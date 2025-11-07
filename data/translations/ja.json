@@ -3,16 +3,16 @@
     "home": "ホーム",
     "about": "会社概要",
     "services": "サービス",
-    "projects": "プロジェクト",
+    "projects": "案件紹介",
     "contact": "お問い合わせ"
   },
   "hero": {
-    "title": "Web3.0の未来を創造する",
-    "subtitle": "ブロックチェーン技術で新しい価値を生み出し、分散型の未来を実現します",
-    "cta": "サービスを見る"
+    "title": "Web3.0 × ライフ",
+    "subtitle": "ブロックチェーン & AI技術 で新しい価値を生み出し、Web3.0のライフスタイルをデザインする",
+    "cta": "提供サービス"
   },
   "services": {
-    "title": "サービス",
+    "title": "提供するサービス",
     "subtitle": "私たちが提供する専門的なWeb3.0ソリューション",
     "smartContract": {
       "title": "スマートコントラクト設計・開発",
@@ -86,7 +86,7 @@
     }
   },
   "footer": {
-    "copyright": "© 2024 Nebula Infinity. All rights reserved.",
+    "copyright": "© 2025 Nebula Infinity. All rights reserved.",
     "quickLinks": "クイックリンク"
   },
   "common": {
