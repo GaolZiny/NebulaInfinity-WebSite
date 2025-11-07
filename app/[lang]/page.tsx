@@ -56,11 +56,6 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
             <Link href={`/${params.lang}/services`}>
               <Button size="lg">{t.hero.cta}</Button>
             </Link>
-            <Link href={`/${params.lang}/contact`}>
-              <Button size="lg" variant="outline">
-                {t.nav.contact}
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
