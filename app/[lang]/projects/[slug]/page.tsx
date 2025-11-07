@@ -1,7 +1,7 @@
 import { type Language } from '@/lib/i18n';
 import Link from 'next/link';
-import Card from '@/components/ui/Card';
-import Button from '@/components/ui/Button';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import styles from './page.module.css';
 import translations from '@/data/translations/ja.json';
 import translationsEn from '@/data/translations/en.json';
@@ -93,7 +93,7 @@ export default async function ProjectDetailPage({
         <>
           <section className={styles.section}>
             <div className="container">
-              <Card glass>
+              <Card>
                 <h2 className={styles.sectionTitle}>
                   {params.lang === 'ja' ? 'プロジェクト概要' : 'Project Overview'}
                 </h2>
@@ -111,7 +111,7 @@ export default async function ProjectDetailPage({
               </h2>
               <div className={styles.techGrid}>
                 {projectDetails.techStack.map((tech: string, index: number) => (
-                  <Card key={index} hover>
+                  <Card key={index}>
                     <div className={styles.techItem}>{tech}</div>
                   </Card>
                 ))}
@@ -126,7 +126,7 @@ export default async function ProjectDetailPage({
               </h2>
               <div className={styles.featuresGrid}>
                 {projectDetails.features.map((feature: any, index: number) => (
-                  <Card key={index} hover>
+                  <Card key={index}>
                     <div className={styles.feature}>
                       <span className={styles.checkmark}>✓</span>
                       <span>{feature[params.lang]}</span>
@@ -140,7 +140,7 @@ export default async function ProjectDetailPage({
           {projectDetails.results && (
             <section className={styles.section}>
               <div className="container">
-                <Card glass className={styles.resultsCard}>
+                <Card className={styles.resultsCard}>
                   <h2 className={styles.sectionTitle}>
                     {params.lang === 'ja' ? '実績・成果' : 'Results'}
                   </h2>
@@ -161,7 +161,7 @@ export default async function ProjectDetailPage({
 
       <section className={styles.ctaSection}>
         <div className="container">
-          <Card glass className={styles.ctaCard}>
+          <Card className={styles.ctaCard}>
             <h2 className={styles.ctaTitle}>
               {params.lang === 'ja'
                 ? '同様のプロジェクトをお考えですか？'

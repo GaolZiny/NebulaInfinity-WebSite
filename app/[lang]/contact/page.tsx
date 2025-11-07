@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { type Language } from '@/lib/i18n';
-import Card from '@/components/ui/Card';
-import Button from '@/components/ui/Button';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import styles from './page.module.css';
 import translations from '@/data/translations/ja.json';
 import translationsEn from '@/data/translations/en.json';
@@ -75,7 +75,7 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
         <div className="container">
           <div className={styles.content}>
             <div className={styles.formSection}>
-              <Card glass>
+              <Card>
                 <form onSubmit={handleSubmit} className={styles.form}>
                   <div className={styles.formGroup}>
                     <label htmlFor="name" className={styles.label}>
@@ -192,7 +192,6 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
                   <Button
                     type="submit"
                     size="lg"
-                    fullWidth
                     disabled={status === 'submitting'}
                   >
                     {status === 'submitting' ? t.contact.form.submitting : t.contact.form.submit}
@@ -202,14 +201,14 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
             </div>
 
             <div className={styles.infoSection}>
-              <Card hover>
+              <Card>
                 <h3 className={styles.infoTitle}>{t.contact.info.email}</h3>
                 <a href="mailto:info@nebulainfinity.com" className={styles.infoLink}>
                   info@nebulainfinity.com
                 </a>
               </Card>
 
-              <Card hover>
+              <Card>
                 <h3 className={styles.infoTitle}>{t.contact.info.social}</h3>
                 <div className={styles.socialLinks}>
                   <a

@@ -1,7 +1,7 @@
 import { type Language } from '@/lib/i18n';
 import Link from 'next/link';
-import Card from '@/components/ui/Card';
-import Button from '@/components/ui/Button';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import styles from './page.module.css';
 import translations from '@/data/translations/ja.json';
 import translationsEn from '@/data/translations/en.json';
@@ -33,7 +33,7 @@ export default function ProjectsPage({ params }: { params: { lang: Language } })
         <div className="container">
           <div className={styles.projectsGrid}>
             {projectsData.projects.map((project) => (
-              <Card key={project.id} hover>
+              <Card key={project.id}>
                 <div className={styles.projectCard}>
                   <div className={styles.projectIcon}>{project.icon ? '🚀' : '📦'}</div>
                   <div className={styles.projectHeader}>
@@ -59,7 +59,7 @@ export default function ProjectsPage({ params }: { params: { lang: Language } })
                     ))}
                   </div>
                   <Link href={`/${params.lang}/projects/${project.slug}`}>
-                    <Button variant="outline" fullWidth>
+                    <Button variant="outline">
                       {t.projects.viewDetails}
                     </Button>
                   </Link>

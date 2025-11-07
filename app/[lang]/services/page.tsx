@@ -1,6 +1,6 @@
 import { type Language } from '@/lib/i18n';
-import Card from '@/components/ui/Card';
-import Button from '@/components/ui/Button';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import styles from './page.module.css';
 import translations from '@/data/translations/ja.json';
@@ -111,7 +111,7 @@ export default function ServicesPage({ params }: { params: { lang: Language } })
         <div className="container">
           <div className={styles.servicesGrid}>
             {services.map((service, index) => (
-              <Card key={index} hover>
+              <Card key={index}>
                 <div className={styles.serviceIcon}>{service.icon}</div>
                 <h3 className={styles.serviceTitle}>{service.title}</h3>
                 <p className={styles.serviceDescription}>{service.description}</p>
@@ -131,7 +131,7 @@ export default function ServicesPage({ params }: { params: { lang: Language } })
 
       <section className={styles.ctaSection}>
         <div className="container">
-          <Card glass className={styles.ctaCard}>
+          <Card className={styles.ctaCard}>
             <h2 className={styles.ctaTitle}>
               {params.lang === 'ja'
                 ? 'サービスについてご相談ください'

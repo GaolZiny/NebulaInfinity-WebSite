@@ -1,5 +1,5 @@
 import { type Language } from '@/lib/i18n';
-import Card from '@/components/ui/Card';
+import { Card } from '@/components/ui/card';
 import styles from './page.module.css';
 import translations from '@/data/translations/ja.json';
 import translationsEn from '@/data/translations/en.json';
@@ -28,7 +28,7 @@ export default function AboutPage({ params }: { params: { lang: Language } }) {
 
       <section className={styles.section}>
         <div className="container">
-          <Card glass className={styles.descriptionCard}>
+          <Card className={styles.descriptionCard}>
             <p className={styles.description}>{t.about.description}</p>
           </Card>
         </div>
@@ -37,11 +37,11 @@ export default function AboutPage({ params }: { params: { lang: Language } }) {
       <section className={styles.section}>
         <div className="container">
           <div className={styles.grid}>
-            <Card hover>
+            <Card>
               <h3 className={styles.cardTitle}>{t.about.mission.title}</h3>
               <p className={styles.cardDescription}>{t.about.mission.description}</p>
             </Card>
-            <Card hover>
+            <Card>
               <h3 className={styles.cardTitle}>{t.about.vision.title}</h3>
               <p className={styles.cardDescription}>{t.about.vision.description}</p>
             </Card>
