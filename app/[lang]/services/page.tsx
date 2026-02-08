@@ -2,183 +2,64 @@ import { type Language } from '@/lib/i18n';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
-import cardStyles from '@/components/ui/Card.module.css';
+import ServiceCard from '@/components/ui/ServiceCard';
+import {
+  SmartContractIcon,
+  AIAgentIcon,
+  AIWorkflowIcon,
+  AIApplicationsIcon,
+  BlockchainDevelopmentIcon,
+  Web3ConsultingIcon
+} from '@/components/ui/icons/ServiceIcons';
+import { services } from '@/data/services';
 import styles from './page.module.css';
-import translations from '@/data/translations/ja.json';
-import translationsEn from '@/data/translations/en.json';
+
+const iconMap: Record<string, React.ReactNode> = {
+  'smart-contract': <SmartContractIcon />,
+  'ai-agent-development': <AIAgentIcon />,
+  'ai-workflow-automation': <AIWorkflowIcon />,
+  'ai-applications': <AIApplicationsIcon />,
+  'blockchain-development': <BlockchainDevelopmentIcon />,
+  'web3-consulting': <Web3ConsultingIcon />
+};
 
 export async function generateMetadata({ params }: { params: { lang: Language } }) {
-  const t = params.lang === 'ja' ? translations : translationsEn;
   return {
-    title: `${t.services.title} - Nebula Infinity`,
-    description: t.services.subtitle,
+    title: params.lang === 'ja' ? 'サービス - Nebula Infinity' : 'Services - Nebula Infinity',
+    description: params.lang === 'ja' 
+      ? 'AIとWeb3で、次を構築する。スマートコントラクト開発、AIエージェント開発、ブロックチェーンアプリケーション開発など、包括的なサービスを提供。'
+      : 'Build the next with AI & Web3. Comprehensive services including smart contract development, AI agent development, and blockchain application development.',
   };
 }
 
 export default function ServicesPage({ params }: { params: { lang: Language } }) {
-  const t = params.lang === 'ja' ? translations : translationsEn;
   const isJa = params.lang === 'ja';
+  
+  const featuredService = services.find(s => s.featured);
+  const otherServices = services.filter(s => !s.featured);
 
-  const featuredService = {
-    title: t.services.smartContract.title,
-    description: t.services.smartContract.description,
-    features:
-      params.lang === 'ja'
-        ? [
-            'Solidityによるスマートコントラクト開発',
-            'セキュリティ監査とベストプラクティス',
-            'ガス最適化',
-            'テストとデプロイメント',
-          ]
-        : [
-            'Smart contract development with Solidity',
-            'Security audits and best practices',
-            'Gas optimization',
-            'Testing and deployment',
-          ],
-    icon: (
-      <svg className={styles.serviceIconSvg} viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          d="M8.5 8.5L5 12l3.5 3.5M15.5 8.5L19 12l-3.5 3.5M13.5 6.5l-3 11"
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="1.7"
-        />
-      </svg>
-    ),
+  // Get simple feature strings for card display
+  const getFeatureStrings = (serviceId: string, lang: Language): string[] => {
+    const service = services.find(s => s.id === serviceId);
+    if (!service) return [];
+    
+    const features = service.features[lang];
+    return features.slice(0, serviceId === 'smart-contract' ? 5 : 4).map(f => f.title);
   };
-
-  const services = [
-    {
-      title: t.services.web3Content.title,
-      description: t.services.web3Content.description,
-      features:
-        params.lang === 'ja'
-          ? [
-              'NFTコレクション企画・開発',
-              'DAppsフロントエンド開発',
-              'メタバース体験設計',
-              'トークノミクス設計',
-            ]
-          : [
-              'NFT collection planning & development',
-              'DApps frontend development',
-              'Metaverse experience design',
-              'Tokenomics design',
-            ],
-      icon: (
-        <svg className={styles.serviceIconSvg} viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M4.5 16.5c3.5-4 6.5-6 10.5-7.5 2.5-.9 4.5.6 4.5 3.2 0 4.7-5.8 7.8-10.5 7.8-2.7 0-4-1.4-4.5-3.5z"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.7"
-          />
-          <path
-            d="M14.5 6.5l1.8 1.8"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.7"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: t.services.consulting.title,
-      description: t.services.consulting.description,
-      features:
-        params.lang === 'ja'
-          ? [
-              'ブロックチェーン技術導入支援',
-              'Web3.0戦略立案',
-              'プロジェクト技術選定',
-              '開発チーム育成',
-            ]
-          : [
-              'Blockchain technology adoption support',
-              'Web3.0 strategy planning',
-              'Project technology selection',
-              'Development team training',
-            ],
-      icon: (
-        <svg className={styles.serviceIconSvg} viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M12 4.5c3.6 0 6.5 2.5 6.5 5.8 0 2.5-1.8 4.7-4.4 5.5l-2.1 2.2-2.1-2.2C7.3 15 5.5 12.8 5.5 10.3 5.5 7 8.4 4.5 12 4.5z"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.7"
-          />
-          <path
-            d="M9.5 10.5h5"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.7"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: t.services.aiDevelopment.title,
-      description: t.services.aiDevelopment.description,
-      features:
-        params.lang === 'ja'
-          ? [
-              '機械学習モデル開発',
-              'データ分析・予測システム',
-              'AI統合ソリューション',
-              'カスタムAIツール開発',
-            ]
-          : [
-              'Machine learning model development',
-              'Data analysis & prediction systems',
-              'AI integration solutions',
-              'Custom AI tool development',
-            ],
-      icon: (
-        <svg className={styles.serviceIconSvg} viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M8 7.5h8M8 12h8M8 16.5h5M6 5.5h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2z"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.7"
-          />
-          <path
-            d="M10.5 3.5v2M13.5 3.5v2"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.7"
-          />
-        </svg>
-      ),
-    },
-  ];
-
-  const principlesTitle = params.lang === 'ja' ? '進め方' : 'Our approach';
-  const principles = params.lang === 'ja'
-    ? ['小さく始めて確実に検証', '設計から運用まで一貫サポート', '共有しやすいドキュメント']
-    : ['Start small, validate quickly.', 'Support from design through operation.', 'Documentation that stays shared.'];
 
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
         <div className="container">
           <span className={styles.eyebrow}>{isJa ? 'サービス' : 'Services'}</span>
-          <h1 className={styles.title}>{t.services.title}</h1>
-          <p className={styles.subtitle}>{t.services.subtitle}</p>
+          <h1 className={styles.title}>
+            {isJa ? 'AIとWeb3で、次を構築する' : 'Build the next with AI & Web3'}
+          </h1>
+          <p className={styles.subtitle}>
+            {isJa
+              ? 'スマートコントラクト開発からAIエージェント構築まで、最先端技術で貴社のプロジェクトを成功に導きます。'
+              : 'From smart contract development to AI agent creation, we guide your project to success with cutting-edge technology.'}
+          </p>
         </div>
       </section>
 
@@ -190,57 +71,59 @@ export default function ServicesPage({ params }: { params: { lang: Language } })
             </h2>
             <p className={styles.sectionSubtitle}>
               {isJa
-                ? '設計から運用まで一貫して支えるバンドルです。'
-                : 'A bundled set of services that covers design through operations.'}
+                ? '設計から運用まで一貫して支えるサービスです。'
+                : 'Comprehensive services from design through operations.'}
             </p>
           </div>
           <div className={styles.bentoGrid}>
-            <Card
-              hover
-              className={`${styles.bentoCard} ${styles.bentoFeatured} ${cardStyles.featured}`}
-            >
-              <div className={styles.bentoHeader}>
-                <span className={styles.serviceIcon}>{featuredService.icon}</span>
-                <p className={styles.bentoLabel}>
-                  {params.lang === 'ja' ? '注目サービス' : 'Featured service'}
-                </p>
+            {featuredService && (
+              <div className={styles.bentoFeatured}>
+                <ServiceCard
+                  id={featuredService.id}
+                  lang={params.lang}
+                  title={isJa ? featuredService.titleJa : featuredService.titleEn}
+                  description={isJa ? featuredService.descriptionJa : featuredService.descriptionEn}
+                  features={getFeatureStrings(featuredService.id, params.lang)}
+                  icon={iconMap[featuredService.id]}
+                  featured
+                />
               </div>
-              <h3 className={styles.serviceTitle}>{featuredService.title}</h3>
-              <p className={styles.serviceDescription}>{featuredService.description}</p>
-              <ul className={styles.featureList}>
-                {featuredService.features.map((feature, i) => (
-                  <li key={i} className={styles.featureItem}>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </Card>
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                hover
-                className={`${styles.bentoCard} ${styles.bentoSmall} ${cardStyles.compact}`}
-              >
-                <span className={styles.serviceIcon}>{service.icon}</span>
-                <h3 className={styles.serviceTitle}>{service.title}</h3>
-                <p className={styles.serviceDescription}>{service.description}</p>
-                <ul className={styles.featureList}>
-                  {service.features.slice(0, 3).map((feature, i) => (
-                    <li key={i} className={styles.featureItem}>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </div>
-          <div className={styles.principles}>
-            <h3 className={styles.principlesTitle}>{principlesTitle}</h3>
-            <ul className={styles.principlesList}>
-              {principles.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
+            )}
+            {/* AI Services Group */}
+            {['ai-agent-development', 'ai-workflow-automation', 'ai-applications'].map(serviceId => {
+              const service = services.find(s => s.id === serviceId);
+              if (!service) return null;
+              const gridClass = serviceId === 'ai-applications' ? styles.bentoMedium : styles.bentoSmall;
+              return (
+                <div key={service.id} className={gridClass}>
+                  <ServiceCard
+                    id={service.id}
+                    lang={params.lang}
+                    title={isJa ? service.titleJa : service.titleEn}
+                    description={isJa ? service.descriptionJa : service.descriptionEn}
+                    features={getFeatureStrings(service.id, params.lang)}
+                    icon={iconMap[service.id]}
+                  />
+                </div>
+              );
+            })}
+            {/* Web3 Services Group */}
+            {['blockchain-development', 'web3-consulting'].map(serviceId => {
+              const service = services.find(s => s.id === serviceId);
+              if (!service) return null;
+              return (
+                <div key={service.id} className={styles.bentoWide}>
+                  <ServiceCard
+                    id={service.id}
+                    lang={params.lang}
+                    title={isJa ? service.titleJa : service.titleEn}
+                    description={isJa ? service.descriptionJa : service.descriptionEn}
+                    features={getFeatureStrings(service.id, params.lang)}
+                    icon={iconMap[service.id]}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -260,11 +143,11 @@ export default function ServicesPage({ params }: { params: { lang: Language } })
             </div>
             <div className={styles.ctaActions}>
               <Link href={`/${params.lang}/contact`}>
-                <Button size="lg">{t.nav.contact}</Button>
+                <Button size="lg">{isJa ? 'お問い合わせ' : 'Contact'}</Button>
               </Link>
               <Link href={`/${params.lang}/projects`}>
                 <Button size="lg" variant="outline">
-                  {t.nav.projects}
+                  {isJa ? '実績を見る' : 'View Projects'}
                 </Button>
               </Link>
             </div>

@@ -1,7 +1,7 @@
 :root {
   /* Typography */
-  --font-sans: 'Exo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  --font-heading: 'Orbitron', 'Exo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-sans: 'Exo 2', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-heading: 'Orbitron', 'Noto Sans JP', 'Exo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 
   /* Design system palette */
   --color-primary: #0f172a;

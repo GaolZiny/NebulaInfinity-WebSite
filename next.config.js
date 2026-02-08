@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // 静态导出配置 - 适用于 Cloudflare Pages
+  // 静的导出配置 - 适用于 Cloudflare Pages
   output: 'export',
 
   // 禁用图片优化 - 避免使用 Cloudflare 边缘函数
