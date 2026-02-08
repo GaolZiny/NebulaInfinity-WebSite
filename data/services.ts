@@ -2,80 +2,79 @@ import { Service } from '@/types/services';
 
 export const services: Service[] = [
   {
-    id: 'smart-contract',
-    titleJa: 'スマートコントラクト設計・開発・監査',
-    titleEn: 'Smart Contract Design, Development & Audit',
-    subtitleJa: 'ブロックチェーンの信頼性を支える、セキュアで効率的なスマートコントラクト開発',
-    subtitleEn: 'Secure, efficient smart contract development — the foundation of blockchain trust',
-    descriptionJa: 'Solidityによるスマートコントラクト開発、セキュリティ監査、ガス最適化まで一貫して提供。ブロックチェーンの信頼性を支える基盤技術。',
-    descriptionEn: 'End-to-end smart contract development with Solidity, security audits, and gas optimization. The foundation of blockchain trust.',
+    id: 'ai-workflow-automation',
+    titleJa: 'AI自動化ワークフロー構築',
+    titleEn: 'AI Workflow Automation',
+    subtitleJa: '手作業をAIで効率化、生産性を劇的に向上',
+    subtitleEn: 'Replace manual work with AI — dramatically boost productivity',
+    descriptionJa: '手作業のプロセスをAIで自動化。文書処理、データ抽出、レポート生成などを効率化。',
+    descriptionEn: 'Automate manual processes with AI. Streamline document processing, data extraction, and report generation.',
     aboutJa: [
-      'スマートコントラクトはブロックチェーンアプリケーションの心臓部です。一度デプロイすると変更不可能なため、設計段階でのセキュリティと効率性が極めて重要です。',
-      'Nebula Infinityは、Solidityによる堅牢なスマートコントラクト開発から、包括的なセキュリティ監査、ガス最適化まで、エンドツーエンドでサポートします。ERC標準準拠はもちろん、カスタムロジックの実装、複雑なトークノミクス設計にも対応。',
-      'エンタープライズグレードの品質基準で、あなたのプロジェクトを成功に導きます。'
+      'ドキュメント処理、データ抽出、レポート生成など、繰り返し行う手作業をAIで自動化。時間とコストを削減し、ヒューマンエラーを防ぎます。',
+      '既存システム（CRM、ERP、データベース）との連携もスムーズ。API統合やカスタムワークフローエンジンで、あなたの業務フローに最適な自動化を実現します。',
+      '導入から運用まで、一貫したサポートを提供します。'
     ],
     aboutEn: [
-      'Smart contracts are the heart of blockchain applications. Once deployed, they are immutable — making security and efficiency at the design stage absolutely critical.',
-      'Nebula Infinity provides end-to-end support: from robust Solidity development to comprehensive security audits and gas optimization. We handle ERC standard compliance, custom logic implementation, and complex tokenomics design.',
-      'With enterprise-grade quality standards, we guide your project to success.'
+      'Automate repetitive manual tasks — document processing, data extraction, report generation — with AI. Reduce time and costs while eliminating human error.',
+      'Seamless integration with existing systems (CRM, ERP, databases). API integration and custom workflow engines deliver automation perfectly tailored to your business.',
+      'We provide consistent support from deployment through operations.'
     ],
     features: {
       ja: [
         {
-          title: 'Solidity開発',
-          description: 'エンタープライズグレードのスマートコントラクトを設計・実装。ERC標準準拠、カスタムロジック対応。'
+          title: 'ドキュメント解析・分類自動化',
+          description: 'AI-OCRと自然言語処理により、文書の自動解析・分類・データ抽出を実現。'
         },
         {
-          title: 'セキュリティ監査',
-          description: '包括的な脆弱性診断。Reentrancy、Overflow、Access Controlなどの一般的な攻撃ベクトルをカバー。'
+          title: 'データ抽出・構造化',
+          description: '非構造化データから必要な情報を抽出し、構造化データとして活用可能に。'
         },
         {
-          title: 'ガス最適化',
-          description: 'トランザクションコストを最小化。ストレージ最適化、バッチ処理、効率的なデータ構造設計。'
+          title: '既存システムとの連携',
+          description: 'CRM、ERP、データベース等の既存システムとAPI連携し、ワークフローを統合。'
         },
         {
-          title: 'テスト自動化',
-          description: 'Hardhat/Foundryによる包括的テストスイート。カバレッジ90%+目標。'
+          title: 'プロセス監視・アラート',
+          description: 'ワークフローの実行状況を監視し、異常検知時にアラート通知。'
         }
       ],
       en: [
         {
-          title: 'Solidity Development',
-          description: 'Design and implement enterprise-grade smart contracts. ERC standard compliance and custom logic support.'
+          title: 'Automated document analysis & classification',
+          description: 'AI-OCR and NLP enable automatic document analysis, classification, and data extraction.'
         },
         {
-          title: 'Security Audits',
-          description: 'Comprehensive vulnerability assessments. Cover common attack vectors: Reentrancy, Overflow, Access Control, and more.'
+          title: 'Data extraction & structuring',
+          description: 'Extract necessary information from unstructured data and transform it into structured, actionable data.'
         },
         {
-          title: 'Gas Optimization',
-          description: 'Minimize transaction costs. Storage optimization, batch processing, and efficient data structure design.'
+          title: 'Integration with existing systems',
+          description: 'API integration with CRM, ERP, databases, and other existing systems to unify workflows.'
         },
         {
-          title: 'Test Automation',
-          description: 'Comprehensive test suites with Hardhat/Foundry. Target 90%+ code coverage.'
+          title: 'Process monitoring & alerts',
+          description: 'Monitor workflow execution and send alerts when anomalies are detected.'
         }
       ]
     },
-    technologies: ['Solidity', 'Hardhat', 'Foundry', 'OpenZeppelin', 'Ethers.js', 'Web3.js', 'Slither', 'Mythril', 'Tenderly', 'Remix', 'Truffle', 'Ganache'],
+    technologies: ['n8n', 'Zapier', 'Make', 'Apache Airflow', 'LangChain', 'OpenAI API', 'Document AI', 'Tesseract', 'Azure AI', 'Python', 'Node.js'],
     process: {
       ja: [
-        { title: '要件定義', description: '初回コンサルテーションとスコープ定義' },
-        { title: '設計', description: 'アーキテクチャ計画と仕様策定' },
-        { title: '開発', description: '実装と反復開発' },
-        { title: 'テスト', description: 'QA、セキュリティレビュー、最適化' },
-        { title: '納品', description: 'デプロイメントとドキュメンテーション' }
+        { title: '要件定義', description: '現行業務フローの分析と自動化対象の特定' },
+        { title: '設計', description: 'ワークフローエンジン選定とプロセス設計' },
+        { title: '開発', description: 'ワークフロー実装とシステム統合' },
+        { title: 'テスト', description: '動作検証と精度チューニング' },
+        { title: '納品', description: 'デプロイメントと運用トレーニング' }
       ],
       en: [
-        { title: 'Requirements', description: 'Initial consultation and scope definition' },
-        { title: 'Design', description: 'Architecture planning and specification' },
-        { title: 'Development', description: 'Implementation and iteration' },
-        { title: 'Testing', description: 'QA, security review, optimization' },
-        { title: 'Delivery', description: 'Deployment and documentation' }
+        { title: 'Requirements', description: 'Analyze current workflows and identify automation targets' },
+        { title: 'Design', description: 'Select workflow engine and design processes' },
+        { title: 'Development', description: 'Workflow implementation and system integration' },
+        { title: 'Testing', description: 'Validation and accuracy tuning' },
+        { title: 'Delivery', description: 'Deployment and operational training' }
       ]
     },
-    category: 'web3',
-    featured: true
+    category: 'ai'
   },
   {
     id: 'ai-agent-development',
@@ -148,81 +147,6 @@ export const services: Service[] = [
         { title: 'Development', description: 'Agent implementation and system integration' },
         { title: 'Testing', description: 'Validation and accuracy tuning' },
         { title: 'Delivery', description: 'Deployment and operational support' }
-      ]
-    },
-    category: 'ai'
-  },
-  {
-    id: 'ai-workflow-automation',
-    titleJa: 'AI自動化ワークフロー構築',
-    titleEn: 'AI Workflow Automation',
-    subtitleJa: '手作業をAIで効率化、生産性を劇的に向上',
-    subtitleEn: 'Replace manual work with AI — dramatically boost productivity',
-    descriptionJa: '手作業のプロセスをAIで自動化。文書処理、データ抽出、レポート生成などを効率化。',
-    descriptionEn: 'Automate manual processes with AI. Streamline document processing, data extraction, and report generation.',
-    aboutJa: [
-      'ドキュメント処理、データ抽出、レポート生成など、繰り返し行う手作業をAIで自動化。時間とコストを削減し、ヒューマンエラーを防ぎます。',
-      '既存システム（CRM、ERP、データベース）との連携もスムーズ。API統合やカスタムワークフローエンジンで、あなたの業務フローに最適な自動化を実現します。',
-      '導入から運用まで、一貫したサポートを提供します。'
-    ],
-    aboutEn: [
-      'Automate repetitive manual tasks — document processing, data extraction, report generation — with AI. Reduce time and costs while eliminating human error.',
-      'Seamless integration with existing systems (CRM, ERP, databases). API integration and custom workflow engines deliver automation perfectly tailored to your business.',
-      'We provide consistent support from deployment through operations.'
-    ],
-    features: {
-      ja: [
-        {
-          title: 'ドキュメント解析・分類自動化',
-          description: 'AI-OCRと自然言語処理により、文書の自動解析・分類・データ抽出を実現。'
-        },
-        {
-          title: 'データ抽出・構造化',
-          description: '非構造化データから必要な情報を抽出し、構造化データとして活用可能に。'
-        },
-        {
-          title: '既存システムとの連携',
-          description: 'CRM、ERP、データベース等の既存システムとAPI連携し、ワークフローを統合。'
-        },
-        {
-          title: 'プロセス監視・アラート',
-          description: 'ワークフローの実行状況を監視し、異常検知時にアラート通知。'
-        }
-      ],
-      en: [
-        {
-          title: 'Automated document analysis & classification',
-          description: 'AI-OCR and NLP enable automatic document analysis, classification, and data extraction.'
-        },
-        {
-          title: 'Data extraction & structuring',
-          description: 'Extract necessary information from unstructured data and transform it into structured, actionable data.'
-        },
-        {
-          title: 'Integration with existing systems',
-          description: 'API integration with CRM, ERP, databases, and other existing systems to unify workflows.'
-        },
-        {
-          title: 'Process monitoring & alerts',
-          description: 'Monitor workflow execution and send alerts when anomalies are detected.'
-        }
-      ]
-    },
-    technologies: ['n8n', 'Zapier', 'Make', 'Apache Airflow', 'LangChain', 'OpenAI API', 'Document AI', 'Tesseract', 'Azure AI', 'Python', 'Node.js'],
-    process: {
-      ja: [
-        { title: '要件定義', description: '現行業務フローの分析と自動化対象の特定' },
-        { title: '設計', description: 'ワークフローエンジン選定とプロセス設計' },
-        { title: '開発', description: 'ワークフロー実装とシステム統合' },
-        { title: 'テスト', description: '動作検証と精度チューニング' },
-        { title: '納品', description: 'デプロイメントと運用トレーニング' }
-      ],
-      en: [
-        { title: 'Requirements', description: 'Analyze current workflows and identify automation targets' },
-        { title: 'Design', description: 'Select workflow engine and design processes' },
-        { title: 'Development', description: 'Workflow implementation and system integration' },
-        { title: 'Testing', description: 'Validation and accuracy tuning' },
-        { title: 'Delivery', description: 'Deployment and operational training' }
       ]
     },
     category: 'ai'
@@ -302,12 +226,12 @@ export const services: Service[] = [
   },
   {
     id: 'blockchain-development',
-    titleJa: 'ブロックチェーン / Web3.0 アプリケーション開発',
-    titleEn: 'Blockchain / Web3.0 Application Development',
+    titleJa: 'Web3.0 アプリケーション開発',
+    titleEn: 'Web3.0 Application Development',
     subtitleJa: 'NFT、DApps、メタバース — Web3時代のアプリケーション',
     subtitleEn: 'NFTs, DApps, metaverse — applications for the Web3 era',
-    descriptionJa: 'NFT、DApps、メタバース体験など、Web3.0時代のアプリケーションを設計・開発。',
-    descriptionEn: 'Design and develop Web3.0-era applications: NFT collections, DApps, metaverse experiences, and more.',
+    descriptionJa: 'NFT、DApps、メタバース体験など、Web3.0時代のアプリケーションを設計・開発。ブロックチェーン技術を活用した次世代ソリューション。',
+    descriptionEn: 'Design and develop Web3.0-era applications: NFT collections, DApps, metaverse experiences. Next-generation solutions powered by blockchain technology.',
     aboutJa: [
       'NFTコレクション、分散型アプリケーション（DApps）、メタバース体験など、Web3.0時代のアプリケーションを設計・開発します。',
       'ウォレット連携（MetaMask、WalletConnect）、トランザクション設計、トークノミクス最適化まで対応。フロントエンドはReact/Next.js、バックエンドはスマートコントラクトとAPIで構築します。',
@@ -376,76 +300,76 @@ export const services: Service[] = [
     category: 'web3'
   },
   {
-    id: 'web3-consulting',
-    titleJa: 'Web3.0 コンサルティング',
-    titleEn: 'Web3.0 Consulting',
-    subtitleJa: 'ブロックチェーン導入から戦略立案、チーム育成まで包括支援',
-    subtitleEn: 'Comprehensive support: from blockchain adoption to strategy and team training',
-    descriptionJa: 'ブロックチェーン技術導入から戦略立案、チーム育成まで。プロジェクトを成功に導く包括的支援。',
-    descriptionEn: 'Comprehensive support from blockchain adoption strategy to team training. Guiding projects to success.',
+    id: 'smart-contract',
+    titleJa: 'スマートコントラクト設計・開発・監査',
+    titleEn: 'Smart Contract Design, Development & Audit',
+    subtitleJa: 'ブロックチェーンの信頼性を支える、セキュアで効率的なスマートコントラクト開発',
+    subtitleEn: 'Secure, efficient smart contract development — the foundation of blockchain trust',
+    descriptionJa: 'Solidityによるスマートコントラクト開発、セキュリティ監査、ガス最適化まで一貫して提供。ブロックチェーンの信頼性を支える基盤技術。',
+    descriptionEn: 'End-to-end smart contract development with Solidity, security audits, and gas optimization. The foundation of blockchain trust.',
     aboutJa: [
-      'Web3.0プロジェクトの成功には、技術選定、トークノミクス設計、コミュニティ戦略、規制対応など、多岐にわたる専門知識が必要です。',
-      'Nebula Infinityは、プロジェクト初期のフィージビリティスタディから、技術アーキテクチャ設計、開発チーム育成、ローンチ後のサポートまで、包括的にコンサルティングします。',
-      'あなたのビジョンを、実現可能なロードマップに落とし込みます。'
+      'スマートコントラクトはブロックチェーンアプリケーションの心臓部です。一度デプロイすると変更不可能なため、設計段階でのセキュリティと効率性が極めて重要です。',
+      'Nebula Infinityは、Solidityによる堅牢なスマートコントラクト開発から、包括的なセキュリティ監査、ガス最適化まで、エンドツーエンドでサポートします。ERC標準準拠はもちろん、カスタムロジックの実装、複雑なトークノミクス設計にも対応。',
+      'エンタープライズグレードの品質基準で、あなたのプロジェクトを成功に導きます。'
     ],
     aboutEn: [
-      'Successful Web3.0 projects require expertise across technology selection, tokenomics design, community strategy, regulatory compliance, and more.',
-      'Nebula Infinity provides comprehensive consulting: from initial feasibility studies to technical architecture design, team training, and post-launch support.',
-      'We transform your vision into an actionable roadmap.'
+      'Smart contracts are the heart of blockchain applications. Once deployed, they are immutable — making security and efficiency at the design stage absolutely critical.',
+      'Nebula Infinity provides end-to-end support: from robust Solidity development to comprehensive security audits and gas optimization. We handle ERC standard compliance, custom logic implementation, and complex tokenomics design.',
+      'With enterprise-grade quality standards, we guide your project to success.'
     ],
     features: {
       ja: [
         {
-          title: 'ブロックチェーン技術導入戦略',
-          description: 'プロジェクトに最適なブロックチェーン技術の選定と導入計画策定。'
+          title: 'Solidity開発',
+          description: 'エンタープライズグレードのスマートコントラクトを設計・実装。ERC標準準拠、カスタムロジック対応。'
         },
         {
-          title: 'Web3.0プロジェクト企画支援',
-          description: 'ビジネスモデル設計、トークノミクス設計、ロードマップ策定。'
+          title: 'セキュリティ監査',
+          description: '包括的な脆弱性診断。Reentrancy、Overflow、Access Controlなどの一般的な攻撃ベクトルをカバー。'
         },
         {
-          title: '技術選定・アーキテクチャ設計',
-          description: '最適な技術スタックの選定とシステムアーキテクチャ設計。'
+          title: 'ガス最適化',
+          description: 'トランザクションコストを最小化。ストレージ最適化、バッチ処理、効率的なデータ構造設計。'
         },
         {
-          title: '開発チーム育成・トレーニング',
-          description: 'Web3.0開発スキルのトレーニングと内製化支援。'
+          title: 'テスト自動化',
+          description: 'Hardhat/Foundryによる包括的テストスイート。カバレッジ90%+目標。'
         }
       ],
       en: [
         {
-          title: 'Blockchain adoption strategy',
-          description: 'Select optimal blockchain technology and develop adoption plans for your project.'
+          title: 'Solidity Development',
+          description: 'Design and implement enterprise-grade smart contracts. ERC standard compliance and custom logic support.'
         },
         {
-          title: 'Web3.0 project planning support',
-          description: 'Business model design, tokenomics design, and roadmap development.'
+          title: 'Security Audits',
+          description: 'Comprehensive vulnerability assessments. Cover common attack vectors: Reentrancy, Overflow, Access Control, and more.'
         },
         {
-          title: 'Technology selection & architecture design',
-          description: 'Select the optimal tech stack and design system architecture.'
+          title: 'Gas Optimization',
+          description: 'Minimize transaction costs. Storage optimization, batch processing, and efficient data structure design.'
         },
         {
-          title: 'Development team training & upskilling',
-          description: 'Web3.0 development training and in-house capability building.'
+          title: 'Test Automation',
+          description: 'Comprehensive test suites with Hardhat/Foundry. Target 90%+ code coverage.'
         }
       ]
     },
-    technologies: ['Ethereum', 'Solidity', 'Tokenomics Frameworks', 'Governance Models', 'DAO Tools', 'Discord', 'Notion', 'Figma'],
+    technologies: ['Solidity', 'Hardhat', 'Foundry', 'OpenZeppelin', 'Ethers.js', 'Web3.js', 'Slither', 'Mythril', 'Tenderly', 'Remix', 'Truffle', 'Ganache'],
     process: {
       ja: [
-        { title: '要件定義', description: 'プロジェクト目標とビジネス要件のヒアリング' },
-        { title: '戦略立案', description: '技術戦略とロードマップの策定' },
-        { title: '実行支援', description: 'アーキテクチャ設計と開発支援' },
-        { title: '育成', description: 'チームトレーニングとナレッジ移転' },
-        { title: 'サポート', description: 'ローンチ後の継続的な技術支援' }
+        { title: '要件定義', description: '初回コンサルテーションとスコープ定義' },
+        { title: '設計', description: 'アーキテクチャ計画と仕様策定' },
+        { title: '開発', description: '実装と反復開発' },
+        { title: 'テスト', description: 'QA、セキュリティレビュー、最適化' },
+        { title: '納品', description: 'デプロイメントとドキュメンテーション' }
       ],
       en: [
-        { title: 'Requirements', description: 'Understand project goals and business requirements' },
-        { title: 'Strategy', description: 'Develop technical strategy and roadmap' },
-        { title: 'Execution', description: 'Architecture design and development support' },
-        { title: 'Training', description: 'Team training and knowledge transfer' },
-        { title: 'Support', description: 'Ongoing technical support post-launch' }
+        { title: 'Requirements', description: 'Initial consultation and scope definition' },
+        { title: 'Design', description: 'Architecture planning and specification' },
+        { title: 'Development', description: 'Implementation and iteration' },
+        { title: 'Testing', description: 'QA, security review, optimization' },
+        { title: 'Delivery', description: 'Deployment and documentation' }
       ]
     },
     category: 'web3'

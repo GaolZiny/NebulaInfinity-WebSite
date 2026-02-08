@@ -48,12 +48,3 @@ export const BlockchainDevelopmentIcon: React.FC<IconProps> = ({ className }) =>
     <path d="M9 12 L12 14 M15 12 L12 14"/>
   </svg>
 );
-
-export const Web3ConsultingIcon: React.FC<IconProps> = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <circle cx="12" cy="12" r="7"/>
-    <path d="M12 5 L12 7 M12 17 L12 19 M5 12 L7 12 M17 12 L19 12"/>
-    <path d="M12 9 L10 12 L12 15 L14 12 Z" fill="currentColor" opacity="0.3"/>
-    <path d="M16 6 L16 7 M15.5 7.5 L16.5 7.5 M16 8 L16 8.5"/>
-  </svg>
-);

@@ -9,7 +9,6 @@ import {
   AIWorkflowIcon,
   AIApplicationsIcon,
   BlockchainDevelopmentIcon,
-  Web3ConsultingIcon
 } from '@/components/ui/icons/ServiceIcons';
 import { services } from '@/data/services';
 import styles from './page.module.css';
@@ -20,31 +19,33 @@ const iconMap: Record<string, React.ReactNode> = {
   'ai-workflow-automation': <AIWorkflowIcon />,
   'ai-applications': <AIApplicationsIcon />,
   'blockchain-development': <BlockchainDevelopmentIcon />,
-  'web3-consulting': <Web3ConsultingIcon />
 };
 
 export async function generateMetadata({ params }: { params: { lang: Language } }) {
   return {
     title: params.lang === 'ja' ? 'サービス - Nebula Infinity' : 'Services - Nebula Infinity',
     description: params.lang === 'ja' 
-      ? 'AIとWeb3で、次を構築する。スマートコントラクト開発、AIエージェント開発、ブロックチェーンアプリケーション開発など、包括的なサービスを提供。'
-      : 'Build the next with AI & Web3. Comprehensive services including smart contract development, AI agent development, and blockchain application development.',
+      ? 'AIとWeb3で、次を構築する。AI自動化ワークフロー、AIエージェント開発、Web3.0アプリケーション開発など、包括的なサービスを提供。'
+      : 'Build the next with AI & Web3. Comprehensive services including AI workflow automation, AI agent development, and Web3.0 application development.',
   };
 }
 
 export default function ServicesPage({ params }: { params: { lang: Language } }) {
   const isJa = params.lang === 'ja';
-  
-  const featuredService = services.find(s => s.featured);
-  const otherServices = services.filter(s => !s.featured);
+
+  // Row 1: two primary services (6col each)
+  const row1Ids = ['ai-workflow-automation', 'ai-agent-development'];
+  // Row 2: three services (4col each)
+  const row2Ids = ['ai-applications', 'blockchain-development', 'smart-contract'];
 
   // Get simple feature strings for card display
   const getFeatureStrings = (serviceId: string, lang: Language): string[] => {
     const service = services.find(s => s.id === serviceId);
     if (!service) return [];
-    
     const features = service.features[lang];
-    return features.slice(0, serviceId === 'smart-contract' ? 5 : 4).map(f => f.title);
+    // Row 1 cards are larger, show more features
+    const limit = row1Ids.includes(serviceId) ? 4 : 3;
+    return features.slice(0, limit).map(f => f.title);
   };
 
   return (
@@ -65,37 +66,13 @@ export default function ServicesPage({ params }: { params: { lang: Language } })
 
       <section className={styles.section}>
         <div className="container">
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
-              {isJa ? '提供サービス' : 'Core services'}
-            </h2>
-            <p className={styles.sectionSubtitle}>
-              {isJa
-                ? '設計から運用まで一貫して支えるサービスです。'
-                : 'Comprehensive services from design through operations.'}
-            </p>
-          </div>
           <div className={styles.bentoGrid}>
-            {featuredService && (
-              <div className={styles.bentoFeatured}>
-                <ServiceCard
-                  id={featuredService.id}
-                  lang={params.lang}
-                  title={isJa ? featuredService.titleJa : featuredService.titleEn}
-                  description={isJa ? featuredService.descriptionJa : featuredService.descriptionEn}
-                  features={getFeatureStrings(featuredService.id, params.lang)}
-                  icon={iconMap[featuredService.id]}
-                  featured
-                />
-              </div>
-            )}
-            {/* AI Services Group */}
-            {['ai-agent-development', 'ai-workflow-automation', 'ai-applications'].map(serviceId => {
+            {/* Row 1: Two primary services — 6col each */}
+            {row1Ids.map(serviceId => {
               const service = services.find(s => s.id === serviceId);
               if (!service) return null;
-              const gridClass = serviceId === 'ai-applications' ? styles.bentoMedium : styles.bentoSmall;
               return (
-                <div key={service.id} className={gridClass}>
+                <div key={service.id} className={styles.bentoRow1}>
                   <ServiceCard
                     id={service.id}
                     lang={params.lang}
@@ -107,12 +84,12 @@ export default function ServicesPage({ params }: { params: { lang: Language } })
                 </div>
               );
             })}
-            {/* Web3 Services Group */}
-            {['blockchain-development', 'web3-consulting'].map(serviceId => {
+            {/* Row 2: Three services — 4col each */}
+            {row2Ids.map(serviceId => {
               const service = services.find(s => s.id === serviceId);
               if (!service) return null;
               return (
-                <div key={service.id} className={styles.bentoWide}>
+                <div key={service.id} className={styles.bentoRow2}>
                   <ServiceCard
                     id={service.id}
                     lang={params.lang}

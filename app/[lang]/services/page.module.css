@@ -37,51 +37,21 @@
   padding: 60px 0;
 }
 
-.sectionHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.sectionTitle {
-  font-size: clamp(2rem, 3.6vw, 3rem);
-  font-family: var(--font-heading);
-  letter-spacing: 0.01em;
-}
-
-.sectionSubtitle {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Bento Grid Layout */
+/* Bento Grid Layout — 12-column */
 .bentoGrid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 24px;
-  grid-auto-flow: dense;
 }
 
-.bentoFeatured {
-  grid-column: span 6;
-  grid-row: span 2;
-}
-
-.bentoSmall {
-  grid-column: span 3;
-}
-
-.bentoMedium {
+/* Row 1: two primary cards, each 6 columns */
+.bentoRow1 {
   grid-column: span 6;
 }
 
-.bentoWide {
-  grid-column: span 6;
+/* Row 2: three cards, each 4 columns */
+.bentoRow2 {
+  grid-column: span 4;
 }
 
 /* CTA Section */
@@ -128,12 +98,9 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .bentoFeatured,
-  .bentoSmall,
-  .bentoMedium,
-  .bentoWide {
+  .bentoRow1,
+  .bentoRow2 {
     grid-column: span 1;
-    grid-row: auto;
   }
 
   .ctaCard {
@@ -146,11 +113,6 @@
 @media (max-width: 767px) {
   .hero {
     padding: 80px 0 40px;
-  }
-
-  .sectionHeader {
-    text-align: left;
-    margin-bottom: 32px;
   }
 
   .bentoGrid {
@@ -192,10 +154,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .bentoGrid,
-  .bentoFeatured,
-  .bentoSmall,
-  .bentoMedium,
-  .bentoWide {
+  .bentoRow1,
+  .bentoRow2 {
     transition: none !important;
   }
 }

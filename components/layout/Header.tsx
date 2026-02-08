@@ -50,7 +50,12 @@ export default function Header({ lang }: HeaderProps) {
 
         <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ''}`}>
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className={styles.navLink}>
+            <Link
+              key={item.href}
+              href={item.href}
+              className={styles.navLink}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               {item.label}
             </Link>
           ))}

@@ -10,7 +10,6 @@ import {
   AIWorkflowIcon,
   AIApplicationsIcon,
   BlockchainDevelopmentIcon,
-  Web3ConsultingIcon
 } from '@/components/ui/icons/ServiceIcons';
 import styles from './page.module.css';
 
@@ -20,7 +19,6 @@ const iconMap: Record<string, React.ReactNode> = {
   'ai-workflow-automation': <AIWorkflowIcon />,
   'ai-applications': <AIApplicationsIcon />,
   'blockchain-development': <BlockchainDevelopmentIcon />,
-  'web3-consulting': <Web3ConsultingIcon />
 };
 
 export async function generateStaticParams() {
