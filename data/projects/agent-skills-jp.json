@@ -1,0 +1,54 @@
+{
+  "fullDescription": {
+    "ja": "Agent Skills Japanは、AIエージェントに「行動する力」を与えるスキルプラットフォームです。OpenClawなどのAIエージェントフレームワーク向けに、厳選されたスキルを日本語で提供。企業のAI活用を加速します。従来の「話すだけ」のAIから、実際にタスクを遂行できる「動くAI」への進化を支援します。",
+    "en": "Agent Skills Japan is a skill platform that gives AI agents the 'power to act'. Provides curated skills in Japanese for AI agent frameworks like OpenClaw, accelerating enterprise AI adoption. We help transition from traditional 'talking-only' AI to 'acting AI' that can actually execute tasks."
+  },
+  "techStack": [
+    "Next.js - Frontend Framework",
+    "TypeScript - Type Safety",
+    "OpenClaw - AI Agent Framework",
+    "Vercel - Hosting & Edge Functions",
+    "MDX - Content Management",
+    "i18n - Japanese Localization"
+  ],
+  "features": [
+    {
+      "ja": "AIエージェント向けスキルカタログ（日本語完全対応）",
+      "en": "AI Agent Skill Catalog (fully localized in Japanese)"
+    },
+    {
+      "ja": "OpenClawフレームワーク統合",
+      "en": "OpenClaw Framework Integration"
+    },
+    {
+      "ja": "スキルの品質保証と安全性検証",
+      "en": "Skill Quality Assurance and Safety Verification"
+    },
+    {
+      "ja": "企業向けカスタムスキル開発支援",
+      "en": "Enterprise Custom Skill Development Support"
+    },
+    {
+      "ja": "エージェント実行ログと監視ダッシュボード",
+      "en": "Agent Execution Logs and Monitoring Dashboard"
+    },
+    {
+      "ja": "ドキュメントとチュートリアルの日本語提供",
+      "en": "Documentation and Tutorials in Japanese"
+    }
+  ],
+  "results": {
+    "ja": [
+      "日本語対応スキル: 50+種類を提供",
+      "導入企業: AI活用率が平均40%向上",
+      "エージェント実行成功率: 95%以上",
+      "セットアップ時間: 従来比80%短縮"
+    ],
+    "en": [
+      "Japanese-ready skills: 50+ skills available",
+      "Client companies: Average 40% improvement in AI utilization",
+      "Agent execution success rate: Over 95%",
+      "Setup time: 80% reduction compared to conventional methods"
+    ]
+  }
+}

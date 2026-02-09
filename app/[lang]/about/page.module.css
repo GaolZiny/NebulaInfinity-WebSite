@@ -12,11 +12,11 @@
 .eyebrow {
   display: inline-block;
   margin-bottom: 16px;
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent-primary);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .heroTitle {

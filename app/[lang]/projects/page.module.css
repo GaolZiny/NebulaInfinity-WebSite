@@ -2,6 +2,7 @@
   padding-top: var(--nav-height);
 }
 
+/* ── Hero ── */
 .hero {
   padding: 120px 0 60px;
   text-align: center;
@@ -10,11 +11,11 @@
 .eyebrow {
   display: inline-block;
   margin-bottom: 16px;
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent-primary);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .title {
@@ -31,6 +32,7 @@
   margin: 0 auto;
 }
 
+/* ── Section ── */
 .section {
   padding: 60px 0 90px;
 }
@@ -40,7 +42,7 @@
   flex-direction: column;
   gap: 16px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .sectionTitle {
@@ -54,21 +56,30 @@
   line-height: 1.7;
 }
 
-.bentoGrid {
+/* ── Project Grid: 2-column ── */
+.projectGrid {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
 }
 
-.bentoCard {
+.projectLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
   height: 100%;
 }
 
-.bentoCompact {
-  grid-column: span 3;
+.projectCard {
+  height: 100%;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
-.projectCard {
+.projectCard:hover {
+  border-color: rgba(202, 138, 4, 0.35);
+}
+
+.projectCardInner {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -79,50 +90,23 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
   background: rgba(202, 138, 4, 0.12);
   color: var(--accent-primary);
 }
 
 .projectIconSvg {
-  width: 22px;
-  height: 22px;
-}
-
-.projectHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
+  width: 24px;
+  height: 24px;
 }
 
 .projectTitle {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-primary);
-  flex: 1;
-}
-
-.statusBadge {
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  font-size: 0.875rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.completed {
-  background: rgba(5, 150, 105, 0.12);
-  color: var(--success);
-  border: 1px solid rgba(5, 150, 105, 0.3);
-}
-
-.inProgress {
-  background: rgba(217, 119, 6, 0.12);
-  color: var(--warning);
-  border: 1px solid rgba(217, 119, 6, 0.3);
+  line-height: 1.35;
 }
 
 .projectDescription {
@@ -152,16 +136,83 @@
   color: var(--text-primary);
 }
 
+.viewMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--accent-primary);
+  margin-top: 4px;
+  transition: gap var(--transition-base);
+}
+
+.projectLink:hover .viewMore {
+  gap: 12px;
+}
+
+.arrowIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--transition-base);
+}
+
+.projectLink:hover .arrowIcon {
+  transform: translateX(4px);
+}
+
+/* ── CTA Section ── */
+.ctaSection {
+  padding: 64px 0 96px;
+}
+
+.ctaCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 48px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(120deg, rgba(15, 23, 42, 0.06), rgba(202, 138, 4, 0.12));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.ctaTitle {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-family: var(--font-heading);
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+
+.ctaDescription {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0;
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ── Tablet ── */
 @media (max-width: 1024px) {
-  .bentoGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .projectGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  .bentoCompact {
-    grid-column: span 1;
+  .ctaCard {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
+/* ── Mobile ── */
 @media (max-width: 768px) {
   .hero {
     padding: 80px 0 40px;
@@ -171,12 +222,49 @@
     text-align: left;
   }
 
-  .bentoGrid {
+  .projectGrid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .projectHeader {
-    flex-direction: column;
-    align-items: flex-start;
+  .ctaSection {
+    padding: 48px 0 64px;
+  }
+
+  .ctaCard {
+    padding: 36px 24px;
+  }
+
+  .ctaActions {
+    width: 100%;
+  }
+
+  .ctaActions a {
+    flex: 1;
+    min-width: 140px;
+  }
+}
+
+/* ── Small Mobile ── */
+@media (max-width: 480px) {
+  .title {
+    font-size: clamp(2rem, 8.5vw, 2.8rem);
+  }
+
+  .ctaCard {
+    padding: 28px 20px;
+  }
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .projectCard,
+  .arrowIcon,
+  .viewMore {
+    transition: none !important;
+  }
+
+  .projectCard:hover {
+    transform: none;
   }
 }

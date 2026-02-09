@@ -51,7 +51,7 @@ export default async function ProjectDetailPage({
   }
 
   // Load project details
-  let projectDetails;
+  let projectDetails: any;
   try {
     projectDetails = await import(`@/data/projects/${params.slug}.json`);
   } catch {
@@ -92,15 +92,6 @@ export default async function ProjectDetailPage({
           </h1>
           <p className={styles.subtitle}>{project.shortDescription[params.lang]}</p>
           <div className={styles.meta}>
-            <span
-              className={`${styles.statusBadge} ${
-                project.status === 'completed' ? styles.completed : styles.inProgress
-              }`}
-            >
-              {project.status === 'completed'
-                ? t.projects.status.completed
-                : t.projects.status.inProgress}
-            </span>
             <div className={styles.tags}>
               {project.tags.map((tag) => (
                 <span key={tag} className={styles.tag}>
