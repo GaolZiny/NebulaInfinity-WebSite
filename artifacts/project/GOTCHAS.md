@@ -4,10 +4,13 @@
 
 ## Next.js 开发相关
 
-### .next 缓存损坏（2026-02-09）
+### .next 缓存损坏（2026-02-09，已发生 3 次）
 - **触发条件**：dev server 运行中修改源文件
-- **现象**：500 错误，webpack chunk 找不到
-- **预防**：编码工作时不启动 dev server
+- **现象**：500 错误 / CSS/JS 404 / 页面无渲染
+- **Coder 必须执行**：
+  1. 开始编码前：`pkill -f "next dev" 2>/dev/null; rm -rf .next`
+  2. 编码期间：禁止 `npm run dev`，用 `npm run build` 验证
+  3. 编码完成后：`rm -rf .next` 再 commit
 - **恢复**：`rm -rf .next && npm run dev`
 
 ### 静态导出注意
