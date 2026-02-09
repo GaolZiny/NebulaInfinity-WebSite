@@ -42,16 +42,77 @@
     "backToProjects": "プロジェクト一覧に戻る"
   },
   "about": {
-    "title": "会社概要",
-    "subtitle": "Web3.0技術で未来を創造する",
+    "title": "AIとWeb3.0で、ビジネスの未来を創る",
+    "subtitle": "日本市場に特化した AI + Web3.0 のワンストップ開発パートナー。構想から運用まで、一貫して支援します。",
     "description": "Nebula Infinityは、ブロックチェーン技術とWeb3.0の専門企業です。スマートコントラクトの設計・開発、NFTやDAppsなどのWeb3.0コンテンツの企画・開発、そしてWeb3.0全般のコンサルティングサービスを提供しています。",
+    "company": {
+      "sectionTitle": "コーポレートプロフィール",
+      "sectionSubtitle": "テクノロジーで社会価値を創造する企業として",
+      "name": "Nebula Infinity（ネビュラインフィニティ）",
+      "nameLabel": "社名",
+      "locationLabel": "所在地",
+      "location": "日本",
+      "domainLabel": "ドメイン",
+      "domain": "nebulainfinity.com",
+      "businessLabel": "主要事業",
+      "business": "AI + Web3.0 ソリューション開発",
+      "clientsLabel": "対象顧客",
+      "clients": "企業・団体・政府機関（規模問わず）",
+      "productsLabel": "自社プロダクト",
+      "products": "自社開発アプリケーションの運営"
+    },
+    "domains": {
+      "sectionTitle": "事業領域",
+      "sectionSubtitle": "AI と Web3.0、二つの先端技術を軸に包括的なソリューションを提供します。",
+      "ai": {
+        "title": "AI ソリューション",
+        "items": [
+          { "title": "AI エージェント開発", "description": "目的に応じた自律型エージェントの設計・構築・運用を支援します。" },
+          { "title": "AI 自動化ワークフロー", "description": "業務プロセスを横断する自動化パイプラインを設計・実装します。" },
+          { "title": "AI アプリケーション開発", "description": "機械学習・生成AIを活用したプロダクトの企画から実装まで。" }
+        ]
+      },
+      "web3": {
+        "title": "Web3.0 ソリューション",
+        "items": [
+          { "title": "Web3.0 アプリケーション開発", "description": "DApps・NFTプラットフォーム等の企画・設計・開発を行います。" },
+          { "title": "スマートコントラクト", "description": "設計・開発・監査まで一貫したスマートコントラクトサービス。" }
+        ]
+      },
+      "viewServices": "サービス詳細を見る"
+    },
+    "values": {
+      "sectionTitle": "私たちの方針",
+      "sectionSubtitle": "ミッションとビジョンを軸に、長期的な価値を設計します。",
+      "items": [
+        { "title": "技術力", "description": "AI と Web3.0 の最前線で培った深い専門知識。" },
+        { "title": "透明性", "description": "意思決定の根拠と進捗を常に可視化します。" },
+        { "title": "ワンストップ", "description": "企画から運用まで一貫して対応できる体制。" },
+        { "title": "セキュリティ", "description": "オンチェーン特有のリスクを踏まえた安全設計。" }
+      ]
+    },
     "mission": {
       "title": "ミッション",
-      "description": "ブロックチェーン技術で新しい価値を生み出し、分散型の未来を実現することをミッションとしています。"
+      "description": "AI とブロックチェーン技術で新しい価値を生み出し、分散型の未来を実現することをミッションとしています。"
     },
     "vision": {
       "title": "ビジョン",
-      "description": "Web3.0技術を通じて、より透明で公平な社会の実現を目指しています。"
+      "description": "Web3.0 技術と AI を通じて、より透明で公平な社会の実現を目指しています。"
+    },
+    "whyUs": {
+      "sectionTitle": "選ばれる理由",
+      "sectionSubtitle": "他社にない三つの差別化ポイントで、プロジェクトを成功に導きます。",
+      "points": [
+        { "title": "ワンストップ", "description": "AI + Web3.0 を横断する統合開発力。複数ベンダーに分散させず、一社で完結。" },
+        { "title": "日本市場特化", "description": "日本の企業文化・商習慣・規制環境に精通したチームが対応します。" },
+        { "title": "構想から運用まで", "description": "企画・設計・開発・テスト・運用の一貫支援。立ち上げ後も伴走します。" }
+      ]
+    },
+    "cta": {
+      "title": "プロジェクトについてご相談ください",
+      "description": "AI + Web3.0 の導入や開発について、お気軽にお問い合わせください。",
+      "contact": "お問い合わせ",
+      "services": "サービスを見る"
     }
   },
   "contact": {

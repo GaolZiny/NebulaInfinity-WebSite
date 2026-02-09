@@ -42,16 +42,77 @@
     "backToProjects": "Back to Projects"
   },
   "about": {
-    "title": "About Us",
-    "subtitle": "Creating the future with Web3.0 technology",
+    "title": "Creating the future of business with AI & Web3.0",
+    "subtitle": "Your one-stop AI + Web3.0 development partner specialized in the Japanese market. From concept to operation, we support you every step.",
     "description": "Nebula Infinity is a specialized company in blockchain technology and Web3.0. We provide smart contract design and development, Web3.0 content planning and development including NFTs and DApps, and comprehensive Web3.0 consulting services.",
+    "company": {
+      "sectionTitle": "Corporate Profile",
+      "sectionSubtitle": "A technology company creating social value",
+      "name": "Nebula Infinity",
+      "nameLabel": "Company",
+      "locationLabel": "Location",
+      "location": "Japan",
+      "domainLabel": "Domain",
+      "domain": "nebulainfinity.com",
+      "businessLabel": "Core Business",
+      "business": "AI + Web3.0 Solution Development",
+      "clientsLabel": "Clients",
+      "clients": "Enterprises, organizations & government agencies of all sizes",
+      "productsLabel": "Own Products",
+      "products": "In-house application development & operation"
+    },
+    "domains": {
+      "sectionTitle": "What We Do",
+      "sectionSubtitle": "Comprehensive solutions built on two pillars of cutting-edge technology: AI and Web3.0.",
+      "ai": {
+        "title": "AI Solutions",
+        "items": [
+          { "title": "AI Agent Development", "description": "Design, build, and operate autonomous agents tailored to your objectives." },
+          { "title": "AI Workflow Automation", "description": "Design and implement automation pipelines that span business processes." },
+          { "title": "AI Application Development", "description": "From planning to implementation of products leveraging ML and generative AI." }
+        ]
+      },
+      "web3": {
+        "title": "Web3.0 Solutions",
+        "items": [
+          { "title": "Web3.0 App Development", "description": "Planning, design, and development of DApps, NFT platforms, and more." },
+          { "title": "Smart Contracts", "description": "End-to-end smart contract design, development, and auditing services." }
+        ]
+      },
+      "viewServices": "View All Services"
+    },
+    "values": {
+      "sectionTitle": "Our Approach",
+      "sectionSubtitle": "Anchored in a clear mission and vision, we design for long-term value.",
+      "items": [
+        { "title": "Technical Excellence", "description": "Deep expertise cultivated at the forefront of AI and Web3.0." },
+        { "title": "Transparency", "description": "We keep decision rationale and progress visible at all times." },
+        { "title": "One-Stop Delivery", "description": "A unified team from planning through to production operations." },
+        { "title": "Security First", "description": "Safety-by-design accounting for on-chain-specific risks." }
+      ]
+    },
     "mission": {
       "title": "Mission",
-      "description": "Our mission is to create new value through blockchain technology and realize a decentralized future."
+      "description": "Our mission is to create new value through AI and blockchain technology and realize a decentralized future."
     },
     "vision": {
       "title": "Vision",
-      "description": "We aim to realize a more transparent and fair society through Web3.0 technology."
+      "description": "We aim to realize a more transparent and fair society through Web3.0 technology and AI."
+    },
+    "whyUs": {
+      "sectionTitle": "Why Choose Us",
+      "sectionSubtitle": "Three differentiators that drive project success — capabilities you won't find elsewhere.",
+      "points": [
+        { "title": "One-Stop", "description": "Integrated development power spanning AI + Web3.0. No vendor fragmentation — everything under one roof." },
+        { "title": "Japan-Focused", "description": "A team deeply familiar with Japanese business culture, practices, and regulatory landscape." },
+        { "title": "Concept to Operation", "description": "End-to-end support through planning, development, testing, and post-launch operations." }
+      ]
+    },
+    "cta": {
+      "title": "Let's discuss your project",
+      "description": "Reach out to explore how AI + Web3.0 can drive your next initiative.",
+      "contact": "Contact Us",
+      "services": "View Services"
     }
   },
   "contact": {
