@@ -12,48 +12,6 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
   const t = params.lang === 'ja' ? translations : translationsEn;
   const isJa = params.lang === 'ja';
 
-  const emailIcon = (
-    <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M4.5 7.5h15a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.7"
-      />
-      <path
-        d="M4.5 9l7.5 5 7.5-5"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.7"
-      />
-    </svg>
-  );
-
-  const socialIcon = (
-    <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M7 7.5h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.7"
-      />
-      <path
-        d="M9.5 12h5M12 9.5v5"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.7"
-      />
-    </svg>
-  );
-
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -89,7 +47,7 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
       } else {
         setStatus('error');
       }
-    } catch (error) {
+    } catch {
       setStatus('error');
     }
   };
@@ -105,23 +63,27 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
 
   return (
     <div className={styles.page}>
+      {/* ── Hero ── */}
       <section className={styles.hero}>
         <div className="container">
-          <span className={styles.eyebrow}>{isJa ? 'お問い合わせ' : 'Contact'}</span>
+          <span className={styles.eyebrow}>{t.contact.eyebrow}</span>
           <h1 className={styles.title}>{t.contact.title}</h1>
           <p className={styles.subtitle}>{t.contact.subtitle}</p>
         </div>
       </section>
 
+      {/* ── Main Content: Form + Info ── */}
       <section className={styles.section}>
         <div className="container">
           <div className={styles.content}>
+            {/* Left: Form */}
             <div className={styles.formSection}>
               <Card glass>
                 <form onSubmit={handleSubmit} className={styles.form}>
+                  {/* Name */}
                   <div className={styles.formGroup}>
                     <label htmlFor="name" className={styles.label}>
-                      {t.contact.form.name} *
+                      {t.contact.form.name} <span className={styles.required}>*</span>
                     </label>
                     <input
                       type="text"
@@ -135,6 +97,7 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
                     />
                   </div>
 
+                  {/* Company */}
                   <div className={styles.formGroup}>
                     <label htmlFor="company" className={styles.label}>
                       {t.contact.form.company}
@@ -150,10 +113,11 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
                     />
                   </div>
 
+                  {/* Email + Phone row */}
                   <div className={styles.formRow}>
                     <div className={styles.formGroup}>
                       <label htmlFor="email" className={styles.label}>
-                        {t.contact.form.email} *
+                        {t.contact.form.email} <span className={styles.required}>*</span>
                       </label>
                       <input
                         type="email"
@@ -183,9 +147,10 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
                     </div>
                   </div>
 
+                  {/* Inquiry Type */}
                   <div className={styles.formGroup}>
                     <label htmlFor="inquiryType" className={styles.label}>
-                      {t.contact.form.inquiryType} *
+                      {t.contact.form.inquiryType} <span className={styles.required}>*</span>
                     </label>
                     <select
                       id="inquiryType"
@@ -196,20 +161,29 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
                       className={styles.select}
                     >
                       <option value="">
-                        {params.lang === 'ja' ? '選択してください' : 'Please select'}
+                        {isJa ? '選択してください' : 'Please select'}
                       </option>
+                      <option value="aiAgent">
+                        {t.contact.form.inquiryTypes.aiAgent}
+                      </option>
+                      <option value="aiWorkflow">
+                        {t.contact.form.inquiryTypes.aiWorkflow}
+                      </option>
+                      <option value="aiApp">
+                        {t.contact.form.inquiryTypes.aiApp}
+                      </option>
+                      <option value="web3">{t.contact.form.inquiryTypes.web3}</option>
                       <option value="smartContract">
                         {t.contact.form.inquiryTypes.smartContract}
                       </option>
-                      <option value="web3">{t.contact.form.inquiryTypes.web3}</option>
-                      <option value="ai">{t.contact.form.inquiryTypes.ai}</option>
                       <option value="other">{t.contact.form.inquiryTypes.other}</option>
                     </select>
                   </div>
 
+                  {/* Message */}
                   <div className={styles.formGroup}>
                     <label htmlFor="message" className={styles.label}>
-                      {t.contact.form.message} *
+                      {t.contact.form.message} <span className={styles.required}>*</span>
                     </label>
                     <textarea
                       id="message"
@@ -223,14 +197,55 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
                     />
                   </div>
 
+                  {/* Status messages */}
                   {status === 'success' && (
-                    <div className={styles.successMessage}>{t.contact.form.success}</div>
+                    <div className={styles.successMessage}>
+                      <svg className={styles.statusIcon} viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                          d="M9 12l2 2 4-4"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                      </svg>
+                      {t.contact.form.success}
+                    </div>
                   )}
 
                   {status === 'error' && (
-                    <div className={styles.errorMessage}>{t.contact.form.error}</div>
+                    <div className={styles.errorMessage}>
+                      <svg className={styles.statusIcon} viewBox="0 0 24 24" aria-hidden="true">
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                        <path
+                          d="M12 8v4m0 4h.01"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                      {t.contact.form.error}
+                    </div>
                   )}
 
+                  {/* Submit */}
                   <Button
                     type="submit"
                     size="lg"
@@ -243,35 +258,133 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
               </Card>
             </div>
 
+            {/* Right: Info Cards */}
             <div className={styles.infoSection}>
-              <div className={styles.infoGrid}>
-                <Card hover className={`${styles.bentoCard} ${styles.bentoCompact}`}>
-                  <span className={styles.cardIconWrap}>{emailIcon}</span>
-                  <h3 className={styles.infoTitle}>{t.contact.info.email}</h3>
-                  <a href="mailto:info@nebulainfinity.com" className={styles.infoLink}>
-                    info@nebulainfinity.com
-                  </a>
-                </Card>
+              {/* Email */}
+              <Card hover className={styles.infoCard}>
+                <span className={styles.cardIconWrap}>
+                  <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M4.5 7.5h15a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2z"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.7"
+                    />
+                    <path
+                      d="M4.5 9l7.5 5 7.5-5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.7"
+                    />
+                  </svg>
+                </span>
+                <h3 className={styles.infoTitle}>{t.contact.info.email}</h3>
+                <a href="mailto:info@nebulainfinity.com" className={styles.infoLink}>
+                  info@nebulainfinity.com
+                </a>
+              </Card>
 
-                <Card hover className={`${styles.bentoCard} ${styles.bentoCompact}`}>
-                  <span className={styles.cardIconWrap}>{socialIcon}</span>
-                  <h3 className={styles.infoTitle}>{t.contact.info.social}</h3>
-                  <div className={styles.socialLinks}>
-                    <a
-                      href="https://twitter.com/N_I_COM"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.socialLink}
-                    >
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                      </svg>
-                      X (Twitter)
-                    </a>
-                  </div>
-                </Card>
-              </div>
+              {/* Social */}
+              <Card hover className={styles.infoCard}>
+                <span className={styles.cardIconWrap}>
+                  <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                <h3 className={styles.infoTitle}>{t.contact.info.social}</h3>
+                <a
+                  href="https://twitter.com/N_I_COM"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231z" />
+                  </svg>
+                  X (Twitter)
+                </a>
+              </Card>
+
+              {/* Business Hours */}
+              <Card hover className={styles.infoCard}>
+                <span className={styles.cardIconWrap}>
+                  <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                    />
+                    <path
+                      d="M12 6v6l4 2"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.7"
+                    />
+                  </svg>
+                </span>
+                <h3 className={styles.infoTitle}>{t.contact.info.hours}</h3>
+                <p className={styles.infoValue}>{t.contact.info.hoursValue}</p>
+              </Card>
+
+              {/* Response Time */}
+              <Card hover className={styles.infoCard}>
+                <span className={styles.cardIconWrap}>
+                  <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.7"
+                    />
+                  </svg>
+                </span>
+                <h3 className={styles.infoTitle}>{t.contact.info.response}</h3>
+                <p className={styles.infoValue}>{t.contact.info.responseValue}</p>
+              </Card>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className={styles.faqSection}>
+        <div className="container">
+          <div className={styles.faqHeader}>
+            <span className={styles.eyebrow}>FAQ</span>
+            <h2 className={styles.sectionTitle}>{t.contact.faq.title}</h2>
+            <p className={styles.sectionSubtitle}>{t.contact.faq.subtitle}</p>
+          </div>
+
+          <div className={styles.faqGrid}>
+            {t.contact.faq.items.map((item, index) => (
+              <details key={index} className={styles.faqItem}>
+                <summary className={styles.faqQuestion}>
+                  <span className={styles.faqQuestionText}>{item.question}</span>
+                  <span className={styles.faqChevron} aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </span>
+                </summary>
+                <div className={styles.faqAnswer}>
+                  <p>{item.answer}</p>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>

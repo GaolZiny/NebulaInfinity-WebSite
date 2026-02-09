@@ -116,8 +116,9 @@
     }
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "Feel free to discuss your project with us",
+    "eyebrow": "Contact",
+    "title": "Let's discuss your project",
+    "subtitle": "Get in touch with us. We typically respond within 1 business day.",
     "form": {
       "name": "Name",
       "namePlaceholder": "John Doe",
@@ -129,21 +130,49 @@
       "phonePlaceholder": "+1 234 567 8900",
       "inquiryType": "Inquiry Type",
       "inquiryTypes": {
-        "smartContract": "Smart Contract Development",
-        "web3": "Web3.0 Consulting",
-        "ai": "AI Development",
+        "aiAgent": "AI Agent Development",
+        "aiWorkflow": "AI Workflow Automation",
+        "aiApp": "AI Application Development",
+        "web3": "Web3.0 / Blockchain Development",
+        "smartContract": "Smart Contracts",
         "other": "Other"
       },
       "message": "Message",
       "messagePlaceholder": "Tell us about your project details and requirements...",
-      "submit": "Submit",
-      "submitting": "Submitting...",
+      "submit": "Send Message",
+      "submitting": "Sending...",
       "success": "Thank you for your inquiry. Our team will contact you shortly.",
       "error": "Failed to send. Please try again."
     },
     "info": {
       "email": "Email",
-      "social": "Social Media"
+      "social": "Social Media",
+      "hours": "Business Hours",
+      "hoursValue": "Weekdays 10:00 – 18:00 (JST)",
+      "response": "Response Time",
+      "responseValue": "Within 1 business day"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Common questions before reaching out",
+      "items": [
+        {
+          "question": "Is the initial consultation free?",
+          "answer": "Yes, the first consultation is free. We'll listen to your project overview and propose the best approach."
+        },
+        {
+          "question": "What is your project process?",
+          "answer": "We follow a structured flow: Hearing → Requirements → Design → Development → Testing → Delivery. We share progress at each phase and incorporate your feedback."
+        },
+        {
+          "question": "Do you accept international clients?",
+          "answer": "Yes, we fully support English communication. We have experience working with overseas clients on various projects."
+        },
+        {
+          "question": "Can you sign an NDA?",
+          "answer": "Yes, we can execute a Non-Disclosure Agreement upon request. Please feel free to let us know."
+        }
+      ]
     }
   },
   "footer": {
