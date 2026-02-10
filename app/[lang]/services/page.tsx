@@ -4,48 +4,44 @@ import Button from '@/components/ui/Button';
 import Link from 'next/link';
 import ServiceCard from '@/components/ui/ServiceCard';
 import {
-  SmartContractIcon,
-  AIAgentIcon,
-  AIWorkflowIcon,
-  AIApplicationsIcon,
-  BlockchainDevelopmentIcon,
+  AutomationWorkflowIcon,
+  CustomAIAgentIcon,
+  BlockchainSmartContractIcon,
+  ApplicationDevelopmentIcon,
 } from '@/components/ui/icons/ServiceIcons';
 import { services } from '@/data/services';
 import styles from './page.module.css';
 
 const iconMap: Record<string, React.ReactNode> = {
-  'smart-contract': <SmartContractIcon />,
-  'ai-agent-development': <AIAgentIcon />,
-  'ai-workflow-automation': <AIWorkflowIcon />,
-  'ai-applications': <AIApplicationsIcon />,
-  'blockchain-development': <BlockchainDevelopmentIcon />,
+  'automation-workflow': <AutomationWorkflowIcon />,
+  'custom-ai-agent': <CustomAIAgentIcon />,
+  'blockchain-smart-contract': <BlockchainSmartContractIcon />,
+  'application-development': <ApplicationDevelopmentIcon />,
 };
 
 export async function generateMetadata({ params }: { params: { lang: Language } }) {
+  const isJa = params.lang === 'ja';
   return {
-    title: params.lang === 'ja' ? 'サービス - Nebula Infinity' : 'Services - Nebula Infinity',
-    description: params.lang === 'ja' 
-      ? 'AIとWeb3で、次を構築する。AI自動化ワークフロー、AIエージェント開発、Web3.0アプリケーション開発など、包括的なサービスを提供。'
-      : 'Build the next with AI & Web3. Comprehensive services including AI workflow automation, AI agent development, and Web3.0 application development.',
+    title: isJa ? 'サービス - Nebula Infinity' : 'Services - Nebula Infinity',
+    description: isJa
+      ? 'ビジネスを加速する、AI × Web3.0 ソリューション。自動化ワークフロー、AIエージェント、ブロックチェーン開発、アプリケーション開発の4領域で包括的なサービスを提供。'
+      : 'AI × Web3.0 solutions that accelerate your business. Comprehensive services across automation workflows, AI agents, blockchain development, and application development.',
   };
 }
 
 export default function ServicesPage({ params }: { params: { lang: Language } }) {
   const isJa = params.lang === 'ja';
 
-  // Row 1: two primary services (6col each)
-  const row1Ids = ['ai-workflow-automation', 'ai-agent-development'];
-  // Row 2: three services (4col each)
-  const row2Ids = ['ai-applications', 'blockchain-development', 'smart-contract'];
+  // Row 1: two AI services (6col each)
+  const row1Ids = ['automation-workflow', 'custom-ai-agent'];
+  // Row 2: two Web3/mixed services (6col each)
+  const row2Ids = ['blockchain-smart-contract', 'application-development'];
 
-  // Get simple feature strings for card display
   const getFeatureStrings = (serviceId: string, lang: Language): string[] => {
     const service = services.find(s => s.id === serviceId);
     if (!service) return [];
     const features = service.features[lang];
-    // Row 1 cards are larger, show more features
-    const limit = row1Ids.includes(serviceId) ? 4 : 3;
-    return features.slice(0, limit).map(f => f.title);
+    return features.slice(0, 4).map(f => f.title);
   };
 
   return (
@@ -54,20 +50,27 @@ export default function ServicesPage({ params }: { params: { lang: Language } })
         <div className="container">
           <span className={styles.eyebrow}>{isJa ? 'サービス' : 'Services'}</span>
           <h1 className={styles.title}>
-            {isJa ? 'AIとWeb3で、次を構築する' : 'Build the next with AI & Web3'}
+            {isJa
+              ? 'ビジネスを加速する、AI × Web3.0 ソリューション'
+              : 'AI × Web3.0 solutions that accelerate your business'}
           </h1>
           <p className={styles.subtitle}>
             {isJa
-              ? 'スマートコントラクト開発からAIエージェント構築まで、最先端技術で貴社のプロジェクトを成功に導きます。'
-              : 'From smart contract development to AI agent creation, we guide your project to success with cutting-edge technology.'}
+              ? '自動化ワークフロー、AIエージェント、ブロックチェーン開発 — 4つの領域で、お客様の課題を解決します。'
+              : 'Automation workflows, AI agents, blockchain development — solving your challenges across four core domains.'}
           </p>
         </div>
       </section>
 
       <section className={styles.section}>
         <div className="container">
+          <p className={styles.sectionIntro}>
+            {isJa
+              ? '業務整理から設計、実装、運用まで、一貫したサポートで確実に成果を届けます。'
+              : 'From business analysis through design, implementation, and operations — we deliver results with end-to-end support.'}
+          </p>
           <div className={styles.bentoGrid}>
-            {/* Row 1: Two primary services — 6col each */}
+            {/* Row 1: Two AI services — 6col each */}
             {row1Ids.map(serviceId => {
               const service = services.find(s => s.id === serviceId);
               if (!service) return null;
@@ -84,12 +87,12 @@ export default function ServicesPage({ params }: { params: { lang: Language } })
                 </div>
               );
             })}
-            {/* Row 2: Three services — 4col each */}
+            {/* Row 2: Two Web3/mixed services — 6col each */}
             {row2Ids.map(serviceId => {
               const service = services.find(s => s.id === serviceId);
               if (!service) return null;
               return (
-                <div key={service.id} className={styles.bentoRow2}>
+                <div key={service.id} className={styles.bentoRow1}>
                   <ServiceCard
                     id={service.id}
                     lang={params.lang}
@@ -120,7 +123,7 @@ export default function ServicesPage({ params }: { params: { lang: Language } })
             </div>
             <div className={styles.ctaActions}>
               <Link href={`/${params.lang}/contact`}>
-                <Button size="lg">{isJa ? 'お問い合わせ' : 'Contact'}</Button>
+                <Button size="lg">{isJa ? 'お問い合わせ' : 'Contact Us'}</Button>
               </Link>
               <Link href={`/${params.lang}/projects`}>
                 <Button size="lg" variant="outline">

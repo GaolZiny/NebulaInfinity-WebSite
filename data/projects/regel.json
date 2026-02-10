@@ -1,0 +1,55 @@
+{
+  "fullDescription": {
+    "ja": "Regel は、小規模事業主、個人事業主、外国人経営者向けの AI 記帳仕訳アプリケーションです。内蔵 AI サービスにより、票據の写真を撮影するだけで、自動的に内容を認識し、適切な勘定科目で仕訳を生成します。日本の税務法規に完全対応し、自動生成される「仕訳帳」「総勘定元帳」「試算表」は、すべて日本の会計基準に準拠。「インボイス制度」にも完全対応し、票據から「登録番号」を自動認識・記録します。さらに、「電子帳簿保存法」に準拠した長期票據保存プランも提供しています。",
+    "en": "Regel is an AI bookkeeping and journaling app for small business owners, sole proprietors, and foreign entrepreneurs. With built-in AI services, simply photograph receipts — the app automatically recognizes content and generates journal entries with appropriate account titles. Fully compliant with Japanese tax regulations, automatically generated 'journal,' 'general ledger,' and 'trial balance' all comply with Japanese accounting standards. Also fully supports the 'Invoice System' with automatic registration number recognition. Additionally offers long-term receipt storage plans compliant with the 'Electronic Bookkeeping Storage Act.'"
+  },
+  "techStack": [
+    "OpenAI API",
+    "OCR (Document AI)",
+    "React Native",
+    "Next.js",
+    "PostgreSQL",
+    "AWS S3 (Document Storage)",
+    "Japanese Tax API"
+  ],
+  "features": [
+    {
+      "ja": "AI による票據自動認識と仕訳生成",
+      "en": "AI-powered automatic receipt recognition and journal entry generation"
+    },
+    {
+      "ja": "日本税務基準に準拠した帳簿自動作成（仕訳帳・総勘定元帳・試算表）",
+      "en": "Automatic ledger creation compliant with Japanese tax standards (journal, general ledger, trial balance)"
+    },
+    {
+      "ja": "インボイス制度対応（登録番号自動認識）",
+      "en": "Invoice System support (automatic registration number recognition)"
+    },
+    {
+      "ja": "電子帳簿保存法対応の長期保存プラン",
+      "en": "Long-term storage plan compliant with Electronic Bookkeeping Storage Act"
+    },
+    {
+      "ja": "専門知識不要の簡単操作",
+      "en": "Easy operation — no specialized knowledge required"
+    },
+    {
+      "ja": "外国人経営者向けの多言語対応",
+      "en": "Multilingual support for foreign entrepreneurs"
+    }
+  ],
+  "results": {
+    "ja": [
+      "記帳作業時間を 70% 削減",
+      "財務知識がない外国人経営者でも正確な記帳が可能",
+      "インボイス制度・電子帳簿保存法に完全対応",
+      "税理士への引継ぎがスムーズ"
+    ],
+    "en": [
+      "70% reduction in bookkeeping time",
+      "Accurate bookkeeping possible even for foreign entrepreneurs without financial knowledge",
+      "Full compliance with Invoice System and Electronic Bookkeeping Storage Act",
+      "Smooth handoff to tax accountants"
+    ]
+  }
+}

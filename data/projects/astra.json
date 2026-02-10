@@ -1,0 +1,55 @@
+{
+  "fullDescription": {
+    "ja": "Astra は、プロジェクト管理業務を AI で支援するカスタム型エージェントです。プロジェクトメンバー管理、WBS 管理、課題・リスク管理、日程管理、文書管理、セマンティック検索などのツールを内蔵し、AI が状況に応じて適切なツールを呼び出して業務を遂行します。「プロジェクトの最新状況を教えて」「課題とリスクを分析して」など、自然言語での指示に応じて、AI が自律的にタスクを実行。プロジェクト管理者の負担を大幅に軽減し、より戦略的な業務に集中できる環境を提供します。",
+    "en": "Astra is a custom-built agent that supports project management with AI. It has built-in tools for project member management, WBS management, issue and risk management, schedule management, document management, and semantic search — and AI calls the appropriate tools based on the situation. Respond to natural language instructions like 'Give me the latest project status' or 'Analyze issues and risks' — AI autonomously executes tasks. Significantly reduce the burden on project managers and provide an environment where they can focus on more strategic work."
+  },
+  "techStack": [
+    "OpenAI API",
+    "Anthropic Claude",
+    "LangChain",
+    "Python",
+    "React",
+    "PostgreSQL",
+    "Semantic Search (Vector DB)"
+  ],
+  "features": [
+    {
+      "ja": "AI によるプロジェクト情報の自動整理と検索",
+      "en": "AI-powered automatic organization and search of project information"
+    },
+    {
+      "ja": "WBS・課題・リスクの一元管理",
+      "en": "Unified management of WBS, issues, and risks"
+    },
+    {
+      "ja": "自然言語での指示による自律的なタスク実行",
+      "en": "Autonomous task execution via natural language instructions"
+    },
+    {
+      "ja": "定期レポートの自動生成",
+      "en": "Automatic periodic report generation"
+    },
+    {
+      "ja": "課題分析と解決策提案",
+      "en": "Issue analysis and solution proposals"
+    },
+    {
+      "ja": "スケジュール調整とミーティング設定",
+      "en": "Schedule coordination and meeting setup"
+    }
+  ],
+  "results": {
+    "ja": [
+      "プロジェクト管理業務の工数を 40% 削減",
+      "課題・リスクの早期発見と対策提案",
+      "定期レポート作成の完全自動化",
+      "プロジェクトメンバーの情報アクセス性向上"
+    ],
+    "en": [
+      "40% reduction in project management workload",
+      "Early detection of issues and risks with proposed countermeasures",
+      "Fully automated periodic report creation",
+      "Improved information accessibility for project members"
+    ]
+  }
+}

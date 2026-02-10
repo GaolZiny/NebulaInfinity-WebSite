@@ -37,6 +37,15 @@
   padding: 60px 0;
 }
 
+.sectionIntro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
 /* Bento Grid Layout — 12-column */
 .bentoGrid {
   display: grid;
@@ -44,14 +53,9 @@
   gap: 24px;
 }
 
-/* Row 1: two primary cards, each 6 columns */
+/* All cards: two per row, each 6 columns */
 .bentoRow1 {
   grid-column: span 6;
-}
-
-/* Row 2: three cards, each 4 columns */
-.bentoRow2 {
-  grid-column: span 4;
 }
 
 /* CTA Section */
@@ -98,8 +102,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .bentoRow1,
-  .bentoRow2 {
+  .bentoRow1 {
     grid-column: span 1;
   }
 

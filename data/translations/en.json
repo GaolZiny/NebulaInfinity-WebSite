@@ -7,33 +7,17 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "AI agents powering Web3.0 automation workflows",
-    "subtitle": "We design autonomous agents, orchestrated workflows, and on-chain systems that move ideas to launch with speed and clarity.",
-    "cta": "Start a Workflow"
+    "title": "Your next-gen AI × Web3.0 development partner — accelerating business outcomes",
+    "subtitle": "From concept to deployment and operations. We design AI agents, automation workflows, and Web3.0 protocols as integrated systems — reducing the distance to real outcomes.",
+    "cta": "View Services"
   },
   "services": {
     "title": "Services",
-    "subtitle": "Professional Web3.0 solutions we provide",
-    "smartContract": {
-      "title": "Smart Contract Design & Development",
-      "description": "Comprehensive support from design to implementation and auditing of secure and efficient smart contracts."
-    },
-    "web3Content": {
-      "title": "Web3.0 Content Planning & Development",
-      "description": "Planning and development of content utilizing the latest Web3.0 technologies including NFTs and DApps."
-    },
-    "consulting": {
-      "title": "Web3.0 Consulting",
-      "description": "Professional advice and support from blockchain technology adoption to operation."
-    },
-    "aiDevelopment": {
-      "title": "AI Development",
-      "description": "Design and development of solutions leveraging machine learning and AI technologies."
-    }
+    "subtitle": "Automation workflows, AI agents, blockchain development — solving your challenges across four core domains."
   },
   "projects": {
-    "title": "Projects",
-    "subtitle": "Showcasing our technical expertise",
+    "title": "Results speak — proven AI × Web3.0 implementation capabilities",
+    "subtitle": "We apply the technical expertise and know-how gained through our own products to your projects.",
     "viewDetails": "View Details",
     "status": {
       "completed": "Completed",
@@ -42,135 +26,143 @@
     "backToProjects": "Back to Projects"
   },
   "about": {
-    "title": "Creating the future of business with AI & Web3.0",
-    "subtitle": "Your one-stop AI + Web3.0 development partner specialized in the Japanese market. From concept to operation, we support you every step.",
-    "description": "Nebula Infinity is a specialized company in blockchain technology and Web3.0. We provide smart contract design and development, Web3.0 content planning and development including NFTs and DApps, and comprehensive Web3.0 consulting services.",
+    "title": "Building the future of business with AI × Web3.0",
+    "subtitle": "Based in Tokyo, we deliver cutting-edge solutions powered by AI and blockchain technology. From business analysis to implementation and operations, we provide end-to-end support to accelerate digital transformation.",
     "company": {
-      "sectionTitle": "Corporate Profile",
-      "sectionSubtitle": "A technology company creating social value",
+      "sectionTitle": "Company Information",
+      "sectionSubtitle": "As a trusted partner, we provide transparent information.",
       "name": "Nebula Infinity",
-      "nameLabel": "Company",
+      "nameLabel": "Company Name",
       "locationLabel": "Location",
-      "location": "Japan",
-      "domainLabel": "Domain",
+      "location": "Tokyo, Japan",
+      "domainLabel": "Website",
       "domain": "nebulainfinity.com",
-      "businessLabel": "Core Business",
-      "business": "AI + Web3.0 Solution Development",
-      "clientsLabel": "Clients",
-      "clients": "Enterprises, organizations & government agencies of all sizes",
-      "productsLabel": "Own Products",
-      "products": "In-house application development & operation"
+      "businessLabel": "Business",
+      "business": "AI & Web3.0 Solution Development",
+      "clientsLabel": "Key Clients",
+      "clients": "Enterprises, Startups & Developer Communities",
+      "productsLabel": "Our Products",
+      "products": "Astra / Regel / AgentSkills.jp / Carina"
     },
     "domains": {
       "sectionTitle": "What We Do",
-      "sectionSubtitle": "Comprehensive solutions built on two pillars of cutting-edge technology: AI and Web3.0.",
+      "sectionSubtitle": "We deliver advanced solutions across two domains: AI and Web3.0.",
       "ai": {
         "title": "AI Solutions",
         "items": [
-          { "title": "AI Agent Development", "description": "Design, build, and operate autonomous agents tailored to your objectives." },
-          { "title": "AI Workflow Automation", "description": "Design and implement automation pipelines that span business processes." },
-          { "title": "AI Application Development", "description": "From planning to implementation of products leveraging ML and generative AI." }
+          { "title": "Automation Workflow Development", "description": "Analyze workflows and automate repetitive tasks with AI. Reduce time and costs while eliminating human error." },
+          { "title": "Custom AI Agent Development", "description": "Build AI agents that understand business processes and act autonomously with intelligent decision-making." },
+          { "title": "AI Application Development", "description": "Implement custom applications leveraging cutting-edge AI: RAG, image generation, voice processing, and more." }
         ]
       },
       "web3": {
         "title": "Web3.0 Solutions",
         "items": [
-          { "title": "Web3.0 App Development", "description": "Planning, design, and development of DApps, NFT platforms, and more." },
-          { "title": "Smart Contracts", "description": "End-to-end smart contract design, development, and auditing services." }
+          { "title": "Blockchain & Smart Contract Development", "description": "Design and implement secure, efficient smart contracts. End-to-end support including audits and gas optimization." },
+          { "title": "Web3.0 Application Development", "description": "Create next-generation Web3.0 experiences: NFTs, DApps, token economics, and more." }
         ]
       },
-      "viewServices": "View All Services"
+      "viewServices": "View Services →"
     },
     "values": {
-      "sectionTitle": "Our Approach",
-      "sectionSubtitle": "Anchored in a clear mission and vision, we design for long-term value.",
+      "sectionTitle": "Our Core Values",
+      "sectionSubtitle": "Four fundamental principles that guide how we work.",
       "items": [
-        { "title": "Technical Excellence", "description": "Deep expertise cultivated at the forefront of AI and Web3.0." },
-        { "title": "Transparency", "description": "We keep decision rationale and progress visible at all times." },
-        { "title": "One-Stop Delivery", "description": "A unified team from planning through to production operations." },
-        { "title": "Security First", "description": "Safety-by-design accounting for on-chain-specific risks." }
+        { "title": "Cutting-edge technology, production-ready", "description": "We deliver the latest AI and blockchain technologies in production-ready forms. Not technology for technology's sake — we pursue solutions that drive real outcomes." },
+        { "title": "Transparency and Trust", "description": "We openly share development processes, decision rationales, and execution logs. Client confidence and operational safety are our top priorities." },
+        { "title": "End-to-End Value Delivery", "description": "Consistent support from concept through design, implementation, and operations. We deliver a seamless development experience with no gaps." },
+        { "title": "Uncompromising Safety", "description": "Blockchain deployments are immutable. That's why we never compromise on security reviews, audits, and risk management." }
       ]
     },
     "mission": {
       "title": "Mission",
-      "description": "Our mission is to create new value through AI and blockchain technology and realize a decentralized future."
+      "description": "Maximize business potential through the power of AI and Web3.0.\nWe transform cutting-edge technology into practical solutions, accelerating our clients' growth. From business analysis to implementation and operations, we deliver results with consistent, end-to-end support."
     },
     "vision": {
       "title": "Vision",
-      "description": "We aim to realize a more transparent and fair society through Web3.0 technology and AI."
+      "description": "A world where everyone can harness advanced technology.\nWe remove technical complexity and create a future where AI agents and blockchain become everyday tools for everyone."
     },
     "whyUs": {
       "sectionTitle": "Why Choose Us",
-      "sectionSubtitle": "Three differentiators that drive project success — capabilities you won't find elsewhere.",
+      "sectionSubtitle": "Five proven strengths that set Nebula Infinity apart.",
       "points": [
-        { "title": "One-Stop", "description": "Integrated development power spanning AI + Web3.0. No vendor fragmentation — everything under one roof." },
-        { "title": "Japan-Focused", "description": "A team deeply familiar with Japanese business culture, practices, and regulatory landscape." },
-        { "title": "Concept to Operation", "description": "End-to-end support through planning, development, testing, and post-launch operations." }
+        { "title": "Business Analysis & Requirements Definition", "description": "Our experienced consultants carefully analyze your workflows. We accurately understand real-world challenges and extract only the necessary features — avoiding over-engineering and proposing optimal solutions." },
+        { "title": "Process Analysis & Workflow Design", "description": "We thoroughly analyze business processes and extract complete business logic. Drawing on extensive experience, we design automation workflows that work at production scale — not just in theory, but in real operations." },
+        { "title": "One-Stop Service", "description": "We support everything from initial concept through implementation to operations. Full-stack coverage: frontend, backend, infrastructure, and smart contract development. No fragmented contacts or information gaps." },
+        { "title": "Cutting-Edge Technology", "description": "We continuously stay current with the latest AI and blockchain technologies. Supporting the newest LLMs (OpenAI, Anthropic Claude) and major chains (Ethereum, Polygon), we deliver optimal solutions tailored to you." },
+        { "title": "Proprietary High-Efficiency Development Methods", "description": "Using AI-powered development environments and our proprietary methodologies and process controls, we achieve exceptionally fast development. We can implement MVPs in as little as 1 hour, accelerating hypothesis-validation cycles." }
       ]
     },
     "cta": {
       "title": "Let's discuss your project",
-      "description": "Reach out to explore how AI + Web3.0 can drive your next initiative.",
+      "description": "AI agents, automation workflows, Web3.0 applications — we're ready to discuss any project with you.",
       "contact": "Contact Us",
       "services": "View Services"
     }
   },
   "contact": {
-    "eyebrow": "Contact",
+    "eyebrow": "Contact Us",
     "title": "Let's discuss your project",
-    "subtitle": "Get in touch with us. We typically respond within 1 business day.",
+    "subtitle": "AI agents, automation workflows, Web3.0 applications — feel free to contact us with any inquiry. We'll work together to solve your business challenges.",
     "form": {
       "name": "Name",
-      "namePlaceholder": "John Doe",
-      "company": "Company / Organization",
-      "companyPlaceholder": "Your Company",
+      "namePlaceholder": "Your name",
+      "company": "Company",
+      "companyPlaceholder": "Your company (optional)",
       "email": "Email",
-      "emailPlaceholder": "your@email.com",
+      "emailPlaceholder": "your.email@example.com",
       "phone": "Phone",
-      "phonePlaceholder": "+1 234 567 8900",
+      "phonePlaceholder": "Your phone (optional)",
       "inquiryType": "Inquiry Type",
       "inquiryTypes": {
-        "aiAgent": "AI Agent Development",
-        "aiWorkflow": "AI Workflow Automation",
-        "aiApp": "AI Application Development",
-        "web3": "Web3.0 / Blockchain Development",
-        "smartContract": "Smart Contracts",
+        "automationWorkflow": "Automation Workflow Development",
+        "customAiAgent": "Custom AI Agent Development",
+        "blockchainSmartContract": "Blockchain & Smart Contract Development",
+        "applicationDev": "Application Development (Web3.0/AI)",
         "other": "Other"
       },
       "message": "Message",
-      "messagePlaceholder": "Tell us about your project details and requirements...",
+      "messagePlaceholder": "Please tell us about your project details and requirements",
       "submit": "Send Message",
       "submitting": "Sending...",
-      "success": "Thank you for your inquiry. Our team will contact you shortly.",
+      "success": "Thank you for your inquiry. We will respond within 2 business days.",
       "error": "Failed to send. Please try again."
     },
     "info": {
       "email": "Email",
       "social": "Social Media",
       "hours": "Business Hours",
-      "hoursValue": "Weekdays 10:00 – 18:00 (JST)",
+      "hoursValue": "Weekdays 10:00 - 18:00 (JST)",
       "response": "Response Time",
-      "responseValue": "Within 1 business day"
+      "responseValue": "Within 2 business days"
     },
     "faq": {
       "title": "Frequently Asked Questions",
-      "subtitle": "Common questions before reaching out",
+      "subtitle": "Please check here before contacting us.",
       "items": [
         {
-          "question": "Is the initial consultation free?",
-          "answer": "Yes, the first consultation is free. We'll listen to your project overview and propose the best approach."
+          "question": "How long does development take?",
+          "answer": "It depends on project scale and requirements, but MVPs can be delivered in as little as 1 hour, while full-scale application development typically takes 2 weeks to 3 months. We'll provide a detailed schedule after the initial consultation."
         },
         {
-          "question": "What is your project process?",
-          "answer": "We follow a structured flow: Hearing → Requirements → Design → Development → Testing → Delivery. We share progress at each phase and incorporate your feedback."
+          "question": "What is your pricing structure?",
+          "answer": "We provide custom quotes based on project content, scale, and duration. Initial consultations are free, so please feel free to contact us."
         },
         {
-          "question": "Do you accept international clients?",
-          "answer": "Yes, we fully support English communication. We have experience working with overseas clients on various projects."
+          "question": "Can you handle small projects?",
+          "answer": "Yes, we can. We actively support small projects including MVP development and proof-of-concept (PoC) initiatives."
         },
         {
-          "question": "Can you sign an NDA?",
-          "answer": "Yes, we can execute a Non-Disclosure Agreement upon request. Please feel free to let us know."
+          "question": "Do you provide operational support?",
+          "answer": "Yes, we provide post-development operational support. We offer continuous support including maintenance, operations, feature additions, and troubleshooting."
+        },
+        {
+          "question": "Can we hold meetings online?",
+          "answer": "Yes, we support online meeting tools like Zoom, Google Meet, and Microsoft Teams. Remote clients are welcome."
+        },
+        {
+          "question": "What about security measures?",
+          "answer": "We implement comprehensive security measures including smart contract security audits, code reviews, and gas optimization. Blockchain projects undergo especially rigorous review."
         }
       ]
     }

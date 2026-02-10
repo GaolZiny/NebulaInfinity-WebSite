@@ -88,12 +88,12 @@ export default function ProjectsPage({ params }: { params: { lang: Language } })
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
-              {isJa ? '実績とケーススタディ' : 'Select work & case studies'}
+              {isJa ? '自社プロダクト' : 'Our Products'}
             </h2>
             <p className={styles.sectionSubtitle}>
               {isJa
-                ? 'AIとWeb3.0の統合領域で成果を生み出したプロジェクトをご紹介します。'
-                : 'A focused selection of AI + Web3.0 engagements with measurable outcomes.'}
+                ? '以下は、私たちが開発・運用している自社プロダクトです。これらのプロジェクトで培った実践的なスキルを、お客様のビジネスに提供します。'
+                : 'Below are our own products that we develop and operate. We bring the practical skills honed in these projects to your business.'}
             </p>
           </div>
           <div className={styles.projectGrid}>

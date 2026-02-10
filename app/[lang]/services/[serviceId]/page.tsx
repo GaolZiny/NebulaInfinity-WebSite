@@ -5,20 +5,18 @@ import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import { getServiceById, services } from '@/data/services';
 import {
-  SmartContractIcon,
-  AIAgentIcon,
-  AIWorkflowIcon,
-  AIApplicationsIcon,
-  BlockchainDevelopmentIcon,
+  AutomationWorkflowIcon,
+  CustomAIAgentIcon,
+  BlockchainSmartContractIcon,
+  ApplicationDevelopmentIcon,
 } from '@/components/ui/icons/ServiceIcons';
 import styles from './page.module.css';
 
 const iconMap: Record<string, React.ReactNode> = {
-  'smart-contract': <SmartContractIcon />,
-  'ai-agent-development': <AIAgentIcon />,
-  'ai-workflow-automation': <AIWorkflowIcon />,
-  'ai-applications': <AIApplicationsIcon />,
-  'blockchain-development': <BlockchainDevelopmentIcon />,
+  'automation-workflow': <AutomationWorkflowIcon />,
+  'custom-ai-agent': <CustomAIAgentIcon />,
+  'blockchain-smart-contract': <BlockchainSmartContractIcon />,
+  'application-development': <ApplicationDevelopmentIcon />,
 };
 
 export async function generateStaticParams() {
@@ -83,6 +81,7 @@ export default function ServiceDetailPage({
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className="container">
+          <span className={styles.eyebrow}>{isJa ? 'サービス詳細' : 'Service Details'}</span>
           <div className={styles.iconLarge}>
             {iconMap[service.id]}
           </div>

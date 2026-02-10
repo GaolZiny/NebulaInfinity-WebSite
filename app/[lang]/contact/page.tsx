@@ -163,18 +163,17 @@ export default function ContactPage({ params }: { params: { lang: Language } }) 
                       <option value="">
                         {isJa ? '選択してください' : 'Please select'}
                       </option>
-                      <option value="aiAgent">
-                        {t.contact.form.inquiryTypes.aiAgent}
+                      <option value="automationWorkflow">
+                        {t.contact.form.inquiryTypes.automationWorkflow}
                       </option>
-                      <option value="aiWorkflow">
-                        {t.contact.form.inquiryTypes.aiWorkflow}
+                      <option value="customAiAgent">
+                        {t.contact.form.inquiryTypes.customAiAgent}
                       </option>
-                      <option value="aiApp">
-                        {t.contact.form.inquiryTypes.aiApp}
+                      <option value="blockchainSmartContract">
+                        {t.contact.form.inquiryTypes.blockchainSmartContract}
                       </option>
-                      <option value="web3">{t.contact.form.inquiryTypes.web3}</option>
-                      <option value="smartContract">
-                        {t.contact.form.inquiryTypes.smartContract}
+                      <option value="applicationDev">
+                        {t.contact.form.inquiryTypes.applicationDev}
                       </option>
                       <option value="other">{t.contact.form.inquiryTypes.other}</option>
                     </select>

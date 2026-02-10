@@ -17,8 +17,8 @@
 .eyebrow {
   display: inline-block;
   margin-bottom: 16px;
-  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
-  letter-spacing: 0.22em;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent-primary);
   font-weight: 700;

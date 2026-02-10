@@ -18,7 +18,7 @@
 ### Epics
 | Epic | Status | Features |
 |------|--------|----------|
-| website-redesign | progressing | design-tokens-migration (done), services-page-design (done), services-page-implementation (progressing) |
+| website-redesign | progressing | design-tokens-migration (done), services-page-design (done), services-page-implementation (done), about-page-redesign (done), projects-page-redesign (done), contact-page-redesign (done), content-overhaul (progressing) |
 
 ## Next
 - Z が Telegram 群組に topic 作成（NebulaInfinity-WebSite）

@@ -1,69 +1,65 @@
 {
   "projects": [
     {
-      "id": "agent-skills-jp",
-      "slug": "agent-skills-jp",
+      "id": "astra",
+      "slug": "astra",
       "name": {
-        "ja": "Agent Skills Japan",
-        "en": "Agent Skills Japan"
+        "ja": "Astra",
+        "en": "Astra"
       },
       "icon": null,
       "shortDescription": {
-        "ja": "「話すAI」から「動くAI」へ。AIエージェントスキルの日本語プラットフォーム。確かな実行力と安心をAIに。",
-        "en": "From 'talking AI' to 'acting AI'. A Japanese-language platform for AI agent skills. Bringing reliable execution and trust to AI."
+        "ja": "プロジェクト情報を理解し、自律的に管理業務を支援する AI エージェント。WBS、課題管理、スケジュール調整、レポート生成を自動化します。",
+        "en": "An AI agent that understands project information and autonomously supports management tasks. Automates WBS, issue tracking, scheduling, and report generation."
       },
-      "fullDescription": {
-        "ja": "Agent Skills Japanは、AIエージェントに「行動する力」を与えるスキルプラットフォームです。OpenClawなどのAIエージェントフレームワーク向けに、厳選されたスキルを日本語で提供。企業のAI活用を加速します。",
-        "en": "Agent Skills Japan is a skill platform that gives AI agents the 'power to act'. Provides curated skills in Japanese for AI agent frameworks like OpenClaw, accelerating enterprise AI adoption."
+      "tags": ["AI Agent", "Project Management", "LangChain", "OpenAI", "Automation"],
+      "category": "ai"
+    },
+    {
+      "id": "regel",
+      "slug": "regel",
+      "name": {
+        "ja": "Regel",
+        "en": "Regel"
       },
-      "tags": ["AI Agent", "OpenClaw", "Skills Platform", "Japanese", "Automation"],
+      "icon": null,
+      "shortDescription": {
+        "ja": "小規模事業主・個人事業主・外国人経営者向けの AI 記帳アプリ。票據を撮影するだけで、自動仕訳・帳簿生成が完了します。",
+        "en": "AI bookkeeping app for small business owners, sole proprietors, and foreign entrepreneurs. Just photograph receipts for automatic journaling and ledger generation."
+      },
+      "tags": ["AI", "OCR", "Bookkeeping", "React Native", "Next.js"],
+      "category": "ai"
+    },
+    {
+      "id": "agent-skills-jp",
+      "slug": "agent-skills-jp",
+      "name": {
+        "ja": "AgentSkills.jp",
+        "en": "AgentSkills.jp"
+      },
+      "icon": null,
+      "shortDescription": {
+        "ja": "AI エージェント向けスキルの日本語プラットフォーム。厳選されたスキルを審査・評価し、安心して利用できる環境を提供します。",
+        "en": "A Japanese-language platform for AI agent skills. We audit and evaluate curated skills, providing a safe environment for use."
+      },
+      "tags": ["AI Agent", "OpenClaw", "Skills Platform", "Next.js", "TypeScript"],
       "url": "https://agentskills.jp",
       "category": "ai"
     },
     {
-      "id": "rigel-finance-dashboard",
-      "slug": "rigel-finance-dashboard",
+      "id": "carina",
+      "slug": "carina",
       "name": {
-        "ja": "Rigel - Web3財務管理ダッシュボード",
-        "en": "Rigel - Web3 Finance Management Dashboard"
+        "ja": "Carina",
+        "en": "Carina"
       },
-      "icon": "/images/projects/rigel-icon.png",
+      "icon": null,
       "shortDescription": {
-        "ja": "AIを活用した次世代Web3財務管理ツール。自動仕訳、OCR、多言語レポート生成機能で企業の経理DXを実現。",
-        "en": "Next-gen Web3 finance management tool powered by AI. Enables corporate accounting DX with automated journaling, OCR, and multi-language reporting."
+        "ja": "小売業者向け Web3.0 CRM。積分、優惠券、会員証をブロックチェーンで管理し、顧客との新しい関係を構築します。",
+        "en": "Web3.0 CRM for retailers. Manage points, coupons, and membership cards on blockchain — build new customer relationships."
       },
-      "tags": ["Web3", "AI", "Finance", "React", "Next.js"],
+      "tags": ["Web3.0", "Polygon", "Smart Contract", "CRM", "NFT"],
       "category": "web3"
-    },
-    {
-      "id": "decentralized-nft-marketplace",
-      "slug": "decentralized-nft-marketplace",
-      "name": {
-        "ja": "分散型NFTマーケットプレイス",
-        "en": "Decentralized NFT Marketplace"
-      },
-      "icon": "/images/projects/nft-marketplace-icon.png",
-      "shortDescription": {
-        "ja": "Ethereum基盤の完全分散型NFTマーケットプレイスプラットフォーム。低手数料とセキュアな取引を実現。",
-        "en": "A fully decentralized NFT marketplace platform built on Ethereum. Features low fees and secure transactions."
-      },
-      "tags": ["Solidity", "NFT", "DApp", "IPFS", "Web3.js"],
-      "category": "web3"
-    },
-    {
-      "id": "ai-powered-defi-analytics",
-      "slug": "ai-powered-defi-analytics",
-      "name": {
-        "ja": "AI駆動DeFi分析プラットフォーム",
-        "en": "AI-Powered DeFi Analytics Platform"
-      },
-      "icon": "/images/projects/defi-analytics-icon.png",
-      "shortDescription": {
-        "ja": "機械学習を活用したDeFiプロトコルのリアルタイム分析・予測プラットフォーム。",
-        "en": "Real-time DeFi protocol analysis and prediction platform powered by machine learning."
-      },
-      "tags": ["AI", "DeFi", "Machine Learning", "Python", "React"],
-      "category": "ai"
     }
   ]
 }

@@ -1,0 +1,57 @@
+{
+  "fullDescription": {
+    "ja": "Carina は、小売業者向けの Web3.0 顧客管理ソリューションです。専属の積分、優惠券、会員証などのサービスを、ブロックチェーン上で提供します。核心技術は Polygon チェーン上のスマートコントラクトで、すべての取引（積分付与、優惠券発行、会員証管理）の正確性と追跡可能性を保証します。顧客は、発行された積分や優惠券に対して絶対的なコントロール権を持ちます。従来の CRM では難しかった透明性と顧客主導の体験を、ブロックチェーン技術で実現します。",
+    "en": "Carina is a Web3.0 customer management solution for retailers. It provides exclusive points, coupons, and membership card services on blockchain. The core technology is smart contracts on the Polygon chain, ensuring accuracy and traceability for all transactions (point issuance, coupon distribution, membership management). Customers have absolute control over issued points and coupons. We achieve transparency and customer-driven experiences that were difficult with traditional CRM — powered by blockchain technology."
+  },
+  "techStack": [
+    "Solidity",
+    "Polygon (Ethereum L2)",
+    "Ethers.js",
+    "Next.js",
+    "React",
+    "MetaMask",
+    "WalletConnect",
+    "IPFS",
+    "The Graph"
+  ],
+  "features": [
+    {
+      "ja": "Polygon スマートコントラクトによる積分・優惠券管理",
+      "en": "Point and coupon management via Polygon smart contracts"
+    },
+    {
+      "ja": "顧客が完全にコントロール可能なデジタル資産",
+      "en": "Fully customer-controlled digital assets"
+    },
+    {
+      "ja": "オンチェーンでの取引履歴の透明性・追跡可能性",
+      "en": "On-chain transparency and traceability of transaction history"
+    },
+    {
+      "ja": "積分・優惠券の P2P 交換機能",
+      "en": "P2P exchange of points and coupons"
+    },
+    {
+      "ja": "NFT 会員証の発行",
+      "en": "NFT membership card issuance"
+    },
+    {
+      "ja": "既存 CRM との連携可能",
+      "en": "Integration with existing CRM systems"
+    }
+  ],
+  "results": {
+    "ja": [
+      "ブロックチェーンによる顧客信頼度の向上",
+      "積分・優惠券の不正利用防止",
+      "顧客エンゲージメントの強化",
+      "Web3.0 特性を活かした新しい顧客体験の提供"
+    ],
+    "en": [
+      "Improved customer trust through blockchain",
+      "Prevention of fraudulent use of points and coupons",
+      "Enhanced customer engagement",
+      "New customer experiences leveraging Web3.0 characteristics"
+    ]
+  }
+}
