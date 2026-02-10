@@ -79,35 +79,6 @@
   gap: 16px;
 }
 
-.heroMeta {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 12px;
-}
-
-.metaItem {
-  padding: 16px;
-  border-radius: var(--radius-lg);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-xs);
-  display: grid;
-  gap: 6px;
-}
-
-.metaLabel {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-tertiary);
-}
-
-.metaValue {
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
 .heroPanel {
   grid-column: span 5;
   padding: 28px;
@@ -424,10 +395,6 @@
     order: 2;
   }
 
-  .heroMeta {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .bentoGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -453,10 +420,6 @@
 
   .heroActions a {
     width: 100%;
-  }
-
-  .heroMeta {
-    grid-template-columns: 1fr;
   }
 
   .bentoGrid {

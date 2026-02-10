@@ -29,14 +29,14 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
 
   const heroHighlights = isJa
     ? [
-      { label: '自動化ワークフロー', value: '業務コスト大幅削減' },
-      { label: 'AIネイティブサービス', value: '低予算と高要件の両立' },
-      { label: 'AI駆動開発', value: '最短1時間でMVP' },
+      { label: '自動化ワークフロー', value: '業務コストの大幅削減' },
+      { label: 'AIネイティブサービス', value: '低予算と高度な機能要件の両立' },
+      { label: 'AI駆動開発', value: '超高速で最短1時間でMVP実現可能' },
     ]
     : [
-      { label: 'Automation Workflows', value: 'Dramatic cost reduction' },
-      { label: 'AI-Native Services', value: 'High requirements, lower budgets' },
-      { label: 'AI-Driven Development', value: 'MVP in as little as 1 hour' },
+      { label: 'Automation Workflows', value: 'Dramatic operational cost reduction' },
+      { label: 'AI-Native Services', value: 'Balancing low budgets with advanced functional requirements' },
+      { label: 'AI-Driven Development', value: 'Ultra-fast: MVP delivery possible in as little as 1 hour' },
     ];
 
   const heroDescription = isJa
@@ -251,18 +251,10 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
                   </Button>
                 </Link>
               </div>
-              <div className={styles.heroMeta}>
-                {heroHighlights.map((item) => (
-                  <div key={item.label} className={styles.metaItem}>
-                    <span className={styles.metaLabel}>{item.label}</span>
-                    <span className={styles.metaValue}>{item.value}</span>
-                  </div>
-                ))}
-              </div>
             </div>
             <div className={styles.heroPanel}>
               <div className={styles.heroPanelHeader}>
-                <span>{isJa ? 'ソリューション概要' : 'Solution Overview'}</span>
+                <span>{isJa ? 'ソリューション特徴' : 'Solution Features'}</span>
                 <span className={styles.heroPanelTag}>{isJa ? '稼働中' : 'Live'}</span>
               </div>
               <div className={styles.heroPanelGrid}>
@@ -277,7 +269,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
                 ))}
               </div>
               <div className={styles.heroPanelFooter}>
-                <span>{isJa ? 'ソリューションフロー' : 'Solution Flow'}</span>
+                <span>{isJa ? '実現の流れ' : 'Path to Realization'}</span>
                 <div className={styles.panelFlow}>
                   <span>{isJa ? '分析' : 'Analyze'}</span>
                   <span className={styles.flowDivider} />
@@ -298,13 +290,13 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
               {isJa
-                ? <>ビジネス課題を解決する<br />「実益重視」のAIソリューション</>
-                : <>Solving real business challenges<br />with ROI-focused AI solutions</>}
+                ? <>ビジネス課題を解決する<br />「実益重視」のソリューション</>
+                : <>Solving real business challenges<br />with ROI-focused solutions</>}
             </h2>
             <p className={styles.sectionSubtitle}>
               {isJa
-                ? <>曖昧な概念ではなく、業務のボトルネックを解消し<br />アイデアを即座に形にするためのソリューションを提供します。</>
-                : <>Not abstract concepts — we eliminate operational bottlenecks<br />and deliver solutions that turn ideas into reality.</>}
+                ? <>曖昧な概念ではなく、業務のボトルネックを解消し<br />アイデアを即座に形にするためのソリューションを提供します</>
+                : <>Not abstract concepts — we eliminate operational bottlenecks<br />and deliver solutions that turn ideas into reality</>}
             </p>
           </div>
           <div className={styles.bentoGrid}>
