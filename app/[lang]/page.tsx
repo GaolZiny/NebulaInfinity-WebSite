@@ -40,7 +40,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
         title: '本質的な課題の特定',
         description: 'プロのコンサルタントによる業務整理',
         bullets: ['業務フローを可視化、潜在課題とニーズを発掘', 'スコープと目標を明確に定義'],
-        className: styles.bentoFeatured,
+        className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" strokeWidth="1.7" />
@@ -53,7 +53,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
         title: 'ワークフローの設計',
         description: '業務フローを徹底的に分析し、自動化ワークフローの実行ロジックへ変換',
         sub: '例外処理や複雑な分岐も網羅し、止まることのない現場で使える自動化フローを設計',
-        className: styles.bentoCompact,
+        className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4.5 12h5.5l2.5-4 2.5 8 2.5-4H19.5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
@@ -66,7 +66,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
         title: '超高速プロトタイプ開発',
         description: '独自のAI駆動開発方法論により、アイデアを最短1時間で検証可能なMVP（試作品）を提供可能',
         sub: '机上の空論で終わらせず、動くプロダクトで即座に仮説検証',
-        className: styles.bentoCompact,
+        className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
             <path d="M13 2L4.5 13h6l-1 9L19 11h-6l1-9z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
@@ -76,7 +76,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       {
         title: '最先端技術の実装',
         description: '常に最新の技術トレンドをキャッチアップし、ビジネスにフィットする形で実装',
-        className: styles.bentoBottom,
+        className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.7" />
@@ -87,7 +87,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       {
         title: '構想から運用まで一気通貫',
         description: '企画・要件定義から、UI/UXデザイン、フロントエンド・バックエンド開発、そして導入後の保守運用まで、ワンチームで責任を持って完遂',
-        className: styles.bentoBottom,
+        className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
             <path d="M3 12h4l3-9 4 18 3-9h4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
@@ -97,7 +97,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       {
         title: '圧倒的なコストパフォーマンス',
         description: 'AI駆動型開発により、従来の手法と比較して開発期間とコストを大幅に圧縮。投資対効果（ROI）の高いソリューションを提供',
-        className: styles.bentoBottom,
+        className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 15.5l7-7 3 3 4-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
@@ -111,7 +111,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
         title: 'Identifying Core Challenges',
         description: 'Professional business process analysis by expert consultants',
         bullets: ['Visualize workflows, uncover latent issues and needs', 'Clearly define scope and objectives'],
-        className: styles.bentoFeatured,
+        className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" strokeWidth="1.7" />
@@ -124,7 +124,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
         title: 'Workflow Design',
         description: 'Thoroughly analyze business flows and convert them into automation workflow execution logic',
         sub: 'Covering edge cases and complex branching — designing automation flows that never stop in production',
-        className: styles.bentoCompact,
+        className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4.5 12h5.5l2.5-4 2.5 8 2.5-4H19.5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
@@ -137,7 +137,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
         title: 'Ultra-Rapid Prototyping',
         description: 'Our proprietary AI-driven development methodology delivers testable MVPs in as little as 1 hour',
         sub: 'No more theory — validate hypotheses instantly with working products',
-        className: styles.bentoCompact,
+        className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
             <path d="M13 2L4.5 13h6l-1 9L19 11h-6l1-9z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
@@ -147,7 +147,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       {
         title: 'Cutting-Edge Implementation',
         description: 'We stay current with the latest technology trends and implement them in ways that fit your business',
-        className: styles.bentoBottom,
+        className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.7" />
@@ -158,7 +158,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       {
         title: 'End-to-End, One Team',
         description: 'From planning and requirements to UI/UX design, full-stack development, and post-launch maintenance — one team takes full responsibility',
-        className: styles.bentoBottom,
+        className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
             <path d="M3 12h4l3-9 4 18 3-9h4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
@@ -168,7 +168,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       {
         title: 'Exceptional Cost Performance',
         description: 'AI-driven development dramatically reduces timelines and costs compared to traditional methods. We deliver solutions with outstanding ROI.',
-        className: styles.bentoBottom,
+        className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 15.5l7-7 3 3 4-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
