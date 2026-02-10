@@ -20,345 +20,226 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
 
   const heroHighlights = isJa
     ? [
-      { label: 'エージェント設計', value: 'マルチエージェント構成' },
-      { label: '自動化運用', value: '可観測なワークフロー' },
-      { label: 'Web3.0基盤', value: 'オンチェーン対応' },
+      { label: '自動化ワークフロー', value: '業務コスト大幅削減' },
+      { label: 'AIネイティブアプリケーション', value: '低予算と高度な処理の両立' },
+      { label: 'AI駆動開発', value: '最短1時間でMVP' },
     ]
     : [
-      { label: 'Agent Design', value: 'Multi-agent systems' },
-      { label: 'Automation Ops', value: 'Observable workflows' },
-      { label: 'Web3.0 Rails', value: 'On-chain ready' },
+      { label: 'Automation Workflows', value: 'Dramatic cost reduction' },
+      { label: 'AI-Native Applications', value: 'Advanced processing, lower budgets' },
+      { label: 'AI-Driven Development', value: 'MVP in as little as 1 hour' },
     ];
+
+  const heroDescription = isJa
+    ? '繰り返される業務フローも、高度なバックエンド処理も、AIの力を最大限に引き出す。Nebula Infinityは、業務プロセスの「完全自動化」と、AIネイティブサービスの「高速開発」を通じて、御社の競争力を最大化する、AI実装のスペシャリストです。'
+    : 'From repetitive workflows to complex backend processing — we maximize the power of AI. Nebula Infinity specializes in full process automation and rapid AI-native service development, maximizing your competitive edge.';
 
   const bentoCards = isJa
     ? [
       {
-        title: 'AIエージェント・オーケストレーション',
-        description: '目的に合わせた役割分担、ツール連携、ガードレールを設計し、プロダクト運用に組み込みます。',
-        bullets: ['エージェント設計', 'ツール/データ連携', '安全性と人の監督'],
+        title: '本質的な課題の特定',
+        description: 'プロのコンサルタントによる業務整理',
+        bullets: ['業務フローを可視化、潜在課題とニーズを発掘', 'スコープと目標を明確に定義'],
         className: styles.bentoFeatured,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M6 7.5h12M6 12h6.5M6 16.5h9"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
-            <path
-              d="M16.5 4.5l3 3-3 3"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
+            <circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" strokeWidth="1.7" />
+            <path d="M15.5 15.5L20 20" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.7" />
+            <path d="M11 8v6M8 11h6" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
           </svg>
         ),
       },
       {
-        title: '自動化ワークフロー',
-        description: '開発・運用・分析を横断するワークフローを構築し、成果までの時間を短縮します。',
+        title: 'ワークフローの設計',
+        description: '業務フローを徹底的に分析し、自動化ワークフローの実行ロジックへ変換',
+        sub: '例外処理や複雑な分岐も網羅し、止まることのない現場で使える自動化フローを設計',
         className: styles.bentoCompact,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M4.5 12h5.5l2.5-4 2.5 8 2.5-4H19.5"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
+            <path d="M4.5 12h5.5l2.5-4 2.5 8 2.5-4H19.5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
             <circle cx="4.5" cy="12" r="1.5" fill="currentColor" />
             <circle cx="19.5" cy="12" r="1.5" fill="currentColor" />
           </svg>
         ),
       },
       {
-        title: 'Web3.0プロトコル設計',
-        description: 'スマートコントラクトからオンチェーンUXまで、プロダクトの基盤を設計します。',
+        title: '超高速プロトタイプ開発',
+        description: '独自のAI駆動開発方法論により、アイデアを最短1時間で検証可能なMVP（試作品）を提供可能',
+        sub: '机上の空論で終わらせず、動くプロダクトで即座に仮説検証',
         className: styles.bentoCompact,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M7 7.5h10v9H7z"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
-            <path
-              d="M7 10.5h10M10.5 7.5v9"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
+            <path d="M13 2L4.5 13h6l-1 9L19 11h-6l1-9z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
           </svg>
         ),
       },
       {
-        title: '可観測性と運用管理',
-        description: '実行ログ、品質メトリクス、リスク管理を統合し、運用に強い体制を作ります。',
-        className: styles.bentoCompact,
+        title: '最先端技術の実装',
+        description: '常に最新の技術トレンドをキャッチアップし、ビジネスにフィットする形で実装',
+        className: styles.bentoBottom,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M5 17.5h14"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
-            <path
-              d="M7 17.5V11l3 2.5 3-6 4 7.5v2.5"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.7" />
+            <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="1.7" />
           </svg>
         ),
       },
       {
-        title: 'デリバリー高速化',
-        description: '要件定義から実装、運用までを一体で進め、プロダクトの立ち上げを加速します。',
-        className: styles.bentoCompact,
+        title: '構想から運用まで一気通貫',
+        description: '企画・要件定義から、UI/UXデザイン、フロントエンド・バックエンド開発、そして導入後の保守運用まで、ワンチームで責任を持って完遂',
+        className: styles.bentoBottom,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M5 15.5l7-7 3 3 4-4"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
-            <path
-              d="M16 7h3v3"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
+            <path d="M3 12h4l3-9 4 18 3-9h4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
           </svg>
         ),
       },
       {
-        title: 'AI x Web3.0統合設計',
-        description: 'オンチェーンデータとAIの知見を繋ぎ、ユースケースに最適な統合体験を設計します。',
-        className: styles.bentoWide,
+        title: '圧倒的なコストパフォーマンス',
+        description: 'AI駆動型開発により、従来の手法と比較して開発期間とコストを大幅に圧縮。投資対効果（ROI）の高いソリューションを提供',
+        className: styles.bentoBottom,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M6 8.5h6v6H6zM12 11.5h6v6h-6z"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
-            <path
-              d="M9 8.5V6.5m6 11v2"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
+            <path d="M5 15.5l7-7 3 3 4-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
+            <path d="M16 7h3v3" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
           </svg>
         ),
       },
     ]
     : [
       {
-        title: 'AI Agent Orchestration',
-        description: 'We architect role-based agent systems, toolchains, and guardrails that plug into real operations.',
-        bullets: ['Agent architecture', 'Tool + data routing', 'Safety and human oversight'],
+        title: 'Identifying Core Challenges',
+        description: 'Professional business process analysis by expert consultants',
+        bullets: ['Visualize workflows, uncover latent issues and needs', 'Clearly define scope and objectives'],
         className: styles.bentoFeatured,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M6 7.5h12M6 12h6.5M6 16.5h9"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
-            <path
-              d="M16.5 4.5l3 3-3 3"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
+            <circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" strokeWidth="1.7" />
+            <path d="M15.5 15.5L20 20" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.7" />
+            <path d="M11 8v6M8 11h6" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
           </svg>
         ),
       },
       {
-        title: 'Automation Workflows',
-        description: 'Cross-team workflows that connect product, ops, and data into one reliable pipeline.',
+        title: 'Workflow Design',
+        description: 'Thoroughly analyze business flows and convert them into automation workflow execution logic',
+        sub: 'Covering edge cases and complex branching — designing automation flows that never stop in production',
         className: styles.bentoCompact,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M4.5 12h5.5l2.5-4 2.5 8 2.5-4H19.5"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
+            <path d="M4.5 12h5.5l2.5-4 2.5 8 2.5-4H19.5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
             <circle cx="4.5" cy="12" r="1.5" fill="currentColor" />
             <circle cx="19.5" cy="12" r="1.5" fill="currentColor" />
           </svg>
         ),
       },
       {
-        title: 'Web3.0 Protocol Design',
-        description: 'From smart contracts to on-chain UX, we build the backbone your product runs on.',
+        title: 'Ultra-Rapid Prototyping',
+        description: 'Our proprietary AI-driven development methodology delivers testable MVPs in as little as 1 hour',
+        sub: 'No more theory — validate hypotheses instantly with working products',
         className: styles.bentoCompact,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M7 7.5h10v9H7z"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
-            <path
-              d="M7 10.5h10M10.5 7.5v9"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
+            <path d="M13 2L4.5 13h6l-1 9L19 11h-6l1-9z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
           </svg>
         ),
       },
       {
-        title: 'Observability + Control',
-        description: 'Execution logs, quality metrics, and risk dashboards built for long-term reliability.',
-        className: styles.bentoCompact,
+        title: 'Cutting-Edge Implementation',
+        description: 'We stay current with the latest technology trends and implement them in ways that fit your business',
+        className: styles.bentoBottom,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M5 17.5h14"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
-            <path
-              d="M7 17.5V11l3 2.5 3-6 4 7.5v2.5"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.7" />
+            <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="1.7" />
           </svg>
         ),
       },
       {
-        title: 'Launch Acceleration',
-        description: 'Unified strategy, build, and operations to move products from brief to launch.',
-        className: styles.bentoCompact,
+        title: 'End-to-End, One Team',
+        description: 'From planning and requirements to UI/UX design, full-stack development, and post-launch maintenance — one team takes full responsibility',
+        className: styles.bentoBottom,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M5 15.5l7-7 3 3 4-4"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
-            <path
-              d="M16 7h3v3"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
+            <path d="M3 12h4l3-9 4 18 3-9h4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
           </svg>
         ),
       },
       {
-        title: 'AI x Web3.0 Experience',
-        description: 'We connect on-chain data with AI intelligence to deliver coherent, secure experiences.',
-        className: styles.bentoWide,
+        title: 'Exceptional Cost Performance',
+        description: 'AI-driven development dramatically reduces timelines and costs compared to traditional methods. We deliver solutions with outstanding ROI.',
+        className: styles.bentoBottom,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M6 8.5h6v6H6zM12 11.5h6v6h-6z"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
-            <path
-              d="M9 8.5V6.5m6 11v2"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.7"
-            />
+            <path d="M5 15.5l7-7 3 3 4-4" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
+            <path d="M16 7h3v3" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
           </svg>
         ),
       },
     ];
 
-  const credentials = isJa
-    ? ['戦略設計', 'エージェント運用', 'スマートコントラクト', 'プロダクト実装']
-    : ['Strategy Design', 'Agent Operations', 'Smart Contracts', 'Product Delivery'];
+  const processSteps = isJa
+    ? [
+      { step: 1, label: '業務整理・課題特定' },
+      { step: 2, label: 'ソリューション設計' },
+      { step: 3, label: '実装' },
+      { step: 4, label: '運用・保守' },
+    ]
+    : [
+      { step: 1, label: 'Business Analysis' },
+      { step: 2, label: 'Solution Design' },
+      { step: 3, label: 'Implementation' },
+      { step: 4, label: 'Operation & Maintenance' },
+    ];
 
   const principles = isJa
     ? [
       {
-        title: '成果から逆算',
-        description: '達成したい成果を起点に、エージェントとワークフローを設計します。',
+        title: 'Business Logic First',
+        description: 'ビジネスモデルや業務フローを深く理解しない限り、真に役立つソリューションは作れないと考えており、「開発者」である前に、御社の「ビジネスパートナー」であり続けます。',
       },
       {
-        title: '透明性のある運用',
-        description: '意思決定の根拠や実行ログを共有し、安心して運用できる体制を作ります。',
+        title: 'No Blackbox',
+        description: '処理ロジックやAIの判断根拠を可能な限り可視化。御社がコントロールでき、安心して運用できる設計を徹底します。',
       },
       {
-        title: '安全性を最優先',
-        description: 'オンチェーン特有のリスクを踏まえ、安全性と検証性を担保します。',
+        title: 'Speed is Value',
+        description: '不確実な時代において、スピードは最大のリスクヘッジです。独自の開発手法で圧倒的な速度でMVPを構築し、変化に合わせて柔軟にプロダクトを進化させ続ける開発スタイルを提供します。',
       },
     ]
     : [
       {
-        title: 'Outcome-driven by default',
-        description: 'We start from the result you need and design agents and workflows around it.',
+        title: 'Business Logic First',
+        description: 'We believe truly useful solutions require deep understanding of business models and workflows. Before being developers, we remain your business partners.',
       },
       {
-        title: 'Operational transparency',
-        description: 'Clear decision trails, logs, and checkpoints keep teams aligned and confident.',
+        title: 'No Blackbox',
+        description: 'We make processing logic and AI decision rationale as transparent as possible. We ensure designs you can control and operate with confidence.',
       },
       {
-        title: 'Safety first for Web3.0',
-        description: 'We prioritize risk controls and verifiable execution for on-chain products.',
+        title: 'Speed is Value',
+        description: 'In an era of uncertainty, speed is the ultimate risk hedge. Our proprietary methods build MVPs at exceptional speed, enabling continuous product evolution that adapts to change.',
       },
     ];
+
+  const principleIcons = [
+    // Business Logic First - handshake/strategy icon
+    <svg key="p1" className={styles.principleIcon} viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20 7h-4l-2-3H10L8 7H4a2 2 0 00-2 2v2l8 5 8-5V9a2 2 0 00-2-2z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
+      <path d="M2 13l8 5 2-1.5L14 18l8-5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
+    </svg>,
+    // No Blackbox - eye/transparency icon
+    <svg key="p2" className={styles.principleIcon} viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
+      <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="1.7" />
+    </svg>,
+    // Speed is Value - rocket/speed icon
+    <svg key="p3" className={styles.principleIcon} viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
+      <path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11.95A22 22 0 0112 15z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
+      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 3 0 3 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-3 0-3" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" />
+    </svg>,
+  ];
 
   return (
     <div className={styles.page}>
@@ -366,9 +247,9 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
         <div className="container">
           <div className={styles.heroInner}>
             <div className={styles.heroCopy}>
-              <span className={styles.eyebrow}>{isJa ? 'AIエージェント × 自動化ワークフロー × Web3.0' : 'AI agents · Automation workflows · Web3.0'}</span>
               <h1 className={styles.heroTitle}>{t.hero.title}</h1>
               <p className={styles.heroSubtitle}>{t.hero.subtitle}</p>
+              <p className={styles.heroDescription}>{heroDescription}</p>
               <div className={styles.heroActions}>
                 <Link href={`/${params.lang}/services`}>
                   <Button size="lg">{t.hero.cta}</Button>
@@ -390,7 +271,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
             </div>
             <div className={styles.heroPanel}>
               <div className={styles.heroPanelHeader}>
-                <span>{isJa ? 'ワークフロー設計図' : 'Workflow Blueprint'}</span>
+                <span>{isJa ? 'ソリューション概要' : 'Solution Overview'}</span>
                 <span className={styles.heroPanelTag}>{isJa ? '稼働中' : 'Live'}</span>
               </div>
               <div className={styles.heroPanelGrid}>
@@ -405,11 +286,13 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
                 ))}
               </div>
               <div className={styles.heroPanelFooter}>
-                <span>{isJa ? '自動化パス' : 'Automation Path'}</span>
+                <span>{isJa ? 'ソリューションフロー' : 'Solution Flow'}</span>
                 <div className={styles.panelFlow}>
+                  <span>{isJa ? '分析' : 'Analyze'}</span>
+                  <span className={styles.flowDivider} />
                   <span>{isJa ? '設計' : 'Design'}</span>
                   <span className={styles.flowDivider} />
-                  <span>{isJa ? '構築' : 'Build'}</span>
+                  <span>{isJa ? '実装' : 'Build'}</span>
                   <span className={styles.flowDivider} />
                   <span>{isJa ? '運用' : 'Run'}</span>
                 </div>
@@ -423,12 +306,14 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
-              {isJa ? 'AIエージェントとWeb3.0のための統合設計' : 'Integrated design for AI agents and Web3.0'}
+              {isJa
+                ? 'ビジネス課題を解決する、「実益重視」のAIソリューション'
+                : 'ROI-focused AI solutions that solve real business challenges'}
             </h2>
             <p className={styles.sectionSubtitle}>
               {isJa
-                ? '構想から実装、運用までを一体化し、成果までの距離を短くします。'
-                : 'We connect strategy, implementation, and operations to reduce the distance to outcomes.'}
+                ? '曖昧な概念ではなく、業務のボトルネックを解消し、アイデアを即座に形にするためのソリューションを提供します。'
+                : 'Not abstract concepts — we deliver solutions that eliminate operational bottlenecks and turn ideas into reality.'}
             </p>
           </div>
           <div className={styles.bentoGrid}>
@@ -446,35 +331,34 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
                     ))}
                   </ul>
                 )}
+                {card.sub && (
+                  <p className={styles.cardSub}>{card.sub}</p>
+                )}
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section className={styles.credentialsSection}>
+      <section className={styles.processSection}>
         <div className="container">
-          <div className={styles.credentialsInner}>
-            <p className={styles.credentialsTitle}>
-              {isJa ? 'ワークフロー全体を支える専門性' : 'Expertise across the full workflow'}
-            </p>
-            <div className={styles.credentialsGrid}>
-              {credentials.map((item) => (
-                <div key={item} className={styles.credentialItem}>
-                  <svg className={styles.credentialIcon} viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M6 12.5l4 4 8-9"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.8"
-                    />
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              {isJa ? 'ソリューション提供の流れ' : 'Our Solution Process'}
+            </h2>
+          </div>
+          <div className={styles.processBar}>
+            {processSteps.map((ps, idx) => (
+              <div key={ps.step} className={styles.processStep}>
+                <div className={styles.processNumber}>{ps.step}</div>
+                <span className={styles.processLabel}>{ps.label}</span>
+                {idx < processSteps.length - 1 && (
+                  <svg className={styles.processArrow} viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                   </svg>
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -482,16 +366,17 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       <section className={styles.principlesSection}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>{isJa ? '私たちの原則' : 'Our principles'}</h2>
+            <h2 className={styles.sectionTitle}>{isJa ? '理念' : 'Principles'}</h2>
             <p className={styles.sectionSubtitle}>
               {isJa
-                ? 'AIエージェントとWeb3.0の運用に必要な基準を明確にします。'
-                : 'Clear standards for safe and steady AI + Web3.0 operations.'}
+                ? 'AIソリューションの成功率を高めるための、3つの約束'
+                : 'Three commitments to maximize AI solution success'}
             </p>
           </div>
           <div className={styles.principlesGrid}>
-            {principles.map((principle) => (
+            {principles.map((principle, idx) => (
               <Card key={principle.title} className={styles.principleCard}>
+                <div className={styles.principleIconWrap}>{principleIcons[idx]}</div>
                 <h3 className={styles.principleTitle}>{principle.title}</h3>
                 <p className={styles.principleDescription}>{principle.description}</p>
               </Card>
@@ -505,21 +390,21 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
           <Card className={styles.ctaCard}>
             <div>
               <h2 className={styles.ctaTitle}>
-                {isJa ? 'AIエージェント導入を一緒に進めませんか？' : 'Ready to deploy AI agents with Web3.0 workflows?'}
+                {isJa ? '「最初の一歩」を、一緒に踏み出しませんか？' : 'Ready to take the first step — together?'}
               </h2>
               <p className={styles.ctaDescription}>
                 {isJa
-                  ? '課題整理からワークフロー設計、実装まで一緒に整理します。'
-                  : 'We can scope the workflow, build the system, and guide the launch together.'}
+                  ? '業務整理から実装、運用まで。「どんな使い方ができるか」の無料診断から承ります。お気軽にご相談ください。'
+                  : 'From business analysis to implementation and operations. We offer free consultations to explore what\'s possible. Feel free to reach out.'}
               </p>
             </div>
             <div className={styles.ctaActions}>
               <Link href={`/${params.lang}/contact`}>
-                <Button size="lg">{t.nav.contact}</Button>
+                <Button size="lg">{isJa ? 'お問い合わせ' : 'Contact Us'}</Button>
               </Link>
               <Link href={`/${params.lang}/services`}>
                 <Button size="lg" variant="outline">
-                  {isJa ? 'サービスを見る' : 'View services'}
+                  {isJa ? 'サービス詳細' : 'Service Details'}
                 </Button>
               </Link>
             </div>

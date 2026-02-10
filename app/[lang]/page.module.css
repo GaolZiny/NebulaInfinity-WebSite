@@ -30,6 +30,8 @@
   background: radial-gradient(circle, rgba(15, 23, 42, 0.12), rgba(15, 23, 42, 0));
 }
 
+/* ===== Hero ===== */
+
 .hero {
   position: relative;
   padding: 96px 0 72px;
@@ -50,14 +52,6 @@
   gap: 20px;
 }
 
-.eyebrow {
-  font-size: 0.85rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-tertiary);
-  font-weight: 600;
-}
-
 .heroTitle {
   font-size: clamp(2.75rem, 5vw, 4.6rem);
   font-family: var(--font-heading);
@@ -69,6 +63,13 @@
   font-size: clamp(1.05rem, 1.9vw, 1.45rem);
   color: var(--text-secondary);
   line-height: 1.7;
+  max-width: 620px;
+}
+
+.heroDescription {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
   max-width: 620px;
 }
 
@@ -196,6 +197,8 @@
   background: var(--border);
 }
 
+/* ===== Bento Section ===== */
+
 .bentoSection {
   position: relative;
   z-index: 1;
@@ -254,8 +257,8 @@
   grid-column: span 3;
 }
 
-.bentoWide {
-  grid-column: span 12;
+.bentoBottom {
+  grid-column: span 4;
 }
 
 .cardHeader {
@@ -273,6 +276,7 @@
   border-radius: 12px;
   background: rgba(202, 138, 4, 0.12);
   color: var(--accent-primary);
+  flex-shrink: 0;
 }
 
 .cardIcon {
@@ -289,6 +293,13 @@
 .cardDescription {
   color: var(--text-secondary);
   line-height: 1.7;
+}
+
+.cardSub {
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  line-height: 1.7;
+  margin: 0;
 }
 
 .cardList {
@@ -316,57 +327,58 @@
   background: var(--accent-primary);
 }
 
-.credentialsSection {
+/* ===== Process Section ===== */
+
+.processSection {
   padding: 40px 0 72px;
   position: relative;
   z-index: 1;
 }
 
-.credentialsInner {
-  padding: 24px 28px;
-  border-radius: var(--radius-xl);
-  background: #ffffff;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-}
-
-.credentialsTitle {
-  margin: 0 0 18px;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--text-tertiary);
-}
-
-.credentialsGrid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.credentialItem {
+.processBar {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  border-radius: var(--radius-md);
-  background: var(--surface);
-  border: 1px solid var(--border);
+  justify-content: center;
+  gap: 0;
+}
+
+.processStep {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.processNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.processLabel {
   font-weight: 600;
-  color: var(--color-primary);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
-.credentialItem:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
-}
-
-.credentialIcon {
-  width: 18px;
-  height: 18px;
+.processArrow {
+  width: 28px;
+  height: 28px;
   color: var(--accent-primary);
+  flex-shrink: 0;
+  margin: 0 8px;
 }
+
+/* ===== Principles Section ===== */
 
 .principlesSection {
   padding: 72px 0;
@@ -388,6 +400,23 @@
   box-shadow: var(--shadow-xs);
 }
 
+.principleIconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(202, 138, 4, 0.12);
+  color: var(--accent-primary);
+  margin-bottom: 16px;
+}
+
+.principleIcon {
+  width: 24px;
+  height: 24px;
+}
+
 .principleTitle {
   font-size: 1.15rem;
   margin-bottom: 12px;
@@ -398,6 +427,8 @@
   color: var(--text-secondary);
   line-height: 1.7;
 }
+
+/* ===== CTA Section ===== */
 
 .ctaSection {
   padding: 64px 0 96px;
@@ -437,6 +468,16 @@
   gap: 16px;
 }
 
+.ctaActions a {
+  min-width: 200px;
+}
+
+.ctaActions a > button {
+  width: 100%;
+}
+
+/* ===== Responsive ===== */
+
 @media (max-width: 1024px) {
   .heroInner {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -461,13 +502,22 @@
 
   .bentoFeatured,
   .bentoCompact,
-  .bentoWide {
+  .bentoBottom {
     grid-column: span 1;
     grid-row: auto;
   }
 
-  .credentialsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .processBar {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .processStep {
+    gap: 8px;
+  }
+
+  .processArrow {
+    display: none;
   }
 
   .principlesGrid {
@@ -501,8 +551,18 @@
     grid-template-columns: 1fr;
   }
 
-  .credentialsGrid {
-    grid-template-columns: 1fr;
+  .processBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .processStep {
+    width: 100%;
+  }
+
+  .processArrow {
+    display: none;
   }
 
   .principlesGrid {
@@ -511,6 +571,16 @@
 
   .ctaCard {
     padding: 36px 28px;
+  }
+
+  .ctaActions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaActions a {
+    width: 100%;
+    min-width: unset;
   }
 }
 
@@ -529,14 +599,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bentoCard,
-  .credentialItem {
+  .bentoCard {
     transition: none;
     transform: none;
   }
 
-  .bentoCard:hover,
-  .credentialItem:hover {
+  .bentoCard:hover {
     transform: none;
     box-shadow: var(--shadow-sm);
   }
