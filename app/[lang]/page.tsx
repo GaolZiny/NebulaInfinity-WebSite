@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { type Language } from '@/lib/i18n';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
@@ -5,6 +6,14 @@ import Card from '@/components/ui/Card';
 import styles from './page.module.css';
 import translations from '@/data/translations/ja.json';
 import translationsEn from '@/data/translations/en.json';
+
+const renderWithBreaks = (text: string) =>
+  text.split('\n').map((line, i) => (
+    <Fragment key={i}>
+      {i > 0 && <br />}
+      {line}
+    </Fragment>
+  ));
 
 export async function generateMetadata({ params }: { params: { lang: Language } }) {
   const t = params.lang === 'ja' ? translations : translationsEn;
@@ -21,12 +30,12 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
   const heroHighlights = isJa
     ? [
       { label: '自動化ワークフロー', value: '業務コスト大幅削減' },
-      { label: 'AIネイティブアプリケーション', value: '低予算と高度な処理の両立' },
+      { label: 'AIネイティブサービス', value: '低予算と高要件の両立' },
       { label: 'AI駆動開発', value: '最短1時間でMVP' },
     ]
     : [
       { label: 'Automation Workflows', value: 'Dramatic cost reduction' },
-      { label: 'AI-Native Applications', value: 'Advanced processing, lower budgets' },
+      { label: 'AI-Native Services', value: 'High requirements, lower budgets' },
       { label: 'AI-Driven Development', value: 'MVP in as little as 1 hour' },
     ];
 
@@ -50,9 +59,8 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
         ),
       },
       {
-        title: 'ワークフローの設計',
-        description: '業務フローを徹底的に分析し、自動化ワークフローの実行ロジックへ変換',
-        sub: '例外処理や複雑な分岐も網羅し、止まることのない現場で使える自動化フローを設計',
+        title: '実働観点のワークフロー設計',
+        bullets: ['業務フローを徹底的に分析し、自動化ワークフローの実行ロジックへ変換', '例外処理や複雑な分岐も網羅し、止まることのない現場で使える自動化フローを設計'],
         className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
@@ -64,8 +72,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       },
       {
         title: '超高速プロトタイプ開発',
-        description: '独自のAI駆動開発方法論により、アイデアを最短1時間で検証可能なMVP（試作品）を提供可能',
-        sub: '机上の空論で終わらせず、動くプロダクトで即座に仮説検証',
+        bullets: ['独自のAI駆動開発方法論により、アイデアを最短1時間で検証可能なMVP（試作品）を提供可能', '机上の空論で終わらせず、動くプロダクトで即座に仮説検証'],
         className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
@@ -86,7 +93,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       },
       {
         title: '構想から運用まで一気通貫',
-        description: '企画・要件定義から、UI/UXデザイン、フロントエンド・バックエンド開発、そして導入後の保守運用まで、ワンチームで責任を持って完遂',
+        description: '企画・要件定義から、ソリューション開発・実装、そして導入後の保守運用まで、ワンチームで責任を持って完遂',
         className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
@@ -121,9 +128,8 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
         ),
       },
       {
-        title: 'Workflow Design',
-        description: 'Thoroughly analyze business flows and convert them into automation workflow execution logic',
-        sub: 'Covering edge cases and complex branching — designing automation flows that never stop in production',
+        title: 'Production-Ready Workflow Design',
+        bullets: ['Thoroughly analyze business flows and convert them into automation workflow execution logic', 'Covering edge cases and complex branching — designing automation flows that never stop in production'],
         className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
@@ -135,8 +141,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       },
       {
         title: 'Ultra-Rapid Prototyping',
-        description: 'Our proprietary AI-driven development methodology delivers testable MVPs in as little as 1 hour',
-        sub: 'No more theory — validate hypotheses instantly with working products',
+        bullets: ['Our proprietary AI-driven development methodology delivers testable MVPs in as little as 1 hour', 'No more theory — validate hypotheses instantly with working products'],
         className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
@@ -157,7 +162,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       },
       {
         title: 'End-to-End, One Team',
-        description: 'From planning and requirements to UI/UX design, full-stack development, and post-launch maintenance — one team takes full responsibility',
+        description: 'From planning and requirements to solution development and implementation, through post-launch maintenance — one team takes full responsibility',
         className: styles.bentoUniform,
         icon: (
           <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
@@ -178,20 +183,6 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       },
     ];
 
-  const processSteps = isJa
-    ? [
-      { step: 1, label: '業務整理・課題特定' },
-      { step: 2, label: 'ソリューション設計' },
-      { step: 3, label: '実装' },
-      { step: 4, label: '運用・保守' },
-    ]
-    : [
-      { step: 1, label: 'Business Analysis' },
-      { step: 2, label: 'Solution Design' },
-      { step: 3, label: 'Implementation' },
-      { step: 4, label: 'Operation & Maintenance' },
-    ];
-
   const principles = isJa
     ? [
       {
@@ -200,7 +191,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       },
       {
         title: 'No Blackbox',
-        description: '処理ロジックやAIの判断根拠を可能な限り可視化。御社がコントロールでき、安心して運用できる設計を徹底します。',
+        description: '処理ロジックやAIの判断根拠を可能な限り可視化し、システムがブラックボックス化することを防ぎます。技術が独り歩きするのではなく、御社自身がプロセスを理解・コントロールでき、長期にわたって安心して運用できる設計を徹底します。',
       },
       {
         title: 'Speed is Value',
@@ -214,7 +205,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
       },
       {
         title: 'No Blackbox',
-        description: 'We make processing logic and AI decision rationale as transparent as possible. We ensure designs you can control and operate with confidence.',
+        description: 'We make processing logic and AI decision rationale as transparent as possible, preventing systems from becoming black boxes. Rather than letting technology run unchecked, we ensure designs where you understand and control every process, operating with confidence over the long term.',
       },
       {
         title: 'Speed is Value',
@@ -247,8 +238,8 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
         <div className="container">
           <div className={styles.heroInner}>
             <div className={styles.heroCopy}>
-              <h1 className={styles.heroTitle}>{t.hero.title}</h1>
-              <p className={styles.heroSubtitle}>{t.hero.subtitle}</p>
+              <h1 className={styles.heroTitle}>{renderWithBreaks(t.hero.title)}</h1>
+              <p className={styles.heroSubtitle}>{renderWithBreaks(t.hero.subtitle)}</p>
               <p className={styles.heroDescription}>{heroDescription}</p>
               <div className={styles.heroActions}>
                 <Link href={`/${params.lang}/services`}>
@@ -307,13 +298,13 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>
               {isJa
-                ? 'ビジネス課題を解決する、「実益重視」のAIソリューション'
-                : 'ROI-focused AI solutions that solve real business challenges'}
+                ? <>ビジネス課題を解決する<br />「実益重視」のAIソリューション</>
+                : <>Solving real business challenges<br />with ROI-focused AI solutions</>}
             </h2>
             <p className={styles.sectionSubtitle}>
               {isJa
-                ? '曖昧な概念ではなく、業務のボトルネックを解消し、アイデアを即座に形にするためのソリューションを提供します。'
-                : 'Not abstract concepts — we deliver solutions that eliminate operational bottlenecks and turn ideas into reality.'}
+                ? <>曖昧な概念ではなく、業務のボトルネックを解消し<br />アイデアを即座に形にするためのソリューションを提供します。</>
+                : <>Not abstract concepts — we eliminate operational bottlenecks<br />and deliver solutions that turn ideas into reality.</>}
             </p>
           </div>
           <div className={styles.bentoGrid}>
@@ -323,7 +314,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
                   <span className={styles.cardIconWrap}>{card.icon}</span>
                   <span className={styles.cardTitle}>{card.title}</span>
                 </div>
-                <p className={styles.cardDescription}>{card.description}</p>
+                {card.description && <p className={styles.cardDescription}>{card.description}</p>}
                 {card.bullets && (
                   <ul className={styles.cardList}>
                     {card.bullets.map((item) => (
@@ -331,33 +322,7 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
                     ))}
                   </ul>
                 )}
-                {card.sub && (
-                  <p className={styles.cardSub}>{card.sub}</p>
-                )}
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.processSection}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
-              {isJa ? 'ソリューション提供の流れ' : 'Our Solution Process'}
-            </h2>
-          </div>
-          <div className={styles.processBar}>
-            {processSteps.map((ps, idx) => (
-              <div key={ps.step} className={styles.processStep}>
-                <div className={styles.processNumber}>{ps.step}</div>
-                <span className={styles.processLabel}>{ps.label}</span>
-                {idx < processSteps.length - 1 && (
-                  <svg className={styles.processArrow} viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                  </svg>
-                )}
-              </div>
             ))}
           </div>
         </div>
@@ -369,8 +334,8 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
             <h2 className={styles.sectionTitle}>{isJa ? '理念' : 'Principles'}</h2>
             <p className={styles.sectionSubtitle}>
               {isJa
-                ? 'AIソリューションの成功率を高めるための、3つの約束'
-                : 'Three commitments to maximize AI solution success'}
+                ? 'ソリューションの成功率を高めるための、3つの約束'
+                : 'Three commitments to maximize solution success'}
             </p>
           </div>
           <div className={styles.principlesGrid}>
@@ -390,7 +355,9 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
           <Card className={styles.ctaCard}>
             <div>
               <h2 className={styles.ctaTitle}>
-                {isJa ? '「最初の一歩」を、一緒に踏み出しませんか？' : 'Ready to take the first step — together?'}
+                {isJa
+                  ? <>「最初の一歩」を<br />一緒に踏み出しませんか？</>
+                  : <>Ready to take the first step<br />— together?</>}
               </h2>
               <p className={styles.ctaDescription}>
                 {isJa
