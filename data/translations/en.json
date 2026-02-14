@@ -7,9 +7,78 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Humans create\nAI executes",
-    "subtitle": "Reduce operational costs and accelerate service development\nYour next-gen AI implementation partner",
-    "cta": "View Services"
+    "title": "Turn AI into real\n\"productive power\"",
+    "subtitle": "We natively integrate AI into your workflows, products, and systems across every business scenario,\ndramatically reducing time and costs while ensuring quality.\nNebula Infinity transforms cutting-edge AI into real competitive advantage for your business.",
+    "cta": "Get a Free Consultation & Request Your MVP",
+    "badges": [
+      { "title": "Overwhelming Speed", "desc": "MVP delivery in 1 hour to 1 business day" },
+      { "title": "Compress Cost & Time", "desc": "Reduce to 1/3 or less" },
+      { "title": "Proven Quality", "desc": "AI + Human hybrid testing" }
+    ]
+  },
+  "concept": {
+    "title": "What is our \"AI Native Solution\"?",
+    "lead": "It's not simply about \"adopting AI tools.\" It's about fusing AI capabilities into your core operations, products, and services to simultaneously achieve",
+    "leadHighlight": "AI Native Solution",
+    "leadAfter": "— efficiency, quality improvement, cost reduction, and time savings. We call this the social implementation of AI, maximizing your competitive edge.",
+    "keywords": ["Efficiency", "Quality", "Cost Reduction", "Time Savings"]
+  },
+  "competence": {
+    "title": "3 Reasons We Achieve Both Speed and Quality",
+    "cards": [
+      {
+        "eyebrow": "Reason 1: Professional Business Analysis & Consulting",
+        "heading": "Accurately extracting true needs before solution design.",
+        "body": "No matter how advanced the AI, it's meaningless if applied to the wrong problem. Our professional consultants thoroughly analyze your existing operations, visualizing workflows and system integrations. By precisely defining the real bottlenecks, we build a solid foundation for high-quality, focused solutions."
+      },
+      {
+        "eyebrow": "Reason 2: Proprietary AI-Driven Development Methodology",
+        "heading": "Delivering a working MVP in as little as 1 hour.",
+        "body": "We implement refined requirements at extreme speed using our proprietary AI-powered development methods. Not theory — we prepare actual working prototypes (MVPs) in 1 hour to 1 business day. By aligning requirements with real products, we eliminate rework and reduce development timelines to 1/3 or less."
+      },
+      {
+        "eyebrow": "Reason 3: AI + Human Hybrid Testing Framework",
+        "heading": "Speed-focused, but never compromising on quality.",
+        "body": "Our proprietary development methodology includes rigorous testing processes to ensure quality. Beyond comprehensive AI-driven automated testing, we combine human checks by consultants and engineers to guarantee safe, high-quality solutions that withstand the demands of real-world operations."
+      }
+    ]
+  },
+  "solutions": {
+    "title": "AI for Every Scenario.",
+    "subtitle": "Solutions tailored to your needs",
+    "cards": [
+      {
+        "number": "01",
+        "title": "AI Integration into Business Workflows",
+        "label": "AI Native Workflow",
+        "body": "We embed AI agents into existing flows — from simple repetitive tasks to complex business processing, back-office operations, and customer support. We visualize and accumulate your non-personnel assets, enabling autonomous business logic processing for massive labor cost reduction and elimination of human error."
+      },
+      {
+        "number": "02",
+        "title": "AI Fusion into Core Products",
+        "label": "AI Native Application",
+        "body": "We integrate cutting-edge AI capabilities into your services and new business applications. By delegating complex backend processing to AI, you can launch products with unique competitive advantages at incredible speed while keeping development costs low."
+      },
+      {
+        "number": "03",
+        "title": "AI-Powered Development",
+        "label": "AI Native Development",
+        "body": "Even for ground-up development, our proprietary AI-driven methodology shines. We optimize every stage from concept and requirements through implementation and testing with AI, achieving delivery at unprecedented low cost and short timelines."
+      }
+    ]
+  },
+  "philosophy": {
+    "title": "Development Philosophy",
+    "cards": [
+      { "title": "Business Logic First", "desc": "We work backwards from your business success, not from technology." },
+      { "title": "No Blackbox", "desc": "We make AI processing logic transparent, delivering solutions you own and control with confidence." },
+      { "title": "Speed is Value", "desc": "In an era of uncertainty, getting a working product in your hands as fast as possible is our top priority." }
+    ]
+  },
+  "cta": {
+    "title": "\"How much of our work can be automated with AI?\"\nConsult with our professional team first.",
+    "description": "No formal requirements document needed. Just tell us about your current challenges and what you'd like to achieve. We start with business analysis and can show you a working solution (MVP) in as little as 1 day.",
+    "button": "Get a Free Consultation & Experience 1-Day MVP"
   },
   "services": {
     "title": "Services",
