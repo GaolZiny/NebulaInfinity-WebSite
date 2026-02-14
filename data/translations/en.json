@@ -11,9 +11,9 @@
     "subtitle": "We natively integrate AI into your workflows, products, and systems across every business scenario,\ndramatically reducing time and costs while ensuring quality.\nNebula Infinity transforms cutting-edge AI into real competitive advantage for your business.",
     "cta": "Get a Free Consultation & Request Your MVP",
     "badges": [
-      { "title": "Overwhelming Speed", "desc": "MVP delivery in 1 hour to 1 business day" },
-      { "title": "Compress Cost & Time", "desc": "Reduce to 1/3 or less" },
-      { "title": "Proven Quality", "desc": "AI + Human hybrid testing" }
+      { "title": "Overwhelming Speed", "value": "MVP in 1 hour to 1 business day" },
+      { "title": "Compress Cost & Time", "value": "Reduce to 1/3 or less" },
+      { "title": "Proven Quality", "value": "Professional analysis × AI-driven dev" }
     ]
   },
   "concept": {

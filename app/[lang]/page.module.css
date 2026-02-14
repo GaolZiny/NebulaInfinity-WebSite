@@ -1,6 +1,7 @@
 /* =============================================
    Homepage V3 — page.module.css
    Full rewrite per handoff.md + layout-reference.md
+   Badge: Laurel Wreath style (Z's override)
    ============================================= */
 
 /* === Page Wrapper (existing, preserved) === */
@@ -71,81 +72,57 @@
   max-width: 740px;
 }
 
-/* --- Badges Container --- */
+/* --- Laurel Wreath Badges --- */
 
 .heroBadges {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 32px;
   width: 100%;
 }
-
-/* --- Individual Badge --- */
 
 .badge {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 16px 24px;
-  background: #ffffff;
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(202, 138, 4, 0.2);
-  box-shadow:
-    0 8px 24px rgba(15, 23, 42, 0.08),
-    0 2px 8px rgba(15, 23, 42, 0.04);
-  flex: 1 1 280px;
-  max-width: 340px;
-  transition:
-    transform var(--transition-base),
-    box-shadow var(--transition-base);
+  gap: 4px;
+  flex: 0 1 auto;
+  cursor: default;
 }
 
-.badge:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 12px 32px rgba(15, 23, 42, 0.12),
-    0 4px 12px rgba(15, 23, 42, 0.06);
-  animation-play-state: paused;
+.laurelLeft,
+.laurelRight {
+  width: 36px;
+  height: 72px;
+  flex-shrink: 0;
 }
 
-.badgeIconWrap {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  border-radius: 12px;
-  background: rgba(202, 138, 4, 0.1);
-  color: var(--accent-primary);
-}
-
-.badgeIcon {
-  width: 24px;
-  height: 24px;
-}
-
-.badgeText {
+.badgeContent {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 8px 4px;
+  min-width: 0;
 }
 
 .badgeTitle {
   display: block;
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.01em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
-.badgeDesc {
+.badgeValue {
   display: block;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin-top: 2px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
 }
 
 /* --- Hero CTA --- */
@@ -476,38 +453,11 @@
   margin-top: 8px;
 }
 
-/* ===== Badge Float Animation ===== */
-
-@keyframes badgeFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-.badge:nth-child(1) {
-  animation: badgeFloat 4s ease-in-out infinite;
-}
-
-.badge:nth-child(2) {
-  animation: badgeFloat 4s ease-in-out 0.5s infinite;
-}
-
-.badge:nth-child(3) {
-  animation: badgeFloat 4s ease-in-out 1s infinite;
-}
-
 /* ===== Responsive: 1024px (Tablet) ===== */
 
 @media (max-width: 1024px) {
   .heroBadges {
-    gap: 16px;
-  }
-
-  .badge {
-    flex: 1 1 240px;
+    gap: 24px;
   }
 
   .solutionGrid {
@@ -534,6 +484,20 @@
 
   .heroContent {
     gap: 24px;
+  }
+
+  .heroBadges {
+    gap: 20px;
+  }
+
+  .laurelLeft,
+  .laurelRight {
+    width: 30px;
+    height: 60px;
+  }
+
+  .badgeValue {
+    font-size: 1rem;
   }
 
   .conceptKeywords {
@@ -579,14 +543,25 @@
     font-size: clamp(2rem, 8vw, 2.8rem);
   }
 
+  /* Badges: horizontal → vertical */
   .heroBadges {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    gap: 16px;
   }
 
-  .badge {
-    max-width: 100%;
-    flex: none;
+  .laurelLeft,
+  .laurelRight {
+    width: 28px;
+    height: 56px;
+  }
+
+  .badgeTitle {
+    font-size: 0.75rem;
+  }
+
+  .badgeValue {
+    font-size: 0.95rem;
   }
 
   .conceptKeywords {
@@ -620,11 +595,6 @@
 /* ===== Reduced Motion ===== */
 
 @media (prefers-reduced-motion: reduce) {
-  .badge {
-    animation: none;
-  }
-
-  .badge:hover,
   .competenceCard:hover,
   .solutionCard:hover,
   .philosophyCard:hover {

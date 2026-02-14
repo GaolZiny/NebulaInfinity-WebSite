@@ -14,32 +14,59 @@ const renderWithBreaks = (text: string) =>
     </Fragment>
   ));
 
-/* --- SVG Badge Icons --- */
+/* --- Laurel Wreath SVG Components --- */
 
-const BadgeIconLightning = () => (
-  <svg className={styles.badgeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M13 2L4.5 13h6l-1 9L19 11h-6l1-9z" />
+const LaurelLeft = () => (
+  <svg
+    className={styles.laurelLeft}
+    viewBox="0 0 44 84"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    {/* Stem */}
+    <path
+      d="M32 76 C28 64, 20 52, 18 40 C16 28, 18 18, 22 8"
+      stroke="#CA8A04"
+      strokeWidth="1.2"
+      fill="none"
+    />
+    {/* Leaves arranged along the curved stem */}
+    <ellipse cx="26" cy="66" rx="9" ry="3.8" transform="rotate(-20 26 66)" fill="#CA8A04" opacity="0.82" />
+    <ellipse cx="22" cy="56" rx="8.5" ry="3.5" transform="rotate(-32 22 56)" fill="#CA8A04" opacity="0.85" />
+    <ellipse cx="19" cy="46" rx="8" ry="3.2" transform="rotate(-44 19 46)" fill="#CA8A04" opacity="0.87" />
+    <ellipse cx="17" cy="36" rx="7.5" ry="3" transform="rotate(-54 17 36)" fill="#CA8A04" opacity="0.85" />
+    <ellipse cx="18" cy="26" rx="7" ry="2.8" transform="rotate(-64 18 26)" fill="#CA8A04" opacity="0.82" />
+    <ellipse cx="20" cy="17" rx="6" ry="2.4" transform="rotate(-72 20 17)" fill="#CA8A04" opacity="0.80" />
+    <ellipse cx="23" cy="10" rx="5" ry="2" transform="rotate(-80 23 10)" fill="#CA8A04" opacity="0.75" />
   </svg>
 );
 
-const BadgeIconTrend = () => (
-  <svg className={styles.badgeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M3 7l6 6 4-4 8 8" />
-    <path d="M17 17h4v-4" />
+const LaurelRight = () => (
+  <svg
+    className={styles.laurelRight}
+    viewBox="0 0 44 84"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    {/* Stem (mirrored) */}
+    <path
+      d="M12 76 C16 64, 24 52, 26 40 C28 28, 26 18, 22 8"
+      stroke="#CA8A04"
+      strokeWidth="1.2"
+      fill="none"
+    />
+    {/* Leaves (mirrored) */}
+    <ellipse cx="18" cy="66" rx="9" ry="3.8" transform="rotate(20 18 66)" fill="#CA8A04" opacity="0.82" />
+    <ellipse cx="22" cy="56" rx="8.5" ry="3.5" transform="rotate(32 22 56)" fill="#CA8A04" opacity="0.85" />
+    <ellipse cx="25" cy="46" rx="8" ry="3.2" transform="rotate(44 25 46)" fill="#CA8A04" opacity="0.87" />
+    <ellipse cx="27" cy="36" rx="7.5" ry="3" transform="rotate(54 27 36)" fill="#CA8A04" opacity="0.85" />
+    <ellipse cx="26" cy="26" rx="7" ry="2.8" transform="rotate(64 26 26)" fill="#CA8A04" opacity="0.82" />
+    <ellipse cx="24" cy="17" rx="6" ry="2.4" transform="rotate(72 24 17)" fill="#CA8A04" opacity="0.80" />
+    <ellipse cx="21" cy="10" rx="5" ry="2" transform="rotate(80 21 10)" fill="#CA8A04" opacity="0.75" />
   </svg>
 );
-
-const BadgeIconShield = () => (
-  <svg className={styles.badgeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-    <path d="M9 12l2 2 4-4" />
-  </svg>
-);
-
-const badgeIcons = [<BadgeIconLightning key="b1" />, <BadgeIconTrend key="b2" />, <BadgeIconShield key="b3" />];
 
 /* --- SVG Philosophy Icons (reused from existing principle icons) --- */
 
@@ -89,17 +116,16 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
               {renderWithBreaks(t.hero.subtitle)}
             </p>
 
-            {/* Floating Badges */}
+            {/* Laurel Wreath Badges */}
             <div className={styles.heroBadges}>
-              {t.hero.badges.map((badge, idx) => (
+              {t.hero.badges.map((badge) => (
                 <div key={badge.title} className={styles.badge}>
-                  <span className={styles.badgeIconWrap}>
-                    {badgeIcons[idx]}
-                  </span>
-                  <div className={styles.badgeText}>
+                  <LaurelLeft />
+                  <div className={styles.badgeContent}>
                     <span className={styles.badgeTitle}>{badge.title}</span>
-                    <span className={styles.badgeDesc}>{badge.desc}</span>
+                    <span className={styles.badgeValue}>{badge.value}</span>
                   </div>
+                  <LaurelRight />
                 </div>
               ))}
             </div>
