@@ -72,12 +72,7 @@ const AIIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const Web3Icon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-    <path d="M12 22V12M3 7l9 5 9-5" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-  </svg>
-);
+
 
 const MissionIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -206,21 +201,7 @@ export default function AboutPage({ params }: { params: { lang: Language } }) {
                 </Card>
               ))}
             </div>
-            {/* Web3.0 Column */}
-            <div className={styles.domainColumn}>
-              <div className={styles.domainHeader}>
-                <span className={styles.domainIconWrap}>
-                  <Web3Icon className={styles.domainIcon} />
-                </span>
-                <h3 className={styles.domainTitle}>{t.about.domains.web3.title}</h3>
-              </div>
-              {t.about.domains.web3.items.map((item) => (
-                <Card key={item.title} className={styles.domainCard}>
-                  <h4 className={styles.domainCardTitle}>{item.title}</h4>
-                  <p className={styles.domainCardDescription}>{item.description}</p>
-                </Card>
-              ))}
-            </div>
+
           </div>
           <div className={styles.domainsFooter}>
             <Link href={`/${params.lang}/services`} className={styles.domainsLink}>

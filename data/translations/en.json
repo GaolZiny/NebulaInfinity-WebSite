@@ -138,30 +138,21 @@
     },
     "domains": {
       "sectionTitle": "What We Do",
-      "sectionSubtitle": "Accelerate your business with 3 AI-powered solutions.",
+      "sectionSubtitle": "We approach all business challenges with the power of AI.",
       "ai": {
         "title": "AI Solutions",
         "items": [
           {
-            "title": "AI Integration into Business Workflows",
-            "description": "Embed AI agents into existing workflows to automate document analysis, data processing, and business decisions."
+            "title": "AI Workflow Integration",
+            "description": "Embed AI agents into existing business processes — from automating repetitive tasks to supporting complex decision-making. Improve efficiency and quality simultaneously."
           },
           {
-            "title": "AI Fusion into Core Products",
-            "description": "Fuse cutting-edge AI — RAG, multimodal AI, real-time processing — into your products to create competitive advantages."
+            "title": "AI-Powered Product Development",
+            "description": "Integrate AI capabilities into your services and new ventures, building products with unique competitive advantages."
           },
           {
-            "title": "AI-Powered Contract Development",
-            "description": "Build high-quality products from scratch at extreme speed with our proprietary AI co-development methodology. Working MVP in as little as 1 day."
-          }
-        ]
-      },
-      "web3": {
-        "title": "AI Native Solutions",
-        "items": [
-          {
-            "title": "Blockchain & Smart Contract Development",
-            "description": "Design and implement secure, efficient smart contracts. End-to-end support including audits and gas optimization."
+            "title": "AI-Accelerated Development",
+            "description": "Our proprietary AI-collaborative development methodology delivers products from scratch in one-third the traditional timeline — fast and high-quality."
           }
         ]
       },
@@ -173,7 +164,7 @@
       "items": [
         {
           "title": "Cutting-edge technology, production-ready",
-          "description": "We deliver the latest AI and blockchain technologies in production-ready forms. Not technology for technology's sake — we pursue solutions that drive real outcomes."
+          "description": "We deliver the latest AI technologies in production-ready forms. Not technology for technology's sake — we pursue solutions that drive real outcomes."
         },
         {
           "title": "Transparency and Trust",
@@ -185,7 +176,7 @@
         },
         {
           "title": "Uncompromising Safety",
-          "description": "In AI solutions, data safety and privacy are paramount. We never compromise on security reviews, audits, and risk management."
+          "description": "We enforce rigorous data protection, prompt-injection countermeasures, and output quality controls in AI systems. We deliver solutions you can deploy with confidence."
         }
       ]
     },
