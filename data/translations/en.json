@@ -11,9 +11,18 @@
     "subtitle": "We natively integrate AI into your workflows, products, and systems across every business scenario,\ndramatically reducing time and costs while ensuring quality.\nNebula Infinity transforms cutting-edge AI into real competitive advantage for your business.",
     "cta": "Get a Free Consultation & Request Your MVP",
     "badges": [
-      { "title": "Overwhelming Speed", "value": "MVP in 1 hour to 1 business day" },
-      { "title": "Compress Cost & Time", "value": "Reduce to 1/3 or less" },
-      { "title": "Proven Quality", "value": "Professional analysis × AI-driven dev" }
+      {
+        "title": "Overwhelming Speed",
+        "value": "MVP in 1 hour to 1 business day"
+      },
+      {
+        "title": "Compress Cost & Time",
+        "value": "Reduce to 1/3 or less"
+      },
+      {
+        "title": "Proven Quality",
+        "value": "Professional analysis × AI-driven dev"
+      }
     ]
   },
   "concept": {
@@ -21,7 +30,12 @@
     "lead": "It's not simply about \"adopting AI tools.\" It's about fusing AI capabilities into your core operations, products, and services to simultaneously achieve",
     "leadHighlight": "AI Native Solution",
     "leadAfter": "— efficiency, quality improvement, cost reduction, and time savings. We call this the social implementation of AI, maximizing your competitive edge.",
-    "keywords": ["Efficiency", "Quality", "Cost Reduction", "Time Savings"]
+    "keywords": [
+      "Efficiency",
+      "Quality",
+      "Cost Reduction",
+      "Time Savings"
+    ]
   },
   "competence": {
     "title": "3 Reasons We Achieve Both Speed and Quality",
@@ -70,9 +84,18 @@
   "philosophy": {
     "title": "Development Philosophy",
     "cards": [
-      { "title": "Business Logic First", "desc": "We work backwards from your business success, not from technology." },
-      { "title": "No Blackbox", "desc": "We make AI processing logic transparent, delivering solutions you own and control with confidence." },
-      { "title": "Speed is Value", "desc": "In an era of uncertainty, getting a working product in your hands as fast as possible is our top priority." }
+      {
+        "title": "Business Logic First",
+        "desc": "We work backwards from your business success, not from technology."
+      },
+      {
+        "title": "No Blackbox",
+        "desc": "We make AI processing logic transparent, delivering solutions you own and control with confidence."
+      },
+      {
+        "title": "Speed is Value",
+        "desc": "In an era of uncertainty, getting a working product in your hands as fast as possible is our top priority."
+      }
     ]
   },
   "cta": {
@@ -82,11 +105,11 @@
   },
   "services": {
     "title": "Services",
-    "subtitle": "Automation workflows, AI agents, blockchain development — solving your challenges across four core domains."
+    "subtitle": "Accelerate your business with 3 AI-powered solutions."
   },
   "projects": {
-    "title": "Results speak — proven AI × Web3.0 implementation capabilities",
-    "subtitle": "We apply the technical expertise and know-how gained through our own products to your projects.",
+    "title": "Proven AI Native implementation — backed by our own products",
+    "subtitle": "The AI expertise and know-how cultivated through our own products — that's the proof of value we deliver to you.",
     "viewDetails": "View Details",
     "status": {
       "completed": "Completed",
@@ -95,8 +118,8 @@
     "backToProjects": "Back to Projects"
   },
   "about": {
-    "title": "Building the future of business with AI × Web3.0",
-    "subtitle": "Based in Tokyo, we deliver cutting-edge solutions powered by AI and blockchain technology. From business analysis to implementation and operations, we provide end-to-end support to accelerate digital transformation.",
+    "title": "Building the future of business with AI Native",
+    "subtitle": "Based in Tokyo, we deliver cutting-edge AI-powered solutions. From business analysis to implementation and operations, we provide end-to-end support to accelerate digital transformation.",
     "company": {
       "sectionTitle": "Company Information",
       "sectionSubtitle": "As a trusted partner, we provide transparent information.",
@@ -107,28 +130,39 @@
       "domainLabel": "Website",
       "domain": "nebulainfinity.com",
       "businessLabel": "Business",
-      "business": "AI & Web3.0 Solution Development",
+      "business": "AI Solution Development",
       "clientsLabel": "Key Clients",
       "clients": "Enterprises, Startups & Developer Communities",
       "productsLabel": "Our Products",
-      "products": "Astra / Regel / AgentSkills.jp / Carina"
+      "products": "Japan Life Navi / Rigel / AgentSkills.jp / Carina"
     },
     "domains": {
       "sectionTitle": "What We Do",
-      "sectionSubtitle": "We deliver advanced solutions across two domains: AI and Web3.0.",
+      "sectionSubtitle": "Accelerate your business with 3 AI-powered solutions.",
       "ai": {
         "title": "AI Solutions",
         "items": [
-          { "title": "Automation Workflow Development", "description": "Analyze workflows and automate repetitive tasks with AI. Reduce time and costs while eliminating human error." },
-          { "title": "Custom AI Agent Development", "description": "Build AI agents that understand business processes and act autonomously with intelligent decision-making." },
-          { "title": "AI Application Development", "description": "Implement custom applications leveraging cutting-edge AI: RAG, image generation, voice processing, and more." }
+          {
+            "title": "AI Integration into Business Workflows",
+            "description": "Embed AI agents into existing workflows to automate document analysis, data processing, and business decisions."
+          },
+          {
+            "title": "AI Fusion into Core Products",
+            "description": "Fuse cutting-edge AI — RAG, multimodal AI, real-time processing — into your products to create competitive advantages."
+          },
+          {
+            "title": "AI-Powered Contract Development",
+            "description": "Build high-quality products from scratch at extreme speed with our proprietary AI co-development methodology. Working MVP in as little as 1 day."
+          }
         ]
       },
       "web3": {
         "title": "Web3.0 Solutions",
         "items": [
-          { "title": "Blockchain & Smart Contract Development", "description": "Design and implement secure, efficient smart contracts. End-to-end support including audits and gas optimization." },
-          { "title": "Web3.0 Application Development", "description": "Create next-generation Web3.0 experiences: NFTs, DApps, token economics, and more." }
+          {
+            "title": "Blockchain & Smart Contract Development",
+            "description": "Design and implement secure, efficient smart contracts. End-to-end support including audits and gas optimization."
+          }
         ]
       },
       "viewServices": "View Services →"
@@ -137,34 +171,61 @@
       "sectionTitle": "Our Core Values",
       "sectionSubtitle": "Four fundamental principles that guide how we work.",
       "items": [
-        { "title": "Cutting-edge technology, production-ready", "description": "We deliver the latest AI and blockchain technologies in production-ready forms. Not technology for technology's sake — we pursue solutions that drive real outcomes." },
-        { "title": "Transparency and Trust", "description": "We openly share development processes, decision rationales, and execution logs. Client confidence and operational safety are our top priorities." },
-        { "title": "End-to-End Value Delivery", "description": "Consistent support from concept through design, implementation, and operations. We deliver a seamless development experience with no gaps." },
-        { "title": "Uncompromising Safety", "description": "Blockchain deployments are immutable. That's why we never compromise on security reviews, audits, and risk management." }
+        {
+          "title": "Cutting-edge technology, production-ready",
+          "description": "We deliver the latest AI and blockchain technologies in production-ready forms. Not technology for technology's sake — we pursue solutions that drive real outcomes."
+        },
+        {
+          "title": "Transparency and Trust",
+          "description": "We openly share development processes, decision rationales, and execution logs. Client confidence and operational safety are our top priorities."
+        },
+        {
+          "title": "End-to-End Value Delivery",
+          "description": "Consistent support from concept through design, implementation, and operations. We deliver a seamless development experience with no gaps."
+        },
+        {
+          "title": "Uncompromising Safety",
+          "description": "In AI solutions, data safety and privacy are paramount. We never compromise on security reviews, audits, and risk management."
+        }
       ]
     },
     "mission": {
       "title": "Mission",
-      "description": "Maximize business potential through the power of AI and Web3.0.\nWe transform cutting-edge technology into practical solutions, accelerating our clients' growth. From business analysis to implementation and operations, we deliver results with consistent, end-to-end support."
+      "description": "Maximize business potential through the power of AI.\nWe transform cutting-edge AI technology into practical solutions, accelerating our clients' growth. From business analysis to implementation and operations, we deliver results with consistent, end-to-end support."
     },
     "vision": {
       "title": "Vision",
-      "description": "A world where everyone can harness advanced technology.\nWe remove technical complexity and create a future where AI agents and blockchain become everyday tools for everyone."
+      "description": "A world where everyone can harness advanced technology.\nWe remove technical complexity and create a future where AI agents become everyday tools for everyone."
     },
     "whyUs": {
       "sectionTitle": "Why Choose Us",
       "sectionSubtitle": "Five proven strengths that set Nebula Infinity apart.",
       "points": [
-        { "title": "Business Analysis & Requirements Definition", "description": "Our experienced consultants carefully analyze your workflows. We accurately understand real-world challenges and extract only the necessary features — avoiding over-engineering and proposing optimal solutions." },
-        { "title": "Process Analysis & Workflow Design", "description": "We thoroughly analyze business processes and extract complete business logic. Drawing on extensive experience, we design automation workflows that work at production scale — not just in theory, but in real operations." },
-        { "title": "One-Stop Service", "description": "We support everything from initial concept through implementation to operations. Full-stack coverage: frontend, backend, infrastructure, and smart contract development. No fragmented contacts or information gaps." },
-        { "title": "Cutting-Edge Technology", "description": "We continuously stay current with the latest AI and blockchain technologies. Supporting the newest LLMs (OpenAI, Anthropic Claude) and major chains (Ethereum, Polygon), we deliver optimal solutions tailored to you." },
-        { "title": "Proprietary High-Efficiency Development Methods", "description": "Using AI-powered development environments and our proprietary methodologies and process controls, we achieve exceptionally fast development. We can implement MVPs in as little as 1 hour, accelerating hypothesis-validation cycles." }
+        {
+          "title": "Business Analysis & Requirements Definition",
+          "description": "Our experienced consultants carefully analyze your workflows. We accurately understand real-world challenges and extract only the necessary features — avoiding over-engineering and proposing optimal solutions."
+        },
+        {
+          "title": "Process Analysis & Workflow Design",
+          "description": "We thoroughly analyze business processes and extract complete business logic. Drawing on extensive experience, we design automation workflows that work at production scale — not just in theory, but in real operations."
+        },
+        {
+          "title": "One-Stop Service",
+          "description": "We support everything from initial concept through implementation to operations. Full-stack coverage: frontend, backend, infrastructure, and smart contract development. No fragmented contacts or information gaps."
+        },
+        {
+          "title": "Cutting-Edge Technology",
+          "description": "We continuously stay current with the latest AI technologies. Supporting the newest LLMs — OpenAI, Anthropic Claude, Google Gemini — we deliver optimal solutions tailored to you."
+        },
+        {
+          "title": "Proprietary High-Efficiency Development Methods",
+          "description": "Using AI-powered development environments and our proprietary methodologies and process controls, we achieve exceptionally fast development. We can implement MVPs in as little as 1 hour, accelerating hypothesis-validation cycles."
+        }
       ]
     },
     "cta": {
       "title": "Let's discuss your project",
-      "description": "AI agents, automation workflows, Web3.0 applications — we're ready to discuss any project with you.",
+      "description": "AI agents, workflow automation, AI-driven product development — we're ready to discuss any project with you.",
       "contact": "Contact Us",
       "services": "View Services"
     }
@@ -172,7 +233,7 @@
   "contact": {
     "eyebrow": "Contact Us",
     "title": "Let's discuss your project",
-    "subtitle": "AI agents, automation workflows, Web3.0 applications — feel free to contact us with any inquiry. We'll work together to solve your business challenges.",
+    "subtitle": "AI agents, workflow automation, AI-driven product development — feel free to contact us with any inquiry. We'll work together to solve your business challenges.",
     "form": {
       "name": "Name",
       "namePlaceholder": "Your name",
@@ -184,10 +245,13 @@
       "phonePlaceholder": "Your phone (optional)",
       "inquiryType": "Inquiry Type",
       "inquiryTypes": {
-        "automationWorkflow": "Automation Workflow Development",
-        "customAiAgent": "Custom AI Agent Development",
-        "blockchainSmartContract": "Blockchain & Smart Contract Development",
-        "applicationDev": "Application Development (Web3.0/AI)",
+        "automationWorkflow": "AI Workflow Integration",
+        "customAiAgent": "AI-Driven Product Development",
+        "blockchainSmartContract": "AI-Powered Contract Development",
+        "applicationDev": "Other",
+        "aiWorkflow": "AI Workflow Integration",
+        "aiProduct": "AI-Driven Product Development",
+        "aiDevelopment": "AI-Powered Contract Development",
         "other": "Other"
       },
       "message": "Message",
@@ -231,7 +295,7 @@
         },
         {
           "question": "What about security measures?",
-          "answer": "We implement comprehensive security measures including smart contract security audits, code reviews, and gas optimization. Blockchain projects undergo especially rigorous review."
+          "answer": "We implement comprehensive security measures including AI model I/O data management, API security, code reviews, and infrastructure security audits. We apply appropriate protection measures based on each project's characteristics."
         }
       ]
     }

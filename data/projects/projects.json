@@ -1,46 +1,40 @@
 {
   "projects": [
     {
-      "id": "astra",
-      "slug": "astra",
-      "name": {
-        "ja": "Astra",
-        "en": "Astra"
-      },
+      "id": "gaijin-life-navi",
+      "slug": "gaijin-life-navi",
+      "name": { "ja": "Japan Life Navi", "en": "Japan Life Navi" },
       "icon": null,
       "shortDescription": {
-        "ja": "プロジェクト情報を理解し、自律的に管理業務を支援する AI エージェント。WBS、課題管理、スケジュール調整、レポート生成を自動化します。",
-        "en": "An AI agent that understands project information and autonomously supports management tasks. Automates WBS, issue tracking, scheduling, and report generation."
+        "ja": "外国人向けAI生活ナビゲーション。336ガイド×7言語対応、6ドメインAIエージェント、SSEストリーミングチャット、画像分析機能を搭載。",
+        "en": "AI-powered life navigation for foreigners in Japan. 336 guides in 7 languages, 6 domain AI agents, SSE streaming chat, and image analysis."
       },
-      "tags": ["AI Agent", "Project Management", "LangChain", "OpenAI", "Automation"],
-      "category": "ai"
+      "tags": ["AI Agent", "Gemini API", "Python", "Flutter", "PostgreSQL", "Firebase"],
+      "category": "ai",
+      "status": "live",
+      "url": "https://japan-life-navi.nebulainfinity.com"
     },
     {
-      "id": "regel",
-      "slug": "regel",
-      "name": {
-        "ja": "Regel",
-        "en": "Regel"
-      },
+      "id": "rigel",
+      "slug": "rigel",
+      "name": { "ja": "Rigel", "en": "Rigel" },
       "icon": null,
       "shortDescription": {
-        "ja": "小規模事業主・個人事業主・外国人経営者向けの AI 記帳アプリ。票據を撮影するだけで、自動仕訳・帳簿生成が完了します。",
-        "en": "AI bookkeeping app for small business owners, sole proprietors, and foreign entrepreneurs. Just photograph receipts for automatic journaling and ledger generation."
+        "ja": "フリーランス・小規模事業者向けAI記帳SaaS。6業種AI対応、自然言語入力、OCRレシート読取、電帳法・インボイス制度準拠。33,000行超・367テスト。",
+        "en": "AI bookkeeping SaaS for freelancers and small businesses. 6-industry AI support, natural language input, OCR receipt scanning, fully compliant with Japanese tax regulations. 33K+ LOC, 367 tests."
       },
-      "tags": ["AI", "OCR", "Bookkeeping", "React Native", "Next.js"],
-      "category": "ai"
+      "tags": ["AI", "Hono", "TypeScript", "Flutter", "PostgreSQL", "Stripe"],
+      "category": "ai",
+      "status": "complete"
     },
     {
       "id": "agent-skills-jp",
       "slug": "agent-skills-jp",
-      "name": {
-        "ja": "AgentSkills.jp",
-        "en": "AgentSkills.jp"
-      },
+      "name": { "ja": "AgentSkills.jp", "en": "AgentSkills.jp" },
       "icon": null,
       "shortDescription": {
-        "ja": "AI エージェント向けスキルの日本語プラットフォーム。厳選されたスキルを審査・評価し、安心して利用できる環境を提供します。",
-        "en": "A Japanese-language platform for AI agent skills. We audit and evaluate curated skills, providing a safe environment for use."
+        "ja": "AIエージェント向けスキルの日本語プラットフォーム。厳選されたスキルを審査・評価し、安心して利用できる環境を提供。",
+        "en": "Japanese-language platform for AI agent skills. Audited and evaluated curated skills in a safe environment."
       },
       "tags": ["AI Agent", "OpenClaw", "Skills Platform", "Next.js", "TypeScript"],
       "url": "https://agentskills.jp",
@@ -49,14 +43,11 @@
     {
       "id": "carina",
       "slug": "carina",
-      "name": {
-        "ja": "Carina",
-        "en": "Carina"
-      },
+      "name": { "ja": "Carina", "en": "Carina" },
       "icon": null,
       "shortDescription": {
-        "ja": "小売業者向け Web3.0 CRM。積分、優惠券、会員証をブロックチェーンで管理し、顧客との新しい関係を構築します。",
-        "en": "Web3.0 CRM for retailers. Manage points, coupons, and membership cards on blockchain — build new customer relationships."
+        "ja": "小売業者向けWeb3.0 CRM。ポイント・クーポン・会員証をブロックチェーンで管理。",
+        "en": "Web3.0 CRM for retailers. Manage points, coupons, and memberships on blockchain."
       },
       "tags": ["Web3.0", "Polygon", "Smart Contract", "CRM", "NFT"],
       "category": "web3"
