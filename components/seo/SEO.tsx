@@ -79,7 +79,7 @@ export function generateOrganizationSchema() {
     url: 'https://www.nebulainfinity.com',
     logo: 'https://www.nebulainfinity.com/images/logo.png',
     description:
-      'Web3.0とブロックチェーン技術の専門企業 / Specialized company in Web3.0 and blockchain technology',
+      'AI Native開発の専門企業 / Specialized company in AI Native development',
     contactPoint: {
       '@type': 'ContactPoint',
       email: 'info@nebulainfinity.com',

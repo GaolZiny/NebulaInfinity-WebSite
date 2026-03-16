@@ -30,8 +30,8 @@ export default function Footer({ lang }: FooterProps) {
             </div>
             <p className={styles.description}>
               {lang === 'ja'
-                ? 'AI × Web3.0 で、ビジネスの未来を実装する'
-                : 'Building the future of business with AI × Web3.0'}
+                ? 'AIの力で、ビジネスの未来を実装する'
+                : 'Building the future of business with AI'}
             </p>
           </div>
 
