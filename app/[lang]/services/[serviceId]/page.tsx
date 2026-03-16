@@ -5,18 +5,16 @@ import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import { getServiceById, services } from '@/data/services';
 import {
-  AutomationWorkflowIcon,
-  CustomAIAgentIcon,
-  BlockchainSmartContractIcon,
-  ApplicationDevelopmentIcon,
+  AIWorkflowIcon,
+  AIProductIcon,
+  AIDevIcon,
 } from '@/components/ui/icons/ServiceIcons';
 import styles from './page.module.css';
 
 const iconMap: Record<string, React.ReactNode> = {
-  'automation-workflow': <AutomationWorkflowIcon />,
-  'custom-ai-agent': <CustomAIAgentIcon />,
-  'blockchain-smart-contract': <BlockchainSmartContractIcon />,
-  'application-development': <ApplicationDevelopmentIcon />,
+  'ai-workflow': <AIWorkflowIcon />,
+  'ai-product': <AIProductIcon />,
+  'ai-development': <AIDevIcon />,
 };
 
 export async function generateStaticParams() {

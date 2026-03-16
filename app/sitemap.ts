@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import projectsData from '@/data/projects/projects.json';
+import { services } from '@/data/services';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.nebulainfinity.com';
@@ -27,5 +28,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticEntries, ...projectEntries];
+  // 生成サービス詳細ページの sitemap 条目
+  const serviceEntries = languages.flatMap((lang) =>
+    services.map((service) => ({
+      url: `${baseUrl}/${lang}/services/${service.id}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
+  );
+
+  return [...staticEntries, ...serviceEntries, ...projectEntries];
 }

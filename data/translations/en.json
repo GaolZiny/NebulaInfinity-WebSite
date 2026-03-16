@@ -245,10 +245,6 @@
       "phonePlaceholder": "Your phone (optional)",
       "inquiryType": "Inquiry Type",
       "inquiryTypes": {
-        "automationWorkflow": "AI Workflow Integration",
-        "customAiAgent": "AI-Driven Product Development",
-        "blockchainSmartContract": "AI-Powered Contract Development",
-        "applicationDev": "Other",
         "aiWorkflow": "AI Workflow Integration",
         "aiProduct": "AI-Driven Product Development",
         "aiDevelopment": "AI-Powered Contract Development",
@@ -308,5 +304,12 @@
     "learnMore": "Learn More",
     "viewAll": "View All",
     "loading": "Loading..."
+  },
+  "home": {
+    "projects": {
+      "title": "Proven AI Native Implementation",
+      "subtitle": "Built with our own technology and know-how",
+      "viewAll": "View all projects →"
+    }
   }
 }

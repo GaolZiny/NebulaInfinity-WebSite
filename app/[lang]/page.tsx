@@ -5,6 +5,9 @@ import Button from '@/components/ui/Button';
 import styles from './page.module.css';
 import translations from '@/data/translations/ja.json';
 import translationsEn from '@/data/translations/en.json';
+import projectsData from '@/data/projects/projects.json';
+import gaijinLifeNaviData from '@/data/projects/gaijin-life-navi.json';
+import rigelData from '@/data/projects/rigel.json';
 
 const renderWithBreaks = (text: string) =>
   text.split('\n').map((line, i) => (
@@ -94,6 +97,7 @@ const philosophyIcons = [
 
 export async function generateMetadata({ params }: { params: { lang: Language } }) {
   const t = params.lang === 'ja' ? translations : translationsEn;
+  const isJa = params.lang === 'ja';
   return {
     title: `Nebula Infinity - ${t.hero.title.replace('\n', ' ')}`,
     description: t.hero.subtitle.replace(/\n/g, ' '),
@@ -102,6 +106,7 @@ export async function generateMetadata({ params }: { params: { lang: Language } 
 
 export default function HomePage({ params }: { params: { lang: Language } }) {
   const t = params.lang === 'ja' ? translations : translationsEn;
+  const isJa = params.lang === 'ja';
 
   return (
     <div className={styles.page}>
@@ -198,6 +203,102 @@ export default function HomePage({ params }: { params: { lang: Language } }) {
                 <p className={styles.solutionBody}>{card.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Projects Highlight ===== */}
+      <section className={styles.projectsHighlight} aria-labelledby="projects-title">
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2 id="projects-title" className={styles.sectionTitle}>
+              {(t as any).home?.projects?.title ?? '実績で証明する、AI Native の実装力'}
+            </h2>
+            <p className={styles.sectionSubtitle}>
+              {(t as any).home?.projects?.subtitle ?? '自社プロダクトで培った技術とノウハウ'}
+            </p>
+          </div>
+          <div className={styles.projectCards}>
+            {/* Japan Life Navi */}
+            {(() => {
+              const project = projectsData.projects.find(p => p.id === 'gaijin-life-navi');
+              if (!project) return null;
+              const kpis = gaijinLifeNaviData.kpis;
+              return (
+                <Link href={`/${params.lang}/projects/${project.slug}`} className={styles.projectCard}>
+                  <div className={styles.projectCardHeader}>
+                    <h3 className={styles.projectCardTitle}>
+                      {isJa ? project.name.ja : project.name.en}
+                    </h3>
+                    <span className={styles.projectStatusBadge} data-status="live">🟢 Live</span>
+                  </div>
+                  <p className={styles.projectCardDesc}>
+                    {isJa ? project.shortDescription.ja : project.shortDescription.en}
+                  </p>
+                  <div className={styles.projectKpis}>
+                    <span className={styles.kpiItem}>
+                      <span className={styles.kpiValue}>{kpis.guides}</span>
+                      <span className={styles.kpiLabel}>{isJa ? 'ガイド' : 'Guides'}</span>
+                    </span>
+                    <span className={styles.kpiDivider}>|</span>
+                    <span className={styles.kpiItem}>
+                      <span className={styles.kpiValue}>{kpis.languages}</span>
+                      <span className={styles.kpiLabel}>{isJa ? '言語' : 'Languages'}</span>
+                    </span>
+                    <span className={styles.kpiDivider}>|</span>
+                    <span className={styles.kpiItem}>
+                      <span className={styles.kpiValue}>{kpis.aiAgents}</span>
+                      <span className={styles.kpiLabel}>{isJa ? 'AIエージェント' : 'AI Agents'}</span>
+                    </span>
+                  </div>
+                </Link>
+              );
+            })()}
+            {/* Rigel */}
+            {(() => {
+              const project = projectsData.projects.find(p => p.id === 'rigel');
+              if (!project) return null;
+              const kpis = rigelData.kpis;
+              return (
+                <Link href={`/${params.lang}/projects/${project.slug}`} className={styles.projectCard}>
+                  <div className={styles.projectCardHeader}>
+                    <h3 className={styles.projectCardTitle}>
+                      {isJa ? project.name.ja : project.name.en}
+                    </h3>
+                    <span className={styles.projectStatusBadge} data-status="complete">✅ Complete</span>
+                  </div>
+                  <p className={styles.projectCardDesc}>
+                    {isJa ? project.shortDescription.ja : project.shortDescription.en}
+                  </p>
+                  <div className={styles.projectKpis}>
+                    <span className={styles.kpiItem}>
+                      <span className={styles.kpiValue}>{kpis.loc}</span>
+                      <span className={styles.kpiLabel}>LOC</span>
+                    </span>
+                    <span className={styles.kpiDivider}>|</span>
+                    <span className={styles.kpiItem}>
+                      <span className={styles.kpiValue}>{kpis.tests}</span>
+                      <span className={styles.kpiLabel}>{isJa ? 'テスト' : 'Tests'}</span>
+                    </span>
+                    <span className={styles.kpiDivider}>|</span>
+                    <span className={styles.kpiItem}>
+                      <span className={styles.kpiValue}>{kpis.apiEndpoints}</span>
+                      <span className={styles.kpiLabel}>API</span>
+                    </span>
+                    <span className={styles.kpiDivider}>|</span>
+                    <span className={styles.kpiItem}>
+                      <span className={styles.kpiValue}>{kpis.industries}</span>
+                      <span className={styles.kpiLabel}>{isJa ? '業種対応' : 'Industries'}</span>
+                    </span>
+                  </div>
+                </Link>
+              );
+            })()}
+          </div>
+          <div className={styles.projectsViewAll}>
+            <Link href={`/${params.lang}/projects`} className={styles.viewAllLink}>
+              {(t as any).home?.projects?.viewAll ?? 'すべてのプロジェクトを見る →'}
+            </Link>
           </div>
         </div>
       </section>

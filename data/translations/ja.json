@@ -245,10 +245,6 @@
       "phonePlaceholder": "03-1234-5678",
       "inquiryType": "お問い合わせ種別",
       "inquiryTypes": {
-        "automationWorkflow": "業務フローへのAI統合",
-        "customAiAgent": "AI駆動プロダクト開発",
-        "blockchainSmartContract": "AI活用開発（受託）",
-        "applicationDev": "その他",
         "aiWorkflow": "業務フローへのAI統合",
         "aiProduct": "AI駆動プロダクト開発",
         "aiDevelopment": "AI活用開発（受託）",
@@ -308,5 +304,12 @@
     "learnMore": "詳しく見る",
     "viewAll": "すべて見る",
     "loading": "読み込み中..."
+  },
+  "home": {
+    "projects": {
+      "title": "実績で証明する、AI Native の実装力",
+      "subtitle": "自社プロダクトで培った技術とノウハウ",
+      "viewAll": "すべてのプロジェクトを見る →"
+    }
   }
 }

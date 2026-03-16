@@ -1,3 +1,13 @@
+# Old service URLs → new service URLs
+/ja/services/automation-workflow  /ja/services/ai-workflow  301
+/en/services/automation-workflow  /en/services/ai-workflow  301
+/ja/services/custom-ai-agent  /ja/services/ai-workflow  301
+/en/services/custom-ai-agent  /en/services/ai-workflow  301
+/ja/services/blockchain-smart-contract  /ja/services/ai-product  301
+/en/services/blockchain-smart-contract  /en/services/ai-product  301
+/ja/services/application-development  /ja/services/ai-product  301
+/en/services/application-development  /en/services/ai-product  301
+
 # Cloudflare Pages redirects
 
 # Redirect root to Japanese homepage
