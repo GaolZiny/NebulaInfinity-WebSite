@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { getLanguage, languages, type Language } from '@/lib/i18n';
+import { getLanguage, languages } from '@/lib/i18n';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 

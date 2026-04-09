@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getLanguage, type Language } from '@/lib/i18n';
+import { getLanguage } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
 import { services } from '@/data/services';
 import projectsData from '@/data/projects/projects.json';

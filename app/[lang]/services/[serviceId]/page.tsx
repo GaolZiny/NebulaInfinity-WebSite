@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getLanguage, type Language } from '@/lib/i18n';
+import { getLanguage } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
 import { getServiceById, services } from '@/data/services';
 import styles from '@/styles/marketing.module.css';

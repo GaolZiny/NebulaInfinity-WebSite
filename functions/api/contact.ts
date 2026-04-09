@@ -5,21 +5,25 @@ import {
   validateContactFormInput,
   type ContactFormInput,
 } from '../../lib/contact';
+import {
+  buildContactCorsHeaders,
+  isContactRequestOriginAllowed,
+  parseAllowedContactOrigins,
+} from '../../lib/contact-request';
 
 interface Env {
   SENDGRID_API_KEY?: string;
   CONTACT_TO_EMAIL?: string;
   CONTACT_FROM_EMAIL?: string;
+  CONTACT_ALLOWED_ORIGINS?: string;
 }
 
-function json(body: unknown, status = 200) {
+function json(body: unknown, status = 200, corsHeaders: Record<string, string> = {}) {
   return new Response(JSON.stringify(body), {
     status,
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
+      ...corsHeaders,
     },
   });
 }
@@ -63,12 +67,26 @@ export async function onRequestPost(context: {
   request: Request;
   env: Env;
 }): Promise<Response> {
+  const allowedOrigins = parseAllowedContactOrigins(context.env.CONTACT_ALLOWED_ORIGINS);
+  const { requestOrigin, isAllowed } = isContactRequestOriginAllowed(context.request, allowedOrigins);
+  const corsHeaders = buildContactCorsHeaders(requestOrigin, allowedOrigins);
   let payload: ContactFormInput;
+
+  if (!isAllowed) {
+    return json(
+      {
+        error: 'origin_not_allowed',
+        message: 'This contact endpoint only accepts requests from approved website origins.',
+      },
+      403,
+      corsHeaders,
+    );
+  }
 
   try {
     payload = (await context.request.json()) as ContactFormInput;
   } catch {
-    return json({ error: 'invalid_json', message: 'Invalid request body' }, 400);
+    return json({ error: 'invalid_json', message: 'Invalid request body' }, 400, corsHeaders);
   }
 
   const validation = validateContactFormInput(payload);
@@ -81,6 +99,7 @@ export async function onRequestPost(context: {
         fieldErrors: toLocalizedValidationErrors(validation.errors, validation.normalized.lang),
       },
       400,
+      corsHeaders,
     );
   }
 
@@ -98,12 +117,13 @@ export async function onRequestPost(context: {
             : 'The contact form is temporarily unavailable. Please email info@nebulainfinity.com directly.',
       },
       503,
+      corsHeaders,
     );
   }
 
   try {
     await sendViaSendGrid(context.env, validation.normalized);
-    return json({ success: true, message: 'Inquiry delivered successfully.' });
+    return json({ success: true, message: 'Inquiry delivered successfully.' }, 200, corsHeaders);
   } catch (error) {
     console.error('Contact delivery failed:', error);
     return json(
@@ -115,17 +135,21 @@ export async function onRequestPost(context: {
             : 'We could not send the form. Please contact info@nebulainfinity.com directly.',
       },
       502,
+      corsHeaders,
     );
   }
 }
 
-export async function onRequestOptions(): Promise<Response> {
+export async function onRequestOptions(context: {
+  request: Request;
+  env: Env;
+}): Promise<Response> {
+  const allowedOrigins = parseAllowedContactOrigins(context.env.CONTACT_ALLOWED_ORIGINS);
+  const { requestOrigin, isAllowed } = isContactRequestOriginAllowed(context.request, allowedOrigins);
+  const corsHeaders = buildContactCorsHeaders(requestOrigin, allowedOrigins);
+
   return new Response(null, {
-    status: 204,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
+    status: isAllowed ? 204 : 403,
+    headers: corsHeaders,
   });
 }

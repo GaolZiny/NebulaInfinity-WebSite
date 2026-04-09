@@ -1,17 +1,23 @@
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
+import nextPlugin from '@next/eslint-plugin-next';
 
-export default [
+const nextRules = {
+  ...nextPlugin.configs.recommended.rules,
+  ...nextPlugin.configs['core-web-vitals'].rules,
+};
+
+export default tseslint.config(
   {
-    ignores: ['.next/**', 'out/**', 'node_modules/**'],
+    ignores: ['.next/**', 'out/**', 'node_modules/**', 'js/**', 'next-env.d.ts'],
   },
+  ...tseslint.configs.recommended,
   {
     files: ['**/*.{js,jsx,ts,tsx,mjs,cjs}'],
     languageOptions: {
-      parser: tseslint.parser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
         ecmaFeatures: {
           jsx: true,
         },
@@ -22,8 +28,12 @@ export default [
       },
     },
     plugins: {
-      '@typescript-eslint': tseslint.plugin,
+      '@next/next': nextPlugin,
     },
-    rules: {},
+    rules: {
+      ...nextRules,
+      '@next/next/no-img-element': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
   },
-];
+);
