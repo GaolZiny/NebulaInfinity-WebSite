@@ -29,10 +29,10 @@ Rebuild the website’s V1 business positioning so the site is actually usable f
 - Rebranding beyond the approved positioning lines above
 
 ## Status
-- PM doc lock: in progress
-- Design / copy production: pending
-- Implementation: pending
-- QA / deploy confirmation: pending
+- PM doc lock: done
+- Design / copy production: done
+- Implementation: done
+- QA / deploy confirmation: QA done, deploy/env config pending
 
 ## Verification Targets
 - Messaging is consistent across Home / Services / Projects / About / Contact

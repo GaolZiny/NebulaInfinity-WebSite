@@ -4,6 +4,14 @@
 - Prior content repositioning pipeline (`pipeline-035`) is complete, but its AI-only positioning is now superseded by the new V1 direction.
 - Design Foundation for the V1 positioning reset has been produced and PM-verified; waiting for Z approval before visual/page design.
 - Visual/page design batch for the V1 positioning rebuild has been produced and PM-verified; waiting for Z approval before implementation.
+- Step 3 implementation for the V1 positioning rebuild is PM-verified on commit `92c76c6`; code review is now in progress before tester QA.
+- Code review on commit `92c76c6` requested targeted fixes before QA: wrong legacy `ai-development` redirect target and missing server-verifiable contact anti-abuse control.
+- Review-fix iteration on commit `75abe40` is PM-verified: legacy `ai-development` redirect now points to AI Workflow and contact anti-abuse now uses a server-side origin allowlist with aligned CORS.
+- Code review rerun on commit `75abe40` is APPROVED; tester QA is now in progress.
+- Final tester QA passed on QA commit `7a505a4`; the website is accepted as V1 usable-state from product/QA perspective.
+- Production deployment is still an operational follow-up: Cloudflare Pages deployment and live SendGrid env configuration were not executed in this pipeline.
+- Contact flow now uses a real SendGrid-backed delivery path with honest provider-missing failure behavior.
+- Next.js was upgraded to 15.5.14 during implementation to clear high-severity audit issues while preserving static export.
 - V1 usable-state planning is now locked around 3 service lines:
   1. AI Workflow Design & Development
   2. AI Application Design & Development
@@ -24,7 +32,7 @@
 ### Epics
 | Epic | Status | Features |
 |------|--------|----------|
-| website-redesign | progressing | content-overhaul (legacy), v1-design-foundation (approved), v1-positioning-rebuild (awaiting Z approval for visual batch) |
+| website-redesign | accepted | content-overhaul (legacy), v1-design-foundation (approved), v1-positioning-rebuild (accepted: V1 usable-state) |
 
 ## Current Feature Focus
 - **Epic**: `website-redesign`
@@ -49,6 +57,9 @@
 | 2026-04-09 | Blog removed from V1 scope | Focus on usable-state business site first |
 | 2026-04-09 | V1 Design Foundation produced and PM-verified | Required gate before page-level redesign and implementation |
 | 2026-04-09 | V1 page visual batch produced and PM-verified | Required gate before implementation step |
+| 2026-04-09 | V1 implementation verified on commit `92c76c6` | Static analysis, build/export, browser verification, and contact 503 fallback check passed |
+| 2026-04-09 | Code review rerun approved on commit `75abe40` | Redirect and anti-abuse fixes accepted; pipeline advanced to tester QA |
+| 2026-04-09 | Final tester QA PASS on commit `75abe40` | V1 usable-state accepted; deploy/env configuration remains operational follow-up |
 
 ## Technical Details
 - **Domain**: nebulainfinity.com
