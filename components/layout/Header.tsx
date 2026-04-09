@@ -1,75 +1,123 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useMemo, useState } from 'react';
 import { type Language } from '@/lib/i18n';
 import styles from './Header.module.css';
-import translations from '@/data/translations/ja.json';
-import translationsEn from '@/data/translations/en.json';
 
 interface HeaderProps {
   lang: Language;
 }
 
+const labels = {
+  ja: {
+    home: 'ホーム',
+    services: 'サービス',
+    projects: 'プロジェクト',
+    about: '会社概要',
+    contact: 'お問い合わせ',
+    contactCta: 'お問い合わせ',
+    toggleMenu: 'メニューを開く',
+    closeMenu: 'メニューを閉じる',
+  },
+  en: {
+    home: 'Home',
+    services: 'Services',
+    projects: 'Projects',
+    about: 'About',
+    contact: 'Contact',
+    contactCta: 'Contact Us',
+    toggleMenu: 'Open menu',
+    closeMenu: 'Close menu',
+  },
+} as const;
+
 export default function Header({ lang }: HeaderProps) {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const t = lang === 'ja' ? translations : translationsEn;
+  const t = labels[lang];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 12);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { href: `/${lang}/`, label: t.nav.home },
-    { href: `/${lang}/about`, label: t.nav.about },
-    { href: `/${lang}/services`, label: t.nav.services },
-    { href: `/${lang}/projects`, label: t.nav.projects },
-    { href: `/${lang}/contact`, label: t.nav.contact },
-  ];
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
-  const toggleLanguage = () => {
-    const newLang = lang === 'ja' ? 'en' : 'ja';
-    const currentPath = window.location.pathname.replace(`/${lang}`, '');
-    window.location.href = `/${newLang}${currentPath}`;
+  const navItems = useMemo(
+    () => [
+      { href: `/${lang}/`, label: t.home },
+      { href: `/${lang}/services`, label: t.services },
+      { href: `/${lang}/projects`, label: t.projects },
+      { href: `/${lang}/about`, label: t.about },
+      { href: `/${lang}/contact`, label: t.contact },
+    ],
+    [lang, t],
+  );
+
+  const alternatePath = useMemo(() => {
+    if (!pathname) {
+      return `/${lang === 'ja' ? 'en' : 'ja'}/`;
+    }
+
+    if (pathname.startsWith(`/${lang}`)) {
+      const suffix = pathname.slice(`/${lang}`.length) || '/';
+      return `/${lang === 'ja' ? 'en' : 'ja'}${suffix}`;
+    }
+
+    return `/${lang === 'ja' ? 'en' : 'ja'}${pathname}`;
+  }, [lang, pathname]);
+
+  const isActive = (href: string) => {
+    if (!pathname) return false;
+    if (href.endsWith('/')) {
+      return pathname === href || pathname === href.slice(0, -1);
+    }
+    return pathname === href || pathname.startsWith(`${href}/`);
   };
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
-        <Link href={`/${lang}/`} className={styles.logo}>
+        <Link href={`/${lang}/`} className={styles.logo} aria-label="Nebula Infinity home">
           <img src="/images/logo.png" alt="Nebula Infinity" className={styles.logoImage} />
           <span className={styles.logoText}>Nebula Infinity</span>
         </Link>
 
-        <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ''}`}>
+        <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ''}`} aria-label="Primary navigation" id="primary-navigation">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={styles.navLink}
-              onClick={() => setIsMobileMenuOpen(false)}
+              className={`${styles.navLink} ${isActive(item.href) ? styles.navLinkActive : ''}`}
             >
               {item.label}
             </Link>
           ))}
+          <Link href={`/${lang}/contact`} className={`${styles.contactCta} ${styles.mobileOnly}`}>
+            {t.contactCta}
+          </Link>
         </nav>
 
         <div className={styles.actions}>
-          <button onClick={toggleLanguage} className={styles.langButton}>
+          <Link href={alternatePath} className={styles.langButton} hrefLang={lang === 'ja' ? 'en' : 'ja'}>
             {lang === 'ja' ? 'EN' : 'JA'}
-          </button>
-
+          </Link>
+          <Link href={`/${lang}/contact`} className={`${styles.contactCta} ${styles.desktopOnly}`}>
+            {t.contactCta}
+          </Link>
           <button
             className={styles.mobileMenuButton}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+            onClick={() => setIsMobileMenuOpen((open) => !open)}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="primary-navigation"
+            aria-label={isMobileMenuOpen ? t.closeMenu : t.toggleMenu}
           >
             <span className={styles.hamburger}></span>
             <span className={styles.hamburger}></span>

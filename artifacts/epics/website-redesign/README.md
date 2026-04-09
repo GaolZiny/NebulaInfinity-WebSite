@@ -1,23 +1,29 @@
-# Epic: Website Redesign
+# Epic: website-redesign
 
-**Goal:** Transform the current dark, Linear-inspired website into a clean, light-toned, professional aesthetic — warm without flashiness, sophisticated without complexity.
+**Goal:** Turn NebulaInfinity.com into a credible, usable business website that clearly communicates the company’s service lines, proof of execution, and inquiry path.
 
-**Reference:** `/REDESIGN-PROPOSAL.md`, `/SITE_V2_DESIGN_SYSTEM.md`
+## Current Direction
+The epic is no longer only a visual redesign effort. It now includes a V1 positioning reset around:
+- AI Workflow Design & Development
+- AI Application Design & Development
+- Web3.0 / Blockchain Application Design & Development
 
 ## Scope
-- New color palette (light theme)
-- Typography & spacing system
-- Component library refresh
-- Page-by-page migration
-- i18n support preserved (ja/en/zh)
+- Site-wide positioning and content alignment
+- Service taxonomy alignment
+- Representative proof / case presentation
+- Contact path usability
+- Static-export-safe implementation and deploy verification
 
 ## Features
 | Feature | Type | Status |
 |---------|------|--------|
-| `design-tokens-migration` | Heavy | 🟡 Planned |
+| `content-overhaul` | Feature | legacy / completed baseline |
+| `v1-positioning-rebuild` | Feature | progressing |
 
 ## Success Criteria
-- Lighthouse performance ≥ 90
-- Consistent design tokens across all pages
-- Zero visual regression on existing content
-- Cloudflare Pages deploy succeeds
+- A first-time visitor can understand the 3 service lines within one visit
+- The site explains the value of preserving know-how as organization-owned assets
+- Contact flow is real and usable
+- Representative cases prove each service line credibly
+- Build + deploy verification passes on Cloudflare Pages

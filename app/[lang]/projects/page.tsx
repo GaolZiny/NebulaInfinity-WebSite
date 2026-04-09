@@ -1,164 +1,79 @@
-import { type Language } from '@/lib/i18n';
-import Link from 'next/link';
-import Card from '@/components/ui/Card';
+import { getLanguage, type Language } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
-import styles from './page.module.css';
-import translations from '@/data/translations/ja.json';
-import translationsEn from '@/data/translations/en.json';
-import projectsData from '@/data/projects/projects.json';
+import Link from 'next/link';
+import ProjectsExplorer from '@/components/projects/ProjectsExplorer';
+import styles from '@/styles/marketing.module.css';
 
-export async function generateMetadata({ params }: { params: { lang: Language } }) {
-  const t = params.lang === 'ja' ? translations : translationsEn;
+const copy = {
+  ja: {
+    eyebrow: 'Projects / Cases',
+    title: '代表例で見る、Nebula Infinity の実装領域',
+    subtitle: 'このページでは、AI Workflow、AI Application、Web3.0 / Blockchain の3領域ごとに、公開できる代表例を整理して紹介します。',
+    ctaTitle: '近い課題や構想があれば、代表例をもとに整理できます',
+    ctaBody: 'AI Workflow、AI Application、Web3.0 / Blockchain のどれに近いか分からない段階でも構いません。背景から一緒に整理します。',
+    contact: 'お問い合わせ',
+    services: 'サービスを見る',
+  },
+  en: {
+    eyebrow: 'Projects / Cases',
+    title: 'Representative proof across Nebula Infinity\'s delivery scope',
+    subtitle: 'This page organizes the public representative examples across AI Workflow, AI Application, and Web3.0 / Blockchain.',
+    ctaTitle: 'If your situation is similar, we can use these examples to structure the next step',
+    ctaBody: 'Even if you are not sure whether the problem is closer to AI Workflow, AI Application, or Web3.0 / Blockchain, we can help structure it from the background.',
+    contact: 'Contact Us',
+    services: 'View Services',
+  },
+} as const;
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang: rawLang } = await params;
+  const lang = getLanguage(rawLang);
+  const t = copy[lang];
   return {
-    title: `${t.projects.title} - Nebula Infinity`,
-    description: t.projects.subtitle,
+    title: `${t.title} - Nebula Infinity`,
+    description: t.subtitle,
   };
 }
 
-export default function ProjectsPage({ params }: { params: { lang: Language } }) {
-  const t = params.lang === 'ja' ? translations : translationsEn;
-  const isJa = params.lang === 'ja';
-
-  const starIcon = (
-    <svg className={styles.projectIconSvg} viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M12 4.5l-1.5 4.5H6l3.7 2.7-1.4 4.3L12 13.3l3.7 2.7-1.4-4.3L18 9H13.5z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.7"
-      />
-    </svg>
-  );
-
-  const boxIcon = (
-    <svg className={styles.projectIconSvg} viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M4.5 7.5l7.5-4 7.5 4-7.5 4-7.5-4z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.7"
-      />
-      <path
-        d="M4.5 7.5v9l7.5 4 7.5-4v-9"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.7"
-      />
-      <path
-        d="M12 11.5v8"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.7"
-      />
-    </svg>
-  );
-
-  const arrowIcon = (
-    <svg className={styles.arrowIcon} viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M5 12h14M13 6l6 6-6 6"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-      />
-    </svg>
-  );
+export default async function ProjectsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang: rawLang } = await params;
+  const lang = getLanguage(rawLang);
+  const t = copy[lang];
 
   return (
     <div className={styles.page}>
-      <section className={styles.hero}>
+      <section className={`${styles.hero} ${styles.heroCentered} ${styles.heroCompact}`}>
         <div className="container">
-          <span className={styles.eyebrow}>{isJa ? 'プロジェクト' : 'Projects'}</span>
-          <h1 className={styles.title}>{t.projects.title}</h1>
-          <p className={styles.subtitle}>{t.projects.subtitle}</p>
+          <div className={styles.heroContent}>
+            <span className={styles.heroEyebrow}>{t.eyebrow}</span>
+            <h1 className={styles.pageTitle}>{t.title}</h1>
+            <p className={styles.pageLead}>{t.subtitle}</p>
+          </div>
         </div>
       </section>
 
       <section className={styles.section}>
         <div className="container">
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>
-              {isJa ? '自社プロダクト' : 'Our Products'}
-            </h2>
-            <p className={styles.sectionSubtitle}>
-              {isJa
-                ? '以下は、私たちが開発・運用している自社プロダクトです。これらのプロジェクトで培った実践的なスキルを、お客様のビジネスに提供します。'
-                : 'Below are our own products that we develop and operate. We bring the practical skills honed in these projects to your business.'}
-            </p>
-          </div>
-          <div className={styles.projectGrid}>
-            {projectsData.projects.map((project) => (
-              <Link
-                key={project.id}
-                href={`/${params.lang}/projects/${project.slug}`}
-                className={styles.projectLink}
-              >
-                <Card hover className={styles.projectCard}>
-                  <div className={styles.projectCardInner}>
-                    <span className={styles.projectIconWrap}>
-                      {project.icon ? starIcon : boxIcon}
-                    </span>
-                    <h3 className={styles.projectTitle}>
-                      {project.name[params.lang]}
-                    </h3>
-                    <p className={styles.projectDescription}>
-                      {project.shortDescription[params.lang]}
-                    </p>
-                    <div className={styles.tags}>
-                      {project.tags.map((tag) => (
-                        <span key={tag} className={styles.tag}>
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <span className={styles.viewMore}>
-                      {t.projects.viewDetails}
-                      {arrowIcon}
-                    </span>
-                  </div>
-                </Card>
-              </Link>
-            ))}
-          </div>
+          <ProjectsExplorer lang={lang} />
         </div>
       </section>
 
-      <section className={styles.ctaSection}>
+      <section className={styles.section}>
         <div className="container">
-          <Card className={styles.ctaCard}>
-            <div>
-              <h2 className={styles.ctaTitle}>
-                {isJa
-                  ? 'プロジェクトについてご相談ください'
-                  : 'Let\u2019s discuss your project'}
-              </h2>
-              <p className={styles.ctaDescription}>
-                {isJa
-                  ? '要件整理から実装まで並走します。お気軽にお問い合わせください。'
-                  : 'From requirements to launch — we\u2019ll build it together. Get in touch.'}
-              </p>
+          <div className={styles.featuredBand}>
+            <div className={styles.bandCopy}>
+              <h2 className={styles.bandTitle}>{t.ctaTitle}</h2>
+              <p className={styles.bandBody}>{t.ctaBody}</p>
             </div>
-            <div className={styles.ctaActions}>
-              <Link href={`/${params.lang}/contact`}>
-                <Button size="lg">{t.nav.contact}</Button>
+            <div className={styles.bandActions}>
+              <Link href={`/${lang}/contact`} className={styles.linkButton}>
+                <Button size="lg">{t.contact}</Button>
               </Link>
-              <Link href={`/${params.lang}/services`}>
-                <Button size="lg" variant="outline">
-                  {t.nav.services}
-                </Button>
+              <Link href={`/${lang}/services`} className={styles.linkButton}>
+                <Button size="lg" variant="outline">{t.services}</Button>
               </Link>
             </div>
-          </Card>
+          </div>
         </div>
       </section>
     </div>

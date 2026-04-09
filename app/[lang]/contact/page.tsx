@@ -1,380 +1,169 @@
-'use client';
+import { Suspense } from 'react';
+import { getLanguage, type Language } from '@/lib/i18n';
+import ContactForm from '@/components/contact/ContactForm';
+import styles from '@/styles/marketing.module.css';
 
-import { useState } from 'react';
-import { type Language } from '@/lib/i18n';
-import Card from '@/components/ui/Card';
-import Button from '@/components/ui/Button';
-import styles from './page.module.css';
-import translations from '@/data/translations/ja.json';
-import translationsEn from '@/data/translations/en.json';
+const copy = {
+  ja: {
+    eyebrow: 'Contact',
+    title: '要件が固まっていなくても、ご相談ください',
+    subtitle: '現場課題、AIアプリケーション構想、Web3.0施策の検討段階でも構いません。Nebula Infinity が、背景整理からご一緒します。',
+    nextTitle: '送信後の流れ',
+    faqEyebrow: 'FAQ',
+    faqTitle: 'よくあるご質問',
+    reassurance: 'Nebula Infinity は、相談内容をもとに最適な入口を整理します。AI Workflow、AI Application、Web3.0 / Blockchain のどれに近いか分からない状態でも問題ありません。',
+  },
+  en: {
+    eyebrow: 'Contact',
+    title: 'You can contact us before the requirements are fixed',
+    subtitle: 'Whether you are dealing with an operational issue, shaping an AI application idea, or exploring a Web3.0 initiative, Nebula Infinity can help structure the next step with you.',
+    nextTitle: 'What happens next',
+    faqEyebrow: 'FAQ',
+    faqTitle: 'Frequently asked questions',
+    reassurance: 'Nebula Infinity will help organize the right entry point from your situation. It is fine if you do not yet know whether the issue is closer to AI Workflow, AI Application, or Web3.0 / Blockchain.',
+  },
+} as const;
 
-export default function ContactPage({ params }: { params: { lang: Language } }) {
-  const t = params.lang === 'ja' ? translations : translationsEn;
-  const isJa = params.lang === 'ja';
+const nextSteps = {
+  ja: [
+    { title: '内容確認', body: 'ご相談テーマと背景を確認します。' },
+    { title: '初回返信', body: '通常 2 営業日以内にご返信します。' },
+    { title: '整理ミーティング', body: '必要に応じて、課題と進め方を短く整理します。' },
+    { title: '次の提案', body: '適したサービスラインと進め方をご提案します。' },
+  ],
+  en: [
+    { title: 'Review', body: 'We review your theme and background.' },
+    { title: 'Initial reply', body: 'We usually respond within 2 business days.' },
+    { title: 'Scoping conversation', body: 'If needed, we organize the challenge and next step together.' },
+    { title: 'Suggested path', body: 'We propose the best-fit service line and engagement path.' },
+  ],
+} as const;
 
-  const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    email: '',
-    phone: '',
-    inquiryType: '',
-    message: '',
-  });
+const expectationCards = {
+  ja: [
+    { title: '返信目安', body: '通常 2 営業日以内' },
+    { title: '対象テーマ', body: 'AI Workflow / AI Application / Web3.0 / Blockchain' },
+    { title: '相談段階', body: '要件未整理でも可' },
+  ],
+  en: [
+    { title: 'Response window', body: 'Usually within 2 business days' },
+    { title: 'Themes covered', body: 'AI Workflow / AI Application / Web3.0 / Blockchain' },
+    { title: 'Stage accepted', body: 'Even before requirements are fixed' },
+  ],
+} as const;
 
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+const faqs = {
+  ja: [
+    { question: '要件がまとまっていなくても相談できますか？', answer: 'はい。現状の課題や作りたい方向性の段階から整理できます。' },
+    { question: 'どのサービスを選べばよいか分からないです。', answer: '背景をもとに、AI Workflow / AI Application / Web3.0 / Blockchain のどこから始めるのが適切か整理します。' },
+    { question: 'オンラインで相談できますか？', answer: 'はい。初回の整理はオンライン前提で対応できます。' },
+    { question: '非公開事例も相談時に見られますか？', answer: '内容に応じて、近い類型や守秘範囲に配慮した形で共有します。' },
+  ],
+  en: [
+    { question: 'Can I reach out before the requirements are clear?', answer: 'Yes. We can start from the current issue or the rough direction of what you want to build.' },
+    { question: 'I am not sure which service line fits.', answer: 'We can structure whether AI Workflow, AI Application, or Web3.0 / Blockchain is the right starting point.' },
+    { question: 'Can the first conversation happen online?', answer: 'Yes. The initial scoping conversation can be handled online.' },
+    { question: 'Can we discuss non-public examples?', answer: 'Yes. When relevant, we can share similar examples in a confidentiality-aware way.' },
+  ],
+} as const;
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('submitting');
+function FAQList({ lang }: { lang: Language }) {
+  return (
+    <div className={styles.faqList}>
+      {faqs[lang].map((faq, index) => (
+        <details key={faq.question} className={styles.faqItem} open={index === 0}>
+          <summary className={styles.faqButton}>
+            <span className={styles.faqQuestionText}>{faq.question}</span>
+            <span className={styles.chevron} aria-hidden="true">⌄</span>
+          </summary>
+          <div className={styles.faqAnswer}>
+            <p className={styles.faqAnswerText}>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  );
+}
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, lang: params.lang }),
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        setFormData({
-          name: '',
-          company: '',
-          email: '',
-          phone: '',
-          inquiryType: '',
-          message: '',
-        });
-      } else {
-        setStatus('error');
-      }
-    } catch {
-      setStatus('error');
-    }
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang: rawLang } = await params;
+  const lang = getLanguage(rawLang);
+  const t = copy[lang];
+  return {
+    title: `${t.title} - Nebula Infinity`,
+    description: t.subtitle,
   };
+}
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
+export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang: rawLang } = await params;
+  const lang = getLanguage(rawLang);
+  const t = copy[lang];
 
   return (
     <div className={styles.page}>
-      {/* ── Hero ── */}
-      <section className={styles.hero}>
+      <section className={`${styles.hero} ${styles.heroCentered} ${styles.heroCompact}`}>
         <div className="container">
-          <span className={styles.eyebrow}>{t.contact.eyebrow}</span>
-          <h1 className={styles.title}>{t.contact.title}</h1>
-          <p className={styles.subtitle}>{t.contact.subtitle}</p>
+          <div className={styles.heroContent}>
+            <span className={styles.heroEyebrow}>{t.eyebrow}</span>
+            <h1 className={styles.pageTitle}>{t.title}</h1>
+            <p className={styles.pageLead}>{t.subtitle}</p>
+          </div>
         </div>
       </section>
 
-      {/* ── Main Content: Form + Info ── */}
       <section className={styles.section}>
         <div className="container">
-          <div className={styles.content}>
-            {/* Left: Form */}
-            <div className={styles.formSection}>
-              <Card glass>
-                <form onSubmit={handleSubmit} className={styles.form}>
-                  {/* Name */}
-                  <div className={styles.formGroup}>
-                    <label htmlFor="name" className={styles.label}>
-                      {t.contact.form.name} <span className={styles.required}>*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder={t.contact.form.namePlaceholder}
-                      className={styles.input}
-                    />
-                  </div>
-
-                  {/* Company */}
-                  <div className={styles.formGroup}>
-                    <label htmlFor="company" className={styles.label}>
-                      {t.contact.form.company}
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      placeholder={t.contact.form.companyPlaceholder}
-                      className={styles.input}
-                    />
-                  </div>
-
-                  {/* Email + Phone row */}
-                  <div className={styles.formRow}>
-                    <div className={styles.formGroup}>
-                      <label htmlFor="email" className={styles.label}>
-                        {t.contact.form.email} <span className={styles.required}>*</span>
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder={t.contact.form.emailPlaceholder}
-                        className={styles.input}
-                      />
+          <div className={styles.formLayout}>
+            <Suspense fallback={<div className={styles.card}>Loading form…</div>}>
+              <ContactForm lang={lang} />
+            </Suspense>
+            <div className={styles.sidebarSection}>
+              <div className={`${styles.card} ${styles.featuredCard}`}>
+                <h2 className={styles.cardTitle}>{t.nextTitle}</h2>
+                <div className={`${styles.stepRail} ${styles.stepRailCompact}`}>
+                  {nextSteps[lang].map((step) => (
+                    <div key={step.title} className={styles.stepItem}>
+                      <h3 className={styles.stepHeading}>{step.title}</h3>
+                      <p className={styles.stepText}>{step.body}</p>
                     </div>
-
-                    <div className={styles.formGroup}>
-                      <label htmlFor="phone" className={styles.label}>
-                        {t.contact.form.phone}
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder={t.contact.form.phonePlaceholder}
-                        className={styles.input}
-                      />
-                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className={styles.grid3}>
+                {expectationCards[lang].map((card) => (
+                  <div key={card.title} className={styles.card}>
+                    <h3 className={styles.cardTitle}>{card.title}</h3>
+                    <p className={styles.cardBody}>{card.body}</p>
                   </div>
-
-                  {/* Inquiry Type */}
-                  <div className={styles.formGroup}>
-                    <label htmlFor="inquiryType" className={styles.label}>
-                      {t.contact.form.inquiryType} <span className={styles.required}>*</span>
-                    </label>
-                    <select
-                      id="inquiryType"
-                      name="inquiryType"
-                      required
-                      value={formData.inquiryType}
-                      onChange={handleChange}
-                      className={styles.select}
-                    >
-                      <option value="">
-                        {isJa ? '選択してください' : 'Please select'}
-                      </option>
-                      <option value="aiWorkflow">{t.contact.form.inquiryTypes.aiWorkflow}</option>
-                      <option value="aiProduct">{t.contact.form.inquiryTypes.aiProduct}</option>
-                      <option value="aiDevelopment">{t.contact.form.inquiryTypes.aiDevelopment}</option>
-                      <option value="other">{t.contact.form.inquiryTypes.other}</option>
-                    </select>
-                  </div>
-
-                  {/* Message */}
-                  <div className={styles.formGroup}>
-                    <label htmlFor="message" className={styles.label}>
-                      {t.contact.form.message} <span className={styles.required}>*</span>
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder={t.contact.form.messagePlaceholder}
-                      className={styles.textarea}
-                      rows={6}
-                    />
-                  </div>
-
-                  {/* Status messages */}
-                  {status === 'success' && (
-                    <div className={styles.successMessage}>
-                      <svg className={styles.statusIcon} viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                          d="M9 12l2 2 4-4"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <circle
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        />
-                      </svg>
-                      {t.contact.form.success}
-                    </div>
-                  )}
-
-                  {status === 'error' && (
-                    <div className={styles.errorMessage}>
-                      <svg className={styles.statusIcon} viewBox="0 0 24 24" aria-hidden="true">
-                        <circle
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        />
-                        <path
-                          d="M12 8v4m0 4h.01"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-                      {t.contact.form.error}
-                    </div>
-                  )}
-
-                  {/* Submit */}
-                  <Button
-                    type="submit"
-                    size="lg"
-                    fullWidth
-                    disabled={status === 'submitting'}
-                  >
-                    {status === 'submitting' ? t.contact.form.submitting : t.contact.form.submit}
-                  </Button>
-                </form>
-              </Card>
-            </div>
-
-            {/* Right: Info Cards */}
-            <div className={styles.infoSection}>
-              {/* Email */}
-              <Card hover className={styles.infoCard}>
-                <span className={styles.cardIconWrap}>
-                  <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M4.5 7.5h15a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2z"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.7"
-                    />
-                    <path
-                      d="M4.5 9l7.5 5 7.5-5"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.7"
-                    />
-                  </svg>
-                </span>
-                <h3 className={styles.infoTitle}>{t.contact.info.email}</h3>
-                <a href="mailto:info@nebulainfinity.com" className={styles.infoLink}>
-                  info@nebulainfinity.com
-                </a>
-              </Card>
-
-              {/* Social */}
-              <Card hover className={styles.infoCard}>
-                <span className={styles.cardIconWrap}>
-                  <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
-                <h3 className={styles.infoTitle}>{t.contact.info.social}</h3>
-                <a
-                  href="https://twitter.com/N_I_COM"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.socialLink}
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231z" />
-                  </svg>
-                  X (Twitter)
-                </a>
-              </Card>
-
-              {/* Business Hours */}
-              <Card hover className={styles.infoCard}>
-                <span className={styles.cardIconWrap}>
-                  <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.7"
-                    />
-                    <path
-                      d="M12 6v6l4 2"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.7"
-                    />
-                  </svg>
-                </span>
-                <h3 className={styles.infoTitle}>{t.contact.info.hours}</h3>
-                <p className={styles.infoValue}>{t.contact.info.hoursValue}</p>
-              </Card>
-
-              {/* Response Time */}
-              <Card hover className={styles.infoCard}>
-                <span className={styles.cardIconWrap}>
-                  <svg className={styles.cardIcon} viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.7"
-                    />
-                  </svg>
-                </span>
-                <h3 className={styles.infoTitle}>{t.contact.info.response}</h3>
-                <p className={styles.infoValue}>{t.contact.info.responseValue}</p>
-              </Card>
+                ))}
+              </div>
+              <div className={styles.card}>
+                <p className={styles.cardBody}>
+                  {lang === 'ja'
+                    ? '営業的な誇張ではなく、現状整理から始める前提でご案内します。'
+                    : 'The first conversation starts from clarifying the current situation, not from forcing a sales script.'}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <section className={styles.faqSection}>
+      <section className={`${styles.section} ${styles.sectionMuted}`}>
         <div className="container">
-          <div className={styles.faqHeader}>
-            <span className={styles.eyebrow}>FAQ</span>
-            <h2 className={styles.sectionTitle}>{t.contact.faq.title}</h2>
-            <p className={styles.sectionSubtitle}>{t.contact.faq.subtitle}</p>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionEyebrow}>{t.faqEyebrow}</span>
+            <h2 className={styles.sectionTitle}>{t.faqTitle}</h2>
           </div>
+          <FAQList lang={lang} />
+        </div>
+      </section>
 
-          <div className={styles.faqGrid}>
-            {t.contact.faq.items.map((item, index) => (
-              <details key={index} className={styles.faqItem}>
-                <summary className={styles.faqQuestion}>
-                  <span className={styles.faqQuestionText}>{item.question}</span>
-                  <span className={styles.faqChevron} aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </span>
-                </summary>
-                <div className={styles.faqAnswer}>
-                  <p>{item.answer}</p>
-                </div>
-              </details>
-            ))}
+      <section className={styles.section}>
+        <div className="container">
+          <div className={styles.reassuranceBand}>
+            <p className={styles.reassuranceText}>{t.reassurance}</p>
           </div>
         </div>
       </section>

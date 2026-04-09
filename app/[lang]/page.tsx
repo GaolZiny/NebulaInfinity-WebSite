@@ -1,345 +1,289 @@
-import { Fragment } from 'react';
-import { type Language } from '@/lib/i18n';
 import Link from 'next/link';
+import { getLanguage, type Language } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
-import styles from './page.module.css';
-import translations from '@/data/translations/ja.json';
-import translationsEn from '@/data/translations/en.json';
+import { services } from '@/data/services';
 import projectsData from '@/data/projects/projects.json';
-import gaijinLifeNaviData from '@/data/projects/gaijin-life-navi.json';
-import rigelData from '@/data/projects/rigel.json';
+import styles from '@/styles/marketing.module.css';
 
-const renderWithBreaks = (text: string) =>
-  text.split('\n').map((line, i) => (
-    <Fragment key={i}>
-      {i > 0 && <br />}
-      {line}
-    </Fragment>
-  ));
+const homeCopy = {
+  ja: {
+    eyebrow: 'AI社会実装のパートナー',
+    title: '「AI」を、現場の「即戦力」へ',
+    body: 'Nebula Infinity は、AI Workflow、AI Application、Web3.0 / Blockchain の設計と開発を通じて、構想を実務で使える仕組みに変えます。属人化したノウハウを整理し、運用できる形で実装し、事業の中で機能する状態まで伴走します。',
+    primaryCta: 'お問い合わせ',
+    secondaryCta: 'サービスを見る',
+    transformationEyebrow: 'Why assetization matters',
+    transformationTitle: '「導入」より先に、「定着する仕組み」を設計する',
+    transformationSubtitle: 'AI 導入が止まる理由の多くは、技術そのものではなく、現場の判断基準や業務知識が人に閉じていることにあります。Nebula Infinity は、その知見を運用可能な形に整理し、再現性のある仕組みに変えます。',
+    servicesEyebrow: 'Services',
+    servicesTitle: '3つの実装ラインで、構想を事業に落とし込む',
+    servicesSubtitle: '業務フローの資産化、AIアプリケーション開発、Web3.0 / Blockchain 活用まで、目的に合わせて最適な実装ラインを設計します。',
+    processEyebrow: 'Process',
+    processTitle: '現場に入る前提で、設計から実装まで進める',
+    processSubtitle: '要件が固まっていなくても構いません。業務の整理から入り、最小構成で試し、実装し、運用に載せるところまで伴走します。',
+    proofEyebrow: 'Proof',
+    proofTitle: '実装力は、代表事例で示す',
+    proofSubtitle: '公開できる範囲の代表例を通じて、Nebula Infinity の実装領域と深さを示します。',
+    trustEyebrow: 'How we work',
+    trustTitle: 'Nebula Infinity が重視する3つの基準',
+    ctaTitle: '要件が固まっていなくても、ご相談ください',
+    ctaBody: '現場の課題、作りたいもの、整理できていない論点の段階でも構いません。Nebula Infinity が、実装の入口から一緒に整理します。',
+    ctaSupport: '通常 2 営業日以内にご返信します。',
+    viewService: '詳細を見る',
+    viewWorkflow: 'AI Workflowを見る',
+    viewCase: '詳細を見る',
+  },
+  en: {
+    eyebrow: 'AI Social Implementation Partner',
+    title: 'Turn AI into front-line capability',
+    body: 'Nebula Infinity designs and builds AI workflows, AI applications, and Web3.0 / blockchain products that work in real operations. We turn people-dependent know-how into systems your team can own, reuse, and scale.',
+    primaryCta: 'Contact Us',
+    secondaryCta: 'View Services',
+    transformationEyebrow: 'Why assetization matters',
+    transformationTitle: 'Design the operating system before introducing the tool',
+    transformationSubtitle: 'AI projects often stall not because of the model, but because decision logic and operational know-how live inside individuals. We turn that knowledge into systems the organization can operate.',
+    servicesEyebrow: 'Services',
+    servicesTitle: 'Three implementation lines, one business partner',
+    servicesSubtitle: 'From workflow assetization to AI application delivery and Web3.0 / blockchain implementation, we structure the right line of work around your business goal.',
+    processEyebrow: 'Process',
+    processTitle: 'Work from real operations, not abstract strategy',
+    processSubtitle: 'You do not need a finished spec. We start by clarifying the operational problem, test the smallest viable shape, implement it, and support rollout.',
+    proofEyebrow: 'Proof',
+    proofTitle: 'Representative proof of delivery',
+    proofSubtitle: 'We show the depth of Nebula Infinity\'s delivery capability through a focused set of representative examples.',
+    trustEyebrow: 'How we work',
+    trustTitle: 'Three standards we do not compromise on',
+    ctaTitle: 'You can reach out before the requirements are fixed',
+    ctaBody: 'You do not need a finished brief. If you have an operational issue, a product idea, or an unclear starting point, we can structure the path with you.',
+    ctaSupport: 'We usually reply within 2 business days.',
+    viewService: 'View service',
+    viewWorkflow: 'View AI Workflow',
+    viewCase: 'View case',
+  },
+} as const;
 
-/* --- Laurel Wreath SVG Components --- */
+const valuePanels = {
+  ja: [
+    { title: '属人業務を、仕組みに', body: '担当者依存の判断や手順を整理し、再利用できる運用資産へ変えます。' },
+    { title: 'MVPから実装まで', body: '課題整理、設計、試作、実装、定着支援まで一気通貫で伴走します。' },
+    { title: 'AI + Web3を一貫支援', body: 'AI活用とWeb3.0活用を、分断せず事業要件に合わせて設計します。' },
+  ],
+  en: [
+    { title: 'From people-dependence to systems', body: 'We convert individual know-how into repeatable operational assets.' },
+    { title: 'From MVP to implementation', body: 'We support discovery, design, prototyping, build, and rollout as one flow.' },
+    { title: 'AI + Web3 under one partner', body: 'We design AI and Web3 initiatives around business requirements, not hype.' },
+  ],
+} as const;
 
-const LaurelLeft = () => (
-  <svg
-    className={styles.laurelLeft}
-    viewBox="0 0 44 84"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    {/* Stem */}
-    <path
-      d="M32 76 C28 64, 20 52, 18 40 C16 28, 18 18, 22 8"
-      stroke="#CA8A04"
-      strokeWidth="1.2"
-      fill="none"
-    />
-    {/* Leaves arranged along the curved stem */}
-    <ellipse cx="26" cy="66" rx="9" ry="3.8" transform="rotate(-20 26 66)" fill="#CA8A04" opacity="0.82" />
-    <ellipse cx="22" cy="56" rx="8.5" ry="3.5" transform="rotate(-32 22 56)" fill="#CA8A04" opacity="0.85" />
-    <ellipse cx="19" cy="46" rx="8" ry="3.2" transform="rotate(-44 19 46)" fill="#CA8A04" opacity="0.87" />
-    <ellipse cx="17" cy="36" rx="7.5" ry="3" transform="rotate(-54 17 36)" fill="#CA8A04" opacity="0.85" />
-    <ellipse cx="18" cy="26" rx="7" ry="2.8" transform="rotate(-64 18 26)" fill="#CA8A04" opacity="0.82" />
-    <ellipse cx="20" cy="17" rx="6" ry="2.4" transform="rotate(-72 20 17)" fill="#CA8A04" opacity="0.80" />
-    <ellipse cx="23" cy="10" rx="5" ry="2" transform="rotate(-80 23 10)" fill="#CA8A04" opacity="0.75" />
-  </svg>
-);
+const transformationColumns = {
+  ja: [
+    { label: 'Current state', bullets: ['担当者ごとに判断がばらつく', '引き継ぎに時間がかかる', 'AI を入れても運用に乗らない'] },
+    { label: 'System design', bullets: ['判断基準と手順を可視化する', 'AI と人の役割分担を設計する', 'レビュー導線と改善ログを残す'] },
+    { label: 'Business outcome', bullets: ['再現性のある実務フローになる', '組織で引き継げる資産になる', '品質と速度を両立できる'] },
+  ],
+  en: [
+    { label: 'Current state', bullets: ['Decisions vary by operator', 'Handoffs take too long', 'AI never sticks in operations'] },
+    { label: 'System design', bullets: ['Make decision rules visible', 'Define human + AI roles', 'Keep review paths and improvement logs'] },
+    { label: 'Business outcome', bullets: ['Repeatable operational flow', 'Transferable organizational asset', 'Better speed with maintained quality'] },
+  ],
+} as const;
 
-const LaurelRight = () => (
-  <svg
-    className={styles.laurelRight}
-    viewBox="0 0 44 84"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    {/* Stem (mirrored) */}
-    <path
-      d="M12 76 C16 64, 24 52, 26 40 C28 28, 26 18, 22 8"
-      stroke="#CA8A04"
-      strokeWidth="1.2"
-      fill="none"
-    />
-    {/* Leaves (mirrored) */}
-    <ellipse cx="18" cy="66" rx="9" ry="3.8" transform="rotate(20 18 66)" fill="#CA8A04" opacity="0.82" />
-    <ellipse cx="22" cy="56" rx="8.5" ry="3.5" transform="rotate(32 22 56)" fill="#CA8A04" opacity="0.85" />
-    <ellipse cx="25" cy="46" rx="8" ry="3.2" transform="rotate(44 25 46)" fill="#CA8A04" opacity="0.87" />
-    <ellipse cx="27" cy="36" rx="7.5" ry="3" transform="rotate(54 27 36)" fill="#CA8A04" opacity="0.85" />
-    <ellipse cx="26" cy="26" rx="7" ry="2.8" transform="rotate(64 26 26)" fill="#CA8A04" opacity="0.82" />
-    <ellipse cx="24" cy="17" rx="6" ry="2.4" transform="rotate(72 24 17)" fill="#CA8A04" opacity="0.80" />
-    <ellipse cx="21" cy="10" rx="5" ry="2" transform="rotate(80 21 10)" fill="#CA8A04" opacity="0.75" />
-  </svg>
-);
+const processSteps = {
+  ja: [
+    { title: '課題を整理する', body: '現場の流れ、判断基準、制約を確認します。' },
+    { title: '実装方針を設計する', body: 'AI / アプリ / Web3 の役割分担と構成を定義します。' },
+    { title: 'MVP・実装を進める', body: '試作で確認しながら、本番利用に向けて磨き込みます。' },
+    { title: '定着と改善を支援する', body: '引き継ぎ、運用、改善ポイントまで整理します。' },
+  ],
+  en: [
+    { title: 'Clarify the problem', body: 'Review the current flow, decision logic, and constraints.' },
+    { title: 'Design the build path', body: 'Define the right mix of AI, application, and Web3 capability.' },
+    { title: 'Prototype and implement', body: 'Use an MVP to validate, then shape for production use.' },
+    { title: 'Support adoption', body: 'Organize handoff, operations, and next improvements.' },
+  ],
+} as const;
 
-/* --- SVG Philosophy Icons (reused from existing principle icons) --- */
+const trustCards = {
+  ja: [
+    { title: 'Business Logic First', body: '技術の前に、現場の判断と事業要件を整理します。' },
+    { title: 'Asset-minded delivery', body: 'その場限りの自動化ではなく、引き継げる運用資産を残します。' },
+    { title: 'Business-ready implementation', body: 'AI も Web3.0 も、実務で使える形まで設計します。' },
+  ],
+  en: [
+    { title: 'Business Logic First', body: 'We structure operational decisions and business requirements before choosing technology.' },
+    { title: 'Asset-minded delivery', body: 'We leave behind operating assets your team can inherit and improve.' },
+    { title: 'Business-ready implementation', body: 'We shape both AI and Web3.0 into business-usable systems.' },
+  ],
+} as const;
 
-const philosophyIcons = [
-  // Business Logic First — handshake/strategy
-  <svg key="p1" className={styles.philosophyIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M20 7h-4l-2-3H10L8 7H4a2 2 0 00-2 2v2l8 5 8-5V9a2 2 0 00-2-2z" />
-    <path d="M2 13l8 5 2-1.5L14 18l8-5" />
-  </svg>,
-  // No Blackbox — eye/transparency
-  <svg key="p2" className={styles.philosophyIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" />
-    <circle cx="12" cy="12" r="3" />
-  </svg>,
-  // Speed is Value — rocket
-  <svg key="p3" className={styles.philosophyIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z" />
-    <path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11.95A22 22 0 0112 15z" />
-    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 3 0 3 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-3 0-3" />
-  </svg>,
-];
+const workflowProof = {
+  ja: {
+    tag: 'AI Workflow Design & Development',
+    title: 'ワークフロー資産化の代表例',
+    summary: 'マルチエージェント開発ワークフローやプロダクトリサーチワークフローなど、判断や引き継ぎが分散しやすい業務を、再利用可能な運用フローへ設計します。',
+    strip: ['判断基準の明文化', '役割分担の設計', '改善ログの蓄積'],
+  },
+  en: {
+    tag: 'AI Workflow Design & Development',
+    title: 'Representative workflow assetization examples',
+    summary: 'We design reusable operating flows for work where judgment and handoff tend to scatter, such as multi-agent development and product research workflows.',
+    strip: ['Visible decision rules', 'Designed role allocation', 'Accumulated improvement logs'],
+  },
+} as const;
 
-export async function generateMetadata({ params }: { params: { lang: Language } }) {
-  const t = params.lang === 'ja' ? translations : translationsEn;
-  const isJa = params.lang === 'ja';
-  return {
-    title: `Nebula Infinity - ${t.hero.title.replace('\n', ' ')}`,
-    description: t.hero.subtitle.replace(/\n/g, ' '),
-  };
+const projectIds = ['gaijin-life-navi', 'rigel', 'carina'] as const;
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang: rawLang } = await params;
+  const lang = getLanguage(rawLang);
+  const t = homeCopy[lang];
+  return { title: `Nebula Infinity - ${t.title}`, description: t.body };
 }
 
-export default function HomePage({ params }: { params: { lang: Language } }) {
-  const t = params.lang === 'ja' ? translations : translationsEn;
-  const isJa = params.lang === 'ja';
+export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang: rawLang } = await params;
+  const lang = getLanguage(rawLang);
+  const t = homeCopy[lang];
+  const featuredProjects = projectsData.projects.filter((project) => projectIds.includes(project.id as (typeof projectIds)[number]));
 
   return (
     <div className={styles.page}>
-      {/* ===== Hero ===== */}
-      <section className={styles.hero} aria-labelledby="hero-title">
+      <section className={styles.hero}>
         <div className="container">
-          <div className={styles.heroContent}>
-            <h1 id="hero-title" className={styles.heroTitle}>
-              {renderWithBreaks(t.hero.title)}
-            </h1>
-            <p className={styles.heroSubtitle}>
-              {renderWithBreaks(t.hero.subtitle)}
-            </p>
-
-            {/* Laurel Wreath Badges */}
-            <div className={styles.heroBadges}>
-              {t.hero.badges.map((badge) => (
-                <div key={badge.title} className={styles.badge}>
-                  <LaurelLeft />
-                  <div className={styles.badgeContent}>
-                    <span className={styles.badgeTitle}>{badge.title}</span>
-                    <span className={styles.badgeValue}>{badge.value}</span>
-                  </div>
-                  <LaurelRight />
+          <div className={styles.heroSplit}>
+            <div className={styles.heroContent}>
+              <span className={styles.heroEyebrow}>{t.eyebrow}</span>
+              <h1 className={styles.heroTitle}>{t.title}</h1>
+              <p className={styles.heroBody}>{t.body}</p>
+              <div className={styles.actionRow}>
+                <Link href={`/${lang}/contact`} className={styles.linkButton}><Button size="lg">{t.primaryCta}</Button></Link>
+                <Link href={`/${lang}/services`} className={styles.linkButton}><Button size="lg" variant="outline">{t.secondaryCta}</Button></Link>
+              </div>
+              <div className={styles.chipRow}>
+                {services.map((service) => <span key={service.id} className={styles.chip}>{service.officialLine}</span>)}
+              </div>
+            </div>
+            <div className={styles.sideStack}>
+              {valuePanels[lang].map((panel) => (
+                <div key={panel.title} className={`${styles.valuePanel} ${styles.featuredPanel}`}>
+                  <h2 className={styles.valuePanelTitle}>{panel.title}</h2>
+                  <p className={styles.cardBody}>{panel.body}</p>
                 </div>
               ))}
             </div>
-
-            <div className={styles.heroActions}>
-              <Link href={`/${params.lang}/contact`}>
-                <Button size="lg">{t.hero.cta}</Button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* ===== Concept ===== */}
-      <section className={styles.concept} aria-labelledby="concept-title">
-        <div className="container">
-          <div className={styles.conceptContent}>
-            <h2 id="concept-title" className={styles.conceptTitle}>
-              {t.concept.title}
-            </h2>
-            <p className={styles.conceptLead}>
-              {t.concept.lead}
-              <span className={styles.conceptHighlight}>{t.concept.leadHighlight}</span>
-              {t.concept.leadAfter}
-            </p>
-            <div className={styles.conceptKeywords}>
-              {t.concept.keywords.map((kw) => (
-                <div key={kw} className={styles.keyword}>{kw}</div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== Core Competence ===== */}
-      <section className={styles.competence} aria-labelledby="competence-title">
+      <section className={styles.section}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2 id="competence-title" className={styles.sectionTitle}>
-              {t.competence.title}
-            </h2>
+            <span className={styles.sectionEyebrow}>{t.transformationEyebrow}</span>
+            <h2 className={styles.sectionTitle}>{t.transformationTitle}</h2>
+            <p className={styles.sectionSubtitle}>{t.transformationSubtitle}</p>
           </div>
-          <div className={styles.competenceCards}>
-            {t.competence.cards.map((card) => (
-              <div key={card.eyebrow} className={styles.competenceCard}>
-                <span className={styles.cardEyebrow}>{card.eyebrow}</span>
-                <h3 className={styles.cardHeading}>{card.heading}</h3>
-                <p className={styles.cardBody}>{card.body}</p>
+          <div className={styles.transformationPanel}>
+            {transformationColumns[lang].map((column) => (
+              <div key={column.label} className={styles.transformationColumn}>
+                <span className={styles.columnLabel}>{column.label}</span>
+                <ul className={styles.list}>{column.bullets.map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== Solutions ===== */}
-      <section className={styles.solutions} aria-labelledby="solutions-title">
+      <section className={`${styles.section} ${styles.sectionMuted}`}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2 id="solutions-title" className={styles.sectionTitle}>
-              {t.solutions.title}
-            </h2>
-            <p className={styles.sectionSubtitle}>{t.solutions.subtitle}</p>
+            <span className={styles.sectionEyebrow}>{t.servicesEyebrow}</span>
+            <h2 className={styles.sectionTitle}>{t.servicesTitle}</h2>
+            <p className={styles.sectionSubtitle}>{t.servicesSubtitle}</p>
           </div>
-          <div className={styles.solutionGrid}>
-            {t.solutions.cards.map((card) => (
-              <div key={card.number} className={styles.solutionCard}>
-                <span className={styles.solutionNumber}>{card.number}</span>
-                <h3 className={styles.solutionTitle}>{card.title}</h3>
-                <span className={styles.solutionLabel}>{card.label}</span>
-                <p className={styles.solutionBody}>{card.body}</p>
+          <div className={styles.serviceGrid}>
+            {services.map((service) => (
+              <div key={service.id} className={`${styles.card} ${styles.interactiveCard}`}>
+                <span className={styles.columnLabel}>{service.officialLine}</span>
+                <h3 className={styles.cardTitle}>{service.title[lang]}</h3>
+                <p className={styles.cardBody}>{service.body[lang]}</p>
+                <ul className={styles.list}>{service.fitBullets[lang].map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
+                <div className={styles.proofStrip}><span className={styles.proofPill}>{service.proofLine[lang]}</span></div>
+                <Link href={`/${lang}/services/${service.id}`} className={styles.ctaLink}>{t.viewService}<span aria-hidden="true">→</span></Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== Projects Highlight ===== */}
-      <section className={styles.projectsHighlight} aria-labelledby="projects-title">
+      <section className={styles.section}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2 id="projects-title" className={styles.sectionTitle}>
-              {(t as any).home?.projects?.title ?? '実績で証明する、AI Native の実装力'}
-            </h2>
-            <p className={styles.sectionSubtitle}>
-              {(t as any).home?.projects?.subtitle ?? '自社プロダクトで培った技術とノウハウ'}
-            </p>
+            <span className={styles.sectionEyebrow}>{t.processEyebrow}</span>
+            <h2 className={styles.sectionTitle}>{t.processTitle}</h2>
+            <p className={styles.sectionSubtitle}>{t.processSubtitle}</p>
           </div>
-          <div className={styles.projectCards}>
-            {/* Japan Life Navi */}
-            {(() => {
-              const project = projectsData.projects.find(p => p.id === 'gaijin-life-navi');
-              if (!project) return null;
-              const kpis = gaijinLifeNaviData.kpis;
+          <div className={styles.stepRail}>
+            {processSteps[lang].map((step, index) => {
+              const nodeClass = index === 1 || index === 2 ? `${styles.stepNode} ${styles.stepNodeAlt}` : styles.stepNode;
               return (
-                <Link href={`/${params.lang}/projects/${project.slug}`} className={styles.projectCard}>
-                  <div className={styles.projectCardHeader}>
-                    <h3 className={styles.projectCardTitle}>
-                      {isJa ? project.name.ja : project.name.en}
-                    </h3>
-                    <span className={styles.projectStatusBadge} data-status="live">🟢 Live</span>
-                  </div>
-                  <p className={styles.projectCardDesc}>
-                    {isJa ? project.shortDescription.ja : project.shortDescription.en}
-                  </p>
-                  <div className={styles.projectKpis}>
-                    <span className={styles.kpiItem}>
-                      <span className={styles.kpiValue}>{kpis.guides}</span>
-                      <span className={styles.kpiLabel}>{isJa ? 'ガイド' : 'Guides'}</span>
-                    </span>
-                    <span className={styles.kpiDivider}>|</span>
-                    <span className={styles.kpiItem}>
-                      <span className={styles.kpiValue}>{kpis.languages}</span>
-                      <span className={styles.kpiLabel}>{isJa ? '言語' : 'Languages'}</span>
-                    </span>
-                    <span className={styles.kpiDivider}>|</span>
-                    <span className={styles.kpiItem}>
-                      <span className={styles.kpiValue}>{kpis.aiAgents}</span>
-                      <span className={styles.kpiLabel}>{isJa ? 'AIエージェント' : 'AI Agents'}</span>
-                    </span>
-                  </div>
-                </Link>
-              );
-            })()}
-            {/* Rigel */}
-            {(() => {
-              const project = projectsData.projects.find(p => p.id === 'rigel');
-              if (!project) return null;
-              const kpis = rigelData.kpis;
-              return (
-                <Link href={`/${params.lang}/projects/${project.slug}`} className={styles.projectCard}>
-                  <div className={styles.projectCardHeader}>
-                    <h3 className={styles.projectCardTitle}>
-                      {isJa ? project.name.ja : project.name.en}
-                    </h3>
-                    <span className={styles.projectStatusBadge} data-status="complete">✅ Complete</span>
-                  </div>
-                  <p className={styles.projectCardDesc}>
-                    {isJa ? project.shortDescription.ja : project.shortDescription.en}
-                  </p>
-                  <div className={styles.projectKpis}>
-                    <span className={styles.kpiItem}>
-                      <span className={styles.kpiValue}>{kpis.loc}</span>
-                      <span className={styles.kpiLabel}>LOC</span>
-                    </span>
-                    <span className={styles.kpiDivider}>|</span>
-                    <span className={styles.kpiItem}>
-                      <span className={styles.kpiValue}>{kpis.tests}</span>
-                      <span className={styles.kpiLabel}>{isJa ? 'テスト' : 'Tests'}</span>
-                    </span>
-                    <span className={styles.kpiDivider}>|</span>
-                    <span className={styles.kpiItem}>
-                      <span className={styles.kpiValue}>{kpis.apiEndpoints}</span>
-                      <span className={styles.kpiLabel}>API</span>
-                    </span>
-                    <span className={styles.kpiDivider}>|</span>
-                    <span className={styles.kpiItem}>
-                      <span className={styles.kpiValue}>{kpis.industries}</span>
-                      <span className={styles.kpiLabel}>{isJa ? '業種対応' : 'Industries'}</span>
-                    </span>
-                  </div>
-                </Link>
-              );
-            })()}
-          </div>
-          <div className={styles.projectsViewAll}>
-            <Link href={`/${params.lang}/projects`} className={styles.viewAllLink}>
-              {(t as any).home?.projects?.viewAll ?? 'すべてのプロジェクトを見る →'}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== Philosophy ===== */}
-      <section className={styles.philosophy} aria-labelledby="philosophy-title">
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <h2 id="philosophy-title" className={styles.sectionTitle}>
-              {t.philosophy.title}
-            </h2>
-          </div>
-          <div className={styles.philosophyGrid}>
-            {t.philosophy.cards.map((card, idx) => (
-              <div key={card.title} className={styles.philosophyCard}>
-                <div className={styles.philosophyIconWrap}>
-                  {philosophyIcons[idx]}
+                <div key={step.title} className={styles.stepItem}>
+                  <div className={nodeClass}>{index + 1}</div>
+                  <h3 className={styles.stepHeading}>{step.title}</h3>
+                  <p className={styles.stepText}>{step.body}</p>
                 </div>
-                <h3 className={styles.philosophyTitle}>{card.title}</h3>
-                <p className={styles.philosophyDesc}>{card.desc}</p>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.section} ${styles.sectionMuted}`}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionEyebrow}>{t.proofEyebrow}</span>
+            <h2 className={styles.sectionTitle}>{t.proofTitle}</h2>
+            <p className={styles.sectionSubtitle}>{t.proofSubtitle}</p>
+          </div>
+          <div className={styles.proofGrid}>
+            <div className={`${styles.proofCard} ${styles.featuredCard}`}>
+              <span className={styles.proofLabel}>{workflowProof[lang].tag}</span>
+              <h3 className={styles.proofTitle}>{workflowProof[lang].title}</h3>
+              <p className={styles.proofSummary}>{workflowProof[lang].summary}</p>
+              <div className={styles.proofStrip}>{workflowProof[lang].strip.map((item) => <span key={item} className={styles.proofPill}>{item}</span>)}</div>
+              <Link href={`/${lang}/services/ai-workflow`} className={styles.ctaLink}>{t.viewWorkflow}<span aria-hidden="true">→</span></Link>
+            </div>
+            {featuredProjects.map((project) => (
+              <div key={project.id} className={`${styles.proofCard} ${styles.proofCardInteractive}`}>
+                <span className={styles.proofLabel}>{project.serviceLine === 'web3-blockchain' ? 'Web3.0 / Blockchain Application Design & Development' : 'AI Application Design & Development'}</span>
+                <h3 className={styles.proofTitle}>{project.name[lang]}</h3>
+                <p className={styles.proofSummary}>{project.summary[lang]}</p>
+                <div className={styles.proofStrip}>{project.proofPoints.map((point: string) => <span key={point} className={styles.proofPill}>{point}</span>)}</div>
+                <Link href={`/${lang}/projects/${project.slug}`} className={styles.ctaLink}>{t.viewCase}<span aria-hidden="true">→</span></Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== CTA ===== */}
-      <section className={styles.ctaSection} aria-labelledby="cta-title">
+      <section className={styles.section}>
         <div className="container">
-          <div className={styles.ctaBanner}>
-            <h2 id="cta-title" className={styles.ctaTitle}>
-              {renderWithBreaks(t.cta.title)}
-            </h2>
-            <p className={styles.ctaDescription}>
-              {t.cta.description}
-            </p>
-            <div className={styles.ctaActions}>
-              <Link href={`/${params.lang}/contact`}>
-                <Button size="lg">{t.cta.button}</Button>
-              </Link>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionEyebrow}>{t.trustEyebrow}</span>
+            <h2 className={styles.sectionTitle}>{t.trustTitle}</h2>
+          </div>
+          <div className={styles.grid3}>{trustCards[lang].map((card) => <div key={card.title} className={styles.card}><h3 className={styles.cardTitle}>{card.title}</h3><p className={styles.cardBody}>{card.body}</p></div>)}</div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className="container">
+          <div className={styles.featuredBand}>
+            <div className={styles.bandCopy}>
+              <h2 className={styles.bandTitle}>{t.ctaTitle}</h2>
+              <p className={styles.bandBody}>{t.ctaBody}</p>
+              <p className={styles.supportText}>{t.ctaSupport}</p>
             </div>
+            <div className={styles.bandActions}><Link href={`/${lang}/contact`} className={styles.linkButton}><Button size="lg">{t.primaryCta}</Button></Link></div>
           </div>
         </div>
       </section>

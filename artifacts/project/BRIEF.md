@@ -1,42 +1,55 @@
 # BRIEF — NebulaInfinity Website
 
 ## Vision
-Nebula Infinity（ネビュラインフィニティ）の企業公式サイト。AI・ブロックチェーン・自動化領域における専門性と信頼性を伝え、潜在顧客からの問い合わせを獲得する。
+Nebula Infinity’s corporate website should clearly position the company as an **AI social implementation partner**: a team that turns AI and Web3.0 from concepts into practical business capability.
+
+## Brand Positioning
+- **Core line**: AI社会実装のパートナー
+- **Value line 1**: 「AI」を、現場の「即戦力」へ
+- **Value line 2**: 「属人」のノウハウを、組織の「資産」に
+- **Value line 3**: Web3.0テクノロジーを、ビジネスへ
+
+## Primary Service Lines
+1. **AI Workflow Design & Development**
+   - Transform people-dependent workflows into repeatable AI workflows owned by the company
+   - Preserve operational know-how as organizational assets instead of individual memory
+2. **AI Application Design & Development**
+   - Design and build AI-native applications, tools, and systems for real usage
+3. **Web3.0 / Blockchain Application Design & Development**
+   - Design and build blockchain-enabled products for real business use cases
 
 ## Company
-- **社名**: Nebula Infinity（ネビュラインフィニティ）
-- **所在地**: 日本
-- **ドメイン**: nebulainfinity.com
-- **主要事業**:
-  - AI エージェント開発
-  - AI 自動化ワークフロー構築
-  - AI アプリケーション（落地応用）
-  - ブロックチェーン / Web3.0 アプリケーション開発
-  - スマートコントラクト設計・開発・監査
-  - Web3.0 コンサルティング
-- **顧客**: 企業・団体・政府機関（規模問わず）
-- **自社プロダクト**: 自社開発アプリの運営あり
+- **Name**: Nebula Infinity（ネビュラインフィニティ）
+- **Location**: Japan
+- **Domain**: nebulainfinity.com
+- **Core Business**:
+  - AI workflow design and development
+  - AI application design and development
+  - Web3.0 / blockchain application design and development
+  - MVP design, prototyping, and implementation support
 
 ## Target Users
-1. **企業の意思決定者** — AI/ブロックチェーン導入を検討中の CTO・CIO・事業責任者
-2. **政府・自治体の担当者** — DX 推進、ブロックチェーン活用を検討中
-3. **スタートアップ** — Web3.0 / AI 領域での技術パートナーを探している
-4. **技術者・業界関係者** — ブログ / 技術記事で流入する潜在顧客
+1. **Business decision makers** — founders, directors, CIO/CTO, operations leads exploring practical AI/Web3 adoption
+2. **Operational leaders** — teams that rely on people-dependent internal workflows and want to convert know-how into reusable systems
+3. **Product owners** — teams building AI-native products, internal tools, or user-facing applications
+4. **Innovation / Web3 stakeholders** — teams evaluating blockchain-enabled products with real business utility
 
 ## Value Proposition
-- 日本市場に特化した AI + Web3.0 のワンストップ開発パートナー
-- エージェント・自動化・オンチェーンを横断する統合的な技術力
-- 構想からローンチまで一貫支援
+- Turn AI into practical front-line execution power, not abstract demos
+- Convert tacit know-how and people-dependent workflows into company-owned assets
+- Deliver end-to-end from workflow design / product design to MVP and implementation
+- Combine AI application capability with blockchain product capability under one team
 
 ## Site Goals
-1. **信頼性の訴求** — プロフェッショナルで洗練されたデザイン
-2. **サービス理解** — 各サービスの具体的な内容と価値を明確に伝える
-3. **実績の可視化** — プロジェクト展示で技術力を証明
-4. **リード獲得** — 問い合わせフォームへの誘導
-5. **情報発信** — ブログ / ニュースで最新技術・プロダクト動向を発信し、SEO + 顧客獲得
+1. Explain Nebula Infinity’s 3 service lines clearly within one visit
+2. Show why AI workflow work is about **assetizing know-how**, not only automation
+3. Prove implementation capability through representative cases
+4. Drive qualified inquiries through a real working contact flow
+5. Establish a credible, professional, business-ready company presence
 
-## Non-goals
-- EC / 決済機能（今回のスコープ外）
-- ユーザーアカウント / ログイン機能
-- 社内向け管理画面
-- モバイルアプリ
+## Non-goals (V1)
+- Blog / news feature
+- CMS integration
+- Account / login system
+- E-commerce / payment flow
+- Long-form content marketing system

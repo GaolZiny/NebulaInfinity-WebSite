@@ -1,4 +1,6 @@
 import { MetadataRoute } from 'next';
+
+export const dynamic = 'force-static';
 import projectsData from '@/data/projects/projects.json';
 import { services } from '@/data/services';
 

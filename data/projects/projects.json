@@ -4,53 +4,83 @@
       "id": "gaijin-life-navi",
       "slug": "gaijin-life-navi",
       "name": { "ja": "Japan Life Navi", "en": "Japan Life Navi" },
-      "icon": null,
       "shortDescription": {
-        "ja": "外国人向けAI生活ナビゲーション。336ガイド×7言語対応、6ドメインAIエージェント、SSEストリーミングチャット、画像分析機能を搭載。",
-        "en": "AI-powered life navigation for foreigners in Japan. 336 guides in 7 languages, 6 domain AI agents, SSE streaming chat, and image analysis."
+        "ja": "在日外国人向けの生活支援アプリ。多言語ガイド、領域特化AI、リアルタイム対話を一体で設計。",
+        "en": "A life-support application for foreign residents in Japan, combining multilingual guidance, domain-specific AI, and real-time interaction."
       },
-      "tags": ["AI Agent", "Gemini API", "Python", "Flutter", "PostgreSQL", "Firebase"],
-      "category": "ai",
+      "summary": {
+        "ja": "在日外国人向け生活支援アプリ。多言語コンテンツ、領域特化AI、リアルタイム対話、画像分析を一つの体験として実装。",
+        "en": "A life-support app for foreign residents in Japan that brings multilingual content, domain-specific AI, real-time interaction, and image analysis into one experience."
+      },
+      "serviceLine": "ai-application",
+      "caseType": "product",
+      "proofPoints": ["336 Guides", "7 Languages", "6 AI Agents"],
+      "tags": ["AI Application", "Gemini API", "Flutter", "FastAPI", "PostgreSQL"],
+      "category": "ai-application",
       "status": "live",
+      "featuredV1": true,
       "url": "https://japan-life-navi.nebulainfinity.com"
     },
     {
       "id": "rigel",
       "slug": "rigel",
       "name": { "ja": "Rigel", "en": "Rigel" },
-      "icon": null,
       "shortDescription": {
-        "ja": "フリーランス・小規模事業者向けAI記帳SaaS。6業種AI対応、自然言語入力、OCRレシート読取、電帳法・インボイス制度準拠。33,000行超・367テスト。",
-        "en": "AI bookkeeping SaaS for freelancers and small businesses. 6-industry AI support, natural language input, OCR receipt scanning, fully compliant with Japanese tax regulations. 33K+ LOC, 367 tests."
+        "ja": "AI記帳SaaSとして、業務知識、法対応、UX、バックエンド実装をまとめて成立させた代表例。",
+        "en": "An AI bookkeeping SaaS proving delivery across domain logic, compliance, UX, and backend implementation."
       },
-      "tags": ["AI", "Hono", "TypeScript", "Flutter", "PostgreSQL", "Stripe"],
-      "category": "ai",
-      "status": "complete"
+      "summary": {
+        "ja": "AI記帳SaaS。業務知識、制度対応、OCR、UX、バックエンド品質まで含めて成立させたプロダクト。",
+        "en": "An AI bookkeeping SaaS that proves delivery across domain logic, regulation support, OCR, user experience, and backend quality."
+      },
+      "serviceLine": "ai-application",
+      "caseType": "product",
+      "proofPoints": ["33,000+ LOC", "367 Tests", "18 API Endpoints", "6 Industries"],
+      "tags": ["AI Application", "Hono", "TypeScript", "Flutter", "PostgreSQL", "Stripe"],
+      "category": "ai-application",
+      "status": "complete",
+      "featuredV1": true
     },
     {
       "id": "agent-skills-jp",
       "slug": "agent-skills-jp",
       "name": { "ja": "AgentSkills.jp", "en": "AgentSkills.jp" },
-      "icon": null,
       "shortDescription": {
         "ja": "AIエージェント向けスキルの日本語プラットフォーム。厳選されたスキルを審査・評価し、安心して利用できる環境を提供。",
         "en": "Japanese-language platform for AI agent skills. Audited and evaluated curated skills in a safe environment."
       },
-      "tags": ["AI Agent", "OpenClaw", "Skills Platform", "Next.js", "TypeScript"],
+      "summary": {
+        "ja": "AIエージェント向けスキルの日本語プラットフォーム。厳選されたスキルを審査・評価し、安心して利用できる環境を提供。",
+        "en": "Japanese-language platform for AI agent skills. Audited and evaluated curated skills in a safe environment."
+      },
+      "serviceLine": "ai-application",
+      "caseType": "product",
+      "proofPoints": ["Curated Skills", "Japanese UX", "Audit-first"],
+      "tags": ["AI", "OpenClaw", "Skills Platform", "Next.js", "TypeScript"],
       "url": "https://agentskills.jp",
-      "category": "ai"
+      "category": "ai-application",
+      "status": "live",
+      "featuredV1": false
     },
     {
       "id": "carina",
       "slug": "carina",
       "name": { "ja": "Carina", "en": "Carina" },
-      "icon": null,
       "shortDescription": {
-        "ja": "小売業者向けWeb3.0 CRM。ポイント・クーポン・会員証をブロックチェーンで管理。",
-        "en": "Web3.0 CRM for retailers. Manage points, coupons, and memberships on blockchain."
+        "ja": "ポイント、クーポン、会員証をブロックチェーン基盤で扱う CRM。Web3.0 を顧客体験と運用へ接続した代表例です。",
+        "en": "A CRM that handles points, coupons, and membership on blockchain infrastructure. It demonstrates Web3.0 connected to customer experience and operations."
       },
-      "tags": ["Web3.0", "Polygon", "Smart Contract", "CRM", "NFT"],
-      "category": "web3"
+      "summary": {
+        "ja": "Carina は、小売向け CRM に Web3.0 を接続し、ポイント、クーポン、会員証の扱いをブロックチェーン基盤で再設計した例です。",
+        "en": "Carina is an example of applying Web3.0 to retail CRM by redesigning points, coupons, and membership on top of blockchain infrastructure."
+      },
+      "serviceLine": "web3-blockchain",
+      "caseType": "web3",
+      "proofPoints": ["Retail CRM", "Membership", "Traceability"],
+      "tags": ["Web3.0", "Polygon", "Smart Contract", "CRM", "Membership"],
+      "category": "web3",
+      "status": "complete",
+      "featuredV1": true
     }
   ]
 }

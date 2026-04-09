@@ -1,0 +1,44 @@
+{
+  "fullDescription": {
+    "ja": "Astra は、OpenClaw から派生したオープンソースの AI プロジェクト管理フレームワークです。AI Agent がプロジェクトの進捗管理、日次・週次報告の自動生成、リスク予警、会議管理、成果物管理を自律的に実行。PM のいないチームでも、PM レベルの可視性と管理体制を実現します。Workflow Engine による確定的なコード実行と、LLM による自然言語理解・生成を組み合わせた独自のハイブリッドアーキテクチャを採用。4 層の記憶システム（セッション記憶、プロジェクト記憶、学習ルール、組織知識）により、使うほど賢くなる PM Agent を実現しています。",
+    "en": "Astra is an open-source AI project management framework derived from OpenClaw. AI agents autonomously handle progress tracking, automatic daily/weekly report generation, risk prediction, meeting management, and deliverable management. Even teams without a dedicated PM achieve PM-level visibility and governance. It features a unique hybrid architecture combining deterministic code execution via a Workflow Engine with natural language understanding and generation via LLMs. A 4-layer memory system (session memory, project memory, learned rules, organizational knowledge) creates a PM agent that gets smarter over time."
+  },
+  "techStack": [
+    "OpenClaw (Fork Base)",
+    "Python",
+    "TypeScript",
+    "Multi-LLM Support (Claude / GPT / Gemini / Local LLM)",
+    "Workflow Engine",
+    "RAG / Vector Search",
+    "Slack / Teams / Telegram Integration"
+  ],
+  "features": [
+    { "ja": "AI Agent による進捗管理・日次/週次報告の自動生成", "en": "AI agent-driven progress management and automatic daily/weekly report generation" },
+    { "ja": "Workflow Engine + LLM のハイブリッド実行（高確定性 + 高知性）", "en": "Hybrid execution with Workflow Engine + LLM (high determinism + high intelligence)" },
+    { "ja": "4 層記憶システム — 使うほど賢くなる PM Agent", "en": "4-layer memory system — a PM agent that gets smarter with use" },
+    { "ja": "リスク予警・課題分析・解決策の自動提案", "en": "Risk prediction, issue analysis, and automated solution proposals" },
+    { "ja": "会議管理（議事録整理、Action Item 追跡、資料自動生成）", "en": "Meeting management (minutes, action item tracking, automated material generation)" },
+    { "ja": "マルチ LLM 対応 + ローカル LLM 対応（完全内網運用可）", "en": "Multi-LLM + local LLM support (fully air-gapped operation possible)" },
+    { "ja": "OpenClaw 派生のオープンソースプロジェクト", "en": "Open-source project derived from OpenClaw" }
+  ],
+  "results": {
+    "ja": [
+      "PM 専任者のいない中小チームに PM レベルの管理体制を提供",
+      "PM 執行業務（報告書作成、進捗追跡、リスク管理）の自動化で工数大幅削減",
+      "Workflow Engine により LLM の不確実性を排除 — 確定的な業務実行を実現",
+      "4 層記憶システムでプロジェクト知識を蓄積 — 経験から学ぶ AI PM"
+    ],
+    "en": [
+      "Provides PM-level governance to small teams without a dedicated project manager",
+      "Dramatically reduces effort by automating PM execution (reports, tracking, risk management)",
+      "Workflow Engine eliminates LLM uncertainty — ensures deterministic business execution",
+      "4-layer memory accumulates project knowledge — an AI PM that learns from experience"
+    ]
+  },
+  "kpis": {
+    "architecture": "Workflow Engine + Selective LLM",
+    "memoryLayers": "4",
+    "license": "Open Source (OpenClaw derivative)",
+    "llmSupport": "Multi-LLM + Local LLM"
+  }
+}

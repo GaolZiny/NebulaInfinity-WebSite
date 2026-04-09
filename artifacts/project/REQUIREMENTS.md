@@ -1,68 +1,82 @@
-# REQUIREMENTS — NebulaInfinity Website
+# REQUIREMENTS — NebulaInfinity Website V1
 
-## Must-have（必須）
+## Must-have
 
-### 機能
-- [ ] 全ページ正常レンダリング（エラーなし）
-- [ ] 国際化（日本語 / 英語）ルーティング正常動作
-- [ ] お問い合わせフォーム送信機能
-- [ ] レスポンシブ対応（モバイル ≤768px / タブレット / デスクトップ）
-  - モバイル: 100%完璧な適応は不要だが、全ページ正常表示が必須
-  - レイアウト崩れ・テキスト切れ・操作不能は NG
-- [ ] SEO 基本対応（メタタグ、OGP、sitemap.xml）
-- [ ] **ブログ / ニュースセクション** — 技術・プロダクト動向の記事を投稿・表示
+### Positioning & Messaging
+- [ ] Website positioning must align with:
+  - AI社会実装のパートナー
+  - 「AI」を、現場の「即戦力」へ
+  - 「属人」のノウハウを、組織の「資産」に
+  - Web3.0テクノロジーを、ビジネスへ
+- [ ] The site must clearly present exactly 3 service lines:
+  1. AI Workflow Design & Development
+  2. AI Application Design & Development
+  3. Web3.0 / Blockchain Application Design & Development
+- [ ] AI Workflow messaging must explain that workflows can preserve company know-how as organizational assets
+- [ ] Workflow examples must be shown as examples only, not as the limit of the offering
 
-### ページ構成
-- [ ] ホーム（Hero + サービス概要 + 実績ハイライト + CTA）
-- [ ] 会社概要（About）
-- [ ] サービス詳細（Services）
-- [ ] プロジェクト展示（Projects）— agent-skills-jp を含む
-- [ ] お問い合わせ（Contact）
-- [ ] **ブログ / ニュース一覧 + 個別記事ページ**
-- [ ] 404 ページ
+### Functional
+- [ ] All primary pages render correctly without runtime errors
+- [ ] Japanese / English routing works on all primary pages
+- [ ] Contact form submits to a **real working delivery path** (not console-only)
+- [ ] Responsive layout works on mobile / tablet / desktop without broken layout or unusable controls
+- [ ] Basic SEO is in place (title, description, OGP, sitemap)
+- [ ] 404 page exists and works
 
-### デザイン
-- [ ] 現行の Light Premium Bento スタイルを維持
-- [ ] Navy (#0f172a) + Gold (#ca8a04) のカラーパレット
-- [ ] Orbitron（見出し）/ Exo 2（本文）フォント
-- [ ] WCAG AA テキストコントラスト（4.5:1 以上）
-- [ ] フォーカスステート可視（アクセシビリティ）
+### Page Set (V1)
+- [ ] Home
+- [ ] About
+- [ ] Services index
+- [ ] AI Workflow service detail
+- [ ] AI Application service detail
+- [ ] Web3.0 / Blockchain service detail
+- [ ] Projects / Cases index
+- [ ] Representative case detail pages (existing dynamic case detail route may be reused)
+- [ ] Contact
+- [ ] 404
 
-### コンテンツ
-- [ ] 全サービスの具体的な説明文（AI エージェント、AI 自動化、AI アプリ、Web3.0、スマートコントラクト、コンサルティング）
-- [ ] プロジェクト展示に agent-skills-jp を追加
-- [ ] 日本語 / 英語の翻訳対応
+### Content
+- [ ] Home page explains the 3 service lines and the core value of assetizing know-how
+- [ ] Services pages explain suitable use cases, value, and typical deliverables
+- [ ] Projects / Cases page shows representative examples across:
+  - Workflow cases
+  - AI application cases
+  - Web3 case(s)
+- [ ] Japan Life Navi and Rigel must be represented as AI application proof points
+- [ ] Carina may be used as a Web3 proof point, but the page must emphasize Web3 capability beyond a single project
+- [ ] Japanese / English copy must be consistent and not contradict service positioning
 
-### パフォーマンス
-- [ ] 静的エクスポート（Cloudflare Pages デプロイ可能）
-- [ ] Core Web Vitals 合格（LCP < 2.5s, FID < 100ms, CLS < 0.1）
+### Design
+- [ ] Keep the existing Light Premium Bento visual direction unless intentionally adjusted in feature docs
+- [ ] Preserve professional, high-trust visual tone
+- [ ] Accessibility basics: readable contrast, visible focus states, clear CTA hierarchy
 
-## Nice-to-have（あると良い）
-- [ ] ダークモード切り替え
-- [ ] 記事の RSS フィード
-- [ ] ブログ記事のタグ / カテゴリフィルタ
-- [ ] アニメーション（スクロール連動、ページ遷移）
-- [ ] 構造化データ（JSON-LD）
-- [ ] パフォーマンス最適化（画像 WebP、lazy loading）
+### Performance / Delivery
+- [ ] Static export remains deployable to Cloudflare Pages
+- [ ] Build succeeds with current stack constraints
+- [ ] No new architecture that requires SSR-only runtime behavior
 
-## Out-of-scope（対象外）
-- CMS 統合（Headless CMS 等）— 記事は Markdown / JSON ファイルベース
-- 決済機能
-- ユーザー認証
-- サーバーサイドレンダリング（SSR）— 静的エクスポートのみ
-- 多言語追加（日英以外）
+## Should-have
+- [ ] Stronger service-to-case mapping on home and services pages
+- [ ] More explicit project process / implementation flow section on home page
+- [ ] Better inquiry intent mapping in contact form
 
-## Constraints（制約）
-- **フレームワーク**: Next.js 14 (App Router) — 変更不可
-- **言語**: TypeScript — 変更不可
-- **スタイル**: CSS Modules + CSS Variables — Tailwind 等の追加禁止
-- **デプロイ**: Cloudflare Pages **無料プラン** 静的エクスポート — `next build` で `out/` 生成
-  - SSR / Edge Functions 等の有料機能は使用不可
-  - ビルド回数: 500回/月（無料枠）
-  - サイトサイズ: 25MB 以下（無料枠）
-- **依存関係**: 最小限に保つ（重い UI ライブラリ追加禁止）
-- **デザイン方向性**: 現行の Light Premium Bento スタイルを基盤とする
-- **ブログ記事データ**: ファイルベース（`data/blog/` に Markdown）
-  - 動的レンダリングなし — ビルド時に静的 HTML 生成
-  - 記事追加フロー: `.md` 作成 → `git commit` → `push` → Cloudflare Pages 自動リビルド
-  - CMS 不要、git でコンテンツ管理
+## Could-have
+- [ ] Dedicated methodology page in a later phase
+- [ ] Deeper case study storytelling in later phase
+
+## Out-of-scope (V1)
+- Blog / news
+- CMS
+- RSS / tags / editorial taxonomy
+- Content marketing system
+- Additional languages beyond Japanese and English
+
+## Constraints
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: CSS Modules + CSS Variables
+- **Deploy**: Cloudflare Pages static export
+- **Dependencies**: Keep additions minimal
+- **Architecture**: Must remain compatible with static export and existing project structure
+- **Implementation discipline**: Documentation and page messaging must be aligned before implementation dispatch

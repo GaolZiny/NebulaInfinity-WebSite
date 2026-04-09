@@ -32,7 +32,7 @@
   /* Colors - Border */
   --border: #e4e4e7;
   --border-hover: #d4d4d8;
-  --border-focus: #a1a1aa;
+  --border-focus: #ca8a04;
 
   /* Card/Surface styles */
   --card-bg: #ffffff;
@@ -69,10 +69,10 @@
   --space-3xl: var(--space-8);
 
   /* Border radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
   --radius-full: 9999px;
 
   /* Z-index */
@@ -95,7 +95,7 @@
   --success: #059669;
   --warning: #d97706;
   --error: #dc2626;
-  --info: #a1a1aa;
+  --info: #2563eb;
 }
 
 /* Media query breakpoints */

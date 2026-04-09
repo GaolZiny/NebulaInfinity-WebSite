@@ -1,72 +1,69 @@
 # PROJECT_MEMORY — NebulaInfinity Website
 
 ## Now
-- コンテンツ・リポジショニング完了（pipeline-035）
-- サービス: 4→3 AI ソリューション（ai-workflow / ai-product / ai-development）
-- プロジェクト: gaijin-life-navi + Rigel 追加、Astra 削除、regel→rigel 修正
-- Homepage に実績ハイライトセクション追加（KPI 付き）
-- 旧URL 301リダイレクト設定済み
-- Cloudflare Pages デプロイ待ち
+- Prior content repositioning pipeline (`pipeline-035`) is complete, but its AI-only positioning is now superseded by the new V1 direction.
+- Design Foundation for the V1 positioning reset has been produced and PM-verified; waiting for Z approval before visual/page design.
+- Visual/page design batch for the V1 positioning rebuild has been produced and PM-verified; waiting for Z approval before implementation.
+- V1 usable-state planning is now locked around 3 service lines:
+  1. AI Workflow Design & Development
+  2. AI Application Design & Development
+  3. Web3.0 / Blockchain Application Design & Development
+- Blog / news is explicitly removed from V1 scope.
+- Home page value proposition must center on converting people-dependent know-how into organization-owned assets.
 
 ## Status
 
 ### Project Docs
 | Document | Status |
 |----------|--------|
-| BRIEF.md | ✅ done |
-| REQUIREMENTS.md | ✅ done |
-| ARCHITECTURE.md | ✅ done |
-| PROJECT_MEMORY.md | ✅ done (this file) |
+| BRIEF.md | ✅ updated for V1 positioning reset |
+| REQUIREMENTS.md | ✅ updated for V1 usable-state scope |
+| ARCHITECTURE.md | ✅ updated for V1 IA + service taxonomy |
+| PROJECT_MEMORY.md | ✅ current |
 
 ### Epics
 | Epic | Status | Features |
 |------|--------|----------|
-| website-redesign | progressing | design-tokens-migration (done), services-page-design (done), services-page-implementation (done), about-page-redesign (done), projects-page-redesign (done), contact-page-redesign (done), content-overhaul (progressing) |
+| website-redesign | progressing | content-overhaul (legacy), v1-design-foundation (approved), v1-positioning-rebuild (awaiting Z approval for visual batch) |
+
+## Current Feature Focus
+- **Epic**: `website-redesign`
+- **Feature**: `v1-positioning-rebuild`
+- **Goal**: Turn the site into a usable V1 business website with unified positioning, credible proof, and a real inquiry path.
 
 ## Next
-- Cloudflare Pages デプロイ（git push 済み → 自動デプロイ確認）
-- 方法論専用ページ（/method or /how-we-build）— 首頁セクションで暫定対応済み、専用ページは Z 判断
-- ブログセクション新設
-- Instant MVP (Phase 0) 再開
+1. Lock PM feature docs for `v1-positioning-rebuild`
+2. Produce page-level content / visual direction for Home, Services, 3 service detail pages, Projects, About, Contact
+3. Implement site-wide copy / structure updates
+4. Make contact form actually deliver inquiries
+5. Verify build, responsive behavior, 404, and Cloudflare Pages deploy state
 
 ## Decisions
 | Date | Decision | Rationale |
 |------|----------|-----------|
-| 2025-07-17 | Adopt artifacts structure | Standardize feature delivery |
-| 2025-07-17 | Epic: website-redesign | Dark → Light professional redesign |
-| 2025-07-17 | First feature: design-tokens-migration | Foundation before component work |
-| 2026-02-08 | Project init docs created | BRIEF / REQUIREMENTS / ARCHITECTURE for PM pipeline |
-| 2026-02-08 | Blog section planned | Markdown-based, no CMS, SEO + lead generation |
-| 2026-02-08 | Design direction: keep current | Light Premium Bento (Navy + Gold) style confirmed by Z |
+| 2025-07-17 | Epic `website-redesign` created | Site redesign managed under artifacts structure |
+| 2026-03-16 | Content repositioning pipeline completed | Reduced service lines and updated project proofs at that time |
+| 2026-04-09 | V1 positioning reset approved by Z | AI-only framing was insufficient for current business positioning |
+| 2026-04-09 | V1 service lines locked to AI Workflow / AI Application / Web3.0 | Matches current business card positioning and company offering |
+| 2026-04-09 | AI Workflow defined as broad organizational assetization capability | Workflow examples are examples only, not service boundaries |
+| 2026-04-09 | Blog removed from V1 scope | Focus on usable-state business site first |
+| 2026-04-09 | V1 Design Foundation produced and PM-verified | Required gate before page-level redesign and implementation |
+| 2026-04-09 | V1 page visual batch produced and PM-verified | Required gate before implementation step |
 
 ## Technical Details
-- **域名**: nebulainfinity.com (Cloudflare Pages 免费套餐)
-- **技术栈**: Next.js 14 + TypeScript + CSS Modules + 静态导出
-- **项目路径**: /root/.openclaw/projects/NebulaInfinity-WebSite
-- **Dev server**: systemd 服務 (nebula-devserver.service) + scripts/devserver.sh + scripts/smoke-test.sh
-- **Telegram Topic**: 66 (PJ-Work-Center 群組 -1003830068021)
-- **已完成 Pipeline**: pipeline-001 (services-page-design), services-page-implementation, pipeline-002 (content-overhaul)
+- **Domain**: nebulainfinity.com
+- **Stack**: Next.js 14 + TypeScript + CSS Modules + static export
+- **Project path**: /root/.openclaw/projects/NebulaInfinity-WebSite
+- **Deploy target**: Cloudflare Pages
+- **Telegram topic**: 66
 
-## Known Issues
-- /ja 和 /en 在 dev mode 返回 404（build 正常）— Next.js dev + export + trailingSlash 交互問題
-- homepage 404 修復待ち
+## Known Issues / Gaps
+- Contact function currently behaves like a placeholder and must be connected to real delivery before V1 is considered usable.
+- Existing content/data still contains legacy AI-only and Web3 residual wording that must be reconciled under the new V1 structure.
+- Cloudflare Pages deploy status still needs explicit verification.
 
-## Backlog
-- ROADMAP.md 創建
-- miryo.AI 競品分析の設計灵感落地（互動 quiz hero、信頼徽章、価格錨定等）
-- Blog セクション新設
-
-## Instant MVP (Phase 0)
-- **概念**: AI 解決方案模擬器 — 非技術用戶答題 → AI 診断・提案・見積
-- **設計演進**: V1(全模板)→V2(模板+AI填充)→V3(純Agent)→V4(Agent+UI模板混合)
-- **Phase 0 決定**: Quiz→AI生成PDF(診断+提案+見積)→Email。Agent不用、OpenClaw不用
-- **Phase 0 技術**: Next.js静的→Cloudflare Worker→Anthropic API(sonnet)→PDF(Puppeteer)→Email(Resend)
-- **成功基準**: 月30+ leads → Phase 1(Agent Demo)
-- **詳細文档**: `docs/INSTANT_MVP_IDEA.md`, `docs/PHASE0_AI_ASSESSMENT.md`
-
-## Glossary
-| Term | Definition |
-|------|-----------|
-| Bento Grid | 12-column grid layout with card-based sections |
-| Static Export | `next build` → `out/` → Cloudflare Pages deploy |
-| i18n | Route-level internationalization (ja/en) |
+## Backlog (Post-V1)
+- Dedicated methodology page
+- Blog / news system
+- Expanded case-study depth
+- SEO/content expansion after usable-state launch

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { languages, type Language } from '@/lib/i18n';
+import { getLanguage, languages, type Language } from '@/lib/i18n';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
@@ -7,23 +7,25 @@ export async function generateStaticParams() {
   return languages.map((lang) => ({ lang }));
 }
 
-export default function LangLayout({
+export default async function LangLayout({
   children,
   params,
 }: {
   children: ReactNode;
-  params: { lang: Language };
+  params: Promise<{ lang: string }> ;
 }) {
+  const { lang: rawLang } = await params;
+  const lang = getLanguage(rawLang);
   return (
     <>
       <script
         dangerouslySetInnerHTML={{
-          __html: `document.documentElement.lang="${params.lang}";`,
+          __html: `document.documentElement.lang="${lang}";`,
         }}
       />
-      <Header lang={params.lang} />
+      <Header lang={lang} />
       <main>{children}</main>
-      <Footer lang={params.lang} />
+      <Footer lang={lang} />
     </>
   );
 }

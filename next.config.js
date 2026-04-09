@@ -20,8 +20,6 @@ const nextConfig = {
   // 严格模式
   reactStrictMode: true,
 
-  // 优化字体加载
-  optimizeFonts: true,
 }
 
 module.exports = nextConfig
