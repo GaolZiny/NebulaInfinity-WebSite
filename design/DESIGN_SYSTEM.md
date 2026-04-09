@@ -387,7 +387,63 @@ Navigation rules:
 - Maintain visible separation from page content with a border and optional shadow on scroll.
 - If a primary header CTA exists, there should be only one.
 
-### 6.6 Dialog / modal
+### 6.6 Proof snapshot card
+
+Use for: service-to-case mapping, representative case cards, and highlighted evidence blocks.
+
+| Element | Spec |
+|---|---|
+| Structure | Eyebrow/tag + title + 2-3 line summary + proof strip + CTA row |
+| Background | White or subtle tinted surface |
+| Border | 1px solid `#E4E4E7`; featured variant may use gold-tinted border |
+| Radius | 16px standard, 20px featured |
+| Padding | 24-32px |
+| Proof strip | 2-4 KPI or evidence items separated by soft dividers |
+| CTA row | Text link or secondary button aligned to bottom |
+
+Rules:
+- One proof card should communicate one capability clearly.
+- Keep summary copy within 2-3 lines on desktop.
+- Use real proof points, named deliverables, or explicit outcome statements — never vague praise.
+
+### 6.7 Transformation flow panel
+
+Use for: workflow assetization explanation, before/after framing, and system/process explanation on landing or service pages.
+
+| Element | Spec |
+|---|---|
+| Structure | 3 columns minimum: `Current state` → `System design` → `Business outcome` |
+| Background | White surface on light section background |
+| Border | Default border with optional gold connector accents |
+| Radius | 20px |
+| Padding | 24px mobile / 32-40px desktop |
+| Connectors | Thin lines or arrows only; avoid heavy illustration dependency |
+| Content density | Max 3 bullets or chips per column |
+
+Rules:
+- Current-state column should make the operational problem tangible.
+- System-design column should show capture/structure/review logic.
+- Outcome column should end on repeatability, ownership, quality, or speed.
+
+### 6.8 Step rail
+
+Use for: engagement process, delivery flow, and contact expectation timeline.
+
+| Element | Spec |
+|---|---|
+| Structure | 3-5 ordered steps with number node, title, and short description |
+| Layout | Horizontal on desktop, vertical on tablet/mobile |
+| Node | 36-44px circular badge with ink or gold accent |
+| Rail | 1px line in neutral border color between steps |
+| Card style | Optional transparent or bordered step container |
+| Copy limit | Title max 1 line, description max 2 lines |
+
+Rules:
+- Use verbs in titles (`整理する`, `設計する`, `実装する`, `定着させる`).
+- Keep the rail short and scannable; detailed process belongs in body copy or supporting cards.
+- Final step should clarify the business handoff or next action.
+
+### 6.9 Dialog / modal
 
 | Element | Spec |
 |---|---|
