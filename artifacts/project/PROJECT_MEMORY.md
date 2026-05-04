@@ -24,6 +24,7 @@
 - 2026-05-05: Visual/page design specs are aligned to the approved Home-led IA on commit `f5a1aea`; Home is canonical for `#services` and `#about`, while Services/About standalone specs are tombstoned for route cleanup.
 - 2026-05-05: Home-led IA code implementation is PM static-verified on commit `3a6bfde`; browser/screenshot QA is next.
 - 2026-05-05: Browser/screenshot QA for Home-led IA failed on commit `3a6bfde`: desktop same-page `#services` and mobile menu `#services/#about` anchor landings can hide/skip target headings; Coder iteration is required.
+- 2026-05-05: Anchor-scroll Coder iteration is PM static-verified on commit `3c0d0f1`; Tester browser/screenshot rerun is next.
 - Production deployment is still an operational follow-up: Cloudflare Pages deployment and live SendGrid env configuration were not executed in this pipeline.
 - Contact flow now uses a real SendGrid-backed delivery path with honest provider-missing failure behavior.
 - Next.js was upgraded to 15.5.14 during implementation to clear high-severity audit issues while preserving static export.
