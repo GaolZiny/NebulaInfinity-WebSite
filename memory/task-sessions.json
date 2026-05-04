@@ -419,5 +419,37 @@
     ],
     "verification": "PM opened task-171 report and commit, confirmed 20 acceptance groups PASS / 0 fail, anchor geometry values show headings below sticky header, 22/22 smoke passed, QA commit contains only allowed report/screenshots, tracked worktree clean except pre-existing untracked docs/nebulainfinity-design-consultation.md.",
     "finalPmAcceptanceCommit": "f52af63ebad61972c6716f9babb2e1fb81377d0e"
+  },
+  {
+    "taskId": "task-172",
+    "project": "NebulaInfinity-WebSite",
+    "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
+    "topicId": "66",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "workerSessionKey": null,
+    "type": "single-worker-task",
+    "worker": "writer",
+    "status": "prepared",
+    "goal": "Rewrite the canonical Home visual/copy document for the new Home-led page structure using Z's 2026-05-04 15:00-22:00 topic discussion requirements.",
+    "baselineCommit": "f728cb6701f72e1b5a19affe2f75fa2769f10c3f",
+    "createdAt": "2026-05-04T22:42:09.078231Z",
+    "allowedFiles": [
+      "design/visual/home.md",
+      "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/ja-home-copy-home-led-structure-task-172.md"
+    ],
+    "forbiddenFiles": [
+      "app/**",
+      "components/**",
+      "data/**",
+      "styles/**",
+      "package.json",
+      "package-lock.json",
+      "docs/nebulainfinity-design-consultation.md"
+    ],
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null
   }
 ]
