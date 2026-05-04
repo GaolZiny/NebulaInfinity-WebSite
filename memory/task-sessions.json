@@ -142,15 +142,18 @@
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "type": "single-worker",
     "worker": "designer",
-    "status": "in-progress",
+    "status": "done",
     "goal": "Revise Home-led IA consolidation proposal per Z confirmation: delete Services index and About standalone pages; keep service detail pages; simplify Home #about.",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-consolidation-proposal.md",
     "baselineCommit": "3fae3e156cfee2855b418c8f78fcab918cf9c422",
     "createdAt": "2026-05-04T15:56:33.953365+00:00",
-    "verificationStatus": "pending",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null
+    "zNotifiedAt": "2026-05-04T16:05:21.145892+00:00",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3668",
+    "completedAt": "2026-05-04T16:04:06.525697+00:00",
+    "commit": "e037a397140aaef2407e4fe72678d52446d1959c",
+    "verification": "PM opened revised proposal, checked allowed-file commit, grep found no secrets/placeholders."
   }
 ]
