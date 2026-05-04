@@ -347,7 +347,7 @@
     "iterationOf": "task-169",
     "iterationCount": 1,
     "goal": "Fix Home-led IA anchor scroll behavior found by browser QA: same-page desktop and mobile menu hash navigation must land with #services/#about headings visible below sticky header.",
-    "baselineCommit": "TBD_AFTER_PM_COMMIT",
+    "baselineCommit": "cfee30e75a6d317f2b558f81da6e82727c2dd0be",
     "qaFailureCommit": "98253c272b34ea1cbc3bbbf28ffc3cb89888cae0",
     "qaReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-ia-task-170.md",
     "allowedFiles": [
