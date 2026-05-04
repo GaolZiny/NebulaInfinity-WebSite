@@ -47,11 +47,19 @@
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "type": "single-worker",
     "worker": "writer",
-    "status": "in-progress",
+    "status": "done",
     "goal": "Revise full JA Home + Services copy sheet according to Z feedback from message 3650.",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/ja-home-services-full-copy-sheet.md",
     "baselineCommit": "7bf9f3e0754a497aa51b1968f89dc197c06de5d8",
     "createdAt": "2026-05-04T12:52:39.613985+00:00",
-    "zFeedback": "Revise Home Process steps to プロセス整理/実装方針設計/検証・最適化/運用・普及; rewrite Home Proof title/subtitle and content to match page structure; update Home final CTA; remove Services Representative proof and Combined services; simplify Services final CTA."
+    "zFeedback": "Revise Home Process steps to プロセス整理/実装方針設計/検証・最適化/運用・普及; rewrite Home Proof title/subtitle and content to match page structure; update Home final CTA; remove Services Representative proof and Combined services; simplify Services final CTA.",
+    "completedAt": "2026-05-04T12:58:07.242467+00:00",
+    "commit": "510e59a131d5c4d8f6c696d637b8bd76c5a3c21a",
+    "verificationStatus": "passed",
+    "zNotificationRequired": true,
+    "zNotifiedAt": "2026-05-04T12:58:07.242467+00:00",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3651-3653",
+    "verification": "PM opened revised artifact, checked allowed-file commit and grep/diff-check output, then sent revised copy excerpts to Telegram topic 66."
   }
 ]
