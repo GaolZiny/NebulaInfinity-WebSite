@@ -1,7 +1,7 @@
 # Visual Spec — Home
 
-**Status:** Canonical V1 Home visual spec for the approved Home-led IA
-**Route:** `/[lang]/`
+**Status:** Canonical V1 Home visual/copy spec for the approved Home-led IA  
+**Route:** `/[lang]/`  
 **Canonical section order (exact):** Hero → Why assetization → Services(#services) → Process → About(#about) → Contact CTA
 
 ## 1. Page role and IA contract
@@ -15,6 +15,7 @@
   - `#about` is the compact company overview surface.
 - Standalone `/[lang]/services` index and `/[lang]/about` page are deleted / stop-exported surfaces. Do not design thin compatibility pages for them.
 - Static export constraint: this IA must not depend on Next.js middleware, server redirects, SSR-only behavior, or server-side compatibility routes. If legacy traffic ever matters, hosting-level redirects are a separate future deployment/config task.
+- Proof is not a standalone Home section in the Home-led IA. Implementation capability is represented through compact service-card proof lines, service detail pages, and the independent Projects route.
 
 ## 2. Header, mobile nav, and link behavior
 
@@ -55,13 +56,13 @@ Anchor accessibility:
 │ HERO                                                                         │
 │ ┌───────────────────────────────7 cols────────────────┬──────5 cols───────┐ │
 │ │ Eyebrow: AI社会実装のパートナー                       │ Value panel 01    │ │
-│ │ H1: 「AI」を、現場の「即戦力」へ                       │ 属人業務を仕組みに │ │
+│ │ H1: 「AI」を、現場の「即戦力」へ。                     │ 属人業務を資産に │ │
 │ │ Body copy                                            ├───────────────────┤ │
-│ │ [お問い合わせ] [サービスを見る -> #services]           │ Value panel 02    │ │
-│ │ Trust chips: Workflow / AI App / Web3.0              │ MVPから実装まで   │ │
+│ │ [まずは要件を整理する] [サービスを見る -> #services]   │ Value panel 02    │ │
+│ │ Trust chips: Workflow / AI App / Web3.0              │ 構想から実装まで │ │
 │ └──────────────────────────────────────────────────────┼───────────────────┤ │
 │                                                        │ Value panel 03    │ │
-│                                                        │ AI + Web3を一貫支援│ │
+│                                                        │ AIとWeb3.0を事業へ│ │
 │                                                        └───────────────────┘ │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │ WHY ASSETIZATION                                                             │
@@ -73,13 +74,13 @@ Anchor accessibility:
 │ each card: fit bullets + compact proof line + detail CTA                     │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │ PROCESS                                                                      │
-│ 課題整理 -> 設計 -> MVP / 実装 -> 定着支援                                     │
+│ プロセス整理 -> 実装方針設計 -> 検証・最適化 -> 運用・普及                   │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │ ABOUT (#about landmark)                                                      │
 │ Company snapshot + working principles only                                   │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │ CONTACT CTA                                                                  │
-│ 要件が固まっていなくても相談できる                                            │
+│ 明確な要件がなくても、ご相談頂けます。                                      │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -114,28 +115,28 @@ Footer
 **Final display copy**
 - JA eyebrow: `AI社会実装のパートナー`
 - EN eyebrow: `AI Social Implementation Partner`
-- JA title: `「AI」を、現場の「即戦力」へ`
+- JA title: `「AI」を、現場の「即戦力」へ。`
 - EN title: `Turn AI into front-line capability`
-- JA body: `Nebula Infinity は、AI Workflow、AI Application、Web3.0 / Blockchain の設計と開発を通じて、構想を実務で使える仕組みに変えます。属人化したノウハウを整理し、運用できる形で実装し、事業の中で機能する状態まで伴走します。`
-- EN body: `Nebula Infinity designs and builds AI workflows, AI applications, and Web3.0 / blockchain products that work in real operations. We turn people-dependent know-how into systems your team can own, reuse, and scale.`
-- JA primary CTA: `お問い合わせ` → `/[lang]/contact`
-- EN primary CTA: `Contact Us` → `/[lang]/contact`
+- JA body: `Nebula Infinityは、属人化した業務ノウハウを整理し、AIワークフロー、AIアプリケーション、Web3.0基盤として実装するパートナーです。技術導入を目的化せず、現場で使われる仕組みとして具体化します。`
+- EN body: `Nebula Infinity organizes people-dependent operational know-how and implements it as AI workflows, AI applications, and Web3.0 infrastructure. We do not treat technology adoption as the goal; we turn it into systems used in real operations.`
+- JA primary CTA: `まずは要件を整理する` → `/[lang]/contact`
+- EN primary CTA: `Clarify requirements first` → `/[lang]/contact`
 - JA secondary CTA: `サービスを見る` → `/[lang]/#services`
 - EN secondary CTA: `View Services` → `/[lang]/#services`
 - Trust chips, exactly:
   - `AI Workflow Design & Development`
   - `AI Application Design & Development`
   - `Web3.0 / Blockchain Application Design & Development`
-- JA value panel 01 title: `属人業務を、仕組みに`
-- JA value panel 01 body: `担当者依存の判断や手順を整理し、再利用できる運用資産へ変えます。`
-- JA value panel 02 title: `MVPから実装まで`
-- JA value panel 02 body: `課題整理、設計、試作、実装、定着支援まで一気通貫で伴走します。`
-- JA value panel 03 title: `AI + Web3を一貫支援`
-- JA value panel 03 body: `AI活用とWeb3.0活用を、分断せず事業要件に合わせて設計します。`
+- JA value panel 01 title: `属人業務を、資産に`
+- JA value panel 01 body: `担当者ごとに閉じた判断基準や手順を整理し、組織で引き継げる仕組みに変えます。`
+- JA value panel 02 title: `構想から実装まで`
+- JA value panel 02 body: `要件整理、設計、試作、実装、運用設計まで、一つの流れとして伴走します。`
+- JA value panel 03 title: `AIとWeb3.0を事業へ`
+- JA value panel 03 body: `AIの活用と、改ざんされにくい記録基盤を、事業要件に合わせて設計します。`
 - EN value panels:
-  - `From people-dependence to systems` / `We convert individual know-how into repeatable operational assets.`
-  - `From MVP to implementation` / `We support discovery, design, prototyping, build, and rollout as one flow.`
-  - `AI + Web3 under one partner` / `We design AI and Web3 initiatives around business requirements, not hype.`
+  - `Turn dependent work into assets` / `We structure individual decision rules and procedures into systems the organization can inherit.`
+  - `From concept to implementation` / `We support requirements, design, prototyping, implementation, and operating design as one flow.`
+  - `AI and Web3.0 for business` / `We design AI use and tamper-resistant record infrastructure around business requirements.`
 - Illustration alt:
   - JA: `業務知識が整理され、運用可能なワークフローとプロダクトに変わる様子を示す抽象図`
   - EN: `Abstract system diagram showing operational knowledge becoming structured workflows and products`
@@ -164,33 +165,34 @@ Footer
 
 **Intent**
 - Explain that Nebula Infinity is not only introducing AI; it designs operating systems that preserve and reuse know-how.
+- Make the core logic concrete: people-dependent judgment and procedures become organizational assets that AI and humans can operate reproducibly.
 
 **Final display copy**
 - JA section eyebrow: `Why assetization matters`
 - EN section eyebrow: `Why assetization matters`
-- JA title: `「導入」より先に、「定着する仕組み」を設計する`
-- EN title: `Design the operating system before introducing the tool`
-- JA subtitle: `AI 導入が止まる理由の多くは、技術そのものではなく、現場の判断基準や業務知識が人に閉じていることにあります。Nebula Infinity は、その知見を運用可能な形に整理し、再現性のある仕組みに変えます。`
-- EN subtitle: `AI projects often stall not because of the model, but because decision logic and operational know-how live inside individuals. We turn that knowledge into systems the organization can operate.`
+- JA title: `属人のノウハウを、組織の資産に。`
+- EN title: `Turn individual know-how into organizational assets`
+- JA subtitle: `AI導入が止まる理由の多くは、技術そのものではなく、判断基準や業務知識が人に閉じていることにあります。Nebula Infinityは、その知見を整理し、AIと人が再現性をもって動ける仕組みに変えていきます。`
+- EN subtitle: `AI projects often stall not because of the technology itself, but because decision criteria and operational knowledge stay inside individuals. Nebula Infinity organizes that knowledge and turns it into systems where AI and people can operate reproducibly.`
 - JA column 1 label: `Current state`
 - JA column 1 bullets:
   - `担当者ごとに判断がばらつく`
   - `引き継ぎに時間がかかる`
-  - `AI を入れても運用に乗らない`
+  - `AIを入れても運用に乗らない`
 - JA column 2 label: `System design`
 - JA column 2 bullets:
   - `判断基準と手順を可視化する`
-  - `AI と人の役割分担を設計する`
+  - `AIと人の役割分担を設計する`
   - `レビュー導線と改善ログを残す`
 - JA column 3 label: `Business outcome`
 - JA column 3 bullets:
   - `再現性のある実務フローになる`
   - `組織で引き継げる資産になる`
-  - `品質と速度を両立できる`
+  - `継続的に改善できる運用になる`
 - EN columns:
-  - `Current state`: `Decisions vary by operator` / `Handoffs take too long` / `AI never sticks in operations`
-  - `System design`: `Make decision rules visible` / `Define human + AI roles` / `Keep review paths and improvement logs`
-  - `Business outcome`: `Repeatable operational flow` / `Transferable organizational asset` / `Better speed with maintained quality`
+  - `Current state`: `Decisions vary by operator` / `Handoffs take too long` / `AI does not stick in operations`
+  - `System design`: `Make decision rules and procedures visible` / `Design roles for AI and people` / `Keep review paths and improvement logs`
+  - `Business outcome`: `Repeatable operational flow` / `Transferable organizational asset` / `Continuously improvable operation`
 
 **Component style guidance**
 - Use a reusable Transformation Flow Panel: white surface, `#E4E4E7` border, 20px radius, 32px desktop padding.
@@ -213,6 +215,8 @@ Footer
 - Show exactly 3 official service lines.
 - Help visitors choose a starting line quickly without recreating the removed Services index.
 - Keep proof compact: proof may appear only as one short proof line inside each service card, then through Projects or service detail pages.
+- AI Workflow must be framed broadly: any repeatable business process with judgment, procedure, review, or handoff can become an AI workflow asset. Nebula's own planning/development workflow is only an example/proof, not the service definition.
+- Web3.0 / Blockchain must be framed as tamper-resistant business trust infrastructure, not as crypto/speculation-first messaging.
 
 **Anchor and landmark contract**
 - Section ID: `services`.
@@ -225,8 +229,8 @@ Footer
 - EN section eyebrow: `Services`
 - JA title: `3つの実装ラインで、構想を事業に落とし込む`
 - EN title: `Three implementation lines, one business partner`
-- JA subtitle: `業務フローの資産化、AIアプリケーション開発、Web3.0 / Blockchain 活用まで、目的に合わせて最適な実装ラインを設計します。`
-- EN subtitle: `From workflow assetization to AI application delivery and Web3.0 / blockchain implementation, we structure the right line of work around your business goal.`
+- JA subtitle: `業務フローの資産化、AIアプリケーション開発、Web3.0 / Blockchain活用まで。Nebula Infinityは、目的に合わせて必要な実装ラインを設計します。`
+- EN subtitle: `From workflow assetization to AI application development and Web3.0 / blockchain use, Nebula Infinity designs the implementation line your business goal requires.`
 
 **Compact choice guide**
 - JA title: `どのラインから始めるべきか`
@@ -236,27 +240,27 @@ Footer
   - `使われるAIプロダクトや業務ツールを作りたいなら` → `AI Application Design & Development`
   - `履歴、評価、契約、会員基盤などの信頼性を価値にしたいなら` → `Web3.0 / Blockchain Application Design & Development`
 - EN choice rows:
-  - `If people-dependence and inconsistent operations are the issue` → `AI Workflow Design & Development`
-  - `If you need an AI product or internal tool people will actually use` → `AI Application Design & Development`
+  - `If people-dependence or inconsistent operation is the issue` → `AI Workflow Design & Development`
+  - `If you need an AI product or operational tool people will actually use` → `AI Application Design & Development`
   - `If history, evaluation, contracts, or membership trust should become business value` → `Web3.0 / Blockchain Application Design & Development`
 
 **Service card 1**
 - Service ID: `ai-workflow`
 - Official line: `AI Workflow Design & Development`
-- JA title: `属人業務を、再利用できる仕組みに`
-- EN title: `Turn people-dependent work into reusable systems`
-- JA body: `判断基準、手順、レビュー導線、既存ツールとの接続を整理し、AI と人が協働できるワークフローへ再設計します。個別事例に閉じず、組織で引き継げる運用資産を作るラインです。`
-- EN body: `We structure decision rules, steps, review paths, and existing-tool connections into workflows where people and AI can operate together. This line creates transferable operating assets, not one-off examples.`
+- JA title: `属人業務を、再現できるワークフローへ`
+- EN title: `Turn people-dependent work into repeatable workflows`
+- JA body: `判断基準や手順を整理し、AIと人が協働できる業務プロセスとして設計・実装します。`
+- EN body: `We organize decision criteria and procedures, then design and implement business processes where AI and people can work together.`
 - JA fit bullets:
   - `社内ノウハウが担当者に偏っている`
-  - `反復業務と判断業務が混在している`
-  - `既存システムと連携しながら改善したい`
+  - `判断を伴う反復業務を標準化したい`
+  - `既存の業務やツールと接続しながら改善したい`
 - EN fit bullets:
-  - `Critical know-how lives inside individuals`
-  - `Operational work mixes repetition and judgment`
-  - `You need improvement without replacing everything`
-- JA compact proof line: `代表例: マルチエージェント開発ワークフロー / プロダクトリサーチワークフロー`
-- EN compact proof line: `Representative examples: multi-agent development workflow / product research workflow`
+  - `Internal know-how is concentrated in specific people`
+  - `You want to standardize repeat work that involves judgment`
+  - `You need improvement while connecting to existing operations and tools`
+- JA compact proof line: `代表例：企画整理、開発プロセス、リサーチ業務など、判断と手順が繰り返される業務のワークフロー化`
+- EN compact proof line: `Examples: workflowization of repeated judgment and procedure, including planning, development processes, and research work`
 - JA detail CTA: `AI Workflowを見る` → `/[lang]/services/ai-workflow`
 - EN detail CTA: `View AI Workflow` → `/[lang]/services/ai-workflow`
 
@@ -264,18 +268,18 @@ Footer
 - Service ID: `ai-application`
 - Official line: `AI Application Design & Development`
 - JA title: `AIを、使われるプロダクトへ`
-- EN title: `Build AI into products people actually use`
-- JA body: `業務ツール、顧客向けアプリ、AIネイティブな新規プロダクトまで、価値が伝わる体験として設計・実装します。`
-- EN body: `We design and ship internal tools, customer-facing apps, and AI-native products that create clear user value.`
+- EN title: `Turn AI into products people actually use`
+- JA body: `社内ツールから顧客向けサービスまで、AI機能を価値が伝わる体験として組み込みます。`
+- EN body: `From internal tools to customer-facing services, we embed AI capability as an experience whose value is clear to users.`
 - JA fit bullets:
-  - `AI を活かした新規サービスを作りたい`
+  - `AIを活かした新規サービスを作りたい`
   - `既存プロダクトにAI機能を組み込みたい`
-  - `RAG / マルチモーダル / リアルタイム処理が必要`
+  - `業務知識をプロダクト体験に落とし込みたい`
 - EN fit bullets:
-  - `You want a new AI-enabled service`
-  - `Your existing product needs meaningful AI capability`
-  - `RAG, multimodal, or streaming UX matters`
-- JA compact proof line: `代表実績: Japan Life Navi / Rigel`
+  - `You want to build a new service that uses AI meaningfully`
+  - `You want to add AI capability to an existing product`
+  - `You want operational knowledge to become product experience`
+- JA compact proof line: `代表実績：Japan Life Navi / Rigel`
 - EN compact proof line: `Representative proof: Japan Life Navi / Rigel`
 - JA detail CTA: `AI Applicationを見る` → `/[lang]/services/ai-application`
 - EN detail CTA: `View AI Application` → `/[lang]/services/ai-application`
@@ -283,19 +287,19 @@ Footer
 **Service card 3**
 - Service ID: `web3-blockchain`
 - Official line: `Web3.0 / Blockchain Application Design & Development`
-- JA title: `信頼を扱う仕組みとして、Web3.0を事業へ`
-- EN title: `Use Web3.0 as business trust infrastructure`
-- JA body: `会員基盤、証跡、契約、評価、トレーサビリティなど、信頼性が価値になる領域で Web3.0 / Blockchain を事業に組み込みます。投機ではなく、運用できる信頼インフラとして設計します。`
-- EN body: `We apply Web3.0 / blockchain to membership, evidence, contracts, evaluation, and traceability where trust becomes business value. The framing is practical infrastructure, not speculation.`
+- JA title: `改ざんされにくい記録を、事業の信頼基盤へ`
+- EN title: `Turn tamper-resistant records into business trust infrastructure`
+- JA body: `ポイント、CRM、レビュー、契約、トレーサビリティなど、信頼が価値になる領域にWeb3.0を実装します。`
+- EN body: `We implement Web3.0 in areas where trust creates value, including points, CRM, reviews, contracts, and traceability.`
 - JA fit bullets:
-  - `履歴や真正性をサービス価値にしたい`
-  - `会員基盤やCRMに信頼性を組み込みたい`
-  - `既存サービスとつながる形で実装したい`
+  - `顧客接点や会員基盤に信頼性を持たせたい`
+  - `履歴・評価・合意を改ざんされにくい形で残したい`
+  - `既存サービスと接続できるWeb3.0活用を検討したい`
 - EN fit bullets:
-  - `History and authenticity should create service value`
-  - `Membership or CRM needs a stronger trust layer`
-  - `The solution must integrate with existing systems`
-- JA compact proof line: `代表実績: Carina`
+  - `Customer touchpoints or membership systems need a stronger trust layer`
+  - `History, evaluation, and agreement records should be hard to tamper with`
+  - `You are exploring Web3.0 use that connects with an existing service`
+- JA compact proof line: `代表実績：Carina`
 - EN compact proof line: `Representative proof: Carina`
 - JA detail CTA: `Web3.0 / Blockchainを見る` → `/[lang]/services/web3-blockchain`
 - EN detail CTA: `View Web3.0 / Blockchain` → `/[lang]/services/web3-blockchain`
@@ -303,6 +307,10 @@ Footer
 **Overlap note**
 - JA: `入口は分けつつ、実装は分断しません。AI Workflow から AI Application へ進むケースや、AI Application と Web3.0 / Blockchain を組み合わせるケースにも対応します。`
 - EN: `We separate the entry point, not the implementation. Work can begin with AI Workflow and expand into AI Application, or combine AI Application with Web3.0 / blockchain when the business problem requires it.`
+
+**Removed Proof mapping note**
+- 旧 Proof 指示は新 IA では独立セクション化せず、Services card proof / Projects導線に吸収する.
+- Do not add a standalone proof grid, project teaser grid, or replacement section for removed proof content.
 
 **Component style guidance**
 - Choice guide: compact neutral band, 20px radius, thin gold divider, 3 rows or 3 chips.
@@ -326,24 +334,25 @@ Footer
 
 **Intent**
 - Show that the company delivers end-to-end instead of stopping at advice.
+- Use Z's corrected visible step labels exactly, then explain each step in implementation-oriented Japanese.
 
 **Final display copy**
 - JA section eyebrow: `Process`
 - EN section eyebrow: `Process`
-- JA title: `現場に入る前提で、設計から実装まで進める`
-- EN title: `Work from real operations, not abstract strategy`
-- JA subtitle: `要件が固まっていなくても構いません。業務の整理から入り、最小構成で試し、実装し、運用に載せるところまで伴走します。`
-- EN subtitle: `You do not need a finished spec. We start by clarifying the operational problem, test the smallest viable shape, implement it, and support rollout.`
+- JA title: `整理から実装、運用・普及まで。`
+- EN title: `From process organization to implementation, operation, and adoption`
+- JA subtitle: `完成した仕様書がなくても構いません。業務の流れを整理し、実装方針を定め、検証しながら現場に広げます。`
+- EN subtitle: `You do not need a finished specification. We organize the business flow, define the implementation direction, validate the approach, and help it spread into operations.`
 - JA steps:
-  1. `課題を整理する` — `現場の流れ、判断基準、制約を確認します。`
-  2. `実装方針を設計する` — `AI / アプリ / Web3 の役割分担と構成を定義します。`
-  3. `MVP・実装を進める` — `試作で確認しながら、本番利用に向けて磨き込みます。`
-  4. `定着と改善を支援する` — `引き継ぎ、運用、改善ポイントまで整理します。`
+  1. `プロセス整理` — `現場の流れ、判断基準、関係者、制約を確認し、実装すべき対象を整理します。`
+  2. `実装方針設計` — `AI、アプリケーション、Web3.0の使い分けと、必要な構成・進め方を設計します。`
+  3. `検証・最適化` — `小さく形にして使われ方を確認し、機能・導線・運用条件を調整します。`
+  4. `運用・普及` — `引き継ぎ、レビュー、改善の流れを整え、組織で使い続けられる状態にします。`
 - EN steps:
-  1. `Clarify the problem` — `Review the current flow, decision logic, and constraints.`
-  2. `Design the build path` — `Define the right mix of AI, application, and Web3 capability.`
-  3. `Prototype and implement` — `Use an MVP to validate, then shape for production use.`
-  4. `Support adoption` — `Organize handoff, operations, and next improvements.`
+  1. `Process organization` — `Clarify the operational flow, decision criteria, stakeholders, and constraints.`
+  2. `Implementation direction design` — `Define how AI, applications, and Web3.0 should be used and how the work should proceed.`
+  3. `Validation and optimization` — `Shape the smallest useful version, observe use, and adjust functions, flows, and operating conditions.`
+  4. `Operation and adoption` — `Prepare handoff, review, and improvement loops so the organization can keep using the system.`
 
 **Component style guidance**
 - Use Step Rail pattern: 4 nodes only, horizontal desktop / vertical mobile.
@@ -393,25 +402,24 @@ Footer
 
 **Working principles**
 - JA cards:
-  1. `Business Logic First` — `技術選定より先に、現場の流れと判断を整理します。`
-  2. `Asset-minded` — `その場限りの自動化ではなく、引き継げる資産を残します。`
-  3. `Implementation-minded` — `提案で終わらせず、設計・実装・定着まで進めます。`
-  4. `Calm, business-ready Web3` — `Web3.0 も投機ではなく、事業価値から設計します。`
+  1. `Business Logic First` — `技術を選ぶ前に、現場の判断、制約、事業要件を整理します。`
+  2. `Asset-minded Delivery` — `その場限りの自動化ではなく、引き継げる運用資産として残します。`
+  3. `Business-ready Implementation` — `AIもWeb3.0も、実務で使われる形まで設計・実装します。`
 - EN cards:
-  1. `Business Logic First` — `We structure the flow and decisions before choosing tools.`
-  2. `Asset-minded` — `We leave behind assets your team can inherit and improve.`
-  3. `Implementation-minded` — `We do not stop at recommendation; we carry the work into design, build, and rollout.`
-  4. `Calm, business-ready Web3` — `We shape Web3.0 from business value, not speculation.`
+  1. `Business Logic First` — `Before choosing technology, we organize on-site judgment, constraints, and business requirements.`
+  2. `Asset-minded Delivery` — `We do not leave behind one-off automation; we leave operating assets the organization can inherit.`
+  3. `Business-ready Implementation` — `We design and implement AI and Web3.0 in forms that are used in real work.`
 
 **Content boundaries**
 - Include only company identity and working principles.
 - Do not add service-line cards, Focus rows, service-domain summaries, representative-product rows, case cards, or project teaser cards inside `#about`.
+- Do not list Japan Life Navi / Rigel / Carina in About.
 - The removed About standalone page must not be rebuilt as a hidden or thin Home subsection.
 
 **Component style guidance**
 - Layout: 12-column bento with intro text spanning 5 columns and snapshot/principles spanning 7 columns, or a 2-column stack if simpler.
 - Snapshot: bordered list rows, 16px radius, white surface.
-- Principle cards: compact 2x2 grid desktop, 1-column mobile, icon containers in soft gold.
+- Principle cards: compact 3-card row desktop, 1-column mobile, icon containers in soft gold.
 - Keep vertical footprint compact: target 1 screen or less on desktop after the section heading.
 
 **Required states**
@@ -427,16 +435,15 @@ Footer
 
 **Intent**
 - Convert hesitation into an inquiry by making the first step feel practical and low-friction.
+- Preserve Z's requested final CTA wording exactly in Japanese.
 
 **Final display copy**
-- JA title: `要件が固まっていなくても、ご相談ください`
-- EN title: `You can reach out before the requirements are fixed`
-- JA body: `現場の課題、作りたいもの、整理できていない論点の段階でも構いません。Nebula Infinity が、実装の入口から一緒に整理します。`
-- EN body: `You do not need a finished brief. If you have an operational issue, a product idea, or an unclear starting point, we can structure the path with you.`
+- JA title: `明確な要件がなくても、ご相談頂けます。`
+- EN title: `You can reach out even before requirements are clear.`
+- JA support text: `アイデア/要件を頂き、最短24時間以内に動くデモをお見せできます。`
+- EN support text: `Share an idea or requirements, and we can show a working demo in as little as 24 hours.`
 - JA primary CTA: `お問い合わせ` → `/[lang]/contact`
 - EN primary CTA: `Contact Us` → `/[lang]/contact`
-- JA support text: `通常 2 営業日以内にご返信します。`
-- EN support text: `We usually reply within 2 business days.`
 
 **Component style guidance**
 - Featured CTA card, 20px radius, gold-tinted wash, 48px desktop padding.
@@ -460,6 +467,7 @@ Footer
 - Static content panels have no loading or error state; preserve semantic HTML instead of fake skeletons.
 - No removed standalone route gets a compatibility page design.
 - No Home standalone Proof section or `Nebula Infinityの実装力` grid may be implemented.
+- 旧 Proof 指示は新 IA では独立セクション化せず、Services card proof / Projects導線に吸収する.
 
 ## 6. Responsive summary
 
