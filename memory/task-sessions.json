@@ -167,7 +167,7 @@
     "pipelineId": "pipeline-167-home-ia-implementation",
     "step": "architecture-docs",
     "worker": "architect",
-    "status": "in-progress",
+    "status": "done",
     "goal": "Align project architecture/requirements artifacts with approved Home-led IA consolidation before implementation.",
     "allowedFiles": [
       "artifacts/project/ARCHITECTURE.md",
@@ -175,12 +175,15 @@
     ],
     "baselineCommit": "eae03d99ecb93abc90b05f35c811963499a08d93",
     "createdAt": "2026-05-04T16:15:46.582003+00:00",
-    "verificationStatus": "pending",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
     "zNotificationMessageId": null,
     "mainNotifiedAt": null,
-    "fallbackCronId": "207f1505-a499-451d-882d-9c17a394bfd2"
+    "fallbackCronId": "207f1505-a499-451d-882d-9c17a394bfd2",
+    "completedAt": "2026-05-04T16:23:42.054267+00:00",
+    "commit": "1c0ccbca08bb16c062cebdcce04dcdd8cf0079be",
+    "verification": "PM opened ARCHITECTURE.md and REQUIREMENTS.md, confirmed Home-led IA constraints, commit changed only allowed architecture/requirements files, git status clean except pre-existing untracked docs/nebulainfinity-design-consultation.md, and secret/placeholder grep returned no findings."
   }
 ]
