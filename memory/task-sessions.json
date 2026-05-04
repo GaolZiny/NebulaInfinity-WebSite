@@ -458,5 +458,40 @@
       "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/ja-home-copy-home-led-structure-task-172.md"
     ],
     "verification": "PM verified commit exists; only allowed files changed; canonical Home section order remains S1 Hero, S2 Why assetization, S3 Services(#services), S4 Process, S5 About(#about), S6 Contact CTA; required Z strings and process labels present; old visible process labels absent; About contains no representative product list; standalone Proof/Services/About are marked non-canonical; secret scan had no credential findings (filename-only false positive for copy noted)."
+  },
+  {
+    "taskId": "task-173",
+    "project": "NebulaInfinity-WebSite",
+    "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
+    "topicId": "66",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "workerSessionKey": null,
+    "type": "pipeline-step",
+    "pipelineId": "pipeline-173-home-copy-implementation-with-z-adjustments",
+    "step": "architecture-requirements-update",
+    "worker": "architect",
+    "status": "prepared",
+    "goal": "Update architecture/requirements for Z-approved Home copy implementation with three new IA adjustments: move Why assetization to AI Workflow detail, add Projects section between Services and Process, simplify About Company snapshot.",
+    "baselineCommit": "38cd420e68a8f1083707e5d43aa3c44dece75a9e",
+    "createdAt": "2026-05-04T23:55:40.274074Z",
+    "allowedFiles": [
+      "artifacts/project/ARCHITECTURE.md",
+      "artifacts/project/REQUIREMENTS.md"
+    ],
+    "forbiddenFiles": [
+      "app/**",
+      "components/**",
+      "data/**",
+      "styles/**",
+      "design/**",
+      "docs/nebulainfinity-design-consultation.md",
+      "package.json",
+      "package-lock.json"
+    ],
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null
   }
 ]
