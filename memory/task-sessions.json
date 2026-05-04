@@ -290,7 +290,7 @@
       "package.json",
       "package-lock.json"
     ],
-    "baselineCommit": "TBD_AFTER_PM_COMMIT",
+    "baselineCommit": "55de3aa9386a6db38184073081ae7898c503403b",
     "createdAt": "2026-05-04T16:53:57.366910Z",
     "verificationStatus": "pending",
     "zNotificationRequired": true,
