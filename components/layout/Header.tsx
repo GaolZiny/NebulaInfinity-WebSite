@@ -53,9 +53,9 @@ export default function Header({ lang }: HeaderProps) {
   const navItems = useMemo(
     () => [
       { href: `/${lang}/`, label: t.home },
-      { href: `/${lang}/services`, label: t.services },
+      { href: `/${lang}/#services`, label: t.services },
       { href: `/${lang}/projects`, label: t.projects },
-      { href: `/${lang}/about`, label: t.about },
+      { href: `/${lang}/#about`, label: t.about },
       { href: `/${lang}/contact`, label: t.contact },
     ],
     [lang, t],
@@ -68,7 +68,10 @@ export default function Header({ lang }: HeaderProps) {
 
     if (pathname.startsWith(`/${lang}`)) {
       const suffix = pathname.slice(`/${lang}`.length) || '/';
-      return `/${lang === 'ja' ? 'en' : 'ja'}${suffix}`;
+      const nextLang = lang === 'ja' ? 'en' : 'ja';
+      if (suffix === '/services') return `/${nextLang}/#services`;
+      if (suffix === '/about') return `/${nextLang}/#about`;
+      return `/${nextLang}${suffix}`;
     }
 
     return `/${lang === 'ja' ? 'en' : 'ja'}${pathname}`;
@@ -96,6 +99,7 @@ export default function Header({ lang }: HeaderProps) {
               key={item.href}
               href={item.href}
               className={`${styles.navLink} ${isActive(item.href) ? styles.navLinkActive : ''}`}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
             </Link>

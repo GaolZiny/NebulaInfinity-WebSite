@@ -69,7 +69,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ lang:
               <Link href={`/${lang}/contact`} className={styles.linkButton}>
                 <Button size="lg">{t.contact}</Button>
               </Link>
-              <Link href={`/${lang}/services`} className={styles.linkButton}>
+              <Link href={`/${lang}/#services`} className={styles.linkButton}>
                 <Button size="lg" variant="outline">{t.services}</Button>
               </Link>
             </div>

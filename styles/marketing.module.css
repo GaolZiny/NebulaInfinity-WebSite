@@ -274,6 +274,74 @@
   text-align: center;
 }
 
+
+.anchorSection {
+  scroll-margin-top: calc(var(--nav-height, 80px) + 24px);
+}
+
+.anchorSection:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 3px rgba(202, 138, 4, 0.18);
+}
+
+.choiceGuide {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  margin-bottom: 24px;
+  background: var(--surface);
+  border: 1px solid rgba(202, 138, 4, 0.22);
+  border-left: 4px solid rgba(202, 138, 4, 0.72);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.choiceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.choiceRow {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  min-height: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: rgba(248, 250, 252, 0.82);
+}
+
+.choicePrompt {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.noteText {
+  margin-top: 24px;
+  max-width: 860px;
+  line-height: 1.8;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.aboutContent {
+  display: grid;
+  gap: 18px;
+}
+
+.principleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
 .grid2,
 .grid3,
 .grid4,
@@ -761,6 +829,9 @@
 @media (max-width: 1024px) {
   .heroSplit,
   .formLayout,
+  .choiceGrid,
+  .aboutGrid,
+  .principleGrid,
   .compareGrid,
   .grid2,
   .grid3,
