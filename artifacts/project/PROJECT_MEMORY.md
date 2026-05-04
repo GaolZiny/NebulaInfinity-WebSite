@@ -25,6 +25,7 @@
 - 2026-05-05: Home-led IA code implementation is PM static-verified on commit `3a6bfde`; browser/screenshot QA is next.
 - 2026-05-05: Browser/screenshot QA for Home-led IA failed on commit `3a6bfde`: desktop same-page `#services` and mobile menu `#services/#about` anchor landings can hide/skip target headings; Coder iteration is required.
 - 2026-05-05: Anchor-scroll Coder iteration is PM static-verified on commit `3c0d0f1`; Tester browser/screenshot rerun is next.
+- 2026-05-05: Home-led IA consolidation is PM-accepted after Tester rerun PASS on QA commit `d586e6c`; final implementation includes `3a6bfde` plus anchor-scroll fix `3c0d0f1`. Services/About standalone routes are removed, Home `#services/#about` anchors are verified on desktop/mobile, and 22/22 smoke passed.
 - Production deployment is still an operational follow-up: Cloudflare Pages deployment and live SendGrid env configuration were not executed in this pipeline.
 - Contact flow now uses a real SendGrid-backed delivery path with honest provider-missing failure behavior.
 - Next.js was upgraded to 15.5.14 during implementation to clear high-severity audit issues while preserving static export.
@@ -56,14 +57,10 @@
 - **Goal**: Turn the site into a usable V1 business website with unified positioning, credible proof, and a real inquiry path.
 
 ## Next
-1. Review IA/content consolidation proposal with Z (`task-165`)
-2. Architecture/design docs are aligned for Home-led IA implementation
-3. Implement approved navigation/page consolidation
-4. Verify browser behavior and anchor navigation
-5. Make contact form actually deliver inquiries in production
-4. Extend approved direction to Contact, service detail pages, Projects, and About
-5. Make contact form actually deliver inquiries in production
-6. Verify build, responsive behavior, 404, and Cloudflare Pages deploy state
+1. Keep Home-led IA consolidation as accepted baseline.
+2. Continue remaining production-readiness follow-ups: Cloudflare Pages deploy verification and production SendGrid/contact env confirmation.
+3. Extend the approved positioning direction to any remaining Contact, service detail, and Projects copy refinements as separate follow-up tasks.
+4. Verify live production URL after deployment, including 404 and contact behavior.
 
 ## Decisions
 | Date | Decision | Rationale |
@@ -90,8 +87,7 @@
 - **Telegram topic**: 66
 
 ## Known Issues / Gaps
-- Current copy is structurally complete but not yet strong enough for client-facing sales/presentation use per Z's 2026-05-04 feedback.
-- Contact function currently behaves like a placeholder and must be connected to real delivery before V1 is considered usable.
+- Contact delivery code exists, but production SendGrid/contact environment and live Cloudflare Pages behavior still need explicit verification.
 - Existing content/data still contains legacy AI-only and Web3 residual wording that must be reconciled under the new V1 structure.
 - Cloudflare Pages deploy status still needs explicit verification.
 
