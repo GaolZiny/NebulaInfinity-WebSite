@@ -28,6 +28,7 @@
 - 日文 B2B 语气：短、稳、具体、可咨询。
 - 优先使用：`整理する` / `設計する` / `実装する` / `運用に落とし込む` / `改善する` / `資産化する`。
 - 不使用：`最短1時間` / `爆速` / `劇的に削減` / `圧倒的` / `1/3以下` / 无来源的强保证。
+- 例外：Home Final CTA 的 `最短24時間以内に動くデモ` 是 Z 指定文言，本稿按原文保留。
 - proof 只使用公开或已在项目资料中出现的代表例，不编造客户故事、效果数字或第三方评价。
 
 ---
@@ -141,78 +142,78 @@ Web3.0 / Blockchain Application Design & Development
 
 ## 1.5 Process section
 
-**中文说明**：流程不承诺“极快交付”，而强调即使需求不清，也可以从业务整理开始并逐步进入实现。
+**中文说明**：流程不承诺“极快交付”，而强调即使需求不清，也可以从业务整理开始，经过实现方针设计与验证优化，最后进入运用和组织内普及。
 
 | 元素 | 日文文案 |
 |---|---|
 | Eyebrow | `Process` |
-| Title | `要件整理から、運用に乗る形まで。` |
-| Subtitle | `完成した仕様書がなくても構いません。現場の流れを整理し、小さく検証しながら、実装と定着に向けて進めます。` |
+| Title | `整理から実装、運用・普及まで。` |
+| Subtitle | `完成した仕様書がなくても構いません。業務の流れを整理し、実装方針を定め、検証しながら現場に広げます。` |
 
 **Steps**：
 
 | Step | Title | Body |
 |---|---|---|
-| 1 | `課題を整理する` | `現場の流れ、判断基準、制約、関係者を確認します。` |
-| 2 | `実装方針を設計する` | `AI、アプリケーション、Web3.0の役割分担と構成を定義します。` |
-| 3 | `小さく検証する` | `必要な機能を絞り、使われ方を確認しながら形にします。` |
-| 4 | `運用に落とし込む` | `引き継ぎ、レビュー、改善の流れまで整理します。` |
+| 1 | `プロセス整理` | `現場の流れ、判断基準、関係者、制約を確認し、実装すべき対象を整理します。` |
+| 2 | `実装方針設計` | `AI、アプリケーション、Web3.0の使い分けと、必要な構成・進め方を設計します。` |
+| 3 | `検証・最適化` | `小さく形にして使われ方を確認し、機能・導線・運用条件を調整します。` |
+| 4 | `運用・普及` | `引き継ぎ、レビュー、改善の流れを整え、組織で使い続けられる状態にします。` |
 
 ---
 
-## 1.6 Proof section：AI Workflow example + project proof wording
+## 1.6 Proof section：project / proof cards
 
-**中文说明**：Home proof 只展示代表性，不展开长案例。AI Workflow 使用“代表例”，AI Application / Web3 使用“代表実績”。不写无来源指标。
+**中文说明**：Home proof 按当前页面的 proof card 结构来写：一个 AI Workflow 代表例卡片，加上公开项目卡片。只展示可见项目名、短说明、pill 和 CTA，不展开抽象服务说明或长案例。
 
 | 元素 | 日文文案 |
 |---|---|
 | Eyebrow | `Proof` |
-| Title | `実装領域を、代表例で示す` |
-| Subtitle | `公開できる範囲の代表例を通じて、AI Workflow、AI Application、Web3.0 / Blockchainの実装領域を示します。` |
+| Title | `Nebula Infinityの実装力` |
+| Subtitle | `一部の実装例(プロジェクト)を公開します。` |
 
-### 1.6.1 Featured proof — AI Workflow representative example
+### 1.6.1 Featured proof card — AI Workflow representative example
 
 | 元素 | 日文文案 |
 |---|---|
 | Label | `AI Workflow Design & Development` |
-| Title | `ワークフロー資産化の代表例` |
-| Summary | `企画整理、開発プロセス、リサーチ業務など、判断や手順が繰り返される業務を、AIと人が再現性をもって動けるワークフローとして設計します。これは一例であり、対象は開発業務に限定されません。` |
-| Pill 1 | `判断基準の明文化` |
-| Pill 2 | `人とAIの役割設計` |
-| Pill 3 | `レビュー導線の整理` |
+| Title | `ワークフロー資産化` |
+| Summary | `企画整理、開発プロセス、リサーチ業務など、判断と手順が繰り返される業務を、AIと人で実行できるワークフローに整理する代表例です。` |
+| Pill 1 | `プロセス整理` |
+| Pill 2 | `役割設計` |
+| Pill 3 | `レビュー導線` |
 | CTA | `AI Workflowを見る` |
 
-### 1.6.2 Project proof — Japan Life Navi
+### 1.6.2 Project proof card — Japan Life Navi
 
 | 元素 | 日文文案 |
 |---|---|
 | Label | `AI Application Design & Development` |
 | Title | `Japan Life Navi` |
-| Summary | `在日外国人向けの生活支援アプリとして、多言語コンテンツ、領域特化AI、リアルタイム対話、画像分析を一つの体験にまとめた代表実績です。` |
+| Summary | `在日外国人向けの生活支援アプリ。多言語コンテンツ、領域特化AI、リアルタイム対話を一つの体験にまとめた実装例です。` |
 | Pill 1 | `多言語生活支援` |
 | Pill 2 | `領域特化AI` |
 | Pill 3 | `リアルタイム対話` |
 | CTA | `詳細を見る` |
 
-### 1.6.3 Project proof — Rigel
+### 1.6.3 Project proof card — Rigel
 
 | 元素 | 日文文案 |
 |---|---|
 | Label | `AI Application Design & Development` |
 | Title | `Rigel` |
-| Summary | `AI記帳SaaSとして、業務知識、制度対応、OCR、UX、バックエンド実装をまとめて成立させた代表実績です。` |
+| Summary | `AI記帳SaaS。業務知識、OCR、UX、バックエンド実装をまとめて、実務で使えるプロダクトとして成立させた実装例です。` |
 | Pill 1 | `業務知識の実装` |
 | Pill 2 | `OCR・AI処理` |
 | Pill 3 | `SaaS開発` |
 | CTA | `詳細を見る` |
 
-### 1.6.4 Project proof — Carina
+### 1.6.4 Project proof card — Carina
 
 | 元素 | 日文文案 |
 |---|---|
 | Label | `Web3.0 / Blockchain Application Design & Development` |
 | Title | `Carina` |
-| Summary | `小売向けCRMにWeb3.0を接続し、ポイント、クーポン、会員証などの顧客接点をブロックチェーン基盤で扱う代表実績です。` |
+| Summary | `小売向けCRMにWeb3.0を接続し、ポイント、クーポン、会員証をブロックチェーン基盤で扱う実装例です。` |
 | Pill 1 | `Retail CRM` |
 | Pill 2 | `Membership` |
 | Pill 3 | `Traceability` |
@@ -239,14 +240,14 @@ Web3.0 / Blockchain Application Design & Development
 
 ## 1.8 Final CTA band
 
-**中文说明**：底部 CTA 要降低咨询门槛。避免“马上做 MVP”给需求未整理的客户压力。
+**中文说明**：底部 CTA 要降低咨询门槛。Z 指定的 demo 速度文案需原文保留；其余正文保持“可先相談、再整理”的低压力语气。
 
 | 元素 | 日文文案 |
 |---|---|
-| Title | `要件が固まっていなくても、ご相談ください。` |
-| Body | `現場の課題、作りたいプロダクト、Web3.0活用の検討段階でも構いません。Nebula Infinityが、実装の入口から一緒に整理します。` |
-| Support | `内容を確認し、次の進め方をご連絡します。` |
-| Primary CTA | `まずは要件を整理する` |
+| Title | `明確な要件がなくても、ご相談頂けます。` |
+| Body | `現場の課題、作りたいプロダクト、Web3.0活用の検討段階からご相談ください。Nebula Infinityが、実装の入口を一緒に整理します。` |
+| Support | `アイデア/要件を頂き、最短24時間以内に動くデモをお見せできます。` |
+| Primary CTA | `お問い合わせ` |
 
 ---
 
@@ -342,43 +343,40 @@ Web3.0 / Blockchain Application Design & Development
 
 ## 2.5 Representative proof section
 
-**中文说明**：Services index 的 proof 应比 Home 稍微明确，但仍不展开成案例页。AI Workflow 使用“代表例”，AI Application / Web3 使用“代表実績”。
+**中文说明**：Z 反馈认为 Services index 的 Representative proof 与 service cards 重复；详情可从各 service card / service detail 进入。因此本区块建议从 proposed implementation 中移除，不再提供完整日文文案表。
 
-| 元素 | 日文文案 |
+**实装建议**：
+
+| 项目 | 处理 |
 |---|---|
-| Eyebrow | `Representative proof` |
-| Title | `サービスごとの代表例` |
-| Support | `公開できる範囲の代表例をもとに、各サービスラインの実装領域を整理しています。詳細な案件整理や非公開事例は、ご相談時に目的に合わせて共有します。` |
-
-| Service line | Proof title | Summary | CTA |
-|---|---|---|---|
-| `AI Workflow Design & Development` | `代表例：ワークフロー資産化` | `業務の判断基準、手順、レビュー導線を整理し、AIと人が再現性をもって動ける運用フローとして設計します。企画整理や開発プロセスは一例であり、対象業務はそれに限定されません。` | `AI Workflowを見る` |
-| `AI Application Design & Development` | `代表実績：Japan Life Navi / Rigel` | `多言語生活支援アプリやAI記帳SaaSなど、AIをユーザーが使えるプロダクト体験として成立させた実績です。` | `AI Applicationを見る` |
-| `Web3.0 / Blockchain Application Design & Development` | `代表実績：Carina` | `ポイント、クーポン、会員証をブロックチェーン基盤で扱うCRMの代表実績です。レビュー、契約、トレーサビリティなど、信頼できる記録が価値になる領域にも応用できます。` | `Web3.0 / Blockchainを見る` |
+| Representative proof section | `不要 / 削除対象` |
+| 理由 | `サービスカード側で代表例・代表実績への導線を持たせるため、Services index では重複表示しない。` |
+| 保留する情報 | `各 service card の Representative line / CTA に集約する。` |
 
 ---
 
 ## 2.6 Overlap / combined-services block
 
-**中文说明**：这里要解释三条服务线是入口分类，不是交付边界。特别补一句 AI + Web3 的结合价值。
+**中文说明**：Z 反馈认为 combined services 区块不需要保留。本区块从 proposed implementation 中移除，不再提供日文正文。
 
-| 元素 | 日文文案 |
+**实装建议**：
+
+| 项目 | 处理 |
 |---|---|
-| Title | `サービスは分断せず、必要に応じて接続する` |
-| Body | `AI Workflowで業務を整理したあとにAI Applicationへ進むケースや、AI ApplicationとWeb3.0 / Blockchainを組み合わせて顧客体験を設計するケースもあります。AIで業務情報を整理・活用し、Blockchainで重要な履歴や合意を信頼できる記録として残すことで、より追跡可能な業務システムを構築できます。Nebula Infinityは、入口は分けつつ、実装は分断しません。` |
+| Combined services section | `不要 / 削除対象` |
+| 理由 | `Services index 先帮助客户选择入口即可；跨服务组合可在咨询或 service detail 中说明，避免首页信息重复。` |
 
 ---
 
 ## 2.7 Final CTA band
 
-**中文说明**：Services 页底部 CTA 继续降低咨询门槛，鼓励客户带着问题来，而不是先自己判断技术路线。
+**中文说明**：Services 页底部 CTA 继续降低咨询门槛，鼓励客户带着问题来，而不是先自己判断技术路线。Z 指定 CTA 只保留 `お問い合わせ`，不再提出 `実績を見る`。
 
 | 元素 | 日文文案 |
 |---|---|
-| Title | `どのラインから始めるべきか、相談しながら決められます。` |
+| Title | `どれを選ぶべきか、相談で決められます。` |
 | Body | `現場課題、プロダクト構想、Web3.0施策の検討段階でも構いません。背景を共有いただければ、適した入口と進め方を一緒に整理します。` |
-| Primary CTA | `まずは要件を整理する` |
-| Secondary CTA | `実績を見る` |
+| Primary CTA | `お問い合わせ` |
 
 ---
 
