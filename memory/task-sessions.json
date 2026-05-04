@@ -294,9 +294,9 @@
     "createdAt": "2026-05-04T16:53:57.366910Z",
     "verificationStatus": "passed_after_iteration_and_tester",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-04T17:46:39.368485Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3678",
     "completedAt": "2026-05-04T17:09:19.907869Z",
     "coderCommit": "3a6bfdea237addd61ed7c6a593488e6d4b45e246",
     "pmStaticVerification": "passed: allowed files, lint, test, build after cancelling concurrent QA, route/link scans, sitemap check, secret scan",
@@ -372,9 +372,9 @@
     "createdAt": "2026-05-04T17:23:56.120180Z",
     "verificationStatus": "passed_with_tester",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-04T17:46:39.368485Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3678",
     "completedAt": "2026-05-04T17:35:01.365364Z",
     "commit": "3c0d0f19089b8be60f105f1e6c1ef4673416b3de",
     "pmStaticVerification": "PM verified commit exists, only components/layout/Header.tsx changed vs baseline, deleted Services/About standalone pages remain absent, service detail file remains present, npm run lint/test/build passed, and secret scan found no credential patterns.",
@@ -398,9 +398,9 @@
     "createdAt": "2026-05-04T17:35:01.365364Z",
     "verificationStatus": "passed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-04T17:46:39.368485Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3678",
     "completedAt": "2026-05-04T17:46:00.961875Z",
     "commit": "d586e6c4da5f7176ac62e478e92d294e08ec5971",
     "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-ia-task-171.md",
@@ -417,6 +417,7 @@
       "artifacts/screenshots/task-171-ja-mobile-about-click.png",
       "artifacts/screenshots/task-171-ja-mobile-services-click.png"
     ],
-    "verification": "PM opened task-171 report and commit, confirmed 20 acceptance groups PASS / 0 fail, anchor geometry values show headings below sticky header, 22/22 smoke passed, QA commit contains only allowed report/screenshots, tracked worktree clean except pre-existing untracked docs/nebulainfinity-design-consultation.md."
+    "verification": "PM opened task-171 report and commit, confirmed 20 acceptance groups PASS / 0 fail, anchor geometry values show headings below sticky header, 22/22 smoke passed, QA commit contains only allowed report/screenshots, tracked worktree clean except pre-existing untracked docs/nebulainfinity-design-consultation.md.",
+    "finalPmAcceptanceCommit": "f52af63ebad61972c6716f9babb2e1fb81377d0e"
   }
 ]
