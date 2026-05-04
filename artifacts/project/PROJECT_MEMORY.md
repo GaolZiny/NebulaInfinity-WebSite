@@ -17,6 +17,7 @@
 - 2026-05-04: Z approved the revised JA Home + Services copy and authorized page implementation.
 - 2026-05-04: JA Home + Services copy implementation is PM-verified on commit `6f4b584`; Tester browser/screenshot QA passed 13/13 with evidence under `artifacts/screenshots/task-164-*` and report `notes/tester-ja-copy-task-164.md`.
 - 2026-05-05: Z requested an IA/content consolidation proposal: remove standalone Services index need by folding service selection into Home, remove Home Proof if covered by service details, and fold About/company overview into Home with nav anchors.
+- 2026-05-05: Home-led IA consolidation proposal is PM-verified on commit `4933ef6`; waiting for Z review/approval before docs or implementation changes.
 - Production deployment is still an operational follow-up: Cloudflare Pages deployment and live SendGrid env configuration were not executed in this pipeline.
 - Contact flow now uses a real SendGrid-backed delivery path with honest provider-missing failure behavior.
 - Next.js was upgraded to 15.5.14 during implementation to clear high-severity audit issues while preserving static export.

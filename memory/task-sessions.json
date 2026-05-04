@@ -120,15 +120,18 @@
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "type": "single-worker",
     "worker": "designer",
-    "status": "in-progress",
+    "status": "done",
     "goal": "Draft IA/content consolidation proposal for Home absorbing Services/About and removing Home Proof per Z feedback.",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-consolidation-proposal.md",
     "baselineCommit": "d33c5492ef681f4076110eb3ea251ba80b6c78de",
     "createdAt": "2026-05-04T15:08:43.160432+00:00",
-    "verificationStatus": "pending",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
-    "zNotificationMessageId": null
+    "zNotificationMessageId": null,
+    "completedAt": "2026-05-04T15:24:40.084665+00:00",
+    "commit": "4933ef6fb0a7616b8e98ff25d20988bce3681c27",
+    "verification": "PM opened proposal, checked commit allowed-file change, and grep found no secrets/placeholders."
   }
 ]
