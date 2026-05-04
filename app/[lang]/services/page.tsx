@@ -7,21 +7,15 @@ import styles from '@/styles/marketing.module.css';
 const copy = {
   ja: {
     eyebrow: 'Services',
-    title: '目的から選べる、3つの実装ライン',
-    subtitle: 'Nebula Infinity のサービスは、AI Workflow、AI Application、Web3.0 / Blockchain の 3 つに整理されています。技術名ではなく、事業で何を実現したいかから選べる構成です。',
+    title: '事業課題に合わせて、AI / Web3.0を実装する3つのサービス',
+    subtitle: '業務プロセスの整理、AIアプリケーションの設計・開発、Web3.0基盤の実装まで。Nebula Infinityは、技術導入を目的化せず、現場で使われる仕組みとして具体化します。',
     decisionTitle: 'どのラインから始めるべきか、こう考える',
     serviceTitle: '3つのサービスライン',
     matrixEyebrow: 'How to choose',
     matrixTitle: '「誰に向くか」「何を作るか」「何で証明するか」を整理する',
-    proofEyebrow: 'Representative proof',
-    proofTitle: 'サービスごとの代表例',
-    proofSupport: '詳細な案件整理や非公開事例は、ご相談時に目的に合わせて共有します。',
-    overlapTitle: 'サービスは分断せず、必要に応じて接続する',
-    overlapBody: 'たとえば、AI Workflow で業務を整理したあとに AI Application へ進むケースや、AI Application と Web3.0 / Blockchain を組み合わせて顧客体験を設計するケースもあります。Nebula Infinity は、入口は分けつつ、実装は分断しません。',
-    ctaTitle: 'どのラインから始めるべきか、相談しながら決められます',
-    ctaBody: '現場課題、プロダクト構想、Web3施策の検討段階でも構いません。まずは背景を共有してください。',
+    ctaTitle: 'どれを選ぶべきか、相談で決められます。',
+    ctaBody: '現場課題、プロダクト構想、Web3.0施策の検討段階でも構いません。背景を共有いただければ、適した入口と進め方を一緒に整理します。',
     contact: 'お問い合わせ',
-    projects: '実績を見る',
   },
   en: {
     eyebrow: 'Services',
@@ -45,15 +39,36 @@ const copy = {
 
 const decisionBullets = {
   ja: [
-    '業務の属人化や運用のばらつきが課題 -> AI Workflow',
-    '使われるAIプロダクトや業務ツールを作りたい -> AI Application',
-    '台帳性・真正性・会員基盤を価値にしたい -> Web3.0 / Blockchain',
+    '業務の属人化や運用のばらつきが課題なら：AI Workflow',
+    '使われるAIプロダクトや業務ツールを作りたいなら：AI Application',
+    '履歴、評価、契約、会員基盤などの信頼性を価値にしたいなら：Web3.0 / Blockchain',
   ],
   en: [
     'If people-dependence and inconsistency are the issue -> AI Workflow',
     'If you need an AI product or internal tool people will use -> AI Application',
     'If traceability, authenticity, or membership infrastructure matters -> Web3.0 / Blockchain',
   ],
+} as const;
+
+const jaServiceCards = {
+  'ai-workflow': {
+    title: '属人業務を、再現できる仕組みに',
+    body: '属人化した業務の判断基準や手順を、AIと人が再現できるワークフローとして資産化します。',
+    fitBullets: ['社内ノウハウが担当者に偏っている', '判断を伴う反復業務を標準化したい', '既存業務を置き換えすぎず、運用可能な形で改善したい'],
+    representativeLine: '代表例：企画整理、開発プロセス、リサーチ業務のワークフロー化',
+  },
+  'ai-application': {
+    title: 'AIを、使われるプロダクトへ',
+    body: 'AI機能を、社内外のユーザーに使われるプロダクト体験として設計・実装します。',
+    fitBullets: ['AIを活かした新規サービスを作りたい', '既存プロダクトにAI機能を組み込みたい', '業務知識や専門知識をアプリ体験に落とし込みたい'],
+    representativeLine: '代表実績：Japan Life Navi / Rigel',
+  },
+  'web3-blockchain': {
+    title: 'Web3.0テクノロジーを、ビジネスへ',
+    body: '改ざんされにくい記録を、顧客体験・契約・評価・トレーサビリティを支える信頼基盤として活用します。',
+    fitBullets: ['ポイント、CRM、レビュー、契約履歴を事業に組み込みたい', '真正性やトレーサビリティを価値にしたい', '既存サービスと接続できるWeb3.0活用を検討したい'],
+    representativeLine: '代表実績：Carina',
+  },
 } as const;
 
 const matrixRows = {
@@ -63,11 +78,11 @@ const matrixRows = {
       en: 'Operations leads / process owners / workflow improvement teams',
     },
     deliverables: {
-      ja: '現行業務整理 / 判断基準の明文化 / AIワークフロー設計 / 人のレビュー導線 / 連携仕様',
+      ja: '現行業務整理 / 判断基準の明文化 / AIワークフロー設計 / 人のレビュー導線 / 既存ツール連携',
       en: 'Current-state mapping / decision rules / AI workflow design / human review path / integration spec',
     },
     proof: {
-      ja: 'マルチエージェント開発ワークフロー / プロダクトリサーチワークフロー',
+      ja: '企画整理、開発プロセス、リサーチ業務など、判断と手順が繰り返される業務のワークフロー化',
       en: 'Multi-agent development workflow / product research workflow',
     },
   },
@@ -77,7 +92,7 @@ const matrixRows = {
       en: 'New business leaders / product owners / digital transformation teams',
     },
     deliverables: {
-      ja: '体験設計 / AI機能設計 / フロント・バックエンド実装 / データ連携 / 運用設計',
+      ja: '体験設計 / AI機能設計 / フロントエンド・バックエンド実装 / データ連携 / 運用設計',
       en: 'Experience design / AI feature design / frontend + backend build / data integration / operations design',
     },
     proof: {
@@ -87,7 +102,7 @@ const matrixRows = {
   },
   'web3-blockchain': {
     fit: {
-      ja: '事業開発 / CRM責任者 / 会員基盤責任者 / Web3新規施策担当',
+      ja: '事業開発 / CRM責任者 / 会員基盤責任者 / Web3.0施策担当',
       en: 'Business development / CRM leads / membership platform owners / Web3 initiative teams',
     },
     deliverables: {
@@ -95,7 +110,7 @@ const matrixRows = {
       en: 'Requirements framing / chain design / smart contract architecture / UI build / existing-service integration',
     },
     proof: {
-      ja: 'Carina',
+      ja: 'Carina。ポイント、CRM、レビュー、契約、トレーサビリティなど、改ざん耐性が価値になる領域へ応用可能です。',
       en: 'Carina',
     },
   },
@@ -152,22 +167,30 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
             <h2 className={styles.sectionTitle}>{t.serviceTitle}</h2>
           </div>
           <div className={styles.serviceGrid}>
-            {services.map((service) => (
-              <div key={service.id} className={`${styles.card} ${styles.interactiveCard}`}>
-                <span className={styles.columnLabel}>{service.officialLine}</span>
-                <h3 className={styles.cardTitle}>{service.title[lang]}</h3>
-                <p className={styles.cardBody}>{service.body[lang]}</p>
-                <ul className={styles.list}>
-                  {service.fitBullets[lang].map((bullet) => (
-                    <li key={bullet} className={styles.listItem}>{bullet}</li>
-                  ))}
-                </ul>
-                <Link href={`/${lang}/services/${service.id}`} className={styles.ctaLink}>
-                  {service.cta[lang]}
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            ))}
+            {services.map((service) => {
+              const jaCard = jaServiceCards[service.id];
+              const title = lang === 'ja' ? jaCard.title : service.title.en;
+              const body = lang === 'ja' ? jaCard.body : service.body.en;
+              const fitBullets = lang === 'ja' ? jaCard.fitBullets : service.fitBullets.en;
+              const representativeLine = lang === 'ja' ? jaCard.representativeLine : service.proofLine.en;
+              return (
+                <div key={service.id} className={`${styles.card} ${styles.interactiveCard}`}>
+                  <span className={styles.columnLabel}>{service.officialLine}</span>
+                  <h3 className={styles.cardTitle}>{title}</h3>
+                  <p className={styles.cardBody}>{body}</p>
+                  <ul className={styles.list}>
+                    {fitBullets.map((bullet) => (
+                      <li key={bullet} className={styles.listItem}>{bullet}</li>
+                    ))}
+                  </ul>
+                  <div className={styles.proofStrip}><span className={styles.proofPill}>{representativeLine}</span></div>
+                  <Link href={`/${lang}/services/${service.id}`} className={styles.ctaLink}>
+                    {service.cta[lang]}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -206,38 +229,6 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
         </div>
       </section>
 
-      <section className={`${styles.section} ${styles.sectionMuted}`}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <span className={styles.sectionEyebrow}>{t.proofEyebrow}</span>
-            <h2 className={styles.sectionTitle}>{t.proofTitle}</h2>
-            <p className={styles.sectionSubtitle}>{t.proofSupport}</p>
-          </div>
-          <div className={styles.grid3}>
-            {services.map((service) => (
-              <div key={service.id} className={styles.proofCard}>
-                <span className={styles.proofLabel}>{service.officialLine}</span>
-                <h3 className={styles.proofTitle}>{service.proofLine[lang]}</h3>
-                <p className={styles.proofSummary}>{service.body[lang]}</p>
-                <Link href={`/${lang}/services/${service.id}`} className={styles.ctaLink}>
-                  {service.cta[lang]}
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className="container">
-          <div className={`${styles.card} ${styles.featuredCard}`}>
-            <h2 className={styles.cardTitle}>{t.overlapTitle}</h2>
-            <p className={styles.cardBody}>{t.overlapBody}</p>
-          </div>
-        </div>
-      </section>
-
       <section className={styles.section}>
         <div className="container">
           <div className={styles.featuredBand}>
@@ -248,9 +239,6 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
             <div className={styles.bandActions}>
               <Link href={`/${lang}/contact`} className={styles.linkButton}>
                 <Button size="lg">{t.contact}</Button>
-              </Link>
-              <Link href={`/${lang}/projects`} className={styles.linkButton}>
-                <Button size="lg" variant="outline">{t.projects}</Button>
               </Link>
             </div>
           </div>

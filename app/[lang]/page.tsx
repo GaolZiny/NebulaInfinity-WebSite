@@ -8,27 +8,27 @@ import styles from '@/styles/marketing.module.css';
 const homeCopy = {
   ja: {
     eyebrow: 'AI社会実装のパートナー',
-    title: '「AI」を、現場の「即戦力」へ',
-    body: 'Nebula Infinity は、AI Workflow、AI Application、Web3.0 / Blockchain の設計と開発を通じて、構想を実務で使える仕組みに変えます。属人化したノウハウを整理し、運用できる形で実装し、事業の中で機能する状態まで伴走します。',
-    primaryCta: 'お問い合わせ',
+    title: '「AI」を、現場の「即戦力」へ。',
+    body: 'Nebula Infinityは、属人化した業務ノウハウを整理し、AIワークフロー、AIアプリケーション、Web3.0基盤として実装するパートナーです。技術導入を目的化せず、現場で使われる仕組みとして具体化します。',
+    primaryCta: 'まずは要件を整理する',
     secondaryCta: 'サービスを見る',
     transformationEyebrow: 'Why assetization matters',
-    transformationTitle: '「導入」より先に、「定着する仕組み」を設計する',
-    transformationSubtitle: 'AI 導入が止まる理由の多くは、技術そのものではなく、現場の判断基準や業務知識が人に閉じていることにあります。Nebula Infinity は、その知見を運用可能な形に整理し、再現性のある仕組みに変えます。',
+    transformationTitle: '属人のノウハウを、組織の資産に。',
+    transformationSubtitle: 'AI導入が止まる理由の多くは、技術そのものではなく、判断基準や業務知識が人に閉じていることにあります。Nebula Infinityは、その知見を整理し、AIと人が再現性をもって動ける仕組みに変えていきます。',
     servicesEyebrow: 'Services',
     servicesTitle: '3つの実装ラインで、構想を事業に落とし込む',
-    servicesSubtitle: '業務フローの資産化、AIアプリケーション開発、Web3.0 / Blockchain 活用まで、目的に合わせて最適な実装ラインを設計します。',
+    servicesSubtitle: '業務フローの資産化、AIアプリケーション開発、Web3.0 / Blockchain活用まで。Nebula Infinityは、目的に合わせて必要な実装ラインを設計します。',
     processEyebrow: 'Process',
-    processTitle: '現場に入る前提で、設計から実装まで進める',
-    processSubtitle: '要件が固まっていなくても構いません。業務の整理から入り、最小構成で試し、実装し、運用に載せるところまで伴走します。',
+    processTitle: '整理から実装、運用・普及まで。',
+    processSubtitle: '完成した仕様書がなくても構いません。業務の流れを整理し、実装方針を定め、検証しながら現場に広げます。',
     proofEyebrow: 'Proof',
-    proofTitle: '実装力は、代表事例で示す',
-    proofSubtitle: '公開できる範囲の代表例を通じて、Nebula Infinity の実装領域と深さを示します。',
+    proofTitle: 'Nebula Infinityの実装力',
+    proofSubtitle: '一部の実装例(プロジェクト)を公開します。',
     trustEyebrow: 'How we work',
-    trustTitle: 'Nebula Infinity が重視する3つの基準',
-    ctaTitle: '要件が固まっていなくても、ご相談ください',
-    ctaBody: '現場の課題、作りたいもの、整理できていない論点の段階でも構いません。Nebula Infinity が、実装の入口から一緒に整理します。',
-    ctaSupport: '通常 2 営業日以内にご返信します。',
+    trustTitle: 'Nebula Infinityが重視する3つの基準',
+    ctaTitle: '明確な要件がなくても、ご相談頂けます。',
+    ctaBody: '現場の課題、作りたいプロダクト、Web3.0活用の検討段階からご相談ください。Nebula Infinityが、実装の入口を一緒に整理します。',
+    ctaSupport: 'アイデア/要件を頂き、最短24時間以内に動くデモをお見せできます。',
     viewService: '詳細を見る',
     viewWorkflow: 'AI Workflowを見る',
     viewCase: '詳細を見る',
@@ -64,9 +64,9 @@ const homeCopy = {
 
 const valuePanels = {
   ja: [
-    { title: '属人業務を、仕組みに', body: '担当者依存の判断や手順を整理し、再利用できる運用資産へ変えます。' },
-    { title: 'MVPから実装まで', body: '課題整理、設計、試作、実装、定着支援まで一気通貫で伴走します。' },
-    { title: 'AI + Web3を一貫支援', body: 'AI活用とWeb3.0活用を、分断せず事業要件に合わせて設計します。' },
+    { title: '属人業務を、資産に', body: '担当者ごとに閉じた判断基準や手順を整理し、組織で引き継げる仕組みに変えます。' },
+    { title: '構想から実装まで', body: '要件整理、設計、試作、実装、運用設計まで、一つの流れとして伴走します。' },
+    { title: 'AIとWeb3.0を事業へ', body: 'AIの活用と、改ざんされにくい記録基盤を、事業要件に合わせて設計します。' },
   ],
   en: [
     { title: 'From people-dependence to systems', body: 'We convert individual know-how into repeatable operational assets.' },
@@ -77,9 +77,9 @@ const valuePanels = {
 
 const transformationColumns = {
   ja: [
-    { label: 'Current state', bullets: ['担当者ごとに判断がばらつく', '引き継ぎに時間がかかる', 'AI を入れても運用に乗らない'] },
-    { label: 'System design', bullets: ['判断基準と手順を可視化する', 'AI と人の役割分担を設計する', 'レビュー導線と改善ログを残す'] },
-    { label: 'Business outcome', bullets: ['再現性のある実務フローになる', '組織で引き継げる資産になる', '品質と速度を両立できる'] },
+    { label: 'Current state', bullets: ['担当者ごとに判断がばらつく', '引き継ぎに時間がかかる', 'AIを入れても運用に乗らない'] },
+    { label: 'System design', bullets: ['判断基準と手順を可視化する', 'AIと人の役割分担を設計する', 'レビュー導線と改善ログを残す'] },
+    { label: 'Business outcome', bullets: ['再現性のある実務フローになる', '組織で引き継げる資産になる', '継続的に改善できる運用になる'] },
   ],
   en: [
     { label: 'Current state', bullets: ['Decisions vary by operator', 'Handoffs take too long', 'AI never sticks in operations'] },
@@ -90,10 +90,10 @@ const transformationColumns = {
 
 const processSteps = {
   ja: [
-    { title: '課題を整理する', body: '現場の流れ、判断基準、制約を確認します。' },
-    { title: '実装方針を設計する', body: 'AI / アプリ / Web3 の役割分担と構成を定義します。' },
-    { title: 'MVP・実装を進める', body: '試作で確認しながら、本番利用に向けて磨き込みます。' },
-    { title: '定着と改善を支援する', body: '引き継ぎ、運用、改善ポイントまで整理します。' },
+    { title: 'プロセス整理', body: '現場の流れ、判断基準、関係者、制約を確認し、実装すべき対象を整理します。' },
+    { title: '実装方針設計', body: 'AI、アプリケーション、Web3.0の使い分けと、必要な構成・進め方を設計します。' },
+    { title: '検証・最適化', body: '小さく形にして使われ方を確認し、機能・導線・運用条件を調整します。' },
+    { title: '運用・普及', body: '引き継ぎ、レビュー、改善の流れを整え、組織で使い続けられる状態にします。' },
   ],
   en: [
     { title: 'Clarify the problem', body: 'Review the current flow, decision logic, and constraints.' },
@@ -105,9 +105,9 @@ const processSteps = {
 
 const trustCards = {
   ja: [
-    { title: 'Business Logic First', body: '技術の前に、現場の判断と事業要件を整理します。' },
-    { title: 'Asset-minded delivery', body: 'その場限りの自動化ではなく、引き継げる運用資産を残します。' },
-    { title: 'Business-ready implementation', body: 'AI も Web3.0 も、実務で使える形まで設計します。' },
+    { title: 'Business Logic First', body: '技術を選ぶ前に、現場の判断、制約、事業要件を整理します。' },
+    { title: 'Asset-minded Delivery', body: 'その場限りの自動化ではなく、引き継げる運用資産として残します。' },
+    { title: 'Business-ready Implementation', body: 'AIもWeb3.0も、実務で使われる形まで設計・実装します。' },
   ],
   en: [
     { title: 'Business Logic First', body: 'We structure operational decisions and business requirements before choosing technology.' },
@@ -119,9 +119,9 @@ const trustCards = {
 const workflowProof = {
   ja: {
     tag: 'AI Workflow Design & Development',
-    title: 'ワークフロー資産化の代表例',
-    summary: 'マルチエージェント開発ワークフローやプロダクトリサーチワークフローなど、判断や引き継ぎが分散しやすい業務を、再利用可能な運用フローへ設計します。',
-    strip: ['判断基準の明文化', '役割分担の設計', '改善ログの蓄積'],
+    title: 'ワークフロー資産化',
+    summary: '企画整理、開発プロセス、リサーチ業務など、判断と手順が繰り返される業務を、AIと人で実行できるワークフローに整理する代表例です。',
+    strip: ['プロセス整理', '役割設計', 'レビュー導線'],
   },
   en: {
     tag: 'AI Workflow Design & Development',
@@ -132,6 +132,21 @@ const workflowProof = {
 } as const;
 
 const projectIds = ['gaijin-life-navi', 'rigel', 'carina'] as const;
+
+const jaProjectProofCopy = {
+  'gaijin-life-navi': {
+    summary: '在日外国人向けの生活支援アプリ。多言語コンテンツ、領域特化AI、リアルタイム対話を一つの体験にまとめた実装例です。',
+    proofPoints: ['多言語生活支援', '領域特化AI', 'リアルタイム対話'],
+  },
+  rigel: {
+    summary: 'AI記帳SaaS。業務知識、OCR、UX、バックエンド実装をまとめて、実務で使えるプロダクトとして成立させた実装例です。',
+    proofPoints: ['業務知識の実装', 'OCR・AI処理', 'SaaS開発'],
+  },
+  carina: {
+    summary: '小売向けCRMにWeb3.0を接続し、ポイント、クーポン、会員証をブロックチェーン基盤で扱う実装例です。',
+    proofPoints: ['Retail CRM', 'Membership', 'Traceability'],
+  },
+} as const satisfies Record<(typeof projectIds)[number], { summary: string; proofPoints: readonly string[] }>;
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang: rawLang } = await params;
@@ -208,7 +223,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 <p className={styles.cardBody}>{service.body[lang]}</p>
                 <ul className={styles.list}>{service.fitBullets[lang].map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
                 <div className={styles.proofStrip}><span className={styles.proofPill}>{service.proofLine[lang]}</span></div>
-                <Link href={`/${lang}/services/${service.id}`} className={styles.ctaLink}>{t.viewService}<span aria-hidden="true">→</span></Link>
+                <Link href={`/${lang}/services/${service.id}`} className={styles.ctaLink}>{lang === 'ja' ? service.cta.ja : t.viewService}<span aria-hidden="true">→</span></Link>
               </div>
             ))}
           </div>
@@ -252,15 +267,20 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <div className={styles.proofStrip}>{workflowProof[lang].strip.map((item) => <span key={item} className={styles.proofPill}>{item}</span>)}</div>
               <Link href={`/${lang}/services/ai-workflow`} className={styles.ctaLink}>{t.viewWorkflow}<span aria-hidden="true">→</span></Link>
             </div>
-            {featuredProjects.map((project) => (
-              <div key={project.id} className={`${styles.proofCard} ${styles.proofCardInteractive}`}>
-                <span className={styles.proofLabel}>{project.serviceLine === 'web3-blockchain' ? 'Web3.0 / Blockchain Application Design & Development' : 'AI Application Design & Development'}</span>
-                <h3 className={styles.proofTitle}>{project.name[lang]}</h3>
-                <p className={styles.proofSummary}>{project.summary[lang]}</p>
-                <div className={styles.proofStrip}>{project.proofPoints.map((point: string) => <span key={point} className={styles.proofPill}>{point}</span>)}</div>
-                <Link href={`/${lang}/projects/${project.slug}`} className={styles.ctaLink}>{t.viewCase}<span aria-hidden="true">→</span></Link>
-              </div>
-            ))}
+            {featuredProjects.map((project) => {
+              const jaOverride = jaProjectProofCopy[project.id as (typeof projectIds)[number]];
+              const summary = lang === 'ja' ? jaOverride.summary : project.summary.en;
+              const proofPoints = lang === 'ja' ? jaOverride.proofPoints : project.proofPoints;
+              return (
+                <div key={project.id} className={`${styles.proofCard} ${styles.proofCardInteractive}`}>
+                  <span className={styles.proofLabel}>{project.serviceLine === 'web3-blockchain' ? 'Web3.0 / Blockchain Application Design & Development' : 'AI Application Design & Development'}</span>
+                  <h3 className={styles.proofTitle}>{project.name[lang]}</h3>
+                  <p className={styles.proofSummary}>{summary}</p>
+                  <div className={styles.proofStrip}>{proofPoints.map((point: string) => <span key={point} className={styles.proofPill}>{point}</span>)}</div>
+                  <Link href={`/${lang}/projects/${project.slug}`} className={styles.ctaLink}>{t.viewCase}<span aria-hidden="true">→</span></Link>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -283,7 +303,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <p className={styles.bandBody}>{t.ctaBody}</p>
               <p className={styles.supportText}>{t.ctaSupport}</p>
             </div>
-            <div className={styles.bandActions}><Link href={`/${lang}/contact`} className={styles.linkButton}><Button size="lg">{t.primaryCta}</Button></Link></div>
+            <div className={styles.bandActions}><Link href={`/${lang}/contact`} className={styles.linkButton}><Button size="lg">{lang === 'ja' ? 'お問い合わせ' : t.primaryCta}</Button></Link></div>
           </div>
         </div>
       </section>
