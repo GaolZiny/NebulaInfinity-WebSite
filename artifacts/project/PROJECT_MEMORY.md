@@ -22,6 +22,7 @@
 - 2026-05-05: Revised Home-led IA consolidation proposal is PM-verified on commit `e037a39`; waiting for Z implementation approval.
 - 2026-05-05: Architecture and requirements docs are aligned to the approved Home-led IA consolidation and PM-verified on commit `1c0ccbc`; implementation pipeline is ready to dispatch.
 - 2026-05-05: Visual/page design specs are aligned to the approved Home-led IA on commit `f5a1aea`; Home is canonical for `#services` and `#about`, while Services/About standalone specs are tombstoned for route cleanup.
+- 2026-05-05: Home-led IA code implementation is PM static-verified on commit `3a6bfde`; browser/screenshot QA is next.
 - Production deployment is still an operational follow-up: Cloudflare Pages deployment and live SendGrid env configuration were not executed in this pipeline.
 - Contact flow now uses a real SendGrid-backed delivery path with honest provider-missing failure behavior.
 - Next.js was upgraded to 15.5.14 during implementation to clear high-severity audit issues while preserving static export.
