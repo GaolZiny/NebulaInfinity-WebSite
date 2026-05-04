@@ -111,5 +111,24 @@
       "artifacts/screenshots/task-164-ja-services-mobile.png"
     ],
     "verification": "Tester QA PASS: 13 pass / 0 fail; PM opened report and screenshot files exist."
+  },
+  {
+    "taskId": "task-165",
+    "project": "NebulaInfinity-WebSite",
+    "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
+    "topicId": "66",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "type": "single-worker",
+    "worker": "designer",
+    "status": "in-progress",
+    "goal": "Draft IA/content consolidation proposal for Home absorbing Services/About and removing Home Proof per Z feedback.",
+    "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-consolidation-proposal.md",
+    "baselineCommit": "d33c5492ef681f4076110eb3ea251ba80b6c78de",
+    "createdAt": "2026-05-04T15:08:43.160432+00:00",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null
   }
 ]

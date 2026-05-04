@@ -16,6 +16,7 @@
 - 2026-05-04: Revised JA Home + Services copy sheet is PM-verified on commit `510e59a` and sent to Telegram topic 66 for Z review (messages 3651-3653).
 - 2026-05-04: Z approved the revised JA Home + Services copy and authorized page implementation.
 - 2026-05-04: JA Home + Services copy implementation is PM-verified on commit `6f4b584`; Tester browser/screenshot QA passed 13/13 with evidence under `artifacts/screenshots/task-164-*` and report `notes/tester-ja-copy-task-164.md`.
+- 2026-05-05: Z requested an IA/content consolidation proposal: remove standalone Services index need by folding service selection into Home, remove Home Proof if covered by service details, and fold About/company overview into Home with nav anchors.
 - Production deployment is still an operational follow-up: Cloudflare Pages deployment and live SendGrid env configuration were not executed in this pipeline.
 - Contact flow now uses a real SendGrid-backed delivery path with honest provider-missing failure behavior.
 - Next.js was upgraded to 15.5.14 during implementation to clear high-severity audit issues while preserving static export.
@@ -47,9 +48,11 @@
 - **Goal**: Turn the site into a usable V1 business website with unified positioning, credible proof, and a real inquiry path.
 
 ## Next
-1. Confirm updated JA Home + Services pages with Z through the internal preview instance
-2. Extend approved direction to Contact, service detail pages, Projects, and About after Z review
-3. Make contact form actually deliver inquiries in production
+1. Review IA/content consolidation proposal with Z (`task-165`)
+2. If approved, update architecture/design docs before implementation
+3. Implement approved navigation/page consolidation
+4. Verify browser behavior and anchor navigation
+5. Make contact form actually deliver inquiries in production
 4. Extend approved direction to Contact, service detail pages, Projects, and About
 5. Make contact form actually deliver inquiries in production
 6. Verify build, responsive behavior, 404, and Cloudflare Pages deploy state
