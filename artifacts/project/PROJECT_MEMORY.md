@@ -21,6 +21,7 @@
 - 2026-05-05: Z approved Services/About as Home anchors and clarified standalone Services index and About pages may be deleted (not compatibility pages). Z also requested Home `#about` not repeat Focus/Representative products and keep working principles in current style.
 - 2026-05-05: Revised Home-led IA consolidation proposal is PM-verified on commit `e037a39`; waiting for Z implementation approval.
 - 2026-05-05: Architecture and requirements docs are aligned to the approved Home-led IA consolidation and PM-verified on commit `1c0ccbc`; implementation pipeline is ready to dispatch.
+- 2026-05-05: Visual/page design specs are aligned to the approved Home-led IA on commit `f5a1aea`; Home is canonical for `#services` and `#about`, while Services/About standalone specs are tombstoned for route cleanup.
 - Production deployment is still an operational follow-up: Cloudflare Pages deployment and live SendGrid env configuration were not executed in this pipeline.
 - Contact flow now uses a real SendGrid-backed delivery path with honest provider-missing failure behavior.
 - Next.js was upgraded to 15.5.14 during implementation to clear high-severity audit issues while preserving static export.
@@ -53,7 +54,7 @@
 
 ## Next
 1. Review IA/content consolidation proposal with Z (`task-165`)
-2. If approved, update architecture/design docs before implementation
+2. Architecture/design docs are aligned for Home-led IA implementation
 3. Implement approved navigation/page consolidation
 4. Verify browser behavior and anchor navigation
 5. Make contact form actually deliver inquiries in production
