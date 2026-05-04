@@ -14,7 +14,8 @@
 - 2026-05-04: Full JA Home + Services section-by-section copy sheet is PM-verified on commit `4e35bb5` and sent to Telegram topic 66 for Z review (messages 3646-3649); implementation remains blocked until Z approval.
 - 2026-05-04: Z requested revisions to the full JA copy sheet: Home Process step labels/content, Home Proof title/subtitle/structure alignment, Home final CTA title/support/CTA, remove Services Representative proof and Combined services sections, and simplify Services final CTA.
 - 2026-05-04: Revised JA Home + Services copy sheet is PM-verified on commit `510e59a` and sent to Telegram topic 66 for Z review (messages 3651-3653).
-- 2026-05-04: Z approved the revised JA Home + Services copy and authorized page implementation; Coder implementation is in progress as `task-163`.
+- 2026-05-04: Z approved the revised JA Home + Services copy and authorized page implementation.
+- 2026-05-04: JA Home + Services copy implementation is PM-verified on commit `6f4b584`; Tester browser/screenshot QA passed 13/13 with evidence under `artifacts/screenshots/task-164-*` and report `notes/tester-ja-copy-task-164.md`.
 - Production deployment is still an operational follow-up: Cloudflare Pages deployment and live SendGrid env configuration were not executed in this pipeline.
 - Contact flow now uses a real SendGrid-backed delivery path with honest provider-missing failure behavior.
 - Next.js was upgraded to 15.5.14 during implementation to clear high-severity audit issues while preserving static export.
@@ -46,9 +47,9 @@
 - **Goal**: Turn the site into a usable V1 business website with unified positioning, credible proof, and a real inquiry path.
 
 ## Next
-1. Implement the approved JA Home + Services copy direction (`task-163`)
-2. Verify build/lint/test and visual/page behavior
-3. Confirm updated pages with Z through an internal preview instance
+1. Confirm updated JA Home + Services pages with Z through the internal preview instance
+2. Extend approved direction to Contact, service detail pages, Projects, and About after Z review
+3. Make contact form actually deliver inquiries in production
 4. Extend approved direction to Contact, service detail pages, Projects, and About
 5. Make contact form actually deliver inquiries in production
 6. Verify build, responsive behavior, 404, and Cloudflare Pages deploy state

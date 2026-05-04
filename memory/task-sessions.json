@@ -70,18 +70,20 @@
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "type": "single-worker",
     "worker": "coder",
-    "status": "in-progress",
+    "status": "done",
     "goal": "Implement Z-approved JA Home + Services copy on pages.",
     "baselineCommit": "d1880c804c1654e4a0f56b9273e230f751506782",
     "sourceApproval": "Z confirmed content and authorized page changes on 2026-05-04 22:29 JST, message 3654.",
     "createdAt": "2026-05-04T13:30:15.339595+00:00",
-    "verificationStatus": "pending-tester",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
+    "zNotifiedAt": "2026-05-04T13:53:02.402980+00:00",
+    "zNotificationStatus": "pending-final-message",
     "zNotificationMessageId": null,
     "coderCommit": "6f4b584545ee78aeaed930d1d9ce50da6c600532",
-    "pmStaticVerification": "passed: allowed files, lint, test, build, secret grep"
+    "pmStaticVerification": "passed: allowed files, lint, test, build, secret grep",
+    "completedAt": "2026-05-04T13:53:02.402980+00:00",
+    "verification": "PM static verification passed and Tester browser QA task-164 passed 13/13."
   },
   {
     "taskId": "task-164",
@@ -91,14 +93,23 @@
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "type": "single-worker",
     "worker": "tester",
-    "status": "in-progress",
+    "status": "done",
     "goal": "Browser/screenshot QA for JA Home + Services copy implementation.",
     "baselineCommit": "6f4b584545ee78aeaed930d1d9ce50da6c600532",
     "createdAt": "2026-05-04T13:42:06.547202+00:00",
-    "verificationStatus": "pending",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null
+    "zNotifiedAt": "2026-05-04T13:53:02.402980+00:00",
+    "zNotificationStatus": "pending-final-message",
+    "zNotificationMessageId": null,
+    "completedAt": "2026-05-04T13:53:02.402980+00:00",
+    "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-ja-copy-task-164.md",
+    "screenshots": [
+      "artifacts/screenshots/task-164-ja-home-desktop.png",
+      "artifacts/screenshots/task-164-ja-home-mobile.png",
+      "artifacts/screenshots/task-164-ja-services-desktop.png",
+      "artifacts/screenshots/task-164-ja-services-mobile.png"
+    ],
+    "verification": "Tester QA PASS: 13 pass / 0 fail; PM opened report and screenshot files exist."
   }
 ]
