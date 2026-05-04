@@ -9,6 +9,8 @@
 - Review-fix iteration on commit `75abe40` is PM-verified: legacy `ai-development` redirect now points to AI Workflow and contact anti-abuse now uses a server-side origin allowlist with aligned CORS.
 - Code review rerun on commit `75abe40` is APPROVED; tester QA is now in progress.
 - Final tester QA passed on QA commit `7a505a4`; the website is accepted as V1 usable-state from product/QA perspective.
+- 2026-05-04: Z judged the current copy still insufficient for a client-facing company website; before customer showcase, run a focused positioning/copy rewrite pass, not only deployment cleanup.
+- 2026-05-04: JA client-facing copy direction proposal is PM-verified on commit `5dfe3d9`, focused on Home + Services first and preserving current design/structure.
 - Production deployment is still an operational follow-up: Cloudflare Pages deployment and live SendGrid env configuration were not executed in this pipeline.
 - Contact flow now uses a real SendGrid-backed delivery path with honest provider-missing failure behavior.
 - Next.js was upgraded to 15.5.14 during implementation to clear high-severity audit issues while preserving static export.
@@ -40,11 +42,12 @@
 - **Goal**: Turn the site into a usable V1 business website with unified positioning, credible proof, and a real inquiry path.
 
 ## Next
-1. Lock PM feature docs for `v1-positioning-rebuild`
-2. Produce page-level content / visual direction for Home, Services, 3 service detail pages, Projects, About, Contact
-3. Implement site-wide copy / structure updates
-4. Make contact form actually deliver inquiries
-5. Verify build, responsive behavior, 404, and Cloudflare Pages deploy state
+1. Review/approve `ja-copy-direction-proposal.md` with Z
+2. Implement the approved JA copy direction on Home + Services first
+3. Confirm updated pages with Z through an internal preview instance
+4. Extend approved direction to Contact, service detail pages, Projects, and About
+5. Make contact form actually deliver inquiries in production
+6. Verify build, responsive behavior, 404, and Cloudflare Pages deploy state
 
 ## Decisions
 | Date | Decision | Rationale |
@@ -60,6 +63,7 @@
 | 2026-04-09 | V1 implementation verified on commit `92c76c6` | Static analysis, build/export, browser verification, and contact 503 fallback check passed |
 | 2026-04-09 | Code review rerun approved on commit `75abe40` | Redirect and anti-abuse fixes accepted; pipeline advanced to tester QA |
 | 2026-04-09 | Final tester QA PASS on commit `75abe40` | V1 usable-state accepted; deploy/env configuration remains operational follow-up |
+| 2026-05-04 | JA copy rewrite must incorporate Z's two proof/value points | AI Workflow must be framed broadly: any company's repeatable business work can be solidified into AI workflows and become company-owned assets independent of individual employees. Nebula's strategist Stage 0 → PM milestone development workflow is only one concrete example from Nebula's own planning/development business, implemented on OpenClaw but not limited to OpenClaw; similar workflows can use Claude Code or other AI tools. Web3 should emphasize blockchain immutability for points/CRM/reviews/contracts and the added effect when combined with AI. |
 
 ## Technical Details
 - **Domain**: nebulainfinity.com
@@ -69,6 +73,7 @@
 - **Telegram topic**: 66
 
 ## Known Issues / Gaps
+- Current copy is structurally complete but not yet strong enough for client-facing sales/presentation use per Z's 2026-05-04 feedback.
 - Contact function currently behaves like a placeholder and must be connected to real delivery before V1 is considered usable.
 - Existing content/data still contains legacy AI-only and Web3 residual wording that must be reconciled under the new V1 structure.
 - Cloudflare Pages deploy status still needs explicit verification.
