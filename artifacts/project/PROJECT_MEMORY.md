@@ -27,6 +27,7 @@
 - 2026-05-05: Anchor-scroll Coder iteration is PM static-verified on commit `3c0d0f1`; Tester browser/screenshot rerun is next.
 - 2026-05-05: Home-led IA consolidation is PM-accepted after Tester rerun PASS on QA commit `d586e6c`; final implementation includes `3a6bfde` plus anchor-scroll fix `3c0d0f1`. Services/About standalone routes are removed, Home `#services/#about` anchors are verified on desktop/mobile, and 22/22 smoke passed.
 - 2026-05-05: Z requested rewriting the canonical Home copy document for the new Home-led structure using the original 2026-05-04 15:00-22:00 topic discussion; Writer task-172 prepared.
+- 2026-05-05: Home-led IA canonical copy docs were rewritten and PM-verified on commit `75dba8a` for Z review; the update maps the 2026-05-04 15:00-22:00 discussion into the new Home structure without code implementation.
 - Production deployment is still an operational follow-up: Cloudflare Pages deployment and live SendGrid env configuration were not executed in this pipeline.
 - Contact flow now uses a real SendGrid-backed delivery path with honest provider-missing failure behavior.
 - Next.js was upgraded to 15.5.14 during implementation to clear high-severity audit issues while preserving static export.
