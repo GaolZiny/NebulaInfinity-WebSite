@@ -155,5 +155,31 @@
     "completedAt": "2026-05-04T16:04:06.525697+00:00",
     "commit": "e037a397140aaef2407e4fe72678d52446d1959c",
     "verification": "PM opened revised proposal, checked allowed-file commit, grep found no secrets/placeholders."
+  },
+  {
+    "taskId": "task-167",
+    "project": "NebulaInfinity-WebSite",
+    "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
+    "topicId": "66",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "workerSessionKey": "agent:architect:subagent:85b4b28e-40f6-4254-a85b-7a570d5da308",
+    "type": "pipeline-step",
+    "pipelineId": "pipeline-167-home-ia-implementation",
+    "step": "architecture-docs",
+    "worker": "architect",
+    "status": "in-progress",
+    "goal": "Align project architecture/requirements artifacts with approved Home-led IA consolidation before implementation.",
+    "allowedFiles": [
+      "artifacts/project/ARCHITECTURE.md",
+      "artifacts/project/REQUIREMENTS.md"
+    ],
+    "baselineCommit": "eae03d99ecb93abc90b05f35c811963499a08d93",
+    "createdAt": "2026-05-04T16:15:46.582003+00:00",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null
   }
 ]
