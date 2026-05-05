@@ -867,10 +867,12 @@
     "runId": "4a450441-05b0-4e20-995d-b20340f76141",
     "verificationStatus": "pending",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T11:06:03.234921Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3733",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-fix-task-184.md",
-    "notes": "Hero chips are excluded from this fix due spec/copy-sheet conflict pending Z decision; preserve display-only Web Contents / Web3.0 unless explicitly changed later."
+    "notes": "Hero chips are excluded from this fix due spec/copy-sheet conflict pending Z decision; preserve display-only Web Contents / Web3.0 unless explicitly changed later.",
+    "dispatchNotifiedAt": "2026-05-05T11:06:03.234921Z",
+    "dispatchNotificationMessageId": "3733"
   }
 ]
