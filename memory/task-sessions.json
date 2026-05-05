@@ -648,7 +648,9 @@
     "completedAt": "2026-05-05T09:20:45.416007Z",
     "commit": "ddd5d0f",
     "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-architecture-task-178.md",
-    "verification": "PM verified commit ddd5d0f exists, changed files are exactly allowed architecture/requirements/handoff note, diff check passes, active docs now require ai-driven-development, Astra, Hero CTA removal, About vertical layout, and retired web3-blockchain/Carina removal. Z-owned copy sheet remains modified but uncommitted and untouched by architect."
+    "verification": "PM verified commit ddd5d0f exists, changed files are exactly allowed architecture/requirements/handoff note, diff check passes, active docs now require ai-driven-development, Astra, Hero CTA removal, About vertical layout, and retired web3-blockchain/Carina removal. Z-owned copy sheet remains modified but uncommitted and untouched by architect.",
+    "fallbackCronRemovedAt": "2026-05-05T09:29:00Z",
+    "fallbackCronStatus": "removed_after_terminal_notification"
   },
   {
     "taskId": "task-179",
