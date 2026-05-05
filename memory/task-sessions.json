@@ -904,9 +904,9 @@
     "dispatchedAt": "2026-05-05T11:12:32.261668Z",
     "verificationStatus": "failed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T11:24:31.901658Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3736",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-rerun-task-185.md",
     "allowedFiles": [
       "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-rerun-task-185.md",
@@ -920,6 +920,8 @@
     "qaCommit": "efaa7f1530c5de565970cb071641268812a9c2a9",
     "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-rerun-task-185.md",
     "verification": "Tester rerun failed: 37 pass / 1 fail. task-183 blockers are resolved (Services subtitle taxonomy and _redirects/out retired Web3 grep PASS). Remaining blocker: retired direct project routes /ja/projects/carina/ and /en/projects/carina/ return 500 in approved preview; expected clean absent/not-found behavior. Hero chips remain informational/pending Z decision; /404/ smoke 500 remains known minor.",
-    "nextStep": "Dispatch bounded Coder fix for retired Carina direct project routes returning 500."
+    "nextStep": "Dispatch bounded Coder fix for retired Carina direct project routes returning 500.",
+    "failureNotifiedAt": "2026-05-05T11:24:31.901658Z",
+    "failureNotificationMessageId": "3736"
   }
 ]
