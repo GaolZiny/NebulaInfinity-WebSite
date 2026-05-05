@@ -867,9 +867,9 @@
     "runId": "4a450441-05b0-4e20-995d-b20340f76141",
     "verificationStatus": "passed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T11:11:48.387306Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3734",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-fix-task-184.md",
     "notes": "Hero chips are excluded from this fix due spec/copy-sheet conflict pending Z decision; preserve display-only Web Contents / Web3.0 unless explicitly changed later.",
     "dispatchNotifiedAt": "2026-05-05T11:06:03.234921Z",
@@ -879,6 +879,8 @@
     "commit": "d9237e6f9489c88f7bc6a1db628daa1ba8d26f81",
     "pmVerifiedAt": "2026-05-05T11:11:29.577919Z",
     "verification": "PM verified task-184 commit d9237e6: report opened, changed files exactly allowed, diff --check passed, npm run lint PASS, npm test PASS (13/13), npm run build PASS, retired-route grep over public/_redirects/out found no services/web3-blockchain/projects/carina/web3-blockchain matches, Services subtitle fields contain no Web3/Web Contents/blockchain, secret scan found no matches, and worktree contains only expected pre-existing dirty files.",
-    "nextStep": "Dispatch Tester rerun for task-185 covering prior task-183 failures/regressions. Hero chips remain pending Z decision and should be reported separately, not treated as a task-184 regression."
+    "nextStep": "Dispatch Tester rerun for task-185 covering prior task-183 failures/regressions. Hero chips remain pending Z decision and should be reported separately, not treated as a task-184 regression.",
+    "verificationNotifiedAt": "2026-05-05T11:11:48.387306Z",
+    "verificationNotificationMessageId": "3734"
   }
 ]
