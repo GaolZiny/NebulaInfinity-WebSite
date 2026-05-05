@@ -738,11 +738,11 @@
     "pipelineId": "pipeline-178-home-service-model-rewrite",
     "step": "taxonomy-foundation",
     "worker": "coder",
-    "status": "in_progress",
+    "status": "done",
     "goal": "Implement service/project/contact taxonomy foundation for AI-Driven Development and Astra, excluding Home page implementation.",
     "baselineCommit": "8da3f32",
     "createdAt": "2026-05-05T10:10:01.387879Z",
-    "verificationStatus": "pending",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -750,6 +750,11 @@
     "notes": "Split from task-180 after uncommitted partials/no report. Do not modify Z copy sheet.",
     "workerSessionKey": "agent:coder:subagent:e82c7b1e-0331-4c5d-b88f-e7af1e6c0c66",
     "runId": "910480d8-085d-47b5-92c3-fe58b4297e89",
-    "dispatchedAt": "2026-05-05T10:11:31.268172Z"
+    "dispatchedAt": "2026-05-05T10:11:31.268172Z",
+    "completedAt": "2026-05-05T10:27:32.307775Z",
+    "commit": "7d56f7dc0720c66e4099356122b185fd9f5037f0",
+    "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-taxonomy-task-181.md",
+    "verification": "PM verified commit exists; changed files are within allowed task-181 scope; forbidden Home/style residue was archived/restored before PM rerun; lint/test/build passed; allowed active app/components/data/lib paths no longer contain retired Web3/Carina references; data assertions passed; only Z-owned copy sheet and pre-existing consultation doc remain dirty/untracked.",
+    "residueArchive": "/tmp/openclaw-trash/nebula-task181-forbidden-dirty-residue-20260505T192600+0900.patch"
   }
 ]
