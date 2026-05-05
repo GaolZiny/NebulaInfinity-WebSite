@@ -632,11 +632,11 @@
     "pipelineId": "pipeline-178-home-service-model-rewrite",
     "step": "architecture-requirements-alignment",
     "worker": "architect",
-    "status": "in_progress",
+    "status": "done",
     "goal": "Align architecture and requirements for Z-approved Home rewrite: remove Hero CTAs, replace web3-blockchain service line with ai-driven-development, replace Carina with Astra, and adjust About layout requirements.",
     "baselineCommit": "adfa4a8",
     "createdAt": "2026-05-05T09:03:15.519744Z",
-    "verificationStatus": "pending",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -644,6 +644,10 @@
     "notes": "Do not modify Z-edited home-copy-editing-sheet-2026-05-05.md.",
     "workerSessionKey": "agent:architect:subagent:ac1f77d2-6b1b-4d1a-9512-a4f368b5ad2b",
     "runId": "8e3e20dd-52aa-4495-ad08-4e53300cc945",
-    "fallbackCronJobId": "2530593d-a545-4023-894e-612d949bf4df"
+    "fallbackCronJobId": "2530593d-a545-4023-894e-612d949bf4df",
+    "completedAt": "2026-05-05T09:20:45.416007Z",
+    "commit": "ddd5d0f",
+    "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-architecture-task-178.md",
+    "verification": "PM verified commit ddd5d0f exists, changed files are exactly allowed architecture/requirements/handoff note, diff check passes, active docs now require ai-driven-development, Astra, Hero CTA removal, About vertical layout, and retired web3-blockchain/Carina removal. Z-owned copy sheet remains modified but uncommitted and untouched by architect."
   }
 ]
