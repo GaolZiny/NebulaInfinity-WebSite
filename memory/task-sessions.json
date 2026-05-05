@@ -567,7 +567,7 @@
       "package.json",
       "package-lock.json"
     ],
-    "verificationStatus": "passed_static_pending_tester",
+    "verificationStatus": "passed_with_tester",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -579,7 +579,10 @@
       "Rigel": "rigel",
       "Carina": "carina"
     },
-    "pmStaticVerification": "PM verified commit exists; only app/[lang]/page.tsx and app/[lang]/services/[serviceId]/page.tsx changed; removed routes remain absent; Home order and Projects links match requirements; Home assetization removed; About snapshot is Company/Location only; AI Workflow detail carries assetization model; lint/test/build passed; secret scan clean."
+    "pmStaticVerification": "PM verified commit exists; only app/[lang]/page.tsx and app/[lang]/services/[serviceId]/page.tsx changed; removed routes remain absent; Home order and Projects links match requirements; Home assetization removed; About snapshot is Company/Location only; AI Workflow detail carries assetization model; lint/test/build passed; secret scan clean.",
+    "testerStatus": "passed",
+    "testerReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-adjustments-task-176.md",
+    "finalTesterCommit": "28f996ffdbd3521e822c63e7e720085d42340d15"
   },
   {
     "taskId": "task-176",
@@ -587,19 +590,32 @@
     "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
     "topicId": "66",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
-    "workerSessionKey": null,
+    "workerSessionKey": "agent:tester:subagent:34254f2d-c43e-4e7e-98f2-ac88d66666d5",
     "type": "pipeline-step",
     "pipelineId": "pipeline-173-home-copy-implementation-with-z-adjustments",
     "step": "browser-qa",
     "worker": "tester",
-    "status": "prepared",
+    "status": "done",
     "goal": "Browser/screenshot QA for task-175 Home copy IA adjustments and AI Workflow assetization move.",
     "baselineCommit": "a61bbb35bdd217f448cef5d19fc6f4489f3dcc22",
     "createdAt": "2026-05-05T00:20:57.244264Z",
-    "verificationStatus": "pending",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
-    "zNotificationMessageId": null
+    "zNotificationMessageId": null,
+    "completedAt": "2026-05-05T00:33:50.191652Z",
+    "commit": "28f996ffdbd3521e822c63e7e720085d42340d15",
+    "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-adjustments-task-176.md",
+    "screenshots": [
+      "artifacts/screenshots/task-176-en-ai-workflow-assetization.png",
+      "artifacts/screenshots/task-176-en-home-services-projects-desktop.png",
+      "artifacts/screenshots/task-176-ja-ai-workflow-assetization.png",
+      "artifacts/screenshots/task-176-ja-home-about-cta-desktop.png",
+      "artifacts/screenshots/task-176-ja-home-desktop-top.png",
+      "artifacts/screenshots/task-176-ja-home-mobile-projects.png",
+      "artifacts/screenshots/task-176-ja-home-services-projects-desktop.png"
+    ],
+    "verification": "PM opened QA report and commit, confirmed 13/13 done criteria PASS, 19 pass / 0 fail, required screenshots present, QA artifact commit contains only allowed report/screenshots, route smoke 18 scoped routes returned 200, and tracked worktree clean except pre-existing untracked docs/nebulainfinity-design-consultation.md."
   }
 ]
