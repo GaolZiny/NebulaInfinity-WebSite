@@ -690,12 +690,12 @@
     "pipelineId": "pipeline-178-home-service-model-rewrite",
     "step": "implementation",
     "worker": "coder",
-    "status": "blocked_scope_split_required",
+    "status": "in_progress_iter2",
     "goal": "Implement Z-approved Home/service model rewrite using Z-edited Home copy sheet without modifying the sheet.",
     "baselineCommit": "28a4e0a",
     "prevStepCommit": "29db21c",
     "createdAt": "2026-05-05T09:41:00.185062Z",
-    "verificationStatus": "blocked",
+    "verificationStatus": "pending",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending_failure_notified",
@@ -712,6 +712,9 @@
     "iterationRunId": "4a129ff7-5555-424b-a19a-77b16f7facdb",
     "iterationSpawnedAt": "2026-05-05T09:54:01.839597Z",
     "blockedAt": "2026-05-05T09:57:22.260378Z",
-    "blockerReason": "Coder iter1 correctly identified that contact taxonomy is controlled by lib/contact.ts, lib/contact.test.ts, and potentially components/contact/ContactForm.tsx, which were outside the allowlist. Without these, active Contact UI/validation would keep retired Web3 taxonomy and fail Done criteria. PM verified the blocker by inspecting those files."
+    "blockerReason": "Coder iter1 correctly identified that contact taxonomy is controlled by lib/contact.ts, lib/contact.test.ts, and potentially components/contact/ContactForm.tsx, which were outside the allowlist. Without these, active Contact UI/validation would keep retired Web3 taxonomy and fail Done criteria. PM verified the blocker by inspecting those files.",
+    "iteration2SessionKey": "agent:coder:subagent:b2a82312-e165-4137-b87a-f85e3851c80d",
+    "iteration2RunId": "46021aa9-3dd5-49a5-919b-870283eebcb5",
+    "iteration2SpawnedAt": "2026-05-05T09:59:18.249527Z"
   }
 ]
