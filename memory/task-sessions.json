@@ -690,20 +690,23 @@
     "pipelineId": "pipeline-178-home-service-model-rewrite",
     "step": "implementation",
     "worker": "coder",
-    "status": "in_progress",
+    "status": "failed_pending_iteration",
     "goal": "Implement Z-approved Home/service model rewrite using Z-edited Home copy sheet without modifying the sheet.",
     "baselineCommit": "28a4e0a",
     "prevStepCommit": "29db21c",
     "createdAt": "2026-05-05T09:41:00.185062Z",
-    "verificationStatus": "pending",
+    "verificationStatus": "failed",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
+    "zNotificationStatus": "pending_failure_notified",
     "zNotificationMessageId": null,
     "notes": "Coder must read but not modify home-copy-editing-sheet-2026-05-05.md. Pre-existing untracked docs/nebulainfinity-design-consultation.md must remain untouched.",
     "workerSessionKey": "agent:coder:subagent:4d98809e-b482-424b-abbb-ef15226447c8",
     "runId": "9f01ffa4-a0ca-4ec4-b7ff-0b67bca299e3",
     "dispatchNotifiedAt": "2026-05-05T09:44:13.523935Z",
-    "dispatchNotificationMessageId": "3714"
+    "dispatchNotificationMessageId": "3714",
+    "failedAt": "2026-05-05T09:52:08.072830Z",
+    "failureReason": "Coder subagent returned only shell error `/bin/bash: line 1: python: command not found`; PM verification found no implementation commit after dispatch, no implementation report, and no allowed implementation file changes. Re-spawn iteration required; use python3 if scripting is needed.",
+    "iterationCount": 1
   }
 ]
