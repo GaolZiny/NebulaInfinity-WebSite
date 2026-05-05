@@ -767,7 +767,7 @@
     "pipelineId": "pipeline-178-home-service-model-rewrite",
     "step": "home-implementation",
     "worker": "coder",
-    "status": "prepared",
+    "status": "in_progress",
     "goal": "Implement Home page copy/layout from Z-edited copy sheet after task-181 taxonomy foundation.",
     "baselineCommit": "5e5e1d2",
     "prevStepCommit": "7d56f7d",
@@ -777,6 +777,9 @@
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
     "zNotificationMessageId": null,
-    "notes": "Home-only implementation. Read but do not modify copy sheet."
+    "notes": "Home-only implementation. Read but do not modify copy sheet.",
+    "workerSessionKey": "agent:coder:subagent:c49de2b0-a0fc-4b87-948f-ebac7f763638",
+    "runId": "6d40c9a0-ef2f-46b6-a80f-c6a906dc4927",
+    "dispatchedAt": "2026-05-05T10:30:04.178032Z"
   }
 ]
