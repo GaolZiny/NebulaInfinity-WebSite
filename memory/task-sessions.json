@@ -738,7 +738,7 @@
     "pipelineId": "pipeline-178-home-service-model-rewrite",
     "step": "taxonomy-foundation",
     "worker": "coder",
-    "status": "prepared",
+    "status": "in_progress",
     "goal": "Implement service/project/contact taxonomy foundation for AI-Driven Development and Astra, excluding Home page implementation.",
     "baselineCommit": "8da3f32",
     "createdAt": "2026-05-05T10:10:01.387879Z",
@@ -747,6 +747,9 @@
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
     "zNotificationMessageId": null,
-    "notes": "Split from task-180 after uncommitted partials/no report. Do not modify Z copy sheet."
+    "notes": "Split from task-180 after uncommitted partials/no report. Do not modify Z copy sheet.",
+    "workerSessionKey": "agent:coder:subagent:e82c7b1e-0331-4c5d-b88f-e7af1e6c0c66",
+    "runId": "910480d8-085d-47b5-92c3-fe58b4297e89",
+    "dispatchedAt": "2026-05-05T10:11:31.268172Z"
   }
 ]
