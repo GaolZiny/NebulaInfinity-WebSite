@@ -5,9 +5,21 @@ import Button from '@/components/ui/Button';
 import projectsData from '@/data/projects/projects.json';
 import styles from '@/styles/marketing.module.css';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const langs: Language[] = ['ja', 'en'];
-  return langs.flatMap((lang) => projectsData.projects.map((project) => ({ lang, slug: project.slug })));
+  const activeProjectParams = langs.flatMap((lang) => projectsData.projects.map((project) => ({ lang, slug: project.slug })));
+
+  if (process.env.NODE_ENV !== 'development') {
+    return activeProjectParams;
+  }
+
+  // In local preview with static export enabled, Next.js must see this retired
+  // slug before the page-level notFound() branch can return a clean 404.
+  // Production/export static params remain active projects only.
+  const retiredProjectParams = langs.map((lang) => ({ lang, slug: 'carina' }));
+  return [...activeProjectParams, ...retiredProjectParams];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }) {
