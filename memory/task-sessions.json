@@ -1010,9 +1010,9 @@
     "dispatchedAt": "2026-05-05T11:48:09.695312Z",
     "verificationStatus": "failed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T12:00:29.516538Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3740",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-187.md",
     "allowedFiles": [
       "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-187.md",
@@ -1026,6 +1026,8 @@
     "qaCommit": "c021074f73d759f72e095239319552dab403bbdb",
     "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-187.md",
     "verification": "Tester final rerun failed: 64 pass / 2 fail. Fresh-preview retired /ja/services/web3-blockchain/ and /en/services/web3-blockchain/ return 500 before active-route warm-up, then change to 404 after active service routes are warmed. Retired Carina routes are fixed and return 404. Static checks, active route matrix, Home/browser/contact/anchors, Services subtitle, redirects/export grep all passed. Hero chips remain informational/pending Z decision; generic /404/ remains known minor.",
-    "nextStep": "Dispatch bounded Coder fix for retired Web3 service fresh-preview not-found behavior."
+    "nextStep": "Dispatch bounded Coder fix for retired Web3 service fresh-preview not-found behavior.",
+    "failureNotifiedAt": "2026-05-05T12:00:29.516538Z",
+    "failureNotificationMessageId": "3740"
   }
 ]
