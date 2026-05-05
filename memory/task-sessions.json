@@ -621,5 +621,26 @@
     ],
     "verification": "PM opened QA report and commit, confirmed 13/13 done criteria PASS, 19 pass / 0 fail, required screenshots present, QA artifact commit contains only allowed report/screenshots, route smoke 18 scoped routes returned 200, and tracked worktree clean except pre-existing untracked docs/nebulainfinity-design-consultation.md.",
     "finalPmAcceptanceCommit": "e0f83e431169f6cac1205dbb6738e065999f4d5d"
+  },
+  {
+    "taskId": "task-178",
+    "project": "NebulaInfinity-WebSite",
+    "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
+    "topicId": "66",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "type": "pipeline-step",
+    "pipelineId": "pipeline-178-home-service-model-rewrite",
+    "step": "architecture-requirements-alignment",
+    "worker": "architect",
+    "status": "in_progress",
+    "goal": "Align architecture and requirements for Z-approved Home rewrite: remove Hero CTAs, replace web3-blockchain service line with ai-driven-development, replace Carina with Astra, and adjust About layout requirements.",
+    "baselineCommit": "adfa4a8",
+    "createdAt": "2026-05-05T09:03:15.519744Z",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "notes": "Do not modify Z-edited home-copy-editing-sheet-2026-05-05.md."
   }
 ]
