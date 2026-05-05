@@ -700,6 +700,8 @@
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
     "zNotificationMessageId": null,
-    "notes": "Coder must read but not modify home-copy-editing-sheet-2026-05-05.md. Pre-existing untracked docs/nebulainfinity-design-consultation.md must remain untouched."
+    "notes": "Coder must read but not modify home-copy-editing-sheet-2026-05-05.md. Pre-existing untracked docs/nebulainfinity-design-consultation.md must remain untouched.",
+    "workerSessionKey": "agent:coder:subagent:4d98809e-b482-424b-abbb-ef15226447c8",
+    "runId": "9f01ffa4-a0ca-4ec4-b7ff-0b67bca299e3"
   }
 ]
