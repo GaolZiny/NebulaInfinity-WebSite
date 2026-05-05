@@ -490,12 +490,13 @@
     ],
     "verificationStatus": "passed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T00:37:14.392125Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3694",
     "completedAt": "2026-05-05T00:02:40.931011Z",
     "commit": "6303a3a3aa7a7c328f8d653084e7894ea1ead47b",
-    "verification": "PM verified commit exists; only ARCHITECTURE.md and REQUIREMENTS.md changed; new Home order, moved Why assetization to AI Workflow detail, Home Projects cards, Location-only About snapshot, static export constraints, and exact 3 service lines are documented; secret scan clean."
+    "verification": "PM verified commit exists; only ARCHITECTURE.md and REQUIREMENTS.md changed; new Home order, moved Why assetization to AI Workflow detail, Home Projects cards, Location-only About snapshot, static export constraints, and exact 3 service lines are documented; secret scan clean.",
+    "finalPmAcceptanceCommit": "e0f83e431169f6cac1205dbb6738e065999f4d5d"
   },
   {
     "taskId": "task-174",
@@ -529,12 +530,13 @@
     ],
     "verificationStatus": "passed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T00:37:14.392125Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3694",
     "completedAt": "2026-05-05T00:12:29.943701Z",
     "commit": "83e8d696e4e0b0980bd754fa8fa29b70ed3426b3",
-    "verification": "PM verified commit exists; only allowed design/copy spec files changed; Home order is Hero → Services(#services) → Projects → Process → About(#about) → Contact CTA; Home assetization section removed; Projects has exactly Japan Life Navi/Rigel/Carina with slug-resolution notes; About snapshot is Company + Location; AI Workflow carries assetization model; secret scan had no credential findings (filename-only/copy text false positives ignored)."
+    "verification": "PM verified commit exists; only allowed design/copy spec files changed; Home order is Hero → Services(#services) → Projects → Process → About(#about) → Contact CTA; Home assetization section removed; Projects has exactly Japan Life Navi/Rigel/Carina with slug-resolution notes; About snapshot is Company + Location; AI Workflow carries assetization model; secret scan had no credential findings (filename-only/copy text false positives ignored).",
+    "finalPmAcceptanceCommit": "e0f83e431169f6cac1205dbb6738e065999f4d5d"
   },
   {
     "taskId": "task-175",
@@ -569,9 +571,9 @@
     ],
     "verificationStatus": "passed_with_tester",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T00:37:14.392125Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3694",
     "completedAt": "2026-05-05T00:20:57.244264Z",
     "commit": "a61bbb35bdd217f448cef5d19fc6f4489f3dcc22",
     "projectSlugs": {
@@ -582,7 +584,8 @@
     "pmStaticVerification": "PM verified commit exists; only app/[lang]/page.tsx and app/[lang]/services/[serviceId]/page.tsx changed; removed routes remain absent; Home order and Projects links match requirements; Home assetization removed; About snapshot is Company/Location only; AI Workflow detail carries assetization model; lint/test/build passed; secret scan clean.",
     "testerStatus": "passed",
     "testerReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-adjustments-task-176.md",
-    "finalTesterCommit": "28f996ffdbd3521e822c63e7e720085d42340d15"
+    "finalTesterCommit": "28f996ffdbd3521e822c63e7e720085d42340d15",
+    "finalPmAcceptanceCommit": "e0f83e431169f6cac1205dbb6738e065999f4d5d"
   },
   {
     "taskId": "task-176",
@@ -601,9 +604,9 @@
     "createdAt": "2026-05-05T00:20:57.244264Z",
     "verificationStatus": "passed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T00:37:14.392125Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3694",
     "completedAt": "2026-05-05T00:33:50.191652Z",
     "commit": "28f996ffdbd3521e822c63e7e720085d42340d15",
     "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-adjustments-task-176.md",
@@ -616,6 +619,7 @@
       "artifacts/screenshots/task-176-ja-home-mobile-projects.png",
       "artifacts/screenshots/task-176-ja-home-services-projects-desktop.png"
     ],
-    "verification": "PM opened QA report and commit, confirmed 13/13 done criteria PASS, 19 pass / 0 fail, required screenshots present, QA artifact commit contains only allowed report/screenshots, route smoke 18 scoped routes returned 200, and tracked worktree clean except pre-existing untracked docs/nebulainfinity-design-consultation.md."
+    "verification": "PM opened QA report and commit, confirmed 13/13 done criteria PASS, 19 pass / 0 fail, required screenshots present, QA artifact commit contains only allowed report/screenshots, route smoke 18 scoped routes returned 200, and tracked worktree clean except pre-existing untracked docs/nebulainfinity-design-consultation.md.",
+    "finalPmAcceptanceCommit": "e0f83e431169f6cac1205dbb6738e065999f4d5d"
   }
 ]
