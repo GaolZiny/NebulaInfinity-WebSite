@@ -810,9 +810,9 @@
     "dispatchedAt": "2026-05-05T10:44:56.686018Z",
     "verificationStatus": "failed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T11:04:13.460861Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3732",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-task-183.md",
     "notes": "Tester QA-only. Allowed artifacts: task-183 report and screenshots. Source edits forbidden; preserve Z copy sheet and consultation doc.",
     "dispatchNotifiedAt": "2026-05-05T10:46:33.391434Z",
@@ -822,6 +822,7 @@
     "qaCommit": "5fbd818a678a627650dd5def1c8899058e1fb945",
     "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-task-183.md",
     "verification": "Tester browser/screenshot QA failed: 28 pass / 4 fail. Confirmed implementation defects: Home Services subtitle still contains retired Web3/Web Contents taxonomy; public/_redirects/out/_redirects still route old blockchain URLs to retired /services/web3-blockchain. Minor pre-existing/devserver issue: scripts/smoke-test.sh /404/ returns 500. Hero trust-chip expectation conflicts with Z-edited copy sheet/task-182 preservation note and needs explicit PM/Z decision before changing.",
-    "nextStep": "Dispatch bounded Coder fix for confirmed implementation defects; treat Hero trust chips as decision/spec conflict unless Z confirms change."
+    "nextStep": "Dispatch bounded Coder fix for confirmed implementation defects; treat Hero trust chips as decision/spec conflict unless Z confirms change.",
+    "failureNotifiedAt": "2026-05-05T11:04:13.460861Z"
   }
 ]
