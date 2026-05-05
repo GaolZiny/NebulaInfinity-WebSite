@@ -31,6 +31,7 @@
 - 2026-05-05: Z approved task-172 Home JA copy direction for implementation with 3 adjustments: move Why assetization into AI Workflow detail, simplify About snapshot to Company/Location only, and add a Home Projects section with Japan Life Navi/Rigel/Carina cards between Services and Process. Architecture update task-173 prepared.
 - 2026-05-05: Architecture/requirements for Z's latest Home adjustments are PM-verified on commit `6303a3a`; design/copy spec update task-174 is prepared next.
 - 2026-05-05: Design/copy specs for Z's latest Home adjustments are PM-verified on commit `83e8d69`; code implementation task-175 is prepared.
+- 2026-05-05: Code implementation for latest Home copy/IA adjustments is PM static-verified on commit `a61bbb3`; project slugs resolved as Japan Life Navi=`gaijin-life-navi`, Rigel=`rigel`, Carina=`carina`; browser/screenshot QA task-176 is next.
 - Production deployment is still an operational follow-up: Cloudflare Pages deployment and live SendGrid env configuration were not executed in this pipeline.
 - Contact flow now uses a real SendGrid-backed delivery path with honest provider-missing failure behavior.
 - Next.js was upgraded to 15.5.14 during implementation to clear high-severity audit issues while preserving static export.
