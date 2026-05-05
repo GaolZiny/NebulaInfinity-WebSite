@@ -1010,14 +1010,16 @@
     "dispatchedAt": "2026-05-05T11:48:09.695312Z",
     "verificationStatus": "pending",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T11:48:28.073690Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3739",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-187.md",
     "allowedFiles": [
       "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-187.md",
       "artifacts/screenshots/task-187-*.png"
     ],
-    "notes": "Fresh-preview retired service/project route checks are required before active-route warm-up. Hero chips remain pending Z decision/informational; generic /404/ smoke 500 remains known minor unless broader not-found regression appears."
+    "notes": "Fresh-preview retired service/project route checks are required before active-route warm-up. Hero chips remain pending Z decision/informational; generic /404/ smoke 500 remains known minor unless broader not-found regression appears.",
+    "dispatchNotifiedAt": "2026-05-05T11:48:28.073690Z",
+    "dispatchNotificationMessageId": "3739"
   }
 ]
