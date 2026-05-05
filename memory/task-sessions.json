@@ -824,5 +824,53 @@
     "verification": "Tester browser/screenshot QA failed: 28 pass / 4 fail. Confirmed implementation defects: Home Services subtitle still contains retired Web3/Web Contents taxonomy; public/_redirects/out/_redirects still route old blockchain URLs to retired /services/web3-blockchain. Minor pre-existing/devserver issue: scripts/smoke-test.sh /404/ returns 500. Hero trust-chip expectation conflicts with Z-edited copy sheet/task-182 preservation note and needs explicit PM/Z decision before changing.",
     "nextStep": "Dispatch bounded Coder fix for confirmed implementation defects; treat Hero trust chips as decision/spec conflict unless Z confirms change.",
     "failureNotifiedAt": "2026-05-05T11:04:13.460861Z"
+  },
+  {
+    "taskId": "task-184",
+    "project": "NebulaInfinity-WebSite",
+    "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
+    "topicId": "66",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "type": "pipeline-step-iteration",
+    "pipelineId": "pipeline-178-home-service-model-rewrite",
+    "step": "implementation-fix-service-intro-redirects",
+    "worker": "coder",
+    "status": "in_progress",
+    "iterationOf": "task-182",
+    "triggeredBy": "task-183",
+    "iterationCount": 1,
+    "goal": "Fix confirmed task-183 defects: Home Services intro retired Web3/Web Contents taxonomy residue and public/_redirects mapping legacy blockchain URLs to retired web3-blockchain.",
+    "baselineCommit": "c6454c55126fdd150fef41df26ec9ec6cb6d9f38",
+    "prevQaCommit": "5fbd818a678a627650dd5def1c8899058e1fb945",
+    "allowedFiles": [
+      "app/[lang]/page.tsx",
+      "public/_redirects",
+      "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-fix-task-184.md"
+    ],
+    "forbiddenFiles": [
+      "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-copy-editing-sheet-2026-05-05.md",
+      "docs/nebulainfinity-design-consultation.md",
+      "styles/marketing.module.css",
+      "components/**",
+      "data/**",
+      "lib/**",
+      "app/[lang]/services/**",
+      "app/[lang]/projects/**",
+      "app/sitemap.ts",
+      "package.json",
+      "package-lock.json",
+      "next.config.js"
+    ],
+    "createdAt": "2026-05-05T11:05:32.022455Z",
+    "dispatchedAt": "2026-05-05T11:05:32.022455Z",
+    "workerSessionKey": "agent:coder:subagent:b0c72293-924c-4fad-b515-0fbb14f5e047",
+    "runId": "4a450441-05b0-4e20-995d-b20340f76141",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-fix-task-184.md",
+    "notes": "Hero chips are excluded from this fix due spec/copy-sheet conflict pending Z decision; preserve display-only Web Contents / Web3.0 unless explicitly changed later."
   }
 ]
