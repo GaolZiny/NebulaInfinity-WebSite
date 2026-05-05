@@ -27,6 +27,11 @@
   - `/[lang]/services/ai-workflow`
   - `/[lang]/services/ai-application`
   - `/[lang]/services/web3-blockchain`
+- [ ] Home Projects cards link to the corresponding project detail routes under `/[lang]/projects/{slug}` for exactly:
+  - Japan Life Navi
+  - Rigel
+  - Carina
+- [ ] If exact project slugs are not already confirmed at implementation time, Coder resolves them from `data/projects` / current dynamic routing before coding Home Projects card links
 - [ ] Service detail breadcrumbs / back-to-services CTAs target `/[lang]/#services`
 - [ ] Header, footer, CTA data, breadcrumb data, sitemap, language switch data, and metadata no longer point to `/[lang]/services` index or `/[lang]/about` standalone routes
 - [ ] `/[lang]/services` standalone index is deleted or no longer exported; implementation removes only the index page and preserves the `services` detail route namespace
@@ -40,6 +45,7 @@
 ### Page / Anchor Set (V1)
 - [ ] Home (`/[lang]/`)
 - [ ] Home Services anchor (`/[lang]/#services`)
+- [ ] Home Projects section between Services and Process (cards link to `/[lang]/projects/{slug}` detail routes)
 - [ ] Home About / company overview anchor (`/[lang]/#about`)
 - [ ] AI Workflow service detail (`/[lang]/services/ai-workflow`)
 - [ ] AI Application service detail (`/[lang]/services/ai-application`)
@@ -52,16 +58,22 @@
 Standalone `/[lang]/services` index and `/[lang]/about` page are not V1 requirements.
 
 ### Content
-- [ ] Home follows the approved section order: `Hero → Why assetization → Services(#services) → Process → About(#about) → Contact CTA`
-- [ ] Home page explains the 3 service lines and the core value of assetizing know-how
+- [ ] Home follows the approved section order: `Hero → Services(#services) → Projects → Process → About(#about) → Contact CTA`
+- [ ] `Why assetization` is not implemented as a Home section; the assetization explanation moves to the AI Workflow detail page
+- [ ] Home page explains the 3 official service lines while keeping deeper assetization logic on the AI Workflow detail page
 - [ ] Home `#services` includes compact service-selection guidance for all exactly 3 service lines
 - [ ] Home `#services` service cards include fit guidance and detail CTAs without duplicating the full former Services index page
-- [ ] Home no longer includes a standalone `Proof` / `Nebula Infinityの実装力` section
-- [ ] Home `#about` includes compact company identity information: company name, base, domain, and a concise one-liner when useful
+- [ ] Home includes a concise Projects section between Services and Process with exactly these cards: Japan Life Navi, Rigel, and Carina
+- [ ] Home Projects cards link to their corresponding `/[lang]/projects/{slug}` detail pages; if exact slugs need verification, Coder resolves them from `data/projects` / current routing before coding
+- [ ] Home Projects is not the old standalone `Proof` / `Nebula Infinityの実装力` grid; it is a concise Z-requested project-card section that routes into project detail pages
+- [ ] Home `#about` includes compact company snapshot rows for `Company` and `Location` only
+- [ ] Home `#about` must not include `Base`, `Domain`, or `One-liner` rows; the previous `Base` label is replaced by `Location`
 - [ ] Home `#about` preserves working-principle messaging in a compact module
-- [ ] Home `#about` does not repeat Focus / service-domain summary content and does not repeat Representative products (Japan Life Navi / Rigel / Carina)
+- [ ] Home `#about` does not repeat Focus / service-domain summary content and does not repeat broad representative product lists beyond the dedicated Home Projects section
 - [ ] Service detail pages explain suitable use cases, value, and typical deliverables
-- [ ] AI Workflow detail explicitly covers `企画整理` or confirms that existing proof/categories cover it clearly
+- [ ] AI Workflow detail carries the assetization explanation formerly planned for Home, including title `属人のノウハウを、組織の資産に。`
+- [ ] AI Workflow detail explains the Current state → System design → Business outcome logic
+- [ ] AI Workflow detail presents broad workflow assetization; examples such as `企画整理`, development process, or research workflow are examples only, not the service definition
 - [ ] Projects / Cases page shows representative examples across:
   - Workflow cases
   - AI application cases
@@ -76,6 +88,7 @@ Standalone `/[lang]/services` index and `/[lang]/about` page are not V1 requirem
 - [ ] Accessibility basics: readable contrast, visible focus states, clear CTA hierarchy
 - [ ] Sticky-header-safe scroll margin prevents `#services` and `#about` headings from being hidden
 - [ ] `#services` and `#about` have accessible headings / landmarks for keyboard and screen-reader navigation
+- [ ] Home Projects section has an accessible section heading, clear card/link names, visible focus states, and responsive 3-up-to-stacked card behavior
 
 ### Performance / Delivery
 - [ ] Static export remains deployable to Cloudflare Pages
