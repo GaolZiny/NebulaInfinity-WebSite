@@ -985,5 +985,39 @@
     "nextStep": "Dispatch Tester rerun task-187. Include fresh-preview retired service route checks to catch the observed warm-up-sensitive 500 if reproducible.",
     "verificationNotifiedAt": "2026-05-05T11:47:25.550909Z",
     "verificationNotificationMessageId": "3738"
+  },
+  {
+    "taskId": "task-187",
+    "project": "NebulaInfinity-WebSite",
+    "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
+    "topicId": "66",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "type": "pipeline-step",
+    "pipelineId": "pipeline-178-home-service-model-rewrite",
+    "step": "final-browser-screenshot-qa-rerun-after-task-186",
+    "worker": "tester",
+    "status": "in_progress",
+    "goal": "Final browser/screenshot QA rerun after task-186, including fresh-preview retired route checks for Web3 service and Carina project plus Home/service/project/contact regressions.",
+    "baselineCommit": "ec449c9510f608c2cd289754b677c34a5c689d5c",
+    "prevStepCommit": "974650f51d6283c8206ea9be4e9af1cf8d56e9c8",
+    "prevQaCommits": [
+      "5fbd818a678a627650dd5def1c8899058e1fb945",
+      "efaa7f1530c5de565970cb071641268812a9c2a9"
+    ],
+    "createdAt": "2026-05-05T11:48:09.695312Z",
+    "workerSessionKey": "agent:tester:subagent:4094d50c-df4b-48e3-b0e9-a53874c7c2b5",
+    "runId": "0141955a-9033-4357-b6d6-7da050cda86d",
+    "dispatchedAt": "2026-05-05T11:48:09.695312Z",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-187.md",
+    "allowedFiles": [
+      "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-187.md",
+      "artifacts/screenshots/task-187-*.png"
+    ],
+    "notes": "Fresh-preview retired service/project route checks are required before active-route warm-up. Hero chips remain pending Z decision/informational; generic /404/ smoke 500 remains known minor unless broader not-found regression appears."
   }
 ]
