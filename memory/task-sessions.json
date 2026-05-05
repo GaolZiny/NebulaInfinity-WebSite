@@ -718,6 +718,9 @@
     "iteration2SpawnedAt": "2026-05-05T09:59:18.249527Z",
     "lateIter1ErrorAt": "2026-05-05T09:59:58.876144Z",
     "lateIter1Error": "Late iter1 runtime event reported an LLM server_error and pasted partial context; PM had already accepted the BLOCKED_SCOPE_SPLIT_REQUIRED state, expanded scope, and spawned iter2. This late event does not change task-180 current state.",
-    "iteration2DispatchNotificationStatus": "pending"
+    "iteration2DispatchNotificationStatus": "sent",
+    "iteration2DispatchNotifiedAt": "2026-05-05T10:00:53.047919Z",
+    "iteration2DispatchNotificationMessageId": "3720",
+    "lateIter1NoiseNotificationMessageId": "3719"
   }
 ]
