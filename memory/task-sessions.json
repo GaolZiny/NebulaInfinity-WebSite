@@ -904,14 +904,16 @@
     "dispatchedAt": "2026-05-05T11:12:32.261668Z",
     "verificationStatus": "pending",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T11:12:45.230757Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3735",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-rerun-task-185.md",
     "allowedFiles": [
       "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-rerun-task-185.md",
       "artifacts/screenshots/task-185-*.png"
     ],
-    "notes": "Hero chips are known pending Z decision / informational, not a blocking rerun failure if unchanged. /404/ dev smoke issue is known minor unless new regression evidence appears."
+    "notes": "Hero chips are known pending Z decision / informational, not a blocking rerun failure if unchanged. /404/ dev smoke issue is known minor unless new regression evidence appears.",
+    "dispatchNotifiedAt": "2026-05-05T11:12:45.230757Z",
+    "dispatchNotificationMessageId": "3735"
   }
 ]
