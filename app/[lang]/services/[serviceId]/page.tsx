@@ -5,6 +5,8 @@ import Button from '@/components/ui/Button';
 import { getServiceById, services } from '@/data/services';
 import styles from '@/styles/marketing.module.css';
 
+export const dynamicParams = false;
+
 const pageContent = {
   'ai-workflow': {
     hero: {
@@ -273,7 +275,17 @@ const pageContent = {
 
 export async function generateStaticParams() {
   const langs: Language[] = ['ja', 'en'];
-  return langs.flatMap((lang) => services.map((service) => ({ lang, serviceId: service.id })));
+  const activeServiceParams = langs.flatMap((lang) => services.map((service) => ({ lang, serviceId: service.id })));
+
+  if (process.env.NODE_ENV !== 'development') {
+    return activeServiceParams;
+  }
+
+  // In local preview with static export enabled, Next.js must see this retired
+  // service id before the page-level notFound() branch can return a clean 404.
+  // Production/export static params remain active services only.
+  const retiredServiceParams = langs.map((lang) => ({ lang, serviceId: 'web3-blockchain' }));
+  return [...activeServiceParams, ...retiredServiceParams];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; serviceId: string }> }) {
