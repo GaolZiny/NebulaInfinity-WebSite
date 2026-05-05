@@ -1090,5 +1090,40 @@
     "nextStep": "Dispatch Tester final rerun task-189 covering fresh retired routes and full Home/service/project/contact browser regression.",
     "verificationNotifiedAt": "2026-05-05T12:16:37.439758Z",
     "verificationNotificationMessageId": "3742"
+  },
+  {
+    "taskId": "task-189",
+    "project": "NebulaInfinity-WebSite",
+    "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
+    "topicId": "66",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "type": "pipeline-step",
+    "pipelineId": "pipeline-178-home-service-model-rewrite",
+    "step": "final-browser-screenshot-qa-rerun-after-task-188",
+    "worker": "tester",
+    "status": "in_progress",
+    "goal": "Final browser/screenshot QA rerun after task-188, including fresh-preview retired Web3 service and Carina project direct routes plus full Home/service/project/contact/browser regressions.",
+    "baselineCommit": "beb9546832f853740ad860fa0fa5cde45bf2c113",
+    "prevStepCommit": "e7c9e3b552f63e0be5dd628451ea1cc44c897723",
+    "prevQaCommits": [
+      "5fbd818a678a627650dd5def1c8899058e1fb945",
+      "efaa7f1530c5de565970cb071641268812a9c2a9",
+      "c021074f73d759f72e095239319552dab403bbdb"
+    ],
+    "createdAt": "2026-05-05T12:18:11.957483Z",
+    "workerSessionKey": "agent:tester:subagent:3cd930b3-50b3-4f58-ab95-1b745c1c66dc",
+    "runId": "830b719a-fef2-4483-96cc-8a91cc09908d",
+    "dispatchedAt": "2026-05-05T12:18:11.957483Z",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-189.md",
+    "allowedFiles": [
+      "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-189.md",
+      "artifacts/screenshots/task-189-*.png"
+    ],
+    "notes": "Fresh-preview retired Web3 service and Carina project route checks are required before active-route warm-up. Hero chips remain pending Z decision/informational; generic /404/ smoke 500 remains known minor unless broader not-found regression appears."
   }
 ]
