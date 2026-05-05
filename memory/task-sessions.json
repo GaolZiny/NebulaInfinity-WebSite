@@ -1075,10 +1075,12 @@
     "runId": "b9c2d1a6-9d46-4213-bfaf-e26f64706fde",
     "verificationStatus": "pending",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T12:02:29.086659Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3741",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-fix-task-188.md",
-    "notes": "Third implementation iteration after split: fix fresh-preview retired Web3 service not-found only. Do not reintroduce active Web3 content/page/redirect/export."
+    "notes": "Third implementation iteration after split: fix fresh-preview retired Web3 service not-found only. Do not reintroduce active Web3 content/page/redirect/export.",
+    "dispatchNotifiedAt": "2026-05-05T12:02:29.086659Z",
+    "dispatchNotificationMessageId": "3741"
   }
 ]
