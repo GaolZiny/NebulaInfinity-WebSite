@@ -970,9 +970,9 @@
     "runId": "7fcc14e5-2f41-47db-bad9-03a357a4afc0",
     "verificationStatus": "passed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T11:47:25.550909Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3738",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-fix-task-186.md",
     "notes": "Do not reintroduce Carina; no compatibility page/redirect. Fix unknown/retired project route not-found behavior only.",
     "dispatchNotifiedAt": "2026-05-05T11:26:14.442713Z",
@@ -982,6 +982,8 @@
     "commit": "974650f51d6283c8206ea9be4e9af1cf8d56e9c8",
     "pmVerifiedAt": "2026-05-05T11:46:26.216853Z",
     "verification": "PM verified task-186 commit 974650f: report opened, changed files exactly allowed, diff --check passed, npm run lint PASS, npm test PASS (13/13), npm run build PASS, export/public retired grep passed, retired Carina preview routes returned 404 and active project detail routes returned 200 via approved devserver workflow, secret scan found no matches, and worktree contains only expected pre-existing dirty files. PM additionally observed retired service web3 direct routes may return 500 on a fresh preview until active service routes are warmed; this is outside task-186 source scope and is assigned to the next Tester rerun as an explicit regression check.",
-    "nextStep": "Dispatch Tester rerun task-187. Include fresh-preview retired service route checks to catch the observed warm-up-sensitive 500 if reproducible."
+    "nextStep": "Dispatch Tester rerun task-187. Include fresh-preview retired service route checks to catch the observed warm-up-sensitive 500 if reproducible.",
+    "verificationNotifiedAt": "2026-05-05T11:47:25.550909Z",
+    "verificationNotificationMessageId": "3738"
   }
 ]
