@@ -1,21 +1,22 @@
 # Visual Spec — Home
 
-**Status:** Canonical V1 Home visual/copy spec for the approved Home-led IA  
-**Route:** `/[lang]/`  
-**Canonical section order (exact):** Hero → Why assetization → Services(#services) → Process → About(#about) → Contact CTA
+**Status:** Canonical V1 Home visual/copy spec for the approved Home-led IA after Z 08:54 adjustments
+**Route:** `/[lang]/`
+**Canonical section order (exact):** Hero → Services(#services) → Projects → Process → About(#about) → Contact CTA
 
 ## 1. Page role and IA contract
 
-- Primary goal: make Nebula Infinity's V1 positioning understandable in one visit, then route qualified visitors to Contact or the correct service detail page.
+- Primary goal: make Nebula Infinity's V1 positioning understandable in one visit, then route qualified visitors to Contact, the correct service detail page, or a representative project detail page.
 - Audience: founders, directors, operations leads, product owners, CIO/CTO, and innovation teams.
 - Primary action: `/[lang]/contact`.
 - Secondary action: `/[lang]/#services` for service selection.
 - Home owns the V1 Services and About overview as anchors:
   - `#services` is the primary service-selection surface.
   - `#about` is the compact company overview surface.
+- Home also includes a concise Projects section between Services and Process. It is a routing/proof teaser for exactly Japan Life Navi, Rigel, and Carina; it must not become a broad proof grid.
 - Standalone `/[lang]/services` index and `/[lang]/about` page are deleted / stop-exported surfaces. Do not design thin compatibility pages for them.
 - Static export constraint: this IA must not depend on Next.js middleware, server redirects, SSR-only behavior, or server-side compatibility routes. If legacy traffic ever matters, hosting-level redirects are a separate future deployment/config task.
-- Proof is not a standalone Home section in the Home-led IA. Implementation capability is represented through compact service-card proof lines, service detail pages, and the independent Projects route.
+- Implementation capability is represented through compact service-card proof lines, the Home Projects routing cards, service detail pages, and the independent Projects route.
 
 ## 2. Header, mobile nav, and link behavior
 
@@ -36,6 +37,7 @@ Required behavior:
 - Hero primary CTA → `/[lang]/contact`.
 - Hero secondary CTA → `/[lang]/#services`.
 - Home service card detail CTAs → `/[lang]/services/{serviceId}`.
+- Home Projects cards → `/[lang]/projects/{slug}`. Coder must resolve the exact slug for Japan Life Navi, Rigel, and Carina from `data/projects` and the current dynamic project routes before coding links.
 - Footer CTA → `/[lang]/contact`.
 - Footer, CTA data, sitemap, language switch data, and metadata must not emit standalone `/[lang]/services` or `/[lang]/about` links.
 
@@ -65,19 +67,20 @@ Anchor accessibility:
 │                                                        │ AIとWeb3.0を事業へ│ │
 │                                                        └───────────────────┘ │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│ WHY ASSETIZATION                                                             │
-│ Current state -> System design -> Business outcome                           │
-├──────────────────────────────────────────────────────────────────────────────┤
 │ SERVICES (#services landmark)                                                │
 │ Choice guide band                                                            │
 │ [AI Workflow] [AI Application] [Web3.0 / Blockchain]                         │
 │ each card: fit bullets + compact proof line + detail CTA                     │
 ├──────────────────────────────────────────────────────────────────────────────┤
+│ PROJECTS                                                                     │
+│ Concise routing cards only: Japan Life Navi / Rigel / Carina                 │
+│ cards link to /[lang]/projects/{slug}; slug resolved from current data/routes│
+├──────────────────────────────────────────────────────────────────────────────┤
 │ PROCESS                                                                      │
 │ プロセス整理 -> 実装方針設計 -> 検証・最適化 -> 運用・普及                   │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │ ABOUT (#about landmark)                                                      │
-│ Company snapshot + working principles only                                   │
+│ Company + Location snapshot and working principles only                      │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │ CONTACT CTA                                                                  │
 │ 明確な要件がなくても、ご相談頂けます。                                      │
@@ -91,10 +94,11 @@ Hero copy
 Primary CTA
 Secondary CTA -> #services
 Value panels x3
-Why assetization flow panel
 Services #services heading
 Choice guide rows x3
 Service cards x3
+Projects heading
+Project cards: Japan Life Navi, Rigel, Carina
 Process rail as vertical steps
 About #about heading
 Company snapshot rows
@@ -161,54 +165,7 @@ Footer
 - Trust chips become 2 rows on tablet and a single-column list on narrow mobile.
 - Secondary CTA remains visible above the fold when practical because it is the main path to `#services`.
 
-### S2. Why assetization
-
-**Intent**
-- Explain that Nebula Infinity is not only introducing AI; it designs operating systems that preserve and reuse know-how.
-- Make the core logic concrete: people-dependent judgment and procedures become organizational assets that AI and humans can operate reproducibly.
-
-**Final display copy**
-- JA section eyebrow: `Why assetization matters`
-- EN section eyebrow: `Why assetization matters`
-- JA title: `属人のノウハウを、組織の資産に。`
-- EN title: `Turn individual know-how into organizational assets`
-- JA subtitle: `AI導入が止まる理由の多くは、技術そのものではなく、判断基準や業務知識が人に閉じていることにあります。Nebula Infinityは、その知見を整理し、AIと人が再現性をもって動ける仕組みに変えていきます。`
-- EN subtitle: `AI projects often stall not because of the technology itself, but because decision criteria and operational knowledge stay inside individuals. Nebula Infinity organizes that knowledge and turns it into systems where AI and people can operate reproducibly.`
-- JA column 1 label: `Current state`
-- JA column 1 bullets:
-  - `担当者ごとに判断がばらつく`
-  - `引き継ぎに時間がかかる`
-  - `AIを入れても運用に乗らない`
-- JA column 2 label: `System design`
-- JA column 2 bullets:
-  - `判断基準と手順を可視化する`
-  - `AIと人の役割分担を設計する`
-  - `レビュー導線と改善ログを残す`
-- JA column 3 label: `Business outcome`
-- JA column 3 bullets:
-  - `再現性のある実務フローになる`
-  - `組織で引き継げる資産になる`
-  - `継続的に改善できる運用になる`
-- EN columns:
-  - `Current state`: `Decisions vary by operator` / `Handoffs take too long` / `AI does not stick in operations`
-  - `System design`: `Make decision rules and procedures visible` / `Design roles for AI and people` / `Keep review paths and improvement logs`
-  - `Business outcome`: `Repeatable operational flow` / `Transferable organizational asset` / `Continuously improvable operation`
-
-**Component style guidance**
-- Use a reusable Transformation Flow Panel: white surface, `#E4E4E7` border, 20px radius, 32px desktop padding.
-- 3 equal columns on desktop, stacked cards on mobile.
-- Column headers use H4; bullets use Body S with check/node icons.
-- Connector line in subtle gold between columns.
-
-**Required states**
-- Static panel by default.
-- If columns become links, support hover and focus-visible.
-
-**Responsive notes**
-- Mobile order remains Current state → System design → Business outcome.
-- Connector becomes a vertical line between stacked panels.
-
-### S3. Services (#services)
+### S2. Services (#services)
 
 **Intent**
 - Serve as the canonical V1 service-selection surface.
@@ -308,16 +265,16 @@ Footer
 - JA: `入口は分けつつ、実装は分断しません。AI Workflow から AI Application へ進むケースや、AI Application と Web3.0 / Blockchain を組み合わせるケースにも対応します。`
 - EN: `We separate the entry point, not the implementation. Work can begin with AI Workflow and expand into AI Application, or combine AI Application with Web3.0 / blockchain when the business problem requires it.`
 
-**Removed Proof mapping note**
-- 旧 Proof 指示は新 IA では独立セクション化せず、Services card proof / Projects導線に吸収する.
-- Do not add a standalone proof grid, project teaser grid, or replacement section for removed proof content.
+**Old proof mapping note**
+- 旧 Proof 指示は独立セクション化しない。V1 Home では、Services card proof と次の Projects 導線に分離して表現する。
+- Do not add the old standalone proof grid, metrics wall, or broad case gallery to Home.
 
 **Component style guidance**
 - Choice guide: compact neutral band, 20px radius, thin gold divider, 3 rows or 3 chips.
 - Service cards: 3-column bento on desktop, 1-column stack on mobile, equal visual weight.
 - Each card uses white surface, `#E4E4E7` border, 16px radius, 24-32px padding, compact proof strip, and bottom CTA row.
 - Official service line appears as Overline/eyebrow, not the main headline.
-- Do not add a standalone proof grid, project teaser grid, or replacement section for removed proof content.
+- Do not add a standalone proof grid, metrics wall, or broad case gallery to Home.
 
 **Required states**
 - Service cards: default / hover / focus-visible / active.
@@ -329,6 +286,76 @@ Footer
 - Fit bullets remain visible on mobile; if needed, keep all three as short wrapped bullets rather than hiding content.
 - Proof line stays a single compact strip; do not expand into case cards.
 - Web3 official line may wrap after `/` on narrow mobile.
+
+### S3. Projects
+
+**Intent**
+- Add Z's requested concise project-card section between Services and Process.
+- Give visitors a fast path from service positioning to public implementation examples.
+- Keep the section limited to three cards: Japan Life Navi, Rigel, and Carina.
+- Present Japan Life Navi and Rigel as AI Application proof, and Carina as Web3.0 / Blockchain proof.
+- Do not recreate the old Home proof grid or a full Projects index; this is a compact routing section only.
+
+**Final display copy**
+- JA section eyebrow: `Projects`
+- EN section eyebrow: `Projects`
+- JA title: `プロジェクト`
+- EN title: `Projects`
+- JA subtitle: `一部の実装例(プロジェクト)を公開します。サービス領域ごとの詳細は、各プロジェクトページで確認できます。`
+- EN subtitle: `A focused set of public implementation examples. Each card routes to the relevant project detail page.`
+
+**Project card 1**
+- Project name: `Japan Life Navi`
+- Proof purpose: AI Application proof.
+- JA category label: `AI Application`
+- EN category label: `AI Application`
+- JA summary: `生活情報を分かりやすく案内するAIアプリケーションの実装例。AI機能を、ユーザーが使えるプロダクト体験として成立させた証明として扱います。`
+- EN summary: `An AI application proof showing how AI capability becomes a usable product experience for navigating life information.`
+- JA CTA: `Japan Life Navi 詳細`
+- EN CTA: `View Japan Life Navi`
+- Link target pattern: `/[lang]/projects/{slug}`
+- Implementation note: resolve the exact Japan Life Navi slug from `data/projects` and current project detail routing before coding; do not hard-code an unverified slug.
+
+**Project card 2**
+- Project name: `Rigel`
+- Proof purpose: AI Application proof.
+- JA category label: `AI Application`
+- EN category label: `AI Application`
+- JA summary: `業務や業界要件に合わせてAI機能を組み込むアプリケーション実装例。AIを単体機能ではなく、継続して使われる体験に落とし込む証明として扱います。`
+- EN summary: `An AI application proof showing AI embedded into a product experience shaped around operational and industry requirements.`
+- JA CTA: `Rigel 詳細`
+- EN CTA: `View Rigel`
+- Link target pattern: `/[lang]/projects/{slug}`
+- Implementation note: resolve the exact Rigel slug from `data/projects` and current project detail routing before coding; do not hard-code an unverified slug.
+
+**Project card 3**
+- Project name: `Carina`
+- Proof purpose: Web3.0 / Blockchain proof.
+- JA category label: `Web3.0 / Blockchain`
+- EN category label: `Web3.0 / Blockchain`
+- JA summary: `ポイント、クーポン、会員証をブロックチェーン基盤で扱うCRM。Web3.0を顧客体験と運用に接続する証明として扱います。`
+- EN summary: `A CRM proof using blockchain infrastructure for points, coupons, and membership, connecting Web3.0 to customer experience and operations.`
+- JA CTA: `Carina 詳細`
+- EN CTA: `View Carina`
+- Link target pattern: `/[lang]/projects/{slug}`
+- Implementation note: resolve the exact Carina slug from `data/projects` and current project detail routing before coding; do not hard-code an unverified slug.
+
+**Component style guidance**
+- Layout: 3 concise cards in one row on desktop; stack on mobile.
+- Cards use the same premium bento surface language as service cards, but with a slimmer footprint: project name, category label, 2-3 line summary, and one text-link CTA.
+- Avoid metric-heavy panels, screenshots, filters, or proof taxonomy controls on Home; those belong to `/[lang]/projects`.
+- Category labels should clarify proof purpose without implying the service line is limited to these projects.
+
+**Required states**
+- Project cards: default / hover lift / active / focus-visible.
+- Project CTAs: default / hover underline / pressed / focus-visible.
+- If a project slug is unavailable during implementation, do not disable the card silently; Coder must resolve data/routing first or raise a blocker.
+
+**Responsive notes**
+- Desktop: 3-up card row with equal heights.
+- Tablet: 2-up then 1-up if space requires.
+- Mobile: Japan Life Navi → Rigel → Carina order, each card full width.
+- Keep the section compact so Process remains visible without excessive scrolling.
 
 ### S4. Process
 
@@ -372,7 +399,7 @@ Footer
 **Intent**
 - Provide compact company identity and working principles inside Home.
 - Replace the removed standalone About page without recreating it.
-- Keep this section factual and lightweight; it must not become another service summary or proof/products area.
+- Keep this section factual and lightweight; it must not become another service summary or products area.
 
 **Anchor and landmark contract**
 - Section ID: `about`.
@@ -391,14 +418,10 @@ Footer
 **Company snapshot rows**
 - JA rows:
   - `Company` — `Nebula Infinity（ネビュラインフィニティ）`
-  - `Base` — `Japan`
-  - `Domain` — `nebulainfinity.com`
-  - `One-liner` — `AI と Web3.0 を、事業で使える仕組みへ落とし込む実装チームです。`
+  - `Location` — `Japan`
 - EN rows:
   - `Company` — `Nebula Infinity`
-  - `Base` — `Japan`
-  - `Domain` — `nebulainfinity.com`
-  - `One-liner` — `An implementation team that turns AI and Web3.0 into systems businesses can use.`
+  - `Location` — `Japan`
 
 **Working principles**
 - JA cards:
@@ -424,7 +447,6 @@ Footer
 
 **Required states**
 - Snapshot rows are static.
-- Domain may be text only; if linked, support hover and focus-visible.
 - Principle cards are static unless made interactive; if interactive, support hover and focus-visible.
 
 **Responsive notes**
@@ -462,17 +484,18 @@ Footer
 - Header links: default / hover / active / focus-visible.
 - Language toggle: default / hover / active / focus-visible.
 - Service cards: default / hover / active / focus-visible.
+- Project cards: default / hover / active / focus-visible.
 - Choice guide rows/chips: default / hover / active / focus-visible if interactive.
 - CTA buttons: default / hover / pressed / focus-visible / disabled.
 - Static content panels have no loading or error state; preserve semantic HTML instead of fake skeletons.
 - No removed standalone route gets a compatibility page design.
-- No Home standalone Proof section or `Nebula Infinityの実装力` grid may be implemented.
-- 旧 Proof 指示は新 IA では独立セクション化せず、Services card proof / Projects導線に吸収する.
+- No old standalone Home proof grid or `Nebula Infinityの実装力` grid may be implemented.
+- Home Projects is limited to Japan Life Navi, Rigel, and Carina and links to project detail pages after slug verification.
 
 ## 6. Responsive summary
 
 - Desktop uses a 12-column bento layout.
 - Tablet keeps the hero split only if content fits; otherwise stack.
-- Mobile preserves order: Hero → Why assetization → Services(#services) → Process → About(#about) → Contact CTA.
+- Mobile preserves order: Hero → Services(#services) → Projects → Process → About(#about) → Contact CTA.
 - Maintain 24px outer padding on mobile and 64-96px section rhythm on desktop.
 - Anchor targets must remain reachable and readable below the sticky header on desktop and mobile.
