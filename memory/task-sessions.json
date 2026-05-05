@@ -970,10 +970,12 @@
     "runId": "7fcc14e5-2f41-47db-bad9-03a357a4afc0",
     "verificationStatus": "pending",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T11:26:14.442713Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3737",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-fix-task-186.md",
-    "notes": "Do not reintroduce Carina; no compatibility page/redirect. Fix unknown/retired project route not-found behavior only."
+    "notes": "Do not reintroduce Carina; no compatibility page/redirect. Fix unknown/retired project route not-found behavior only.",
+    "dispatchNotifiedAt": "2026-05-05T11:26:14.442713Z",
+    "dispatchNotificationMessageId": "3737"
   }
 ]
