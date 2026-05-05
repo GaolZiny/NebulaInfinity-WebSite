@@ -893,7 +893,7 @@
     "pipelineId": "pipeline-178-home-service-model-rewrite",
     "step": "browser-screenshot-qa-rerun-after-task-184",
     "worker": "tester",
-    "status": "in_progress",
+    "status": "failed",
     "goal": "Rerun browser/screenshot QA after task-184 fixes for the Home service-model rewrite, verifying task-183 failures are resolved without regressions.",
     "baselineCommit": "838ead45979de5e0bf36058eb9b7e159984fdf18",
     "prevStepCommit": "d9237e6f9489c88f7bc6a1db628daa1ba8d26f81",
@@ -902,11 +902,11 @@
     "workerSessionKey": "agent:tester:subagent:fa44bbc8-199a-4945-986c-b28e94979bf1",
     "runId": "ef2a8dcd-b6e1-4e0a-8672-9165645d5173",
     "dispatchedAt": "2026-05-05T11:12:32.261668Z",
-    "verificationStatus": "pending",
+    "verificationStatus": "failed",
     "zNotificationRequired": true,
-    "zNotifiedAt": "2026-05-05T11:12:45.230757Z",
-    "zNotificationStatus": "sent",
-    "zNotificationMessageId": "3735",
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-rerun-task-185.md",
     "allowedFiles": [
       "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-rerun-task-185.md",
@@ -914,6 +914,12 @@
     ],
     "notes": "Hero chips are known pending Z decision / informational, not a blocking rerun failure if unchanged. /404/ dev smoke issue is known minor unless new regression evidence appears.",
     "dispatchNotifiedAt": "2026-05-05T11:12:45.230757Z",
-    "dispatchNotificationMessageId": "3735"
+    "dispatchNotificationMessageId": "3735",
+    "completedAt": "2026-05-05T11:24:16.777000Z",
+    "qaResult": "FAIL",
+    "qaCommit": "efaa7f1530c5de565970cb071641268812a9c2a9",
+    "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-rerun-task-185.md",
+    "verification": "Tester rerun failed: 37 pass / 1 fail. task-183 blockers are resolved (Services subtitle taxonomy and _redirects/out retired Web3 grep PASS). Remaining blocker: retired direct project routes /ja/projects/carina/ and /en/projects/carina/ return 500 in approved preview; expected clean absent/not-found behavior. Hero chips remain informational/pending Z decision; /404/ smoke 500 remains known minor.",
+    "nextStep": "Dispatch bounded Coder fix for retired Carina direct project routes returning 500."
   }
 ]
