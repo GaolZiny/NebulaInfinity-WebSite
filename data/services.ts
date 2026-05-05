@@ -1,36 +1,34 @@
-import { ServiceLineSummary } from '@/types/services';
-
-export const services: ServiceLineSummary[] = [
+export const services = [
   {
     id: 'ai-workflow',
     officialLine: 'AI Workflow Design & Development',
     title: {
-      ja: '属人業務を、再現できるワークフローへ',
-      en: 'Turn people-dependent work into reusable systems',
+      ja: '業務プロセスを、組織のアセットへ',
+      en: 'Turn business processes into organizational assets',
     },
     body: {
-      ja: '判断基準や手順を整理し、AIと人が協働できる業務プロセスとして設計・実装します。',
-      en: 'We structure decision rules, steps, and review paths into workflows where people and AI can operate together.',
+      ja: '判断基準や手順を可視化し、AIと人が協働する効率的なAIワークフローを設計・実装します。',
+      en: 'We visualize decision criteria and procedures, then design and implement efficient AI workflows where people and AI collaborate.',
     },
     fitBullets: {
       ja: [
         '社内ノウハウが担当者に偏っている',
-        '判断を伴う反復業務を標準化したい',
-        '既存の業務やツールと接続しながら改善したい',
+        '既存業務プロセスの改善・効率化をしたい',
+        'AIを活用した業務フローを社内に取り入れたい',
       ],
       en: [
-        'Critical know-how lives inside individuals',
-        'Operational work mixes repetition and judgment',
-        'You need improvement without replacing everything',
+        'Internal know-how is concentrated in specific people',
+        'You want to improve and streamline existing business processes',
+        'You want to introduce AI-enabled workflows into the organization',
       ],
     },
     proofLine: {
-      ja: '代表例：企画整理、開発プロセス、リサーチ業務など、判断と手順が繰り返される業務のワークフロー化',
-      en: 'Representative examples: multi-agent development workflow / product research workflow',
+      ja: '例：企画・リサーチ業務、システム開発業務（要件定義、実装、検証）など',
+      en: 'Examples: planning and research work, system development work such as requirements, implementation, and verification',
     },
     cta: {
-      ja: 'AI Workflowを見る',
-      en: 'View AI Workflow',
+      ja: 'AI Workflow サービス詳細を見る',
+      en: 'View AI Workflow service',
     },
   },
   {
@@ -38,66 +36,69 @@ export const services: ServiceLineSummary[] = [
     officialLine: 'AI Application Design & Development',
     title: {
       ja: 'AIを、使われるプロダクトへ',
-      en: 'Build AI into products people actually use',
+      en: 'Turn AI into products people actually use',
     },
     body: {
       ja: '社内ツールから顧客向けサービスまで、AI機能を価値が伝わる体験として組み込みます。',
-      en: 'We design and ship internal tools, customer-facing apps, and AI-native products that create clear user value.',
+      en: 'From internal tools to customer-facing services, we embed AI capability as an experience whose value is clear to users.',
     },
     fitBullets: {
       ja: [
-        'AIを活かした新規サービスを作りたい',
+        'AI機能を活かした新規サービスを作りたい',
         '既存プロダクトにAI機能を組み込みたい',
-        '業務知識をプロダクト体験に落とし込みたい',
+        '業務ノウハウをプロダクトに落とし込みたい',
       ],
       en: [
-        'You want a new AI-enabled service',
-        'Your existing product needs meaningful AI capability',
-        'RAG, multimodal, or streaming UX matters',
+        'You want to build a new service using AI capability',
+        'You want to add AI capability to an existing product',
+        'You want operational know-how to become product experience',
       ],
     },
     proofLine: {
-      ja: '代表実績：Japan Life Navi / Rigel',
-      en: 'Representative proof: Japan Life Navi / Rigel',
+      ja: '例：業務アシスタント、カスタマーサービス',
+      en: 'Examples: operational assistants and customer service experiences',
     },
     cta: {
-      ja: 'AI Applicationを見る',
-      en: 'View AI Application',
+      ja: 'AI Application サービス詳細を見る',
+      en: 'View AI Application service',
     },
   },
   {
-    id: 'web3-blockchain',
-    officialLine: 'Web3.0 / Blockchain Application Design & Development',
+    id: 'ai-driven-development',
+    officialLine: 'AI-Driven Development',
     title: {
-      ja: '改ざんされにくい記録を、事業の信頼基盤へ',
-      en: 'Apply Web3.0 where it creates business utility',
+      ja: 'AI駆動開発で、超高速実装',
+      en: 'Ultra-fast implementation with AI-driven development',
     },
     body: {
-      ja: 'ポイント、CRM、レビュー、契約、トレーサビリティなど、信頼が価値になる領域にWeb3.0を実装します。',
-      en: 'We design membership, traceability, digital asset, and customer experience systems that make Web3.0 useful in business.',
+      ja: 'AI Agentと開発ワークフロー（設計→実装→テスト）を組み合わせ、超高速高品質な実装を実現します。',
+      en: 'We combine AI agents with development workflows — design, implementation, and testing — to deliver fast, high-quality implementation.',
     },
     fitBullets: {
       ja: [
-        '顧客接点や会員基盤に信頼性を持たせたい',
-        '履歴・評価・合意を改ざんされにくい形で残したい',
-        '既存サービスと接続できるWeb3.0活用を検討したい',
+        'アイデア・発想を素早く動くデモやMVPにしたい',
+        '開発プロセスの属人化や手戻りを減らしたい',
+        '即時実装・イテレーション型の開発をしたい',
       ],
       en: [
-        'You want Web3 in operations or customer experience',
-        'Traceability and authenticity create value',
-        'The solution must integrate with existing systems',
+        'You want to turn an idea into a working demo or MVP quickly',
+        'You want to reduce people-dependence and rework in the development process',
+        'You want immediate implementation and iterative development',
       ],
     },
     proofLine: {
-      ja: '代表実績：Carina',
-      en: 'Representative proof: Carina',
+      ja: '例：AIエージェントを前提にした開発体制と品質ゲート',
+      en: 'Example: agent-assisted delivery systems and quality gates',
     },
     cta: {
-      ja: 'Web3.0 / Blockchainを見る',
-      en: 'View Web3.0 / Blockchain',
+      ja: 'AI-Driven Development サービスを見る',
+      en: 'View AI-Driven Development',
     },
   },
-];
+] as const;
+
+export type Service = (typeof services)[number];
+export type ServiceId = Service['id'];
 
 export function getServiceById(id: string) {
   return services.find((service) => service.id === id);

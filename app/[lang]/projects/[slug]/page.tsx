@@ -31,7 +31,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     details = null;
   }
 
-  const serviceLineLabel = project.serviceLine === 'web3-blockchain' ? 'Web3.0 / Blockchain Application Design & Development' : 'AI Application Design & Development';
+  const serviceLineLabel = project.serviceLine === 'ai-workflow' ? 'AI Workflow Design & Development' : project.serviceLine === 'ai-driven-development' ? 'AI-Driven Development' : 'AI Application Design & Development';
 
   return (
     <div className={styles.page}>

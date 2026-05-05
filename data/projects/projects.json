@@ -42,6 +42,26 @@
       "featuredV1": true
     },
     {
+      "id": "astra",
+      "slug": "astra",
+      "name": { "ja": "Astra", "en": "Astra" },
+      "shortDescription": {
+        "ja": "AIエージェントを組み込んだ開発・PMOプロセスと品質ゲートを短いサイクルで回す代表例。",
+        "en": "A representative case for short-cycle development and PMO processes using AI agents and quality gates."
+      },
+      "summary": {
+        "ja": "AIエージェントを組み込んだ開発プロセスと品質ゲートを使い、短いサイクルで検証・改善を回す AI-Driven Development の代表実績です。",
+        "en": "A representative AI-driven development proof using AI-agent-assisted delivery processes and quality gates to run short validation and improvement cycles."
+      },
+      "serviceLine": "ai-driven-development",
+      "caseType": "ai-driven-development",
+      "proofPoints": ["Agentic workflow", "Quality gates", "Iterative delivery"],
+      "tags": ["AI-Driven Development", "Agentic Workflow", "Quality Gates", "OpenClaw", "TypeScript"],
+      "category": "ai-driven-development",
+      "status": "active",
+      "featuredV1": true
+    },
+    {
       "id": "agent-skills-jp",
       "slug": "agent-skills-jp",
       "name": { "ja": "AgentSkills.jp", "en": "AgentSkills.jp" },
@@ -61,26 +81,6 @@
       "category": "ai-application",
       "status": "live",
       "featuredV1": false
-    },
-    {
-      "id": "carina",
-      "slug": "carina",
-      "name": { "ja": "Carina", "en": "Carina" },
-      "shortDescription": {
-        "ja": "ポイント、クーポン、会員証をブロックチェーン基盤で扱う CRM。Web3.0 を顧客体験と運用へ接続した代表例です。",
-        "en": "A CRM that handles points, coupons, and membership on blockchain infrastructure. It demonstrates Web3.0 connected to customer experience and operations."
-      },
-      "summary": {
-        "ja": "Carina は、小売向け CRM に Web3.0 を接続し、ポイント、クーポン、会員証の扱いをブロックチェーン基盤で再設計した例です。",
-        "en": "Carina is an example of applying Web3.0 to retail CRM by redesigning points, coupons, and membership on top of blockchain infrastructure."
-      },
-      "serviceLine": "web3-blockchain",
-      "caseType": "web3",
-      "proofPoints": ["Retail CRM", "Membership", "Traceability"],
-      "tags": ["Web3.0", "Polygon", "Smart Contract", "CRM", "Membership"],
-      "category": "web3",
-      "status": "complete",
-      "featuredV1": true
     }
   ]
 }

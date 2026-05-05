@@ -134,7 +134,7 @@
       "clientsLabel": "主要顧客",
       "clients": "企業・スタートアップ・開発者コミュニティ",
       "productsLabel": "自社プロダクト",
-      "products": "Japan Life Navi / Rigel / AgentSkills.jp / Carina"
+      "products": "Japan Life Navi / Rigel / AgentSkills.jp / Astra"
     },
     "domains": {
       "sectionTitle": "私たちができること",
@@ -202,7 +202,7 @@
         },
         {
           "title": "ワンストップサービス",
-          "description": "構想段階から実装、そして運用まで、すべてを一貫してサポートします。フロントエンド、バックエンド、インフラ、スマートコントラクト開発まで、フルスタックで対応。窓口の分散や情報の断絶を防ぎます。"
+          "description": "構想段階から実装、そして運用まで、すべてを一貫してサポートします。フロントエンド、バックエンド、インフラ、AIエージェント開発まで、フルスタックで対応。窓口の分散や情報の断絶を防ぎます。"
         },
         {
           "title": "最先端技術",
