@@ -1116,9 +1116,9 @@
     "dispatchedAt": "2026-05-05T12:18:11.957483Z",
     "verificationStatus": "passed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T12:40:15.004052Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3744",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-189.md",
     "allowedFiles": [
       "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-189.md",
@@ -1134,6 +1134,8 @@
     "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-189.md",
     "pmVerifiedAt": "2026-05-05T12:39:15.835848Z",
     "verification": "PM verified task-189 PASS: report opened, evidence commit c4d52bd contains only allowed QA report/screenshots, 12 screenshots present, git diff --check passed, report secret scan clean, worktree has only expected Z copy sheet and consultation doc dirty files. Tester evidence covers lint/test/build PASS, approved devserver lifecycle PASS, fresh retired Web3 service and Carina routes 404 before warm-up, active route matrix 12/12 200, Home/browser/contact/anchors/static export checks PASS. No blocking issues remain; Hero chips remain pending Z decision/informational and generic /404/ smoke 500 remains known minor.",
-    "finalPipelineStatus": "accepted_after_qa"
+    "finalPipelineStatus": "accepted_after_qa",
+    "verificationNotifiedAt": "2026-05-05T12:40:15.004052Z",
+    "verificationNotificationMessageId": "3744"
   }
 ]
