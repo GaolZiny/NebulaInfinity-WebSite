@@ -724,7 +724,9 @@
     "lateIter1NoiseNotificationMessageId": "3719",
     "iter2FailedAt": "2026-05-05T10:10:01.387879Z",
     "iter2FailureReason": "Coder iter2 left uncommitted partial changes, no required implementation report, and no commit. PM archived partial diff to /tmp/openclaw-trash/nebula-task180-iter2-no-commit-partials-20260505T190714+0900.patch, restored tracked partials, and decided to split the oversized implementation into smaller tasks.",
-    "splitDecision": "Split into task-181 taxonomy/service/contact/project foundation and task-182 Home page implementation after foundation passes."
+    "splitDecision": "Split into task-181 taxonomy/service/contact/project foundation and task-182 Home page implementation after foundation passes.",
+    "iter2AdditionalArchive": "/tmp/openclaw-trash/nebula-task180-iter2-additional-partials-20260505T191012+0900.patch",
+    "iter2RestoreStatus": "tracked partials restored; only Z-owned copy sheet and pre-existing untracked consultation doc remain dirty/untracked"
   },
   {
     "taskId": "task-181",
