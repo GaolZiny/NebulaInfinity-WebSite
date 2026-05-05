@@ -549,7 +549,7 @@
     "worker": "coder",
     "status": "prepared",
     "goal": "Implement Z-approved Home copy and IA adjustments: remove Home assetization section, add Home Projects cards, update About snapshot, and move assetization model to AI Workflow detail.",
-    "baselineCommit": "TBD_AFTER_PM_COMMIT",
+    "baselineCommit": "ad7e0ffca13156a75308f4ecbe107e99c9c83ebc",
     "createdAt": "2026-05-05T00:12:29.943701Z",
     "allowedFiles": [
       "app/[lang]/page.tsx",
