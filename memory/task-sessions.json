@@ -789,5 +789,31 @@
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-home-task-182.md",
     "pmVerifiedAt": "2026-05-05T10:42:03.768437Z",
     "verification": "PM verified worker commit 2f09295: allowed files only, git diff --check passed, npm run lint PASS, npm test PASS (13/13), npm run build PASS, Home grep found no retired Web3/Carina/routes/CTA keys, active ai-driven-development/Astra/Home anchors present, and secret scan over changed files found no real secrets (only report text occurrences). Browser/screenshot QA remains next."
+  },
+  {
+    "taskId": "task-183",
+    "project": "NebulaInfinity-WebSite",
+    "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
+    "topicId": "66",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "type": "pipeline-step",
+    "pipelineId": "pipeline-178-home-service-model-rewrite",
+    "step": "browser-screenshot-qa",
+    "worker": "tester",
+    "status": "in_progress",
+    "goal": "Browser/screenshot QA for the Home service-model rewrite after task-181 taxonomy foundation and task-182 Home implementation.",
+    "baselineCommit": "24e1279ce8c09b28675e09f02d9ad7a282228de2",
+    "prevStepCommit": "2f092953810c6ae670cd10e2e80d789d9e3f4d1e",
+    "createdAt": "2026-05-05T10:44:56.686018Z",
+    "workerSessionKey": "agent:tester:subagent:950b683e-e198-40de-bd7b-5cc8edbf197f",
+    "runId": "04113b5f-e964-418d-a367-066a608f8caa",
+    "dispatchedAt": "2026-05-05T10:44:56.686018Z",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-task-183.md",
+    "notes": "Tester QA-only. Allowed artifacts: task-183 report and screenshots. Source edits forbidden; preserve Z copy sheet and consultation doc."
   }
 ]
