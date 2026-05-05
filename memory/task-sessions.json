@@ -690,12 +690,12 @@
     "pipelineId": "pipeline-178-home-service-model-rewrite",
     "step": "implementation",
     "worker": "coder",
-    "status": "failed_pending_iteration",
+    "status": "in_progress_iter1",
     "goal": "Implement Z-approved Home/service model rewrite using Z-edited Home copy sheet without modifying the sheet.",
     "baselineCommit": "28a4e0a",
     "prevStepCommit": "29db21c",
     "createdAt": "2026-05-05T09:41:00.185062Z",
-    "verificationStatus": "failed",
+    "verificationStatus": "pending",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending_failure_notified",
@@ -707,6 +707,9 @@
     "dispatchNotificationMessageId": "3714",
     "failedAt": "2026-05-05T09:52:08.072830Z",
     "failureReason": "Coder subagent returned only shell error `/bin/bash: line 1: python: command not found`; PM verification found no implementation commit after dispatch, no implementation report, and no allowed implementation file changes. Re-spawn iteration required; use python3 if scripting is needed.",
-    "iterationCount": 1
+    "iterationCount": 1,
+    "iterationSessionKey": "agent:coder:subagent:ec1e0b9d-d4b4-4250-9182-26bed782a4a4",
+    "iterationRunId": "4a129ff7-5555-424b-a19a-77b16f7facdb",
+    "iterationSpawnedAt": "2026-05-05T09:54:01.839597Z"
   }
 ]
