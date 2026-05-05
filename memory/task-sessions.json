@@ -996,7 +996,7 @@
     "pipelineId": "pipeline-178-home-service-model-rewrite",
     "step": "final-browser-screenshot-qa-rerun-after-task-186",
     "worker": "tester",
-    "status": "in_progress",
+    "status": "failed",
     "goal": "Final browser/screenshot QA rerun after task-186, including fresh-preview retired route checks for Web3 service and Carina project plus Home/service/project/contact regressions.",
     "baselineCommit": "ec449c9510f608c2cd289754b677c34a5c689d5c",
     "prevStepCommit": "974650f51d6283c8206ea9be4e9af1cf8d56e9c8",
@@ -1008,11 +1008,11 @@
     "workerSessionKey": "agent:tester:subagent:4094d50c-df4b-48e3-b0e9-a53874c7c2b5",
     "runId": "0141955a-9033-4357-b6d6-7da050cda86d",
     "dispatchedAt": "2026-05-05T11:48:09.695312Z",
-    "verificationStatus": "pending",
+    "verificationStatus": "failed",
     "zNotificationRequired": true,
-    "zNotifiedAt": "2026-05-05T11:48:28.073690Z",
-    "zNotificationStatus": "sent",
-    "zNotificationMessageId": "3739",
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-187.md",
     "allowedFiles": [
       "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-187.md",
@@ -1020,6 +1020,12 @@
     ],
     "notes": "Fresh-preview retired service/project route checks are required before active-route warm-up. Hero chips remain pending Z decision/informational; generic /404/ smoke 500 remains known minor unless broader not-found regression appears.",
     "dispatchNotifiedAt": "2026-05-05T11:48:28.073690Z",
-    "dispatchNotificationMessageId": "3739"
+    "dispatchNotificationMessageId": "3739",
+    "completedAt": "2026-05-05T12:00:04.448468Z",
+    "qaResult": "FAIL",
+    "qaCommit": "c021074f73d759f72e095239319552dab403bbdb",
+    "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-187.md",
+    "verification": "Tester final rerun failed: 64 pass / 2 fail. Fresh-preview retired /ja/services/web3-blockchain/ and /en/services/web3-blockchain/ return 500 before active-route warm-up, then change to 404 after active service routes are warmed. Retired Carina routes are fixed and return 404. Static checks, active route matrix, Home/browser/contact/anchors, Services subtitle, redirects/export grep all passed. Hero chips remain informational/pending Z decision; generic /404/ remains known minor.",
+    "nextStep": "Dispatch bounded Coder fix for retired Web3 service fresh-preview not-found behavior."
   }
 ]
