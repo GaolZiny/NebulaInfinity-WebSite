@@ -767,12 +767,12 @@
     "pipelineId": "pipeline-178-home-service-model-rewrite",
     "step": "home-implementation",
     "worker": "coder",
-    "status": "in_progress",
+    "status": "done",
     "goal": "Implement Home page copy/layout from Z-edited copy sheet after task-181 taxonomy foundation.",
     "baselineCommit": "5e5e1d2",
     "prevStepCommit": "7d56f7d",
     "createdAt": "2026-05-05T10:29:11.934897Z",
-    "verificationStatus": "pending",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -782,6 +782,12 @@
     "runId": "6d40c9a0-ef2f-46b6-a80f-c6a906dc4927",
     "dispatchedAt": "2026-05-05T10:30:04.178032Z",
     "dispatchNotifiedAt": "2026-05-05T10:30:23.642986Z",
-    "dispatchNotificationMessageId": "3729"
+    "dispatchNotificationMessageId": "3729",
+    "completedAt": "2026-05-05T10:42:03.768437Z",
+    "workerCommit": "2f092953810c6ae670cd10e2e80d789d9e3f4d1e",
+    "commit": "2f092953810c6ae670cd10e2e80d789d9e3f4d1e",
+    "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-home-task-182.md",
+    "pmVerifiedAt": "2026-05-05T10:42:03.768437Z",
+    "verification": "PM verified worker commit 2f09295: allowed files only, git diff --check passed, npm run lint PASS, npm test PASS (13/13), npm run build PASS, Home grep found no retired Web3/Carina/routes/CTA keys, active ai-driven-development/Astra/Home anchors present, and secret scan over changed files found no real secrets (only report text occurrences). Browser/screenshot QA remains next."
   }
 ]
