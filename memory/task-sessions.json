@@ -670,6 +670,8 @@
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
     "zNotificationMessageId": null,
-    "notes": "Do not modify Z-edited home-copy-editing-sheet-2026-05-05.md."
+    "notes": "Do not modify Z-edited home-copy-editing-sheet-2026-05-05.md.",
+    "workerSessionKey": "agent:designer:subagent:5d4122d6-6ded-4d08-a1ac-ce9f88e97afa",
+    "runId": "b50d1f83-bd48-4b89-8b55-b36c267d14cc"
   }
 ]
