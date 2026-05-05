@@ -756,5 +756,27 @@
     "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-taxonomy-task-181.md",
     "verification": "PM verified commit exists; changed files are within allowed task-181 scope; forbidden Home/style residue was archived/restored before PM rerun; lint/test/build passed; allowed active app/components/data/lib paths no longer contain retired Web3/Carina references; data assertions passed; only Z-owned copy sheet and pre-existing consultation doc remain dirty/untracked.",
     "residueArchive": "/tmp/openclaw-trash/nebula-task181-forbidden-dirty-residue-20260505T192600+0900.patch"
+  },
+  {
+    "taskId": "task-182",
+    "project": "NebulaInfinity-WebSite",
+    "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
+    "topicId": "66",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "type": "pipeline-step",
+    "pipelineId": "pipeline-178-home-service-model-rewrite",
+    "step": "home-implementation",
+    "worker": "coder",
+    "status": "prepared",
+    "goal": "Implement Home page copy/layout from Z-edited copy sheet after task-181 taxonomy foundation.",
+    "baselineCommit": "5e5e1d2",
+    "prevStepCommit": "7d56f7d",
+    "createdAt": "2026-05-05T10:29:11.934897Z",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "notes": "Home-only implementation. Read but do not modify copy sheet."
   }
 ]
