@@ -649,5 +649,27 @@
     "commit": "ddd5d0f",
     "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-architecture-task-178.md",
     "verification": "PM verified commit ddd5d0f exists, changed files are exactly allowed architecture/requirements/handoff note, diff check passes, active docs now require ai-driven-development, Astra, Hero CTA removal, About vertical layout, and retired web3-blockchain/Carina removal. Z-owned copy sheet remains modified but uncommitted and untouched by architect."
+  },
+  {
+    "taskId": "task-179",
+    "project": "NebulaInfinity-WebSite",
+    "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
+    "topicId": "66",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "type": "pipeline-step",
+    "pipelineId": "pipeline-178-home-service-model-rewrite",
+    "step": "design-spec-alignment",
+    "worker": "designer",
+    "status": "in_progress",
+    "goal": "Align visual/design specs with the Home service model rewrite before code implementation.",
+    "baselineCommit": "cea2074",
+    "prevStepCommit": "ddd5d0f",
+    "createdAt": "2026-05-05T09:20:59.345125Z",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "notes": "Do not modify Z-edited home-copy-editing-sheet-2026-05-05.md."
   }
 ]
