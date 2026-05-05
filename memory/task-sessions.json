@@ -679,5 +679,27 @@
     "commit": "29db21c",
     "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-design-task-179.md",
     "verification": "PM verified commit 29db21c exists, changed files match allowed design/handoff scope, git diff --check passes, Home spec removes Hero CTA and sets AI-Driven Development/Astra/About vertical layout, ai-driven-development spec exists, web3-blockchain spec is tombstoned, and Z-owned copy sheet was not included in the commit."
+  },
+  {
+    "taskId": "task-180",
+    "project": "NebulaInfinity-WebSite",
+    "projectPath": "/root/.openclaw/projects/NebulaInfinity-WebSite",
+    "topicId": "66",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "type": "pipeline-step",
+    "pipelineId": "pipeline-178-home-service-model-rewrite",
+    "step": "implementation",
+    "worker": "coder",
+    "status": "in_progress",
+    "goal": "Implement Z-approved Home/service model rewrite using Z-edited Home copy sheet without modifying the sheet.",
+    "baselineCommit": "28a4e0a",
+    "prevStepCommit": "29db21c",
+    "createdAt": "2026-05-05T09:41:00.185062Z",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "notes": "Coder must read but not modify home-copy-editing-sheet-2026-05-05.md. Pre-existing untracked docs/nebulainfinity-design-consultation.md must remain untouched."
   }
 ]
