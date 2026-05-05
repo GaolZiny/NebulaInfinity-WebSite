@@ -1075,9 +1075,9 @@
     "runId": "b9c2d1a6-9d46-4213-bfaf-e26f64706fde",
     "verificationStatus": "passed",
     "zNotificationRequired": true,
-    "zNotifiedAt": null,
-    "zNotificationStatus": "pending",
-    "zNotificationMessageId": null,
+    "zNotifiedAt": "2026-05-05T12:16:37.439758Z",
+    "zNotificationStatus": "sent",
+    "zNotificationMessageId": "3742",
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-service-model-rewrite-fix-task-188.md",
     "notes": "Third implementation iteration after split: fix fresh-preview retired Web3 service not-found only. Do not reintroduce active Web3 content/page/redirect/export.",
     "dispatchNotifiedAt": "2026-05-05T12:02:29.086659Z",
@@ -1087,6 +1087,8 @@
     "commit": "e7c9e3b552f63e0be5dd628451ea1cc44c897723",
     "pmVerifiedAt": "2026-05-05T12:15:09.241206Z",
     "verification": "PM verified task-188 commit e7c9e3b: report opened, changed files exactly allowed, diff --check passed, npm run lint PASS, npm test PASS (13/13), npm run build PASS, export/public retired grep passed, fresh approved-preview retired Web3 service routes and Carina routes returned 404 before active-route warm-up, active JA/EN AI Workflow/AI Application/AI-Driven Development service detail routes returned 200, secret scan found no matches, and worktree contains only expected pre-existing dirty files.",
-    "nextStep": "Dispatch Tester final rerun task-189 covering fresh retired routes and full Home/service/project/contact browser regression."
+    "nextStep": "Dispatch Tester final rerun task-189 covering fresh retired routes and full Home/service/project/contact browser regression.",
+    "verificationNotifiedAt": "2026-05-05T12:16:37.439758Z",
+    "verificationNotificationMessageId": "3742"
   }
 ]
