@@ -1101,7 +1101,7 @@
     "pipelineId": "pipeline-178-home-service-model-rewrite",
     "step": "final-browser-screenshot-qa-rerun-after-task-188",
     "worker": "tester",
-    "status": "in_progress",
+    "status": "done",
     "goal": "Final browser/screenshot QA rerun after task-188, including fresh-preview retired Web3 service and Carina project direct routes plus full Home/service/project/contact/browser regressions.",
     "baselineCommit": "beb9546832f853740ad860fa0fa5cde45bf2c113",
     "prevStepCommit": "e7c9e3b552f63e0be5dd628451ea1cc44c897723",
@@ -1114,11 +1114,11 @@
     "workerSessionKey": "agent:tester:subagent:3cd930b3-50b3-4f58-ab95-1b745c1c66dc",
     "runId": "830b719a-fef2-4483-96cc-8a91cc09908d",
     "dispatchedAt": "2026-05-05T12:18:11.957483Z",
-    "verificationStatus": "pending",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
-    "zNotifiedAt": "2026-05-05T12:19:03.416113Z",
-    "zNotificationStatus": "sent",
-    "zNotificationMessageId": "3743",
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
     "artifact": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-189.md",
     "allowedFiles": [
       "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-189.md",
@@ -1126,6 +1126,14 @@
     ],
     "notes": "Fresh-preview retired Web3 service and Carina project route checks are required before active-route warm-up. Hero chips remain pending Z decision/informational; generic /404/ smoke 500 remains known minor unless broader not-found regression appears.",
     "dispatchNotifiedAt": "2026-05-05T12:19:03.416113Z",
-    "dispatchNotificationMessageId": "3743"
+    "dispatchNotificationMessageId": "3743",
+    "completedAt": "2026-05-05T12:39:15.835848Z",
+    "qaResult": "PASS",
+    "qaCommit": "c4d52bdb347bbb3fe4773be6d1fedb204024353a",
+    "commit": "c4d52bdb347bbb3fe4773be6d1fedb204024353a",
+    "report": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-home-service-model-final-rerun-task-189.md",
+    "pmVerifiedAt": "2026-05-05T12:39:15.835848Z",
+    "verification": "PM verified task-189 PASS: report opened, evidence commit c4d52bd contains only allowed QA report/screenshots, 12 screenshots present, git diff --check passed, report secret scan clean, worktree has only expected Z copy sheet and consultation doc dirty files. Tester evidence covers lint/test/build PASS, approved devserver lifecycle PASS, fresh retired Web3 service and Carina routes 404 before warm-up, active route matrix 12/12 200, Home/browser/contact/anchors/static export checks PASS. No blocking issues remain; Hero chips remain pending Z decision/informational and generic /404/ smoke 500 remains known minor.",
+    "finalPipelineStatus": "accepted_after_qa"
   }
 ]
