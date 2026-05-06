@@ -1231,5 +1231,71 @@
         "artifacts/project/REQUIREMENTS.md"
       ]
     }
+  },
+  {
+    "taskId": "task-192",
+    "pipelineId": "pipeline-192-ai-workflow-projects-index-removal",
+    "status": "in-progress",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null,
+    "source": "telegram",
+    "agentId": "coder",
+    "workerRole": "coder",
+    "goal": "Implement Z-edited AI Workflow service detail page plus remove standalone Projects index while preserving project detail routes.",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "createdAt": "2026-05-06T05:32:27.689638Z",
+    "updatedAt": "2026-05-06T05:32:27.689638Z",
+    "expectedOutput": "code commit + implementation report",
+    "pipelineStep": 1,
+    "constraints": [
+      "Use Z-edited non-home copy sheet only for AI Workflow JA source; do not modify/stage copy sheets",
+      "Remove standalone /[lang]/projects index but preserve /[lang]/projects/{gaijin-life-navi|rigel|astra}",
+      "Projects nav targets Home #projects"
+    ],
+    "fallback": {
+      "jobId": null,
+      "name": null,
+      "status": "not_configured",
+      "createdAt": null,
+      "removedAt": null,
+      "removeReason": "push-based Coder→Tester pipeline completion expected"
+    }
+  },
+  {
+    "taskId": "task-193",
+    "pipelineId": "pipeline-192-ai-workflow-projects-index-removal",
+    "status": "pending",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null,
+    "source": "telegram",
+    "agentId": "tester",
+    "workerRole": "tester",
+    "goal": "Browser/build QA for task-192 AI Workflow and Projects-index removal implementation.",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "createdAt": "2026-05-06T05:32:27.689638Z",
+    "updatedAt": "2026-05-06T05:32:27.689638Z",
+    "expectedOutput": "QA report + screenshots",
+    "pipelineStep": 2,
+    "constraints": [
+      "Use Z-edited non-home copy sheet only for AI Workflow JA source; do not modify/stage copy sheets",
+      "Remove standalone /[lang]/projects index but preserve /[lang]/projects/{gaijin-life-navi|rigel|astra}",
+      "Projects nav targets Home #projects"
+    ],
+    "fallback": {
+      "jobId": null,
+      "name": null,
+      "status": "not_configured",
+      "createdAt": null,
+      "removedAt": null,
+      "removeReason": "push-based Coder→Tester pipeline completion expected"
+    }
   }
 ]

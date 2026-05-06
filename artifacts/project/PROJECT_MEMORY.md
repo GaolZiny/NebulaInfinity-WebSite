@@ -1,6 +1,7 @@
 # PROJECT_MEMORY — NebulaInfinity Website
 
 ## Now
+- 2026-05-06: task-192 implementation pipeline started for Z-edited AI Workflow service detail page plus standalone Projects index removal; scope excludes other non-Home copy edits still in progress.
 - 2026-05-06: Projects index removal architecture alignment is PM-verified on commit `97d2b05`: Home `#projects` replaces standalone `/[lang]/projects`, while active detail routes remain `gaijin-life-navi`, `rigel`, and `astra`. Downstream design/copy/code updates are next.
 - 2026-05-06: task-190 non-Home copy editing sheet is PM-verified on commit `10ded20`; it drafts service detail, Projects, Japan Life Navi, Rigel, Astra, and Contact copy aligned to Z's modified Home direction for Z review/editing before implementation.
 - Prior content repositioning pipeline (`pipeline-035`) is complete, but its AI-only positioning is now superseded by the new V1 direction.
