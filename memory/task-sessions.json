@@ -1620,8 +1620,8 @@
   {
     "taskId": "task-201",
     "pipelineId": null,
-    "status": "in-progress",
-    "verificationStatus": "pending",
+    "status": "done",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -1633,7 +1633,7 @@
     "goal": "Revise service-detail copy sheet examples: move Astra from AI-Driven Development proof to AI Workflow examples and add stream-demo/product video waterfall page as AI-Driven Development proof.",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "createdAt": "2026-05-06T15:03:27.089282Z",
-    "updatedAt": "2026-05-06T15:03:27.089282Z",
+    "updatedAt": "2026-05-06T15:10:05.410753Z",
     "expectedOutput": "updated non-home copy sheet examples for AI Workflow and AI-Driven Development",
     "constraints": [
       "Only edit relevant sections in non-home copy sheet; source code untouched",
@@ -1648,6 +1648,21 @@
       "createdAt": null,
       "removedAt": null,
       "removeReason": "short design/copy task; relying on push-based completion"
+    },
+    "commit": "8dd0ca5",
+    "pmVerification": {
+      "verifiedAt": "2026-05-06T15:10:05.410753Z",
+      "status": "passed",
+      "checks": [
+        "Commit 8dd0ca5 exists and changes only non-home copy sheet",
+        "git diff --check passed",
+        "Astra moved into AI Workflow JA representative examples",
+        "Astra removed from AI-Driven Development JA representative proof",
+        "stream-demo/product video waterfall page added as AI-Driven Development proof with project-specific 24h/3-day/1-week timeline",
+        "AI-DD notes no longer recommend Astra as AI-DD proof and mark stream-demo as no active detail route yet",
+        "Source code untouched; Home sheet and consultation doc remain untouched"
+      ],
+      "requiresFollowUp": "ARCHITECTURE.md/REQUIREMENTS.md still contain older Astra classification assumptions and must be aligned before implementation."
     }
   }
 ]
