@@ -1235,8 +1235,8 @@
   {
     "taskId": "task-192",
     "pipelineId": "pipeline-192-ai-workflow-projects-index-removal",
-    "status": "in-progress",
-    "verificationStatus": "pending",
+    "status": "implemented_pending_tester",
+    "verificationStatus": "pending_tester",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -1248,7 +1248,7 @@
     "goal": "Implement Z-edited AI Workflow service detail page plus remove standalone Projects index while preserving project detail routes.",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "createdAt": "2026-05-06T05:32:27.689638Z",
-    "updatedAt": "2026-05-06T05:32:27.689638Z",
+    "updatedAt": "2026-05-06T05:48:09.138901Z",
     "expectedOutput": "code commit + implementation report",
     "pipelineStep": 1,
     "constraints": [
@@ -1263,12 +1263,16 @@
       "createdAt": null,
       "removedAt": null,
       "removeReason": "push-based Coder→Tester pipeline completion expected"
-    }
+    },
+    "commit": "42ee882f78923abeb317dcb9ed9fcc4c8c2684d5",
+    "workerCommit": "42ee882f78923abeb317dcb9ed9fcc4c8c2684d5",
+    "implementationReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/coder-ai-workflow-projects-index-task-192.md",
+    "testerSessionKey": "agent:tester:subagent:ab263713-9882-425a-b2d1-ea1d1be79bf9"
   },
   {
     "taskId": "task-193",
     "pipelineId": "pipeline-192-ai-workflow-projects-index-removal",
-    "status": "pending",
+    "status": "in-progress",
     "verificationStatus": "pending",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
@@ -1279,9 +1283,9 @@
     "agentId": "tester",
     "workerRole": "tester",
     "goal": "Browser/build QA for task-192 AI Workflow and Projects-index removal implementation.",
-    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "sessionKey": "agent:tester:subagent:ab263713-9882-425a-b2d1-ea1d1be79bf9",
     "createdAt": "2026-05-06T05:32:27.689638Z",
-    "updatedAt": "2026-05-06T05:32:27.689638Z",
+    "updatedAt": "2026-05-06T05:48:09.138901Z",
     "expectedOutput": "QA report + screenshots",
     "pipelineStep": 2,
     "constraints": [
@@ -1296,6 +1300,7 @@
       "createdAt": null,
       "removedAt": null,
       "removeReason": "push-based Coder→Tester pipeline completion expected"
-    }
+    },
+    "prevTaskCommit": "42ee882f78923abeb317dcb9ed9fcc4c8c2684d5"
   }
 ]
