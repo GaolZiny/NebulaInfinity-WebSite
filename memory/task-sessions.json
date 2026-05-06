@@ -1235,8 +1235,8 @@
   {
     "taskId": "task-192",
     "pipelineId": "pipeline-192-ai-workflow-projects-index-removal",
-    "status": "implemented_pending_tester",
-    "verificationStatus": "pending_tester",
+    "status": "done",
+    "verificationStatus": "passed_with_tester",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -1248,7 +1248,7 @@
     "goal": "Implement Z-edited AI Workflow service detail page plus remove standalone Projects index while preserving project detail routes.",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "createdAt": "2026-05-06T05:32:27.689638Z",
-    "updatedAt": "2026-05-06T05:48:09.138901Z",
+    "updatedAt": "2026-05-06T05:58:23.303707Z",
     "expectedOutput": "code commit + implementation report",
     "pipelineStep": 1,
     "constraints": [
@@ -1267,13 +1267,20 @@
     "commit": "42ee882f78923abeb317dcb9ed9fcc4c8c2684d5",
     "workerCommit": "42ee882f78923abeb317dcb9ed9fcc4c8c2684d5",
     "implementationReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/coder-ai-workflow-projects-index-task-192.md",
-    "testerSessionKey": "agent:tester:subagent:ab263713-9882-425a-b2d1-ea1d1be79bf9"
+    "testerSessionKey": "agent:tester:subagent:ab263713-9882-425a-b2d1-ea1d1be79bf9",
+    "pmVerification": {
+      "verifiedAt": "2026-05-06T05:58:23.303707Z",
+      "status": "passed",
+      "basis": "Tester task-193 PASS plus PM rerun lint/test/build and devserver smoke for /ja/ and /ja/services/ai-workflow/",
+      "implementationCommit": "42ee882f78923abeb317dcb9ed9fcc4c8c2684d5",
+      "testerReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-ai-workflow-projects-index-task-193.md"
+    }
   },
   {
     "taskId": "task-193",
     "pipelineId": "pipeline-192-ai-workflow-projects-index-removal",
-    "status": "in-progress",
-    "verificationStatus": "pending",
+    "status": "done",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -1285,7 +1292,7 @@
     "goal": "Browser/build QA for task-192 AI Workflow and Projects-index removal implementation.",
     "sessionKey": "agent:tester:subagent:ab263713-9882-425a-b2d1-ea1d1be79bf9",
     "createdAt": "2026-05-06T05:32:27.689638Z",
-    "updatedAt": "2026-05-06T05:48:09.138901Z",
+    "updatedAt": "2026-05-06T05:58:23.303707Z",
     "expectedOutput": "QA report + screenshots",
     "pipelineStep": 2,
     "constraints": [
@@ -1301,6 +1308,11 @@
       "removedAt": null,
       "removeReason": "push-based Coder→Tester pipeline completion expected"
     },
-    "prevTaskCommit": "42ee882f78923abeb317dcb9ed9fcc4c8c2684d5"
+    "prevTaskCommit": "42ee882f78923abeb317dcb9ed9fcc4c8c2684d5",
+    "commit": "42ee882f78923abeb317dcb9ed9fcc4c8c2684d5",
+    "testedCommit": "42ee882f78923abeb317dcb9ed9fcc4c8c2684d5",
+    "qaReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-ai-workflow-projects-index-task-193.md",
+    "evidenceJson": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-ai-workflow-projects-index-task-193.evidence.json",
+    "screenshotsDir": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/screenshots/task-193-ai-workflow-projects-index/"
   }
 ]
