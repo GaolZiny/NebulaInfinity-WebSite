@@ -1492,13 +1492,14 @@
     "goal": "Implement Z-edited AI Application service detail JA copy and remove bottom CTA for this service detail page.",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "createdAt": "2026-05-06T08:46:16.570418Z",
-    "updatedAt": "2026-05-06T08:46:16.570418Z",
+    "updatedAt": "2026-05-06T08:51:16.462392Z",
     "expectedOutput": "implementation commit/report",
     "pipelineStep": 1,
     "constraints": [
       "Use Z-edited AI Application JA section in non-home copy sheet as source of truth",
       "Remove AI Application bottom CTA structurally for both JA/EN",
-      "Do not modify or stage Z-owned copy sheets"
+      "Do not modify or stage Z-owned copy sheets",
+      "EN copy must semantically align to the revised JA copy for AI Application, while avoiding legal/compliance overclaims."
     ],
     "fallback": {
       "jobId": null,
@@ -1507,7 +1508,10 @@
       "createdAt": null,
       "removedAt": null,
       "removeReason": "push-based Coder→Tester pipeline completion expected"
-    }
+    },
+    "iterations": [],
+    "pmCorrectionAt": "2026-05-06T08:51:16.462392Z",
+    "pmCorrection": "Z clarified EN copy should semantically align to revised JA copy, not only remove bottom CTA. Coder steered before completion."
   },
   {
     "taskId": "task-199",
@@ -1525,13 +1529,14 @@
     "goal": "QA AI Application service detail copy/structure implementation from task-198.",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "createdAt": "2026-05-06T08:46:16.570418Z",
-    "updatedAt": "2026-05-06T08:46:16.570418Z",
+    "updatedAt": "2026-05-06T08:51:16.462392Z",
     "expectedOutput": "QA report/screenshots",
     "pipelineStep": 2,
     "constraints": [
       "Use Z-edited AI Application JA section in non-home copy sheet as source of truth",
       "Remove AI Application bottom CTA structurally for both JA/EN",
-      "Do not modify or stage Z-owned copy sheets"
+      "Do not modify or stage Z-owned copy sheets",
+      "QA must verify EN AI Application copy is semantically aligned to revised JA, not merely CTA removal."
     ],
     "fallback": {
       "jobId": null,
