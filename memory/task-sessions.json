@@ -1616,5 +1616,38 @@
         "Source code untouched; expected dirty Home sheet and untracked consultation doc remain"
       ]
     }
+  },
+  {
+    "taskId": "task-201",
+    "pipelineId": null,
+    "status": "in-progress",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null,
+    "source": "telegram",
+    "agentId": "designer",
+    "workerRole": "designer",
+    "goal": "Revise service-detail copy sheet examples: move Astra from AI-Driven Development proof to AI Workflow examples and add stream-demo/product video waterfall page as AI-Driven Development proof.",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "createdAt": "2026-05-06T15:03:27.089282Z",
+    "updatedAt": "2026-05-06T15:03:27.089282Z",
+    "expectedOutput": "updated non-home copy sheet examples for AI Workflow and AI-Driven Development",
+    "constraints": [
+      "Only edit relevant sections in non-home copy sheet; source code untouched",
+      "Astra belongs under AI Workflow / PMO example, not AI-Driven Development",
+      "AI-Driven Development proof should replace Astra with stream-demo/product video waterfall display page example",
+      "Use Z-provided facts: demo within 24h, beta delivered 3 days after contract, deployed one week later; avoid overclaiming"
+    ],
+    "fallback": {
+      "jobId": null,
+      "name": null,
+      "status": "not_configured",
+      "createdAt": null,
+      "removedAt": null,
+      "removeReason": "short design/copy task; relying on push-based completion"
+    }
   }
 ]

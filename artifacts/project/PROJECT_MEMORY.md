@@ -1,6 +1,7 @@
 # PROJECT_MEMORY — NebulaInfinity Website
 
 ## Now
+- 2026-05-07: Z clarified Astra belongs under AI Workflow examples, not AI-Driven Development. AI-Driven Development proof should instead include the stream-demo/product video waterfall display page example: demo within 24h, beta 3 days after contract, deployed one week later. task-201 started to revise the non-Home copy sheet examples.
 - 2026-05-06: task-200 is PM-verified on commit `63bcd28`: AI-Driven Development “What we design and build” JA copy now positions the service as Nebula Infinity-delivered ultra-fast, quality-gated MVP/demo/product development for client needs, with conditional 24h MVP/demo and 24h iteration-cycle language.
 - 2026-05-06: task-198/task-199 are PM-accepted: AI Application service detail JA copy was implemented from Z's revised sheet, EN was semantically aligned to the revised JA, JA/EN bottom CTA was removed, and Tester QA passed 47/47 on implementation commit `8617661`.
 - 2026-05-06: task-196/task-197 are PM-accepted: AI Workflow visual correction landed on commit `e405598` and Tester QA passed 12/12 against Z screenshots and sibling Service pages. Custom warm/gold section backgrounds were removed, neutral Service-page tones restored, and 設計・開発範囲 lead/grid alignment is 0px delta at 1440/1024/mobile; port 3000 preview returns 200.
