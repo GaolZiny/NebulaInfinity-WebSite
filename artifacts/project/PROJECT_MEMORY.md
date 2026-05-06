@@ -1,6 +1,7 @@
 # PROJECT_MEMORY — NebulaInfinity Website
 
 ## Now
+- 2026-05-06: Z rejected the task-194 AI Workflow visual result: custom section colors did not match sibling Service pages and the 設計・開発範囲 lead still did not align with the grid. task-196 urgent visual iteration started.
 - 2026-05-06: task-194/task-195 are PM-accepted: AI Workflow visual fixes landed on commit `b72de3e` and Tester QA passed 12/12. The hero service-card panel is removed, first content sections are visually separated, and the 設計・開発範囲 lead aligns widely with the card grid on desktop/1024 while mobile remains readable.
 - 2026-05-06: task-192/task-193 are PM-accepted: AI Workflow service detail now follows Z-edited reduced JA structure, standalone `/[lang]/projects` index is removed, Home `#projects` replaces it, active project details remain, and Tester QA passed 26/26 on implementation commit `42ee882`. 3000 dev preview was restarted and returns 200 for Home and AI Workflow.
 - 2026-05-06: Projects index removal architecture alignment is PM-verified on commit `97d2b05`: Home `#projects` replaces standalone `/[lang]/projects`, while active detail routes remain `gaijin-life-navi`, `rigel`, and `astra`. Downstream design/copy/code updates are next.

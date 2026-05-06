@@ -1331,7 +1331,7 @@
     "goal": "Fix Z-reported AI Workflow detail visual layout issues: section separation, hero card removal, and lead width alignment.",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "createdAt": "2026-05-06T06:27:53.573409Z",
-    "updatedAt": "2026-05-06T07:00:35.380215Z",
+    "updatedAt": "2026-05-06T07:18:29.766928Z",
     "expectedOutput": "implementation commit/report",
     "pipelineStep": 1,
     "fallback": {
@@ -1358,7 +1358,8 @@
         "lint/test/build passed per Tester report",
         "Only expected pre-existing dirty copy sheets and unrelated untracked docs remain outside committed evidence"
       ]
-    }
+    },
+    "postAcceptanceIssue": "Z rejected visual result at 2026-05-06 16:14 JST: custom AI Workflow section tones do not align with other service pages; scope lead still not aligned with grid."
   },
   {
     "taskId": "task-195",
@@ -1376,7 +1377,7 @@
     "goal": "QA screenshots/browser verification for AI Workflow visual layout fixes from task-194.",
     "sessionKey": "agent:tester:subagent:1a91af9e-5124-4b5e-9516-e2737ad051c2",
     "createdAt": "2026-05-06T06:27:53.573409Z",
-    "updatedAt": "2026-05-06T07:00:35.380215Z",
+    "updatedAt": "2026-05-06T07:18:29.766928Z",
     "expectedOutput": "QA report/screenshots",
     "pipelineStep": 2,
     "fallback": {
@@ -1391,6 +1392,65 @@
     "commit": "b72de3e33a77dc82129d0c3db166394131e95fce",
     "testedCommit": "b72de3e33a77dc82129d0c3db166394131e95fce",
     "qaReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-ai-workflow-visual-fix-task-195.md",
-    "screenshotsDir": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/screenshots/task-195-ai-workflow-visual-fix/"
+    "screenshotsDir": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/screenshots/task-195-ai-workflow-visual-fix/",
+    "postAcceptanceIssue": "Z rejected visual result at 2026-05-06 16:14 JST: custom AI Workflow section tones do not align with other service pages; scope lead still not aligned with grid."
+  },
+  {
+    "taskId": "task-196",
+    "pipelineId": "pipeline-196-ai-workflow-visual-iteration",
+    "iterationOf": "task-194/task-195",
+    "status": "in-progress",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null,
+    "source": "telegram",
+    "agentId": "coder",
+    "workerRole": "coder",
+    "goal": "Iteration fix for AI Workflow visual regression: align section tones to other service pages grey/white system and make scope lead exactly align with grid width.",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "createdAt": "2026-05-06T07:18:29.766928Z",
+    "updatedAt": "2026-05-06T07:18:29.766928Z",
+    "expectedOutput": "implementation commit/report",
+    "pipelineStep": 1,
+    "fallback": {
+      "jobId": null,
+      "name": null,
+      "status": "not_configured",
+      "createdAt": null,
+      "removedAt": null,
+      "removeReason": "urgent visual correction; push-based Coder→Tester completion expected"
+    }
+  },
+  {
+    "taskId": "task-197",
+    "pipelineId": "pipeline-196-ai-workflow-visual-iteration",
+    "iterationOf": "task-194/task-195",
+    "status": "pending",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null,
+    "source": "telegram",
+    "agentId": "tester",
+    "workerRole": "tester",
+    "goal": "QA screenshot verification for task-196 AI Workflow visual correction against Z screenshots and sibling service pages.",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "createdAt": "2026-05-06T07:18:29.766928Z",
+    "updatedAt": "2026-05-06T07:18:29.766928Z",
+    "expectedOutput": "QA report/screenshots",
+    "pipelineStep": 2,
+    "fallback": {
+      "jobId": null,
+      "name": null,
+      "status": "not_configured",
+      "createdAt": null,
+      "removedAt": null,
+      "removeReason": "urgent visual correction; push-based Coder→Tester completion expected"
+    }
   }
 ]
