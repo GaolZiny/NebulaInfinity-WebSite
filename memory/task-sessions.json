@@ -1570,5 +1570,38 @@
     "testedCommit": "8617661500d76c7708cd13108b309b3432da193f",
     "qaReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-ai-application-copy-task-199.md",
     "screenshotsDir": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/screenshots/task-199-ai-application-copy/"
+  },
+  {
+    "taskId": "task-200",
+    "pipelineId": null,
+    "status": "in-progress",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null,
+    "source": "telegram",
+    "agentId": "designer",
+    "workerRole": "designer",
+    "goal": "Rewrite the JA What we design and build section for AI-Driven Development service detail to clarify it is Nebula Infinity's high-speed/high-quality development service, not a service for building client AI development workflows.",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "createdAt": "2026-05-06T10:46:56.875572Z",
+    "updatedAt": "2026-05-06T10:46:56.875572Z",
+    "expectedOutput": "updated non-home copy sheet section draft",
+    "constraints": [
+      "Only update AI-Driven Development Proposed JA copy Section: What we design and build in non-home copy sheet",
+      "Do not modify source code",
+      "Position service as client gives requirements/needs to Nebula Infinity, Nebula Infinity develops MVP/demo/product rapidly with quality gates",
+      "Phrase 24h capability conditionally, not universal guarantee"
+    ],
+    "fallback": {
+      "jobId": null,
+      "name": null,
+      "status": "not_configured",
+      "createdAt": null,
+      "removedAt": null,
+      "removeReason": "short design/copy task; relying on push-based completion"
+    }
   }
 ]
