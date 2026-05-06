@@ -131,6 +131,12 @@ Proof: 役割設計 / レビューゲート / 自己進化
 プロダクトリサーチワークフロー
 売れ筋商品発掘するため、リアルタイムの市場情報収集、競合分析、自社情報集約、独自ノウハウに基づく傾向分析・要約し、意思決定に渡すリサーチフローを実現しました。
 Proof: 情報収集 / 要点整理 / 独自ノウハウ
+
+Astra（PMO・プロジェクト管理ワークフロー）
+プロジェクト管理・PMO領域で分散しやすい進捗、課題、リスク、リソース情報を、AIワークフローとして構造化した例です。AIエージェントによる情報整理と次アクション候補の提示により、状況把握、判断導線、改善サイクルを支援します。
+Proof: PMO業務 / 情報整理 / 改善サイクル
+CTA: Astra 詳細
+Slug: astra
 ```
 
 ### Aligned EN copy
@@ -251,6 +257,12 @@ Proof: Role design / Review gates / Reusable rules
 Product research workflow
 A research workflow example for collecting, comparing, and summarizing market, competitor, and user information into decision-ready input.
 Proof: Collection / Synthesis / Decision input
+
+Astra (PMO / project-management workflow)
+A workflow example that structures scattered progress, issues, risks, and resource information as an AI workflow for project management and PMO work. AI agents support information organization and next-action candidates so teams can improve visibility, decision paths, and improvement cycles.
+Proof: PMO work / Information organization / Improvement cycle
+CTA: View Astra
+Slug: astra
 ```
 
 **Bottom CTA**
@@ -569,7 +581,7 @@ AI駆動開発で、構想を速く確かな実装へ
 
 **Hero lead**
 ```text
-マルチAIエージェントによる設計から実装、テストまでの開発ワークフローを自社ノウハウで構築し、極めて短いサイクル（24時間程度）で要件を実装できます。さらに、レビューゲート、検証プロセスを組み合わせ、速さだけでなく、品質も担保されます。
+マルチAIエージェントによる設計から実装、テストまでの開発ワークフローを自社ノウハウで構築し、クライアントのニーズや要件を、動くデモやMVPへ短いサイクルで進めます。条件が合う場合には24時間程度で初回デモを提示し、レビューゲートと検証プロセスを組み合わせて、速度と品質を両立します。
 ```
 
 **Hero chips**
@@ -604,44 +616,44 @@ Nebula Infinity の AI-Driven Development Solution
 Cards:
 ```text
 要件・初期スコープ整理
-お客様の開発ニーズや要件をもとに、目的、必要な画面・機能・ユーザーフロー、制約条件を整理し、最初に動かすデモ範囲を定義します。
+アイデアやニーズをもとに、画面・機能、制約条件などの要件を整理し、最初に動かすデモの範囲を定義します。
 
 MVP / Demo 高速実装
-条件が合い、スコープを絞れる場合は最短24時間で、動くMVPやデモを実装します。画面、API、データ連携、AI機能まで、判断に必要な形を優先して作ります。
+条件が合い、スコープを絞れる場合は24時間程度で、動くMVPやデモを実装します。画面、API、AI機能まで、判断に必要な形を優先して作ります。
 
 AIエージェント活用による開発
-Nebula Infinity の開発チームが、調査、設計、実装、修正、テスト補助にAIエージェントを活用し、短いサイクルで実装密度を高めます。
+調査、設計、実装、修正、テスト補助にAIエージェントを活用し、短いサイクルで実装密度を高めます。
 
 レビューゲート / 品質管理
-要件、実装差分、テスト、ビルド、受け入れ条件をレビューゲートで確認し、速度だけに偏らない品質管理を組み込みます。
+要件、実装、テスト、受け入れ条件をレビューゲートで確認でき、速度だけに偏らない品質管理を組み込みます。
 
-24時間単位の改善サイクル
-フィードバックをもとに修正、追加実装、次回デモを短いサイクルで回します。必要に応じて判断ログや残課題を整理し、継続開発へ接続します。
+短い単位の改善サイクル
+フィードバックをもとに修正、追加実装、次回デモを短いサイクルで繰り返すことができます。
 ```
 
 **Section: Representative proof**
 ```text
-AI駆動開発の代表実績
+AI駆動開発の開発例
 ```
 
 Lead:
 ```text
-以下は、AIエージェントを前提にした開発体制、品質ゲート、短い検証サイクルを説明するための代表 proof です。
+クライアントのニーズを受け、デモ/MVP、β版、公開までをレビューゲート付きで短い周期で進めた開発例です。
 ```
 
 Project cards:
 ```text
 Rigel
-個人事業主・小規模事業者向けのAI記帳アプリ。構想から短時間で動くMVPを形にし、その後の機能追加まで短いサイクルで進めた、AI駆動開発の速度と実装範囲を示す代表例です。会計アプリとしての内容はAI Application文脈でも扱えますが、Homeでは主に超高速MVP delivery proofとして見せます。
+個人事業主・小規模事業者向けのAI記帳アプリ。構想から16時間で動くMVPを形にし、その後の機能追加まで短いサイクルで進め、1週間程度で開発完了できました。AI駆動開発のスピードを体感できるプロジェクトでした。
 Proof: 16-hour MVP / 33,000+ LOC / 367 Tests / 18 API Endpoints
 CTA: Rigel 詳細
 Slug: rigel
 
-Astra
-プロジェクト管理・PMO領域のニーズに対し、進捗、課題、リスク、リソースの整理をAIワークフローとして扱う代表例です。AIエージェントを組み込んだ管理プロセスにより、プロジェクト状況の把握、次アクション整理、改善サイクルを支援します。
-Proof: PMO workflow / Agentic workflow / Quality gates
-CTA: Astra 詳細
-Slug: astra
+プロダクト動画ウォーターフォール表示ページ（stream-demo）
+プロダクト紹介動画をウォーターフォール型に表示するWebページの開発例です。クライアント要件を受けて、判断に必要なデモをほぼ24時間以内に提示し、契約から3日後にβ版を納品、1週間後にデプロイ・公開しました。短いサイクルでも、要件確認、差分レビュー、表示品質確認を挟みながら、ニーズを動くプロダクトへ進めました。
+Proof: 24h demo / 3-day beta / 1-week launch / Review gates
+CTA: この開発例を相談する
+Slug: none / no active detail route yet
 ```
 
 ### Aligned EN copy
@@ -771,11 +783,11 @@ Proof: 16-hour MVP / 33,000+ LOC / 367 Tests / 18 API Endpoints
 CTA: View Rigel
 Slug: rigel
 
-Astra
-A representative case for project-management and PMO needs, treating progress, issues, risks, and resources as AI workflows. With AI agents embedded into the management process, Astra supports project visibility, next-action organization, and improvement cycles.
-Proof: PMO workflow / Agentic workflow / Quality gates
-CTA: View Astra
-Slug: astra
+Product video waterfall display page (stream-demo)
+A development example for a product-video waterfall display page. After receiving the client's requirements, Nebula Infinity presented a decision-ready demo basically within 24 hours, delivered a beta version three days after contract, and deployed/launched one week later. The short delivery cycle used requirements checks, diff review, display QA, and quality gates rather than speed alone.
+Proof: 24h demo / 3-day beta / 1-week launch / Review gates
+CTA: Discuss this development example
+Slug: none / no active detail route yet
 ```
 
 **Bottom CTA**
@@ -789,8 +801,9 @@ You do not need a complete specification. We can start from purpose, constraints
 - Use `ai-driven-development` unchanged.
 - No Web3 / Blockchain copy, route, CTA, or Carina proof on this page.
 - Rigel should be allowed to appear here as primary AI-Driven Development proof, even if product data also keeps AI Application traits.
-- Astra copy should highlight PMO / project-management workflow proof. Current source data labels Astra as `ai-driven-development`; if filters can only show one service line, mark this as Needs PM/Z decision. Recommended wording: Astra is an AI Workflow / PMO proof delivered through an AI-driven development method.
-- Phrase “最短24時間” as conditional capability, not universal guarantee.
+- Do not use Astra as AI-Driven Development proof on this service page. Treat Astra as AI Workflow / PMO / project-management workflow proof.
+- Use the stream-demo / product video waterfall display page example as the additional AI-Driven Development proof. It currently has no active website project detail route; keep `Slug: none / no active detail route yet` or use a consultation CTA unless PM/Z later approve adding a route.
+- Phrase “24時間程度” and the stream-demo 24h / 3-day / 1-week timeline as conditional or achieved project-specific evidence, not a universal guarantee.
 
 ---
 
