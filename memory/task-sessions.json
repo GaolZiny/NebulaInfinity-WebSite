@@ -1318,8 +1318,8 @@
   {
     "taskId": "task-194",
     "pipelineId": "pipeline-194-ai-workflow-visual-fix",
-    "status": "in-progress",
-    "verificationStatus": "pending",
+    "status": "implemented_pending_tester",
+    "verificationStatus": "pending_tester",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -1331,7 +1331,7 @@
     "goal": "Fix Z-reported AI Workflow detail visual layout issues: section separation, hero card removal, and lead width alignment.",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "createdAt": "2026-05-06T06:27:53.573409Z",
-    "updatedAt": "2026-05-06T06:27:53.573409Z",
+    "updatedAt": "2026-05-06T06:46:43.571246Z",
     "expectedOutput": "implementation commit/report",
     "pipelineStep": 1,
     "fallback": {
@@ -1341,12 +1341,16 @@
       "createdAt": null,
       "removedAt": null,
       "removeReason": "push-based Coder→Tester pipeline completion expected"
-    }
+    },
+    "commit": "b72de3e33a77dc82129d0c3db166394131e95fce",
+    "workerCommit": "b72de3e33a77dc82129d0c3db166394131e95fce",
+    "implementationReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/coder-ai-workflow-visual-fix-task-194.md",
+    "testerSessionKey": "agent:tester:subagent:1a91af9e-5124-4b5e-9516-e2737ad051c2"
   },
   {
     "taskId": "task-195",
     "pipelineId": "pipeline-194-ai-workflow-visual-fix",
-    "status": "pending",
+    "status": "in-progress",
     "verificationStatus": "pending",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
@@ -1357,9 +1361,9 @@
     "agentId": "tester",
     "workerRole": "tester",
     "goal": "QA screenshots/browser verification for AI Workflow visual layout fixes from task-194.",
-    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "sessionKey": "agent:tester:subagent:1a91af9e-5124-4b5e-9516-e2737ad051c2",
     "createdAt": "2026-05-06T06:27:53.573409Z",
-    "updatedAt": "2026-05-06T06:27:53.573409Z",
+    "updatedAt": "2026-05-06T06:46:43.571246Z",
     "expectedOutput": "QA report/screenshots",
     "pipelineStep": 2,
     "fallback": {
@@ -1369,6 +1373,7 @@
       "createdAt": null,
       "removedAt": null,
       "removeReason": "push-based Coder→Tester pipeline completion expected"
-    }
+    },
+    "prevTaskCommit": "b72de3e33a77dc82129d0c3db166394131e95fce"
   }
 ]
