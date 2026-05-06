@@ -1399,8 +1399,8 @@
     "taskId": "task-196",
     "pipelineId": "pipeline-196-ai-workflow-visual-iteration",
     "iterationOf": "task-194/task-195",
-    "status": "in-progress",
-    "verificationStatus": "pending",
+    "status": "implemented_pending_tester",
+    "verificationStatus": "pending_tester",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -1412,7 +1412,7 @@
     "goal": "Iteration fix for AI Workflow visual regression: align section tones to other service pages grey/white system and make scope lead exactly align with grid width.",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "createdAt": "2026-05-06T07:18:29.766928Z",
-    "updatedAt": "2026-05-06T07:18:29.766928Z",
+    "updatedAt": "2026-05-06T07:37:09.709402Z",
     "expectedOutput": "implementation commit/report",
     "pipelineStep": 1,
     "fallback": {
@@ -1422,13 +1422,17 @@
       "createdAt": null,
       "removedAt": null,
       "removeReason": "urgent visual correction; push-based Coder→Tester completion expected"
-    }
+    },
+    "commit": "e40559815aebf17094806eebc12038129e043e71",
+    "workerCommit": "e40559815aebf17094806eebc12038129e043e71",
+    "implementationReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/coder-ai-workflow-visual-correction-task-196.md",
+    "testerSessionKey": "agent:tester:subagent:27004736-6d7d-4adb-856e-0271092e01c2"
   },
   {
     "taskId": "task-197",
     "pipelineId": "pipeline-196-ai-workflow-visual-iteration",
     "iterationOf": "task-194/task-195",
-    "status": "pending",
+    "status": "in-progress",
     "verificationStatus": "pending",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
@@ -1439,9 +1443,9 @@
     "agentId": "tester",
     "workerRole": "tester",
     "goal": "QA screenshot verification for task-196 AI Workflow visual correction against Z screenshots and sibling service pages.",
-    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "sessionKey": "agent:tester:subagent:27004736-6d7d-4adb-856e-0271092e01c2",
     "createdAt": "2026-05-06T07:18:29.766928Z",
-    "updatedAt": "2026-05-06T07:18:29.766928Z",
+    "updatedAt": "2026-05-06T07:37:09.709402Z",
     "expectedOutput": "QA report/screenshots",
     "pipelineStep": 2,
     "fallback": {
@@ -1451,6 +1455,7 @@
       "createdAt": null,
       "removedAt": null,
       "removeReason": "urgent visual correction; push-based Coder→Tester completion expected"
-    }
+    },
+    "prevTaskCommit": "e40559815aebf17094806eebc12038129e043e71"
   }
 ]
