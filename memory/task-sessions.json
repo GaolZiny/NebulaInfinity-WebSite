@@ -1137,5 +1137,37 @@
     "finalPipelineStatus": "accepted_after_qa",
     "verificationNotifiedAt": "2026-05-05T12:40:15.004052Z",
     "verificationNotificationMessageId": "3744"
+  },
+  {
+    "taskId": "task-190",
+    "pipelineId": null,
+    "status": "in-progress",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null,
+    "source": "telegram",
+    "agentId": "writer",
+    "workerRole": "writer",
+    "goal": "Draft an optimized non-Home page copy editing sheet aligned to Z's modified Home direction, so Z can edit it before implementation.",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "createdAt": "2026-05-06T01:38:23.779471Z",
+    "updatedAt": "2026-05-06T01:38:23.779471Z",
+    "expectedOutput": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/non-home-copy-editing-sheet-2026-05-06.md",
+    "constraints": [
+      "Do not modify or stage Z-edited home-copy-editing-sheet-2026-05-05.md",
+      "Draft docs only; no source code implementation",
+      "Align service/project/contact copy with active service model: AI Workflow, AI Application, AI-Driven Development and projects Japan Life Navi, Rigel, Astra"
+    ],
+    "fallback": {
+      "jobId": null,
+      "name": null,
+      "status": "not_configured",
+      "createdAt": null,
+      "removedAt": null,
+      "removeReason": "cron tool unavailable; relying on push-based sessions_spawn completion"
+    }
   }
 ]
