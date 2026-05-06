@@ -22,53 +22,56 @@
 - [ ] Japanese / English routing works on all primary pages and Home anchor targets
 - [ ] Global nav order is Home / Services / Projects / About / Contact, with JA labels `ホーム` / `サービス` / `プロジェクト` / `会社概要` / `お問い合わせ`
 - [ ] Header and mobile nav `サービス` target `/[lang]/#services`
+- [ ] Header and mobile nav `プロジェクト` target `/[lang]/#projects`, not `/[lang]/projects`
 - [ ] Header and mobile nav `会社概要` target `/[lang]/#about`
 - [ ] Home Hero CTA button area is removed; Hero does not render old primary/secondary CTA buttons or reserve empty CTA space
 - [ ] Home service cards link directly to:
   - `/[lang]/services/ai-workflow`
   - `/[lang]/services/ai-application`
   - `/[lang]/services/ai-driven-development`
-- [ ] Home Projects cards link to the corresponding project detail routes under `/[lang]/projects/{slug}` for exactly:
-  - Japan Life Navi
-  - Rigel
-  - Astra
-- [ ] If exact project slugs are not already confirmed at implementation time, Coder resolves them from `data/projects` / current dynamic routing before coding Home Projects card links
+- [ ] Home Projects section exposes an explicit `#projects` anchor/landmark between Services and Process
+- [ ] Home Projects cards link directly to exactly these corresponding project detail routes:
+  - Japan Life Navi → `/[lang]/projects/gaijin-life-navi`
+  - Rigel → `/[lang]/projects/rigel`
+  - Astra → `/[lang]/projects/astra`
 - [ ] Service detail breadcrumbs / back-to-services CTAs target `/[lang]/#services`
-- [ ] Header, footer, CTA data, breadcrumb data, sitemap, language switch data, and metadata no longer point to `/[lang]/services` index, `/[lang]/about` standalone route, retired `/[lang]/services/web3-blockchain`, or retired Carina project routes
+- [ ] Header, footer, CTA data, breadcrumb data, sitemap, language switch data, and metadata no longer point to `/[lang]/services` index, `/[lang]/projects` index, `/[lang]/about` standalone route, retired `/[lang]/services/web3-blockchain`, or retired Carina project routes
 - [ ] `/[lang]/services` standalone index is deleted or no longer exported; implementation removes only the index page and preserves the `services` detail route namespace
+- [ ] `/[lang]/projects` standalone index is deleted or no longer exported; implementation removes only the index page and preserves the `projects` detail route namespace
 - [ ] `/[lang]/about` standalone page is deleted or no longer exported
 - [ ] `/[lang]/services/ai-workflow`, `/[lang]/services/ai-application`, and `/[lang]/services/ai-driven-development` continue to exist and remain accessible
+- [ ] `/[lang]/projects/gaijin-life-navi`, `/[lang]/projects/rigel`, and `/[lang]/projects/astra` continue to exist and remain accessible from Home Projects cards
 - [ ] `/[lang]/services/web3-blockchain` is not an active V1 route and is not emitted by static params, sitemap, metadata, or language switch links
 - [ ] Carina is not an active Home/project proof route; active project data/static params/sitemap must not advertise `projects/carina`
 - [ ] Contact form submits to a **real working delivery path** (not console-only)
 - [ ] Responsive layout works on mobile / tablet / desktop without broken layout or unusable controls
-- [ ] Basic SEO is in place (title, description, OGP, sitemap) and sitemap excludes removed standalone and retired detail/project routes
+- [ ] Basic SEO is in place (title, description, OGP, sitemap) and sitemap excludes removed standalone index routes and retired detail/project routes; active project detail routes may remain if current sitemap strategy supports detail URLs
 - [ ] 404 page exists and works
 
 ### Page / Anchor Set (V1)
 - [ ] Home (`/[lang]/`)
 - [ ] Home Services anchor (`/[lang]/#services`)
-- [ ] Home Projects section between Services and Process (cards link to `/[lang]/projects/{slug}` detail routes)
+- [ ] Home Projects anchor (`/[lang]/#projects`) between Services and Process (cards link to active `/[lang]/projects/{slug}` detail routes)
 - [ ] Home About / company overview anchor (`/[lang]/#about`)
 - [ ] AI Workflow service detail (`/[lang]/services/ai-workflow`)
 - [ ] AI Application service detail (`/[lang]/services/ai-application`)
 - [ ] AI-Driven Development service detail (`/[lang]/services/ai-driven-development`)
-- [ ] Projects / Cases index (`/[lang]/projects`)
-- [ ] Representative case detail pages (existing dynamic case detail route may be reused; active Home proof details are Japan Life Navi, Rigel, and Astra)
+- [ ] Representative project detail pages under `/[lang]/projects/{slug}` for exactly Japan Life Navi (`gaijin-life-navi`), Rigel (`rigel`), and Astra (`astra`)
 - [ ] Contact (`/[lang]/contact`)
 - [ ] 404
 
-Standalone `/[lang]/services` index, standalone `/[lang]/about` page, retired `/[lang]/services/web3-blockchain`, and retired Carina project proof/page are not V1 requirements.
+Standalone `/[lang]/services` index, standalone `/[lang]/projects` index, standalone `/[lang]/about` page, retired `/[lang]/services/web3-blockchain`, and retired Carina project proof/page are not V1 requirements.
 
 ### Content
-- [ ] Home follows the approved section order: `Hero → Services(#services) → Projects → Process → About(#about) → Contact CTA`
+- [ ] Home follows the approved section order: `Hero → Services(#services) → Projects(#projects) → Process → About(#about) → Contact CTA`
 - [ ] Home Hero CTA buttons are removed; do not keep hidden CTA buttons or an empty CTA container
 - [ ] `Why assetization` is not implemented as a Home section; the assetization explanation moves to the AI Workflow detail page
 - [ ] Home page explains the 3 official service lines while keeping deeper assetization logic on the AI Workflow detail page
 - [ ] Home `#services` includes compact service-selection guidance for all exactly 3 service lines
 - [ ] Home `#services` service cards include fit guidance and detail CTAs without duplicating the full former Services index page
-- [ ] Home includes a concise Projects section between Services and Process with exactly these cards: Japan Life Navi, Rigel, and Astra
-- [ ] Home Projects cards link to their corresponding `/[lang]/projects/{slug}` detail pages; if exact slugs need verification, Coder resolves them from `data/projects` / current routing before coding
+- [ ] Home includes a concise Projects section with explicit `#projects` anchor/landmark between Services and Process with exactly these cards: Japan Life Navi, Rigel, and Astra
+- [ ] Home Projects cards link to their corresponding detail pages: `/[lang]/projects/gaijin-life-navi`, `/[lang]/projects/rigel`, and `/[lang]/projects/astra`
+- [ ] Home Projects replaces the standalone Projects / Cases index as the public project-selection surface
 - [ ] Home Projects is not the old standalone `Proof` / `Nebula Infinityの実装力` grid; it is a concise Z-requested project-card section that routes into project detail pages
 - [ ] Home `#about` body paragraph/column is removed
 - [ ] Home `#about` renders Company snapshot and Working principles directly below the About title in a vertical layout, not side-by-side with a body column
@@ -81,7 +84,7 @@ Standalone `/[lang]/services` index, standalone `/[lang]/about` page, retired `/
 - [ ] AI Workflow detail explains the Current state → System design → Business outcome logic
 - [ ] AI Workflow detail presents broad workflow assetization; examples such as `企画整理`, development process, or research workflow are examples only, not the service definition
 - [ ] AI-Driven Development detail explains Nebula Infinity's agent-assisted development methodology, implementation workflow, quality gates, and delivery model
-- [ ] Projects / Cases page shows representative examples across:
+- [ ] Home Projects cards and project detail pages represent the active proof set across:
   - Workflow cases
   - AI application cases
   - AI-driven development cases
@@ -94,8 +97,8 @@ Standalone `/[lang]/services` index, standalone `/[lang]/about` page, retired `/
 - [ ] Keep the existing Light Premium Bento visual direction unless intentionally adjusted in feature docs
 - [ ] Preserve professional, high-trust visual tone
 - [ ] Accessibility basics: readable contrast, visible focus states, clear link hierarchy after Hero CTA removal
-- [ ] Sticky-header-safe scroll margin prevents `#services` and `#about` headings from being hidden
-- [ ] `#services` and `#about` have accessible headings / landmarks for keyboard and screen-reader navigation
+- [ ] Sticky-header-safe scroll margin prevents `#services`, `#projects`, and `#about` headings from being hidden
+- [ ] `#services`, `#projects`, and `#about` have accessible headings / landmarks for keyboard and screen-reader navigation
 - [ ] Home Projects section has an accessible section heading, clear card/link names, visible focus states, and responsive 3-up-to-stacked card behavior
 - [ ] Home About snapshot/principles stack vertically under the title across responsive breakpoints; no body-column layout remains
 
@@ -104,26 +107,27 @@ Standalone `/[lang]/services` index, standalone `/[lang]/about` page, retired `/
 - [ ] Build succeeds with current stack constraints
 - [ ] No new architecture requires SSR-only runtime behavior
 - [ ] Removed route handling does not depend on Next.js middleware redirects or server redirects
-- [ ] If future legacy traffic for `/services`, `/about`, `/services/web3-blockchain`, or removed Carina project routes is discovered, hosting-level redirects may be evaluated in a separate deployment/config task; they are not part of this implementation requirement
+- [ ] If future legacy traffic for `/services`, `/projects`, `/about`, `/services/web3-blockchain`, or removed Carina project routes is discovered, hosting-level redirects may be evaluated in a separate deployment/config task; they are not part of this implementation requirement
 
 ## Should-have
 - [ ] Stronger service-to-case mapping on Home service cards and service detail pages
 - [ ] More explicit project process / implementation flow section on home page
 - [ ] Better inquiry intent mapping in contact form
-- [ ] Language switching preserves the user’s Home anchor context when practical and never emits links to removed standalone or retired routes
+- [ ] Language switching preserves the user’s Home anchor context when practical, including `#projects`, and never emits links to removed standalone or retired routes
 
 ## Could-have
 - [ ] Dedicated methodology page in a later phase
 - [ ] Deeper case study storytelling in later phase
-- [ ] Hosting-level redirect safety task if analytics/Search Console later prove meaningful legacy traffic to removed routes
+- [ ] Hosting-level redirect safety task if analytics/Search Console later prove meaningful legacy traffic to removed routes such as `/projects`
 
 ## Out-of-scope (V1)
 - Standalone `/[lang]/services` index page
+- Standalone `/[lang]/projects` index page
 - Standalone `/[lang]/about` page
 - Retired `/[lang]/services/web3-blockchain` service detail route/content
 - Retired Carina Home/project proof page/content
-- Thin compatibility pages for removed Services/About/Web3/Carina routes
-- Next.js middleware redirects or server redirects for static-export route cleanup
+- Thin compatibility pages for removed Services/Projects/About/Web3/Carina routes
+- Next.js middleware redirects or server redirects for static-export route cleanup, including `/[lang]/projects` index removal
 - Blog / news
 - CMS
 - RSS / tags / editorial taxonomy
@@ -138,4 +142,4 @@ Standalone `/[lang]/services` index, standalone `/[lang]/about` page, retired `/
 - **Dependencies**: Keep additions minimal
 - **Architecture**: Must remain compatible with static export and existing project structure
 - **Implementation discipline**: Documentation and page messaging must be aligned before implementation dispatch
-- **Route discipline**: Preserve `/[lang]/services/{serviceId}` detail pages while deleting/stopping export for `/[lang]/services` index and retiring only the old `web3-blockchain` detail/content path
+- **Route discipline**: Preserve `/[lang]/services/{serviceId}` detail pages and active `/[lang]/projects/{slug}` detail pages while deleting/stopping export for `/[lang]/services` and `/[lang]/projects` indexes, retiring only the old `web3-blockchain` detail/content path, and keeping Carina inactive
