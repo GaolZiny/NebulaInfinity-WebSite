@@ -273,27 +273,6 @@
   background: rgba(255, 255, 255, 0.7);
 }
 
-.aiWorkflowProblemSection {
-  background:
-    linear-gradient(180deg, rgba(248, 250, 252, 0.96) 0%, rgba(255, 255, 255, 0.92) 100%);
-  border-top: 1px solid rgba(228, 228, 231, 0.72);
-  border-bottom: 1px solid rgba(228, 228, 231, 0.8);
-}
-
-.aiWorkflowScopeSection {
-  background:
-    radial-gradient(circle at top left, rgba(202, 138, 4, 0.08), transparent 30%),
-    linear-gradient(180deg, #ffffff 0%, #fffaf0 100%);
-  border-top: 1px solid rgba(202, 138, 4, 0.2);
-  border-bottom: 1px solid rgba(202, 138, 4, 0.16);
-}
-
-.aiWorkflowExamplesSection {
-  background:
-    radial-gradient(circle at top right, rgba(15, 23, 42, 0.04), transparent 32%),
-    rgba(248, 250, 252, 0.9);
-}
-
 .sectionHeader {
   display: grid;
   gap: 14px;
@@ -308,11 +287,13 @@
 }
 
 .aiWorkflowWideSectionHeader {
-  max-width: min(100%, 1040px);
+  width: 100%;
+  max-width: none;
 }
 
 .aiWorkflowWideSectionHeader .sectionSubtitle {
-  max-width: 1040px;
+  width: 100%;
+  max-width: none;
 }
 
 

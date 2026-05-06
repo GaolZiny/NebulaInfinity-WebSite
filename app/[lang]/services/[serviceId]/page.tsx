@@ -360,18 +360,12 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
   const heroSplitClassName = isAiWorkflow ? `${styles.heroSplit} ${styles.aiWorkflowHeroTextOnly}` : styles.heroSplit;
   const heroContentClassName = isAiWorkflow ? `${styles.heroContent} ${styles.aiWorkflowHeroContent}` : styles.heroContent;
-  const problemSectionClassName = isAiWorkflow
-    ? `${styles.section} ${styles.aiWorkflowProblemSection}`
-    : `${styles.section} ${styles.sectionMuted}`;
-  const deliverablesSectionClassName = isAiWorkflow
-    ? `${styles.section} ${styles.aiWorkflowScopeSection}`
-    : `${styles.section} ${styles.sectionMuted}`;
+  const problemSectionClassName = `${styles.section} ${styles.sectionMuted}`;
+  const deliverablesSectionClassName = isAiWorkflow ? styles.section : `${styles.section} ${styles.sectionMuted}`;
   const deliverablesHeaderClassName = isAiWorkflow
     ? `${styles.sectionHeader} ${styles.aiWorkflowWideSectionHeader}`
     : styles.sectionHeader;
-  const proofSectionClassName = isAiWorkflow
-    ? `${styles.section} ${styles.sectionMuted} ${styles.aiWorkflowExamplesSection}`
-    : styles.section;
+  const proofSectionClassName = isAiWorkflow ? `${styles.section} ${styles.sectionMuted}` : styles.section;
 
   return (
     <div className={styles.page}>
