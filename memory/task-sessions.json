@@ -1479,8 +1479,8 @@
   {
     "taskId": "task-198",
     "pipelineId": "pipeline-198-ai-application-copy-implementation",
-    "status": "in-progress",
-    "verificationStatus": "pending",
+    "status": "implemented_pending_tester",
+    "verificationStatus": "pending_tester",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -1492,7 +1492,7 @@
     "goal": "Implement Z-edited AI Application service detail JA copy and remove bottom CTA for this service detail page.",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "createdAt": "2026-05-06T08:46:16.570418Z",
-    "updatedAt": "2026-05-06T08:51:16.462392Z",
+    "updatedAt": "2026-05-06T09:08:21.503179Z",
     "expectedOutput": "implementation commit/report",
     "pipelineStep": 1,
     "constraints": [
@@ -1511,12 +1511,16 @@
     },
     "iterations": [],
     "pmCorrectionAt": "2026-05-06T08:51:16.462392Z",
-    "pmCorrection": "Z clarified EN copy should semantically align to revised JA copy, not only remove bottom CTA. Coder steered before completion."
+    "pmCorrection": "Z clarified EN copy should semantically align to revised JA copy, not only remove bottom CTA. Coder steered before completion.",
+    "commit": "8617661500d76c7708cd13108b309b3432da193f",
+    "workerCommit": "8617661500d76c7708cd13108b309b3432da193f",
+    "implementationReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/coder-ai-application-copy-task-198.md",
+    "testerSessionKey": "agent:tester:subagent:8bfd89da-81f7-49f2-818c-53e65394e2bd"
   },
   {
     "taskId": "task-199",
     "pipelineId": "pipeline-198-ai-application-copy-implementation",
-    "status": "pending",
+    "status": "in-progress",
     "verificationStatus": "pending",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
@@ -1527,9 +1531,9 @@
     "agentId": "tester",
     "workerRole": "tester",
     "goal": "QA AI Application service detail copy/structure implementation from task-198.",
-    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "sessionKey": "agent:tester:subagent:8bfd89da-81f7-49f2-818c-53e65394e2bd",
     "createdAt": "2026-05-06T08:46:16.570418Z",
-    "updatedAt": "2026-05-06T08:51:16.462392Z",
+    "updatedAt": "2026-05-06T09:08:21.503179Z",
     "expectedOutput": "QA report/screenshots",
     "pipelineStep": 2,
     "constraints": [
@@ -1545,6 +1549,7 @@
       "createdAt": null,
       "removedAt": null,
       "removeReason": "push-based Coder→Tester pipeline completion expected"
-    }
+    },
+    "prevTaskCommit": "8617661500d76c7708cd13108b309b3432da193f"
   }
 ]
