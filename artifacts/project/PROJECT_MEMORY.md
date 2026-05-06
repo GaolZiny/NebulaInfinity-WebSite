@@ -1,6 +1,7 @@
 # PROJECT_MEMORY — NebulaInfinity Website
 
 ## Now
+- 2026-05-06: Z finished revising the JA AI Application service detail copy in the non-Home copy sheet and requested implementation; task-198 implementation pipeline started, including removal of the AI Application bottom CTA.
 - 2026-05-06: task-196/task-197 are PM-accepted: AI Workflow visual correction landed on commit `e405598` and Tester QA passed 12/12 against Z screenshots and sibling Service pages. Custom warm/gold section backgrounds were removed, neutral Service-page tones restored, and 設計・開発範囲 lead/grid alignment is 0px delta at 1440/1024/mobile; port 3000 preview returns 200.
 - 2026-05-06: task-194/task-195 are PM-accepted: AI Workflow visual fixes landed on commit `b72de3e` and Tester QA passed 12/12. The hero service-card panel is removed, first content sections are visually separated, and the 設計・開発範囲 lead aligns widely with the card grid on desktop/1024 while mobile remains readable.
 - 2026-05-06: task-192/task-193 are PM-accepted: AI Workflow service detail now follows Z-edited reduced JA structure, standalone `/[lang]/projects` index is removed, Home `#projects` replaces it, active project details remain, and Tester QA passed 26/26 on implementation commit `42ee882`. 3000 dev preview was restarted and returns 200 for Home and AI Workflow.

@@ -1475,5 +1475,71 @@
     "testedCommit": "e40559815aebf17094806eebc12038129e043e71",
     "qaReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-ai-workflow-visual-correction-task-197.md",
     "screenshotsDir": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/screenshots/task-197-ai-workflow-visual-correction/"
+  },
+  {
+    "taskId": "task-198",
+    "pipelineId": "pipeline-198-ai-application-copy-implementation",
+    "status": "in-progress",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null,
+    "source": "telegram",
+    "agentId": "coder",
+    "workerRole": "coder",
+    "goal": "Implement Z-edited AI Application service detail JA copy and remove bottom CTA for this service detail page.",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "createdAt": "2026-05-06T08:46:16.570418Z",
+    "updatedAt": "2026-05-06T08:46:16.570418Z",
+    "expectedOutput": "implementation commit/report",
+    "pipelineStep": 1,
+    "constraints": [
+      "Use Z-edited AI Application JA section in non-home copy sheet as source of truth",
+      "Remove AI Application bottom CTA structurally for both JA/EN",
+      "Do not modify or stage Z-owned copy sheets"
+    ],
+    "fallback": {
+      "jobId": null,
+      "name": null,
+      "status": "not_configured",
+      "createdAt": null,
+      "removedAt": null,
+      "removeReason": "push-based Coder→Tester pipeline completion expected"
+    }
+  },
+  {
+    "taskId": "task-199",
+    "pipelineId": "pipeline-198-ai-application-copy-implementation",
+    "status": "pending",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null,
+    "source": "telegram",
+    "agentId": "tester",
+    "workerRole": "tester",
+    "goal": "QA AI Application service detail copy/structure implementation from task-198.",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "createdAt": "2026-05-06T08:46:16.570418Z",
+    "updatedAt": "2026-05-06T08:46:16.570418Z",
+    "expectedOutput": "QA report/screenshots",
+    "pipelineStep": 2,
+    "constraints": [
+      "Use Z-edited AI Application JA section in non-home copy sheet as source of truth",
+      "Remove AI Application bottom CTA structurally for both JA/EN",
+      "Do not modify or stage Z-owned copy sheets"
+    ],
+    "fallback": {
+      "jobId": null,
+      "name": null,
+      "status": "not_configured",
+      "createdAt": null,
+      "removedAt": null,
+      "removeReason": "push-based Coder→Tester pipeline completion expected"
+    }
   }
 ]
