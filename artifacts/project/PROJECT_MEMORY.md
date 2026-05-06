@@ -1,7 +1,7 @@
 # PROJECT_MEMORY — NebulaInfinity Website
 
 ## Now
-- 2026-05-06: task-190 Writer draft started to optimize non-Home page copy (service detail, Projects, Contact) against Z's modified Home direction before Z edits and implementation.
+- 2026-05-06: task-190 non-Home copy editing sheet is PM-verified on commit `10ded20`; it drafts service detail, Projects, Japan Life Navi, Rigel, Astra, and Contact copy aligned to Z's modified Home direction for Z review/editing before implementation.
 - Prior content repositioning pipeline (`pipeline-035`) is complete, but its AI-only positioning is now superseded by the new V1 direction.
 - Design Foundation for the V1 positioning reset has been produced and PM-verified; waiting for Z approval before visual/page design.
 - Visual/page design batch for the V1 positioning rebuild has been produced and PM-verified; waiting for Z approval before implementation.

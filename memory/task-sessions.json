@@ -1141,8 +1141,8 @@
   {
     "taskId": "task-190",
     "pipelineId": null,
-    "status": "in-progress",
-    "verificationStatus": "pending",
+    "status": "done",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -1154,7 +1154,7 @@
     "goal": "Draft an optimized non-Home page copy editing sheet aligned to Z's modified Home direction, so Z can edit it before implementation.",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "createdAt": "2026-05-06T01:38:23.779471Z",
-    "updatedAt": "2026-05-06T01:38:23.779471Z",
+    "updatedAt": "2026-05-06T01:47:41.342076Z",
     "expectedOutput": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/non-home-copy-editing-sheet-2026-05-06.md",
     "constraints": [
       "Do not modify or stage Z-edited home-copy-editing-sheet-2026-05-05.md",
@@ -1168,6 +1168,20 @@
       "createdAt": null,
       "removedAt": null,
       "removeReason": "cron tool unavailable; relying on push-based sessions_spawn completion"
+    },
+    "commit": "10ded20",
+    "pmVerification": {
+      "verifiedAt": "2026-05-06T01:47:41.342076Z",
+      "status": "passed",
+      "checks": [
+        "Output markdown opened and spot-checked",
+        "Commit 10ded20 exists and only adds required non-home copy sheet",
+        "Required surfaces present: three services, projects index, Japan Life Navi, Rigel, Astra, Contact",
+        "No TODO/TBD/lorem/placeholder residue found",
+        "Secrets pattern check clean",
+        "Expected dirty Home copy sheet and unrelated untracked docs file remain untouched"
+      ],
+      "outputPath": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/non-home-copy-editing-sheet-2026-05-06.md"
     }
   }
 ]
