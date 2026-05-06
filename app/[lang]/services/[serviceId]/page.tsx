@@ -356,6 +356,22 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const chips = isJa ? content.hero.chipsJa : content.hero.chipsEn;
   const primaryCta = isJa ? (content.hero.primaryCtaJa ?? 'この領域を相談する') : (content.hero.primaryCtaEn ?? 'Discuss this service');
   const secondaryCta = isJa ? (content.hero.secondaryCtaJa ?? 'サービス選択に戻る') : (content.hero.secondaryCtaEn ?? 'Back to Home Services');
+  const isAiWorkflow = serviceId === 'ai-workflow';
+
+  const heroSplitClassName = isAiWorkflow ? `${styles.heroSplit} ${styles.aiWorkflowHeroTextOnly}` : styles.heroSplit;
+  const heroContentClassName = isAiWorkflow ? `${styles.heroContent} ${styles.aiWorkflowHeroContent}` : styles.heroContent;
+  const problemSectionClassName = isAiWorkflow
+    ? `${styles.section} ${styles.aiWorkflowProblemSection}`
+    : `${styles.section} ${styles.sectionMuted}`;
+  const deliverablesSectionClassName = isAiWorkflow
+    ? `${styles.section} ${styles.aiWorkflowScopeSection}`
+    : `${styles.section} ${styles.sectionMuted}`;
+  const deliverablesHeaderClassName = isAiWorkflow
+    ? `${styles.sectionHeader} ${styles.aiWorkflowWideSectionHeader}`
+    : styles.sectionHeader;
+  const proofSectionClassName = isAiWorkflow
+    ? `${styles.section} ${styles.sectionMuted} ${styles.aiWorkflowExamplesSection}`
+    : styles.section;
 
   return (
     <div className={styles.page}>
@@ -372,8 +388,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       </section>
       <section className={styles.hero}>
         <div className="container">
-          <div className={styles.heroSplit}>
-            <div className={styles.heroContent}>
+          <div className={heroSplitClassName}>
+            <div className={heroContentClassName}>
               <span className={styles.heroEyebrow}>{content.hero.eyebrow}</span>
               <h1 className={styles.heroTitle}>{isJa ? content.hero.jaTitle : content.hero.enTitle}</h1>
               <p className={styles.heroBody}>{isJa ? content.hero.jaSubtitle : content.hero.enSubtitle}</p>
@@ -387,15 +403,17 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 </Link>
               </div>
             </div>
-            <div className={`${styles.card} ${styles.featuredCard}`}>
-              <h2 className={styles.cardTitle}>{service.title[lang]}</h2>
-              <p className={styles.cardBody}>{service.body[lang]}</p>
-              <ul className={styles.list}>{service.fitBullets[lang].map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
-            </div>
+            {isAiWorkflow ? null : (
+              <div className={`${styles.card} ${styles.featuredCard}`}>
+                <h2 className={styles.cardTitle}>{service.title[lang]}</h2>
+                <p className={styles.cardBody}>{service.body[lang]}</p>
+                <ul className={styles.list}>{service.fitBullets[lang].map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
+              </div>
+            )}
           </div>
         </div>
       </section>
-      <section className={`${styles.section} ${styles.sectionMuted}`}>
+      <section className={problemSectionClassName}>
         <div className="container">
           <div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{isJa ? content.sectionA.titleJa : content.sectionA.titleEn}</h2></div>
           <div className={cards.length === 3 ? styles.grid3 : styles.grid2}>
@@ -422,16 +440,16 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           </div>
         </section>
       ) : null}
-      <section className={`${styles.section} ${styles.sectionMuted}`}>
+      <section className={deliverablesSectionClassName}>
         <div className="container">
-          <div className={styles.sectionHeader}>
+          <div className={deliverablesHeaderClassName}>
             <h2 className={styles.sectionTitle}>{isJa ? content.deliverables.titleJa : content.deliverables.titleEn}</h2>
             {content.deliverables.subtitleJa || content.deliverables.subtitleEn ? <p className={styles.sectionSubtitle}>{isJa ? content.deliverables.subtitleJa : content.deliverables.subtitleEn}</p> : null}
           </div>
           <div className={deliverables.length === 4 ? styles.grid2 : styles.grid3}>{deliverables.map(([title, body]) => <div key={title} className={styles.card}><h3 className={styles.cardTitle}>{title}</h3><p className={styles.cardBody}>{body}</p></div>)}</div>
         </div>
       </section>
-      <section className={styles.section}>
+      <section className={proofSectionClassName}>
         <div className="container">
           <div className={styles.sectionHeader}>
             <span className={styles.sectionEyebrow}>{content.proof.eyebrow}</span>
