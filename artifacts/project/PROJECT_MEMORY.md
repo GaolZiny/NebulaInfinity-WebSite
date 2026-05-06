@@ -1,6 +1,7 @@
 # PROJECT_MEMORY — NebulaInfinity Website
 
 ## Now
+- 2026-05-06: Z approved removing the standalone Projects index because Home Projects now replaces it; Home cards should link directly to individual project detail pages. Architecture alignment task-191 started before design/copy/code changes.
 - 2026-05-06: task-190 non-Home copy editing sheet is PM-verified on commit `10ded20`; it drafts service detail, Projects, Japan Life Navi, Rigel, Astra, and Contact copy aligned to Z's modified Home direction for Z review/editing before implementation.
 - Prior content repositioning pipeline (`pipeline-035`) is complete, but its AI-only positioning is now superseded by the new V1 direction.
 - Design Foundation for the V1 positioning reset has been produced and PM-verified; waiting for Z approval before visual/page design.

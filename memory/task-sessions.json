@@ -1183,5 +1183,37 @@
       ],
       "outputPath": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/non-home-copy-editing-sheet-2026-05-06.md"
     }
+  },
+  {
+    "taskId": "task-191",
+    "pipelineId": "pipeline-191-remove-projects-index",
+    "status": "in-progress",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null,
+    "source": "telegram",
+    "agentId": "architect",
+    "workerRole": "architect",
+    "goal": "Align architecture and requirements for Z's decision to remove the Projects index while preserving Home Projects cards linking directly to project detail pages.",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "createdAt": "2026-05-06T02:09:40.797573Z",
+    "updatedAt": "2026-05-06T02:09:40.797573Z",
+    "expectedOutput": "updates to artifacts/project/ARCHITECTURE.md and artifacts/project/REQUIREMENTS.md",
+    "constraints": [
+      "Home Projects replaces standalone /[lang]/projects index",
+      "Project detail routes /[lang]/projects/{gaijin-life-navi|rigel|astra} remain active",
+      "Do not modify Z-edited copy sheets or source implementation in architecture step"
+    ],
+    "fallback": {
+      "jobId": null,
+      "name": null,
+      "status": "not_configured",
+      "createdAt": null,
+      "removedAt": null,
+      "removeReason": "expected short architecture-doc task; relying on push-based sessions_spawn completion"
+    }
   }
 ]
