@@ -1479,8 +1479,8 @@
   {
     "taskId": "task-198",
     "pipelineId": "pipeline-198-ai-application-copy-implementation",
-    "status": "implemented_pending_tester",
-    "verificationStatus": "pending_tester",
+    "status": "done",
+    "verificationStatus": "passed_with_tester",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -1492,7 +1492,7 @@
     "goal": "Implement Z-edited AI Application service detail JA copy and remove bottom CTA for this service detail page.",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "createdAt": "2026-05-06T08:46:16.570418Z",
-    "updatedAt": "2026-05-06T09:08:21.503179Z",
+    "updatedAt": "2026-05-06T09:19:51.022073Z",
     "expectedOutput": "implementation commit/report",
     "pipelineStep": 1,
     "constraints": [
@@ -1515,13 +1515,28 @@
     "commit": "8617661500d76c7708cd13108b309b3432da193f",
     "workerCommit": "8617661500d76c7708cd13108b309b3432da193f",
     "implementationReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/coder-ai-application-copy-task-198.md",
-    "testerSessionKey": "agent:tester:subagent:8bfd89da-81f7-49f2-818c-53e65394e2bd"
+    "testerSessionKey": "agent:tester:subagent:8bfd89da-81f7-49f2-818c-53e65394e2bd",
+    "pmVerification": {
+      "verifiedAt": "2026-05-06T09:19:51.022073Z",
+      "status": "passed",
+      "implementationCommit": "8617661500d76c7708cd13108b309b3432da193f",
+      "testerReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-ai-application-copy-task-199.md",
+      "checks": [
+        "Coder commit exists and changed only allowed files",
+        "Tester task-199 PASS 47/47 content/browser checks plus lint/test/build",
+        "JA revised AI Application copy rendered from Z-edited sheet",
+        "EN semantic alignment verified after PM correction",
+        "JA/EN bottom CTA absence verified",
+        "No app/component/lib/style/package/sitemap code diff from implementation commit to PM runtime HEAD",
+        "Precise secret scan clean for QA report/evidence"
+      ]
+    }
   },
   {
     "taskId": "task-199",
     "pipelineId": "pipeline-198-ai-application-copy-implementation",
-    "status": "in-progress",
-    "verificationStatus": "pending",
+    "status": "done",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -1533,7 +1548,7 @@
     "goal": "QA AI Application service detail copy/structure implementation from task-198.",
     "sessionKey": "agent:tester:subagent:8bfd89da-81f7-49f2-818c-53e65394e2bd",
     "createdAt": "2026-05-06T08:46:16.570418Z",
-    "updatedAt": "2026-05-06T09:08:21.503179Z",
+    "updatedAt": "2026-05-06T09:19:51.022073Z",
     "expectedOutput": "QA report/screenshots",
     "pipelineStep": 2,
     "constraints": [
@@ -1550,6 +1565,10 @@
       "removedAt": null,
       "removeReason": "push-based Coder→Tester pipeline completion expected"
     },
-    "prevTaskCommit": "8617661500d76c7708cd13108b309b3432da193f"
+    "prevTaskCommit": "8617661500d76c7708cd13108b309b3432da193f",
+    "commit": "8617661500d76c7708cd13108b309b3432da193f",
+    "testedCommit": "8617661500d76c7708cd13108b309b3432da193f",
+    "qaReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-ai-application-copy-task-199.md",
+    "screenshotsDir": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/screenshots/task-199-ai-application-copy/"
   }
 ]
