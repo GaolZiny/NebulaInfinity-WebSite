@@ -1314,5 +1314,61 @@
     "qaReport": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-ai-workflow-projects-index-task-193.md",
     "evidenceJson": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/tester-ai-workflow-projects-index-task-193.evidence.json",
     "screenshotsDir": "artifacts/epics/website-redesign/features/v1-positioning-rebuild/screenshots/task-193-ai-workflow-projects-index/"
+  },
+  {
+    "taskId": "task-194",
+    "pipelineId": "pipeline-194-ai-workflow-visual-fix",
+    "status": "in-progress",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null,
+    "source": "telegram",
+    "agentId": "coder",
+    "workerRole": "coder",
+    "goal": "Fix Z-reported AI Workflow detail visual layout issues: section separation, hero card removal, and lead width alignment.",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "createdAt": "2026-05-06T06:27:53.573409Z",
+    "updatedAt": "2026-05-06T06:27:53.573409Z",
+    "expectedOutput": "implementation commit/report",
+    "pipelineStep": 1,
+    "fallback": {
+      "jobId": null,
+      "name": null,
+      "status": "not_configured",
+      "createdAt": null,
+      "removedAt": null,
+      "removeReason": "push-based Coder→Tester pipeline completion expected"
+    }
+  },
+  {
+    "taskId": "task-195",
+    "pipelineId": "pipeline-194-ai-workflow-visual-fix",
+    "status": "pending",
+    "verificationStatus": "pending",
+    "zNotificationRequired": true,
+    "zNotifiedAt": null,
+    "zNotificationStatus": "pending",
+    "zNotificationMessageId": null,
+    "mainNotifiedAt": null,
+    "source": "telegram",
+    "agentId": "tester",
+    "workerRole": "tester",
+    "goal": "QA screenshots/browser verification for AI Workflow visual layout fixes from task-194.",
+    "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
+    "createdAt": "2026-05-06T06:27:53.573409Z",
+    "updatedAt": "2026-05-06T06:27:53.573409Z",
+    "expectedOutput": "QA report/screenshots",
+    "pipelineStep": 2,
+    "fallback": {
+      "jobId": null,
+      "name": null,
+      "status": "not_configured",
+      "createdAt": null,
+      "removedAt": null,
+      "removeReason": "push-based Coder→Tester pipeline completion expected"
+    }
   }
 ]
