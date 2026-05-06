@@ -33,7 +33,7 @@ const labels = {
   },
 } as const;
 
-const HOME_ANCHORS = new Set(['#services', '#about']);
+const HOME_ANCHORS = new Set(['#services', '#projects', '#about']);
 
 function normalizePath(path: string) {
   return path.length > 1 ? path.replace(/\/$/, '') : path;
@@ -121,7 +121,7 @@ export default function Header({ lang }: HeaderProps) {
     () => [
       { href: `/${lang}/`, label: t.home },
       { href: `/${lang}/#services`, label: t.services },
-      { href: `/${lang}/projects`, label: t.projects },
+      { href: `/${lang}/#projects`, label: t.projects },
       { href: `/${lang}/#about`, label: t.about },
       { href: `/${lang}/contact`, label: t.contact },
     ],
@@ -137,6 +137,7 @@ export default function Header({ lang }: HeaderProps) {
       const suffix = pathname.slice(`/${lang}`.length) || '/';
       const nextLang = lang === 'ja' ? 'en' : 'ja';
       if (suffix === '/services') return `/${nextLang}/#services`;
+      if (suffix === '/projects') return `/${nextLang}/#projects`;
       if (suffix === '/about') return `/${nextLang}/#about`;
       return `/${nextLang}${suffix}`;
     }

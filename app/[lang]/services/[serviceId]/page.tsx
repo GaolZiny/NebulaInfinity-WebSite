@@ -7,90 +7,131 @@ import styles from '@/styles/marketing.module.css';
 
 export const dynamicParams = false;
 
-const pageContent = {
+type DetailCard = readonly [string, string];
+type TransformationColumn = readonly [string, readonly string[]];
+type ProofItem = readonly [string, string, readonly string[], string?];
+
+type DetailContent = {
+  hero: {
+    eyebrow: string;
+    jaTitle: string;
+    enTitle: string;
+    jaSubtitle: string;
+    enSubtitle: string;
+    chipsJa: readonly string[];
+    chipsEn: readonly string[];
+    primaryCtaJa?: string;
+    primaryCtaEn?: string;
+    secondaryCtaJa?: string;
+    secondaryCtaEn?: string;
+  };
+  sectionA: {
+    titleJa: string;
+    titleEn: string;
+    cardsJa: readonly DetailCard[];
+    cardsEn: readonly DetailCard[];
+  };
+  transformation?: {
+    eyebrow: string;
+    titleJa: string;
+    titleEn: string;
+    subtitleJa: string;
+    subtitleEn: string;
+    columnsJa: readonly TransformationColumn[];
+    columnsEn: readonly TransformationColumn[];
+  };
+  deliverables: {
+    titleJa: string;
+    titleEn: string;
+    subtitleJa?: string;
+    subtitleEn?: string;
+    itemsJa: readonly DetailCard[];
+    itemsEn: readonly DetailCard[];
+  };
+  proof: {
+    eyebrow: string;
+    titleJa: string;
+    titleEn: string;
+    noteJa: string;
+    noteEn: string;
+    itemsJa: readonly ProofItem[];
+    itemsEn: readonly ProofItem[];
+  };
+  steps?: {
+    titleJa: string;
+    titleEn: string;
+    ja: readonly string[];
+    en: readonly string[];
+  };
+  cta?: {
+    jaTitle: string;
+    enTitle: string;
+    jaBody: string;
+    enBody: string;
+  };
+};
+
+const pageContent: Record<string, DetailContent> = {
   'ai-workflow': {
     hero: {
-      eyebrow: 'AI Workflow Design & Development',
-      jaTitle: '「属人」のノウハウを、組織の「資産」に',
-      enTitle: 'Turn tacit know-how into organizational assets',
-      jaSubtitle: 'Nebula Infinity は、担当者依存の業務をそのまま自動化するのではなく、判断基準・手順・レビューの流れを整理し、AI と人が運用できるワークフローとして設計・開発します。',
-      enSubtitle: 'Nebula Infinity does not simply automate a person’s work as-is. We structure decision logic, steps, and review paths into workflows that people and AI can operate together.',
-      chipsJa: ['属人化の解消', 'ナレッジの資産化', '再現性のある運用'],
-      chipsEn: ['Reduce people-dependence', 'Assetize know-how', 'Create repeatable operations'],
+      eyebrow: 'AI Workflow Solution',
+      jaTitle: 'プロセスを、再現できるワークフローへ',
+      enTitle: 'Turn people-dependent work into repeatable workflows',
+      jaSubtitle: '担当者に閉じた判断基準、考え方、作業手順を整理し、AIと人が協働できるプロセスとして設計・実装します。自己改善の仕組みも実装することにより、単発の自動化ではなく、組織で引き継ぎ、改善し続けられるアセットへ変えていきます。',
+      enSubtitle: 'Nebula Infinity organizes decision criteria, procedures, and review paths that are closed inside specific people, then designs and implements them as business workflows where people and AI can work together. We do not stop at one-off automation; we turn the work into operating assets the organization can inherit and improve.',
+      chipsJa: ['属人化の解消', 'ナレッジの可視化', '継続進化できる仕組み'],
+      chipsEn: ['Reduce people-dependence', 'Make decision criteria visible', 'Create continuously improvable operations'],
+      primaryCtaJa: 'この領域で相談する',
+      primaryCtaEn: 'Discuss this service',
+      secondaryCtaJa: 'サービス選択に戻る',
+      secondaryCtaEn: 'Back to Home Services',
     },
     sectionA: {
-      titleJa: 'AI 導入前に整理すべき、現場の3つの症状',
+      titleJa: '整理すべき、3つの課題認識',
       titleEn: 'Three operational symptoms to solve before AI can stick',
       cardsJa: [
-        ['判断が人に閉じている', '経験者にしか分からない基準が多く、再現しづらい。'],
-        ['引き継ぎコストが高い', '手順はあっても、実際の勘所が共有されていない。'],
-        ['ツールを入れても定着しない', '役割分担やレビュー導線が設計されていない。'],
+        ['ノウハウが特定担当者に閉じている', '経験者にしか分からない判断基準やコツなどのノウハウが多く、同じ業務でも担当者間で結果がばらつく。'],
+        ['引き継ぎコストが高い', '手順書があっても、例外対応や判断の勘所が共有されてなく、引き継ぎには時間と労力がかかる。'],
+        ['ツールを入れても定着しない', 'AIやSaaSを導入しても、役割分担、レビュー導線、改善サイクルが設計されていない。'],
       ],
       cardsEn: [
-        ['Decisions live inside individuals', 'Critical criteria exist only in experienced operators.'],
-        ['Handoffs are expensive', 'There may be steps, but not the real judgment behind them.'],
-        ['Tools never become operations', 'Roles, review paths, and adoption flow were never designed.'],
-      ],
-    },
-    transformation: {
-      eyebrow: 'Assetization model',
-      titleJa: '属人のノウハウを、組織の資産に。',
-      titleEn: 'Turn individual know-how into organizational assets',
-      subtitleJa: 'AI導入が止まる理由の多くは、技術そのものではなく、判断基準や業務知識が人に閉じていることにあります。Nebula Infinityは、その知見を整理し、AIと人が再現性をもって動ける仕組みに変えていきます。',
-      subtitleEn: 'AI projects often stall not because of the technology itself, but because decision criteria and operational knowledge stay inside individuals. Nebula Infinity organizes that knowledge and turns it into systems where AI and people can operate reproducibly.',
-      columnsJa: [
-        ['Current state', ['担当者ごとに判断がばらつく', '引き継ぎに時間がかかる', 'AIを入れても運用に乗らない']],
-        ['System design', ['判断基準と手順を可視化する', 'AIと人の役割分担を設計する', 'レビュー導線と改善ログを残す']],
-        ['Business outcome', ['再現性のある実務フローになる', '組織で引き継げる資産になる', '継続的に改善できる運用になる']],
-      ],
-      columnsEn: [
-        ['Current state', ['Decisions vary by operator', 'Handoffs take too long', 'AI does not stick in operations']],
-        ['System design', ['Make decision rules and procedures visible', 'Design roles for AI and people', 'Keep review paths and improvement logs']],
-        ['Business outcome', ['Repeatable operational flow', 'Transferable organizational asset', 'Continuously improvable operation']],
+        ['Decisions live inside individuals', 'Critical criteria exist only in experienced operators, so the same work produces inconsistent results.'],
+        ['Handoffs are expensive', 'Steps may be documented, but exceptions and judgment points are not shared.'],
+        ['Tools never become operations', 'AI or SaaS tools are introduced without role design, review paths, or improvement loops.'],
       ],
     },
     deliverables: {
-      titleJa: 'Nebula Infinity が設計・開発するもの',
+      titleJa: 'Nebula Infinity の AI Workflow Solution',
       titleEn: 'What Nebula Infinity designs and builds',
+      subtitleJa: 'AI活用が止まる理由の多くは、技術そのものではなく、業務知識や判断基準などのノウハウが人に閉じていることにあります。AI Workflow Solution は、そのノウハウを抽出し、プロセスに落とし込み、AI と人が協業できる仕組みに変えていきます。',
+      subtitleEn: 'AI adoption often stalls not because of the technology itself, but because operational knowledge and decision criteria stay inside individuals. Nebula Infinity extracts that know-how, places it into the process, and turns it into workflows where AI and people can collaborate.',
       itemsJa: [
-        ['現行業務の整理', '関係者、判断、例外、入力・出力を構造化します。'],
-        ['AIワークフロー設計', 'AI と人の役割分担、レビュー位置、連携仕様を定義します。'],
-        ['実装・接続', '既存システムやツールとつながる形で実装します。'],
-        ['運用定着支援', '引き継ぎ、改善観点、ログの見方まで整えます。'],
+        ['プロセス整理', '関係者、入力、判断、例外、出力を構造化し、プロセスを可視化します。'],
+        ['AIワークフロー設計', 'AIと人の役割分担、レビューの配置、周辺連携仕様を定義します。'],
+        ['実装・接続', '既存ツールやデータとつながる形で、実務に乗るワークフローを実装します。'],
+        ['運用定着支援', '引き継ぎ、改善サイクル、ログ運用まで整え、使い続けられる状態にします。'],
       ],
       itemsEn: [
-        ['Current-state mapping', 'We structure stakeholders, decisions, exceptions, inputs, and outputs.'],
-        ['Workflow architecture', 'We define human-AI roles, review points, and integration behavior.'],
-        ['Implementation and integration', 'We build the workflow so it connects to existing systems and tools.'],
-        ['Operational adoption', 'We support handoff, improvement criteria, and how to read the logs.'],
+        ['Current-state mapping', 'We structure stakeholders, inputs, decisions, exceptions, and outputs.'],
+        ['AI workflow design', 'We define human-AI roles, review points, and integration behavior.'],
+        ['Implementation and connection', 'We build workflows that connect to existing tools and data, so they can run in real operations.'],
+        ['Operational adoption', 'We prepare handoff, improvement criteria, and log review so the workflow can keep being used.'],
       ],
     },
     proof: {
       eyebrow: 'Representative examples',
-      titleJa: '現在公開している代表例',
-      titleEn: 'Representative examples currently shown publicly',
+      titleJa: 'プロジェクト例',
+      titleEn: 'Representative examples',
       noteJa: 'これらは代表例であり、AI Workflow の提供範囲を限定するものではありません。',
-      noteEn: 'These are representative examples only and do not define the full boundary of the AI Workflow service.',
+      noteEn: 'These are representative examples only and do not define the full boundary of the AI Workflow service. The same approach can apply to work involving judgment, procedures, review, and handoff.',
       itemsJa: [
-        ['マルチエージェント開発ワークフロー', '要件整理、設計、実装、テストの役割分担を定義し、レビューしながら進める開発フローの設計例。', ['役割分担', 'レビューゲート', '再利用ルール']],
-        ['プロダクトリサーチワークフロー', '市場・競合・ユーザー情報を収集し、比較と要点化を経て意思決定に渡すリサーチフローの設計例。', ['情報収集', '要点整理', '意思決定入力']],
+        ['マルチエージェント開発ワークフロー', 'ビジネス構想、要件定義、設計、実装、検証の一連の開発フローは異なるAIエージェントが担当し、人は各タスクのアウトプットをレビューしながら、超高速かつ高品質な開発を実現しました。さらに、定期的に作業履歴の振り返りを行い、フローの課題抽出及び改善提案による継続的に自己進化する仕組みも実装しました。', ['役割設計', 'レビューゲート', '自己進化']],
+        ['プロダクトリサーチワークフロー', '売れ筋商品発掘するため、リアルタイムの市場情報収集、競合分析、自社情報集約、独自ノウハウに基づく傾向分析・要約し、意思決定に渡すリサーチフローを実現しました。', ['情報収集', '要点整理', '独自ノウハウ']],
       ],
       itemsEn: [
-        ['Multi-agent development workflow', 'A workflow design example that allocates requirements, design, implementation, and testing roles with explicit review paths.', ['Role allocation', 'Review gates', 'Reusable rules']],
-        ['Product research workflow', 'A workflow design example for collecting market, competitor, and user inputs, synthesizing them, and handing them into decision-making.', ['Collection', 'Synthesis', 'Decision input']],
+        ['Multi-agent development workflow', 'A workflow design example where different AI agents handle business framing, requirements, design, implementation, and verification while people review each output. The workflow also includes regular retrospectives, issue extraction, and improvement proposals so the process can keep evolving.', ['Role design', 'Review gates', 'Self-improvement']],
+        ['Product research workflow', 'A research workflow that collects real-time market information, analyzes competitors, gathers internal context, then summarizes tendencies through proprietary know-how and hands decision-ready input to the team.', ['Collection', 'Synthesis', 'Proprietary know-how']],
       ],
-    },
-    steps: {
-      titleJa: '進め方',
-      titleEn: 'How engagements move',
-      ja: ['現場を整理する', 'ワークフローを設計する', '実装して検証する', '運用へ引き渡す'],
-      en: ['Clarify operations', 'Design the workflow', 'Implement and validate', 'Hand off into operations'],
-    },
-    cta: {
-      jaTitle: '属人化した業務を、どこから整理すべきか一緒に見極めます',
-      enTitle: 'We can help identify where to start with people-dependent work',
-      jaBody: 'まだ課題が曖昧でも問題ありません。現場で何が止まっているか、どこに判断が集中しているかから整理します。',
-      enBody: 'You do not need a polished brief. We can start from where work gets stuck and where judgment is concentrated today.',
     },
   },
   'ai-application': {
@@ -302,14 +343,19 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const service = getServiceById(serviceId);
   if (!service || !(serviceId in pageContent)) notFound();
 
-  const content = pageContent[serviceId as keyof typeof pageContent];
+  const content = pageContent[serviceId];
   const isJa = lang === 'ja';
   const cards = isJa ? content.sectionA.cardsJa : content.sectionA.cardsEn;
-  const columns = isJa ? content.transformation.columnsJa : content.transformation.columnsEn;
+  const transformation = content.transformation;
+  const columns = transformation ? (isJa ? transformation.columnsJa : transformation.columnsEn) : [];
   const deliverables = isJa ? content.deliverables.itemsJa : content.deliverables.itemsEn;
   const proofItems = isJa ? content.proof.itemsJa : content.proof.itemsEn;
-  const stepItems = isJa ? content.steps.ja : content.steps.en;
+  const steps = content.steps;
+  const stepItems = steps ? (isJa ? steps.ja : steps.en) : [];
+  const cta = content.cta;
   const chips = isJa ? content.hero.chipsJa : content.hero.chipsEn;
+  const primaryCta = isJa ? (content.hero.primaryCtaJa ?? 'この領域を相談する') : (content.hero.primaryCtaEn ?? 'Discuss this service');
+  const secondaryCta = isJa ? (content.hero.secondaryCtaJa ?? 'サービス選択に戻る') : (content.hero.secondaryCtaEn ?? 'Back to Home Services');
 
   return (
     <div className={styles.page}>
@@ -334,10 +380,10 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               <div className={styles.chipRow}>{chips.map((chip) => <span key={chip} className={styles.chip}>{chip}</span>)}</div>
               <div className={styles.actionRow}>
                 <Link href={`/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`} className={styles.linkButton}>
-                  <Button size="lg">{isJa ? 'この領域を相談する' : 'Discuss this service'}</Button>
+                  <Button size="lg">{primaryCta}</Button>
                 </Link>
                 <Link href={`/${lang}/#services`} className={styles.linkButton}>
-                  <Button size="lg" variant="outline">{isJa ? 'サービス選択に戻る' : 'Back to Home Services'}</Button>
+                  <Button size="lg" variant="outline">{secondaryCta}</Button>
                 </Link>
               </div>
             </div>
@@ -357,26 +403,31 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </section>
-      <section className={styles.section}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <span className={styles.sectionEyebrow}>{content.transformation.eyebrow}</span>
-            <h2 className={styles.sectionTitle}>{isJa ? content.transformation.titleJa : content.transformation.titleEn}</h2>
-            <p className={styles.sectionSubtitle}>{isJa ? content.transformation.subtitleJa : content.transformation.subtitleEn}</p>
+      {transformation ? (
+        <section className={styles.section}>
+          <div className="container">
+            <div className={styles.sectionHeader}>
+              <span className={styles.sectionEyebrow}>{transformation.eyebrow}</span>
+              <h2 className={styles.sectionTitle}>{isJa ? transformation.titleJa : transformation.titleEn}</h2>
+              <p className={styles.sectionSubtitle}>{isJa ? transformation.subtitleJa : transformation.subtitleEn}</p>
+            </div>
+            <div className={columns.length > 3 ? styles.gridAuto : styles.grid3}>
+              {columns.map(([title, bullets]) => (
+                <div key={title} className={`${styles.card} ${styles.featuredCard}`}>
+                  <h3 className={styles.cardTitle}>{title}</h3>
+                  <ul className={styles.list}>{bullets.map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className={columns.length > 3 ? styles.gridAuto : styles.grid3}>
-            {columns.map(([title, bullets]) => (
-              <div key={title} className={`${styles.card} ${styles.featuredCard}`}>
-                <h3 className={styles.cardTitle}>{title}</h3>
-                <ul className={styles.list}>{bullets.map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
       <section className={`${styles.section} ${styles.sectionMuted}`}>
         <div className="container">
-          <div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{isJa ? content.deliverables.titleJa : content.deliverables.titleEn}</h2></div>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>{isJa ? content.deliverables.titleJa : content.deliverables.titleEn}</h2>
+            {content.deliverables.subtitleJa || content.deliverables.subtitleEn ? <p className={styles.sectionSubtitle}>{isJa ? content.deliverables.subtitleJa : content.deliverables.subtitleEn}</p> : null}
+          </div>
           <div className={deliverables.length === 4 ? styles.grid2 : styles.grid3}>{deliverables.map(([title, body]) => <div key={title} className={styles.card}><h3 className={styles.cardTitle}>{title}</h3><p className={styles.cardBody}>{body}</p></div>)}</div>
         </div>
       </section>
@@ -402,26 +453,30 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </section>
-      <section className={`${styles.section} ${styles.sectionMuted}`}>
-        <div className="container">
-          <div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{isJa ? content.steps.titleJa : content.steps.titleEn}</h2></div>
-          <div className={styles.stepRail}>{stepItems.map((step, index) => <div key={step} className={styles.stepItem}><div className={index === 1 || index === 2 ? `${styles.stepNode} ${styles.stepNodeAlt}` : styles.stepNode}>{index + 1}</div><h3 className={styles.stepHeading}>{step}</h3></div>)}</div>
-        </div>
-      </section>
-      <section className={styles.section}>
-        <div className="container">
-          <div className={styles.featuredBand}>
-            <div className={styles.bandCopy}>
-              <h2 className={styles.bandTitle}>{isJa ? content.cta.jaTitle : content.cta.enTitle}</h2>
-              <p className={styles.bandBody}>{isJa ? content.cta.jaBody : content.cta.enBody}</p>
-            </div>
-            <div className={styles.bandActions}>
-              <Link href={`/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`} className={styles.linkButton}><Button size="lg">{isJa ? 'お問い合わせ' : 'Contact Us'}</Button></Link>
-              <Link href={`/${lang}/#services`} className={styles.linkButton}><Button size="lg" variant="outline">{isJa ? 'サービス選択に戻る' : 'Back to Home Services'}</Button></Link>
+      {steps ? (
+        <section className={`${styles.section} ${styles.sectionMuted}`}>
+          <div className="container">
+            <div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{isJa ? steps.titleJa : steps.titleEn}</h2></div>
+            <div className={styles.stepRail}>{stepItems.map((step, index) => <div key={step} className={styles.stepItem}><div className={index === 1 || index === 2 ? `${styles.stepNode} ${styles.stepNodeAlt}` : styles.stepNode}>{index + 1}</div><h3 className={styles.stepHeading}>{step}</h3></div>)}</div>
+          </div>
+        </section>
+      ) : null}
+      {cta ? (
+        <section className={styles.section}>
+          <div className="container">
+            <div className={styles.featuredBand}>
+              <div className={styles.bandCopy}>
+                <h2 className={styles.bandTitle}>{isJa ? cta.jaTitle : cta.enTitle}</h2>
+                <p className={styles.bandBody}>{isJa ? cta.jaBody : cta.enBody}</p>
+              </div>
+              <div className={styles.bandActions}>
+                <Link href={`/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`} className={styles.linkButton}><Button size="lg">{isJa ? 'お問い合わせ' : 'Contact Us'}</Button></Link>
+                <Link href={`/${lang}/#services`} className={styles.linkButton}><Button size="lg" variant="outline">{isJa ? 'サービス選択に戻る' : 'Back to Home Services'}</Button></Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
     </div>
   );
 }

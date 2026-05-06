@@ -276,11 +276,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className={styles.section}>
+      <section id="projects" aria-labelledby="home-projects-heading" tabIndex={-1} className={`${styles.section} ${styles.anchorSection}`}>
         <div className="container">
           <div className={styles.sectionHeader}>
             <span className={styles.sectionEyebrow}>{t.projectsEyebrow}</span>
-            <h2 className={styles.sectionTitle}>{t.projectsTitle}</h2>
+            <h2 id="home-projects-heading" className={styles.sectionTitle}>{t.projectsTitle}</h2>
             <p className={styles.sectionSubtitle}>{t.projectsSubtitle}</p>
           </div>
           <div className={styles.grid3}>

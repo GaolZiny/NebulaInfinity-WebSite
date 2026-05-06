@@ -36,7 +36,7 @@ export default function Footer({ lang }: FooterProps) {
   const navItems = [
     { href: `/${lang}/`, label: t.home },
     { href: `/${lang}/#services`, label: t.services },
-    { href: `/${lang}/projects`, label: t.projects },
+    { href: `/${lang}/#projects`, label: t.projects },
     { href: `/${lang}/#about`, label: t.about },
     { href: `/${lang}/contact`, label: t.contact },
   ];
