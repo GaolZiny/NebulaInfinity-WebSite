@@ -1187,8 +1187,8 @@
   {
     "taskId": "task-191",
     "pipelineId": "pipeline-191-remove-projects-index",
-    "status": "in-progress",
-    "verificationStatus": "pending",
+    "status": "done",
+    "verificationStatus": "passed",
     "zNotificationRequired": true,
     "zNotifiedAt": null,
     "zNotificationStatus": "pending",
@@ -1200,7 +1200,7 @@
     "goal": "Align architecture and requirements for Z's decision to remove the Projects index while preserving Home Projects cards linking directly to project detail pages.",
     "sessionKey": "agent:pm:telegram:group:-1003830068021:topic:66",
     "createdAt": "2026-05-06T02:09:40.797573Z",
-    "updatedAt": "2026-05-06T02:09:40.797573Z",
+    "updatedAt": "2026-05-06T02:16:48.844963Z",
     "expectedOutput": "updates to artifacts/project/ARCHITECTURE.md and artifacts/project/REQUIREMENTS.md",
     "constraints": [
       "Home Projects replaces standalone /[lang]/projects index",
@@ -1214,6 +1214,22 @@
       "createdAt": null,
       "removedAt": null,
       "removeReason": "expected short architecture-doc task; relying on push-based sessions_spawn completion"
+    },
+    "commit": "97d2b053e0b36f9c10ba7e807079c96c274c1bcb",
+    "pmVerification": {
+      "verifiedAt": "2026-05-06T02:16:48.844963Z",
+      "status": "passed",
+      "checks": [
+        "Commit 97d2b05 exists and changes only ARCHITECTURE.md / REQUIREMENTS.md",
+        "ARCHITECTURE.md removes standalone Projects index and defines Home #projects as public project-selection surface",
+        "REQUIREMENTS.md updates nav/link/sitemap/page-set requirements for /[lang]/#projects and active project detail routes",
+        "git diff --check passed for architecture/requirements docs",
+        "Expected dirty copy sheets and unrelated untracked docs file remain untouched"
+      ],
+      "changedFiles": [
+        "artifacts/project/ARCHITECTURE.md",
+        "artifacts/project/REQUIREMENTS.md"
+      ]
     }
   }
 ]
