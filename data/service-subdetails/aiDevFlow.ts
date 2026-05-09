@@ -3,7 +3,7 @@ export const aiDevFlowContent = {
     metadata: {
       title: 'Agentic AI 開発ワークフロー - Nebula Infinity',
       description:
-        '市場機会の整理から企画、UX/IA、技術設計、実装、検証、Milestone Acceptance までを、AI Agent と人のレビューゲートで進める Nebula Infinity の AI Workflow 方法論です。',
+        'Nebula Infinity が自社の企画・設計・開発・検証・受け入れ業務を AI Workflow として実装した proof です。複雑な業務を、AI Agent と人のレビューゲートで運用できる形へ設計する考え方を紹介します。',
     },
     breadcrumb: {
       home: 'ホーム',
@@ -12,35 +12,35 @@ export const aiDevFlowContent = {
       current: 'Agentic AI 開発ワークフロー',
     },
     hero: {
-      eyebrow: 'AI Workflow Methodology',
-      title: '構想を、検証できるプロダクトへ',
+      eyebrow: 'AI Workflow Proof',
+      title: '複雑な事業運営を、AIワークフローとして実装する',
       lead:
-        'Nebula Infinity は、市場機会の整理、事業性の検証、プロダクト企画、UX/IA、技術設計、実装、QA、Milestone Acceptance までを、役割分担された AI Agent と人のレビューゲートで進めます。AI にコードを書かせるだけではなく、判断と成果物を積み上げ、次の意思決定につながるデリバリープロセスを設計します。',
-      chips: ['Market to Milestone', 'Multi-agent delivery', 'Human review gates'],
-      primaryCta: 'このワークフローを相談する',
+        'このページは、Nebula Infinity が自社の市場機会整理、プロダクト企画、UX/IA、技術設計、実装、QA、Milestone Acceptance までの業務を AI Workflow として実装した proof です。当社固有の開発ワークフローをそのまま顧客に納品するという意味ではありません。長期・多段階・複数役割の業務でも、判断、成果物、レビューゲート、改善ログを設計すれば、AI と人が協働して運用できるワークフローにできることを示しています。',
+      chips: ['Nebula internal proof', 'Multi-step operations', 'Human review gates'],
+      primaryCta: '自社の複雑業務を相談する',
       secondaryCta: 'AI Workflow に戻る',
-      panelTitle: 'Market signal → Milestone acceptance',
+      panelTitle: 'Nebula internal proof → Client workflow design',
       panelRows: [
-        ['機会を選ぶ', '市場、ユーザー、代替手段、事業性を確認する'],
-        ['設計に落とす', 'UX/IA と技術設計へ、判断を引き継ぐ'],
-        ['品質ゲートで進める', '実装、検証、受け入れ基準を段階ごとに確認する'],
+        ['自社業務を対象にする', '企画、設計、実装、QA、受け入れまでの実運用を AI Workflow 化する'],
+        ['判断と証跡を残す', '役割、レビュー、受け入れ条件、改善ログをプロセスに組み込む'],
+        ['顧客業務へ応用する', '同じ設計思想で、各社固有の複雑な業務ワークフローを設計・実装する'],
       ],
     },
     premise: {
-      title: 'プロダクトの失敗は、コードの前で起きる',
+      title: '証明したいのは、開発手順そのものではなく、複雑業務を実装できること',
       subtitle:
-        '開発速度だけを上げても、市場、ユーザー、事業性、プロダクト境界が曖昧なままでは、手戻りは減りません。このワークフローは、上流の判断を明文化し、設計・実装・検証へ引き継げる形にします。',
+        'AI Workflow の価値は、特定の作業を速くするだけではありません。複数の役割、長い工程、判断の分岐、レビュー、証跡、次工程への引き渡しが必要な業務を、AI と人が協働できる運用プロセスとして形にすることです。',
       cards: [
-        ['市場機会が曖昧', '誰のどの痛みを解くのか、既存手段で代替できない理由を先に確認します。'],
-        ['設計と技術が分断', 'UX/IA、データ、権限、非機能要件をつなぎ、実装判断が迷子にならないようにします。'],
-        ['完了基準が弱い', 'コード提出ではなく、Milestone の受け入れ条件と検証証跡で完了を判断します。'],
+        ['長期・多段階の業務を扱える', '市場調査、企画、設計、実装、検証、受け入れのように、工程が長く依存関係が多い業務でも、段階と成果物を分けて設計できます。'],
+        ['役割分担とレビューを組み込める', 'AI Agent に任せる作業、人が判断する作業、レビューすべき地点を分けることで、速度と品質を同時に管理できます。'],
+        ['各社固有の業務へ応用できる', 'このページの流れは Nebula Infinity 自社の proof です。顧客向けには、PMO、リサーチ、審査、運用、社内管理など、各社の業務に合わせて再設計します。'],
       ],
     },
     workflow: {
-      eyebrow: 'Workflow map',
-      title: 'Market Signal から Milestone Acceptance まで',
+      eyebrow: 'Workflow proof',
+      title: 'Nebula Infinity 自社ワークフローの実装例',
       subtitle:
-        '各段階で専門 Agent が成果物を作り、人がレビューし、次の工程へ渡せる形に整えます。流れを固定化するのではなく、判断・証跡・改善点を残しながら進めることが目的です。',
+        '以下は、当社が自社の事業・開発業務に実装している AI Workflow の一例です。重要なのは順番を固定することではなく、判断、成果物、レビュー、受け入れ条件、改善点を次の工程へ渡せる形で残すことです。顧客プロジェクトでは、同じ設計思想を使い、対象業務に合わせて段階・役割・ゲートを組み替えます。',
       ariaLabel: 'AI Native Product Delivery Workflow stages',
       stages: [
         {
@@ -80,7 +80,7 @@ export const aiDevFlowContent = {
       title: '専門 Agent を、プロダクトチームの役割として組み込む',
       subtitle:
         'Strategist、Designer、Architect、PM、Coder、Tester がそれぞれ異なる責務を持ちます。人は判断が必要なポイントでレビューし、次工程に渡せる品質になっているかを確認します。',
-      reviewGate: '人のレビューは、判断・承認・例外処理・最終受け入れに集中させます。',
+      reviewGate: '役割名は Nebula Infinity の自社ワークフロー上の例です。顧客業務では、営業、PMO、審査、CS、バックオフィスなど、対象業務に合わせた役割へ置き換えて設計します。人のレビューは、判断・承認・例外処理・最終受け入れに集中させます。',
       cards: [
         ['Strategist', '市場、ユーザー、事業性、代替リスクを整理し、進むべき機会を判断する。', ['Market lens', 'Validation', 'Product planning']],
         ['Designer', 'UX/IA、画面構造、デザインシステム、ページ内容をユーザーが理解できる形にする。', ['UX/IA', 'Design system', 'Visual handoff']],
@@ -94,7 +94,7 @@ export const aiDevFlowContent = {
       eyebrow: 'Quality gates',
       title: '速さを、証跡で管理する',
       subtitle:
-        '各段階の成果物は、次へ進むための入力になります。曖昧なまま通過させず、判断理由・未解決点・受け入れ条件を残します。',
+        '各段階の成果物は、次へ進むための入力になります。曖昧なまま通過させず、判断理由・未解決点・受け入れ条件を残します。ゲートは開発専用ではなく、業務上の判断・承認・例外処理・引き渡しにも適用できます。',
       rows: [
         ['上流判断ゲート', '市場性、代替性、MVP の価値、Go / Conditional Go / No-Go を確認する。'],
         ['企画・UX ゲート', '対象ユーザー、主要導線、画面構造、データ要求、非ゴールを確認する。'],
@@ -104,9 +104,9 @@ export const aiDevFlowContent = {
       ],
     },
     deliverables: {
-      title: '各段階で、次に使える成果物を残す',
+      title: '複雑業務を、引き継げる運用資産として残す',
       subtitle:
-        '成果物は社内説明、開発、検証、次回改善に使える形で残します。プロジェクトが進むほど、判断と学習が組織の資産になります。',
+        '成果物は、Nebula Infinity 自社ワークフローで使っている実装証跡の例です。顧客向けには、対象業務に応じて調査結果、判断基準、レビュー記録、連携仕様、改善ログなどを残し、担当者に閉じない運用資産へ変えていきます。',
       cards: [
         ['市場・機会整理', '対象セグメント、機会仮説、競合・代替手段、Go 条件。'],
         ['プロダクト企画', 'Product spec、MVP 範囲、非ゴール、KPI、獲得導線、リスク。'],
@@ -119,18 +119,18 @@ export const aiDevFlowContent = {
       ],
     },
     useCases: {
-      title: 'このワークフローが向いている相談',
-      subtitle: 'まだ仕様が固まっていない段階でも、機会の選び方、MVP の切り方、品質ゲートの置き方から整理できます。',
+      title: 'この proof から相談しやすい複雑業務',
+      subtitle: '開発ワークフローそのものを導入したい場合だけでなく、長期・多段階・判断分岐の多い業務を AI Workflow 化したい相談に向いています。',
       cards: [
-        ['AI SaaS / 新規プロダクト', '市場機会から MVP までを短いサイクルで検証したい。'],
-        ['業務自動化・内部ツール', '現場の知識と業務ルールを、実装可能なワークフローに変えたい。'],
-        ['複雑な Web / App MVP', 'ユーザー体験、データ、AI 機能、運用を同時に設計したい。'],
-        ['既存プロダクト改善', '次の改善範囲を、定量・定性の証跡から決めたい。'],
+        ['商品・市場リサーチ', '市場、競合、自社データ、独自ノウハウを集め、意思決定と後続システム連携までつなげたい。'],
+        ['PMO・プロジェクト管理', '進捗、課題、リスク、リソース、意思決定ログを整理し、プロジェクト運営を継続改善したい。'],
+        ['審査・レビュー・承認業務', '判断基準、例外処理、レビュー証跡を残しながら、属人化しやすい確認業務を整えたい。'],
+        ['複数システムをまたぐ業務運用', '人の判断、AI の処理、既存ツールやデータ連携を一つの業務フローとしてつなげたい。'],
       ],
     },
     cta: {
-      title: 'アイデアの段階から、実装・検証できるプロダクト計画へ',
-      body: '要件が固まっていなくても構いません。市場機会、ユーザー、MVP 範囲、品質ゲートを一緒に整理し、次に検証すべき形へ落とし込みます。',
+      title: '自社固有の複雑業務を、AI Workflow として設計できます',
+      body: 'このページの開発ワークフローは、Nebula Infinity 自社の proof です。同じものをそのまま導入するのではなく、貴社の業務、判断基準、レビュー導線、既存システムに合わせて、再現可能な AI Workflow を一緒に設計します。',
       tertiary: 'サービス選択に戻る',
     },
   },
@@ -138,7 +138,7 @@ export const aiDevFlowContent = {
     metadata: {
       title: 'Agentic AI development workflow - Nebula Infinity',
       description:
-        "Nebula Infinity's AI Workflow methodology for moving from market opportunity and product planning through UX/IA, architecture, implementation, QA, milestone acceptance, and iteration with specialized AI agents and human review gates.",
+        "Proof that Nebula Infinity implemented its own planning, design, development, verification, and acceptance operations as an AI Workflow. The page explains how complex work can be designed so AI agents and human review gates can operate it.",
     },
     breadcrumb: {
       home: 'Home',
@@ -147,35 +147,35 @@ export const aiDevFlowContent = {
       current: 'Agentic AI development workflow',
     },
     hero: {
-      eyebrow: 'AI Workflow Methodology',
-      title: 'From idea to verifiable product',
+      eyebrow: 'AI Workflow Proof',
+      title: 'Implement complex business operations as AI workflows',
       lead:
-        'Nebula Infinity moves from market opportunity, business validation, product planning, UX/IA, and architecture into implementation, QA, milestone acceptance, and iteration through specialized AI agents and human review gates. This is not only AI writing code; it is a delivery workflow that accumulates decisions, artifacts, and evidence for the next product decision.',
-      chips: ['Market to Milestone', 'Multi-agent delivery', 'Human review gates'],
-      primaryCta: 'Discuss this workflow',
+        "This page is proof of how Nebula Infinity implemented its own market opportunity, product planning, UX/IA, architecture, implementation, QA, and milestone acceptance operations as AI Workflow. It does not mean that Nebula Infinity installs this exact development workflow for every client. It demonstrates that long-running, multi-step operations with multiple roles can become AI-and-human workflows when decisions, artifacts, review gates, and improvement logs are designed into the process.",
+      chips: ['Nebula internal proof', 'Multi-step operations', 'Human review gates'],
+      primaryCta: 'Discuss your complex workflow',
       secondaryCta: 'Back to AI Workflow',
-      panelTitle: 'Market signal → Milestone acceptance',
+      panelTitle: 'Nebula internal proof → Client workflow design',
       panelRows: [
-        ['Select the opportunity', 'Check market, users, substitutes, and business fit'],
-        ['Translate into design', 'Carry decisions into UX/IA and architecture'],
-        ['Move through quality gates', 'Check implementation, verification, and acceptance by stage'],
+        ["Target Nebula's own work", "Turn planning, design, implementation, QA, and acceptance operations into AI Workflow"],
+        ['Preserve decisions and evidence', 'Build roles, reviews, acceptance criteria, and improvement logs into the process'],
+        ['Apply the design to customer operations', 'Use the same design principle to design and implement company-specific complex workflows'],
       ],
     },
     premise: {
-      title: 'Product failure often happens before code',
+      title: 'The proof is not the development procedure itself; it is that complex work can be implemented',
       subtitle:
-        'Increasing development speed alone does not reduce rework when market fit, user need, business model, and product boundaries remain unclear. This workflow makes upstream decisions explicit and hands them into design, implementation, and verification.',
+        'AI Workflow is not only about making one task faster. It is about turning work with multiple roles, long processes, decision branches, reviews, evidence, and handoffs into an operating process where AI and people collaborate.',
       cards: [
-        ['The opportunity is unclear', 'We first check whose pain is being solved and why existing substitutes are not enough.'],
-        ['Design and technology are disconnected', 'UX/IA, data, permissions, and non-functional needs are connected so implementation decisions stay grounded.'],
-        ['Done is poorly defined', 'Completion is judged by milestone acceptance criteria and evidence, not by code submission alone.'],
+        ['Handle long-running multi-step work', 'Even work with long phases and many dependencies, such as market research, planning, design, implementation, verification, and acceptance, can be designed by separating stages and artifacts.'],
+        ['Build in role separation and reviews', 'Speed and quality can be governed together by separating what AI agents handle, where people decide, and which points require review.'],
+        ["Apply the approach to each company's own operations", "This page shows Nebula Infinity's own proof. For customers, we redesign the approach around their operations, such as PMO, research, screening, operations, and internal management."],
       ],
     },
     workflow: {
-      eyebrow: 'Workflow map',
-      title: 'From market signal to milestone acceptance',
+      eyebrow: 'Workflow proof',
+      title: "Example implementation of Nebula Infinity's own workflow",
       subtitle:
-        'Specialized agents produce artifacts at each stage, humans review them, and the workflow packages them for the next step. The goal is not a rigid sequence; it is to keep decisions, evidence, and improvement points usable.',
+        "The flow below is one example of AI Workflow implemented in Nebula Infinity's own business and development operations. The important point is not freezing this order; it is preserving decisions, artifacts, reviews, acceptance criteria, and improvements so they can move into the next phase. Customer projects should reuse the design principle while changing stages, roles, and gates around the target operation.",
       ariaLabel: 'AI Native Product Delivery Workflow stages',
       stages: [
         {
@@ -184,7 +184,7 @@ export const aiDevFlowContent = {
           outputs: ['Segment map', 'Research priorities', 'Initial hypotheses'],
         },
         {
-          title: 'Screen and validate the opportunity',
+          title: 'Screen and validate opportunities',
           description: 'Check market signals, competition, substitutes, user pain, and business fit before committing to a product direction.',
           outputs: ['Shortlist', 'Substitutability analysis', 'Go conditions'],
         },
@@ -199,7 +199,7 @@ export const aiDevFlowContent = {
           outputs: ['UX/IA', 'Architecture docs', 'User stories'],
         },
         {
-          title: 'Orchestrate execution',
+          title: 'Orchestrate execution through PM',
           description: 'PM turns the plan into milestones, features, and task contracts, then coordinates Designer, Coder, Tester, and other workers.',
           outputs: ['Task contracts', 'Commits', 'QA evidence'],
         },
@@ -215,7 +215,7 @@ export const aiDevFlowContent = {
       title: 'Place specialist agents into product-team roles',
       subtitle:
         'Strategist, Designer, Architect, PM, Coder, and Tester carry different responsibilities. Humans review the points that require judgment and confirm whether the output is ready for the next stage.',
-      reviewGate: 'Human review is concentrated on judgment, approval, exceptions, and final acceptance.',
+      reviewGate: "The role names are examples from Nebula Infinity's own workflow. For customer operations, replace them with roles such as sales, PMO, review, customer support, back office, or other business-specific roles. Human review is concentrated on judgment, approval, exceptions, and final acceptance.",
       cards: [
         ['Strategist', 'Structures market, users, business fit, and substitutability risk to select the right opportunity.', ['Market lens', 'Validation', 'Product planning']],
         ['Designer', 'Turns product planning into UX/IA, screen structure, design system, and page content users can understand.', ['UX/IA', 'Design system', 'Visual handoff']],
@@ -229,7 +229,7 @@ export const aiDevFlowContent = {
       eyebrow: 'Quality gates',
       title: 'Govern speed with evidence',
       subtitle:
-        "Each stage's output becomes the input for the next stage. The workflow avoids passing ambiguity downstream by keeping rationale, unresolved points, and acceptance conditions visible.",
+        "Each stage's output becomes the input for the next stage. The workflow avoids passing ambiguity downstream by keeping rationale, unresolved points, and acceptance conditions visible. Gates are not development-only; they can also apply to business judgment, approval, exception handling, and handoff.",
       rows: [
         ['Upstream decision gate', 'Check market fit, substitutability, MVP value, and Go / Conditional Go / No-Go.'],
         ['Planning and UX gate', 'Check target users, core flows, screen structure, data needs, and non-goals.'],
@@ -239,9 +239,9 @@ export const aiDevFlowContent = {
       ],
     },
     deliverables: {
-      title: 'Each stage leaves reusable artifacts',
+      title: 'Leave complex operations as transferable operating assets',
       subtitle:
-        'Artifacts are kept in a form that supports internal explanation, development, verification, and future improvement. As the project progresses, decisions and learning become organizational assets.',
+        "The artifacts shown are examples of evidence used in Nebula Infinity's own workflow. For customers, deliverables should preserve research results, decision criteria, review records, integration specifications, and improvement logs according to the target operation.",
       cards: [
         ['Market and opportunity framing', 'Target segments, opportunity hypotheses, competitors, substitutes, and Go conditions.'],
         ['Product planning', 'Product spec, MVP scope, non-goals, KPIs, acquisition path, and risks.'],
@@ -254,18 +254,18 @@ export const aiDevFlowContent = {
       ],
     },
     useCases: {
-      title: 'Where this workflow is a good fit',
-      subtitle: 'Even before specifications are fixed, we can help structure opportunity selection, MVP scope, and quality gates.',
+      title: 'Complex operations that can start from this proof',
+      subtitle: 'The page is useful not only when a client wants a development workflow, but when long-running, multi-step, decision-heavy work should become AI Workflow.',
       cards: [
-        ['AI SaaS / new products', 'You want to validate from market opportunity to MVP in short cycles.'],
-        ['Business automation / internal tools', 'You want to turn operational knowledge and rules into an implementable workflow.'],
-        ['Complex web / app MVPs', 'You need to design user experience, data, AI features, and operations together.'],
-        ['Existing product improvement', 'You want evidence to guide the next improvement scope.'],
+        ['Product and market research', 'You want to gather market, competitor, and internal data, then connect decisions into downstream systems.'],
+        ['PMO and project management', 'You want to organize progress, issues, risks, resources, and decision logs while continuously improving project operations.'],
+        ['Screening, review, and approval work', 'You want to structure work that easily becomes people-dependent while preserving decision criteria, exception handling, and review evidence.'],
+        ['Operations spanning multiple systems', 'You want to connect human decisions, AI processing, existing tools, and data integrations into one business workflow.'],
       ],
     },
     cta: {
-      title: 'Turn an early idea into a product plan that can be delivered',
-      body: 'You do not need fixed requirements. We can structure the market opportunity, users, MVP scope, and quality gates together, then turn them into the next verifiable step.',
+      title: 'Design your own complex business operation as an AI Workflow',
+      body: "The development workflow on this page is Nebula Infinity's internal proof. Instead of introducing the same workflow unchanged, we design a repeatable AI Workflow around your work, decision criteria, review paths, and existing systems.",
       tertiary: 'Back to Home Services',
     },
   },

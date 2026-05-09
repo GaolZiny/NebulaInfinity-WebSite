@@ -127,15 +127,17 @@ const pageContent: Record<string, DetailContent> = {
       eyebrow: 'Representative examples',
       titleJa: 'プロジェクト例',
       titleEn: 'Representative examples',
-      noteJa: 'これらは代表例であり、AI Workflow の提供範囲を限定するものではありません。',
-      noteEn: 'These are representative examples only and do not define the full boundary of the AI Workflow service. The same approach can apply to work involving judgment, procedures, review, and handoff.',
+      noteJa: 'これらは代表例であり、AI Workflow の提供範囲を限定するものではありません。開発、PMO、リサーチのように、判断・手順・レビュー・連携が複雑な業務を、各社の状況に合わせて AI Workflow として設計・実装できます。',
+      noteEn: 'These are representative examples only; they do not define the boundary of the AI Workflow service. The same approach can be applied to business operations with complex decisions, procedures, reviews, and handoffs.',
       itemsJa: [
-        ['Agentic AI 開発ワークフロー', '市場機会の整理から企画、UX/IA、技術設計、実装、検証、Milestone Acceptance までを、役割分担された AI Agent と人のレビューゲートで進めるプロダクトデリバリーワークフローです。', ['役割設計', 'レビューゲート', 'Milestone Acceptance'], { href: (lang) => `/${lang}/services/ai-workflow/ai-dev-flow`, ctaJa: '開発ワークフロー詳細', ctaEn: 'Development workflow details' }],
-        ['プロダクトリサーチワークフロー', '売れ筋商品発掘するため、リアルタイムの市場情報収集、競合分析、自社情報集約、独自ノウハウに基づく傾向分析・要約し、意思決定に渡すリサーチフローを実現しました。', ['情報収集', '要点整理', '独自ノウハウ']],
+        ['Agentic AI 開発ワークフロー', 'Nebula Infinity 自社のビジネス構想、要件定義、設計、実装、検証の一連の開発フローを、複数の AI エージェントと人のレビューゲートで運用するワークフロー proof です。長期・多段階の業務を AI Workflow として実装し、定期的な振り返りと改善提案により自己進化する仕組みを持たせています。', ['役割設計', 'レビューゲート', '自己進化'], { href: (lang) => `/${lang}/services/ai-workflow/ai-dev-flow`, ctaJa: '開発ワークフロー詳細', ctaEn: 'Development workflow details' }],
+        ['Astra PMワークフロー', 'プロジェクト内で分散しやすい情報を AI エージェントが一元管理し、進捗、課題、リスク、リソースなどの PM 管理作業を AI ワークフローとして自律的に支援します。進捗報告、課題・リスク分析、リソース一覧などの資料を即時生成し、低コストで効率的なプロジェクト運営を可能にします。', ['PM業務', '情報整理', '自律作業'], { href: (lang) => `/${lang}/projects/astra`, ctaJa: 'Astra 詳細', ctaEn: 'View Astra' }],
+        ['プロダクトリサーチワークフロー', '売れ筋商品発掘のため、AI エージェントがリアルタイムの市場情報収集、競合分析、自社情報集約、独自ノウハウに基づく傾向分析・要約を自律的に行うワークフローです。人がアウトプットをもとに意思決定を行い、その結果を後続の業務システムへ連携します。', ['情報収集・分析', '独自ノウハウ', '他システム連携'], { href: (lang) => `/${lang}/contact?inquiry=${encodeURIComponent('AI Workflow Design & Development')}`, ctaJa: 'この類型を相談する', ctaEn: 'Discuss this workflow type' }],
       ],
       itemsEn: [
-        ['Agentic AI development workflow', 'A product delivery workflow that moves from market opportunity and planning through UX/IA, architecture, implementation, verification, and milestone acceptance with specialized AI agents and human review gates.', ['Role design', 'Review gates', 'Milestone acceptance'], { href: (lang) => `/${lang}/services/ai-workflow/ai-dev-flow`, ctaJa: '開発ワークフロー詳細', ctaEn: 'Development workflow details' }],
-        ['Product research workflow', 'A research workflow that collects real-time market information, analyzes competitors, gathers internal context, then summarizes tendencies through proprietary know-how and hands decision-ready input to the team.', ['Collection', 'Synthesis', 'Proprietary know-how']],
+        ['Agentic AI development workflow', "A workflow proof from Nebula Infinity's own business and development operations, covering concept framing, requirements, design, implementation, and verification with multiple AI agents and human review gates. It shows how long-running, multi-step work can be implemented as AI Workflow with role design, review gates, and self-improvement loops.", ['Role design', 'Review gates', 'Self-improvement'], { href: (lang) => `/${lang}/services/ai-workflow/ai-dev-flow`, ctaJa: '開発ワークフロー詳細', ctaEn: 'Development workflow details' }],
+        ['Astra PM workflow', 'A PMO workflow that uses AI agents to organize information scattered across a project, including progress, issues, risks, and resources. It supports immediate generation of progress reports, issue/risk analysis, and resource views so project operations can run with lower cost and higher efficiency.', ['PM work', 'Information organization', 'Autonomous support'], { href: (lang) => `/${lang}/projects/astra`, ctaJa: 'Astra 詳細', ctaEn: 'View Astra' }],
+        ['Product research workflow', 'A workflow where AI agents autonomously collect real-time market information, analyze competitors, gather internal information, and summarize trends through proprietary know-how. Humans make decisions from the outputs, and the results connect into downstream business systems.', ['Collection and analysis', 'Proprietary know-how', 'Business-system linkage'], { href: (lang) => `/${lang}/contact?inquiry=${encodeURIComponent('AI Workflow Design & Development')}`, ctaJa: 'この類型を相談する', ctaEn: 'Discuss this workflow type' }],
       ],
     },
   },
@@ -449,7 +451,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <h2 className={styles.sectionTitle}>{isJa ? content.proof.titleJa : content.proof.titleEn}</h2>
             <p className={styles.sectionSubtitle}>{isJa ? content.proof.noteJa : content.proof.noteEn}</p>
           </div>
-          <div className={proofItems.length === 1 ? styles.gridAuto : styles.grid2}>
+          <div className={proofItems.length === 1 ? styles.gridAuto : proofItems.length === 3 ? styles.grid3 : styles.grid2}>
             {proofItems.map(([title, body, strip, link]) => {
               const href = typeof link === 'string' ? `/${lang}/projects/${link}` : link?.href(lang) ?? `/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`;
               const ctaLabel = typeof link === 'object'
