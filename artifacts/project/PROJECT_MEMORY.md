@@ -1,6 +1,7 @@
 # PROJECT_MEMORY — NebulaInfinity Website
 
 ## Now
+- 2026-05-09: pipeline-202 is PM-accepted for `ai-dev-flow`: architecture (`ea53c16`), design handoff (`eb8a03a`), implementation (`f5b1e01`), and Tester QA PASS (50/50) are complete. Active route is `/[lang]/services/ai-workflow/ai-dev-flow`; it is an AI Workflow methodology/sub-detail page, not a Project route and not AI-Driven Development proof. Evidence: `notes/tester-ai-dev-flow-task-205.md` and `screenshots/task-205-ai-dev-flow/`.
 - 2026-05-07: task-201 is PM-verified on commit `8dd0ca5`: Astra moved to AI Workflow / PMO examples, AI-Driven Development proof now uses Rigel plus stream-demo/product video waterfall page with project-specific 24h demo, 3-day beta, and 1-week launch evidence. Architecture/requirements still need alignment before implementation.
 - 2026-05-06: task-200 is PM-verified on commit `63bcd28`: AI-Driven Development “What we design and build” JA copy now positions the service as Nebula Infinity-delivered ultra-fast, quality-gated MVP/demo/product development for client needs, with conditional 24h MVP/demo and 24h iteration-cycle language.
 - 2026-05-06: task-198/task-199 are PM-accepted: AI Application service detail JA copy was implemented from Z's revised sheet, EN was semantically aligned to the revised JA, JA/EN bottom CTA was removed, and Tester QA passed 47/47 on implementation commit `8617661`.
