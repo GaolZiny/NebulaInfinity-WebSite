@@ -1,12 +1,12 @@
 # Japanese Site Copy Master — 2026-05-09
 
-**Purpose:** one Japanese editing surface for Nebula Infinity website copy after task-206 alignment.
+**Purpose:** one Japanese editing surface for Nebula Infinity website copy after task-208 QA PASS.
 **Baseline rule:** Japanese is the editing baseline; English should later mirror Japanese structure, route model, proof set, and claims.
-**Task-207 target surfaces:** AI Workflow representative examples and `ai-dev-flow` framing; other sections are captured for Z editing continuity unless explicitly marked target.
+**Current implementation note:** AI Workflow representative examples and `ai-dev-flow` reframing are current live/as-implemented after task-207 implementation and task-208 QA.
+**Change log — 2026-05-09:** task-207 implementation commit `608dedf`; task-208 QA commit `fa9dec4`; QA PASS 24/24. AI Workflow parent examples and `ai-dev-flow` reframing are current as implemented/live. Remaining `[needs-Z-edit]` areas stay as Z's watchlist.
 **Status labels:**
 
 - `[current-live]` — current implementation/data copy captured from source.
-- `[target-task-207]` — copy that should be implemented by the next Coder task.
 - `[needs-Z-edit]` — optional area where Z may continue editing; current text is included so nothing is lost.
 
 **How to use:** this file is the ongoing Japanese editing surface for Z. The older `home-copy-editing-sheet-2026-05-05.md` and `non-home-copy-editing-sheet-2026-05-06.md` remain source/history documents and should not be overwritten from this master.
@@ -226,7 +226,7 @@ AIと人の役割分担、レビューの配置、周辺連携仕様を定義し
 引き継ぎ、改善サイクル、ログ運用まで整え、使い続けられる状態にします。
 ```
 
-## 2.5 Representative examples [target-task-207]
+## 2.5 Representative examples [current-live]
 
 ```text
 Eyebrow: Representative examples
@@ -256,7 +256,7 @@ Link: /[lang]/contact?inquiry=AI%20Workflow%20Design%20%26%20Development
 
 # 3. AI Workflow sub-detail `/ja/services/ai-workflow/ai-dev-flow`
 
-## 3.1 Metadata [target-task-207]
+## 3.1 Metadata [current-live]
 
 ```text
 Title: Agentic AI 開発ワークフロー - Nebula Infinity
@@ -269,7 +269,7 @@ Description: Nebula Infinity が自社の企画・設計・開発・検証・受
 ホーム / サービス / AI Workflow / Agentic AI 開発ワークフロー
 ```
 
-## 3.3 Hero [target-task-207]
+## 3.3 Hero [current-live]
 
 ```text
 Eyebrow: AI Workflow Proof
@@ -279,18 +279,24 @@ Chips: Nebula internal proof / Multi-step operations / Human review gates
 Primary CTA: 自社の複雑業務を相談する
 Secondary CTA: AI Workflow に戻る
 Panel: Nebula internal proof → Client workflow design
-Rows: 自社業務を対象にする / 判断と証跡を残す / 顧客業務へ応用する
+Rows:
+- 自社業務を対象にする — 企画、設計、実装、QA、受け入れまでの実運用を AI Workflow 化する
+- 判断と証跡を残す — 役割、レビュー、受け入れ条件、改善ログをプロセスに組み込む
+- 顧客業務へ応用する — 同じ設計思想で、各社固有の複雑な業務ワークフローを設計・実装する
 ```
 
-## 3.4 Premise [target-task-207]
+## 3.4 Premise [current-live]
 
 ```text
 Title: 証明したいのは、開発手順そのものではなく、複雑業務を実装できること
 Subtitle: AI Workflow の価値は、特定の作業を速くするだけではありません。複数の役割、長い工程、判断の分岐、レビュー、証跡、次工程への引き渡しが必要な業務を、AI と人が協働できる運用プロセスとして形にすることです。
-Cards: 長期・多段階の業務を扱える / 役割分担とレビューを組み込める / 各社固有の業務へ応用できる
+Cards:
+- 長期・多段階の業務を扱える — 市場調査、企画、設計、実装、検証、受け入れのように、工程が長く依存関係が多い業務でも、段階と成果物を分けて設計できます。
+- 役割分担とレビューを組み込める — AI Agent に任せる作業、人が判断する作業、レビューすべき地点を分けることで、速度と品質を同時に管理できます。
+- 各社固有の業務へ応用できる — このページの流れは Nebula Infinity 自社の proof です。顧客向けには、PMO、リサーチ、審査、運用、社内管理など、各社の業務に合わせて再設計します。
 ```
 
-## 3.5 Workflow map [target-task-207]
+## 3.5 Workflow map [current-live]
 
 ```text
 Eyebrow: Workflow proof
@@ -314,7 +320,7 @@ Current stage card copy can stay unless Z edits deeper:
 Eyebrow: Role orchestration
 Title: 専門 Agent を、プロダクトチームの役割として組み込む
 Subtitle: Strategist、Designer、Architect、PM、Coder、Tester がそれぞれ異なる責務を持ちます。人は判断が必要なポイントでレビューし、次工程に渡せる品質になっているかを確認します。
-Review band: 人のレビューは、判断・承認・例外処理・最終受け入れに集中させます。
+Review note: 役割名は Nebula Infinity の自社ワークフロー上の例です。顧客業務では、営業、PMO、審査、CS、バックオフィスなど、対象業務に合わせた役割へ置き換えて設計します。人のレビューは、判断・承認・例外処理・最終受け入れに集中させます。
 Roles: Strategist / Designer / Architect / PM / Coder / Worker / Tester
 ```
 
@@ -323,11 +329,11 @@ Roles: Strategist / Designer / Architect / PM / Coder / Worker / Tester
 ```text
 Eyebrow: Quality gates
 Title: 速さを、証跡で管理する
-Subtitle: 各段階の成果物は、次へ進むための入力になります。曖昧なまま通過させず、判断理由・未解決点・受け入れ条件を残します。
+Subtitle: 各段階の成果物は、次へ進むための入力になります。曖昧なまま通過させず、判断理由・未解決点・受け入れ条件を残します。ゲートは開発専用ではなく、業務上の判断・承認・例外処理・引き渡しにも適用できます。
 Rows: 上流判断ゲート / 企画・UX ゲート / アーキテクチャゲート / 実行ゲート / Milestone Acceptance ゲート
 ```
 
-## 3.8 Deliverables [target-task-207]
+## 3.8 Deliverables [current-live]
 
 ```text
 Title: 複雑業務を、引き継げる運用資産として残す
@@ -335,15 +341,19 @@ Subtitle: 成果物は、Nebula Infinity 自社ワークフローで使ってい
 Cards current-live: 市場・機会整理 / プロダクト企画 / UX/IA / 技術アーキテクチャ / デザイン・ページ内容 / 実装差分 / 検証証跡 / Milestone package
 ```
 
-## 3.9 Use cases [target-task-207]
+## 3.9 Use cases [current-live]
 
 ```text
 Title: この proof から相談しやすい複雑業務
 Subtitle: 開発ワークフローそのものを導入したい場合だけでなく、長期・多段階・判断分岐の多い業務を AI Workflow 化したい相談に向いています。
-Cards: 商品・市場リサーチ / PMO・プロジェクト管理 / 審査・レビュー・承認業務 / 複数システムをまたぐ業務運用
+Cards:
+- 商品・市場リサーチ — 市場、競合、自社データ、独自ノウハウを集め、意思決定と後続システム連携までつなげたい。
+- PMO・プロジェクト管理 — 進捗、課題、リスク、リソース、意思決定ログを整理し、プロジェクト運営を継続改善したい。
+- 審査・レビュー・承認業務 — 判断基準、例外処理、レビュー証跡を残しながら、属人化しやすい確認業務を整えたい。
+- 複数システムをまたぐ業務運用 — 人の判断、AI の処理、既存ツールやデータ連携を一つの業務フローとしてつなげたい。
 ```
 
-## 3.10 CTA band [target-task-207]
+## 3.10 CTA band [current-live]
 
 ```text
 Title: 自社固有の複雑業務を、AI Workflow として設計できます
@@ -701,4 +711,5 @@ Final reassurance: Nebula Infinity は、相談内容をもとに最適な入口
 1. Home hero service chips still say `Web Contents / Web3.0`; active service taxonomy is AI Workflow / AI Application / AI-Driven Development.
 2. Home and contact-adjacent `最短24時間` language should remain conditional, not a universal delivery guarantee.
 3. Rigel detail data still contains `完全準拠` and `税務リスクを排除`; non-home sheet recommends weaker guidance/support wording unless specialist review approves.
-4. AI Workflow parent examples and `ai-dev-flow` target-task-207 copy above should be implemented before screenshot QA, because they directly resolve Z's latest four differences.
+
+Resolved/current-live note: AI Workflow parent examples and `ai-dev-flow` reframing were implemented in task-207 and QA-passed in task-208; Sections 2.5 and 3.* are now the current Japanese editing baseline.
