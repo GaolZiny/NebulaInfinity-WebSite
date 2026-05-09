@@ -42,5 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticEntries, ...serviceEntries, ...projectEntries];
+  // 生成サービス配下の方法論ページの sitemap 条目
+  const serviceSubdetailEntries = languages.map((lang) => ({
+    url: `${baseUrl}/${lang}/services/ai-workflow/ai-dev-flow`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...serviceEntries, ...serviceSubdetailEntries, ...projectEntries];
 }

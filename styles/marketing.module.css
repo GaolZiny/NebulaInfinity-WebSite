@@ -841,6 +841,167 @@
   height: 22px;
 }
 
+.heroSupportPanel {
+  align-self: stretch;
+  display: grid;
+  gap: 18px;
+  border-top: 2px solid rgba(202, 138, 4, 0.62);
+}
+
+.supportList,
+.workflowTimeline,
+.gateList,
+.stageOutputs {
+  list-style: none;
+}
+
+.supportList {
+  display: grid;
+  gap: 14px;
+}
+
+.supportItem,
+.gateRow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.supportItem strong,
+.gateRow strong {
+  display: block;
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.supportItem span:last-child,
+.gateRow span:last-child {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.supportIndex,
+.gateNumber,
+.stageNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  color: #ffffff;
+  background: var(--accent-secondary);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.workflowTimeline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  counter-reset: workflow;
+}
+
+.workflowStage {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.workflowStage:not(:nth-child(3n))::after {
+  content: '';
+  position: absolute;
+  top: 44px;
+  right: -24px;
+  width: 24px;
+  height: 1px;
+  background: rgba(202, 138, 4, 0.45);
+}
+
+.stageNumber {
+  color: var(--accent-primary);
+  background: rgba(202, 138, 4, 0.1);
+  border: 1px solid rgba(202, 138, 4, 0.4);
+}
+
+.stageOutputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.stageOutputs li {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  padding: 6px 10px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-full);
+  background: rgba(15, 23, 42, 0.04);
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.stageOutputs li:first-child {
+  border-color: rgba(202, 138, 4, 0.28);
+  background: rgba(202, 138, 4, 0.08);
+}
+
+.roleReviewBand,
+.gateList {
+  margin-top: 24px;
+}
+
+.roleReviewBand {
+  padding: 18px 20px;
+  border: 1px solid rgba(202, 138, 4, 0.24);
+  border-left: 4px solid rgba(202, 138, 4, 0.72);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.gateList {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid rgba(202, 138, 4, 0.22);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.gateRow {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: rgba(248, 250, 252, 0.74);
+}
+
+.gateNumber {
+  color: var(--accent-primary);
+  background: rgba(202, 138, 4, 0.1);
+  border: 1px solid rgba(202, 138, 4, 0.38);
+}
+
+.aiDevFlowGrid4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
 .alignCenter {
   text-align: center;
 }
@@ -867,13 +1028,21 @@
   .categoryGrid,
   .proofGrid,
   .transformationPanel,
-  .stepRail {
+  .stepRail,
+  .workflowTimeline,
+  .aiDevFlowGrid4 {
     grid-template-columns: 1fr;
   }
 
   .transformationColumn:not(:last-child)::after,
-  .stepItem:not(:last-child)::after {
+  .stepItem:not(:last-child)::after,
+  .workflowStage:not(:nth-child(3n))::after {
     display: none;
+  }
+
+  .workflowTimeline,
+  .aiDevFlowGrid4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .band,
@@ -915,7 +1084,9 @@
     padding: 24px;
   }
 
-  .twoCol {
+  .twoCol,
+  .workflowTimeline,
+  .aiDevFlowGrid4 {
     grid-template-columns: 1fr;
   }
 }

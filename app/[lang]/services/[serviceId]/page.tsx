@@ -9,7 +9,12 @@ export const dynamicParams = false;
 
 type DetailCard = readonly [string, string];
 type TransformationColumn = readonly [string, readonly string[]];
-type ProofItem = readonly [string, string, readonly string[], string?];
+type ProofLink = {
+  href: (lang: Language) => string;
+  ctaJa: string;
+  ctaEn: string;
+};
+type ProofItem = readonly [string, string, readonly string[], (string | ProofLink)?];
 
 type DetailContent = {
   hero: {
@@ -125,11 +130,11 @@ const pageContent: Record<string, DetailContent> = {
       noteJa: 'これらは代表例であり、AI Workflow の提供範囲を限定するものではありません。',
       noteEn: 'These are representative examples only and do not define the full boundary of the AI Workflow service. The same approach can apply to work involving judgment, procedures, review, and handoff.',
       itemsJa: [
-        ['マルチエージェント開発ワークフロー', 'ビジネス構想、要件定義、設計、実装、検証の一連の開発フローは異なるAIエージェントが担当し、人は各タスクのアウトプットをレビューしながら、超高速かつ高品質な開発を実現しました。さらに、定期的に作業履歴の振り返りを行い、フローの課題抽出及び改善提案による継続的に自己進化する仕組みも実装しました。', ['役割設計', 'レビューゲート', '自己進化']],
+        ['Agentic AI 開発ワークフロー', '市場機会の整理から企画、UX/IA、技術設計、実装、検証、Milestone Acceptance までを、役割分担された AI Agent と人のレビューゲートで進めるプロダクトデリバリーワークフローです。', ['役割設計', 'レビューゲート', 'Milestone Acceptance'], { href: (lang) => `/${lang}/services/ai-workflow/ai-dev-flow`, ctaJa: '開発ワークフロー詳細', ctaEn: 'Development workflow details' }],
         ['プロダクトリサーチワークフロー', '売れ筋商品発掘するため、リアルタイムの市場情報収集、競合分析、自社情報集約、独自ノウハウに基づく傾向分析・要約し、意思決定に渡すリサーチフローを実現しました。', ['情報収集', '要点整理', '独自ノウハウ']],
       ],
       itemsEn: [
-        ['Multi-agent development workflow', 'A workflow design example where different AI agents handle business framing, requirements, design, implementation, and verification while people review each output. The workflow also includes regular retrospectives, issue extraction, and improvement proposals so the process can keep evolving.', ['Role design', 'Review gates', 'Self-improvement']],
+        ['Agentic AI development workflow', 'A product delivery workflow that moves from market opportunity and planning through UX/IA, architecture, implementation, verification, and milestone acceptance with specialized AI agents and human review gates.', ['Role design', 'Review gates', 'Milestone acceptance'], { href: (lang) => `/${lang}/services/ai-workflow/ai-dev-flow`, ctaJa: '開発ワークフロー詳細', ctaEn: 'Development workflow details' }],
         ['Product research workflow', 'A research workflow that collects real-time market information, analyzes competitors, gathers internal context, then summarizes tendencies through proprietary know-how and hands decision-ready input to the team.', ['Collection', 'Synthesis', 'Proprietary know-how']],
       ],
     },
@@ -284,13 +289,13 @@ const pageContent: Record<string, DetailContent> = {
       eyebrow: 'Representative proof',
       titleJa: 'AI駆動開発の代表実績',
       titleEn: 'Representative AI-driven development proof',
-      noteJa: 'Astra は、AIエージェントを組み込んだ開発プロセスと品質ゲートを示すアクティブ proof です。',
-      noteEn: 'Astra is active proof for AI-agent-assisted delivery processes and quality gates.',
+      noteJa: 'Rigel は、AI駆動の超高速開発と品質ゲートを示すアクティブ proof です。Astra は AI Workflow / PMO proof として扱います。',
+      noteEn: 'Rigel is active proof for AI-driven ultra-fast development and quality gates. Astra is treated as AI Workflow / PMO proof.',
       itemsJa: [
-        ['Astra', 'AIエージェントを組み込んだ開発プロセスと品質ゲートを使い、短いサイクルで検証・改善を回す代表実績です。', ['Agentic workflow', 'Quality gates', 'Iterative delivery'], 'astra'],
+        ['Rigel', 'AI記帳アプリのMVPから追加機能までを、短いサイクルと品質ゲートで進めた AI-Driven Development の代表実績です。', ['16h MVP', 'Quality gates', '1-week launch'], 'rigel'],
       ],
       itemsEn: [
-        ['Astra', 'A representative proof using AI-agent-assisted delivery processes and quality gates to run short validation and improvement cycles.', ['Agentic workflow', 'Quality gates', 'Iterative delivery'], 'astra'],
+        ['Rigel', 'A representative AI-Driven Development proof that moved an AI bookkeeping app from MVP to additional features through short cycles and quality gates.', ['16h MVP', 'Quality gates', '1-week launch'], 'rigel'],
       ],
     },
     steps: {
@@ -445,14 +450,19 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <p className={styles.sectionSubtitle}>{isJa ? content.proof.noteJa : content.proof.noteEn}</p>
           </div>
           <div className={proofItems.length === 1 ? styles.gridAuto : styles.grid2}>
-            {proofItems.map(([title, body, strip, slug]) => {
-              const href = typeof slug === 'string' ? `/${lang}/projects/${slug}` : `/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`;
+            {proofItems.map(([title, body, strip, link]) => {
+              const href = typeof link === 'string' ? `/${lang}/projects/${link}` : link?.href(lang) ?? `/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`;
+              const ctaLabel = typeof link === 'object'
+                ? (isJa ? link.ctaJa : link.ctaEn)
+                : isJa
+                  ? (typeof link === 'string' ? '詳細を見る' : 'この類型を相談する')
+                  : (typeof link === 'string' ? 'View case' : 'Discuss this workflow type');
               return (
                 <div key={title} className={`${styles.proofCard} ${styles.featuredCard}`}>
                   <h3 className={styles.proofTitle}>{title}</h3>
                   <p className={styles.proofSummary}>{body}</p>
                   <div className={styles.proofStrip}>{strip.map((item) => <span key={item} className={styles.proofPill}>{item}</span>)}</div>
-                  <Link href={href} className={styles.ctaLink}>{isJa ? (typeof slug === 'string' ? '詳細を見る' : 'この類型を相談する') : (typeof slug === 'string' ? 'View case' : 'Discuss this workflow type')}<span aria-hidden="true">→</span></Link>
+                  <Link href={href} className={styles.ctaLink}>{ctaLabel}<span aria-hidden="true">→</span></Link>
                 </div>
               );
             })}

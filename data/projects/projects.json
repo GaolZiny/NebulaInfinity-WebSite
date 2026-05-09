@@ -33,11 +33,11 @@
         "ja": "AI記帳SaaS。業務知識、制度対応、OCR、UX、バックエンド品質まで含めて成立させたプロダクト。",
         "en": "An AI bookkeeping SaaS that proves delivery across domain logic, regulation support, OCR, user experience, and backend quality."
       },
-      "serviceLine": "ai-application",
-      "caseType": "product",
-      "proofPoints": ["33,000+ LOC", "367 Tests", "18 API Endpoints", "6 Industries"],
-      "tags": ["AI Application", "Hono", "TypeScript", "Flutter", "PostgreSQL", "Stripe"],
-      "category": "ai-application",
+      "serviceLine": "ai-driven-development",
+      "caseType": "ai-driven-development",
+      "proofPoints": ["16h MVP", "367 Tests", "1-week launch", "Quality gates"],
+      "tags": ["AI-Driven Development", "AI Application", "Hono", "TypeScript", "Flutter", "Quality Gates"],
+      "category": "ai-driven-development",
       "status": "complete",
       "featuredV1": true
     },
@@ -50,14 +50,14 @@
         "en": "A representative case for short-cycle development and PMO processes using AI agents and quality gates."
       },
       "summary": {
-        "ja": "AIエージェントを組み込んだ開発プロセスと品質ゲートを使い、短いサイクルで検証・改善を回す AI-Driven Development の代表実績です。",
-        "en": "A representative AI-driven development proof using AI-agent-assisted delivery processes and quality gates to run short validation and improvement cycles."
+        "ja": "プロジェクト管理ニーズに向け、進捗・課題・リスク・リソースなどのPM管理プロセスを AI Workflow として実装する PMO proof です。",
+        "en": "An AI Workflow / PMO proof that implements project-management processes such as progress, issues, risks, and resources as AI workflows."
       },
-      "serviceLine": "ai-driven-development",
-      "caseType": "ai-driven-development",
-      "proofPoints": ["Agentic workflow", "Quality gates", "Iterative delivery"],
-      "tags": ["AI-Driven Development", "Agentic Workflow", "Quality Gates", "OpenClaw", "TypeScript"],
-      "category": "ai-driven-development",
+      "serviceLine": "ai-workflow",
+      "caseType": "workflow",
+      "proofPoints": ["PMO workflow", "Role design", "Review gates"],
+      "tags": ["AI Workflow", "PMO", "Project Management", "Agentic Workflow", "Review Gates"],
+      "category": "ai-workflow",
       "status": "active",
       "featuredV1": true
     },
