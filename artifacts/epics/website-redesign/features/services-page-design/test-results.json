@@ -1,0 +1,160 @@
+{
+  "verdict": "FAIL",
+  "summary": {
+    "passed": 19,
+    "failed": 6,
+    "total": 25
+  },
+  "tests": [
+    {
+      "name": "Services page loads (JA)",
+      "status": "PASS",
+      "details": "",
+      "severity": ""
+    },
+    {
+      "name": "Services page loads (EN)",
+      "status": "PASS",
+      "details": "",
+      "severity": ""
+    },
+    {
+      "name": "Six service cards present",
+      "status": "FAIL",
+      "details": "Found 8 cards",
+      "severity": "critical"
+    },
+    {
+      "name": "Featured card exists",
+      "status": "PASS",
+      "details": "",
+      "severity": ""
+    },
+    {
+      "name": "Detail page: smart-contract",
+      "status": "PASS",
+      "details": "",
+      "severity": ""
+    },
+    {
+      "name": "Detail page: ai-agent-development",
+      "status": "PASS",
+      "details": "",
+      "severity": ""
+    },
+    {
+      "name": "Detail page: ai-workflow-automation",
+      "status": "PASS",
+      "details": "",
+      "severity": ""
+    },
+    {
+      "name": "Detail page: ai-applications",
+      "status": "PASS",
+      "details": "",
+      "severity": ""
+    },
+    {
+      "name": "Detail page: blockchain-development",
+      "status": "PASS",
+      "details": "",
+      "severity": ""
+    },
+    {
+      "name": "Detail page: web3-consulting",
+      "status": "PASS",
+      "details": "",
+      "severity": ""
+    },
+    {
+      "name": "Detail page H1 exists",
+      "status": "PASS",
+      "details": "Found 1 H1s",
+      "severity": ""
+    },
+    {
+      "name": "Breadcrumb navigation exists",
+      "status": "PASS",
+      "details": "",
+      "severity": "minor"
+    },
+    {
+      "name": "Features section exists",
+      "status": "PASS",
+      "details": "Found 17 features",
+      "severity": ""
+    },
+    {
+      "name": "Tech tags exist",
+      "status": "PASS",
+      "details": "Found 13 tags",
+      "severity": "minor"
+    },
+    {
+      "name": "Process timeline exists",
+      "status": "FAIL",
+      "details": "Found 0 steps",
+      "severity": "minor"
+    },
+    {
+      "name": "CTA buttons exist",
+      "status": "PASS",
+      "details": "Found 15 CTAs",
+      "severity": "minor"
+    },
+    {
+      "name": "Responsive Mobile 375px: Cards visible",
+      "status": "FAIL",
+      "details": "Found 8",
+      "severity": "minor"
+    },
+    {
+      "name": "Responsive Tablet 768px: Cards visible",
+      "status": "FAIL",
+      "details": "Found 8",
+      "severity": "minor"
+    },
+    {
+      "name": "Responsive Desktop 1024px: Cards visible",
+      "status": "FAIL",
+      "details": "Found 8",
+      "severity": "minor"
+    },
+    {
+      "name": "Responsive Desktop 1440px: Cards visible",
+      "status": "FAIL",
+      "details": "Found 8",
+      "severity": "minor"
+    },
+    {
+      "name": "Icons have aria-hidden",
+      "status": "PASS",
+      "details": "Found 6",
+      "severity": "minor"
+    },
+    {
+      "name": "Semantic HTML used",
+      "status": "PASS",
+      "details": "",
+      "severity": "minor"
+    },
+    {
+      "name": "JA/EN titles differ",
+      "status": "PASS",
+      "details": "",
+      "severity": ""
+    },
+    {
+      "name": "EN detail page loads",
+      "status": "PASS",
+      "details": "",
+      "severity": ""
+    },
+    {
+      "name": "No console errors",
+      "status": "PASS",
+      "details": "",
+      "severity": ""
+    }
+  ]
+}

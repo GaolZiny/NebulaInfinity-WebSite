@@ -1,178 +1,49 @@
-import { type Language } from '@/lib/i18n';
 import Link from 'next/link';
-import Card from '@/components/ui/Card';
+import { notFound } from 'next/navigation';
+import { getLanguage, type Language } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
-import styles from './page.module.css';
-import translations from '@/data/translations/ja.json';
-import translationsEn from '@/data/translations/en.json';
 import projectsData from '@/data/projects/projects.json';
+import styles from '@/styles/marketing.module.css';
 
 export async function generateStaticParams() {
-  const params = [];
   const langs: Language[] = ['ja', 'en'];
-
-  for (const lang of langs) {
-    for (const project of projectsData.projects) {
-      params.push({
-        lang,
-        slug: project.slug,
-      });
-    }
-  }
-
-  return params;
+  return langs.flatMap((lang) => projectsData.projects.map((project) => ({ lang, slug: project.slug })));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { lang: Language; slug: string };
-}) {
-  const project = projectsData.projects.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }) {
+  const { lang: rawLang, slug } = await params;
+  const lang = getLanguage(rawLang);
+  const project = projectsData.projects.find((item) => item.slug === slug);
   if (!project) return {};
-
-  return {
-    title: `${project.name[params.lang]} - Nebula Infinity`,
-    description: project.shortDescription[params.lang],
-  };
+  return { title: `${project.name[lang]} - Nebula Infinity`, description: project.summary[lang] };
 }
 
-export default async function ProjectDetailPage({
-  params,
-}: {
-  params: { lang: Language; slug: string };
-}) {
-  const t = params.lang === 'ja' ? translations : translationsEn;
-  const project = projectsData.projects.find((p) => p.slug === params.slug);
+export default async function ProjectDetailPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
+  const { lang: rawLang, slug } = await params;
+  const lang = getLanguage(rawLang);
+  const project = projectsData.projects.find((item) => item.slug === slug);
+  if (!project) notFound();
 
-  if (!project) {
-    return <div>Project not found</div>;
-  }
-
-  // Load project details
-  let projectDetails;
+  let details: any = null;
   try {
-    projectDetails = await import(`@/data/projects/${params.slug}.json`);
+    details = await import(`@/data/projects/${slug}.json`);
   } catch {
-    projectDetails = null;
+    details = null;
   }
+
+  const serviceLineLabel = project.serviceLine === 'web3-blockchain' ? 'Web3.0 / Blockchain Application Design & Development' : 'AI Application Design & Development';
 
   return (
     <div className={styles.page}>
-      <section className={styles.hero}>
-        <div className="container">
-          <Link href={`/${params.lang}/projects`} className={styles.backLink}>
-            ← {t.projects.backToProjects}
-          </Link>
-          <h1 className={styles.title}>
-            {project.name[params.lang]}
-          </h1>
-          <p className={styles.subtitle}>{project.shortDescription[params.lang]}</p>
-          <div className={styles.meta}>
-            <span
-              className={`${styles.status} ${
-                project.status === 'completed' ? styles.completed : styles.inProgress
-              }`}
-            >
-              {project.status === 'completed'
-                ? t.projects.status.completed
-                : t.projects.status.inProgress}
-            </span>
-            <div className={styles.tags}>
-              {project.tags.map((tag) => (
-                <span key={tag} className={styles.tag}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {projectDetails && (
-        <>
-          <section className={styles.section}>
-            <div className="container">
-              <Card glass>
-                <h2 className={styles.sectionTitle}>
-                  {params.lang === 'ja' ? 'プロジェクト概要' : 'Project Overview'}
-                </h2>
-                <p className={styles.fullDescription}>
-                  {projectDetails.fullDescription[params.lang]}
-                </p>
-              </Card>
-            </div>
-          </section>
-
-          <section className={styles.section}>
-            <div className="container">
-              <h2 className={styles.sectionTitle}>
-                {params.lang === 'ja' ? '技術スタック' : 'Tech Stack'}
-              </h2>
-              <div className={styles.techGrid}>
-                {projectDetails.techStack.map((tech: string, index: number) => (
-                  <Card key={index} hover>
-                    <div className={styles.techItem}>{tech}</div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section className={styles.section}>
-            <div className="container">
-              <h2 className={styles.sectionTitle}>
-                {params.lang === 'ja' ? '主な機能' : 'Key Features'}
-              </h2>
-              <div className={styles.featuresGrid}>
-                {projectDetails.features.map((feature: any, index: number) => (
-                  <Card key={index} hover>
-                    <div className={styles.feature}>
-                      <span className={styles.checkmark}>✓</span>
-                      <span>{feature[params.lang]}</span>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {projectDetails.results && (
-            <section className={styles.section}>
-              <div className="container">
-                <Card glass className={styles.resultsCard}>
-                  <h2 className={styles.sectionTitle}>
-                    {params.lang === 'ja' ? '実績・成果' : 'Results'}
-                  </h2>
-                  <div className={styles.resultsList}>
-                    {projectDetails.results[params.lang].map((result: string, index: number) => (
-                      <div key={index} className={styles.resultItem}>
-                        <span className={styles.resultIcon}>🎯</span>
-                        <span>{result}</span>
-                      </div>
-                    ))}
-                  </div>
-                </Card>
-              </div>
-            </section>
-          )}
-        </>
-      )}
-
-      <section className={styles.ctaSection}>
-        <div className="container">
-          <Card glass className={styles.ctaCard}>
-            <h2 className={styles.ctaTitle}>
-              {params.lang === 'ja'
-                ? '同様のプロジェクトをお考えですか？'
-                : 'Interested in a similar project?'}
-            </h2>
-            <Link href={`/${params.lang}/contact`}>
-              <Button size="lg">{t.nav.contact}</Button>
-            </Link>
-          </Card>
-        </div>
-      </section>
+      <section className={styles.breadcrumb}><div className="container"><div className={styles.breadcrumbInner}><Link href={`/${lang}/`}>{lang === 'ja' ? 'ホーム' : 'Home'}</Link><span>/</span><Link href={`/${lang}/projects`}>{lang === 'ja' ? 'プロジェクト' : 'Projects'}</Link><span>/</span><span>{project.name[lang]}</span></div></div></section>
+      <section className={styles.hero}><div className="container"><div className={styles.heroSplit}><div className={styles.heroContent}><span className={styles.heroEyebrow}>{serviceLineLabel}</span><h1 className={styles.heroTitle}>{project.name[lang]}</h1><p className={styles.heroBody}>{project.summary[lang]}</p><div className={styles.chipRow}>{project.proofPoints.map((point: string) => <span key={point} className={styles.chip}>{point}</span>)}</div><div className={styles.actionRow}><Link href={`/${lang}/contact?inquiry=${encodeURIComponent(serviceLineLabel)}`} className={styles.linkButton}><Button size="lg">{lang === 'ja' ? '似た相談をする' : 'Discuss a similar case'}</Button></Link><Link href={`/${lang}/projects`} className={styles.linkButton}><Button size="lg" variant="outline">{lang === 'ja' ? '一覧に戻る' : 'Back to projects'}</Button></Link></div></div><div className={`${styles.card} ${styles.featuredCard}`}><h2 className={styles.cardTitle}>{lang === 'ja' ? 'Representative proof' : 'Representative proof'}</h2><p className={styles.cardBody}>{project.shortDescription[lang]}</p><div className={styles.proofStrip}>{project.tags.map((tag: string) => <span key={tag} className={styles.proofPill}>{tag}</span>)}</div>{project.url ? <a href={project.url} target="_blank" rel="noreferrer" className={styles.ctaLink}>{lang === 'ja' ? '公開サイトを見る' : 'Open live site'}<span aria-hidden="true">→</span></a> : null}</div></div></div></section>
+      {details ? <>
+        <section className={styles.section}><div className="container"><div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{lang === 'ja' ? 'プロジェクト概要' : 'Project overview'}</h2></div><div className={`${styles.card} ${styles.featuredCard}`}><p className={styles.cardBody}>{details.fullDescription[lang]}</p></div></div></section>
+        <section className={`${styles.section} ${styles.sectionMuted}`}><div className="container"><div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{lang === 'ja' ? '技術スタック' : 'Tech stack'}</h2></div><div className={styles.grid3}>{details.techStack.map((tech: string) => <div key={tech} className={styles.card}><h3 className={styles.cardTitle}>{tech}</h3></div>)}</div></div></section>
+        <section className={styles.section}><div className="container"><div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{lang === 'ja' ? '主な機能' : 'Key features'}</h2></div><div className={styles.grid2}>{details.features.map((feature: any) => <div key={feature[lang]} className={styles.card}><h3 className={styles.cardTitle}>{feature[lang]}</h3></div>)}</div></div></section>
+        {details.results ? <section className={`${styles.section} ${styles.sectionMuted}`}><div className="container"><div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{lang === 'ja' ? '実績・成果' : 'Results'}</h2></div><div className={styles.grid2}>{details.results[lang].map((result: string) => <div key={result} className={styles.card}><p className={styles.cardBody}>{result}</p></div>)}</div></div></section> : null}
+      </> : null}
+      <section className={styles.section}><div className="container"><div className={styles.featuredBand}><div className={styles.bandCopy}><h2 className={styles.bandTitle}>{lang === 'ja' ? '同様の課題や構想があれば、ご相談ください' : 'If your situation is similar, let\'s discuss it'}</h2><p className={styles.bandBody}>{lang === 'ja' ? '要件整理から実装方針まで、代表例をもとに次の一歩を整理します。' : 'We can use this case as a reference point to structure your next step.'}</p></div><div className={styles.bandActions}><Link href={`/${lang}/contact?inquiry=${encodeURIComponent(serviceLineLabel)}`} className={styles.linkButton}><Button size="lg">{lang === 'ja' ? 'お問い合わせ' : 'Contact Us'}</Button></Link><Link href={`/${lang}/services`} className={styles.linkButton}><Button size="lg" variant="outline">{lang === 'ja' ? 'サービスを見る' : 'View Services'}</Button></Link></div></div></div></section>
     </div>
   );
 }

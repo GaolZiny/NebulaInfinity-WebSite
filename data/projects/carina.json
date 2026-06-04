@@ -1,0 +1,53 @@
+{
+  "fullDescription": {
+    "ja": "Carina は、小売向け CRM に Web3.0 を接続し、ポイント、クーポン、会員証の扱いをブロックチェーン基盤で再設計したプロダクトです。台帳性と真正性を顧客体験や運用設計に接続し、発行履歴や保有状態を透明に扱える状態を実現しました。Nebula Infinity は、Web3.0 を投機的な文脈ではなく、会員基盤・証跡管理・デジタル資産設計に活かせる事業基盤として設計しています。",
+    "en": "Carina is a product that applies Web3.0 to retail CRM by redesigning points, coupons, and membership on top of blockchain infrastructure. It connects traceability and authenticity to both customer experience and operations, making issuance history and ownership state transparent and operable. Nebula Infinity approaches Web3.0 not as speculative technology, but as business infrastructure for membership, traceability, and digital asset design."
+  },
+  "techStack": [
+    "Solidity",
+    "Polygon (Ethereum L2)",
+    "Ethers.js",
+    "Next.js",
+    "React",
+    "MetaMask",
+    "WalletConnect",
+    "IPFS",
+    "The Graph"
+  ],
+  "features": [
+    {
+      "ja": "ポイント・クーポン・会員証をブロックチェーン基盤で管理",
+      "en": "Manage points, coupons, and membership on blockchain infrastructure"
+    },
+    {
+      "ja": "発行履歴と保有状態の透明性・追跡可能性を確保",
+      "en": "Maintain transparency and traceability for issuance history and ownership state"
+    },
+    {
+      "ja": "顧客が特典や会員情報を扱いやすい体験を設計",
+      "en": "Design user-facing experiences for handling benefits and membership assets"
+    },
+    {
+      "ja": "既存 CRM や会員基盤との連携を前提に設計",
+      "en": "Design with existing CRM and membership systems in mind"
+    },
+    {
+      "ja": "デジタル資産・真正性・台帳性を事業価値へ変換",
+      "en": "Turn digital assets, authenticity, and ledger properties into business value"
+    }
+  ],
+  "results": {
+    "ja": [
+      "ポイント・クーポン・会員証の取り扱いをブロックチェーン基盤で再設計",
+      "発行履歴や保有状態を透明に扱える CRM 体験を実現",
+      "Web3.0 を顧客体験と運用フローへ接続する実装例を提示",
+      "会員基盤・証跡設計へ展開できる事業活用の土台を構築"
+    ],
+    "en": [
+      "Redesigned points, coupons, and membership handling on blockchain infrastructure",
+      "Delivered CRM experiences with transparent issuance history and ownership state",
+      "Proved how Web3.0 can connect to customer experience and operational flow",
+      "Established a reusable foundation for broader membership and traceability use cases"
+    ]
+  }
+}

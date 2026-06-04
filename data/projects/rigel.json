@@ -1,0 +1,46 @@
+{
+  "fullDescription": {
+    "ja": "Rigel は、フリーランス・小規模事業者・外国人経営者向けの AI 記帳 SaaS です。レシートを撮影するだけで AI が自動仕訳を生成。6 業種（飲食・小売・IT・建設・美容・不動産）に特化した AI プロンプトと 140 パターンの仕訳辞書により、業種に最適化された高精度な記帳を実現します。自然言語での取引入力にも対応し、会計知識がなくても正確な帳簿を維持できます。電子帳簿保存法・インボイス制度に完全準拠。Stripe による課金・プラン管理機能も搭載しています。",
+    "en": "Rigel is an AI bookkeeping SaaS for freelancers, small business owners, and foreign entrepreneurs. Simply photograph receipts — AI automatically generates journal entries. With AI prompts specialized for 6 industries (food service, retail, IT, construction, beauty, real estate) and a 140-pattern journal dictionary, it delivers highly accurate, industry-optimized bookkeeping. Supports natural language transaction input, enabling accurate ledger maintenance without accounting knowledge. Fully compliant with Japan's Electronic Bookkeeping Storage Act and Invoice System. Also features Stripe-powered billing and plan management."
+  },
+  "techStack": [
+    "Hono (TypeScript)",
+    "Flutter (iOS/Android/Web)",
+    "PostgreSQL + Drizzle ORM",
+    "Firebase Auth",
+    "Google Gemini API (Flash / Flash Lite)",
+    "Cloudflare R2 (Receipt Storage)",
+    "Stripe (Billing)",
+    "Docker Compose"
+  ],
+  "features": [
+    { "ja": "AIによるレシートOCR → 自動仕訳生成", "en": "AI-powered receipt OCR → automatic journal entry generation" },
+    { "ja": "6業種特化AIプロンプト + 140パターン仕訳辞書", "en": "6-industry specialized AI prompts + 140-pattern journal dictionary" },
+    { "ja": "自然言語による取引入力モード", "en": "Natural language transaction input mode" },
+    { "ja": "電子帳簿保存法準拠（SHA-256証憑検証・タイムスタンプ）", "en": "Electronic Bookkeeping Storage Act compliance (SHA-256 verification, timestamps)" },
+    { "ja": "インボイス制度対応（登録番号自動認識・記録）", "en": "Invoice System support (automatic registration number recognition)" },
+    { "ja": "仕訳帳・総勘定元帳・試算表の自動生成 + PDF/CSVエクスポート", "en": "Auto-generated journal, general ledger, trial balance + PDF/CSV export" },
+    { "ja": "Stripe課金 + 使用量制限 + プラン管理", "en": "Stripe billing + usage limits + plan management" },
+    { "ja": "オフラインレシート保存 + 自動同期", "en": "Offline receipt storage + automatic sync" }
+  ],
+  "results": {
+    "ja": [
+      "33,000行超のコードベース — 367テストで品質保証",
+      "18のAPIエンドポイント — 完全なバックエンド実装",
+      "6業種に最適化されたAI仕訳で記帳精度を大幅向上",
+      "電帳法・インボイス制度に完全準拠 — 税務リスクを排除"
+    ],
+    "en": [
+      "33,000+ lines of code — quality assured with 367 tests",
+      "18 API endpoints — complete backend implementation",
+      "AI journal entries optimized for 6 industries dramatically improve accuracy",
+      "Full compliance with Electronic Bookkeeping Act and Invoice System — eliminating tax risk"
+    ]
+  },
+  "kpis": {
+    "loc": "33,000+",
+    "tests": "367",
+    "apiEndpoints": "18",
+    "industries": "6"
+  }
+}

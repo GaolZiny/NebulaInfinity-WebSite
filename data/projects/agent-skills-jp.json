@@ -1,0 +1,56 @@
+{
+  "fullDescription": {
+    "ja": "AgentSkills.jp は、AI エージェントに「行動する力」を与えるスキルプラットフォームです。OpenClaw などの AI エージェントフレームワーク向けに、厳選されたスキルを日本語で提供。全世界に公開されているスキルを収集し、内容を詳細に審査・評価。日本語での審査結果を提供することで、ユーザーは安心してスキルをダウンロードし、安全に利用できます。また、日本市場向けに独自開発したスキルも公開し、AI の潜在能力を引き出します。",
+    "en": "AgentSkills.jp is a skill platform that gives AI agents the 'power to act.' Provides curated skills in Japanese for AI agent frameworks like OpenClaw. We collect skills published worldwide, audit and evaluate their content in detail, and provide audit results in Japanese. Users can confidently download and safely use skills. We also publish proprietary skills developed specifically for the Japanese market, unlocking AI's potential."
+  },
+  "techStack": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "OpenClaw",
+    "Python",
+    "GitHub API (Skill Collection)",
+    "AI Review System"
+  ],
+  "features": [
+    {
+      "ja": "AI エージェント向けスキルの審査・評価",
+      "en": "Audit and evaluation of skills for AI agents"
+    },
+    {
+      "ja": "日本語での詳細レビューと分級情報",
+      "en": "Detailed reviews and classification in Japanese"
+    },
+    {
+      "ja": "安全性が確認されたスキルの提供",
+      "en": "Provision of safety-verified skills"
+    },
+    {
+      "ja": "日本市場向けオリジナルスキルの開発・公開",
+      "en": "Development and publication of original skills for the Japanese market"
+    },
+    {
+      "ja": "OpenClaw 等主要フレームワーク対応",
+      "en": "Support for major frameworks like OpenClaw"
+    },
+    {
+      "ja": "スキル検索・ダウンロード機能",
+      "en": "Skill search and download functionality"
+    }
+  ],
+  "results": {
+    "ja": [
+      "AI エージェントの活用範囲を大幅に拡大",
+      "日本語環境での AI スキル利用を促進",
+      "安全性審査により、企業での導入ハードルを低減",
+      "日本市場特化スキルの提供"
+    ],
+    "en": [
+      "Significantly expand the scope of AI agent utilization",
+      "Promote AI skill usage in Japanese environments",
+      "Safety audits reduce barriers to enterprise adoption",
+      "Provision of skills tailored to the Japanese market"
+    ]
+  }
+}

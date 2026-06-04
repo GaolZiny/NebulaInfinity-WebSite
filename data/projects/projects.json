@@ -1,34 +1,86 @@
 {
   "projects": [
     {
-      "id": "decentralized-nft-marketplace",
-      "slug": "decentralized-nft-marketplace",
-      "name": {
-        "ja": "分散型NFTマーケットプレイス",
-        "en": "Decentralized NFT Marketplace"
-      },
-      "icon": "/images/projects/nft-marketplace-icon.png",
+      "id": "gaijin-life-navi",
+      "slug": "gaijin-life-navi",
+      "name": { "ja": "Japan Life Navi", "en": "Japan Life Navi" },
       "shortDescription": {
-        "ja": "Ethereum基盤の完全分散型NFTマーケットプレイスプラットフォーム。低手数料とセキュアな取引を実現。",
-        "en": "A fully decentralized NFT marketplace platform built on Ethereum. Features low fees and secure transactions."
+        "ja": "在日外国人向けの生活支援アプリ。多言語ガイド、領域特化AI、リアルタイム対話を一体で設計。",
+        "en": "A life-support application for foreign residents in Japan, combining multilingual guidance, domain-specific AI, and real-time interaction."
       },
-      "tags": ["Solidity", "NFT", "DApp", "IPFS", "Web3.js"],
-      "status": "completed"
+      "summary": {
+        "ja": "在日外国人向け生活支援アプリ。多言語コンテンツ、領域特化AI、リアルタイム対話、画像分析を一つの体験として実装。",
+        "en": "A life-support app for foreign residents in Japan that brings multilingual content, domain-specific AI, real-time interaction, and image analysis into one experience."
+      },
+      "serviceLine": "ai-application",
+      "caseType": "product",
+      "proofPoints": ["336 Guides", "7 Languages", "6 AI Agents"],
+      "tags": ["AI Application", "Gemini API", "Flutter", "FastAPI", "PostgreSQL"],
+      "category": "ai-application",
+      "status": "live",
+      "featuredV1": true,
+      "url": "https://japan-life-navi.nebulainfinity.com"
     },
     {
-      "id": "ai-powered-defi-analytics",
-      "slug": "ai-powered-defi-analytics",
-      "name": {
-        "ja": "AI駆動DeFi分析プラットフォーム",
-        "en": "AI-Powered DeFi Analytics Platform"
-      },
-      "icon": "/images/projects/defi-analytics-icon.png",
+      "id": "rigel",
+      "slug": "rigel",
+      "name": { "ja": "Rigel", "en": "Rigel" },
       "shortDescription": {
-        "ja": "機械学習を活用したDeFiプロトコルのリアルタイム分析・予測プラットフォーム。",
-        "en": "Real-time DeFi protocol analysis and prediction platform powered by machine learning."
+        "ja": "AI記帳SaaSとして、業務知識、法対応、UX、バックエンド実装をまとめて成立させた代表例。",
+        "en": "An AI bookkeeping SaaS proving delivery across domain logic, compliance, UX, and backend implementation."
       },
-      "tags": ["AI", "DeFi", "Machine Learning", "Python", "React"],
-      "status": "in-progress"
+      "summary": {
+        "ja": "AI記帳SaaS。業務知識、制度対応、OCR、UX、バックエンド品質まで含めて成立させたプロダクト。",
+        "en": "An AI bookkeeping SaaS that proves delivery across domain logic, regulation support, OCR, user experience, and backend quality."
+      },
+      "serviceLine": "ai-application",
+      "caseType": "product",
+      "proofPoints": ["33,000+ LOC", "367 Tests", "18 API Endpoints", "6 Industries"],
+      "tags": ["AI Application", "Hono", "TypeScript", "Flutter", "PostgreSQL", "Stripe"],
+      "category": "ai-application",
+      "status": "complete",
+      "featuredV1": true
+    },
+    {
+      "id": "agent-skills-jp",
+      "slug": "agent-skills-jp",
+      "name": { "ja": "AgentSkills.jp", "en": "AgentSkills.jp" },
+      "shortDescription": {
+        "ja": "AIエージェント向けスキルの日本語プラットフォーム。厳選されたスキルを審査・評価し、安心して利用できる環境を提供。",
+        "en": "Japanese-language platform for AI agent skills. Audited and evaluated curated skills in a safe environment."
+      },
+      "summary": {
+        "ja": "AIエージェント向けスキルの日本語プラットフォーム。厳選されたスキルを審査・評価し、安心して利用できる環境を提供。",
+        "en": "Japanese-language platform for AI agent skills. Audited and evaluated curated skills in a safe environment."
+      },
+      "serviceLine": "ai-application",
+      "caseType": "product",
+      "proofPoints": ["Curated Skills", "Japanese UX", "Audit-first"],
+      "tags": ["AI", "OpenClaw", "Skills Platform", "Next.js", "TypeScript"],
+      "url": "https://agentskills.jp",
+      "category": "ai-application",
+      "status": "live",
+      "featuredV1": false
+    },
+    {
+      "id": "carina",
+      "slug": "carina",
+      "name": { "ja": "Carina", "en": "Carina" },
+      "shortDescription": {
+        "ja": "ポイント、クーポン、会員証をブロックチェーン基盤で扱う CRM。Web3.0 を顧客体験と運用へ接続した代表例です。",
+        "en": "A CRM that handles points, coupons, and membership on blockchain infrastructure. It demonstrates Web3.0 connected to customer experience and operations."
+      },
+      "summary": {
+        "ja": "Carina は、小売向け CRM に Web3.0 を接続し、ポイント、クーポン、会員証の扱いをブロックチェーン基盤で再設計した例です。",
+        "en": "Carina is an example of applying Web3.0 to retail CRM by redesigning points, coupons, and membership on top of blockchain infrastructure."
+      },
+      "serviceLine": "web3-blockchain",
+      "caseType": "web3",
+      "proofPoints": ["Retail CRM", "Membership", "Traceability"],
+      "tags": ["Web3.0", "Polygon", "Smart Contract", "CRM", "Membership"],
+      "category": "web3",
+      "status": "complete",
+      "featuredV1": true
     }
   ]
 }

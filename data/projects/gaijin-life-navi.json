@@ -1,0 +1,44 @@
+{
+  "fullDescription": {
+    "ja": "Japan Life Navi は、日本で暮らす外国人のための AI 生活ナビゲーションアプリです。ビザ・在留資格、税金・社会保険、医療、住居、教育、日常生活の 6 つのドメインにわたる 336 のガイド記事を 7 言語（英語・中国語・韓国語・ベトナム語・ポルトガル語・スペイン語・日本語）で提供。各ドメインに特化した AI エージェントが、ユーザーの具体的な状況に応じた個別アドバイスをリアルタイムで提供します。SSE ストリーミングによる快適なチャット体験と、画像分析機能による書類読み取り支援も搭載しています。",
+    "en": "Japan Life Navi is an AI-powered life navigation app for foreigners living in Japan. It provides 336 guide articles across 6 domains — visa/residency, tax/social insurance, healthcare, housing, education, and daily life — in 7 languages (English, Chinese, Korean, Vietnamese, Portuguese, Spanish, Japanese). Domain-specialized AI agents deliver personalized, real-time advice tailored to each user's specific situation. Features SSE streaming chat for a smooth conversational experience and image analysis for document reading assistance."
+  },
+  "techStack": [
+    "Python / FastAPI",
+    "Flutter (iOS/Android/Web)",
+    "PostgreSQL",
+    "Firebase Auth",
+    "Google Gemini API",
+    "Gemini Grounding (Web Search)",
+    "SSE Streaming",
+    "Cloudflare R2"
+  ],
+  "features": [
+    { "ja": "6ドメイン×専門AIエージェント（ビザ・税金・医療・住居・教育・日常生活）", "en": "6 domain-specialized AI agents (visa, tax, healthcare, housing, education, daily life)" },
+    { "ja": "336ガイド記事 × 7言語対応", "en": "336 guide articles in 7 languages" },
+    { "ja": "SSEストリーミングによるリアルタイムAIチャット", "en": "Real-time AI chat with SSE streaming" },
+    { "ja": "画像分析による書類読み取り支援", "en": "Document reading assistance via image analysis" },
+    { "ja": "Gemini Grounding（Web検索）による最新情報の提供", "en": "Up-to-date information via Gemini Grounding (Web Search)" },
+    { "ja": "地域別にカスタマイズされた情報提供", "en": "Region-customized information delivery" }
+  ],
+  "results": {
+    "ja": [
+      "336のガイド記事を7言語で提供 — 在日外国人の生活全般をカバー",
+      "6つのドメイン特化AIが的確な個別アドバイスを自動生成",
+      "SSEストリーミングで快適なリアルタイム対話を実現",
+      "画像分析で在留カードや書類の読み取りをサポート"
+    ],
+    "en": [
+      "336 guide articles in 7 languages — covering all aspects of life for foreigners in Japan",
+      "6 domain-specialized AI agents generate accurate, personalized advice",
+      "SSE streaming delivers a smooth real-time conversational experience",
+      "Image analysis supports reading residence cards and documents"
+    ]
+  },
+  "kpis": {
+    "guides": "336",
+    "languages": "7",
+    "aiAgents": "6",
+    "domains": "6"
+  }
+}

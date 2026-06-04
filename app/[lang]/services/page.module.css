@@ -7,105 +7,120 @@
   text-align: center;
 }
 
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  font-weight: 700;
+}
+
 .title {
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
+  font-family: var(--font-heading);
   margin-bottom: 24px;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
 }
 
 .subtitle {
   font-size: clamp(1.125rem, 2vw, 1.5rem);
   color: var(--text-secondary);
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .section {
   padding: 60px 0;
 }
 
-.servicesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-}
-
-.serviceIcon {
-  font-size: 56px;
-  margin-bottom: 24px;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
-}
-
-.serviceTitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: var(--text-primary);
-}
-
-.serviceDescription {
+.sectionIntro {
+  text-align: center;
+  font-size: 1.1rem;
   color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 40px;
   line-height: 1.7;
-  margin-bottom: 24px;
 }
 
-.featureList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Bento Grid Layout — 12-column */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
 }
 
-.feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  color: var(--text-secondary);
-  margin-bottom: 12px;
-  line-height: 1.6;
+/* All cards: two per row, each 6 columns */
+.bentoRow1 {
+  grid-column: span 6;
 }
 
-.checkmark {
-  color: var(--accent-cyan);
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
+/* CTA Section */
 .ctaSection {
-  padding: 80px 0;
+  padding: 64px 0 96px;
 }
 
 .ctaCard {
-  text-align: center;
-  padding: 64px 32px !important;
-  background: linear-gradient(
-    135deg,
-    rgba(102, 126, 234, 0.1),
-    rgba(45, 212, 191, 0.1)
-  ) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 48px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(120deg, rgba(15, 23, 42, 0.06), rgba(202, 138, 4, 0.12));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
 }
 
 .ctaTitle {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 700;
-  margin-bottom: 16px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-family: var(--font-heading);
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
 }
 
 .ctaDescription {
   color: var(--text-secondary);
-  font-size: 1.125rem;
-  margin-bottom: 32px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Tablet: 2-column grid */
+@media (max-width: 1023px) {
+  .bentoGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bentoRow1 {
+    grid-column: span 1;
+  }
+
+  .ctaCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile: 1-column stack */
+@media (max-width: 767px) {
   .hero {
     padding: 80px 0 40px;
   }
 
-  .servicesGrid {
+  .bentoGrid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .ctaSection {
@@ -113,6 +128,37 @@
   }
 
   .ctaCard {
-    padding: 48px 24px !important;
+    padding: 40px 24px;
+  }
+
+  .ctaActions {
+    width: 100%;
+  }
+
+  .ctaActions a {
+    flex: 1;
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: clamp(2rem, 8.5vw, 2.8rem);
+  }
+
+  .bentoGrid {
+    gap: 16px;
+  }
+
+  .ctaCard {
+    padding: 32px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bentoGrid,
+  .bentoRow1,
+  .bentoRow2 {
+    transition: none !important;
   }
 }

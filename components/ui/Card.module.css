@@ -2,21 +2,62 @@
   padding: 32px;
   border-radius: var(--radius-lg);
   transition: all var(--transition-base);
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  background: var(--background-secondary);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
+}
+
+.compact {
+  padding: 20px;
+}
+
+.featured {
+  background: linear-gradient(180deg, rgba(202, 138, 4, 0.08), rgba(248, 250, 252, 0.7));
+  box-shadow: var(--shadow-sm);
+  border-color: rgba(202, 138, 4, 0.25);
 }
 
 .glass {
-  /* Linear style - solid background, not glass */
+  background: var(--background-secondary);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
+}
+
+.bentoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
   background: var(--surface);
   border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.cardIconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(202, 138, 4, 0.12);
+  color: var(--accent-primary);
+}
+
+.cardIcon {
+  width: 22px;
+  height: 22px;
 }
 
 .hover:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
   border-color: var(--border-hover);
   background: var(--surface-hover);
+}
+
+.hover {
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
