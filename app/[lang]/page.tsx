@@ -52,12 +52,12 @@ const serviceLines = {
 
 const valuePanels = {
   ja: [
-    { title: '個人の知見を、組織の資産に', body: '担当者に閉じた判断基準や手順を可視化し、組織が運用・進化できる仕組みへ変えます。' },
+    { title: '個人の知見を、組織の資産に', body: '定型業務や負荷の高い処理はAIが担い、人は判断と創造に集中。業務効率と人の働きがいを両立します。' },
     { title: '構想から運用まで、伴走', body: '構想の整理から、設計・実装・検証、そして運用まで一貫して伴走します。' },
     { title: '最短24時間で、動くデモ', body: 'AI駆動開発により、アイデアや要件から、最短24時間で動くデモをお見せできることもあります。' },
   ],
   en: [
-    { title: 'Turn individual know-how into an organizational asset', body: "We surface the decision rules and steps locked in one person's head, and rebuild them into a system your organization can run and improve." },
+    { title: 'Turn individual know-how into an organizational asset', body: 'AI takes on routine, heavy-load work so people can focus on judgment and creativity — balancing efficiency with more rewarding work.' },
     { title: 'With you from concept to operation', body: 'One continuous team — from shaping the concept through design, build, and validation, all the way to live operation.' },
     { title: 'A working demo in as little as 24 hours', body: 'With AI-driven development, we can turn an idea or rough requirement into a working demo — in as little as 24 hours.' },
   ],
@@ -69,7 +69,7 @@ const serviceCards = {
       id: 'ai-workflow',
       officialLine: 'AI Workflow Solution',
       title: '業務プロセスを、組織の資産へ',
-      body: '属人化した判断基準や手順を可視化し、AIと人が協働するワークフローとして設計・実装します。',
+      body: '個人に依存した判断基準や手順を可視化し、AIと人が協働するワークフローとして設計・実装します。',
       fitBullets: ['社内ノウハウが担当者に偏っている', '既存業務プロセスの改善・効率化をしたい', 'AIを活用した業務フローを社内に取り入れたい'],
       proofLine: '例：企画・リサーチ業務、システム開発業務（要件定義・実装・検証）など',
       cta: 'AI Workflow の詳細を見る',
@@ -88,7 +88,7 @@ const serviceCards = {
       officialLine: 'AI-Driven Development Solution',
       title: 'AI駆動開発で、最短実装',
       body: 'AIエージェントと開発ワークフロー（設計→実装→テスト）を組み合わせ、速さと品質を両立した実装を実現します。',
-      fitBullets: ['アイデア・発想を素早く動くデモやMVPにしたい', '開発プロセスの属人化や手戻りを減らしたい', '即時実装・イテレーション型の開発をしたい'],
+      fitBullets: ['アイデア・発想を素早く動くデモやMVPにしたい', '開発の個人依存や手戻りを減らしたい', '即時実装・イテレーション型の開発をしたい'],
       proofLine: '例：高速開発プロジェクト Rigel（16時間でMVP）',
       cta: 'AI-Driven Development の詳細を見る',
     },
