@@ -1,13 +1,13 @@
 # BRIEF — NebulaInfinity Website
 
 ## Vision
-Nebula Infinity’s corporate website should clearly position the company as an **AI social implementation partner**: a team that turns AI and Web3.0 from concepts into practical business capability.
+Nebula Infinity’s corporate website should clearly position the company as an **AI social implementation partner**: a team that turns AI from concepts into practical business capability.
 
 ## Brand Positioning
 - **Core line**: AI社会実装のパートナー
 - **Value line 1**: 「AI」を、現場の「即戦力」へ
 - **Value line 2**: 「属人」のノウハウを、組織の「資産」に
-- **Value line 3**: Web3.0テクノロジーを、ビジネスへ
+- **Value line 3**: AI駆動開発で、超高速実装
 
 ## Primary Service Lines
 1. **AI Workflow Design & Development**
@@ -15,8 +15,9 @@ Nebula Infinity’s corporate website should clearly position the company as an 
    - Preserve operational know-how as organizational assets instead of individual memory
 2. **AI Application Design & Development**
    - Design and build AI-native applications, tools, and systems for real usage
-3. **Web3.0 / Blockchain Application Design & Development**
-   - Design and build blockchain-enabled products for real business use cases
+3. **AI-Driven Development**
+   - Combine AI agents with the design → implementation → testing workflow for fast, high-quality delivery
+   - (The Web3.0 / blockchain offering remains a company capability — see COMPANY_INFO.md — but is no longer a public V1 website service line)
 
 ## Company
 - **Name**: Nebula Infinity（ネビュラインフィニティ）
