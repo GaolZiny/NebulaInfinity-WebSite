@@ -22,6 +22,15 @@ body {
   min-height: 100vh;
 }
 
+/* Japanese line breaking — avoid mid-word/phrase breaks (e.g. リサ|ーチ).
+   line-break: strict applies kinsoku (no break before ー, small kana, punctuation)
+   in every browser; word-break: auto-phrase breaks at natural 文節 boundaries in
+   Chromium and is ignored elsewhere. Scoped to JA so English is untouched. */
+:lang(ja) {
+  line-break: strict;
+  word-break: auto-phrase;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -92,6 +101,7 @@ h6 {
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--text-primary);
+  text-wrap: balance;
 }
 
 h1,
@@ -117,6 +127,7 @@ h3 {
 p {
   line-height: 1.75;
   color: var(--text-secondary);
+  text-wrap: pretty;
 }
 
 button {
