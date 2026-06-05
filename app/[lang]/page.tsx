@@ -46,8 +46,8 @@ const homeCopy = {
 } as const;
 
 const serviceLines = {
-  ja: ['AI Workflow', 'AI Application', 'Web Contents / Web3.0'],
-  en: ['AI Workflow', 'AI Application', 'Web Contents / Web3.0'],
+  ja: ['AI Workflow', 'AI Application', 'AI-Driven Development'],
+  en: ['AI Workflow', 'AI Application', 'AI-Driven Development'],
 } as const;
 
 const valuePanels = {
