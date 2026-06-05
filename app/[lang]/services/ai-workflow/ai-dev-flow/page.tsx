@@ -188,25 +188,6 @@ export default async function AiDevFlowPage({ params }: { params: Promise<{ lang
         </div>
       </section>
 
-      <section className={styles.section}>
-        <div className="container">
-          <div className={styles.featuredBand}>
-            <div className={styles.bandCopy}>
-              <h2 className={styles.bandTitle}>{content.cta.title}</h2>
-              <p className={styles.bandBody}>{content.cta.body}</p>
-              <Link href={servicesHref} className={styles.ctaLink}>{content.cta.tertiary}<span aria-hidden="true">→</span></Link>
-            </div>
-            <div className={styles.bandActions}>
-              <Link href={contactHref} className={styles.linkButton}>
-                <Button size="lg">{content.hero.primaryCta}</Button>
-              </Link>
-              <Link href={parentHref} className={styles.linkButton}>
-                <Button size="lg" variant="outline">{content.hero.secondaryCta}</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
