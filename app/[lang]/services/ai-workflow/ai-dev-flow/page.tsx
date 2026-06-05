@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { getLanguage } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
 import { aiDevFlowContent, aiWorkflowInquiry } from '@/data/service-subdetails/aiDevFlow';
+import { generateSEOMetadata } from '@/components/seo/SEO';
 import styles from '@/styles/marketing.module.css';
 
 export const dynamic = 'force-static';
@@ -15,10 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = getLanguage(rawLang);
   const { metadata } = aiDevFlowContent[lang];
-  return {
-    title: metadata.title,
-    description: metadata.description,
-  };
+  return generateSEOMetadata({ title: metadata.title, description: metadata.description, lang, path: '/services/ai-workflow/ai-dev-flow' });
 }
 
 export default async function AiDevFlowPage({ params }: { params: Promise<{ lang: string }> }) {

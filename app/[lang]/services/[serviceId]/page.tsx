@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getLanguage, type Language } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
 import { getServiceById, services } from '@/data/services';
+import { generateSEOMetadata } from '@/components/seo/SEO';
 import styles from '@/styles/marketing.module.css';
 
 export const dynamicParams = false;
@@ -335,7 +336,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const lang = getLanguage(rawLang);
   const service = getServiceById(serviceId);
   if (!service) return {};
-  return { title: `${service.title[lang]} - Nebula Infinity`, description: service.body[lang] };
+  return generateSEOMetadata({ title: `${service.title[lang]} - Nebula Infinity`, description: service.body[lang], lang, path: `/services/${serviceId}` });
 }
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ lang: string; serviceId: string }> }) {

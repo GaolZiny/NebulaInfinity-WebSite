@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import Button from '@/components/ui/Button';
 import { getLanguage } from '@/lib/i18n';
+import { generateSEOMetadata } from '@/components/seo/SEO';
 import styles from '@/styles/marketing.module.css';
 
 const homeCopy = {
@@ -219,7 +221,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = getLanguage(rawLang);
   const t = homeCopy[lang];
-  return { title: `Nebula Infinity - ${t.title}`, description: t.body };
+  return generateSEOMetadata({ title: `Nebula Infinity - ${t.title}`, description: t.body, lang, path: '/' });
 }
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
@@ -238,6 +240,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <p className={styles.heroBody}>{t.body}</p>
               <div className={styles.chipRow} aria-label={lang === 'ja' ? 'サービスライン' : 'Service lines'}>
                 {serviceLines[lang].map((line) => <span key={line} className={styles.chip}>{line}</span>)}
+              </div>
+              <div className={styles.actionRow}>
+                <Link href={`/${lang}/contact`} className={styles.linkButton}><Button size="lg">{t.contactCta}</Button></Link>
               </div>
             </div>
             <div className={styles.sideStack} aria-label={lang === 'ja' ? '提供価値' : 'Value highlights'}>

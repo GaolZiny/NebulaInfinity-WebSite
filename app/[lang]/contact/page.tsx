@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { getLanguage, type Language } from '@/lib/i18n';
 import ContactForm from '@/components/contact/ContactForm';
+import { generateSEOMetadata } from '@/components/seo/SEO';
 import styles from '@/styles/marketing.module.css';
 
 const copy = {
@@ -89,10 +90,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = getLanguage(rawLang);
   const t = copy[lang];
-  return {
-    title: `${t.title} - Nebula Infinity`,
-    description: t.subtitle,
-  };
+  return generateSEOMetadata({ title: `${t.title} - Nebula Infinity`, description: t.subtitle, lang, path: '/contact' });
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -102,9 +100,9 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
 
   return (
     <div className={styles.page}>
-      <section className={`${styles.hero} ${styles.heroCentered} ${styles.heroCompact}`}>
+      <section className={`${styles.hero} ${styles.heroCompact}`}>
         <div className="container">
-          <div className={styles.heroContent}>
+          <div className={`${styles.heroContent} ${styles.aiWorkflowHeroContent}`}>
             <span className={styles.heroEyebrow}>{t.eyebrow}</span>
             <h1 className={styles.pageTitle}>{t.title}</h1>
             <p className={styles.pageLead}>{t.subtitle}</p>
