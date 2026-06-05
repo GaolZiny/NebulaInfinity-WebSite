@@ -39,11 +39,11 @@
 }
 
 .aiWorkflowHeroContent {
-  max-width: min(100%, 1040px);
+  max-width: none;
 }
 
 .aiWorkflowHeroContent .heroBody {
-  max-width: 980px;
+  max-width: none;
 }
 
 .heroEyebrow,
@@ -277,12 +277,13 @@
   display: grid;
   gap: 14px;
   margin-bottom: 32px;
-  max-width: 820px;
+  max-width: none;
 }
 
 .sectionCentered .sectionHeader {
   margin-left: auto;
   margin-right: auto;
+  max-width: 820px;
   text-align: center;
 }
 

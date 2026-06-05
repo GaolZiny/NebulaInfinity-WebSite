@@ -357,16 +357,14 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const chips = isJa ? content.hero.chipsJa : content.hero.chipsEn;
   const primaryCta = isJa ? (content.hero.primaryCtaJa ?? 'この領域を相談する') : (content.hero.primaryCtaEn ?? 'Discuss this service');
   const secondaryCta = isJa ? (content.hero.secondaryCtaJa ?? 'サービス選択に戻る') : (content.hero.secondaryCtaEn ?? 'Back to Home Services');
-  const isAiWorkflow = serviceId === 'ai-workflow';
-
-  const heroSplitClassName = isAiWorkflow ? `${styles.heroSplit} ${styles.aiWorkflowHeroTextOnly}` : styles.heroSplit;
-  const heroContentClassName = isAiWorkflow ? `${styles.heroContent} ${styles.aiWorkflowHeroContent}` : styles.heroContent;
+  // Unified detail-page layout for all services: full-width text-only hero (no
+  // side card), matching the ai-workflow page format.
+  const heroSplitClassName = `${styles.heroSplit} ${styles.aiWorkflowHeroTextOnly}`;
+  const heroContentClassName = `${styles.heroContent} ${styles.aiWorkflowHeroContent}`;
   const problemSectionClassName = `${styles.section} ${styles.sectionMuted}`;
-  const deliverablesSectionClassName = isAiWorkflow ? styles.section : `${styles.section} ${styles.sectionMuted}`;
-  const deliverablesHeaderClassName = isAiWorkflow
-    ? `${styles.sectionHeader} ${styles.aiWorkflowWideSectionHeader}`
-    : styles.sectionHeader;
-  const proofSectionClassName = isAiWorkflow ? `${styles.section} ${styles.sectionMuted}` : styles.section;
+  const deliverablesSectionClassName = styles.section;
+  const deliverablesHeaderClassName = `${styles.sectionHeader} ${styles.aiWorkflowWideSectionHeader}`;
+  const proofSectionClassName = `${styles.section} ${styles.sectionMuted}`;
 
   return (
     <div className={styles.page}>
@@ -398,13 +396,6 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 </Link>
               </div>
             </div>
-            {isAiWorkflow ? null : (
-              <div className={`${styles.card} ${styles.featuredCard}`}>
-                <h2 className={styles.cardTitle}>{service.title[lang]}</h2>
-                <p className={styles.cardBody}>{service.body[lang]}</p>
-                <ul className={styles.list}>{service.fitBullets[lang].map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
-              </div>
-            )}
           </div>
         </div>
       </section>
