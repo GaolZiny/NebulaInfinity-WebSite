@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getLanguage, type Language } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
 import projectsData from '@/data/projects/projects.json';
-import { generateSEOMetadata } from '@/components/seo/SEO';
+import { generateSEOMetadata, generateBreadcrumbSchema } from '@/components/seo/SEO';
 import styles from '@/styles/marketing.module.css';
 
 export const dynamicParams = false;
@@ -57,6 +57,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
   return (
     <div className={styles.page}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(lang, [{ name: lang === 'ja' ? 'ホーム' : 'Home', path: '/' }, { name: lang === 'ja' ? 'プロジェクト' : 'Projects', path: '/#projects' }, { name: project.name[lang], path: `/projects/${slug}` }])) }} />
       <section className={styles.breadcrumb}><div className="container"><div className={styles.breadcrumbInner}><Link href={`/${lang}/`}>{lang === 'ja' ? 'ホーム' : 'Home'}</Link><span>/</span><Link href={`/${lang}/#projects`}>{lang === 'ja' ? 'プロジェクト' : 'Projects'}</Link><span>/</span><span>{project.name[lang]}</span></div></div></section>
       <section className={styles.hero}><div className="container"><div className={`${styles.heroSplit} ${styles.aiWorkflowHeroTextOnly}`}><div className={`${styles.heroContent} ${styles.aiWorkflowHeroContent}`}><span className={styles.heroEyebrow}>{serviceLineLabel}</span><h1 className={styles.heroTitle}>{project.name[lang]}</h1><p className={styles.heroBody}>{project.summary[lang]}</p><div className={styles.chipRow}>{project.proofPoints.map((point: string) => <span key={point} className={styles.chip}>{point}</span>)}</div><div className={styles.actionRow}><Link href={`/${lang}/contact?inquiry=${encodeURIComponent(serviceLineLabel)}`} className={styles.linkButton}><Button size="lg">{lang === 'ja' ? '似た相談をする' : 'Discuss a similar case'}</Button></Link><Link href={`/${lang}/#projects`} className={styles.linkButton}><Button size="lg" variant="outline">{lang === 'ja' ? 'プロジェクト選択に戻る' : 'Back to Home Projects'}</Button></Link></div></div></div></div></section>
       {details ? <>

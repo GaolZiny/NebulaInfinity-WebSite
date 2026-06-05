@@ -127,6 +127,43 @@ export function generateWebSiteSchema() {
   };
 }
 
+export function generateServiceSchema({
+  name,
+  description,
+  path,
+  lang,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  lang: 'ja' | 'en';
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name,
+    description,
+    url: `${BASE_URL}/${lang}${path}`,
+    serviceType: name,
+    provider: { '@id': `${BASE_URL}/#organization` },
+    areaServed: 'JP',
+    inLanguage: lang,
+  };
+}
+
+export function generateBreadcrumbSchema(lang: 'ja' | 'en', items: { name: string; path: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: `${BASE_URL}/${lang}${item.path}`,
+    })),
+  };
+}
+
 export function generateWebPageSchema(title: string, description: string, url: string) {
   return {
     '@context': 'https://schema.org',

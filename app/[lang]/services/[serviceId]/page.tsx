@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getLanguage, type Language } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
 import { getServiceById, services } from '@/data/services';
-import { generateSEOMetadata } from '@/components/seo/SEO';
+import { generateSEOMetadata, generateServiceSchema, generateBreadcrumbSchema } from '@/components/seo/SEO';
 import styles from '@/styles/marketing.module.css';
 
 export const dynamicParams = false;
@@ -366,6 +366,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
   return (
     <div className={styles.page}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema({ name: service.officialLine, description: service.body[lang], path: `/services/${serviceId}`, lang })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(lang, [{ name: isJa ? 'ホーム' : 'Home', path: '/' }, { name: isJa ? 'サービス' : 'Services', path: '/#services' }, { name: service.officialLine, path: `/services/${serviceId}` }])) }} />
       <section className={styles.breadcrumb}>
         <div className="container">
           <div className={styles.breadcrumbInner}>
