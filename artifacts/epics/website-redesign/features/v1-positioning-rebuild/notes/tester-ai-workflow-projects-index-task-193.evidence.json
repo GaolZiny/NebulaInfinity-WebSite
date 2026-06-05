@@ -1,0 +1,142 @@
+{
+  "passed": 26,
+  "failed": 0,
+  "results": [
+    {
+      "name": "ja AI Workflow structure/runtime",
+      "ok": true,
+      "detail": "status=200, missing=[], forbidden=[], errors=[]"
+    },
+    {
+      "name": "en AI Workflow structure/runtime",
+      "ok": true,
+      "detail": "status=200, missing=[], forbidden=[], errors=[]"
+    },
+    {
+      "name": "ja Home #projects desktop/nav/footer/anchor",
+      "ok": true,
+      "detail": "status=200, anchor_count=2, href_ok=True, metrics={'hash': '#projects', 'sectionTop': 104.28125, 'headingTop': 196.28125, 'headerBottom': 80, 'sectionId': True, 'aria': 'home-projects-heading', 'tabIndex': '-1'}, errors=[]"
+    },
+    {
+      "name": "en Home #projects desktop/nav/footer/anchor",
+      "ok": true,
+      "detail": "status=200, anchor_count=2, href_ok=True, metrics={'hash': '#projects', 'sectionTop': 104.359375, 'headingTop': 196.359375, 'headerBottom': 80, 'sectionId': True, 'aria': 'home-projects-heading', 'tabIndex': '-1'}, errors=[]"
+    },
+    {
+      "name": "route /ja/projects/gaijin-life-navi/",
+      "ok": true,
+      "detail": "status=200, errors=[]"
+    },
+    {
+      "name": "route /ja/projects/rigel/",
+      "ok": true,
+      "detail": "status=200, errors=[]"
+    },
+    {
+      "name": "route /ja/projects/astra/",
+      "ok": true,
+      "detail": "status=200, errors=[]"
+    },
+    {
+      "name": "route /ja/services/ai-workflow/",
+      "ok": true,
+      "detail": "status=200, errors=[]"
+    },
+    {
+      "name": "route /ja/services/ai-application/",
+      "ok": true,
+      "detail": "status=200, errors=[]"
+    },
+    {
+      "name": "route /ja/services/ai-driven-development/",
+      "ok": true,
+      "detail": "status=200, errors=[]"
+    },
+    {
+      "name": "route /en/projects/gaijin-life-navi/",
+      "ok": true,
+      "detail": "status=200, errors=[]"
+    },
+    {
+      "name": "route /en/projects/rigel/",
+      "ok": true,
+      "detail": "status=200, errors=[]"
+    },
+    {
+      "name": "route /en/projects/astra/",
+      "ok": true,
+      "detail": "status=200, errors=[]"
+    },
+    {
+      "name": "route /en/services/ai-workflow/",
+      "ok": true,
+      "detail": "status=200, errors=[]"
+    },
+    {
+      "name": "route /en/services/ai-application/",
+      "ok": true,
+      "detail": "status=200, errors=[]"
+    },
+    {
+      "name": "route /en/services/ai-driven-development/",
+      "ok": true,
+      "detail": "status=200, errors=[]"
+    },
+    {
+      "name": "clean 404 /ja/projects/",
+      "ok": true,
+      "detail": "status=404, errors=[]"
+    },
+    {
+      "name": "clean 404 /en/projects/",
+      "ok": true,
+      "detail": "status=404, errors=[]"
+    },
+    {
+      "name": "clean 404 /ja/projects",
+      "ok": true,
+      "detail": "status=404, errors=[]"
+    },
+    {
+      "name": "clean 404 /en/projects",
+      "ok": true,
+      "detail": "status=404, errors=[]"
+    },
+    {
+      "name": "clean 404 /ja/services/web3-blockchain/",
+      "ok": true,
+      "detail": "status=404, errors=[]"
+    },
+    {
+      "name": "clean 404 /en/services/web3-blockchain/",
+      "ok": true,
+      "detail": "status=404, errors=[]"
+    },
+    {
+      "name": "clean 404 /ja/projects/carina/",
+      "ok": true,
+      "detail": "status=404, errors=[]"
+    },
+    {
+      "name": "clean 404 /en/projects/carina/",
+      "ok": true,
+      "detail": "status=404, errors=[]"
+    },
+    {
+      "name": "JA mobile nav Projects anchor",
+      "ok": true,
+      "detail": "status=200, clicked_href=/ja/#projects, metrics={'hash': '#projects', 'sectionTop': 103.578125, 'headingTop': 195.578125, 'headerBottom': 80, 'expanded': 'false'}, errors=[]"
+    },
+    {
+      "name": "sitemap/static export route list",
+      "ok": true,
+      "detail": "forbidden_present=[], missing_active=[], index_files_exist=[]"
+    }
+  ],
+  "screenshots": [
+    "artifacts/epics/website-redesign/features/v1-positioning-rebuild/screenshots/task-193-ai-workflow-projects-index/ja-ai-workflow-desktop.png",
+    "artifacts/epics/website-redesign/features/v1-positioning-rebuild/screenshots/task-193-ai-workflow-projects-index/ja-home-projects-anchor-desktop.png",
+    "artifacts/epics/website-redesign/features/v1-positioning-rebuild/screenshots/task-193-ai-workflow-projects-index/ja-mobile-projects-anchor.png",
+    "artifacts/epics/website-redesign/features/v1-positioning-rebuild/screenshots/task-193-ai-workflow-projects-index/ja-project-astra-detail-desktop.png"
+  ]
+}

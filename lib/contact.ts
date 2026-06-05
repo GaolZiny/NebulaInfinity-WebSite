@@ -1,7 +1,7 @@
 export const CONTACT_INQUIRY_TYPES = [
   'AI Workflow Design & Development',
   'AI Application Design & Development',
-  'Web3.0 / Blockchain Application Design & Development',
+  'AI-Driven Development',
   'Still defining / Other',
 ] as const;
 
@@ -32,7 +32,9 @@ const OTHER_INQUIRY_JA_LABEL = 'まだ整理中 / Other';
 const CONTACT_INQUIRY_TYPE_ALIASES: Record<string, ContactInquiryType> = {
   'AI Workflow Design & Development': 'AI Workflow Design & Development',
   'AI Application Design & Development': 'AI Application Design & Development',
-  'Web3.0 / Blockchain Application Design & Development': 'Web3.0 / Blockchain Application Design & Development',
+  'AI-Driven Development': 'AI-Driven Development',
+  'AI-Driven Development Solution': 'AI-Driven Development',
+  'AI-Driven Development Design & Development': 'AI-Driven Development',
   'Still defining / Other': 'Still defining / Other',
   [OTHER_INQUIRY_JA_LABEL]: 'Still defining / Other',
 };

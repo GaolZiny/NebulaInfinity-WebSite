@@ -8,7 +8,7 @@ interface FooterProps {
 
 const copy = {
   ja: {
-    description: 'AI Workflow、AI Application、Web3.0 / Blockchain の3つの実装ラインで、構想を現場で使える仕組みに変えます。',
+    description: 'AI Workflow、AI Application、AI-Driven Development の3つの実装ラインで、構想を現場で使える仕組みに変えます。',
     quickLinks: 'Quick Links',
     contactLabel: 'Contact',
     rights: '© 2026 Nebula Infinity. All rights reserved.',
@@ -19,7 +19,7 @@ const copy = {
     contact: 'お問い合わせ',
   },
   en: {
-    description: 'We turn ideas into operational systems through three implementation lines: AI Workflow, AI Application, and Web3.0 / Blockchain.',
+    description: 'We turn ideas into operational systems through three implementation lines: AI Workflow, AI Application, and AI-Driven Development.',
     quickLinks: 'Quick Links',
     contactLabel: 'Contact',
     rights: '© 2026 Nebula Infinity. All rights reserved.',
@@ -35,9 +35,9 @@ export default function Footer({ lang }: FooterProps) {
   const t = copy[lang];
   const navItems = [
     { href: `/${lang}/`, label: t.home },
-    { href: `/${lang}/services`, label: t.services },
-    { href: `/${lang}/projects`, label: t.projects },
-    { href: `/${lang}/about`, label: t.about },
+    { href: `/${lang}/#services`, label: t.services },
+    { href: `/${lang}/#projects`, label: t.projects },
+    { href: `/${lang}/#about`, label: t.about },
     { href: `/${lang}/contact`, label: t.contact },
   ];
 

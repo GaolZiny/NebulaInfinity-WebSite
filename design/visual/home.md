@@ -1,25 +1,54 @@
 # Visual Spec — Home
 
-## 1. Page role
-- Primary goal: make Nebula Infinity's V1 positioning immediately understandable in one visit.
-- Audience: founders, directors, operations leads, product owners, CIO/CTO, innovation teams.
-- Primary action: move qualified visitors to Contact.
-- Secondary action: move visitors into Services and Projects.
+**Status:** Canonical V1 Home visual/copy spec for the Z-approved Home-led IA and service-model rewrite
+**Route:** `/[lang]/`
+**Canonical section order (exact):** Hero → Services(#services) → Projects → Process → About(#about) → Contact CTA
 
-## 2. Header / navigation flow
-- Header elements:
-  - Left: Nebula Infinity wordmark
-  - Center/right: Home / Services / Projects / About / Contact
-  - Right-end controls: language toggle, primary CTA button `お問い合わせ` / `Contact`
-- Page transitions:
-  - Hero primary CTA -> `/[lang]/contact`
-  - Hero secondary CTA -> `/[lang]/services`
-  - Service cards -> corresponding service detail pages
-  - Proof cards -> `/[lang]/projects` or mapped detail pages
-  - Footer CTA -> `/[lang]/contact`
-- Back destination: global header handles return paths; logo always returns to Home.
-- Unauthenticated flow: no restriction; full page accessible.
-- No-dead-end rule: every section exposes either a service/detail route or the primary contact CTA.
+## 1. Page role and IA contract
+
+- Primary goal: make Nebula Infinity's V1 positioning understandable in one visit, then route qualified visitors to Contact, the correct service detail page, or a representative project detail page.
+- Audience: founders, directors, operations leads, product owners, CIO/CTO, and innovation teams.
+- Primary conversion path: global/header Contact and the final Contact CTA route to `/[lang]/contact`.
+- Service-selection path: global/header Services and service-selection links route to `/[lang]/#services`.
+- **Hero CTA button area is removed.** Do not render the old primary/secondary Hero button group, hidden buttons, or an empty CTA container.
+- Home owns the V1 Services and About overview as anchors:
+  - `#services` is the primary service-selection surface.
+  - `#about` is the compact company overview surface.
+- Home includes a concise Projects section between Services and Process. It is a routing/proof teaser for exactly **Japan Life Navi / Rigel / Astra**; it must not become a broad proof grid.
+- Standalone `/[lang]/services` index and `/[lang]/about` page are deleted / stop-exported surfaces. Do not design thin compatibility pages for them.
+- Retired `/[lang]/services/web3-blockchain` and retired Carina project proof are not active Home requirements.
+- Static export constraint: this IA must not depend on Next.js middleware, server redirects, SSR-only behavior, or server-side compatibility routes. If legacy traffic ever matters, hosting-level redirects are a separate future deployment/config task.
+- Implementation capability is represented through compact service-card proof lines, the Home Projects routing cards, service detail pages, and the independent Projects route.
+
+## 2. Header, mobile nav, and link behavior
+
+| Nav item | JA label | Target |
+|---|---|---|
+| Home | `ホーム` | `/[lang]/` |
+| Services | `サービス` | `/[lang]/#services` |
+| Projects | `プロジェクト` | `/[lang]/projects` |
+| About | `会社概要` | `/[lang]/#about` |
+| Contact | `お問い合わせ` | `/[lang]/contact` |
+
+Required behavior:
+- Header and mobile menu use the same targets above.
+- Logo and Home return to `/[lang]/`.
+- Header/mobile `サービス` never links to `/[lang]/services`.
+- Header/mobile `会社概要` never links to `/[lang]/about`.
+- Hero contains no CTA links or button row.
+- Home service card detail CTAs → `/[lang]/services/{serviceId}` for exactly:
+  - `/[lang]/services/ai-workflow`
+  - `/[lang]/services/ai-application`
+  - `/[lang]/services/ai-driven-development`
+- Home Projects cards → `/[lang]/projects/{slug}`. Coder must resolve the exact slug for Japan Life Navi, Rigel, and Astra from `data/projects` and the current dynamic project routes before coding links; do not hard-code an unverified slug.
+- Footer CTA → `/[lang]/contact`.
+- Footer, CTA data, sitemap, language switch data, and metadata must not emit standalone `/[lang]/services`, standalone `/[lang]/about`, retired `/[lang]/services/web3-blockchain`, or retired Carina project links.
+
+Anchor accessibility:
+- Implement `#services` as `<section id="services" aria-labelledby="home-services-heading">` with a visible `<h2 id="home-services-heading">`.
+- Implement `#about` as `<section id="about" aria-labelledby="home-about-heading">` with a visible `<h2 id="home-about-heading">`.
+- Both anchors need sticky-header-safe offset: `scroll-margin-top: calc(var(--header-height, 80px) + 24px)` or equivalent.
+- If anchor navigation programmatically focuses the section, use `tabindex="-1"` on the section and preserve visible focus styling.
 
 ## 3. Hi-Fi ASCII layout
 
@@ -27,35 +56,37 @@
 ```text
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Header: Logo | Home Services Projects About Contact | JA/EN | Contact CTA  │
+│              Services -> /[lang]/#services | About -> /[lang]/#about       │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│ HERO (12 cols)                                                              │
+│ HERO                                                                         │
 │ ┌───────────────────────────────7 cols────────────────┬──────5 cols───────┐ │
-│ │ Eyebrow                                             │ Value panel 01    │ │
-│ │ 「AI」を、現場の「即戦力」へ                         │ 属人業務を仕組みに │ │
-│ │ Body copy                                           ├───────────────────┤ │
-│ │ [Primary CTA] [Secondary CTA]                       │ Value panel 02    │ │
-│ │ Trust chips: Workflow / AI App / Web3.0            │ MVPから実装まで   │ │
-│ └─────────────────────────────────────────────────────┼───────────────────┤ │
-│                                                       │ Value panel 03    │ │
-│                                                       │ AI + Web3を一貫支援│ │
-│                                                       └───────────────────┘ │
+│ │ Eyebrow: AI社会実装のパートナー                       │ Value panel 01    │ │
+│ │ H1: 「AI」を、現場の「即戦力」へ。                     │ 属人業務を資産に │ │
+│ │ Body copy                                            ├───────────────────┤ │
+│ │ Trust chips: Workflow / AI App / AI-Driven Dev       │ Value panel 02    │ │
+│ │ (no CTA row, no reserved CTA space)                  │ 構想から実装まで │ │
+│ └──────────────────────────────────────────────────────┼───────────────────┤ │
+│                                                        │ Value panel 03    │ │
+│                                                        │ AI駆動で実装速度へ│ │
+│                                                        └───────────────────┘ │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│ TRANSFORMATION FLOW PANEL                                                   │
-│ Current state -> System design -> Business outcome                          │
+│ SERVICES (#services landmark)                                                │
+│ Choice guide band                                                            │
+│ [AI Workflow] [AI Application] [AI-Driven Development]                       │
+│ each card: fit bullets + compact proof line + detail CTA                     │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│ 3 SERVICE CARDS                                                             │
-│ [AI Workflow] [AI Application] [Web3.0 / Blockchain]                       │
+│ PROJECTS                                                                     │
+│ Concise routing cards only: Japan Life Navi / Rigel / Astra                  │
+│ cards link to /[lang]/projects/{slug}; slug resolved from current data/routes│
 ├──────────────────────────────────────────────────────────────────────────────┤
-│ STEP RAIL: 課題整理 -> 設計 -> MVP / 実装 -> 定着支援                        │
+│ PROCESS                                                                      │
+│ プロセス整理 -> 実装方針設計 -> 検証・最適化 -> 運用・普及                   │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│ PROOF GRID                                                                  │
-│ [Workflow examples] [Japan Life Navi]                                       │
-│ [Rigel]             [Carina]                                                │
+│ ABOUT (#about landmark)                                                      │
+│ Title -> Company snapshot -> Working principles, stacked vertically          │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│ TRUST / WORKING PRINCIPLES                                                  │
-│ [Business Logic First] [Asset-minded] [Business-ready delivery]             │
-├──────────────────────────────────────────────────────────────────────────────┤
-│ CTA BAND: 要件が固まっていなくても相談できる                                │
+│ CONTACT CTA                                                                  │
+│ 明確な要件がなくても、ご相談頂けます。                                      │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -63,371 +94,416 @@
 ```text
 Header
 Hero copy
-Primary CTA
-Secondary CTA
-3 stacked value panels
-Transformation flow panel (stacked 3 blocks)
-Service cards x3
-Step rail (vertical)
-Proof cards x4
-Trust cards x3
-CTA band
+Trust chips x3
+(no Hero CTA buttons, no empty CTA spacer)
+Value panels x3
+Services #services heading
+Choice guide rows x3
+Service cards x3: AI Workflow, AI Application, AI-Driven Development
+Projects heading
+Project cards: Japan Life Navi, Rigel, Astra
+Process rail as vertical steps
+About #about heading
+Company snapshot rows
+Working principle cards
+Contact CTA
 Footer
 ```
 
 ## 4. Section-by-section spec
 
 ### S1. Hero
+
 **Intent**
 - Establish the approved positioning within the first screen.
 - Make the site feel premium, structured, and business-ready rather than experimental.
+- Introduce the three-line service model without forcing an immediate button decision in the Hero.
+- Remove the old Hero primary/secondary CTA button area completely.
 
 **Final display copy**
 - JA eyebrow: `AI社会実装のパートナー`
 - EN eyebrow: `AI Social Implementation Partner`
-- JA title: `「AI」を、現場の「即戦力」へ`
+- JA title: `「AI」を、現場の「即戦力」へ。`
 - EN title: `Turn AI into front-line capability`
-- JA body: `Nebula Infinity は、AI Workflow、AI Application、Web3.0 / Blockchain の設計と開発を通じて、構想を実務で使える仕組みに変えます。属人化したノウハウを整理し、運用できる形で実装し、事業の中で機能する状態まで伴走します。`
-- EN body: `Nebula Infinity designs and builds AI workflows, AI applications, and Web3.0 / blockchain products that work in real operations. We turn people-dependent know-how into systems your team can own, reuse, and scale.`
-- JA primary CTA: `お問い合わせ`
-- EN primary CTA: `Contact Us`
-- JA secondary CTA: `サービスを見る`
-- EN secondary CTA: `View Services`
-- JA trust chips:
+- JA body: `Nebula Infinityは、属人化した業務ノウハウを整理し、AIワークフロー、AIアプリケーション、AI-Driven Developmentによって、現場で使われる仕組みへ実装するパートナーです。技術導入を目的化せず、事業に残る運用資産として具体化します。`
+- EN body: `Nebula Infinity organizes people-dependent operational know-how and implements it as AI workflows, AI applications, and AI-driven development systems used in real operations. We do not treat technology adoption as the goal; we shape it into operational assets the business can keep using.`
+- Hero CTAs: **none**. Do not render `まずは要件を整理する`, `サービスを見る`, `Clarify requirements first`, `View Services`, or any replacement Hero button group.
+- Trust chips, exactly:
   - `AI Workflow Design & Development`
   - `AI Application Design & Development`
-  - `Web3.0 / Blockchain Application Design & Development`
-- EN trust chips: same as above
-- JA value panel 01 title: `属人業務を、仕組みに`
-- JA value panel 01 body: `担当者依存の判断や手順を整理し、再利用できる運用資産へ変えます。`
-- JA value panel 02 title: `MVPから実装まで`
-- JA value panel 02 body: `課題整理、設計、試作、実装、定着支援まで一気通貫で伴走します。`
-- JA value panel 03 title: `AI + Web3を一貫支援`
-- JA value panel 03 body: `AI活用とWeb3.0活用を、分断せず事業要件に合わせて設計します。`
+  - `AI-Driven Development`
+- JA value panel 01 title: `属人業務を、資産に`
+- JA value panel 01 body: `担当者ごとに閉じた判断基準や手順を整理し、組織で引き継げる仕組みに変えます。`
+- JA value panel 02 title: `構想から実装まで`
+- JA value panel 02 body: `要件整理、設計、試作、実装、運用設計まで、一つの流れとして伴走します。`
+- JA value panel 03 title: `AI駆動で、実装速度と品質へ`
+- JA value panel 03 body: `AIエージェント、開発ワークフロー、品質ゲートを組み合わせ、速さだけでなく再現性のある実装へつなげます。`
 - EN value panels:
-  - `From people-dependence to systems` / `We convert individual know-how into repeatable operational assets.`
-  - `From MVP to implementation` / `We support discovery, design, prototyping, build, and rollout as one flow.`
-  - `AI + Web3 under one partner` / `We design AI and Web3 initiatives around business requirements, not hype.`
+  - `Turn dependent work into assets` / `We structure individual decision rules and procedures into systems the organization can inherit.`
+  - `From concept to implementation` / `We support requirements, design, prototyping, implementation, and operating design as one flow.`
+  - `AI-driven speed with quality` / `We combine AI agents, development workflows, and quality gates to deliver implementation with repeatability, not just speed.`
 - Illustration alt:
-  - JA: `業務知識が整理され、運用可能なワークフローとプロダクトに変わる様子を示す抽象図`
-  - EN: `Abstract system diagram showing operational knowledge becoming structured workflows and products`
+  - JA: `業務知識が整理され、運用可能なワークフロー、プロダクト、AI駆動開発の仕組みに変わる様子を示す抽象図`
+  - EN: `Abstract system diagram showing operational knowledge becoming structured workflows, products, and AI-driven development systems`
 
 **Component style guidance**
-- Background: subtle radial wash from `#FFFFFF` to `#F8FAFC` with faint gold highlight in top-right only.
+- Background: subtle radial wash from `#FFFFFF` to `#F8FAFC`, with a faint `#CA8A04` gold highlight in the top-right only.
 - Left content width: 7 columns, max 620px.
-- Right stack: 3 featured cards, each 16-20px radius, white surface, Level 2 shadow, thin gold top border.
-- Eyebrow uses Overline token, gold text on transparent background.
-- Title uses Display/H1 hybrid: 64px desktop / 40px mobile, max 2 lines.
-- CTA row: primary gold button + secondary outline button, 16px gap desktop / 12px mobile.
-- Trust chips: soft neutral pills with ink text; do not use multi-color tags.
+- Right value stack: 3 featured cards, 16-20px radius, white surface, Level 2 shadow, thin gold top border.
+- Eyebrow: Overline token, gold text.
+- Title: Display / Hero XL, 64px desktop / 40px mobile, max 2 lines desktop and 3 lines mobile.
+- No CTA row. Remove any former button flex/grid wrapper and do not leave vertical margin that existed only for that wrapper.
+- Trust chips: soft neutral pills with ink text; do not use multi-color AI tags.
 
 **Required states**
-- Primary CTA: default / hover / pressed / focus-visible / disabled.
-- Secondary CTA: default / hover / focus-visible.
-- Value panels: default / hover with slight lift.
+- Hero has no CTA button states because the Hero button area is removed.
+- Value panels: default / hover with slight lift if cards are interactive; static panels should not imply clickability.
+- Header links and language toggle: default / hover / active / focus-visible.
 
 **Responsive notes**
-- On tablet and below, value panels stack under CTA.
-- Trust chips become 2 rows on tablet and single-column list on narrow mobile.
-- Title stays within 3 lines max on mobile.
+- On tablet and below, value panels stack under the Hero copy and trust chips.
+- Trust chips become 2 rows on tablet and a single-column list on narrow mobile.
+- Removing the Hero CTA row should tighten the Hero vertical rhythm; do not compensate with a blank spacer.
 
-### S2. Transformation flow panel
+### S2. Services (#services)
+
 **Intent**
-- Explain that the company is not just "introducing AI"; it is designing operational systems that preserve and reuse know-how.
+- Serve as the canonical V1 service-selection surface.
+- Show exactly 3 official service lines.
+- Help visitors choose a starting line quickly without recreating the removed Services index.
+- Keep proof compact: proof may appear only as one short proof line inside each service card, then through Projects or service detail pages.
+- AI Workflow must be framed broadly: any repeatable business process with judgment, procedure, review, or handoff can become an AI workflow asset. Nebula's own planning/development workflow is only an example/proof, not the service definition.
+- AI-Driven Development replaces the retired Web3 / Blockchain service line and must emphasize agentic development method, workflow automation, quality gates, and delivery acceleration.
 
-**Final display copy**
-- JA section eyebrow: `Why assetization matters`
-- EN section eyebrow: `Why assetization matters`
-- JA title: `「導入」より先に、「定着する仕組み」を設計する`
-- EN title: `Design the operating system before introducing the tool`
-- JA subtitle: `AI 導入が止まる理由の多くは、技術そのものではなく、現場の判断基準や業務知識が人に閉じていることにあります。Nebula Infinity は、その知見を運用可能な形に整理し、再現性のある仕組みに変えます。`
-- EN subtitle: `AI projects often stall not because of the model, but because decision logic and operational know-how live inside individuals. We turn that knowledge into systems the organization can operate.`
-- JA column 1 label: `Current state`
-- JA column 1 bullets:
-  - `担当者ごとに判断がばらつく`
-  - `引き継ぎに時間がかかる`
-  - `AI を入れても運用に乗らない`
-- JA column 2 label: `System design`
-- JA column 2 bullets:
-  - `判断基準と手順を可視化する`
-  - `AI と人の役割分担を設計する`
-  - `レビュー導線と改善ログを残す`
-- JA column 3 label: `Business outcome`
-- JA column 3 bullets:
-  - `再現性のある実務フローになる`
-  - `組織で引き継げる資産になる`
-  - `品質と速度を両立できる`
-- EN columns:
-  - `Current state`: `Decisions vary by operator` / `Handoffs take too long` / `AI never sticks in operations`
-  - `System design`: `Make decision rules visible` / `Define human + AI roles` / `Keep review paths and improvement logs`
-  - `Business outcome`: `Repeatable operational flow` / `Transferable organizational asset` / `Better speed with maintained quality`
-
-**Component style guidance**
-- Use reusable Transformation Flow Panel from Design System section 6.7.
-- 3 equal columns on desktop, stacked cards on mobile.
-- Column headers use H4; bullets use Body S with check/node icons.
-- Connector line in soft gold between columns.
-
-**Required states**
-- Static panel, but bullet chips may have hover emphasis if individually interactive.
-- Focus-visible required only if columns become links.
-
-**Responsive notes**
-- Mobile order remains Current state -> System design -> Business outcome.
-- Connector becomes vertical line between stacked panels.
-
-### S3. Three service lines
-**Intent**
-- Present exactly 3 service lines and make each one understandable within scan time.
+**Anchor and landmark contract**
+- Section ID: `services`.
+- Heading ID: `home-services-heading`.
+- Required heading: visible H2 with the JA/EN titles below.
+- Sticky offset: `scroll-margin-top: calc(var(--header-height, 80px) + 24px)` or equivalent.
 
 **Final display copy**
 - JA section eyebrow: `Services`
 - EN section eyebrow: `Services`
 - JA title: `3つの実装ラインで、構想を事業に落とし込む`
 - EN title: `Three implementation lines, one business partner`
-- JA subtitle: `業務フローの資産化、AIアプリケーション開発、Web3.0 / Blockchain 活用まで、目的に合わせて最適な実装ラインを設計します。`
-- EN subtitle: `From workflow assetization to AI application delivery and Web3.0 / blockchain implementation, we structure the right line of work around your business goal.`
+- JA subtitle: `業務フローの資産化、AIアプリケーション開発、AI-Driven Developmentまで。Nebula Infinityは、目的に合わせて必要な実装ラインを設計します。`
+- EN subtitle: `From workflow assetization to AI application development and AI-driven delivery, Nebula Infinity designs the implementation line your business goal requires.`
+
+**Compact choice guide**
+- JA title: `どのラインから始めるべきか`
+- EN title: `Where to start`
+- JA choice rows:
+  - `業務の属人化や運用のばらつきが課題なら` → `AI Workflow Design & Development`
+  - `使われるAIプロダクトや業務ツールを作りたいなら` → `AI Application Design & Development`
+  - `AIエージェントを前提に、開発速度と品質を両立したいなら` → `AI-Driven Development`
+- EN choice rows:
+  - `If people-dependence or inconsistent operation is the issue` → `AI Workflow Design & Development`
+  - `If you need an AI product or operational tool people will actually use` → `AI Application Design & Development`
+  - `If you want agent-assisted delivery that improves both speed and quality` → `AI-Driven Development`
 
 **Service card 1**
+- Service ID: `ai-workflow`
 - Official line: `AI Workflow Design & Development`
-- JA title: `属人業務を、再利用できる仕組みに`
-- EN title: `Turn people-dependent work into reusable systems`
-- JA body: `判断基準、手順、レビューの流れを整理し、AI と人が協働できるワークフローへ再設計します。`
-- EN body: `We structure decision rules, steps, and review paths into workflows where people and AI can operate together.`
+- JA title: `属人業務を、再現できるワークフローへ`
+- EN title: `Turn people-dependent work into repeatable workflows`
+- JA body: `判断基準や手順を整理し、AIと人が協働できる業務プロセスとして設計・実装します。`
+- EN body: `We organize decision criteria and procedures, then design and implement business processes where AI and people can work together.`
 - JA fit bullets:
   - `社内ノウハウが担当者に偏っている`
-  - `反復業務と判断業務が混在している`
-  - `既存システムと連携しながら改善したい`
+  - `判断を伴う反復業務を標準化したい`
+  - `既存の業務やツールと接続しながら改善したい`
 - EN fit bullets:
-  - `Critical know-how lives inside individuals`
-  - `Operational work mixes repetition and judgment`
-  - `You need improvement without replacing everything`
-- JA proof line: `代表例: マルチエージェント開発ワークフロー / プロダクトリサーチワークフロー`
-- EN proof line: `Representative examples: multi-agent development workflow / product research workflow`
-- CTA: `詳細を見る` / `View service`
+  - `Internal know-how is concentrated in specific people`
+  - `You want to standardize repeat work that involves judgment`
+  - `You need improvement while connecting to existing operations and tools`
+- JA compact proof line: `代表例：企画整理、開発プロセス、リサーチ業務など、判断と手順が繰り返される業務のワークフロー化`
+- EN compact proof line: `Examples: workflowization of repeated judgment and procedure, including planning, development processes, and research work`
+- JA detail CTA: `AI Workflowを見る` → `/[lang]/services/ai-workflow`
+- EN detail CTA: `View AI Workflow` → `/[lang]/services/ai-workflow`
 
 **Service card 2**
+- Service ID: `ai-application`
 - Official line: `AI Application Design & Development`
 - JA title: `AIを、使われるプロダクトへ`
-- EN title: `Build AI into products people actually use`
-- JA body: `業務ツール、顧客向けアプリ、AIネイティブな新規プロダクトまで、価値が伝わる体験として設計・実装します。`
-- EN body: `We design and ship internal tools, customer-facing apps, and AI-native products that create clear user value.`
+- EN title: `Turn AI into products people actually use`
+- JA body: `社内ツールから顧客向けサービスまで、AI機能を価値が伝わる体験として組み込みます。`
+- EN body: `From internal tools to customer-facing services, we embed AI capability as an experience whose value is clear to users.`
 - JA fit bullets:
-  - `AI を活かした新規サービスを作りたい`
+  - `AIを活かした新規サービスを作りたい`
   - `既存プロダクトにAI機能を組み込みたい`
-  - `RAG / マルチモーダル / リアルタイム処理が必要`
+  - `業務知識をプロダクト体験に落とし込みたい`
 - EN fit bullets:
-  - `You want a new AI-enabled service`
-  - `Your existing product needs meaningful AI capability`
-  - `RAG, multimodal, or streaming UX matters`
-- JA proof line: `代表実績: Japan Life Navi / Rigel`
-- EN proof line: `Representative proof: Japan Life Navi / Rigel`
-- CTA: `詳細を見る` / `View service`
+  - `You want to build a new service that uses AI meaningfully`
+  - `You want to add AI capability to an existing product`
+  - `You want operational knowledge to become product experience`
+- JA compact proof line: `代表実績：Japan Life Navi / Rigel`
+- EN compact proof line: `Representative proof: Japan Life Navi / Rigel`
+- JA detail CTA: `AI Applicationを見る` → `/[lang]/services/ai-application`
+- EN detail CTA: `View AI Application` → `/[lang]/services/ai-application`
 
 **Service card 3**
-- Official line: `Web3.0 / Blockchain Application Design & Development`
-- JA title: `Web3.0テクノロジーを、ビジネスへ`
-- EN title: `Apply Web3.0 where it creates business utility`
-- JA body: `会員基盤、証跡管理、デジタル資産、顧客体験の設計を通じて、Web3.0 を事業で使える形に落とし込みます。`
-- EN body: `We design membership, traceability, digital asset, and customer experience systems that make Web3.0 useful in business.`
+- Service ID: `ai-driven-development`
+- Official line: `AI-Driven Development`
+- JA title: `AI駆動の開発体制で、実装を前へ進める`
+- EN title: `Move implementation forward with AI-driven development`
+- JA body: `AIエージェントを前提にした開発ワークフロー、レビューゲート、検証自動化を組み合わせ、構想を速く確かな実装へ近づけます。`
+- EN body: `We combine agent-assisted development workflows, review gates, and automated verification to turn ideas into reliable implementation faster.`
 - JA fit bullets:
-  - `Web3 を業務・顧客体験に活かしたい`
-  - `台帳性や真正性を価値に変えたい`
-  - `既存サービスとつながる形で実装したい`
+  - `短いサイクルでプロトタイプや機能を検証したい`
+  - `AIエージェントを使った開発体制を標準化したい`
+  - `速度だけでなく品質ゲートも含めて実装したい`
 - EN fit bullets:
-  - `You want Web3 in operations or customer experience`
-  - `Traceability and authenticity create value`
-  - `The solution must integrate with existing systems`
-- JA proof line: `代表実績: Carina`
-- EN proof line: `Representative proof: Carina`
-- CTA: `詳細を見る` / `View service`
+  - `You need to validate prototypes or features in short cycles`
+  - `You want to standardize an AI-agent-assisted development model`
+  - `You need quality gates as part of faster delivery, not after it`
+- JA compact proof line: `代表実績：Astra`
+- EN compact proof line: `Representative proof: Astra`
+- JA detail CTA: `AI-Driven Developmentを見る` → `/[lang]/services/ai-driven-development`
+- EN detail CTA: `View AI-Driven Development` → `/[lang]/services/ai-driven-development`
+
+**Overlap note**
+- JA: `入口は分けつつ、実装は分断しません。AI Workflow で整理した業務資産を AI Application へ展開するケースや、AI-Driven Development の開発体制でプロダクト実装を加速するケースにも対応します。`
+- EN: `We separate the entry point, not the implementation. Work can begin with AI Workflow and expand into AI Application, or use AI-Driven Development to accelerate product delivery with quality gates.`
+
+**Old proof mapping note**
+- 旧 Proof 指示は独立セクション化しない。V1 Home では、Services card proof と次の Projects 導線に分離して表現する。
+- Do not add the old standalone proof grid, metrics wall, or broad case gallery to Home.
+- Do not render an active Web3 / Blockchain card or link to `/[lang]/services/web3-blockchain`.
 
 **Component style guidance**
-- 3-column bento on desktop, 1-column stack on mobile.
-- Each card uses white surface + proof strip + bottom CTA row.
+- Choice guide: compact neutral band, 20px radius, thin gold divider, 3 rows or 3 chips.
+- Service cards: 3-column bento on desktop, 1-column stack on mobile, equal visual weight.
+- Each card uses white surface, `#E4E4E7` border, 16px radius, 24-32px padding, compact proof strip, and bottom CTA row.
 - Official service line appears as Overline/eyebrow, not the main headline.
-- One featured card only if implementation wants emphasis; default is equal-weight trio.
+- AI-Driven Development may use a subtle gold/ink accent micro-diagram, but must stay within the Light Premium Bento system.
 
 **Required states**
-- Card hover: border darkens, shadow increases one level, CTA underline animates.
-- CTA focus-visible: gold ring.
-- Service chips inside cards: default / hover.
+- Service cards: default / hover / focus-visible / active.
+- Detail CTA links: default / hover underline / pressed / focus-visible.
+- Choice rows/chips: default / hover / active / focus-visible if interactive.
+- Disabled state only applies if a detail route is unavailable; for V1 all 3 detail routes are expected to remain available.
 
 **Responsive notes**
-- Fit bullets collapse to 2 visible bullets on mobile, remaining bullet wraps below divider.
-- Keep official service line on one line up to tablet; allow two lines on narrow mobile.
+- Fit bullets remain visible on mobile; if needed, keep all three as short wrapped bullets rather than hiding content.
+- Proof line stays a single compact strip; do not expand into case cards.
+- AI-Driven Development official line may wrap after the hyphen on narrow mobile.
 
-### S4. Engagement step rail
+### S3. Projects
+
+**Intent**
+- Add Z's requested concise project-card section between Services and Process.
+- Give visitors a fast path from service positioning to public implementation examples.
+- Keep the section limited to three cards: Japan Life Navi, Rigel, and Astra.
+- Present Japan Life Navi and Rigel as AI Application proof, and Astra as AI-Driven Development proof.
+- Do not recreate the old Home proof grid or a full Projects index; this is a compact routing section only.
+- Carina is retired from active Home/project proof and must not be shown in this section.
+
+**Final display copy**
+- JA section eyebrow: `Projects`
+- EN section eyebrow: `Projects`
+- JA title: `プロジェクト`
+- EN title: `Projects`
+- JA subtitle: `一部の実装例(プロジェクト)を公開します。サービス領域ごとの詳細は、各プロジェクトページで確認できます。`
+- EN subtitle: `A focused set of public implementation examples. Each card routes to the relevant project detail page.`
+
+**Project card 1**
+- Project name: `Japan Life Navi`
+- Proof purpose: AI Application proof.
+- JA category label: `AI Application`
+- EN category label: `AI Application`
+- JA summary: `生活情報を分かりやすく案内するAIアプリケーションの実装例。AI機能を、ユーザーが使えるプロダクト体験として成立させた証明として扱います。`
+- EN summary: `An AI application proof showing how AI capability becomes a usable product experience for navigating life information.`
+- JA CTA: `Japan Life Navi 詳細`
+- EN CTA: `View Japan Life Navi`
+- Link target pattern: `/[lang]/projects/{slug}`
+- Implementation note: resolve the exact Japan Life Navi slug from `data/projects` and current project detail routing before coding; do not hard-code an unverified slug.
+
+**Project card 2**
+- Project name: `Rigel`
+- Proof purpose: AI Application proof.
+- JA category label: `AI Application`
+- EN category label: `AI Application`
+- JA summary: `業務や業界要件に合わせてAI機能を組み込むアプリケーション実装例。AIを単体機能ではなく、継続して使われる体験に落とし込む証明として扱います。`
+- EN summary: `An AI application proof showing AI embedded into a product experience shaped around operational and industry requirements.`
+- JA CTA: `Rigel 詳細`
+- EN CTA: `View Rigel`
+- Link target pattern: `/[lang]/projects/{slug}`
+- Implementation note: resolve the exact Rigel slug from `data/projects` and current project detail routing before coding; do not hard-code an unverified slug.
+
+**Project card 3**
+- Project name: `Astra`
+- Proof purpose: AI-Driven Development proof.
+- JA category label: `AI-Driven Development`
+- EN category label: `AI-Driven Development`
+- JA summary: `AIエージェントを前提にした開発ワークフロー、レビューゲート、検証サイクルを組み合わせるAI駆動開発の実装例。速度と品質を両立する開発体制の証明として扱います。`
+- EN summary: `An AI-driven development proof showing agent-assisted workflows, review gates, and verification cycles combined into a delivery model that balances speed and quality.`
+- JA CTA: `Astra 詳細`
+- EN CTA: `View Astra`
+- Link target pattern: `/[lang]/projects/{slug}`
+- Implementation note: resolve the exact Astra slug from `data/projects` and current project detail routing before coding; do not hard-code an unverified slug.
+
+**Component style guidance**
+- Layout: 3 concise cards in one row on desktop; stack on mobile.
+- Cards use the same premium bento surface language as service cards, but with a slimmer footprint: project name, category label, 2-3 line summary, and one text-link CTA.
+- Avoid metric-heavy panels, screenshots, filters, or proof taxonomy controls on Home; those belong to `/[lang]/projects`.
+- Category labels should clarify proof purpose without implying the service line is limited to these projects.
+
+**Required states**
+- Project cards: default / hover lift / active / focus-visible.
+- Project CTAs: default / hover underline / pressed / focus-visible.
+- If a project slug is unavailable during implementation, do not disable the card silently; Coder must resolve data/routing first or raise a blocker.
+
+**Responsive notes**
+- Desktop: 3-up card row with equal heights.
+- Tablet: 2-up then 1-up if space requires.
+- Mobile: Japan Life Navi → Rigel → Astra order, each card full width.
+- Keep the section compact so Process remains visible without excessive scrolling.
+
+### S4. Process
+
 **Intent**
 - Show that the company delivers end-to-end instead of stopping at advice.
+- Use Z's corrected visible step labels exactly, then explain each step in implementation-oriented Japanese.
 
 **Final display copy**
 - JA section eyebrow: `Process`
 - EN section eyebrow: `Process`
-- JA title: `現場に入る前提で、設計から実装まで進める`
-- EN title: `Work from real operations, not abstract strategy`
-- JA subtitle: `要件が固まっていなくても構いません。業務の整理から入り、最小構成で試し、実装し、運用に載せるところまで伴走します。`
-- EN subtitle: `You do not need a finished spec. We start by clarifying the operational problem, test the smallest viable shape, implement it, and support rollout.`
+- JA title: `整理から実装、運用・普及まで。`
+- EN title: `From process organization to implementation, operation, and adoption`
+- JA subtitle: `完成した仕様書がなくても構いません。業務の流れを整理し、実装方針を定め、検証しながら現場に広げます。`
+- EN subtitle: `You do not need a finished specification. We organize the business flow, define the implementation direction, validate the approach, and help it spread into operations.`
 - JA steps:
-  1. `課題を整理する` — `現場の流れ、判断基準、制約を確認します。`
-  2. `実装方針を設計する` — `AI / アプリ / Web3 の役割分担と構成を定義します。`
-  3. `MVP・実装を進める` — `試作で確認しながら、本番利用に向けて磨き込みます。`
-  4. `定着と改善を支援する` — `引き継ぎ、運用、改善ポイントまで整理します。`
+  1. `プロセス整理` — `現場の流れ、判断基準、関係者、制約を確認し、実装すべき対象を整理します。`
+  2. `実装方針設計` — `AIワークフロー、AIアプリケーション、AI-Driven Development の使い分けと、必要な構成・進め方を設計します。`
+  3. `検証・最適化` — `小さく形にして使われ方を確認し、機能・導線・運用条件を調整します。`
+  4. `運用・普及` — `引き継ぎ、レビュー、改善の流れを整え、組織で使い続けられる状態にします。`
 - EN steps:
-  1. `Clarify the problem` — `Review the current flow, decision logic, and constraints.`
-  2. `Design the build path` — `Define the right mix of AI, application, and Web3 capability.`
-  3. `Prototype and implement` — `Use an MVP to validate, then shape for production use.`
-  4. `Support adoption` — `Organize handoff, operations, and next improvements.`
+  1. `Process organization` — `Clarify the operational flow, decision criteria, stakeholders, and constraints.`
+  2. `Implementation direction design` — `Define how AI Workflow, AI Application, and AI-Driven Development should be used and how the work should proceed.`
+  3. `Validation and optimization` — `Shape the smallest useful version, observe use, and adjust functions, flows, and operating conditions.`
+  4. `Operation and adoption` — `Prepare handoff, review, and improvement loops so the organization can keep using the system.`
 
 **Component style guidance**
-- Use Step Rail pattern from Design System section 6.8.
-- 4 nodes only, horizontal desktop / vertical mobile.
+- Use Step Rail pattern: 4 nodes only, horizontal desktop / vertical mobile.
 - Node 1 and 4 in navy; nodes 2 and 3 in gold-outline for rhythm.
+- Rail uses `#E4E4E7` connector with gold progress accents.
 
 **Required states**
+- Static by default.
 - If each step links to deeper explanation, support hover and focus-visible.
-- Otherwise static.
 
 **Responsive notes**
 - Descriptions max 2 lines desktop, 3 lines mobile.
 - Keep rail visible without horizontal scrolling.
 
-### S5. Representative proof grid
+### S5. About (#about)
+
 **Intent**
-- Map proof directly to the three service lines and show breadth without overloading the visitor.
+- Provide compact company identity and working principles inside Home.
+- Replace the removed standalone About page without recreating it.
+- Keep this section factual and lightweight; it must not become another service summary or products area.
+- Remove the old About body paragraph/column entirely.
+
+**Anchor and landmark contract**
+- Section ID: `about`.
+- Heading ID: `home-about-heading`.
+- Required heading: visible H2 with the JA/EN titles below.
+- Sticky offset: `scroll-margin-top: calc(var(--header-height, 80px) + 24px)` or equivalent.
 
 **Final display copy**
-- JA section eyebrow: `Proof`
-- EN section eyebrow: `Proof`
-- JA title: `実装力は、代表事例で示す`
-- EN title: `Representative proof of delivery`
-- JA subtitle: `公開できる範囲の代表例を通じて、Nebula Infinity の実装領域と深さを示します。`
-- EN subtitle: `We show the depth of Nebula Infinity's delivery capability through a focused set of representative examples.`
+- JA eyebrow: `About Nebula Infinity`
+- EN eyebrow: `About Nebula Infinity`
+- JA title: `AI社会実装のパートナー`
+- EN title: `An implementation partner for AI in real business`
+- Body paragraph/intro column: **none**. Do not render the previous About body text or reserve a body-column layout.
 
-**Proof card A — Workflow examples**
-- Tag: `AI Workflow Design & Development`
-- JA title: `ワークフロー資産化の代表例`
-- EN title: `Representative workflow assetization examples`
-- JA summary: `マルチエージェント開発ワークフローやプロダクトリサーチワークフローなど、判断や引き継ぎが分散しやすい業務を、再利用可能な運用フローへ設計します。`
-- EN summary: `We design reusable operating flows for work where judgment and handoff tend to scatter, such as multi-agent development and product research workflows.`
-- JA proof strip:
-  - `判断基準の明文化`
-  - `役割分担の設計`
-  - `改善ログの蓄積`
-- EN proof strip:
-  - `Visible decision rules`
-  - `Designed role allocation`
-  - `Accumulated improvement logs`
-- CTA: `AI Workflowを見る` / `View AI Workflow`
+**Company snapshot rows**
+- JA rows:
+  - `Company` — `Nebula Infinity（ネビュラインフィニティ）`
+  - `Location` — `Japan`
+- EN rows:
+  - `Company` — `Nebula Infinity`
+  - `Location` — `Japan`
 
-**Proof card B — Japan Life Navi**
-- Tag: `AI Application Design & Development`
-- JA title: `Japan Life Navi`
-- EN title: `Japan Life Navi`
-- JA summary: `在日外国人向けの生活支援アプリ。多言語ガイド、領域特化AI、リアルタイム対話を一体で設計。`
-- EN summary: `A life-support application for foreign residents in Japan, combining multilingual guidance, domain-specific AI, and real-time interaction.`
-- JA proof strip: `336 Guides / 7 Languages / 6 AI Agents`
-- EN proof strip: same values
-- CTA: `詳細を見る` / `View case`
-
-**Proof card C — Rigel**
-- Tag: `AI Application Design & Development`
-- JA title: `Rigel`
-- EN title: `Rigel`
-- JA summary: `AI記帳SaaSとして、業務知識、法対応、UX、バックエンド実装をまとめて成立させた代表例。`
-- EN summary: `An AI bookkeeping SaaS proving delivery across domain logic, compliance, UX, and backend implementation.`
-- JA proof strip: `33,000+ LOC / 367 Tests / 18 API Endpoints / 6 Industries`
-- EN proof strip: same values
-- CTA: `詳細を見る` / `View case`
-
-**Proof card D — Carina**
-- Tag: `Web3.0 / Blockchain Application Design & Development`
-- JA title: `Carina`
-- EN title: `Carina`
-- JA summary: `ポイント、クーポン、会員証をブロックチェーンで扱う CRM。Web3.0 を顧客体験と運用設計に接続した実例です。`
-- EN summary: `A blockchain-backed CRM for points, coupons, and membership. It shows how Web3.0 can connect to customer experience and operations.`
-- JA proof strip:
-  - `Traceability`
-  - `Membership`
-  - `CRM Integration`
-- EN proof strip: same values
-- CTA: `詳細を見る` / `View case`
-
-**Component style guidance**
-- Use Proof Snapshot Card pattern.
-- 2x2 grid on desktop, single-column stack on mobile.
-- Workflow examples card can use subtle gold-tinted background because it represents methodology breadth rather than a public named product.
-
-**Required states**
-- Cards: default / hover / focus-visible.
-- Tags: default only.
-- CTA links: underline grow on hover.
-
-**Responsive notes**
-- Keep proof strip to 3 items on mobile; Rigel may wrap into 2 rows.
-- Case summaries limited to 3 lines desktop / 4 lines mobile.
-
-### S6. Trust / working principles
-**Intent**
-- Close the page with operating principles that reinforce high-trust delivery.
-
-**Final display copy**
-- JA section eyebrow: `How we work`
-- EN section eyebrow: `How we work`
-- JA title: `Nebula Infinity が重視する3つの基準`
-- EN title: `Three standards we do not compromise on`
+**Working principles**
 - JA cards:
-  1. `Business Logic First` — `技術の前に、現場の判断と事業要件を整理します。`
-  2. `Asset-minded delivery` — `その場限りの自動化ではなく、引き継げる運用資産を残します。`
-  3. `Business-ready implementation` — `AI も Web3.0 も、実務で使える形まで設計します。`
+  1. `Business Logic First` — `技術を選ぶ前に、現場の判断、制約、事業要件を整理します。`
+  2. `Asset-minded Delivery` — `その場限りの自動化ではなく、引き継げる運用資産として残します。`
+  3. `Business-ready Implementation` — `AIワークフロー、AIアプリケーション、AI駆動開発を、実務で使われる形まで設計・実装します。`
 - EN cards:
-  1. `Business Logic First` — `We structure operational decisions and business requirements before choosing technology.`
-  2. `Asset-minded delivery` — `We leave behind operating assets your team can inherit and improve.`
-  3. `Business-ready implementation` — `We shape both AI and Web3.0 into business-usable systems.`
+  1. `Business Logic First` — `Before choosing technology, we organize on-site judgment, constraints, and business requirements.`
+  2. `Asset-minded Delivery` — `We do not leave behind one-off automation; we leave operating assets the organization can inherit.`
+  3. `Business-ready Implementation` — `We design and implement AI workflows, AI applications, and AI-driven development systems in forms that are used in real work.`
+
+**Content boundaries**
+- Include only the About title, compact company snapshot rows, and working principles.
+- Render in a vertical sequence: section title → snapshot module → principles module.
+- Do not add a body paragraph, service-line cards, Focus rows, service-domain summaries, representative-product rows, case cards, or project teaser cards inside `#about`.
+- Do not list Japan Life Navi / Rigel / Astra / Carina in About.
+- The removed About standalone page must not be rebuilt as a hidden or thin Home subsection.
 
 **Component style guidance**
-- 3 equal standard cards with icon wrappers.
-- No flashy illustration; icons only.
+- Layout: single vertical stack under the section heading, not a side-by-side intro/body column.
+- Snapshot: bordered list rows, 16px radius, white surface, max-width aligned to the content container.
+- Principle cards: compact 3-card row desktop, 1-column mobile, icon containers in soft gold.
+- Keep vertical footprint compact: target 1 screen or less on desktop after the section heading.
 
 **Required states**
-- Hover only if cards are clickable; otherwise static.
+- Snapshot rows are static.
+- Principle cards are static unless made interactive; if interactive, support hover and focus-visible.
 
 **Responsive notes**
-- 3-up -> 1-up stack.
+- Mobile order is unchanged: heading → snapshot rows → principle cards.
+- Tablet and desktop keep the same vertical relationship; do not introduce the previous body-column layout at any breakpoint.
+- Do not introduce tabs or accordions; content is short enough to stack.
 
-### S7. CTA band
+### S6. Contact CTA
+
 **Intent**
 - Convert hesitation into an inquiry by making the first step feel practical and low-friction.
+- Preserve Z's requested final CTA wording exactly in Japanese.
 
 **Final display copy**
-- JA title: `要件が固まっていなくても、ご相談ください`
-- EN title: `You can reach out before the requirements are fixed`
-- JA body: `現場の課題、作りたいもの、整理できていない論点の段階でも構いません。Nebula Infinity が、実装の入口から一緒に整理します。`
-- EN body: `You do not need a finished brief. If you have an operational issue, a product idea, or an unclear starting point, we can structure the path with you.`
-- JA primary CTA: `お問い合わせ`
-- EN primary CTA: `Contact Us`
-- JA support text: `通常 2 営業日以内にご返信します。`
-- EN support text: `We usually reply within 2 business days.`
+- JA title: `明確な要件がなくても、ご相談頂けます。`
+- EN title: `You can reach out even before requirements are clear.`
+- JA support text: `アイデア/要件を頂き、最短24時間以内に動くデモをお見せできます。`
+- EN support text: `Share an idea or requirements, and we can show a working demo in as little as 24 hours.`
+- JA primary CTA: `お問い合わせ` → `/[lang]/contact`
+- EN primary CTA: `Contact Us` → `/[lang]/contact`
 
 **Component style guidance**
 - Featured CTA card, 20px radius, gold-tinted wash, 48px desktop padding.
 - CTA aligned right on desktop, stacked on mobile.
+- Do not add a secondary Services CTA here; the Services nav path is already handled by header and Home section flow.
 
 **Required states**
-- CTA default / hover / focus-visible / disabled.
+- CTA: default / hover / pressed / focus-visible / disabled.
+- No loading state is required for this static link. Loading/success/error states belong to the Contact page form spec.
 
 **Responsive notes**
-- Support text goes below CTA buttons on mobile.
+- Support text goes below CTA button on mobile.
 
-## 5. Global state checklist
+## 5. Global states and handoff checklist
+
 - Header links: default / hover / active / focus-visible.
 - Language toggle: default / hover / active / focus-visible.
-- Proof cards and service cards: default / hover / focus-visible.
-- CTA buttons: default / hover / pressed / focus-visible / disabled.
-- No loading state required on this page.
+- Service cards: default / hover / active / focus-visible.
+- Project cards: default / hover / active / focus-visible.
+- Choice guide rows/chips: default / hover / active / focus-visible if interactive.
+- Contact CTA button: default / hover / pressed / focus-visible / disabled.
+- Static content panels have no loading or error state; preserve semantic HTML instead of fake skeletons.
+- No Hero CTA button group or empty Hero CTA spacer may be implemented.
+- No removed standalone route gets a compatibility page design.
+- No retired Web3 / Blockchain service card/detail link may be implemented.
+- No retired Carina Home/project proof may be implemented.
+- No old standalone Home proof grid or `Nebula Infinityの実装力` grid may be implemented.
+- Home Projects is limited to Japan Life Navi, Rigel, and Astra and links to project detail pages after slug verification.
+- About section stacks title → snapshot → principles vertically and contains no body paragraph/column.
 
 ## 6. Responsive summary
-- Desktop uses 12-column bento layout.
-- Tablet keeps hero split only if content fits; otherwise stack.
-- Mobile preserves order: positioning -> value -> explanation -> services -> process -> proof -> trust -> CTA.
-- Maintain generous 24px outer padding on mobile and 64-96px section rhythm on desktop.
+
+- Desktop uses a 12-column bento layout where useful, but About remains a vertical stack under its title.
+- Tablet keeps the hero split only if content fits; otherwise stack.
+- Mobile preserves order: Hero → Services(#services) → Projects → Process → About(#about) → Contact CTA.
+- Maintain 24px outer padding on mobile and 64-96px section rhythm on desktop.
+- Anchor targets must remain reachable and readable below the sticky header on desktop and mobile.

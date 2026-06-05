@@ -1,0 +1,225 @@
+{
+  "base": "http://127.0.0.1:3100",
+  "checks": [
+    {
+      "name": "HTTP 200 /ja/services/ai-application/",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "HTTP 200 /en/services/ai-application/",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "HTTP 200 /ja/services/ai-workflow/",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "HTTP 200 /en/services/ai-workflow/",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "HTTP 200 /ja/services/ai-driven-development/",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "HTTP 200 /en/services/ai-driven-development/",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "name": "JA hero eyebrow",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA hero title",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA hero lead",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA Section A title",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA customer service card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA internal tools card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA copilot card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA knowledge card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA application model title",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA application model lead",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA flow user need",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA flow product design",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA flow business outcome",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA scope title",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA operation/improvement item",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA proof title",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA proof lead",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA Japan Life Navi body",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA Japan Life Navi proof",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA Rigel compliance body",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA Rigel proof pills",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "EN hero lead aligns",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "EN section A title",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "EN application model lead",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "EN AI Application Solution scope",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "EN operation/improvement feature implementation",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "EN project examples",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "EN Japan Life Navi proof copy",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "EN Rigel careful support wording",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "EN Rigel proof points",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA bottom CTA title absent",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "JA bottom CTA body absent",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "EN bottom CTA title absent",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "EN bottom CTA body absent",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "sibling rendered text /ja/services/ai-workflow/",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "sibling rendered text /en/services/ai-workflow/",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "sibling rendered text /ja/services/ai-driven-development/",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "sibling rendered text /en/services/ai-driven-development/",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

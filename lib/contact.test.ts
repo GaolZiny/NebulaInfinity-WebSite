@@ -12,13 +12,26 @@ test('normalizes Japanese other inquiry label to canonical value', () => {
   assert.equal(normalizeContactInquiryType('まだ整理中 / Other'), 'Still defining / Other');
 });
 
-test('returns localized inquiry labels for the contact form', () => {
+test('returns localized inquiry labels for the active contact taxonomy', () => {
   const jaOptions = getContactInquiryTypeOptions('ja');
   const enOptions = getContactInquiryTypeOptions('en');
+  const optionValues = jaOptions.map((option) => option.value);
 
+  assert.deepEqual(optionValues, [
+    'AI Workflow Design & Development',
+    'AI Application Design & Development',
+    'AI-Driven Development',
+    'Still defining / Other',
+  ]);
   assert.equal(jaOptions.at(-1)?.label, 'まだ整理中 / Other');
   assert.equal(jaOptions.at(-1)?.value, 'Still defining / Other');
   assert.equal(enOptions.at(-1)?.label, 'Still defining / Other');
+  assert.equal(optionValues.some((value) => value.includes('Blockchain Application')), false);
+});
+
+test('normalizes AI-Driven Development inquiry type to the active canonical value', () => {
+  assert.equal(normalizeContactInquiryType(' AI-Driven Development '), 'AI-Driven Development');
+  assert.equal(normalizeContactInquiryType('AI-Driven Development Solution'), 'AI-Driven Development');
 });
 
 test('accepts canonicalized inquiry types and validates valid payloads', () => {
@@ -36,6 +49,27 @@ test('accepts canonicalized inquiry types and validates valid payloads', () => {
   assert.equal(result.isValid, true);
   assert.equal(result.normalized.inquiryType, 'Still defining / Other');
   assert.deepEqual(result.errors, {});
+});
+
+test('supports AI-Driven Development inquiry and excludes retired Web3 option', () => {
+  const enOptions = getContactInquiryTypeOptions('en');
+
+  assert.ok(enOptions.some((option) => option.value === 'AI-Driven Development'));
+  assert.ok(!enOptions.some((option) => option.value.includes('Web3.0') || option.label.includes('Web3.0')));
+
+  const result = validateContactFormInput({
+    name: 'Test User',
+    company: 'Nebula Infinity',
+    email: 'test@example.com',
+    phone: '',
+    inquiryType: 'AI-Driven Development',
+    message: 'We want to discuss an AI-driven development workflow and quality gates.',
+    lang: 'en',
+    website: '',
+  });
+
+  assert.equal(result.isValid, true);
+  assert.equal(result.normalized.inquiryType, 'AI-Driven Development');
 });
 
 test('rejects invalid payloads with field and form errors', () => {

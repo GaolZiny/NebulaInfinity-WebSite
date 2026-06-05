@@ -33,12 +33,32 @@
         "ja": "AI記帳SaaS。業務知識、制度対応、OCR、UX、バックエンド品質まで含めて成立させたプロダクト。",
         "en": "An AI bookkeeping SaaS that proves delivery across domain logic, regulation support, OCR, user experience, and backend quality."
       },
-      "serviceLine": "ai-application",
-      "caseType": "product",
-      "proofPoints": ["33,000+ LOC", "367 Tests", "18 API Endpoints", "6 Industries"],
-      "tags": ["AI Application", "Hono", "TypeScript", "Flutter", "PostgreSQL", "Stripe"],
-      "category": "ai-application",
+      "serviceLine": "ai-driven-development",
+      "caseType": "ai-driven-development",
+      "proofPoints": ["16h MVP", "367 Tests", "1-week launch", "Quality gates"],
+      "tags": ["AI-Driven Development", "AI Application", "Hono", "TypeScript", "Flutter", "Quality Gates"],
+      "category": "ai-driven-development",
       "status": "complete",
+      "featuredV1": true
+    },
+    {
+      "id": "astra",
+      "slug": "astra",
+      "name": { "ja": "Astra", "en": "Astra" },
+      "shortDescription": {
+        "ja": "AIエージェントを組み込んだ開発・PMOプロセスと品質ゲートを短いサイクルで回す代表例。",
+        "en": "A representative case for short-cycle development and PMO processes using AI agents and quality gates."
+      },
+      "summary": {
+        "ja": "プロジェクト管理ニーズに向け、進捗・課題・リスク・リソースなどのPM管理プロセスを AI Workflow として実装する PMO proof です。",
+        "en": "An AI Workflow / PMO proof that implements project-management processes such as progress, issues, risks, and resources as AI workflows."
+      },
+      "serviceLine": "ai-workflow",
+      "caseType": "workflow",
+      "proofPoints": ["PMO workflow", "Role design", "Review gates"],
+      "tags": ["AI Workflow", "PMO", "Project Management", "Agentic Workflow", "Review Gates"],
+      "category": "ai-workflow",
+      "status": "active",
       "featuredV1": true
     },
     {
@@ -61,26 +81,6 @@
       "category": "ai-application",
       "status": "live",
       "featuredV1": false
-    },
-    {
-      "id": "carina",
-      "slug": "carina",
-      "name": { "ja": "Carina", "en": "Carina" },
-      "shortDescription": {
-        "ja": "ポイント、クーポン、会員証をブロックチェーン基盤で扱う CRM。Web3.0 を顧客体験と運用へ接続した代表例です。",
-        "en": "A CRM that handles points, coupons, and membership on blockchain infrastructure. It demonstrates Web3.0 connected to customer experience and operations."
-      },
-      "summary": {
-        "ja": "Carina は、小売向け CRM に Web3.0 を接続し、ポイント、クーポン、会員証の扱いをブロックチェーン基盤で再設計した例です。",
-        "en": "Carina is an example of applying Web3.0 to retail CRM by redesigning points, coupons, and membership on top of blockchain infrastructure."
-      },
-      "serviceLine": "web3-blockchain",
-      "caseType": "web3",
-      "proofPoints": ["Retail CRM", "Membership", "Traceability"],
-      "tags": ["Web3.0", "Polygon", "Smart Contract", "CRM", "Membership"],
-      "category": "web3",
-      "status": "complete",
-      "featuredV1": true
     }
   ]
 }

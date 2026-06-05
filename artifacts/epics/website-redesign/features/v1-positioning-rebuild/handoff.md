@@ -32,7 +32,7 @@ Rebuild the website’s V1 business positioning so the site is actually usable f
 - PM doc lock: done
 - Design / copy production: done
 - Implementation: done
-- QA / deploy confirmation: QA done, deploy/env config pending
+- QA / deploy confirmation: Home-led IA browser QA passed; deploy/env config pending
 
 ## Verification Targets
 - Messaging is consistent across Home / Services / Projects / About / Contact
@@ -51,3 +51,18 @@ Rebuild the website’s V1 business positioning so the site is actually usable f
 1. Use `spec.md` as the scope lock
 2. Use `plan.md` as the execution sequence
 3. Use `tasks.md` for worker dispatch breakdown
+
+## Home-led IA Consolidation Acceptance — 2026-05-05
+- Architecture/requirements alignment: `1c0ccbc`
+- Visual specs alignment: `f5a1aea`
+- Implementation: `3a6bfde`
+- Anchor-scroll fix: `3c0d0f1`
+- Final browser QA: `d586e6c` — 20 acceptance groups passed, 0 failed; smoke test 22/22 passed.
+- Result: standalone `/[lang]/services` and `/[lang]/about` are removed/stop-exported; Home `#services` and `#about` are the primary IA surfaces; `/[lang]/services/{serviceId}` detail routes remain.
+
+## Home Copy / IA Adjustment Acceptance — 2026-05-05
+- Architecture update: `6303a3a`
+- Design/copy spec update: `83e8d69`
+- Implementation: `a61bbb3`
+- Browser QA: `28f996f` — 13/13 done criteria PASS, 19 pass / 0 fail.
+- Result: Home order is now `Hero → Services(#services) → Projects → Process → About(#about) → Contact CTA`; Home Projects includes Japan Life Navi (`gaijin-life-navi`), Rigel (`rigel`), and Carina (`carina`); Home About snapshot is Company + Location only; AI Workflow detail now owns the assetization model.

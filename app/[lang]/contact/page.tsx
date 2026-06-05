@@ -7,20 +7,20 @@ const copy = {
   ja: {
     eyebrow: 'Contact',
     title: '要件が固まっていなくても、ご相談ください',
-    subtitle: '現場課題、AIアプリケーション構想、Web3.0施策の検討段階でも構いません。Nebula Infinity が、背景整理からご一緒します。',
+    subtitle: '現場課題、AIアプリケーション構想、AI-Driven Development施策の検討段階でも構いません。Nebula Infinity が、背景整理からご一緒します。',
     nextTitle: '送信後の流れ',
     faqEyebrow: 'FAQ',
     faqTitle: 'よくあるご質問',
-    reassurance: 'Nebula Infinity は、相談内容をもとに最適な入口を整理します。AI Workflow、AI Application、Web3.0 / Blockchain のどれに近いか分からない状態でも問題ありません。',
+    reassurance: 'Nebula Infinity は、相談内容をもとに最適な入口を整理します。AI Workflow、AI Application、AI-Driven Development のどれに近いか分からない状態でも問題ありません。',
   },
   en: {
     eyebrow: 'Contact',
     title: 'You can contact us before the requirements are fixed',
-    subtitle: 'Whether you are dealing with an operational issue, shaping an AI application idea, or exploring a Web3.0 initiative, Nebula Infinity can help structure the next step with you.',
+    subtitle: 'Whether you are dealing with an operational issue, shaping an AI application idea, or exploring an AI-Driven Development initiative, Nebula Infinity can help structure the next step with you.',
     nextTitle: 'What happens next',
     faqEyebrow: 'FAQ',
     faqTitle: 'Frequently asked questions',
-    reassurance: 'Nebula Infinity will help organize the right entry point from your situation. It is fine if you do not yet know whether the issue is closer to AI Workflow, AI Application, or Web3.0 / Blockchain.',
+    reassurance: 'Nebula Infinity will help organize the right entry point from your situation. It is fine if you do not yet know whether the issue is closer to AI Workflow, AI Application, or AI-Driven Development.',
   },
 } as const;
 
@@ -42,12 +42,12 @@ const nextSteps = {
 const expectationCards = {
   ja: [
     { title: '返信目安', body: '通常 2 営業日以内' },
-    { title: '対象テーマ', body: 'AI Workflow / AI Application / Web3.0 / Blockchain' },
+    { title: '対象テーマ', body: 'AI Workflow / AI Application / AI-Driven Development' },
     { title: '相談段階', body: '要件未整理でも可' },
   ],
   en: [
     { title: 'Response window', body: 'Usually within 2 business days' },
-    { title: 'Themes covered', body: 'AI Workflow / AI Application / Web3.0 / Blockchain' },
+    { title: 'Themes covered', body: 'AI Workflow / AI Application / AI-Driven Development' },
     { title: 'Stage accepted', body: 'Even before requirements are fixed' },
   ],
 } as const;
@@ -55,13 +55,13 @@ const expectationCards = {
 const faqs = {
   ja: [
     { question: '要件がまとまっていなくても相談できますか？', answer: 'はい。現状の課題や作りたい方向性の段階から整理できます。' },
-    { question: 'どのサービスを選べばよいか分からないです。', answer: '背景をもとに、AI Workflow / AI Application / Web3.0 / Blockchain のどこから始めるのが適切か整理します。' },
+    { question: 'どのサービスを選べばよいか分からないです。', answer: '背景をもとに、AI Workflow / AI Application / AI-Driven Development のどこから始めるのが適切か整理します。' },
     { question: 'オンラインで相談できますか？', answer: 'はい。初回の整理はオンライン前提で対応できます。' },
     { question: '非公開事例も相談時に見られますか？', answer: '内容に応じて、近い類型や守秘範囲に配慮した形で共有します。' },
   ],
   en: [
     { question: 'Can I reach out before the requirements are clear?', answer: 'Yes. We can start from the current issue or the rough direction of what you want to build.' },
-    { question: 'I am not sure which service line fits.', answer: 'We can structure whether AI Workflow, AI Application, or Web3.0 / Blockchain is the right starting point.' },
+    { question: 'I am not sure which service line fits.', answer: 'We can structure whether AI Workflow, AI Application, or AI-Driven Development is the right starting point.' },
     { question: 'Can the first conversation happen online?', answer: 'Yes. The initial scoping conversation can be handled online.' },
     { question: 'Can we discuss non-public examples?', answer: 'Yes. When relevant, we can share similar examples in a confidentiality-aware way.' },
   ],
