@@ -7,7 +7,7 @@
 
 ## 0. Brand core
 
-Nebula Infinity should read as a company that helps organizations move from interest in AI/Web3 to **real operational capability**.
+Nebula Infinity should read as a company that helps organizations move from interest in AI to **real operational capability**.
 
 ### Approved positioning anchors
 These are the strongest brand lines in V1 and should remain intact unless explicitly replaced by a later approved messaging pass:
@@ -15,7 +15,7 @@ These are the strongest brand lines in V1 and should remain intact unless explic
 - **AI社会実装のパートナー**
 - **「AI」を、現場の「即戦力」へ**
 - **「属人」のノウハウを、組織の「資産」に**
-- **Web3.0テクノロジーを、ビジネスへ**
+- **AI駆動開発で、超高速実装**
 
 ### What the brand should feel like
 - credible
@@ -91,8 +91,8 @@ The brand's AI workflow story is not just automation. It is about converting tac
 - framing AI workflow as only coding automation
 - presenting current workflow examples as the full service boundary
 
-#### Pillar D — Business-ready Web3
-Web3 capability should feel operational, not speculative.
+#### Pillar D — AI-Driven Development
+AI-driven delivery should feel fast **and** reliable — speed paired with quality, never reckless.
 
 **Express visually through:**
 - security, system, governance, traceability, ledger, identity, and infrastructure metaphors
@@ -121,7 +121,7 @@ Web3 capability should feel operational, not speculative.
 | Case/proof section | Evidence-led | Use delivered capability, scale, and fit |
 | CTA | Calm confidence | Invite discussion, don't pressure |
 | Form microcopy | Reassuring and direct | Make next step feel clear and low-friction |
-| Web3 pages | Conservative-modern | Stress business application and delivery quality |
+| AI-Driven Development pages | Confident, precise | Stress speed paired with quality and reliability |
 
 ### CTA language examples
 
@@ -208,7 +208,6 @@ Use a **rounded outline icon system** that feels technical, precise, and lightwe
 - no photo-based icons
 - no heavy filled icon set as the primary style
 - no different icon families mixed on the same page
-- no coin/token symbols as generic Web3 shorthand unless the content is explicitly about token mechanics
 
 ---
 
@@ -327,17 +326,17 @@ Reduce workflow capability to only:
 **Why**  
 Current development workflow examples are proof points, not the service boundary.
 
-### Pair 3 — Web3 expression
+### Pair 3 — AI-Driven Development expression
 **Do**  
-Frame Web3 as:
-`業務・顧客体験・証跡管理に効くプロダクト基盤`
+Frame AI-driven development as:
+`速さと品質を両立した、確かな実装`
 
 **Don't**  
-Frame Web3 as:
-`トークンで盛り上げる未来志向の施策`
+Frame it as:
+`速さだけを誇張するハイプ`
 
 **Why**  
-V1 must signal business utility, not speculation.
+V1 must signal reliable delivery, not hype.
 
 ### Pair 4 — Visual styling
 **Do**  
@@ -351,7 +350,7 @@ The site should feel premium and trustworthy, not trend-chasing.
 
 ### Pair 5 — Proof communication
 **Do**  
-Use named proof like Japan Life Navi, Rigel, and Carina as evidence of broader capability.
+Use named proof like Japan Life Navi, Rigel, and Astra as evidence of broader capability.
 
 **Don't**  
 Make one project feel like the entire company.
@@ -379,7 +378,7 @@ Use this before approving any future page design:
 - Is gold used for emphasis rather than decoration?
 - Is the page visually structured enough to communicate intelligence?
 - Does AI workflow read as organizational assetization, not only automation?
-- Does Web3 read as business capability, not speculation?
+- Does AI-Driven Development read as fast, reliable delivery — not hype?
 - Are icons consistent and emoji-free?
 - Is the copy specific, restrained, and proof-aware?
 - Is there any accidental blog/news direction creeping in?
