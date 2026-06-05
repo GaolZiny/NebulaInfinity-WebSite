@@ -39,11 +39,11 @@
 }
 
 .aiWorkflowHeroContent {
-  max-width: min(100%, 1040px);
+  max-width: none;
 }
 
 .aiWorkflowHeroContent .heroBody {
-  max-width: 980px;
+  max-width: none;
 }
 
 .heroEyebrow,
