@@ -47,8 +47,8 @@ export default async function AiDevFlowPage({ params }: { params: Promise<{ lang
 
       <section className={styles.hero}>
         <div className="container">
-          <div className={styles.heroSplit}>
-            <div className={styles.heroContent}>
+          <div className={`${styles.heroSplit} ${styles.aiWorkflowHeroTextOnly}`}>
+            <div className={`${styles.heroContent} ${styles.aiWorkflowHeroContent}`}>
               <span className={styles.heroEyebrow}>{content.hero.eyebrow}</span>
               <h1 className={styles.heroTitle}>{content.hero.title}</h1>
               <p className={styles.heroBody}>{content.hero.lead}</p>
@@ -66,21 +66,6 @@ export default async function AiDevFlowPage({ params }: { params: Promise<{ lang
                 </Link>
               </div>
             </div>
-
-            <aside className={`${styles.card} ${styles.featuredCard} ${styles.heroSupportPanel}`} aria-labelledby="ai-dev-flow-panel-title">
-              <h2 id="ai-dev-flow-panel-title" className={styles.cardTitle}>{content.hero.panelTitle}</h2>
-              <ol className={styles.supportList}>
-                {content.hero.panelRows.map(([title, body], index) => (
-                  <li key={title} className={styles.supportItem}>
-                    <span className={styles.supportIndex} aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-                    <span>
-                      <strong>{title}</strong>
-                      <span>{body}</span>
-                    </span>
-                  </li>
-                ))}
-              </ol>
-            </aside>
           </div>
         </div>
       </section>
