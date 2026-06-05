@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getLanguage, type Language } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
 import { getServiceById, services } from '@/data/services';
+import { generateSEOMetadata, generateServiceSchema, generateBreadcrumbSchema } from '@/components/seo/SEO';
 import styles from '@/styles/marketing.module.css';
 
 export const dynamicParams = false;
@@ -335,7 +336,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const lang = getLanguage(rawLang);
   const service = getServiceById(serviceId);
   if (!service) return {};
-  return { title: `${service.title[lang]} - Nebula Infinity`, description: service.body[lang] };
+  return generateSEOMetadata({ title: `${service.title[lang]} - Nebula Infinity`, description: service.body[lang], lang, path: `/services/${serviceId}` });
 }
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ lang: string; serviceId: string }> }) {
@@ -351,9 +352,6 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const columns = transformation ? (isJa ? transformation.columnsJa : transformation.columnsEn) : [];
   const deliverables = isJa ? content.deliverables.itemsJa : content.deliverables.itemsEn;
   const proofItems = isJa ? content.proof.itemsJa : content.proof.itemsEn;
-  const steps = content.steps;
-  const stepItems = steps ? (isJa ? steps.ja : steps.en) : [];
-  const cta = content.cta;
   const chips = isJa ? content.hero.chipsJa : content.hero.chipsEn;
   const primaryCta = isJa ? (content.hero.primaryCtaJa ?? 'この領域を相談する') : (content.hero.primaryCtaEn ?? 'Discuss this service');
   const secondaryCta = isJa ? (content.hero.secondaryCtaJa ?? 'サービス選択に戻る') : (content.hero.secondaryCtaEn ?? 'Back to Home Services');
@@ -368,6 +366,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
   return (
     <div className={styles.page}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema({ name: service.officialLine, description: service.body[lang], path: `/services/${serviceId}`, lang })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(lang, [{ name: isJa ? 'ホーム' : 'Home', path: '/' }, { name: isJa ? 'サービス' : 'Services', path: '/#services' }, { name: service.officialLine, path: `/services/${serviceId}` }])) }} />
       <section className={styles.breadcrumb}>
         <div className="container">
           <div className={styles.breadcrumbInner}>
@@ -462,30 +462,6 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </section>
-      {steps ? (
-        <section className={`${styles.section} ${styles.sectionMuted}`}>
-          <div className="container">
-            <div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{isJa ? steps.titleJa : steps.titleEn}</h2></div>
-            <div className={styles.stepRail}>{stepItems.map((step, index) => <div key={step} className={styles.stepItem}><div className={index === 1 || index === 2 ? `${styles.stepNode} ${styles.stepNodeAlt}` : styles.stepNode}>{index + 1}</div><h3 className={styles.stepHeading}>{step}</h3></div>)}</div>
-          </div>
-        </section>
-      ) : null}
-      {cta ? (
-        <section className={styles.section}>
-          <div className="container">
-            <div className={styles.featuredBand}>
-              <div className={styles.bandCopy}>
-                <h2 className={styles.bandTitle}>{isJa ? cta.jaTitle : cta.enTitle}</h2>
-                <p className={styles.bandBody}>{isJa ? cta.jaBody : cta.enBody}</p>
-              </div>
-              <div className={styles.bandActions}>
-                <Link href={`/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`} className={styles.linkButton}><Button size="lg">{isJa ? 'お問い合わせ' : 'Contact Us'}</Button></Link>
-                <Link href={`/${lang}/#services`} className={styles.linkButton}><Button size="lg" variant="outline">{isJa ? 'サービス選択に戻る' : 'Back to Home Services'}</Button></Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      ) : null}
     </div>
   );
 }

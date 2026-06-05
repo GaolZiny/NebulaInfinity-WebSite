@@ -10,6 +10,20 @@
 /ja/services/ai-development  /ja/services/ai-workflow  301
 /en/services/ai-development  /en/services/ai-workflow  301
 
+# Removed standalone index pages → homepage anchors (V2 homepage-anchor IA)
+/ja/services/  /ja/#services  301
+/en/services/  /en/#services  301
+/ja/services    /ja/#services  301
+/en/services    /en/#services  301
+/ja/projects/  /ja/#projects  301
+/en/projects/  /en/#projects  301
+/ja/projects    /ja/#projects  301
+/en/projects    /en/#projects  301
+/ja/about/     /ja/#about     301
+/en/about/     /en/#about     301
+/ja/about       /ja/#about     301
+/en/about       /en/#about     301
+
 # Cloudflare Pages redirects
 
 # Redirect root to Japanese homepage

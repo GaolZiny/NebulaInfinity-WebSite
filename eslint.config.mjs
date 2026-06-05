@@ -9,7 +9,7 @@ const nextRules = {
 
 export default tseslint.config(
   {
-    ignores: ['.next/**', 'out/**', 'node_modules/**', 'js/**', 'next-env.d.ts'],
+    ignores: ['.next/**', 'out/**', 'node_modules/**', 'artifacts/**', 'next-env.d.ts'],
   },
   ...tseslint.configs.recommended,
   {

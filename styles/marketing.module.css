@@ -842,26 +842,12 @@
   height: 22px;
 }
 
-.heroSupportPanel {
-  align-self: stretch;
-  display: grid;
-  gap: 18px;
-  border-top: 2px solid rgba(202, 138, 4, 0.62);
-}
-
-.supportList,
 .workflowTimeline,
 .gateList,
 .stageOutputs {
   list-style: none;
 }
 
-.supportList {
-  display: grid;
-  gap: 14px;
-}
-
-.supportItem,
 .gateRow {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -869,7 +855,6 @@
   align-items: start;
 }
 
-.supportItem strong,
 .gateRow strong {
   display: block;
   color: var(--text-primary);
@@ -877,13 +862,11 @@
   margin-bottom: 4px;
 }
 
-.supportItem span:last-child,
 .gateRow span:last-child {
   color: var(--text-secondary);
   line-height: 1.7;
 }
 
-.supportIndex,
 .gateNumber,
 .stageNumber {
   display: inline-flex;

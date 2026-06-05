@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { getLanguage } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
 import { aiDevFlowContent, aiWorkflowInquiry } from '@/data/service-subdetails/aiDevFlow';
+import { generateSEOMetadata, generateBreadcrumbSchema } from '@/components/seo/SEO';
 import styles from '@/styles/marketing.module.css';
 
 export const dynamic = 'force-static';
@@ -15,10 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = getLanguage(rawLang);
   const { metadata } = aiDevFlowContent[lang];
-  return {
-    title: metadata.title,
-    description: metadata.description,
-  };
+  return generateSEOMetadata({ title: metadata.title, description: metadata.description, lang, path: '/services/ai-workflow/ai-dev-flow' });
 }
 
 export default async function AiDevFlowPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -31,6 +29,7 @@ export default async function AiDevFlowPage({ params }: { params: Promise<{ lang
 
   return (
     <div className={styles.page}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(lang, [{ name: content.breadcrumb.home, path: '/' }, { name: content.breadcrumb.services, path: '/#services' }, { name: content.breadcrumb.parent, path: '/services/ai-workflow' }, { name: content.breadcrumb.current, path: '/services/ai-workflow/ai-dev-flow' }])) }} />
       <section className={styles.breadcrumb}>
         <div className="container">
           <nav className={styles.breadcrumbInner} aria-label="Breadcrumb">
@@ -190,25 +189,6 @@ export default async function AiDevFlowPage({ params }: { params: Promise<{ lang
         </div>
       </section>
 
-      <section className={styles.section}>
-        <div className="container">
-          <div className={styles.featuredBand}>
-            <div className={styles.bandCopy}>
-              <h2 className={styles.bandTitle}>{content.cta.title}</h2>
-              <p className={styles.bandBody}>{content.cta.body}</p>
-              <Link href={servicesHref} className={styles.ctaLink}>{content.cta.tertiary}<span aria-hidden="true">→</span></Link>
-            </div>
-            <div className={styles.bandActions}>
-              <Link href={contactHref} className={styles.linkButton}>
-                <Button size="lg">{content.hero.primaryCta}</Button>
-              </Link>
-              <Link href={parentHref} className={styles.linkButton}>
-                <Button size="lg" variant="outline">{content.hero.secondaryCta}</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
