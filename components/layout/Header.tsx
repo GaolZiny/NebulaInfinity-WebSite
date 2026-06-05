@@ -33,6 +33,12 @@ const labels = {
   },
 } as const;
 
+const HOME_ANCHORS = new Set(['#services', '#projects', '#about']);
+
+function normalizePath(path: string) {
+  return path.length > 1 ? path.replace(/\/$/, '') : path;
+}
+
 export default function Header({ lang }: HeaderProps) {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,12 +56,73 @@ export default function Header({ lang }: HeaderProps) {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    const handleHashLinkClick = (event: MouseEvent) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+
+      if (!(event.target instanceof Element)) return;
+
+      const link = event.target.closest<HTMLAnchorElement>('a[href]');
+      if (!link || link.target || link.hasAttribute('download')) return;
+
+      const targetUrl = new URL(link.href);
+      if (targetUrl.origin !== window.location.origin || !HOME_ANCHORS.has(targetUrl.hash)) return;
+
+      const homePath = normalizePath(`/${lang}/`);
+      const currentPath = normalizePath(window.location.pathname);
+      const targetPath = normalizePath(targetUrl.pathname);
+
+      if (currentPath !== homePath || targetPath !== homePath) return;
+
+      event.preventDefault();
+      setIsMobileMenuOpen(false);
+
+      const scrollToAnchor = () => {
+        const target = document.getElementById(targetUrl.hash.slice(1));
+        if (!target) return;
+
+        const header = document.querySelector<HTMLElement>('header');
+        const headerHeight = header?.getBoundingClientRect().height ?? 80;
+        const scrollOffset = headerHeight + 24;
+        const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - scrollOffset);
+        const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+
+        window.history.pushState(null, '', `${targetUrl.pathname}${targetUrl.hash}`);
+        window.scrollTo({ top, behavior });
+        target.focus({ preventScroll: true });
+      };
+
+      const scheduleScroll = () => {
+        window.requestAnimationFrame(() => window.requestAnimationFrame(scrollToAnchor));
+      };
+
+      if (isMobileMenuOpen) {
+        window.setTimeout(scheduleScroll, 240);
+        return;
+      }
+
+      scheduleScroll();
+    };
+
+    document.addEventListener('click', handleHashLinkClick, { capture: true });
+    return () => document.removeEventListener('click', handleHashLinkClick, { capture: true });
+  }, [isMobileMenuOpen, lang]);
+
   const navItems = useMemo(
     () => [
       { href: `/${lang}/`, label: t.home },
-      { href: `/${lang}/services`, label: t.services },
-      { href: `/${lang}/projects`, label: t.projects },
-      { href: `/${lang}/about`, label: t.about },
+      { href: `/${lang}/#services`, label: t.services },
+      { href: `/${lang}/#projects`, label: t.projects },
+      { href: `/${lang}/#about`, label: t.about },
       { href: `/${lang}/contact`, label: t.contact },
     ],
     [lang, t],
@@ -68,7 +135,11 @@ export default function Header({ lang }: HeaderProps) {
 
     if (pathname.startsWith(`/${lang}`)) {
       const suffix = pathname.slice(`/${lang}`.length) || '/';
-      return `/${lang === 'ja' ? 'en' : 'ja'}${suffix}`;
+      const nextLang = lang === 'ja' ? 'en' : 'ja';
+      if (suffix === '/services') return `/${nextLang}/#services`;
+      if (suffix === '/projects') return `/${nextLang}/#projects`;
+      if (suffix === '/about') return `/${nextLang}/#about`;
+      return `/${nextLang}${suffix}`;
     }
 
     return `/${lang === 'ja' ? 'en' : 'ja'}${pathname}`;
@@ -96,6 +167,7 @@ export default function Header({ lang }: HeaderProps) {
               key={item.href}
               href={item.href}
               className={`${styles.navLink} ${isActive(item.href) ? styles.navLinkActive : ''}`}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
             </Link>

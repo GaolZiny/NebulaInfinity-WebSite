@@ -1,309 +1,333 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getLanguage } from '@/lib/i18n';
+import { getLanguage, type Language } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
 import { getServiceById, services } from '@/data/services';
 import styles from '@/styles/marketing.module.css';
 
-const pageContent = {
+export const dynamicParams = false;
+
+type DetailCard = readonly [string, string];
+type TransformationColumn = readonly [string, readonly string[]];
+type ProofLink = {
+  href: (lang: Language) => string;
+  ctaJa: string;
+  ctaEn: string;
+};
+type ProofItem = readonly [string, string, readonly string[], (string | ProofLink)?];
+
+type DetailContent = {
+  hero: {
+    eyebrow: string;
+    jaTitle: string;
+    enTitle: string;
+    jaSubtitle: string;
+    enSubtitle: string;
+    chipsJa: readonly string[];
+    chipsEn: readonly string[];
+    primaryCtaJa?: string;
+    primaryCtaEn?: string;
+    secondaryCtaJa?: string;
+    secondaryCtaEn?: string;
+  };
+  sectionA: {
+    titleJa: string;
+    titleEn: string;
+    cardsJa: readonly DetailCard[];
+    cardsEn: readonly DetailCard[];
+  };
+  transformation?: {
+    eyebrow: string;
+    titleJa: string;
+    titleEn: string;
+    subtitleJa: string;
+    subtitleEn: string;
+    columnsJa: readonly TransformationColumn[];
+    columnsEn: readonly TransformationColumn[];
+  };
+  deliverables: {
+    titleJa: string;
+    titleEn: string;
+    subtitleJa?: string;
+    subtitleEn?: string;
+    itemsJa: readonly DetailCard[];
+    itemsEn: readonly DetailCard[];
+  };
+  proof: {
+    eyebrow: string;
+    titleJa: string;
+    titleEn: string;
+    noteJa: string;
+    noteEn: string;
+    itemsJa: readonly ProofItem[];
+    itemsEn: readonly ProofItem[];
+  };
+  steps?: {
+    titleJa: string;
+    titleEn: string;
+    ja: readonly string[];
+    en: readonly string[];
+  };
+  cta?: {
+    jaTitle: string;
+    enTitle: string;
+    jaBody: string;
+    enBody: string;
+  };
+};
+
+const pageContent: Record<string, DetailContent> = {
   'ai-workflow': {
     hero: {
-      eyebrow: 'AI Workflow Design & Development',
-      jaTitle: '「属人」のノウハウを、組織の「資産」に',
-      enTitle: 'Turn tacit know-how into organizational assets',
-      jaSubtitle: 'Nebula Infinity は、担当者依存の業務をそのまま自動化するのではなく、判断基準・手順・レビューの流れを整理し、AI と人が運用できるワークフローとして設計・開発します。',
-      enSubtitle: 'Nebula Infinity does not simply automate a person\'s work as-is. We structure decision logic, steps, and review paths into workflows that people and AI can operate together.',
-      chipsJa: ['属人化の解消', 'ナレッジの資産化', '再現性のある運用'],
-      chipsEn: ['Reduce people-dependence', 'Assetize know-how', 'Create repeatable operations'],
+      eyebrow: 'AI Workflow Solution',
+      jaTitle: 'プロセスを、再現できるワークフローへ',
+      enTitle: 'Turn people-dependent work into repeatable workflows',
+      jaSubtitle: '担当者に閉じた判断基準、考え方、作業手順を整理し、AIと人が協働できるプロセスとして設計・実装します。自己改善の仕組みも実装することにより、単発の自動化ではなく、組織で引き継ぎ、改善し続けられるアセットへ変えていきます。',
+      enSubtitle: 'Nebula Infinity organizes decision criteria, procedures, and review paths that are closed inside specific people, then designs and implements them as business workflows where people and AI can work together. We do not stop at one-off automation; we turn the work into operating assets the organization can inherit and improve.',
+      chipsJa: ['属人化の解消', 'ナレッジの可視化', '継続進化できる仕組み'],
+      chipsEn: ['Reduce people-dependence', 'Make decision criteria visible', 'Create continuously improvable operations'],
+      primaryCtaJa: 'この領域で相談する',
+      primaryCtaEn: 'Discuss this service',
+      secondaryCtaJa: 'サービス選択に戻る',
+      secondaryCtaEn: 'Back to Home Services',
     },
     sectionA: {
-      titleJa: 'AI 導入前に整理すべき、現場の3つの症状',
+      titleJa: '整理すべき、3つの課題認識',
       titleEn: 'Three operational symptoms to solve before AI can stick',
       cardsJa: [
-        ['判断が人に閉じている', '経験者にしか分からない基準が多く、再現しづらい。'],
-        ['引き継ぎコストが高い', '手順はあっても、実際の勘所が共有されていない。'],
-        ['ツールを入れても定着しない', '役割分担やレビュー導線が設計されていない。'],
+        ['ノウハウが特定担当者に閉じている', '経験者にしか分からない判断基準やコツなどのノウハウが多く、同じ業務でも担当者間で結果がばらつく。'],
+        ['引き継ぎコストが高い', '手順書があっても、例外対応や判断の勘所が共有されてなく、引き継ぎには時間と労力がかかる。'],
+        ['ツールを入れても定着しない', 'AIやSaaSを導入しても、役割分担、レビュー導線、改善サイクルが設計されていない。'],
       ],
       cardsEn: [
-        ['Decisions live inside individuals', 'Critical criteria exist only in experienced operators.'],
-        ['Handoffs are expensive', 'There may be steps, but not the real judgment behind them.'],
-        ['Tools never become operations', 'Roles, review paths, and adoption flow were never designed.'],
-      ],
-    },
-    transformation: {
-      eyebrow: 'Assetization model',
-      titleJa: 'ワークフローの価値は、「自動化」より「資産化」にある',
-      titleEn: 'The value is not just automation. It is assetization.',
-      subtitleJa: 'Nebula Infinity が行うのは、単純な置き換えではなく、現場の知識を引き継げる運用資産へ変えることです。',
-      subtitleEn: 'Our job is not simple replacement. It is turning operational knowledge into assets the organization can inherit.',
-      columnsJa: [
-        ['Capture', ['担当者の判断・例外対応・確認観点を拾う']],
-        ['Structure', ['手順、条件、役割分担、レビュー導線として整理する']],
-        ['Operate', ['AI と人が協働しながら回せる運用フローに落とし込む']],
-      ],
-      columnsEn: [
-        ['Capture', ['Extract human judgment, exceptions, and review points']],
-        ['Structure', ['Convert them into steps, conditions, roles, and review paths']],
-        ['Operate', ['Turn the result into a workflow people and AI can run together']],
-      ],
-    },
-    categories: {
-      titleJa: '対象は、特定のユースケースに限りません',
-      titleEn: 'The capability is broader than the current public examples',
-      subtitleJa: 'マルチエージェント開発やプロダクトリサーチは代表例です。実際には、知識・判断・レビューが絡むさまざまな業務へ展開できます。',
-      subtitleEn: 'Multi-agent development and product research are representative examples only. The same capability applies across many knowledge-heavy workflows.',
-      itemsJa: [
-        ['Knowledge Operations', '社内ナレッジの検索・要約・更新フロー'],
-        ['Product Research', '市場・競合・顧客情報の収集と要点整理'],
-        ['Document Operations', '文書確認、分類、抽出、要約、次アクション整理'],
-        ['Support Operations', '問い合わせ一次整理、回答候補生成、エスカレーション判断'],
-        ['Internal Operations', '申請、チェック、社内連携、報告フローの整理'],
-        ['Development Workflow', '要件、設計、実装、レビューの協調フロー'],
-      ],
-      itemsEn: [
-        ['Knowledge Operations', 'Search, summarize, and update internal knowledge flows'],
-        ['Product Research', 'Collect, synthesize, and hand off market, competitor, and customer input'],
-        ['Document Operations', 'Review, classify, extract, summarize, and route documents'],
-        ['Support Operations', 'Triage inquiries, generate responses, and decide escalation'],
-        ['Internal Operations', 'Organize requests, checks, coordination, and reporting flows'],
-        ['Development Workflow', 'Coordinate requirements, design, implementation, and review'],
+        ['Decisions live inside individuals', 'Critical criteria exist only in experienced operators, so the same work produces inconsistent results.'],
+        ['Handoffs are expensive', 'Steps may be documented, but exceptions and judgment points are not shared.'],
+        ['Tools never become operations', 'AI or SaaS tools are introduced without role design, review paths, or improvement loops.'],
       ],
     },
     deliverables: {
-      titleJa: 'Nebula Infinity が設計・開発するもの',
+      titleJa: 'Nebula Infinity の AI Workflow Solution',
       titleEn: 'What Nebula Infinity designs and builds',
+      subtitleJa: 'AI活用が止まる理由の多くは、技術そのものではなく、業務知識や判断基準などのノウハウが人に閉じていることにあります。AI Workflow Solution は、そのノウハウを抽出し、プロセスに落とし込み、AI と人が協業できる仕組みに変えていきます。',
+      subtitleEn: 'AI adoption often stalls not because of the technology itself, but because operational knowledge and decision criteria stay inside individuals. Nebula Infinity extracts that know-how, places it into the process, and turns it into workflows where AI and people can collaborate.',
       itemsJa: [
-        ['現行業務の整理', '関係者、判断、例外、入力・出力を構造化します。'],
-        ['AIワークフロー設計', 'AI と人の役割分担、レビュー位置、連携仕様を定義します。'],
-        ['実装・接続', '既存システムやツールとつながる形で実装します。'],
-        ['運用定着支援', '引き継ぎ、改善観点、ログの見方まで整えます。'],
+        ['プロセス整理', '関係者、入力、判断、例外、出力を構造化し、プロセスを可視化します。'],
+        ['AIワークフロー設計', 'AIと人の役割分担、レビューの配置、周辺連携仕様を定義します。'],
+        ['実装・接続', '既存ツールやデータとつながる形で、実務に乗るワークフローを実装します。'],
+        ['運用定着支援', '引き継ぎ、改善サイクル、ログ運用まで整え、使い続けられる状態にします。'],
       ],
       itemsEn: [
-        ['Current-state mapping', 'We structure stakeholders, decisions, exceptions, inputs, and outputs.'],
-        ['Workflow architecture', 'We define human-AI roles, review points, and integration behavior.'],
-        ['Implementation and integration', 'We build the workflow so it connects to existing systems and tools.'],
-        ['Operational adoption', 'We support handoff, improvement criteria, and how to read the logs.'],
+        ['Current-state mapping', 'We structure stakeholders, inputs, decisions, exceptions, and outputs.'],
+        ['AI workflow design', 'We define human-AI roles, review points, and integration behavior.'],
+        ['Implementation and connection', 'We build workflows that connect to existing tools and data, so they can run in real operations.'],
+        ['Operational adoption', 'We prepare handoff, improvement criteria, and log review so the workflow can keep being used.'],
       ],
     },
     proof: {
       eyebrow: 'Representative examples',
-      titleJa: '現在公開している代表例',
-      titleEn: 'Representative examples currently shown publicly',
+      titleJa: 'プロジェクト例',
+      titleEn: 'Representative examples',
+      noteJa: 'これらは代表例であり、AI Workflow の提供範囲を限定するものではありません。開発、PMO、リサーチのように、判断・手順・レビュー・連携が複雑な業務を、各社の状況に合わせて AI Workflow として設計・実装できます。',
+      noteEn: 'These are representative examples only; they do not define the boundary of the AI Workflow service. The same approach can be applied to business operations with complex decisions, procedures, reviews, and handoffs.',
       itemsJa: [
-        ['マルチエージェント開発ワークフロー', '要件整理、設計、実装、テストの役割分担を定義し、レビューしながら進める開発フローの設計例。', ['役割分担', 'レビューゲート', '再利用ルール']],
-        ['プロダクトリサーチワークフロー', '市場・競合・ユーザー情報を収集し、比較と要点化を経て意思決定に渡すリサーチフローの設計例。', ['情報収集', '要点整理', '意思決定入力']],
+        ['Agentic AI 開発ワークフロー', 'Nebula Infinity 自社のビジネス構想、要件定義、設計、実装、検証の一連の開発フローを、複数の AI エージェントと人のレビューゲートで運用するワークフロー proof です。長期・多段階の業務を AI Workflow として実装し、定期的な振り返りと改善提案により自己進化する仕組みを持たせています。', ['役割設計', 'レビューゲート', '自己進化'], { href: (lang) => `/${lang}/services/ai-workflow/ai-dev-flow`, ctaJa: '開発ワークフロー詳細', ctaEn: 'Development workflow details' }],
+        ['Astra PMワークフロー', 'プロジェクト内で分散しやすい情報を AI エージェントが一元管理し、進捗、課題、リスク、リソースなどの PM 管理作業を AI ワークフローとして自律的に支援します。進捗報告、課題・リスク分析、リソース一覧などの資料を即時生成し、低コストで効率的なプロジェクト運営を可能にします。', ['PM業務', '情報整理', '自律作業'], { href: (lang) => `/${lang}/projects/astra`, ctaJa: 'Astra 詳細', ctaEn: 'View Astra' }],
+        ['プロダクトリサーチワークフロー', '売れ筋商品発掘のため、AI エージェントがリアルタイムの市場情報収集、競合分析、自社情報集約、独自ノウハウに基づく傾向分析・要約を自律的に行うワークフローです。人がアウトプットをもとに意思決定を行い、その結果を後続の業務システムへ連携します。', ['情報収集・分析', '独自ノウハウ', '他システム連携'], { href: (lang) => `/${lang}/contact?inquiry=${encodeURIComponent('AI Workflow Design & Development')}`, ctaJa: 'この類型を相談する', ctaEn: 'Discuss this workflow type' }],
       ],
       itemsEn: [
-        ['Multi-agent development workflow', 'A workflow design example that allocates requirements, design, implementation, and testing roles with explicit review paths.', ['Role allocation', 'Review gates', 'Reusable rules']],
-        ['Product research workflow', 'A workflow design example for collecting market, competitor, and user inputs, synthesizing them, and handing them into decision-making.', ['Collection', 'Synthesis', 'Decision input']],
+        ['Agentic AI development workflow', "A workflow proof from Nebula Infinity's own business and development operations, covering concept framing, requirements, design, implementation, and verification with multiple AI agents and human review gates. It shows how long-running, multi-step work can be implemented as AI Workflow with role design, review gates, and self-improvement loops.", ['Role design', 'Review gates', 'Self-improvement'], { href: (lang) => `/${lang}/services/ai-workflow/ai-dev-flow`, ctaJa: '開発ワークフロー詳細', ctaEn: 'Development workflow details' }],
+        ['Astra PM workflow', 'A PMO workflow that uses AI agents to organize information scattered across a project, including progress, issues, risks, and resources. It supports immediate generation of progress reports, issue/risk analysis, and resource views so project operations can run with lower cost and higher efficiency.', ['PM work', 'Information organization', 'Autonomous support'], { href: (lang) => `/${lang}/projects/astra`, ctaJa: 'Astra 詳細', ctaEn: 'View Astra' }],
+        ['Product research workflow', 'A workflow where AI agents autonomously collect real-time market information, analyze competitors, gather internal information, and summarize trends through proprietary know-how. Humans make decisions from the outputs, and the results connect into downstream business systems.', ['Collection and analysis', 'Proprietary know-how', 'Business-system linkage'], { href: (lang) => `/${lang}/contact?inquiry=${encodeURIComponent('AI Workflow Design & Development')}`, ctaJa: 'この類型を相談する', ctaEn: 'Discuss this workflow type' }],
       ],
-      noteJa: 'これらは代表例であり、AI Workflow の提供範囲を限定するものではありません。',
-      noteEn: 'These are representative examples only and do not define the full boundary of the AI Workflow service.',
-    },
-    steps: {
-      titleJa: '進め方',
-      titleEn: 'How engagements move',
-      ja: ['現場を整理する', 'ワークフローを設計する', '実装して検証する', '運用へ引き渡す'],
-      en: ['Clarify operations', 'Design the workflow', 'Implement and validate', 'Hand off into operations'],
-    },
-    cta: {
-      jaTitle: '属人化した業務を、どこから整理すべきか一緒に見極めます',
-      enTitle: 'We can help identify where to start with people-dependent work',
-      jaBody: 'まだ課題が曖昧でも問題ありません。現場で何が止まっているか、どこに判断が集中しているかから整理します。',
-      enBody: 'You do not need a polished brief. We can start from where work gets stuck and where judgment is concentrated today.',
     },
   },
   'ai-application': {
     hero: {
-      eyebrow: 'AI Application Design & Development',
+      eyebrow: 'AI Application Solution',
       jaTitle: 'AIを、使われるアプリケーションへ',
       enTitle: 'Turn AI into applications people actually use',
-      jaSubtitle: 'Nebula Infinity は、AI の機能実装だけではなく、体験設計、データ連携、業務との接続まで含めて、現場で使われるアプリケーションとして設計・開発します。',
-      enSubtitle: 'Nebula Infinity goes beyond AI feature implementation. We design and build applications that people actually use by connecting experience design, data, and operational context.',
+      jaSubtitle: 'AI機能だけでなく、体験の設計、データ連携、業務との接続まで含め、現場や顧客に使われるアプリケーションとして設計・開発します。',
+      enSubtitle: 'Nebula Infinity goes beyond AI feature implementation. We connect user experience, business data, and operating flow, then design and build AI applications people can use in real customer or operational contexts.',
       chipsJa: ['Customer-facing products', 'Internal tools', 'RAG / Multimodal / Realtime'],
       chipsEn: ['Customer-facing products', 'Internal tools', 'RAG / Multimodal / Realtime'],
     },
     sectionA: {
-      titleJa: 'こんなAIアプリケーションに向いています',
+      titleJa: 'AIアプリケーションに適した領域',
       titleEn: 'Typical application shapes we support',
       cardsJa: [
-        ['顧客向けAIサービス', '相談、検索、提案、ガイドを提供するプロダクト'],
-        ['社内業務ツール', '業務判断や情報整理を支援する内部アプリケーション'],
-        ['AIコパイロット', '専門業務に沿って回答・提案・生成を行う支援体験'],
-        ['ナレッジ活用アプリ', '社内文書や蓄積知識を検索・要約・再利用する仕組み'],
+        ['顧客向けAIサービス', '相談、検索、提案、ガイドを提供するプロダクト。'],
+        ['社内業務ツール', '反復作業、業務ルールに基づく判断を支援する内部アプリケーション。'],
+        ['AIコパイロット', '専門業務、社内ルールに沿って回答・提案・生成を行う支援体験。'],
+        ['ナレッジ活用アプリ', '社内文書や蓄積知識を検索・要約・再利用する仕組み。'],
       ],
       cardsEn: [
-        ['Customer AI services', 'Products that guide, answer, search, or recommend for end users'],
-        ['Internal operation tools', 'Applications that support judgment and information handling inside the business'],
-        ['AI copilots', 'Guided experiences that answer, generate, and recommend around domain-specific work'],
-        ['Knowledge applications', 'Systems that search, summarize, and reuse internal documents and know-how'],
-      ],
-    },
-    deliverables: {
-      titleJa: 'Nebula Infinity が担う設計・開発範囲',
-      titleEn: 'What Nebula Infinity takes responsibility for',
-      itemsJa: [
-        ['体験設計', 'ユーザーが迷わず価値に到達できるUI / UXを設計します。'],
-        ['AI機能設計', '検索、生成、要約、判定、推薦などの体験を要件に合わせて構成します。'],
-        ['データ連携', '社内データ、外部API、既存システムと接続します。'],
-        ['実装', 'フロントエンド、バックエンド、モデル連携まで一体で構築します。'],
-        ['運用設計', '管理画面、改善サイクル、ログの見方まで含めて整えます。'],
-      ],
-      itemsEn: [
-        ['Experience design', 'We design UI and UX that make the value easy to reach.'],
-        ['AI feature design', 'We shape retrieval, generation, summarization, classification, and recommendation around the goal.'],
-        ['Data integration', 'We connect internal data, external APIs, and existing systems.'],
-        ['Implementation', 'We build frontend, backend, and model integration as one delivery flow.'],
-        ['Operational design', 'We include admin surfaces, logging, and the improvement loop.'],
-      ],
-    },
-    proof: {
-      eyebrow: 'Proof',
-      titleJa: '代表実績で見る、AI Application の実装力',
-      titleEn: 'Proof of AI application delivery',
-      noteJa: 'Japan Life Navi と Rigel は、Nebula Infinity が AI アプリケーションを設計・開発し、実用レベルまで形にできることを示す代表例です。',
-      noteEn: 'Japan Life Navi and Rigel are the clearest proof that Nebula Infinity can design and deliver AI applications at practical quality.',
-      itemsJa: [
-        ['Japan Life Navi', '在日外国人向け生活支援アプリ。多言語コンテンツ、領域特化AI、リアルタイム対話、画像分析を一つの体験として実装。', ['336 Guides', '7 Languages', '6 AI Agents'], 'gaijin-life-navi'],
-        ['Rigel', 'AI記帳SaaS。業務知識、制度対応、OCR、UX、バックエンド品質まで含めて成立させたプロダクト。', ['33,000+ LOC', '367 Tests', '18 API Endpoints', '6 Industries'], 'rigel'],
-      ],
-      itemsEn: [
-        ['Japan Life Navi', 'A life-support app for foreign residents in Japan that brings multilingual content, domain-specific AI, real-time interaction, and image analysis into one experience.', ['336 Guides', '7 Languages', '6 AI Agents'], 'gaijin-life-navi'],
-        ['Rigel', 'An AI bookkeeping SaaS that proves delivery across domain logic, regulation support, OCR, user experience, and backend quality.', ['33,000+ LOC', '367 Tests', '18 API Endpoints', '6 Industries'], 'rigel'],
-      ],
-    },
-    categories: {
-      titleJa: '実装できる主要モジュール',
-      titleEn: 'Key capability modules we can implement',
-      itemsJa: [
-        ['RAG / ナレッジ検索', '必要なモジュールだけを組み合わせ、使われる体験として成立する形まで設計します。'],
-        ['マルチモーダル入力', '画像・音声・テキストをまたぐ入力体験も設計します。'],
-        ['リアルタイム応答', 'ストリーミングや即時反応が必要なUIを実装できます。'],
-        ['管理・運用画面', '改善のための管理画面やオペレーションUIも含めて構築します。'],
-        ['外部システム連携', '既存システムやAPIとの接続を前提に設計します。'],
-      ],
-      itemsEn: [
-        ['RAG / knowledge retrieval', 'We combine only the modules that matter and shape them into an experience people will actually use.'],
-        ['Multimodal input', 'We design across image, voice, and text input where the use case calls for it.'],
-        ['Real-time response', 'We can implement streaming and low-latency application behavior.'],
-        ['Admin and operations UI', 'We include management and operations interfaces for continuous improvement.'],
-        ['External system integration', 'We design with existing systems and APIs in mind from the start.'],
-      ],
-    },
-    steps: {
-      titleJa: '進め方',
-      titleEn: 'How engagements move',
-      ja: ['目的と利用者を定める', '体験とAI機能を設計する', '実装して検証する', '運用へつなぐ'],
-      en: ['Define goal and users', 'Design the UX and AI behavior', 'Implement and validate', 'Connect to operations'],
-    },
-    cta: {
-      jaTitle: 'AIアプリケーションの構想段階から相談できます',
-      enTitle: 'You can engage us from the application concept stage',
-      jaBody: '新規プロダクト、社内ツール、既存サービスへのAI機能追加まで、どの段階でもご相談ください。',
-      enBody: 'From new products to internal tools and AI expansion inside an existing service, we can work with you at any stage.',
-    },
-  },
-  'web3-blockchain': {
-    hero: {
-      eyebrow: 'Web3.0 / Blockchain Application Design & Development',
-      jaTitle: 'Web3.0テクノロジーを、ビジネスへ',
-      enTitle: 'Apply Web3.0 where it creates business utility',
-      jaSubtitle: 'Nebula Infinity は、Web3.0 を投機的な文脈ではなく、顧客体験、会員基盤、証跡管理、デジタル資産の設計に活かせる技術として扱います。',
-      enSubtitle: 'Nebula Infinity approaches Web3.0 not as speculative technology, but as infrastructure for customer experience, membership, traceability, and digital asset design.',
-      chipsJa: ['Membership', 'Traceability', 'Digital Assets'],
-      chipsEn: ['Membership', 'Traceability', 'Digital Assets'],
-    },
-    sectionA: {
-      titleJa: 'Web3.0 が効くのは、こんな要件です',
-      titleEn: 'When Web3.0 is the right fit',
-      cardsJa: [
-        ['会員や特典の真正性を高めたい', '発行履歴や保有状態を明確に扱いたい。'],
-        ['ポイントやクーポンを再設計したい', '顧客との関係性を継続的に設計したい。'],
-        ['証跡や透明性を価値にしたい', '履歴管理や検証可能性そのものが事業価値になる。'],
-      ],
-      cardsEn: [
-        ['You need stronger authenticity for membership or benefits', 'Issuance and ownership need to be explicit and verifiable.'],
-        ['You want to redesign loyalty mechanics', 'The relationship with the customer needs a stronger long-term structure.'],
-        ['Traceability itself creates value', 'History and verification are part of the product or operational value.'],
-      ],
-    },
-    categories: {
-      titleJa: 'ビジネスに落とし込める代表ユースケース',
-      titleEn: 'Representative business use cases',
-      itemsJa: [
-        ['Membership & Loyalty', '会員証、ポイント、特典、ランク設計'],
-        ['Traceability', '履歴確認、証跡保持、真正性の担保'],
-        ['Digital Asset Design', 'クーポン、チケット、保有権の設計'],
-        ['Customer Experience', '顧客が自分の資産や特典を扱える体験'],
-        ['Integration', '既存CRMやアプリとつながる運用設計'],
-      ],
-      itemsEn: [
-        ['Membership & Loyalty', 'Cards, points, benefits, and tier logic'],
-        ['Traceability', 'History, verification, and evidentiary records'],
-        ['Digital Asset Design', 'Coupons, tickets, and ownership structures'],
-        ['Customer Experience', 'User-facing control over benefits and digital assets'],
-        ['Integration', 'Operational connection to existing CRM and applications'],
+        ['Customer AI services', 'Products that guide, answer, search, or recommend for end users.'],
+        ['Internal operation tools', 'Applications that support repetitive work and judgment based on business rules.'],
+        ['AI copilots', 'Guided experiences that answer, recommend, and generate in line with specialized work and internal rules.'],
+        ['Knowledge applications', 'Systems that search, summarize, and reuse internal documents and accumulated know-how.'],
       ],
     },
     transformation: {
-      eyebrow: 'How Nebula Infinity keeps Web3 business-ready',
-      titleJa: 'Nebula Infinity が重視する、ビジネス前提のWeb3設計',
-      titleEn: 'How Nebula Infinity keeps Web3 business-ready',
-      subtitleJa: 'Web3 を目的化せず、業務や顧客体験で価値が出る位置に設計します。',
-      subtitleEn: 'We do not make Web3 the goal itself. We use it where it creates operational or customer-facing value.',
+      eyebrow: 'Application model',
+      titleJa: 'AI機能を、使われる体験に組み込む',
+      titleEn: 'Embed AI capability into usable product experience',
+      subtitleJa: '誰が、どの場面で、何を判断するために使うのかを整理し、画面、データ、AI応答、例外対応まで一つの体験として設計します。',
+      subtitleEn: 'Models and APIs alone do not create value. We clarify who uses the system, in what context, and for what decision, then design screens, data, AI responses, and exception behavior as one experience.',
       columnsJa: [
-        ['What we build', ['業務・顧客体験に効く目的から設計する', '運用と既存サービス接続を前提にする', '台帳性や真正性を価値へ変える']],
-        ['What we avoid', ['投機文脈を前提にしない', '暗号資産の値動き訴求に寄せない', 'Web3 を目的化しない']],
+        ['User need', ['誰がどの目的で使いたいか', 'どの業務や生活場面で使うか', '何が成功条件か']],
+        ['Product design', ['画面と導線を設計する', 'AI応答とデータを接続する', '例外や失敗時の体験を決める']],
+        ['Business outcome', ['継続利用しやすい', '業務や生活文脈に接続できる', '改善サイクルを回せる']],
       ],
       columnsEn: [
-        ['What we build', ['Start from operational or customer experience value', 'Design for operations and integration from day one', 'Turn traceability and authenticity into usable value']],
-        ['What we avoid', ['Do not lead with speculative framing', 'Do not rely on token-price narratives', 'Do not make Web3 the goal itself']],
+        ['User need', ['Who wants to use it and for what purpose', 'Where it fits in work or daily life', 'What success looks like']],
+        ['Product design', ['Design screens and flows', 'Connect AI responses and data', 'Define fallback and exception behavior']],
+        ['Business outcome', ['Easy to use repeatedly', 'Connected to real context', 'Ready for improvement cycles']],
+      ],
+    },
+    deliverables: {
+      titleJa: 'Nebula Infinity の AI Application Solution',
+      titleEn: 'Nebula Infinity AI Application Solution',
+      itemsJa: [
+        ['体験設計', '利用者、画面、導線、AI応答の見せ方を設計します。'],
+        ['フロントエンド / バックエンド実装', 'UI、API、認証、データ、外部サービス連携を実装します。'],
+        ['AI機能実装', 'RAG、マルチモーダルなどAI関連技術、業務ロジック連携を組み込みます。'],
+        ['運用・改善機能実装', 'ログ、評価、保守、改善の仕組みを設計・実装します。'],
+      ],
+      itemsEn: [
+        ['Experience design', 'We design users, screens, flows, and how AI responses appear.'],
+        ['Frontend and backend implementation', 'We build UI, APIs, auth, data, and external-service integration.'],
+        ['AI feature implementation', 'We embed AI-related technologies such as RAG and multimodal interaction, together with domain logic.'],
+        ['Operation and improvement feature implementation', 'We design and implement logging, evaluation, maintenance, and improvement mechanisms.'],
       ],
     },
     proof: {
-      eyebrow: 'Proof',
-      titleJa: '代表実績: Carina',
-      titleEn: 'Representative proof: Carina',
-      noteJa: 'Carina は、小売向け CRM に Web3.0 を接続し、ポイント、クーポン、会員証の扱いをブロックチェーン基盤で再設計した例です。Nebula Infinity の Web3.0 提供価値は、この1件に限定されず、会員基盤や証跡設計全般へ展開できます。',
-      noteEn: 'Carina is an example of applying Web3.0 to retail CRM by redesigning points, coupons, and membership on top of blockchain infrastructure. Nebula Infinity\'s Web3.0 capability extends beyond this one project into broader membership and traceability design.',
-      itemsJa: [['Carina', 'ポイント、クーポン、会員証をブロックチェーン基盤で扱う CRM。Web3.0 を顧客体験と運用設計に接続した実例です。', ['Retail CRM', 'Membership', 'Points & Coupons', 'Traceability'], 'carina']],
-      itemsEn: [['Carina', 'A blockchain-backed CRM for points, coupons, and membership. It shows how Web3.0 can connect to customer experience and operations.', ['Retail CRM', 'Membership', 'Points & Coupons', 'Traceability'], 'carina']],
-    },
-    deliverables: {
-      titleJa: '対応範囲',
-      titleEn: 'Delivery scope',
+      eyebrow: 'Representative proof',
+      titleJa: 'プロジェクト例',
+      titleEn: 'Project examples',
+      noteJa: 'AI機能の実装だけでなく、利用者が価値を理解し、継続して使えるプロジェクト例です。',
+      noteEn: 'These cases show AI capability shaped into product experiences that users can understand and keep using.',
       itemsJa: [
-        ['要件整理', 'どこで Web3.0 を使うべきかを事業要件から整理します。'],
-        ['チェーン / コントラクト設計', 'どの責務をオンチェーン化するかを設計します。'],
-        ['UI / 体験設計', '利用者が迷わず扱える画面と導線を設計します。'],
-        ['既存サービス連携', 'CRM、アプリ、会員基盤との接続を考慮します。'],
-        ['運用設計', '発行、更新、監視、問い合わせ対応まで整えます。'],
+        ['Japan Life Navi', '在日外国人向けに、生活情報、手続きの流れ、日常の困りごとを案内するAIアシスタントアプリ。領域別に強化されたAIエージェント、独自に整理した生活ノウハウ、定期的に更新される情報を組み合わせ、利用者に合わせた役立つ案内体験を提供します。', ['336 Guides', '7 Languages', '6 AI Agents'], 'gaijin-life-navi'],
+        ['Rigel', 'AI記帳アプリとして、レシートOCR、業種別の自動仕訳支援、帳票出力などを一つの業務体験にまとめたプロダクトです。自然言語で自動仕訳可能の他、OCRプロセスでのインボイス制度及び電子帳簿保存法の対応機能も実装されている。', ['電子帳簿保存法対応機能', 'インボイス制度対応機能', '６業種テンプレート'], 'rigel'],
       ],
       itemsEn: [
-        ['Requirements framing', 'We determine where Web3.0 should create value in the business.'],
-        ['Chain and contract architecture', 'We define what responsibility belongs on-chain.'],
-        ['UX and interface design', 'We design screens and flows that users can actually operate.'],
-        ['Existing-service integration', 'We account for CRM, apps, and membership systems from the start.'],
-        ['Operational design', 'We plan issuance, updates, monitoring, and support handling.'],
+        ['Japan Life Navi', 'An AI assistant application for foreign residents in Japan, guiding daily-life information, procedures, and practical questions. It combines domain-strengthened AI agents, organized living know-how, and regularly updated information into useful guidance tailored to each user.', ['336 Guides', '7 Languages', '6 AI Agents'], 'gaijin-life-navi'],
+        ['Rigel', 'An AI bookkeeping application that brings receipt OCR, industry-specific journal-entry support, and reporting output into one operational product experience. It also includes natural-language journal-entry assistance plus support features related to invoice-system and e-bookkeeping workflows in the OCR process.', ['e-bookkeeping support features', 'invoice-system support features', '6 industry templates'], 'rigel'],
       ],
     },
     steps: {
       titleJa: '進め方',
       titleEn: 'How engagements move',
-      ja: ['要件を整理する', 'Web3.0の責務を定める', '実装して接続する', '運用へ載せる'],
-      en: ['Clarify the requirement', 'Define the Web3 responsibility', 'Build and integrate', 'Put it into operations'],
+      ja: ['利用者と業務を整理する', '体験と構成を設計する', '実装して検証する', '運用・改善へ接続する'],
+      en: ['Clarify users and operations', 'Design experience and architecture', 'Build and validate', 'Connect to operation and improvement'],
+    },
+  },
+  'ai-driven-development': {
+    hero: {
+      eyebrow: 'AI-Driven Development',
+      jaTitle: 'AI駆動の開発体制で、構想を速く確かな実装へ',
+      enTitle: 'Turn ideas into reliable implementation with AI-driven development',
+      jaSubtitle: 'Nebula Infinityは、AIエージェントを前提にした開発ワークフロー、レビューゲート、検証自動化を組み合わせ、要件整理から実装・改善までの速度と品質を両立します。',
+      enSubtitle: 'Nebula Infinity combines AI-agent-assisted development workflows, review gates, and automated verification to balance speed and quality from requirements through implementation and improvement.',
+      chipsJa: ['Agentic Workflow', 'Quality Gates', 'Delivery Acceleration'],
+      chipsEn: ['Agentic Workflow', 'Quality Gates', 'Delivery Acceleration'],
+    },
+    sectionA: {
+      titleJa: 'このラインが向いている状況',
+      titleEn: 'When this line is the right fit',
+      cardsJa: [
+        ['短期間で動く形を検証したい', '構想を小さく実装し、使いながら判断したい。'],
+        ['仕様変更が多いプロダクトを進めたい', '変更を前提に、レビューと改善が回る開発体制が必要。'],
+        ['AIエージェント活用を開発標準にしたい', '属人的なAI活用ではなく、チームで再現できる進め方にしたい。'],
+        ['速度と品質ゲートを両立したい', '早く作るだけでなく、検証・レビュー・引き継ぎまで残したい。'],
+      ],
+      cardsEn: [
+        ['You need a working version quickly', 'You want to implement a focused version and make decisions through use.'],
+        ['The product will change often', 'You need a delivery model where review and improvement keep pace with change.'],
+        ['You want AI-agent use to become a development standard', 'You need a repeatable team method, not individual AI experimentation.'],
+        ['Speed must include quality gates', 'You need verification, review, and handoff discipline, not just faster output.'],
+      ],
+    },
+    transformation: {
+      eyebrow: 'Delivery model',
+      titleJa: 'AIエージェントを、開発プロセスの中に組み込む',
+      titleEn: 'Put AI agents inside a governed development process',
+      subtitleJa: 'AIを単発の作業補助として使うのではなく、要件、設計、実装、レビュー、検証の流れに役割として組み込みます。',
+      subtitleEn: 'We do not use AI as one-off task assistance. We place it into requirements, design, implementation, review, and verification as defined roles.',
+      columnsJa: [
+        ['Brief', ['目的、制約、成功条件を短く明文化する。']],
+        ['Workflow design', ['AIエージェント、人、レビュー担当の役割を決める。']],
+        ['Agent-assisted build', ['実装・調査・修正を並行しながら進める。']],
+        ['Quality gates', ['レビュー、テスト、ビルド、差分確認を通す。']],
+        ['Handoff', ['判断理由、残課題、運用メモを残して次へ渡す。']],
+      ],
+      columnsEn: [
+        ['Brief', ['Define purpose, constraints, and success criteria in a compact form.']],
+        ['Workflow design', ['Define roles for AI agents, humans, and reviewers.']],
+        ['Agent-assisted build', ['Move implementation, research, and fixes in parallel where safe.']],
+        ['Quality gates', ['Pass review, tests, build checks, and diff inspection.']],
+        ['Handoff', ['Leave decision rationale, open issues, and operating notes for the next step.']],
+      ],
+    },
+    deliverables: {
+      titleJa: 'Nebula Infinity が設計・実装するもの',
+      titleEn: 'What Nebula Infinity designs and builds',
+      itemsJa: [
+        ['開発ワークフロー設計', '要件整理、設計、実装、レビュー、検証の流れをAI前提で組み直します。'],
+        ['AIエージェント役割設計', '調査、実装、レビュー補助、テスト補助などの担当範囲を定義します。'],
+        ['プロダクト実装', 'フロントエンド、バックエンド、データ連携、AI機能を一体で実装します。'],
+        ['品質ゲート整備', 'テスト、型チェック、ビルド、レビュー観点、受け入れ条件を組み込みます。'],
+        ['運用・改善ハンドオフ', '判断ログ、残課題、改善サイクルを残し、継続開発へ接続します。'],
+      ],
+      itemsEn: [
+        ['Development workflow design', 'We rebuild requirements, design, implementation, review, and verification around AI-assisted delivery.'],
+        ['AI-agent role design', 'We define where agents support research, implementation, review, and testing.'],
+        ['Product implementation', 'We build frontend, backend, data integration, and AI features as one delivery flow.'],
+        ['Quality gate setup', 'We embed tests, type checks, builds, review criteria, and acceptance conditions.'],
+        ['Operations and improvement handoff', 'We leave decision logs, open issues, and improvement cycles for continued development.'],
+      ],
+    },
+    proof: {
+      eyebrow: 'Representative proof',
+      titleJa: 'AI駆動開発の代表実績',
+      titleEn: 'Representative AI-driven development proof',
+      noteJa: 'Rigel は、AI駆動の超高速開発と品質ゲートを示すアクティブ proof です。Astra は AI Workflow / PMO proof として扱います。',
+      noteEn: 'Rigel is active proof for AI-driven ultra-fast development and quality gates. Astra is treated as AI Workflow / PMO proof.',
+      itemsJa: [
+        ['Rigel', 'AI記帳アプリのMVPから追加機能までを、短いサイクルと品質ゲートで進めた AI-Driven Development の代表実績です。', ['16h MVP', 'Quality gates', '1-week launch'], 'rigel'],
+      ],
+      itemsEn: [
+        ['Rigel', 'A representative AI-Driven Development proof that moved an AI bookkeeping app from MVP to additional features through short cycles and quality gates.', ['16h MVP', 'Quality gates', '1-week launch'], 'rigel'],
+      ],
+    },
+    steps: {
+      titleJa: '進め方',
+      titleEn: 'How engagements move',
+      ja: ['構想を短く定義する', '開発ワークフローを設計する', '品質ゲート付きで実装する', '引き継ぎ、改善へ接続する'],
+      en: ['Frame the idea', 'Design the delivery workflow', 'Implement with quality gates', 'Hand off and improve'],
     },
     cta: {
-      jaTitle: 'Web3.0 を使うべきかどうかの整理から相談できます',
-      enTitle: 'You can start by deciding whether Web3.0 should be used at all',
-      jaBody: '会員基盤、証跡、デジタル資産の設計で迷っている段階でも問題ありません。事業要件から一緒に整理します。',
-      enBody: 'If you are still evaluating membership, traceability, or digital asset design, we can structure the decision from business requirements first.',
+      jaTitle: '構想を、速く確かな実装へ進めます',
+      enTitle: 'We can move your idea toward reliable implementation quickly',
+      jaBody: '明確な仕様がなくても構いません。目的、制約、最初に動かす範囲から一緒に整理します。',
+      enBody: 'You do not need a complete specification. We can start from purpose, constraints, and the first useful working scope.',
     },
   },
 } as const;
 
 export async function generateStaticParams() {
-  return services.map((service) => ({ serviceId: service.id }));
+  const langs: Language[] = ['ja', 'en'];
+  const activeServiceParams = langs.flatMap((lang) => services.map((service) => ({ lang, serviceId: service.id })));
+
+  if (process.env.NODE_ENV !== 'development') {
+    return activeServiceParams;
+  }
+
+  // In local preview with static export enabled, Next.js must see this retired
+  // service id before the page-level notFound() branch can return a clean 404.
+  // Production/export static params remain active services only.
+  const retiredServiceParams = langs.map((lang) => ({ lang, serviceId: 'web3-blockchain' }));
+  return [...activeServiceParams, ...retiredServiceParams];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; serviceId: string }> }) {
@@ -311,35 +335,166 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const lang = getLanguage(rawLang);
   const service = getServiceById(serviceId);
   if (!service) return {};
-  return { title: `${service.officialLine} - Nebula Infinity`, description: service.body[lang] };
+  return { title: `${service.title[lang]} - Nebula Infinity`, description: service.body[lang] };
 }
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ lang: string; serviceId: string }> }) {
   const { lang: rawLang, serviceId } = await params;
   const lang = getLanguage(rawLang);
   const service = getServiceById(serviceId);
-  const content = pageContent[serviceId as keyof typeof pageContent] as any;
-  if (!service || !content) notFound();
+  if (!service || !(serviceId in pageContent)) notFound();
 
+  const content = pageContent[serviceId];
   const isJa = lang === 'ja';
   const cards = isJa ? content.sectionA.cardsJa : content.sectionA.cardsEn;
-  const categoryItems = isJa ? content.categories.itemsJa : content.categories.itemsEn;
+  const transformation = content.transformation;
+  const columns = transformation ? (isJa ? transformation.columnsJa : transformation.columnsEn) : [];
   const deliverables = isJa ? content.deliverables.itemsJa : content.deliverables.itemsEn;
   const proofItems = isJa ? content.proof.itemsJa : content.proof.itemsEn;
-  const stepItems: string[] = isJa ? [...content.steps.ja] : [...content.steps.en];
-  const chips: string[] = isJa ? [...content.hero.chipsJa] : [...content.hero.chipsEn];
+  const steps = content.steps;
+  const stepItems = steps ? (isJa ? steps.ja : steps.en) : [];
+  const cta = content.cta;
+  const chips = isJa ? content.hero.chipsJa : content.hero.chipsEn;
+  const primaryCta = isJa ? (content.hero.primaryCtaJa ?? 'この領域を相談する') : (content.hero.primaryCtaEn ?? 'Discuss this service');
+  const secondaryCta = isJa ? (content.hero.secondaryCtaJa ?? 'サービス選択に戻る') : (content.hero.secondaryCtaEn ?? 'Back to Home Services');
+  const isAiWorkflow = serviceId === 'ai-workflow';
+
+  const heroSplitClassName = isAiWorkflow ? `${styles.heroSplit} ${styles.aiWorkflowHeroTextOnly}` : styles.heroSplit;
+  const heroContentClassName = isAiWorkflow ? `${styles.heroContent} ${styles.aiWorkflowHeroContent}` : styles.heroContent;
+  const problemSectionClassName = `${styles.section} ${styles.sectionMuted}`;
+  const deliverablesSectionClassName = isAiWorkflow ? styles.section : `${styles.section} ${styles.sectionMuted}`;
+  const deliverablesHeaderClassName = isAiWorkflow
+    ? `${styles.sectionHeader} ${styles.aiWorkflowWideSectionHeader}`
+    : styles.sectionHeader;
+  const proofSectionClassName = isAiWorkflow ? `${styles.section} ${styles.sectionMuted}` : styles.section;
 
   return (
     <div className={styles.page}>
-      <section className={styles.breadcrumb}><div className="container"><div className={styles.breadcrumbInner}><Link href={`/${lang}/`}>{lang === 'ja' ? 'ホーム' : 'Home'}</Link><span>/</span><Link href={`/${lang}/services`}>{lang === 'ja' ? 'サービス' : 'Services'}</Link><span>/</span><span>{service.officialLine}</span></div></div></section>
-      <section className={styles.hero}><div className="container"><div className={styles.heroSplit}><div className={styles.heroContent}><span className={styles.heroEyebrow}>{content.hero.eyebrow}</span><h1 className={styles.heroTitle}>{isJa ? content.hero.jaTitle : content.hero.enTitle}</h1><p className={styles.heroBody}>{isJa ? content.hero.jaSubtitle : content.hero.enSubtitle}</p><div className={styles.actionRow}><Link href={`/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`} className={styles.linkButton}><Button size="lg">{lang === 'ja' ? 'この領域を相談する' : 'Discuss this service'}</Button></Link><Link href={`/${lang}/projects`} className={styles.linkButton}><Button size="lg" variant="outline">{lang === 'ja' ? '代表例を見る' : 'View representative proof'}</Button></Link></div><div className={styles.chipRow}>{chips.map((chip) => <span key={chip} className={styles.chip}>{chip}</span>)}</div></div><div className={`${styles.card} ${styles.featuredCard}`}><span className={styles.columnLabel}>{service.officialLine}</span><h2 className={styles.cardTitle}>{service.title[lang]}</h2><p className={styles.cardBody}>{service.body[lang]}</p><ul className={styles.list}>{service.fitBullets[lang].map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul></div></div></div></section>
-      <section className={styles.section}><div className="container"><div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{isJa ? content.sectionA.titleJa : content.sectionA.titleEn}</h2></div><div className={cards.length === 4 ? styles.grid2 : styles.grid3}>{cards.map(([title, body]: [string, string]) => <div key={title} className={styles.card}><h3 className={styles.cardTitle}>{title}</h3><p className={styles.cardBody}>{body}</p></div>)}</div></div></section>
-      {content.transformation ? <section className={`${styles.section} ${styles.sectionMuted}`}><div className="container"><div className={styles.sectionHeader}><span className={styles.sectionEyebrow}>{content.transformation.eyebrow}</span><h2 className={styles.sectionTitle}>{isJa ? content.transformation.titleJa : content.transformation.titleEn}</h2><p className={styles.sectionSubtitle}>{isJa ? content.transformation.subtitleJa : content.transformation.subtitleEn}</p></div><div className={(isJa ? content.transformation.columnsJa.length : content.transformation.columnsEn.length) === 2 ? styles.compareGrid : styles.transformationPanel}>{(isJa ? content.transformation.columnsJa : content.transformation.columnsEn).map(([label, bullets]: [string, readonly string[]]) => <div key={label} className={(isJa ? content.transformation.columnsJa.length : content.transformation.columnsEn.length) === 2 ? `${styles.card} ${styles.featuredCard}` : styles.transformationColumn}><span className={styles.columnLabel}>{label}</span><ul className={styles.list}>{(bullets as string[]).map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul></div>)}</div></div></section> : null}
-      <section className={styles.section}><div className="container"><div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{isJa ? content.categories.titleJa : content.categories.titleEn}</h2>{'subtitleJa' in content.categories ? <p className={styles.sectionSubtitle}>{isJa ? content.categories.subtitleJa : content.categories.subtitleEn}</p> : null}</div><div className={styles.grid3}>{categoryItems.map(([title, body]: [string, string]) => <div key={title} className={styles.card}><h3 className={styles.cardTitle}>{title}</h3><p className={styles.cardBody}>{body}</p></div>)}</div></div></section>
-      <section className={`${styles.section} ${styles.sectionMuted}`}><div className="container"><div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{isJa ? content.deliverables.titleJa : content.deliverables.titleEn}</h2></div><div className={deliverables.length === 4 ? styles.grid2 : styles.grid3}>{deliverables.map(([title, body]: [string, string]) => <div key={title} className={styles.card}><h3 className={styles.cardTitle}>{title}</h3><p className={styles.cardBody}>{body}</p></div>)}</div></div></section>
-      <section className={styles.section}><div className="container"><div className={styles.sectionHeader}><span className={styles.sectionEyebrow}>{content.proof.eyebrow}</span><h2 className={styles.sectionTitle}>{isJa ? content.proof.titleJa : content.proof.titleEn}</h2><p className={styles.sectionSubtitle}>{isJa ? content.proof.noteJa : content.proof.noteEn}</p></div><div className={styles.grid2}>{proofItems.map(([title, body, strip, slug]: [string, string, readonly string[], string?]) => <div key={title} className={`${styles.proofCard} ${styles.featuredCard}`}><h3 className={styles.proofTitle}>{title}</h3><p className={styles.proofSummary}>{body}</p><div className={styles.proofStrip}>{strip.map((item) => <span key={item} className={styles.proofPill}>{item}</span>)}</div><Link href={typeof slug === 'string' && slug in {'gaijin-life-navi':1,'rigel':1,'carina':1} ? `/${lang}/projects/${slug}` : `/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`} className={styles.ctaLink}>{lang === 'ja' ? (serviceId === 'ai-workflow' ? 'この類型を相談する' : '詳細を見る') : (serviceId === 'ai-workflow' ? 'Discuss this workflow type' : 'View case')}<span aria-hidden="true">→</span></Link></div>)}</div></div></section>
-      <section className={`${styles.section} ${styles.sectionMuted}`}><div className="container"><div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{isJa ? content.steps.titleJa : content.steps.titleEn}</h2></div><div className={styles.stepRail}>{stepItems.map((step, index) => <div key={step} className={styles.stepItem}><div className={index === 1 || index === 2 ? `${styles.stepNode} ${styles.stepNodeAlt}` : styles.stepNode}>{index + 1}</div><h3 className={styles.stepHeading}>{step}</h3></div>)}</div></div></section>
-      <section className={styles.section}><div className="container"><div className={styles.featuredBand}><div className={styles.bandCopy}><h2 className={styles.bandTitle}>{isJa ? content.cta.jaTitle : content.cta.enTitle}</h2><p className={styles.bandBody}>{isJa ? content.cta.jaBody : content.cta.enBody}</p></div><div className={styles.bandActions}><Link href={`/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`} className={styles.linkButton}><Button size="lg">{lang === 'ja' ? 'お問い合わせ' : 'Contact Us'}</Button></Link><Link href={`/${lang}/services`} className={styles.linkButton}><Button size="lg" variant="outline">{lang === 'ja' ? 'サービス一覧へ' : 'Back to Services'}</Button></Link></div></div></div></section>
+      <section className={styles.breadcrumb}>
+        <div className="container">
+          <div className={styles.breadcrumbInner}>
+            <Link href={`/${lang}/`}>{isJa ? 'ホーム' : 'Home'}</Link>
+            <span>/</span>
+            <Link href={`/${lang}/#services`}>{isJa ? 'サービス' : 'Services'}</Link>
+            <span>/</span>
+            <span aria-current="page">{service.officialLine}</span>
+          </div>
+        </div>
+      </section>
+      <section className={styles.hero}>
+        <div className="container">
+          <div className={heroSplitClassName}>
+            <div className={heroContentClassName}>
+              <span className={styles.heroEyebrow}>{content.hero.eyebrow}</span>
+              <h1 className={styles.heroTitle}>{isJa ? content.hero.jaTitle : content.hero.enTitle}</h1>
+              <p className={styles.heroBody}>{isJa ? content.hero.jaSubtitle : content.hero.enSubtitle}</p>
+              <div className={styles.chipRow}>{chips.map((chip) => <span key={chip} className={styles.chip}>{chip}</span>)}</div>
+              <div className={styles.actionRow}>
+                <Link href={`/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`} className={styles.linkButton}>
+                  <Button size="lg">{primaryCta}</Button>
+                </Link>
+                <Link href={`/${lang}/#services`} className={styles.linkButton}>
+                  <Button size="lg" variant="outline">{secondaryCta}</Button>
+                </Link>
+              </div>
+            </div>
+            {isAiWorkflow ? null : (
+              <div className={`${styles.card} ${styles.featuredCard}`}>
+                <h2 className={styles.cardTitle}>{service.title[lang]}</h2>
+                <p className={styles.cardBody}>{service.body[lang]}</p>
+                <ul className={styles.list}>{service.fitBullets[lang].map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+      <section className={problemSectionClassName}>
+        <div className="container">
+          <div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{isJa ? content.sectionA.titleJa : content.sectionA.titleEn}</h2></div>
+          <div className={cards.length === 3 ? styles.grid3 : styles.grid2}>
+            {cards.map(([title, body]) => <div key={title} className={styles.card}><h3 className={styles.cardTitle}>{title}</h3><p className={styles.cardBody}>{body}</p></div>)}
+          </div>
+        </div>
+      </section>
+      {transformation ? (
+        <section className={styles.section}>
+          <div className="container">
+            <div className={styles.sectionHeader}>
+              <span className={styles.sectionEyebrow}>{transformation.eyebrow}</span>
+              <h2 className={styles.sectionTitle}>{isJa ? transformation.titleJa : transformation.titleEn}</h2>
+              <p className={styles.sectionSubtitle}>{isJa ? transformation.subtitleJa : transformation.subtitleEn}</p>
+            </div>
+            <div className={columns.length > 3 ? styles.gridAuto : styles.grid3}>
+              {columns.map(([title, bullets]) => (
+                <div key={title} className={`${styles.card} ${styles.featuredCard}`}>
+                  <h3 className={styles.cardTitle}>{title}</h3>
+                  <ul className={styles.list}>{bullets.map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+      <section className={deliverablesSectionClassName}>
+        <div className="container">
+          <div className={deliverablesHeaderClassName}>
+            <h2 className={styles.sectionTitle}>{isJa ? content.deliverables.titleJa : content.deliverables.titleEn}</h2>
+            {content.deliverables.subtitleJa || content.deliverables.subtitleEn ? <p className={styles.sectionSubtitle}>{isJa ? content.deliverables.subtitleJa : content.deliverables.subtitleEn}</p> : null}
+          </div>
+          <div className={deliverables.length === 4 ? styles.grid2 : styles.grid3}>{deliverables.map(([title, body]) => <div key={title} className={styles.card}><h3 className={styles.cardTitle}>{title}</h3><p className={styles.cardBody}>{body}</p></div>)}</div>
+        </div>
+      </section>
+      <section className={proofSectionClassName}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionEyebrow}>{content.proof.eyebrow}</span>
+            <h2 className={styles.sectionTitle}>{isJa ? content.proof.titleJa : content.proof.titleEn}</h2>
+            <p className={styles.sectionSubtitle}>{isJa ? content.proof.noteJa : content.proof.noteEn}</p>
+          </div>
+          <div className={proofItems.length === 1 ? styles.gridAuto : proofItems.length === 3 ? styles.grid3 : styles.grid2}>
+            {proofItems.map(([title, body, strip, link]) => {
+              const href = typeof link === 'string' ? `/${lang}/projects/${link}` : link?.href(lang) ?? `/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`;
+              const ctaLabel = typeof link === 'object'
+                ? (isJa ? link.ctaJa : link.ctaEn)
+                : isJa
+                  ? (typeof link === 'string' ? '詳細を見る' : 'この類型を相談する')
+                  : (typeof link === 'string' ? 'View case' : 'Discuss this workflow type');
+              return (
+                <div key={title} className={`${styles.proofCard} ${styles.featuredCard}`}>
+                  <h3 className={styles.proofTitle}>{title}</h3>
+                  <p className={styles.proofSummary}>{body}</p>
+                  <div className={styles.proofStrip}>{strip.map((item) => <span key={item} className={styles.proofPill}>{item}</span>)}</div>
+                  <Link href={href} className={styles.ctaLink}>{ctaLabel}<span aria-hidden="true">→</span></Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+      {steps ? (
+        <section className={`${styles.section} ${styles.sectionMuted}`}>
+          <div className="container">
+            <div className={styles.sectionHeader}><h2 className={styles.sectionTitle}>{isJa ? steps.titleJa : steps.titleEn}</h2></div>
+            <div className={styles.stepRail}>{stepItems.map((step, index) => <div key={step} className={styles.stepItem}><div className={index === 1 || index === 2 ? `${styles.stepNode} ${styles.stepNodeAlt}` : styles.stepNode}>{index + 1}</div><h3 className={styles.stepHeading}>{step}</h3></div>)}</div>
+          </div>
+        </section>
+      ) : null}
+      {cta ? (
+        <section className={styles.section}>
+          <div className="container">
+            <div className={styles.featuredBand}>
+              <div className={styles.bandCopy}>
+                <h2 className={styles.bandTitle}>{isJa ? cta.jaTitle : cta.enTitle}</h2>
+                <p className={styles.bandBody}>{isJa ? cta.jaBody : cta.enBody}</p>
+              </div>
+              <div className={styles.bandActions}>
+                <Link href={`/${lang}/contact?inquiry=${encodeURIComponent(service.officialLine)}`} className={styles.linkButton}><Button size="lg">{isJa ? 'お問い合わせ' : 'Contact Us'}</Button></Link>
+                <Link href={`/${lang}/#services`} className={styles.linkButton}><Button size="lg" variant="outline">{isJa ? 'サービス選択に戻る' : 'Back to Home Services'}</Button></Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }

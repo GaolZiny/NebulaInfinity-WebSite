@@ -1,6 +1,16 @@
 # PROJECT_MEMORY — NebulaInfinity Website
 
 ## Now
+- 2026-05-09: pipeline-203 is PM-accepted for AI Workflow copy realignment and Japanese copy master. Designer handoff/copy master `37b41b6`, Coder implementation `608dedf`, Tester QA PASS 24/24 `fa9dec4`, and final master cleanup `73abe58` are complete. Current Japanese editing surface is `artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/ja-site-copy-master-2026-05-09.md`; older Home/non-Home copy sheets are source/history only. Remaining intentional `[needs-Z-edit]` watchlist items: Home service chips/taxonomy residue, broad 24h wording, and Rigel compliance-risk wording.
+- 2026-05-09: pipeline-202 is PM-accepted for `ai-dev-flow`: architecture (`ea53c16`), design handoff (`eb8a03a`), implementation (`f5b1e01`), and Tester QA PASS (50/50) are complete. Active route is `/[lang]/services/ai-workflow/ai-dev-flow`; it is an AI Workflow methodology/sub-detail page, not a Project route and not AI-Driven Development proof. Evidence: `notes/tester-ai-dev-flow-task-205.md` and `screenshots/task-205-ai-dev-flow/`.
+- 2026-05-07: task-201 is PM-verified on commit `8dd0ca5`: Astra moved to AI Workflow / PMO examples, AI-Driven Development proof now uses Rigel plus stream-demo/product video waterfall page with project-specific 24h demo, 3-day beta, and 1-week launch evidence. Architecture/requirements still need alignment before implementation.
+- 2026-05-06: task-200 is PM-verified on commit `63bcd28`: AI-Driven Development “What we design and build” JA copy now positions the service as Nebula Infinity-delivered ultra-fast, quality-gated MVP/demo/product development for client needs, with conditional 24h MVP/demo and 24h iteration-cycle language.
+- 2026-05-06: task-198/task-199 are PM-accepted: AI Application service detail JA copy was implemented from Z's revised sheet, EN was semantically aligned to the revised JA, JA/EN bottom CTA was removed, and Tester QA passed 47/47 on implementation commit `8617661`.
+- 2026-05-06: task-196/task-197 are PM-accepted: AI Workflow visual correction landed on commit `e405598` and Tester QA passed 12/12 against Z screenshots and sibling Service pages. Custom warm/gold section backgrounds were removed, neutral Service-page tones restored, and 設計・開発範囲 lead/grid alignment is 0px delta at 1440/1024/mobile; port 3000 preview returns 200.
+- 2026-05-06: task-194/task-195 are PM-accepted: AI Workflow visual fixes landed on commit `b72de3e` and Tester QA passed 12/12. The hero service-card panel is removed, first content sections are visually separated, and the 設計・開発範囲 lead aligns widely with the card grid on desktop/1024 while mobile remains readable.
+- 2026-05-06: task-192/task-193 are PM-accepted: AI Workflow service detail now follows Z-edited reduced JA structure, standalone `/[lang]/projects` index is removed, Home `#projects` replaces it, active project details remain, and Tester QA passed 26/26 on implementation commit `42ee882`. 3000 dev preview was restarted and returns 200 for Home and AI Workflow.
+- 2026-05-06: Projects index removal architecture alignment is PM-verified on commit `97d2b05`: Home `#projects` replaces standalone `/[lang]/projects`, while active detail routes remain `gaijin-life-navi`, `rigel`, and `astra`. Downstream design/copy/code updates are next.
+- 2026-05-06: task-190 non-Home copy editing sheet is PM-verified on commit `10ded20`; it drafts service detail, Projects, Japan Life Navi, Rigel, Astra, and Contact copy aligned to Z's modified Home direction for Z review/editing before implementation.
 - Prior content repositioning pipeline (`pipeline-035`) is complete, but its AI-only positioning is now superseded by the new V1 direction.
 - Design Foundation for the V1 positioning reset has been produced and PM-verified; waiting for Z approval before visual/page design.
 - Visual/page design batch for the V1 positioning rebuild has been produced and PM-verified; waiting for Z approval before implementation.
@@ -9,6 +19,57 @@
 - Review-fix iteration on commit `75abe40` is PM-verified: legacy `ai-development` redirect now points to AI Workflow and contact anti-abuse now uses a server-side origin allowlist with aligned CORS.
 - Code review rerun on commit `75abe40` is APPROVED; tester QA is now in progress.
 - Final tester QA passed on QA commit `7a505a4`; the website is accepted as V1 usable-state from product/QA perspective.
+- 2026-05-04: Z judged the current copy still insufficient for a client-facing company website; before customer showcase, run a focused positioning/copy rewrite pass, not only deployment cleanup.
+- 2026-05-04: JA client-facing copy direction proposal is PM-verified on commit `5dfe3d9`, focused on Home + Services first and preserving current design/structure.
+- 2026-05-04: Full JA Home + Services section-by-section copy sheet is PM-verified on commit `4e35bb5` and sent to Telegram topic 66 for Z review (messages 3646-3649); implementation remains blocked until Z approval.
+- 2026-05-04: Z requested revisions to the full JA copy sheet: Home Process step labels/content, Home Proof title/subtitle/structure alignment, Home final CTA title/support/CTA, remove Services Representative proof and Combined services sections, and simplify Services final CTA.
+- 2026-05-04: Revised JA Home + Services copy sheet is PM-verified on commit `510e59a` and sent to Telegram topic 66 for Z review (messages 3651-3653).
+- 2026-05-04: Z approved the revised JA Home + Services copy and authorized page implementation.
+- 2026-05-04: JA Home + Services copy implementation is PM-verified on commit `6f4b584`; Tester browser/screenshot QA passed 13/13 with evidence under `artifacts/screenshots/task-164-*` and report `notes/tester-ja-copy-task-164.md`.
+- 2026-05-05: Z requested an IA/content consolidation proposal: remove standalone Services index need by folding service selection into Home, remove Home Proof if covered by service details, and fold About/company overview into Home with nav anchors.
+- 2026-05-05: Home-led IA consolidation proposal is PM-verified on commit `4933ef6`.
+- 2026-05-05: Z approved Services/About as Home anchors and clarified standalone Services index and About pages may be deleted (not compatibility pages). Z also requested Home `#about` not repeat Focus/Representative products and keep working principles in current style.
+- 2026-05-05: Revised Home-led IA consolidation proposal is PM-verified on commit `e037a39`; waiting for Z implementation approval.
+- 2026-05-05: Architecture and requirements docs are aligned to the approved Home-led IA consolidation and PM-verified on commit `1c0ccbc`; implementation pipeline is ready to dispatch.
+- 2026-05-05: Visual/page design specs are aligned to the approved Home-led IA on commit `f5a1aea`; Home is canonical for `#services` and `#about`, while Services/About standalone specs are tombstoned for route cleanup.
+- 2026-05-05: Home-led IA code implementation is PM static-verified on commit `3a6bfde`; browser/screenshot QA is next.
+- 2026-05-05: Browser/screenshot QA for Home-led IA failed on commit `3a6bfde`: desktop same-page `#services` and mobile menu `#services/#about` anchor landings can hide/skip target headings; Coder iteration is required.
+- 2026-05-05: Anchor-scroll Coder iteration is PM static-verified on commit `3c0d0f1`; Tester browser/screenshot rerun is next.
+- 2026-05-05: Home-led IA consolidation is PM-accepted after Tester rerun PASS on QA commit `d586e6c`; final implementation includes `3a6bfde` plus anchor-scroll fix `3c0d0f1`. Services/About standalone routes are removed, Home `#services/#about` anchors are verified on desktop/mobile, and 22/22 smoke passed.
+- 2026-05-05: Z requested rewriting the canonical Home copy document for the new Home-led structure using the original 2026-05-04 15:00-22:00 topic discussion; Writer task-172 prepared.
+- 2026-05-05: Home-led IA canonical copy docs were rewritten and PM-verified on commit `75dba8a` for Z review; the update maps the 2026-05-04 15:00-22:00 discussion into the new Home structure without code implementation.
+- 2026-05-05: Z approved task-172 Home JA copy direction for implementation with 3 adjustments: move Why assetization into AI Workflow detail, simplify About snapshot to Company/Location only, and add a Home Projects section with Japan Life Navi/Rigel/Carina cards between Services and Process. Architecture update task-173 prepared.
+- 2026-05-05: Architecture/requirements for Z's latest Home adjustments are PM-verified on commit `6303a3a`; design/copy spec update task-174 is prepared next.
+- 2026-05-05: Design/copy specs for Z's latest Home adjustments are PM-verified on commit `83e8d69`; code implementation task-175 is prepared.
+- 2026-05-05: Code implementation for latest Home copy/IA adjustments is PM static-verified on commit `a61bbb3`; project slugs resolved as Japan Life Navi=`gaijin-life-navi`, Rigel=`rigel`, Carina=`carina`; browser/screenshot QA task-176 is next.
+- 2026-05-05: Latest Home copy/IA adjustments are PM-accepted after Tester QA PASS on commit `28f996f`; final implementation commit `a61bbb3` adds Home Projects (Japan Life Navi/Rigel/Carina), removes Home assetization section, moves assetization model to AI Workflow detail, and verifies 19 pass / 0 fail.
+- 2026-05-05: Created editable Home copy sheet for Z's full rewrite request at `artifacts/epics/website-redesign/features/v1-positioning-rebuild/notes/home-copy-editing-sheet-2026-05-05.md`; after Z edits it, PM should dispatch implementation and QA against this sheet.
+- 2026-05-05: Z confirmed full Home rewrite structural decisions: remove Hero CTA buttons, replace Web3.0 service line/detail route with `ai-driven-development`, delete old `web3-blockchain` service route/content, replace Home Projects `Carina` with `Astra`, add Astra project data/detail, and delete Carina page/content. Architecture alignment task-178 started; do not touch Z-edited copy sheet during planning.
+- 2026-05-05: Architecture/requirements for the Home service model rewrite are PM-verified on commit `ddd5d0f`; active service routes are `ai-workflow`, `ai-application`, `ai-driven-development`; active Home Projects are Japan Life Navi/Rigel/Astra; Web3/Carina are retired from active contracts. Design spec alignment task-179 is next.
+- 2026-05-05: Design spec alignment task-179 started for Home service model rewrite; scope includes Home, AI-Driven Development detail, Projects index/case proof mapping, and tombstoning/removing active Web3/Carina design references; Z-edited copy sheet remains untouched.
+- 2026-05-05: Design specs for the Home service model rewrite are PM-verified on commit `29db21c`; Home, Projects, Services tombstone, Web3 tombstone, and new AI-Driven Development detail specs are aligned. Implementation task-180 is next and must use Z-edited copy sheet as source without modifying it.
+- 2026-05-05: Implementation task-180 started for the Home service model rewrite; Coder must implement from Z-edited `home-copy-editing-sheet-2026-05-05.md`, align EN to JA, add `ai-driven-development`, add Astra, remove active Web3/Carina, and leave the copy sheet untouched.
+- 2026-05-05: task-180 first Coder attempt failed before implementation because the Worker invoked missing `python`; PM verified there is no implementation commit/report and no implementation file changes. Iteration will be re-spawned with explicit `python3` guidance.
+- 2026-05-05: task-180 iter1 blocked correctly on scope: active Contact inquiry options/validation still use retired Web3 taxonomy in `lib/contact.ts` / `lib/contact.test.ts` / `components/contact/ContactForm.tsx`, which were outside the original allowlist. PM verified and will re-spawn with a narrow expanded contact allowlist.
+- 2026-05-05: task-180 iter2 produced uncommitted partial changes without the required implementation report/commit. PM archived the partial diff, restored tracked partials, and split implementation into smaller tasks: task-181 taxonomy/service/contact/project foundation, then task-182 Home implementation.
+- 2026-05-05: task-181 taxonomy foundation is PM-verified on commit `7d56f7d`; active service/contact/project taxonomy now uses `ai-driven-development` and Astra, Carina data is removed, lint/test/build passed, and forbidden Home/style residue from earlier partial work was archived/restored. Home page implementation task-182 is next.
+- 2026-05-05: task-182 prepared as the Home-only implementation slice after task-181 passed; scope is `app/[lang]/page.tsx` plus minimal `styles/marketing.module.css` if needed, using Z-edited copy sheet as read-only source.
+- 2026-05-05: task-182 Home-only implementation is PM static-verified on commit `2f09295`; Home now uses Z-edited JA copy with aligned EN, Hero CTA row removed, active Home services are AI Workflow / AI Application / AI-Driven Development, Projects are Japan Life Navi / Rigel / Astra, and About is vertical Title → Company snapshot → Working principles. Lint/test/build passed; browser/screenshot QA task-183 is next.
+- 2026-05-05: task-183 Tester browser/screenshot QA is dispatched for the Home service model rewrite, covering JA/EN desktop/mobile Home, AI-Driven Development detail routes, retired Web3/Carina absence, Contact taxonomy, anchors, and static export smoke.
+- 2026-05-05: task-183 Tester browser/screenshot QA failed on QA commit `5fbd818`: 28 pass / 4 fail. Confirmed defects are Home Services intro retaining retired Web3/Web Contents taxonomy and `_redirects` mapping legacy blockchain URLs to retired `web3-blockchain`; `/404/` dev smoke remains a minor known issue. Hero trust-chip wording is a spec/copy-sheet conflict and should not be silently changed without Z/PM decision.
+- 2026-05-05: task-184 Coder fix is dispatched for confirmed task-183 defects: Home Services intro taxonomy residue and `_redirects` retired Web3 route exposure. Hero chip wording is intentionally excluded pending Z/PM decision because it conflicts between QA/design expectation and Z-edited copy-sheet preservation.
+- 2026-05-05: task-184 Coder fix is PM static-verified on commit `d9237e6`: Home Services intro no longer contains Web3/Web Contents taxonomy residue, `_redirects` no longer exposes retired `web3-blockchain`, lint/test/build passed, retired-route grep passed. Tester rerun is next; Hero chip wording remains pending Z decision.
+- 2026-05-05: task-185 Tester rerun is dispatched after task-184, covering prior task-183 failures and Home/service/contact/anchor/static-export regressions. Hero chips are classified as pending Z decision/informational for this rerun.
+- 2026-05-05: task-185 Tester rerun failed on QA commit `efaa7f1`: prior task-183 blockers are fixed, but retired direct project routes `/ja/projects/carina/` and `/en/projects/carina/` return 500 in approved preview instead of clean not-found behavior. Hero chips remain informational/pending Z decision.
+- 2026-05-05: task-186 Coder fix is dispatched for the remaining task-185 blocker: retired Carina direct project routes return 500 in approved preview. Scope is limited to project detail not-found behavior; Carina must not be reintroduced.
+- 2026-05-05: task-186 Coder fix is PM static-verified on commit `974650f`: retired Carina direct project routes return 404 in approved preview, active Japan Life Navi/Rigel/Astra project detail routes return 200, lint/test/build and export retired grep passed. PM observed a possible fresh-preview retired Web3 service route warm-up issue and will force Tester to check it in the next rerun.
+- 2026-05-05: task-187 Tester final rerun is dispatched after task-186. It must check fresh-preview retired Web3 service and Carina project direct routes before active-route warm-up, plus full Home/service/project/contact/browser regressions.
+- 2026-05-05: task-187 Tester final rerun failed on QA commit `c021074`: fresh-preview retired Web3 service routes `/ja/services/web3-blockchain/` and `/en/services/web3-blockchain/` return 500 before active-route warm-up, then 404 after warm-up. Carina retired routes are fixed (404), active routes/Home/browser/contact/export checks passed.
+- 2026-05-05: task-188 Coder fix is dispatched for the remaining task-187 blocker: fresh-preview retired Web3 service direct routes return 500 before active-route warm-up. Scope is limited to service detail not-found behavior; Web3 must not be reintroduced as active content, route, redirect, sitemap, or export artifact.
+- 2026-05-05: task-188 Coder fix is PM static-verified on commit `e7c9e3b`: fresh-preview retired Web3 service routes return 404 before active-route warm-up, retired Carina remains 404, active AI Workflow/AI Application/AI-Driven Development service routes return 200, lint/test/build and export retired grep passed. Tester final rerun is next.
+- 2026-05-05: task-189 Tester final rerun is dispatched after task-188, covering fresh-preview retired Web3 service and Carina direct routes before active-route warm-up, active route matrix, and full Home/service/project/contact/browser regressions.
+- 2026-05-05: task-189 Tester final rerun is PM-accepted on QA commit `c4d52bd`: final Home/service model rewrite QA passed 42/42 with no blocking issues. Fresh retired Web3 service and Carina direct routes return 404 before active-route warm-up; active service/project route matrix returns 200; Home JA/EN desktop/mobile, anchors, AI-Driven detail, Contact taxonomy, static export, and `_redirects` checks passed. Hero chip wording remains pending Z decision/informational; generic `/404/` smoke 500 remains a known minor follow-up.
+- 2026-05-05: Z explicitly reinforced PM notification discipline after task-178 confusion: for future pipeline milestones, PM must send clear updates to the Telegram topic for dispatch/start, Worker completion + PM verification, failures/noisy status clarification, and final acceptance; do not rely on silent background state changes or raw subagent events.
 - Production deployment is still an operational follow-up: Cloudflare Pages deployment and live SendGrid env configuration were not executed in this pipeline.
 - Contact flow now uses a real SendGrid-backed delivery path with honest provider-missing failure behavior.
 - Next.js was upgraded to 15.5.14 during implementation to clear high-severity audit issues while preserving static export.
@@ -40,11 +101,10 @@
 - **Goal**: Turn the site into a usable V1 business website with unified positioning, credible proof, and a real inquiry path.
 
 ## Next
-1. Lock PM feature docs for `v1-positioning-rebuild`
-2. Produce page-level content / visual direction for Home, Services, 3 service detail pages, Projects, About, Contact
-3. Implement site-wide copy / structure updates
-4. Make contact form actually deliver inquiries
-5. Verify build, responsive behavior, 404, and Cloudflare Pages deploy state
+1. Keep Home-led IA consolidation as accepted baseline.
+2. Continue remaining production-readiness follow-ups: Cloudflare Pages deploy verification and production SendGrid/contact env confirmation.
+3. Extend the approved positioning direction to any remaining Contact, service detail, and Projects copy refinements as separate follow-up tasks.
+4. Verify live production URL after deployment, including 404 and contact behavior.
 
 ## Decisions
 | Date | Decision | Rationale |
@@ -60,6 +120,8 @@
 | 2026-04-09 | V1 implementation verified on commit `92c76c6` | Static analysis, build/export, browser verification, and contact 503 fallback check passed |
 | 2026-04-09 | Code review rerun approved on commit `75abe40` | Redirect and anti-abuse fixes accepted; pipeline advanced to tester QA |
 | 2026-04-09 | Final tester QA PASS on commit `75abe40` | V1 usable-state accepted; deploy/env configuration remains operational follow-up |
+| 2026-05-04 | JA copy rewrite must incorporate Z's two proof/value points | AI Workflow must be framed broadly: any company's repeatable business work can be solidified into AI workflows and become company-owned assets independent of individual employees. Nebula's strategist Stage 0 → PM milestone development workflow is only one concrete example from Nebula's own planning/development business, implemented on OpenClaw but not limited to OpenClaw; similar workflows can use Claude Code or other AI tools. Web3 should emphasize blockchain immutability for points/CRM/reviews/contracts and the added effect when combined with AI. |
+| 2026-05-04 | Z selected Hero option A and normal Services intro for JA copy direction | Use `「AI」を、現場の「即戦力」へ。` as Home Hero direction; use the full/normal Services intro, not the shorter alternative. Remaining Home/Services sections still need a full section-by-section copy sheet before implementation. |
 
 ## Technical Details
 - **Domain**: nebulainfinity.com
@@ -69,7 +131,7 @@
 - **Telegram topic**: 66
 
 ## Known Issues / Gaps
-- Contact function currently behaves like a placeholder and must be connected to real delivery before V1 is considered usable.
+- Contact delivery code exists, but production SendGrid/contact environment and live Cloudflare Pages behavior still need explicit verification.
 - Existing content/data still contains legacy AI-only and Web3 residual wording that must be reconciled under the new V1 structure.
 - Cloudflare Pages deploy status still needs explicit verification.
 

@@ -1,137 +1,220 @@
 import Link from 'next/link';
 import { getLanguage } from '@/lib/i18n';
 import Button from '@/components/ui/Button';
-import { services } from '@/data/services';
-import projectsData from '@/data/projects/projects.json';
 import styles from '@/styles/marketing.module.css';
 
 const homeCopy = {
   ja: {
     eyebrow: 'AI社会実装のパートナー',
     title: '「AI」を、現場の「即戦力」へ',
-    body: 'Nebula Infinity は、AI Workflow、AI Application、Web3.0 / Blockchain の設計と開発を通じて、構想を実務で使える仕組みに変えます。属人化したノウハウを整理し、運用できる形で実装し、事業の中で機能する状態まで伴走します。',
-    primaryCta: 'お問い合わせ',
-    secondaryCta: 'サービスを見る',
-    transformationEyebrow: 'Why assetization matters',
-    transformationTitle: '「導入」より先に、「定着する仕組み」を設計する',
-    transformationSubtitle: 'AI 導入が止まる理由の多くは、技術そのものではなく、現場の判断基準や業務知識が人に閉じていることにあります。Nebula Infinity は、その知見を運用可能な形に整理し、再現性のある仕組みに変えます。',
+    body: 'Nebula Infinityは、AIの力を引き出し、クライアントのプロセス（業務・作業・構想）をワークフロー/アプリケーション/コンテンツとして実装するパートナーです。',
     servicesEyebrow: 'Services',
-    servicesTitle: '3つの実装ラインで、構想を事業に落とし込む',
-    servicesSubtitle: '業務フローの資産化、AIアプリケーション開発、Web3.0 / Blockchain 活用まで、目的に合わせて最適な実装ラインを設計します。',
+    servicesTitle: '3つのソリューションで、アイデア/構想を事業に落とし込む',
+    servicesSubtitle: '業務フローの資産化、AIアプリケーション開発、AI-Driven Developmentまで。Nebula Infinityは、目的に合わせて必要な実装ラインを設計します。',
+    projectsEyebrow: 'Projects',
+    projectsTitle: 'プロジェクト例',
+    projectsSubtitle: '一部のプロジェクト例を公開します。詳細内容は、各プロジェクトページでも確認できます。',
     processEyebrow: 'Process',
-    processTitle: '現場に入る前提で、設計から実装まで進める',
-    processSubtitle: '要件が固まっていなくても構いません。業務の整理から入り、最小構成で試し、実装し、運用に載せるところまで伴走します。',
-    proofEyebrow: 'Proof',
-    proofTitle: '実装力は、代表事例で示す',
-    proofSubtitle: '公開できる範囲の代表例を通じて、Nebula Infinity の実装領域と深さを示します。',
-    trustEyebrow: 'How we work',
-    trustTitle: 'Nebula Infinity が重視する3つの基準',
-    ctaTitle: '要件が固まっていなくても、ご相談ください',
-    ctaBody: '現場の課題、作りたいもの、整理できていない論点の段階でも構いません。Nebula Infinity が、実装の入口から一緒に整理します。',
-    ctaSupport: '通常 2 営業日以内にご返信します。',
-    viewService: '詳細を見る',
-    viewWorkflow: 'AI Workflowを見る',
-    viewCase: '詳細を見る',
+    processTitle: 'アイデア/ニーズから実装、運用まで。',
+    processSubtitle: '明確な要件がなくても構いません。構想（アイデア/ニーズ）からプロセスを整理し、実装方針を定め、検証しながら仕上げていきます。',
+    aboutEyebrow: 'About Nebula Infinity',
+    aboutTitle: 'AI社会実装のパートナー',
+    ctaTitle: '思いだけでもご相談頂けます。',
+    ctaBody: 'アイデア/要件を頂き、最短24時間以内に動くデモをお見せできます。',
+    contactCta: 'お問い合わせ',
   },
   en: {
     eyebrow: 'AI Social Implementation Partner',
     title: 'Turn AI into front-line capability',
-    body: 'Nebula Infinity designs and builds AI workflows, AI applications, and Web3.0 / blockchain products that work in real operations. We turn people-dependent know-how into systems your team can own, reuse, and scale.',
-    primaryCta: 'Contact Us',
-    secondaryCta: 'View Services',
-    transformationEyebrow: 'Why assetization matters',
-    transformationTitle: 'Design the operating system before introducing the tool',
-    transformationSubtitle: 'AI projects often stall not because of the model, but because decision logic and operational know-how live inside individuals. We turn that knowledge into systems the organization can operate.',
+    body: 'Nebula Infinity draws out the power of AI and implements client processes — operations, work, and ideas — as workflows, applications, and content that can be used in real business.',
     servicesEyebrow: 'Services',
-    servicesTitle: 'Three implementation lines, one business partner',
-    servicesSubtitle: 'From workflow assetization to AI application delivery and Web3.0 / blockchain implementation, we structure the right line of work around your business goal.',
+    servicesTitle: 'Three solutions that turn ideas into business implementation',
+    servicesSubtitle: 'From workflow assetization to AI application development and AI-Driven Development, Nebula Infinity designs the implementation line your business goal requires.',
+    projectsEyebrow: 'Projects',
+    projectsTitle: 'Project examples',
+    projectsSubtitle: 'A focused set of public project examples. Details are available on each project page.',
     processEyebrow: 'Process',
-    processTitle: 'Work from real operations, not abstract strategy',
-    processSubtitle: 'You do not need a finished spec. We start by clarifying the operational problem, test the smallest viable shape, implement it, and support rollout.',
-    proofEyebrow: 'Proof',
-    proofTitle: 'Representative proof of delivery',
-    proofSubtitle: 'We show the depth of Nebula Infinity\'s delivery capability through a focused set of representative examples.',
-    trustEyebrow: 'How we work',
-    trustTitle: 'Three standards we do not compromise on',
-    ctaTitle: 'You can reach out before the requirements are fixed',
-    ctaBody: 'You do not need a finished brief. If you have an operational issue, a product idea, or an unclear starting point, we can structure the path with you.',
-    ctaSupport: 'We usually reply within 2 business days.',
-    viewService: 'View service',
-    viewWorkflow: 'View AI Workflow',
-    viewCase: 'View case',
+    processTitle: 'From ideas and needs to implementation and operation.',
+    processSubtitle: 'You do not need finished requirements. We organize the process from an idea or need, define the implementation direction, and refine it through validation.',
+    aboutEyebrow: 'About Nebula Infinity',
+    aboutTitle: 'AI Social Implementation Partner',
+    ctaTitle: 'You can reach out with only an initial thought.',
+    ctaBody: 'Share an idea or requirements, and we can show a working demo in as little as 24 hours.',
+    contactCta: 'Contact Us',
   },
+} as const;
+
+const serviceLines = {
+  ja: ['AI Workflow', 'AI Application', 'Web Contents / Web3.0'],
+  en: ['AI Workflow', 'AI Application', 'Web Contents / Web3.0'],
 } as const;
 
 const valuePanels = {
   ja: [
-    { title: '属人業務を、仕組みに', body: '担当者依存の判断や手順を整理し、再利用できる運用資産へ変えます。' },
-    { title: 'MVPから実装まで', body: '課題整理、設計、試作、実装、定着支援まで一気通貫で伴走します。' },
-    { title: 'AI + Web3を一貫支援', body: 'AI活用とWeb3.0活用を、分断せず事業要件に合わせて設計します。' },
+    { title: '業務プロセスを、組織の資産に', body: '担当者に閉じた判断基準や作業手順を可視化し、進化可能な仕組みに変え、資産化します。' },
+    { title: '構想から実現まで', body: '構想整理から、試作、設計、実装、運用まで伴走します。' },
+    { title: '最短24時間動くデモ', body: '超高速AI駆動開発により、最短24時間以内、アイデア・要件から動くデモを提供できます。' },
   ],
   en: [
-    { title: 'From people-dependence to systems', body: 'We convert individual know-how into repeatable operational assets.' },
-    { title: 'From MVP to implementation', body: 'We support discovery, design, prototyping, build, and rollout as one flow.' },
-    { title: 'AI + Web3 under one partner', body: 'We design AI and Web3 initiatives around business requirements, not hype.' },
+    { title: 'Turn business processes into assets', body: 'We visualize decision rules and procedures that are closed inside individuals, then turn them into systems that can evolve.' },
+    { title: 'From concept to realization', body: 'We support concept organization, prototyping, design, implementation, and operation as one continuous flow.' },
+    { title: 'Working demos in as little as 24 hours', body: 'Through ultra-fast AI-driven development, we can turn ideas and requirements into a working demo in as little as 24 hours.' },
   ],
 } as const;
 
-const transformationColumns = {
+const serviceCards = {
   ja: [
-    { label: 'Current state', bullets: ['担当者ごとに判断がばらつく', '引き継ぎに時間がかかる', 'AI を入れても運用に乗らない'] },
-    { label: 'System design', bullets: ['判断基準と手順を可視化する', 'AI と人の役割分担を設計する', 'レビュー導線と改善ログを残す'] },
-    { label: 'Business outcome', bullets: ['再現性のある実務フローになる', '組織で引き継げる資産になる', '品質と速度を両立できる'] },
+    {
+      id: 'ai-workflow',
+      officialLine: 'AI Workflow Solution',
+      title: '業務プロセスを、組織のアセットへ',
+      body: '判断基準や手順を可視化し、AIと人が協働する効率的なAIワークフローを設計・実装します。',
+      fitBullets: ['社内ノウハウが担当者に偏っている', '既存業務プロセスの改善・効率化をしたい', 'AIを活用した業務フローを社内に取り入れたい'],
+      proofLine: '例：企画・リサーチ業務、システム開発業務（要件定義、実装、検証）など',
+      cta: 'AI Workflow サービス詳細を見る',
+    },
+    {
+      id: 'ai-application',
+      officialLine: 'AI Application Solution',
+      title: 'AIを、使われるプロダクトへ',
+      body: '社内ツールから顧客向けサービスまで、AI機能を価値が伝わる体験として組み込みます。',
+      fitBullets: ['AI機能を活かした新規サービスを作りたい', '既存プロダクトにAI機能を組み込みたい', '業務ノウハウをプロダクトに落とし込みたい'],
+      proofLine: '例：業務アシスタント、カスタマーサービス',
+      cta: 'AI Application サービス詳細を見る',
+    },
+    {
+      id: 'ai-driven-development',
+      officialLine: 'AI-Driven Development Solution',
+      title: 'AI駆動開発で、超高速実装',
+      body: 'AI Agentと開発ワークフロー（設計→実装→テスト）を組み合わせ、超高速高品質な実装を実現します。',
+      fitBullets: ['アイデア・発想を素早く動くデモやMVPにしたい', '開発プロセスの属人化や手戻りを減らしたい', '即時実装・イテレーション型の開発をしたい'],
+      proofLine: '例：超高速開発プロジェクトRigel',
+      cta: 'AI-Driven Development サービスを見る',
+    },
   ],
   en: [
-    { label: 'Current state', bullets: ['Decisions vary by operator', 'Handoffs take too long', 'AI never sticks in operations'] },
-    { label: 'System design', bullets: ['Make decision rules visible', 'Define human + AI roles', 'Keep review paths and improvement logs'] },
-    { label: 'Business outcome', bullets: ['Repeatable operational flow', 'Transferable organizational asset', 'Better speed with maintained quality'] },
+    {
+      id: 'ai-workflow',
+      officialLine: 'AI Workflow Solution',
+      title: 'Turn business processes into organizational assets',
+      body: 'We visualize decision criteria and procedures, then design and implement efficient AI workflows where people and AI collaborate.',
+      fitBullets: ['Internal know-how is concentrated in specific people', 'You want to improve and streamline existing business processes', 'You want to introduce AI-enabled workflows into the organization'],
+      proofLine: 'Examples: planning and research work, system development work such as requirements, implementation, and verification',
+      cta: 'View AI Workflow service',
+    },
+    {
+      id: 'ai-application',
+      officialLine: 'AI Application Solution',
+      title: 'Turn AI into products people actually use',
+      body: 'From internal tools to customer-facing services, we embed AI capability as an experience whose value is clear to users.',
+      fitBullets: ['You want to build a new service using AI capability', 'You want to add AI capability to an existing product', 'You want operational know-how to become product experience'],
+      proofLine: 'Examples: operational assistants and customer service experiences',
+      cta: 'View AI Application service',
+    },
+    {
+      id: 'ai-driven-development',
+      officialLine: 'AI-Driven Development Solution',
+      title: 'Ultra-fast implementation with AI-driven development',
+      body: 'We combine AI agents with development workflows — design, implementation, and testing — to deliver fast, high-quality implementation.',
+      fitBullets: ['You want to turn an idea into a working demo or MVP quickly', 'You want to reduce people-dependence and rework in the development process', 'You want immediate implementation and iterative development'],
+      proofLine: 'Example: ultra-fast development project Rigel',
+      cta: 'View AI-Driven Development',
+    },
+  ],
+} as const;
+
+const overlapNote = {
+  ja: 'AI Workflow から AI Application へ進むケースや、AI-Driven Development と AI Workflow を組み合わせるケースにも対応します。',
+  en: 'We also support cases that begin with AI Workflow and move into AI Application, or combine AI-Driven Development with AI Workflow.',
+} as const;
+
+const homeProjects = {
+  ja: [
+    {
+      name: 'Japan Life Navi',
+      category: 'AI Application',
+      summary: '在日外国人向けに、日常生活の関連情報、手続きやコツなどを分かりやすく案内するAIアシスタント（エージェント）です。独自のノウハウ、定期的に自動更新の仕組みも搭載しています。',
+      cta: 'Japan Life Navi プロジェクト詳細',
+      slug: 'gaijin-life-navi',
+    },
+    {
+      name: 'Rigel',
+      category: 'AI-Driven Development',
+      summary: '個人事業主・小企業向けに、AI自動仕訳できる記帳アプリです。AI駆動の超高速開発により、構想スタートから16時間で動くMVPを提供し、追加機能開発を含めた開発期間は1週間に収まった。',
+      cta: 'Rigel プロジェクト詳細',
+      slug: 'rigel',
+    },
+    {
+      name: 'Astra',
+      category: 'AI Workflow',
+      summary: 'プロジェクト管理ニーズに向け、進捗/課題/リスク/リソースなどのPM管理プロセスをAIワークフローで実現し、機能強化したAI agentによるPMOサービスを提供する。',
+      cta: 'Astra プロジェクト詳細',
+      slug: 'astra',
+    },
+  ],
+  en: [
+    {
+      name: 'Japan Life Navi',
+      category: 'AI Application',
+      summary: 'An AI assistant application for foreign residents in Japan, guiding daily-life information, procedures, and practical know-how with proprietary know-how and regularly updated content.',
+      cta: 'View Japan Life Navi',
+      slug: 'gaijin-life-navi',
+    },
+    {
+      name: 'Rigel',
+      category: 'AI-Driven Development',
+      summary: 'An AI bookkeeping app for freelancers and small businesses. AI-driven ultra-fast development delivered a working MVP 16 hours from concept start, with additional feature development completed within one week.',
+      cta: 'View Rigel',
+      slug: 'rigel',
+    },
+    {
+      name: 'Astra',
+      category: 'AI Workflow',
+      summary: 'A PMO service powered by enhanced AI agents, implementing project-management processes such as progress, issues, risks, and resources as AI workflows.',
+      cta: 'View Astra',
+      slug: 'astra',
+    },
   ],
 } as const;
 
 const processSteps = {
   ja: [
-    { title: '課題を整理する', body: '現場の流れ、判断基準、制約を確認します。' },
-    { title: '実装方針を設計する', body: 'AI / アプリ / Web3 の役割分担と構成を定義します。' },
-    { title: 'MVP・実装を進める', body: '試作で確認しながら、本番利用に向けて磨き込みます。' },
-    { title: '定着と改善を支援する', body: '引き継ぎ、運用、改善ポイントまで整理します。' },
+    { title: 'プロセス整理', body: '構想実現のプロセスを軸に、判断基準や制約条件などを確認し、実装すべき対象を整理します。' },
+    { title: '実装方針設計', body: 'AIワークフロー、アプリケーションの使い分けと、必要な構成・進め方を設計します。' },
+    { title: '検証・最適化', body: 'デモ/MVPで使われ方を確認し、機能・導線・運用条件を調整し、イテレーションします。' },
+    { title: '運用・普及', body: '引き継ぎ、レビュー、改善の流れを整え、組織で使い続けられる状態にします。' },
   ],
   en: [
-    { title: 'Clarify the problem', body: 'Review the current flow, decision logic, and constraints.' },
-    { title: 'Design the build path', body: 'Define the right mix of AI, application, and Web3 capability.' },
-    { title: 'Prototype and implement', body: 'Use an MVP to validate, then shape for production use.' },
-    { title: 'Support adoption', body: 'Organize handoff, operations, and next improvements.' },
+    { title: 'Process organization', body: 'Use the process for realizing the idea as the axis, then clarify decision criteria, constraints, and what should be implemented.' },
+    { title: 'Implementation direction design', body: 'Define how to use AI workflows and applications, along with the required structure and way of working.' },
+    { title: 'Validation and optimization', body: 'Use a demo or MVP to observe use, adjust functions, flows, and operating conditions, and iterate.' },
+    { title: 'Operation and adoption', body: 'Prepare handoff, review, and improvement loops so the organization can keep using the system.' },
   ],
 } as const;
 
-const trustCards = {
+const companySnapshot = {
   ja: [
-    { title: 'Business Logic First', body: '技術の前に、現場の判断と事業要件を整理します。' },
-    { title: 'Asset-minded delivery', body: 'その場限りの自動化ではなく、引き継げる運用資産を残します。' },
-    { title: 'Business-ready implementation', body: 'AI も Web3.0 も、実務で使える形まで設計します。' },
+    ['Company', '株式会社ネビュラインフィニティ（Nebula Infinity Inc.）'],
+    ['Location', '千葉県松戸市上本郷3948−3'],
   ],
   en: [
-    { title: 'Business Logic First', body: 'We structure operational decisions and business requirements before choosing technology.' },
-    { title: 'Asset-minded delivery', body: 'We leave behind operating assets your team can inherit and improve.' },
-    { title: 'Business-ready implementation', body: 'We shape both AI and Web3.0 into business-usable systems.' },
+    ['Company', 'Nebula Infinity Inc.'],
+    ['Location', 'Matsudo, Chiba, Japan'],
   ],
 } as const;
 
-const workflowProof = {
-  ja: {
-    tag: 'AI Workflow Design & Development',
-    title: 'ワークフロー資産化の代表例',
-    summary: 'マルチエージェント開発ワークフローやプロダクトリサーチワークフローなど、判断や引き継ぎが分散しやすい業務を、再利用可能な運用フローへ設計します。',
-    strip: ['判断基準の明文化', '役割分担の設計', '改善ログの蓄積'],
-  },
-  en: {
-    tag: 'AI Workflow Design & Development',
-    title: 'Representative workflow assetization examples',
-    summary: 'We design reusable operating flows for work where judgment and handoff tend to scatter, such as multi-agent development and product research workflows.',
-    strip: ['Visible decision rules', 'Designed role allocation', 'Accumulated improvement logs'],
-  },
+const workingPrinciples = {
+  ja: [
+    { title: 'Business Logic First', body: '技術より、現場の判断、制約、事業要件を優先します。' },
+    { title: 'Asset-minded Delivery', body: 'その場限りではなく、引き継げる資産として残します。' },
+    { title: 'Business-ready Implementation', body: '実務で使われる形まで設計・実装します。' },
+  ],
+  en: [
+    { title: 'Business Logic First', body: 'Before technology, we prioritize on-site judgment, constraints, and business requirements.' },
+    { title: 'Asset-minded Delivery', body: 'We do not leave one-off output behind; we leave transferable assets.' },
+    { title: 'Business-ready Implementation', body: 'We design and implement systems in forms that are used in real work.' },
+  ],
 } as const;
-
-const projectIds = ['gaijin-life-navi', 'rigel', 'carina'] as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang: rawLang } = await params;
@@ -144,7 +227,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = getLanguage(rawLang);
   const t = homeCopy[lang];
-  const featuredProjects = projectsData.projects.filter((project) => projectIds.includes(project.id as (typeof projectIds)[number]));
 
   return (
     <div className={styles.page}>
@@ -155,15 +237,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <span className={styles.heroEyebrow}>{t.eyebrow}</span>
               <h1 className={styles.heroTitle}>{t.title}</h1>
               <p className={styles.heroBody}>{t.body}</p>
-              <div className={styles.actionRow}>
-                <Link href={`/${lang}/contact`} className={styles.linkButton}><Button size="lg">{t.primaryCta}</Button></Link>
-                <Link href={`/${lang}/services`} className={styles.linkButton}><Button size="lg" variant="outline">{t.secondaryCta}</Button></Link>
-              </div>
-              <div className={styles.chipRow}>
-                {services.map((service) => <span key={service.id} className={styles.chip}>{service.officialLine}</span>)}
+              <div className={styles.chipRow} aria-label={lang === 'ja' ? 'サービスライン' : 'Service lines'}>
+                {serviceLines[lang].map((line) => <span key={line} className={styles.chip}>{line}</span>)}
               </div>
             </div>
-            <div className={styles.sideStack}>
+            <div className={styles.sideStack} aria-label={lang === 'ja' ? '提供価値' : 'Value highlights'}>
               {valuePanels[lang].map((panel) => (
                 <div key={panel.title} className={`${styles.valuePanel} ${styles.featuredPanel}`}>
                   <h2 className={styles.valuePanelTitle}>{panel.title}</h2>
@@ -175,41 +253,44 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className={styles.section}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <span className={styles.sectionEyebrow}>{t.transformationEyebrow}</span>
-            <h2 className={styles.sectionTitle}>{t.transformationTitle}</h2>
-            <p className={styles.sectionSubtitle}>{t.transformationSubtitle}</p>
-          </div>
-          <div className={styles.transformationPanel}>
-            {transformationColumns[lang].map((column) => (
-              <div key={column.label} className={styles.transformationColumn}>
-                <span className={styles.columnLabel}>{column.label}</span>
-                <ul className={styles.list}>{column.bullets.map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={`${styles.section} ${styles.sectionMuted}`}>
+      <section id="services" aria-labelledby="home-services-heading" tabIndex={-1} className={`${styles.section} ${styles.sectionMuted} ${styles.anchorSection}`}>
         <div className="container">
           <div className={styles.sectionHeader}>
             <span className={styles.sectionEyebrow}>{t.servicesEyebrow}</span>
-            <h2 className={styles.sectionTitle}>{t.servicesTitle}</h2>
+            <h2 id="home-services-heading" className={styles.sectionTitle}>{t.servicesTitle}</h2>
             <p className={styles.sectionSubtitle}>{t.servicesSubtitle}</p>
           </div>
           <div className={styles.serviceGrid}>
-            {services.map((service) => (
-              <div key={service.id} className={`${styles.card} ${styles.interactiveCard}`}>
+            {serviceCards[lang].map((service) => (
+              <article key={service.id} className={`${styles.card} ${styles.interactiveCard}`}>
                 <span className={styles.columnLabel}>{service.officialLine}</span>
-                <h3 className={styles.cardTitle}>{service.title[lang]}</h3>
-                <p className={styles.cardBody}>{service.body[lang]}</p>
-                <ul className={styles.list}>{service.fitBullets[lang].map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
-                <div className={styles.proofStrip}><span className={styles.proofPill}>{service.proofLine[lang]}</span></div>
-                <Link href={`/${lang}/services/${service.id}`} className={styles.ctaLink}>{t.viewService}<span aria-hidden="true">→</span></Link>
-              </div>
+                <h3 className={styles.cardTitle}>{service.title}</h3>
+                <p className={styles.cardBody}>{service.body}</p>
+                <ul className={styles.list}>{service.fitBullets.map((bullet) => <li key={bullet} className={styles.listItem}>{bullet}</li>)}</ul>
+                <div className={styles.proofStrip}><span className={styles.proofPill}>{service.proofLine}</span></div>
+                <Link href={`/${lang}/services/${service.id}`} className={styles.ctaLink}>{service.cta}<span aria-hidden="true">→</span></Link>
+              </article>
+            ))}
+          </div>
+          <p className={styles.noteText}>{overlapNote[lang]}</p>
+        </div>
+      </section>
+
+      <section id="projects" aria-labelledby="home-projects-heading" tabIndex={-1} className={`${styles.section} ${styles.anchorSection}`}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionEyebrow}>{t.projectsEyebrow}</span>
+            <h2 id="home-projects-heading" className={styles.sectionTitle}>{t.projectsTitle}</h2>
+            <p className={styles.sectionSubtitle}>{t.projectsSubtitle}</p>
+          </div>
+          <div className={styles.grid3}>
+            {homeProjects[lang].map((project) => (
+              <article key={project.slug} className={`${styles.card} ${styles.interactiveCard}`}>
+                <span className={styles.columnLabel}>{project.category}</span>
+                <h3 className={styles.cardTitle}>{project.name}</h3>
+                <p className={styles.cardBody}>{project.summary}</p>
+                <Link href={`/${lang}/projects/${project.slug}`} className={styles.ctaLink}>{project.cta}<span aria-hidden="true">→</span></Link>
+              </article>
             ))}
           </div>
         </div>
@@ -237,41 +318,30 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className={`${styles.section} ${styles.sectionMuted}`}>
+      <section id="about" aria-labelledby="home-about-heading" tabIndex={-1} className={`${styles.section} ${styles.sectionMuted} ${styles.anchorSection}`}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <span className={styles.sectionEyebrow}>{t.proofEyebrow}</span>
-            <h2 className={styles.sectionTitle}>{t.proofTitle}</h2>
-            <p className={styles.sectionSubtitle}>{t.proofSubtitle}</p>
+            <span className={styles.sectionEyebrow}>{t.aboutEyebrow}</span>
+            <h2 id="home-about-heading" className={styles.sectionTitle}>{t.aboutTitle}</h2>
           </div>
-          <div className={styles.proofGrid}>
-            <div className={`${styles.proofCard} ${styles.featuredCard}`}>
-              <span className={styles.proofLabel}>{workflowProof[lang].tag}</span>
-              <h3 className={styles.proofTitle}>{workflowProof[lang].title}</h3>
-              <p className={styles.proofSummary}>{workflowProof[lang].summary}</p>
-              <div className={styles.proofStrip}>{workflowProof[lang].strip.map((item) => <span key={item} className={styles.proofPill}>{item}</span>)}</div>
-              <Link href={`/${lang}/services/ai-workflow`} className={styles.ctaLink}>{t.viewWorkflow}<span aria-hidden="true">→</span></Link>
+          <div className={styles.aboutContent}>
+            <div className={styles.snapshotTable} aria-label={lang === 'ja' ? '会社概要' : 'Company snapshot'}>
+              {companySnapshot[lang].map(([label, value]) => (
+                <div key={label} className={styles.snapshotRow}>
+                  <strong>{label}</strong>
+                  <span className={styles.snapshotText}>{value}</span>
+                </div>
+              ))}
             </div>
-            {featuredProjects.map((project) => (
-              <div key={project.id} className={`${styles.proofCard} ${styles.proofCardInteractive}`}>
-                <span className={styles.proofLabel}>{project.serviceLine === 'web3-blockchain' ? 'Web3.0 / Blockchain Application Design & Development' : 'AI Application Design & Development'}</span>
-                <h3 className={styles.proofTitle}>{project.name[lang]}</h3>
-                <p className={styles.proofSummary}>{project.summary[lang]}</p>
-                <div className={styles.proofStrip}>{project.proofPoints.map((point: string) => <span key={point} className={styles.proofPill}>{point}</span>)}</div>
-                <Link href={`/${lang}/projects/${project.slug}`} className={styles.ctaLink}>{t.viewCase}<span aria-hidden="true">→</span></Link>
-              </div>
-            ))}
+            <div className={styles.principleGrid}>
+              {workingPrinciples[lang].map((card) => (
+                <div key={card.title} className={styles.card}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <p className={styles.cardBody}>{card.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <span className={styles.sectionEyebrow}>{t.trustEyebrow}</span>
-            <h2 className={styles.sectionTitle}>{t.trustTitle}</h2>
-          </div>
-          <div className={styles.grid3}>{trustCards[lang].map((card) => <div key={card.title} className={styles.card}><h3 className={styles.cardTitle}>{card.title}</h3><p className={styles.cardBody}>{card.body}</p></div>)}</div>
         </div>
       </section>
 
@@ -281,9 +351,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div className={styles.bandCopy}>
               <h2 className={styles.bandTitle}>{t.ctaTitle}</h2>
               <p className={styles.bandBody}>{t.ctaBody}</p>
-              <p className={styles.supportText}>{t.ctaSupport}</p>
             </div>
-            <div className={styles.bandActions}><Link href={`/${lang}/contact`} className={styles.linkButton}><Button size="lg">{t.primaryCta}</Button></Link></div>
+            <div className={styles.bandActions}><Link href={`/${lang}/contact`} className={styles.linkButton}><Button size="lg">{t.contactCta}</Button></Link></div>
           </div>
         </div>
       </section>

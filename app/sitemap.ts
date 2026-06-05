@@ -4,11 +4,13 @@ export const dynamic = 'force-static';
 import projectsData from '@/data/projects/projects.json';
 import { services } from '@/data/services';
 
+const ACTIVE_PROJECT_SLUGS = new Set(['gaijin-life-navi', 'rigel', 'astra']);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.nebulainfinity.com';
   const languages = ['ja', 'en'];
 
-  const staticPages = ['', '/about', '/services', '/projects', '/contact'];
+  const staticPages = ['', '/contact'];
 
   // 生成静态页面的 sitemap 条目
   const staticEntries = languages.flatMap((lang) =>
@@ -22,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 生成项目详情页的 sitemap 条目
   const projectEntries = languages.flatMap((lang) =>
-    projectsData.projects.map((project) => ({
+    projectsData.projects.filter((project) => ACTIVE_PROJECT_SLUGS.has(project.slug)).map((project) => ({
       url: `${baseUrl}/${lang}/projects/${project.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
@@ -40,5 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticEntries, ...serviceEntries, ...projectEntries];
+  // 生成サービス配下の方法論ページの sitemap 条目
+  const serviceSubdetailEntries = languages.map((lang) => ({
+    url: `${baseUrl}/${lang}/services/ai-workflow/ai-dev-flow`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...serviceEntries, ...serviceSubdetailEntries, ...projectEntries];
 }

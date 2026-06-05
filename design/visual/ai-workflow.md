@@ -1,20 +1,22 @@
 # Visual Spec — AI Workflow Detail
 
 ## 1. Page role
-- Primary goal: explain AI Workflow as broad know-how / workflow assetization capability, not a narrow development automation offer.
+- Primary goal: explain AI Workflow as broad company workflow / know-how assetization capability, not a narrow development automation offer.
 - Audience: operations leaders, team managers, founders, PM/ops owners dealing with people-dependent workflows.
 - Primary action: inquiry about workflow design and implementation.
-- Secondary action: move to Projects or Services index.
+- Secondary action: move to representative examples or the independent Projects route.
+- Definition guardrail: OpenClaw, development workflow, and research workflow examples are examples only; they must not define or limit the AI Workflow service.
 
 ## 2. Header / navigation flow
 - Header: global shell.
 - Breadcrumb recommended: Home / Services / AI Workflow.
 - Page transitions:
   - Primary CTA -> Contact
-  - Secondary CTA -> Projects
+  - Secondary CTA -> Representative examples section or Projects
   - Proof cards -> Projects or Contact depending on public detail availability
   - Service switch links -> sibling service pages
-- Back destination: Services index.
+- Back-to-services destination: `/[lang]/#services`, not `/[lang]/services`.
+- Service detail breadcrumbs and bottom secondary CTA must return to the Home Services anchor when the intent is service selection.
 - Unauthenticated flow: fully open.
 
 ## 3. Hi-Fi ASCII layout
@@ -25,7 +27,7 @@ Header
 Breadcrumb
 Hero: official line + Japanese promise + CTA + outcome chips
 Problem section: 3 symptom cards
-Transformation panel: 属人業務 -> 仕組み化 -> 組織資産化
+Assetization panel: Current state -> System design -> Business outcome
 Workflow category grid: knowledge ops / research / document ops / support / internal ops / dev workflow
 Deliverables grid: what Nebula Infinity designs and builds
 Representative examples: multi-agent development workflow + product research workflow
@@ -39,7 +41,7 @@ Header
 Breadcrumb
 Hero
 Symptoms x3
-Transformation panel stacked
+Assetization panel stacked
 Workflow categories x6 stacked
 Deliverables x4 stacked
 Representative examples x2
@@ -65,10 +67,10 @@ CTA band
   - `Reduce people-dependence`
   - `Assetize know-how`
   - `Create repeatable operations`
-- JA primary CTA: `この領域を相談する`
-- EN primary CTA: `Discuss this service`
-- JA secondary CTA: `代表例を見る`
-- EN secondary CTA: `View representative proof`
+- JA primary CTA: `この領域を相談する` → `/[lang]/contact`
+- EN primary CTA: `Discuss this service` → `/[lang]/contact`
+- JA secondary CTA: `代表例を見る` → representative examples section or `/[lang]/projects`
+- EN secondary CTA: `View representative proof` → representative examples section or `/[lang]/projects`
 - Illustration alt JA: `判断基準が整理され、AI と人の役割分担が設計されたワークフロー図`
 - Illustration alt EN: `Workflow diagram showing structured decision rules and human-AI role allocation`
 
@@ -107,36 +109,60 @@ CTA band
 **Responsive**
 - 3-up -> 1-up.
 
-### S3. Assetization transformation panel
+### S3. Assetization model
+**Intent**
+- Carry the assetization explanation that no longer belongs on Home.
+- Make the service logic concrete: people-dependent judgment and procedures become organizational assets that AI and humans can operate reproducibly.
+- Keep the definition broad enough for any repeatable business process with judgment, procedure, review, handoff, or improvement loops.
+
 **Final display copy**
 - JA eyebrow: `Assetization model`
 - EN eyebrow: `Assetization model`
-- JA title: `ワークフローの価値は、「自動化」より「資産化」にある`
-- EN title: `The value is not just automation. It is assetization.`
-- JA subtitle: `Nebula Infinity が行うのは、単純な置き換えではなく、現場の知識を引き継げる運用資産へ変えることです。`
-- EN subtitle: `Our job is not simple replacement. It is turning operational knowledge into assets the organization can inherit.`
-- JA columns:
-  - `Capture` / `担当者の判断・例外対応・確認観点を拾う`
-  - `Structure` / `手順、条件、役割分担、レビュー導線として整理する`
-  - `Operate` / `AI と人が協働しながら回せる運用フローに落とし込む`
+- JA title: `属人のノウハウを、組織の資産に。`
+- EN title: `Turn individual know-how into organizational assets`
+- JA subtitle: `AI導入が止まる理由の多くは、技術そのものではなく、判断基準や業務知識が人に閉じていることにあります。Nebula Infinityは、その知見を整理し、AIと人が再現性をもって動ける仕組みに変えていきます。`
+- EN subtitle: `AI projects often stall not because of the technology itself, but because decision criteria and operational knowledge stay inside individuals. Nebula Infinity organizes that knowledge and turns it into systems where AI and people can operate reproducibly.`
+
+**Current state → System design → Business outcome logic**
+- JA column 1 label: `Current state`
+- JA column 1 bullets:
+  - `担当者ごとに判断がばらつく`
+  - `引き継ぎに時間がかかる`
+  - `AIを入れても運用に乗らない`
+- JA column 2 label: `System design`
+- JA column 2 bullets:
+  - `判断基準と手順を可視化する`
+  - `AIと人の役割分担を設計する`
+  - `レビュー導線と改善ログを残す`
+- JA column 3 label: `Business outcome`
+- JA column 3 bullets:
+  - `再現性のある実務フローになる`
+  - `組織で引き継げる資産になる`
+  - `継続的に改善できる運用になる`
 - EN columns:
-  - `Capture` / `Extract human judgment, exceptions, and review points`
-  - `Structure` / `Convert them into steps, conditions, roles, and review paths`
-  - `Operate` / `Turn the result into a workflow people and AI can run together`
+  - `Current state`: `Decisions vary by operator` / `Handoffs take too long` / `AI does not stick in operations`
+  - `System design`: `Make decision rules and procedures visible` / `Design roles for AI and people` / `Keep review paths and improvement logs`
+  - `Business outcome`: `Repeatable operational flow` / `Transferable organizational asset` / `Continuously improvable operation`
 
-**Style guidance**
-- Use Transformation Flow Panel pattern.
-- Each column includes 1 short paragraph + 3 micro bullets.
+**Component style guidance**
+- Use a reusable Transformation Flow Panel: white surface, `#E4E4E7` border, 20px radius, 32px desktop padding.
+- 3 equal columns on desktop, stacked cards on mobile.
+- Column headers use H4; bullets use Body S with check/node icons.
+- Connector line in subtle gold between columns.
+- This panel is the canonical detail-page home for the assetization explanation; do not duplicate it as a Home section.
 
-**States**
-- Static.
+**Required states**
+- Static panel by default.
+- If columns become links, support hover and focus-visible.
 
-**Responsive**
-- Stacked vertical flow on mobile.
+**Responsive notes**
+- Mobile order remains Current state → System design → Business outcome.
+- Connector becomes a vertical line between stacked panels.
 
 ### S4. Workflow categories
 **Intent**
 - Prove breadth beyond the current examples.
+- Ensure public examples such as development and research workflows are clearly examples only, not the service definition.
 
 **Final display copy**
 - JA title: `対象は、特定のユースケースに限りません`
@@ -195,6 +221,9 @@ CTA band
 - Stack 4 cards on mobile.
 
 ### S6. Representative examples
+**Intent**
+- Show recognizable proof while preserving the broader AI Workflow definition.
+
 **Final display copy**
 - JA section eyebrow: `Representative examples`
 - EN section eyebrow: `Representative examples`
@@ -273,10 +302,10 @@ CTA band
 - EN title: `We can help identify where to start with people-dependent work`
 - JA body: `まだ課題が曖昧でも問題ありません。現場で何が止まっているか、どこに判断が集中しているかから整理します。`
 - EN body: `You do not need a polished brief. We can start from where work gets stuck and where judgment is concentrated today.`
-- JA primary CTA: `お問い合わせ`
-- EN primary CTA: `Contact Us`
-- JA secondary CTA: `サービス一覧へ`
-- EN secondary CTA: `Back to Services`
+- JA primary CTA: `お問い合わせ` → `/[lang]/contact`
+- EN primary CTA: `Contact Us` → `/[lang]/contact`
+- JA secondary CTA: `サービスを見る` → `/[lang]/#services`
+- EN secondary CTA: `View Services` → `/[lang]/#services`
 
 **Style guidance**
 - Featured CTA band.
@@ -291,6 +320,7 @@ CTA band
 - Breadcrumb links: default / hover / focus-visible.
 - CTA buttons: default / hover / pressed / focus-visible / disabled.
 - Example cards: default / hover / focus-visible.
+- Service-selection links and back links: default / hover / active / focus-visible and target `/[lang]/#services`.
 
 ## 6. Responsive summary
 - Keep breadth, not just example proof, visible before the fold on tablet.
