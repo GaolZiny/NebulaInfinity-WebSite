@@ -52,12 +52,12 @@ const serviceLines = {
 
 const valuePanels = {
   ja: [
-    { title: '個人の知見を、会社の資産に', body: '担当者に閉じた判断基準や手順を可視化し、組織が運用・進化できる仕組みへ変えます。' },
+    { title: '個人の知見を、組織の資産に', body: '担当者に閉じた判断基準や手順を可視化し、組織が運用・進化できる仕組みへ変えます。' },
     { title: '構想から運用まで、伴走', body: '構想の整理から、設計・実装・検証、そして運用まで一貫して伴走します。' },
     { title: '最短24時間で、動くデモ', body: 'AI駆動開発により、アイデアや要件から、最短24時間で動くデモをお見せできることもあります。' },
   ],
   en: [
-    { title: 'Turn individual know-how into a company asset', body: "We surface the decision rules and steps locked in one person's head, and rebuild them into a system your organization can run and improve." },
+    { title: 'Turn individual know-how into an organizational asset', body: "We surface the decision rules and steps locked in one person's head, and rebuild them into a system your organization can run and improve." },
     { title: 'With you from concept to operation', body: 'One continuous team — from shaping the concept through design, build, and validation, all the way to live operation.' },
     { title: 'A working demo in as little as 24 hours', body: 'With AI-driven development, we can turn an idea or rough requirement into a working demo — in as little as 24 hours.' },
   ],
