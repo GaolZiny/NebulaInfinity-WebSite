@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { getLanguage } from '@/lib/i18n';
-import Button from '@/components/ui/Button';
 import styles from '@/styles/marketing.module.css';
 
 const homeCopy = {
@@ -341,18 +340,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className="container">
-          <div className={styles.featuredBand}>
-            <div className={styles.bandCopy}>
-              <h2 className={styles.bandTitle}>{t.ctaTitle}</h2>
-              <p className={styles.bandBody}>{t.ctaBody}</p>
-            </div>
-            <div className={styles.bandActions}><Link href={`/${lang}/contact`} className={styles.linkButton}><Button size="lg">{t.contactCta}</Button></Link></div>
           </div>
         </div>
       </section>
