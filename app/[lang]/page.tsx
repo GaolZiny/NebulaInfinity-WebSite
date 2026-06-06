@@ -16,8 +16,8 @@ const homeCopy = {
     projectsTitle: 'プロジェクト例',
     projectsSubtitle: '代表的なプロジェクトをご紹介します。詳細は各プロジェクトページをご覧ください。',
     processEyebrow: 'Process',
-    processTitle: '構想から運用まで、私たちの進め方',
-    processSubtitle: 'ヒアリングから診断・設計・実施、運用後の改善まで一貫して伴走します。明確な要件はなくても構いません。',
+    processTitle: 'AI実装の進め方',
+    processSubtitle: 'ヒアリングから診断・設計・実施、運用後の改善まで一貫して伴走します。明確な要件はなくてもスタートできます。',
     aboutEyebrow: 'About Nebula Infinity',
     aboutTitle: 'AI社会実装のパートナー',
     contactCta: 'お問い合わせ',
@@ -33,7 +33,7 @@ const homeCopy = {
     projectsTitle: 'Selected work',
     projectsSubtitle: 'A few projects that show how we work. See each page for the full story.',
     processEyebrow: 'Process',
-    processTitle: 'How we work — from concept to operation',
+    processTitle: 'How we implement AI',
     processSubtitle: 'From listening through diagnosis, design, and build to post-launch improvement — we stay with you. No finished spec required.',
     aboutEyebrow: 'About Nebula Infinity',
     aboutTitle: 'Your partner for putting AI to work',
@@ -48,14 +48,14 @@ const serviceLines = {
 
 const valuePanels = {
   ja: [
-    { title: '個人の知見を、組織の資産に', body: '担当者に依存した判断や手順を可視化し、組織が運用・進化できる資産に変えます。' },
-    { title: 'AIと人で、効率も働きがいも', body: '重い定型業務はAIが担い、人は判断と創造に集中。業務効率と働きがいを両立します。' },
-    { title: 'AI駆動で、最短でカタチに', body: 'AI駆動開発により、構想や要件から、最短24時間で動くMVPをお見せします。' },
+    { title: '個人の知見を、組織の資産に', body: '担当者に依存した判断や手順を可視化し、組織が運用・進化できる資産に転換させます。' },
+    { title: 'AIと人で、効率も働きがいも', body: 'AIは重い定型業務を担い、人は判断と創造に集中し、業務効率と働きがいを両立させます。' },
+    { title: 'AI駆動で、最短でカタチに', body: '構想や要件の実現に要する期間を大幅に短縮させ、最短24時間内で動くMVPを実現させます。' },
   ],
   en: [
     { title: 'Turn individual know-how into a shared asset', body: 'We surface the judgment and steps that depend on individuals, and turn them into an asset your organization can run and evolve.' },
-    { title: 'Efficiency and more rewarding work', body: 'AI takes the heavy, routine load so people focus on judgment and creativity — efficiency and fulfilment together.' },
-    { title: 'From idea to working MVP, fast', body: 'With AI-driven development, we turn a concept or rough requirement into a working MVP — in as little as 24 hours.' },
+    { title: 'Efficiency and more rewarding work', body: 'AI handles the heavy, routine work while people focus on judgment and creativity — raising both efficiency and fulfilment.' },
+    { title: 'From idea to working MVP, fast', body: 'We dramatically cut the time from concept or requirement to reality — a working MVP in as little as 24 hours.' },
   ],
 } as const;
 
@@ -64,8 +64,8 @@ const serviceCards = {
     {
       id: 'ai-workflow',
       officialLine: 'AI Workflow Solution',
-      title: '業務プロセスを、組織の資産へ',
-      body: '個人に依存した判断や手順を可視化し、AIと人が協働するワークフローに設計・実装します。',
+      title: 'AIを業務プロセスの中に',
+      body: '担当者に依存した判断や手順を可視化し、AIと人が協働するワークフローとして設計・実装します。',
       fitBullets: ['社内ノウハウが個人に偏っている', '既存業務を改善・効率化したい', 'AI活用を社内業務に取り入れたい'],
       proofLine: '例：企画・リサーチ、システム開発の業務',
       cta: 'AI Workflow の詳細を見る',
@@ -73,8 +73,8 @@ const serviceCards = {
     {
       id: 'ai-application',
       officialLine: 'AI Application Solution',
-      title: 'AIを、使われるプロダクトへ',
-      body: '社内ツールから顧客向けサービスまで、AI機能を価値が伝わる体験として実装します。',
+      title: 'AIをプロダクトの一部に',
+      body: '社内ツールから顧客向けサービスまで、AI機能を価値が伝わる体験として設計・実装します。',
       fitBullets: ['AIを活かした新規サービスを作りたい', '既存プロダクトにAIを組み込みたい', '業務知見をプロダクトに活かしたい'],
       proofLine: '例：業務アシスタント、顧客向けサービス',
       cta: 'AI Application の詳細を見る',
@@ -82,8 +82,8 @@ const serviceCards = {
     {
       id: 'ai-driven-development',
       officialLine: 'AI-Driven Development Solution',
-      title: 'AI駆動開発で、最短実装',
-      body: 'AIエージェントと開発ワークフローを組み合わせ、速さと品質を両立した実装を実現します。',
+      title: 'AIを開発・実現の主力に',
+      body: 'AIエージェントと開発ワークフローを組み合わせ、速さと品質を両立した実装を高速に実現します。',
       fitBullets: ['構想を素早く動くMVPにしたい', '開発の個人依存や手戻りを減らしたい', '短いサイクルで実装したい'],
       proofLine: '例：高速開発プロジェクト Rigel（16時間でMVP）',
       cta: 'AI-Driven Development の詳細を見る',
@@ -93,7 +93,7 @@ const serviceCards = {
     {
       id: 'ai-workflow',
       officialLine: 'AI Workflow Solution',
-      title: 'Turn workflows into shared assets',
+      title: 'Put AI inside your operations',
       body: 'We surface the decision rules and steps trapped in individuals, then rebuild them as workflows where people and AI work together.',
       fitBullets: ['Know-how is concentrated in a few people', 'You want to streamline existing workflows', 'You want AI built into how your team works'],
       proofLine: 'Examples: planning, research, software delivery',
@@ -102,8 +102,8 @@ const serviceCards = {
     {
       id: 'ai-application',
       officialLine: 'AI Application Solution',
-      title: 'AI products people actually use',
-      body: 'From internal tools to customer-facing products, we shape AI into an experience whose value is obvious to users.',
+      title: 'Make AI part of your product',
+      body: 'From internal tools to customer-facing products, we design and build AI into an experience whose value is obvious to users.',
       fitBullets: ['Launch a new AI-powered service', 'Add AI to an existing product', 'Turn operational know-how into product experience'],
       proofLine: 'Examples: operational assistants, customer-service experiences',
       cta: 'Explore AI Application',
@@ -111,7 +111,7 @@ const serviceCards = {
     {
       id: 'ai-driven-development',
       officialLine: 'AI-Driven Development Solution',
-      title: 'Ship fast with AI-driven development',
+      title: 'Put AI at the core of development',
       body: 'We combine AI agents with a design-build-test workflow to deliver speed and quality at once — not a trade-off.',
       fitBullets: ['Get a concept to a working MVP, fast', 'Cut rework and people-dependence in delivery', 'Build in short, iterative cycles'],
       proofLine: 'Example: Rigel — a working MVP in 16 hours',
@@ -130,21 +130,21 @@ const homeProjects = {
     {
       name: 'Japan Life Navi',
       category: 'AI Application',
-      summary: '在日外国人向けに、日常生活の情報や手続き・コツを案内するAIアシスタント。情報は定期的に自動更新されます。',
+      summary: '在日外国人向けに、日常生活の情報や手続き・コツを案内するAIアシスタント。ナレッジベースの定期更新機能実装。',
       cta: 'Japan Life Navi プロジェクト詳細',
       slug: 'gaijin-life-navi',
     },
     {
       name: 'Rigel',
       category: 'AI-Driven Development',
-      summary: '個人事業主・小企業向けのAI自動仕訳記帳アプリ。構想から16時間で動くMVPを実現し、全体で約1週間でした。',
+      summary: '個人事業主・小企業・外国人向けの自然言語でのAI自動仕訳記帳アプリ。構想から16時間でMVPを実現(開発全体は約1週間)。',
       cta: 'Rigel プロジェクト詳細',
       slug: 'rigel',
     },
     {
       name: 'Astra',
       category: 'AI Workflow',
-      summary: '進捗・課題・リスク・リソースなどのPM管理をAIワークフローで実現し、AIエージェントが担うPMOサービスです。',
+      summary: '進捗・課題・リスク・リソースなどのPM管理をAIワークフローで実現し、AIエージェントによるPMOサービス。',
       cta: 'Astra プロジェクト詳細',
       slug: 'astra',
     },
@@ -153,14 +153,14 @@ const homeProjects = {
     {
       name: 'Japan Life Navi',
       category: 'AI Application',
-      summary: 'An AI assistant for foreign residents in Japan that guides daily-life information and procedures, kept current with automatic updates.',
+      summary: 'An AI assistant for foreign residents in Japan that guides daily-life information and procedures, with a regularly-updated knowledge base.',
       cta: 'View Japan Life Navi',
       slug: 'gaijin-life-navi',
     },
     {
       name: 'Rigel',
       category: 'AI-Driven Development',
-      summary: 'An AI auto-bookkeeping app for freelancers and small businesses — a working MVP in 16 hours, with the full build done in about a week.',
+      summary: 'An AI auto-bookkeeping app with natural-language input for freelancers, small businesses, and foreign residents — a working MVP in 16 hours (full build in about a week).',
       cta: 'View Rigel',
       slug: 'rigel',
     },
@@ -176,20 +176,20 @@ const homeProjects = {
 
 const processSteps = {
   ja: [
-    { title: 'ヒアリング', body: '構想や課題からご相談ください。明確な要件は不要です。' },
-    { title: '診断', body: '業務を読み解き、資産化できる課題と方向を見極めます。' },
-    { title: '設計', body: 'AIと人の役割と、最適な実装ラインを設計します。' },
-    { title: '実施', body: 'AI駆動で、最短に動くカタチへ実装します。' },
+    { title: 'ヒアリング', body: '構想や課題感の段階から、どうぞお気軽にご相談ください。' },
+    { title: '診断', body: '業務を読み解き、資産化できる課題と進むべき方向を見極めます。' },
+    { title: '設計', body: 'AIと人の役割分担と、最適な実装ラインの構成を設計します。' },
+    { title: '実施', body: 'AI駆動開発を活かし、構想を最短で動くカタチへと実装します。' },
     { title: '効果検証', body: '独自の評価体系にもとづき、効果を多面的かつ正確に検証します。' },
-    { title: '改善', body: '運用しながら改善し、組織の資産にして次へ。' },
+    { title: '改善', body: '運用しながら継続的に改善し、組織の資産として蓄積します。' },
   ],
   en: [
-    { title: 'Listen', body: 'Bring your concept or concerns — no finished spec needed.' },
-    { title: 'Diagnose', body: 'We find the real problem and what can become an asset.' },
-    { title: 'Design', body: 'We design the AI-and-people split and the right line.' },
-    { title: 'Build', body: 'We implement fast with AI-driven development.' },
-    { title: 'Measure', body: 'We verify results with a systematic, multi-dimensional framework.' },
-    { title: 'Improve', body: 'We improve in operation and turn it into an asset.' },
+    { title: 'Listen', body: 'Start the conversation from just a concept or a concern.' },
+    { title: 'Diagnose', body: 'We read your operations to find the real problem and what can become an asset.' },
+    { title: 'Design', body: 'We design the AI-and-people split and the right implementation line.' },
+    { title: 'Build', body: 'Using AI-driven development, we implement fast into a working form.' },
+    { title: 'Measure', body: 'We verify results with our systematic, multi-dimensional evaluation framework.' },
+    { title: 'Improve', body: 'We keep improving in operation and accumulate it as an organizational asset.' },
   ],
 } as const;
 
