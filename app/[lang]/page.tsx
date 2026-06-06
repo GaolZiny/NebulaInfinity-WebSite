@@ -317,8 +317,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               const nodeClass = isLoopEnd ? `${styles.stepNode} ${styles.stepNodeAlt}` : styles.stepNode;
               return (
                 <div key={step.title} className={styles.stepItem}>
-                  <div className={nodeClass}>{index + 1}</div>
-                  <h3 className={styles.stepHeading}>{step.title}</h3>
+                  <div className={styles.stepHead}>
+                    <span className={nodeClass}>{index + 1}</span>
+                    <h3 className={styles.stepHeading}>{step.title}</h3>
+                  </div>
                   <p className={styles.stepText}>{step.body}</p>
                 </div>
               );
