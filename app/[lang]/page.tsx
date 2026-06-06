@@ -16,8 +16,8 @@ const homeCopy = {
     projectsTitle: 'プロジェクト例',
     projectsSubtitle: '代表的なプロジェクトをご紹介します。詳細は各プロジェクトページをご覧ください。',
     processEyebrow: 'Process',
-    processTitle: '構想から、実装・運用まで。',
-    processSubtitle: '明確な要件はなくても構いません。構想からプロセスを整理し、方針を定め、検証しながら仕上げていきます。',
+    processTitle: '実装して終わり、ではなく。',
+    processSubtitle: 'ご相談からはじめ、診断・設計・実施を経て、運用後も効果を検証しながら改善し続けます。明確な要件はなくても構いません。',
     aboutEyebrow: 'About Nebula Infinity',
     aboutTitle: 'AI社会実装のパートナー',
     ctaTitle: '思いだけでもご相談頂けます。',
@@ -35,8 +35,8 @@ const homeCopy = {
     projectsTitle: 'Selected work',
     projectsSubtitle: 'A few projects that show how we work. See each page for the full story.',
     processEyebrow: 'Process',
-    processTitle: 'From concept to live operation.',
-    processSubtitle: 'No finished spec required. We start from the concept, map the process, set direction, and refine it through real validation.',
+    processTitle: 'Not build-and-leave. Build-and-improve.',
+    processSubtitle: 'We start from a conversation, move through diagnosis, design, and delivery, then keep measuring and improving after launch. No finished spec required.',
     aboutEyebrow: 'Your partner for putting AI to work',
     aboutTitle: 'Your partner for putting AI to work',
     ctaTitle: 'You can reach out with only an initial thought.',
@@ -180,16 +180,20 @@ const homeProjects = {
 
 const processSteps = {
   ja: [
-    { title: 'プロセス整理', body: '構想を軸に、判断基準や制約を確認し、実装すべき対象を見極めます。' },
-    { title: '実装方針の設計', body: 'AIワークフロー・アプリケーション・AI駆動開発の使い分けと、構成・進め方を設計します。' },
-    { title: '検証・最適化', body: 'デモやMVPで使われ方を確かめ、機能・導線・運用条件を調整しながら改善します。' },
-    { title: '運用・定着', body: '引き継ぎ・レビュー・改善の流れを整え、組織で使い続けられる状態にします。' },
+    { title: 'ヒアリング', body: '構想や課題感からご相談ください。明確な要件は不要です。' },
+    { title: '診断', body: '業務を読み解き、本質的な課題と進む方向を見極めます。' },
+    { title: '設計', body: '最適な手段と、構成・進め方を設計します。' },
+    { title: '実施', body: 'デモ・MVPから、実務で使える品質まで実装します。' },
+    { title: '効果検証', body: '実際の使われ方を見て、狙った効果を確かめます。' },
+    { title: '改善', body: '検証結果をもとに改善し、次のサイクルへつなげます。' },
   ],
   en: [
-    { title: 'Map the process', body: 'Starting from the concept, we clarify decision rules and constraints, and pinpoint what to build.' },
-    { title: 'Design the approach', body: 'We decide how to combine workflows, applications, and AI-driven development, and set the structure and plan.' },
-    { title: 'Validate and refine', body: 'We watch a demo or MVP in real use, then tune features, flows, and operating conditions as we iterate.' },
-    { title: 'Operate and embed', body: 'We set up handoff, review, and improvement loops so your team keeps using and improving it.' },
+    { title: 'Listen', body: 'Bring your concept or concerns — no finished spec needed.' },
+    { title: 'Diagnose', body: 'We pinpoint the real problem and the right direction.' },
+    { title: 'Design', body: 'We design the right approach, structure, and plan.' },
+    { title: 'Build', body: 'We build fast — from MVP to production-ready quality.' },
+    { title: 'Measure', body: "We watch real usage and verify it's delivering results." },
+    { title: 'Improve', body: 'We improve on the evidence — and loop back.' },
   ],
 } as const;
 
@@ -309,7 +313,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </div>
           <div className={styles.stepRail}>
             {processSteps[lang].map((step, index) => {
-              const nodeClass = index === 1 || index === 2 ? `${styles.stepNode} ${styles.stepNodeAlt}` : styles.stepNode;
+              const isLoopEnd = index === 0 || index === processSteps[lang].length - 1;
+              const nodeClass = isLoopEnd ? `${styles.stepNode} ${styles.stepNodeAlt}` : styles.stepNode;
               return (
                 <div key={step.title} className={styles.stepItem}>
                   <div className={nodeClass}>{index + 1}</div>
@@ -318,6 +323,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 </div>
               );
             })}
+          </div>
+          <div className={styles.processLoop}>
+            <span>{lang === 'ja' ? '↺ 改善から、次のヒアリングへ。継続的に改善します' : '↺ Improve loops back to Listen — we keep improving with you'}</span>
           </div>
         </div>
       </section>

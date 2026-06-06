@@ -489,7 +489,7 @@
 
 .stepRail {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -506,7 +506,7 @@
   box-shadow: var(--shadow-sm);
 }
 
-.stepItem:not(:last-child)::after {
+.stepItem:not(:nth-child(3n))::after {
   content: '';
   position: absolute;
   top: 42px;
@@ -533,6 +533,25 @@
   color: var(--accent-primary);
   background: rgba(202, 138, 4, 0.1);
   border: 1px solid rgba(202, 138, 4, 0.4);
+}
+
+.processLoop {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.processLoop span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(202, 138, 4, 0.4);
+  background: rgba(202, 138, 4, 0.08);
+  color: var(--accent-primary);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .band,
@@ -1019,7 +1038,7 @@
   }
 
   .transformationColumn:not(:last-child)::after,
-  .stepItem:not(:last-child)::after,
+  .stepItem::after,
   .workflowStage:not(:nth-child(3n))::after {
     display: none;
   }
