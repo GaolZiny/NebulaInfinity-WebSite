@@ -65,7 +65,7 @@ const serviceCards = {
       id: 'ai-workflow',
       officialLine: 'AI Workflow Solution',
       title: 'AIを業務プロセスの中に',
-      body: 'チャットでのコピペ利用を超え、AIを実際の業務フローに組み込み、人との役割を設計します。',
+      body: 'チャット利用を超え、AIを実際の業務フローに組み込み、人との役割を予め設計します。',
       fitBullets: ['社内ノウハウが個人に偏っている', '既存業務を改善・効率化したい', 'AI活用を社内業務に取り入れたい'],
       proofLine: '例：顧客対応、営業支援、データ分析',
       cta: 'AI Workflow の詳細を見る',
@@ -94,7 +94,7 @@ const serviceCards = {
       id: 'ai-workflow',
       officialLine: 'AI Workflow Solution',
       title: 'Put AI inside your operations',
-      body: 'Go beyond copy-pasting from a chatbot — we build AI into your actual workflow and design the roles people and AI play.',
+      body: 'Go beyond chatbot use — we build AI into your actual workflow and design, in advance, the roles people and AI play.',
       fitBullets: ['Know-how is concentrated in a few people', 'You want to streamline existing workflows', 'You want AI built into how your team works'],
       proofLine: 'Examples: customer support, sales enablement, data analysis',
       cta: 'Explore AI Workflow',
@@ -321,9 +321,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 </div>
               );
             })}
-          </div>
-          <div className={styles.processLoop}>
-            <span>{lang === 'ja' ? '↺ 改善から、次のヒアリングへ。継続的に改善します' : '↺ Improve loops back to Listen — we keep improving with you'}</span>
           </div>
           <div className={styles.processCtaRow}>
             <Link href={`/${lang}/process`} className={styles.ctaLink}>

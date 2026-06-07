@@ -21,8 +21,8 @@ export const processHero = {
   eyebrow: 'How We Work',
   titleJa: 'AIを「使っている」から、「流れに組み込む」へ。',
   titleEn: 'From using AI to building it into the flow.',
-  leadJa: '多くの現場では、ChatGPTやNotebookLMを「その都度」使っています。Nebula Infinityは、そのバラバラな使い方を、入力から成果物までの一つの業務フローにまとめます。どこをAIに任せ、どこを人が判断するかを定義し、運用しながら改善し続けます。',
-  leadEn: 'Most teams use ChatGPT or NotebookLM one prompt at a time. Nebula Infinity turns that scattered usage into a single workflow — from input to output. We define what AI handles and where people decide, then keep improving it while it runs.',
+  leadJa: 'AIに聞いて、答えをコピペして、自分で資料に貼り直す——ChatGPTやNotebookLMは、まだ「その都度の道具」のままになっていませんか。Nebula Infinityは、その単発の使い方を、入力から成果物までの一つの業務フローに組み立てます。どこをAIに任せ、どこを人が判断するかを定義し、運用しながら改善し続けます。',
+  leadEn: 'You ask AI, copy the answer, and paste it back into your own documents — are ChatGPT and NotebookLM still just "a tool you reach for each time"? Nebula Infinity turns that one-off use into a single workflow, from input to output. We define what AI handles and where people decide, then keep improving it while it runs.',
   chipsJa: ['入力から成果物まで一連で', 'AIと人の分担を定義', '要件は決まっていなくていい'],
   chipsEn: ['One flow, input to output', 'Define the AI-and-human split', 'No fixed requirements needed'],
   primaryCtaJa: '進め方について相談する',
@@ -55,8 +55,8 @@ export const processBlocks: readonly Block[] = [
       {
         aJa: 'バラバラを、一つの流れに',
         aEn: 'We turn scattered use into one flow',
-        bJa: 'ChatGPTに都度きいて終わり、にはしません。入力から成果物までを一つの業務フローにまとめ、どこを人が判断するかまで設計します。流れとして残るから、続けて活かせます。',
-        bEn: "We don't stop at asking ChatGPT each time. We bring it into a single workflow from input to output, design where people make the call — and because it stays as a flow, it keeps paying off.",
+        bJa: 'AIに聞いてコピペして終わり、にはしません。入力から成果物までを一つの業務フローにまとめ、どこを人が判断するかまで設計します。流れとして残るから、続けて活かせます。',
+        bEn: "We don't stop at asking AI and pasting the answer back by hand. We bring it into a single workflow from input to output, design where people make the call — and because it stays as a flow, it keeps paying off.",
       },
       {
         aJa: '各ステップに、成果物を残す',
