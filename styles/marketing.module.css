@@ -1013,6 +1013,68 @@
   border: 1px solid rgba(202, 138, 4, 0.38);
 }
 
+/* pitfalls カードを「失敗モード（見出し）→ 私たちの対処（本文）」に中立トーンで2段分節。
+   strategist の「人の問題は克制・正向、scare term 回避」方針に従い、赤/警告色は使わず muted の区切り線のみ。 */
+.pitfallCard .cardTitle {
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pitfallFix {
+  position: relative;
+  padding-left: 16px;
+}
+
+.pitfallFix::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--accent-secondary);
+}
+
+/* 七维を「分担と判断」「続く仕組み」の2グループに視覚分割（subtitle の宣言と実装を一致させる） */
+.gateGroups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.gateGroup .gateList {
+  margin-top: 12px;
+  height: 100%;
+}
+
+.gateGroupLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+
+.gateGroupLabel::before {
+  content: '';
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent-secondary);
+}
+
+@media (max-width: 768px) {
+  .gateGroups {
+    grid-template-columns: 1fr;
+  }
+}
+
 .aiDevFlowGrid4 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

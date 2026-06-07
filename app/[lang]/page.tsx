@@ -65,7 +65,7 @@ const serviceCards = {
       id: 'ai-workflow',
       officialLine: 'AI Workflow Solution',
       title: 'AIを業務プロセスの中に',
-      body: '担当者に依存した判断や手順を可視化し、AIと人が協働するワークフローとして設計します。',
+      body: 'チャットでのコピペ利用を超え、AIを実際の業務フローに組み込み、人との役割を設計します。',
       fitBullets: ['社内ノウハウが個人に偏っている', '既存業務を改善・効率化したい', 'AI活用を社内業務に取り入れたい'],
       proofLine: '例：顧客対応、営業支援、データ分析',
       cta: 'AI Workflow の詳細を見る',
@@ -94,7 +94,7 @@ const serviceCards = {
       id: 'ai-workflow',
       officialLine: 'AI Workflow Solution',
       title: 'Put AI inside your operations',
-      body: 'We surface the decision rules and steps trapped in individuals, then rebuild them as workflows where people and AI work together.',
+      body: 'Go beyond copy-pasting from a chatbot — we build AI into your actual workflow and design the roles people and AI play.',
       fitBullets: ['Know-how is concentrated in a few people', 'You want to streamline existing workflows', 'You want AI built into how your team works'],
       proofLine: 'Examples: customer support, sales enablement, data analysis',
       cta: 'Explore AI Workflow',
@@ -176,16 +176,16 @@ const homeProjects = {
 
 const processSteps = {
   ja: [
-    { title: 'ヒアリング', body: '構想や課題感など要件明確でない段階からでも、As-IsとTo-BeのGAP(課題/要件)整理を行います。' },
-    { title: '診断', body: '課題と要件を現状に照らし、最適な方向性とソリューションを見極めます。' },
+    { title: 'ヒアリング', body: '構想や課題感など明確でない段階からでも、一緒に要件・課題の整理を行います。' },
+    { title: '診断', body: '要件・課題を現状に照らし合わせた上、最適な方向性とソリューションを見極めます。' },
     { title: '設計', body: '効果を最大限引き出せるように、最適なソリューション構成を設計します。' },
     { title: '実施', body: 'AI駆動型開発で、最短で動くMVPを実現し、短期間で高品質に実装します。' },
     { title: '効果検証', body: 'AI時代に適した評価体系に基づき、効果を正確に検証し、改善点を特定します。' },
     { title: '改善', body: '運用で特定した改善点を実装し、組織の資産として蓄積・進化し続けます。' },
   ],
   en: [
-    { title: 'Listen', body: 'Even before requirements are clear — just a concept or a concern — we map the gap between As-Is and To-Be.' },
-    { title: 'Diagnose', body: 'We check the issues and requirements against reality to pinpoint the best direction and solution.' },
+    { title: 'Listen', body: 'Even before things are clear — from just a concept or a concern — we sort out requirements and issues together.' },
+    { title: 'Diagnose', body: 'After checking requirements and issues against reality, we pinpoint the best direction and solution.' },
     { title: 'Design', body: 'We design the optimal solution architecture to draw out the greatest possible effect.' },
     { title: 'Build', body: 'With AI-driven development, we reach a working MVP fast and implement at high quality in a short cycle.' },
     { title: 'Measure', body: 'Using an evaluation framework fit for the AI era, we verify results precisely and identify what to improve.' },
