@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.nebulainfinity.com';
   const languages = ['ja', 'en'];
 
-  const staticPages = ['', '/contact'];
+  const staticPages = ['', '/process', '/contact'];
 
   // 生成静态页面的 sitemap 条目
   const staticEntries = languages.flatMap((lang) =>
