@@ -85,7 +85,7 @@ const pageContent: Record<string, DetailContent> = {
       enTitle: 'Turn people-dependent work into repeatable workflows',
       jaSubtitle: '担当者に閉じた判断基準、考え方、作業手順を整理し、AIと人が協働できるプロセスとして設計・実装します。自己改善の仕組みも実装することにより、単発の自動化ではなく、組織で引き継ぎ、改善し続けられるアセットへ変えていきます。',
       enSubtitle: 'Nebula Infinity organizes decision criteria, procedures, and review paths that are closed inside specific people, then designs and implements them as business workflows where people and AI can work together. We do not stop at one-off automation; we turn the work into operating assets the organization can inherit and improve.',
-      chipsJa: ['属人化の解消', 'ナレッジの可視化', '継続進化できる仕組み'],
+      chipsJa: ['個人依存の解消', 'ナレッジの可視化', '継続進化できる仕組み'],
       chipsEn: ['Reduce people-dependence', 'Make decision criteria visible', 'Create continuously improvable operations'],
       primaryCtaJa: 'この領域で相談する',
       primaryCtaEn: 'Discuss this service',
@@ -104,6 +104,23 @@ const pageContent: Record<string, DetailContent> = {
         ['Decisions live inside individuals', 'Critical criteria exist only in experienced operators, so the same work produces inconsistent results.'],
         ['Handoffs are expensive', 'Steps may be documented, but exceptions and judgment points are not shared.'],
         ['Tools never become operations', 'AI or SaaS tools are introduced without role design, review paths, or improvement loops.'],
+      ],
+    },
+    transformation: {
+      eyebrow: 'AIと人の協働',
+      titleJa: 'AIと人が、それぞれの強みを発揮する',
+      titleEn: 'AI and people, each doing what they do best',
+      subtitleJa: 'ワークフロー設計は、人をAIに置き換えるためのものではありません。重い定型業務はAIが担い、人は判断と創造に集中する——役割を再設計することで、業務効率と働きがいを同時に高めます。',
+      subtitleEn: 'Designing a workflow is not about replacing people with AI. AI takes on the heavy, routine load while people focus on judgment and creativity — by redesigning the roles, we raise both efficiency and the quality of work.',
+      columnsJa: [
+        ['AIが担う', ['大量・反復・定型の処理', '24時間の一次対応と下準備', 'ログに基づく改善の提案']],
+        ['人が担う', ['責任を伴う最終判断', '例外対応と関係構築', '創造的な企画とゴール設定']],
+        ['両立する成果', ['業務効率（処理量・速度）の向上', '働きがい（負荷軽減・裁量）の向上', '組織に残る改善サイクル']],
+      ],
+      columnsEn: [
+        ['AI handles', ['High-volume, repetitive, routine processing', '24/7 first response and preparation', 'Improvement suggestions from logs']],
+        ['People handle', ['Final decisions that carry responsibility', 'Exceptions and relationship building', 'Creative planning and goal setting']],
+        ['Gains, together', ['Higher efficiency (throughput and speed)', 'More rewarding work (less load, more discretion)', 'An improvement cycle that stays in the organization']],
       ],
     },
     deliverables: {
@@ -239,7 +256,7 @@ const pageContent: Record<string, DetailContent> = {
       cardsJa: [
         ['短期間で動く形を検証したい', '構想を小さく実装し、使いながら判断したい。'],
         ['仕様変更が多いプロダクトを進めたい', '変更を前提に、レビューと改善が回る開発体制が必要。'],
-        ['AIエージェント活用を開発標準にしたい', '属人的なAI活用ではなく、チームで再現できる進め方にしたい。'],
+        ['AIエージェント活用を開発標準にしたい', '個人依存のAI活用ではなく、チームで再現できる進め方にしたい。'],
         ['速度と品質ゲートを両立したい', '早く作るだけでなく、検証・レビュー・引き継ぎまで残したい。'],
       ],
       cardsEn: [

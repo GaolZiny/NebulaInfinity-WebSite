@@ -549,6 +549,12 @@
   margin-top: 24px;
 }
 
+.processCtaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .processLoop span {
   display: inline-flex;
   align-items: center;

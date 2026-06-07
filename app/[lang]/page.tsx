@@ -325,6 +325,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <div className={styles.processLoop}>
             <span>{lang === 'ja' ? '↺ 改善から、次のヒアリングへ。継続的に改善します' : '↺ Improve loops back to Listen — we keep improving with you'}</span>
           </div>
+          <div className={styles.processCtaRow}>
+            <Link href={`/${lang}/process`} className={styles.ctaLink}>
+              {lang === 'ja' ? 'AI実装の進め方を詳しく見る' : 'See how we work in detail'}
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
