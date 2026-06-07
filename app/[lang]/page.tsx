@@ -48,9 +48,9 @@ const serviceLines = {
 
 const valuePanels = {
   ja: [
-    { title: '個人の知見を、組織の資産に', body: '担当者に依存した判断や手順を可視化し、組織が運用・進化できる資産に転換させます。' },
-    { title: 'AIと人で、効率も働きがいも', body: 'AIは重い定型業務を担い、人は判断と創造に集中し、業務効率と働きがいを両立させます。' },
-    { title: 'AI駆動で、最短でカタチに', body: '構想や要件の実現に要する期間を大幅に短縮させ、最短24時間内で動くMVPを実現させます。' },
+    { title: '個人の知見を、組織の資産に', body: '担当者に依存した判断や手順を可視化し、組織が運用・進化できる資産に転換' },
+    { title: 'AIと人で、効率も働きがいも', body: 'AIは重い定型業務を担い、人は判断と創造に集中し、業務効率と働きがいを両立' },
+    { title: 'AI駆動で、最短でカタチに', body: '構想や要件の実現に要する期間を大幅に短縮させ、最短24時間内で動くMVPを実現' },
   ],
   en: [
     { title: 'Turn individual know-how into a shared asset', body: 'We surface the judgment and steps that depend on individuals, and turn them into an asset your organization can run and evolve.' },
@@ -83,9 +83,9 @@ const serviceCards = {
       id: 'ai-driven-development',
       officialLine: 'AI-Driven Development Solution',
       title: 'AIを開発・実現の主力に',
-      body: 'AIエージェントと開発ワークフローを組み合わせ、速さと品質を両立した実装を提供します。',
+      body: 'AI主軸の開発手法により、速さと品質を両立した実装を提供します。',
       fitBullets: ['構想を素早く動くMVPにしたい', '開発の個人依存や手戻りを減らしたい', '短いサイクルで実装したい'],
-      proofLine: '例：24時間MVP、開発',
+      proofLine: '例：24時間MVP、アジャイル型開発',
       cta: 'AI-Driven Development の詳細を見る',
     },
   ],
@@ -112,9 +112,9 @@ const serviceCards = {
       id: 'ai-driven-development',
       officialLine: 'AI-Driven Development Solution',
       title: 'Put AI at the core of development',
-      body: 'We combine AI agents with a design-build-test workflow to deliver speed and quality at once — not a trade-off.',
+      body: 'With an AI-first development method, we deliver implementation that balances speed and quality.',
       fitBullets: ['Get a concept to a working MVP, fast', 'Cut rework and people-dependence in delivery', 'Build in short, iterative cycles'],
-      proofLine: 'Examples: 24-hour MVP, development',
+      proofLine: 'Examples: 24-hour MVP, agile development',
       cta: 'Explore AI-Driven Development',
     },
   ],
@@ -176,20 +176,20 @@ const homeProjects = {
 
 const processSteps = {
   ja: [
-    { title: 'ヒアリング', body: '構想や課題感の段階から、どうぞお気軽にご相談ください。' },
-    { title: '診断', body: '業務を読み解き、資産化できる課題と進むべき方向を見極めます。' },
-    { title: '設計', body: 'AIと人の役割分担と、最適な実装ラインの構成を設計します。' },
-    { title: '実施', body: 'AI駆動開発を活かし、構想を最短で動くカタチへと実装します。' },
-    { title: '効果検証', body: '独自の評価体系にもとづき、効果を多面的かつ正確に検証します。' },
-    { title: '改善', body: '運用しながら継続的に改善し、組織の資産として蓄積します。' },
+    { title: 'ヒアリング', body: '構想や課題感など要件明確でない段階からでも、As-IsとTo-BeのGAP(課題/要件)整理を行います。' },
+    { title: '診断', body: '課題と要件を現状に照らし、最適な方向性とソリューションを見極めます。' },
+    { title: '設計', body: '効果を最大限引き出せるように、最適なソリューション構成を設計します。' },
+    { title: '実施', body: 'AI駆動型開発で、最短で動くMVPを実現し、短期間で高品質に実装します。' },
+    { title: '効果検証', body: 'AI時代に適した評価体系に基づき、効果を正確に検証し、改善点を特定します。' },
+    { title: '改善', body: '運用で特定した改善点を実装し、組織の資産として蓄積・進化し続けます。' },
   ],
   en: [
-    { title: 'Listen', body: 'Start the conversation from just a concept or a concern.' },
-    { title: 'Diagnose', body: 'We read your operations to find the real problem and what can become an asset.' },
-    { title: 'Design', body: 'We design the AI-and-people split and the right implementation line.' },
-    { title: 'Build', body: 'Using AI-driven development, we implement fast into a working form.' },
-    { title: 'Measure', body: 'We verify results with our systematic, multi-dimensional evaluation framework.' },
-    { title: 'Improve', body: 'We keep improving in operation and accumulate it as an organizational asset.' },
+    { title: 'Listen', body: 'Even before requirements are clear — just a concept or a concern — we map the gap between As-Is and To-Be.' },
+    { title: 'Diagnose', body: 'We check the issues and requirements against reality to pinpoint the best direction and solution.' },
+    { title: 'Design', body: 'We design the optimal solution architecture to draw out the greatest possible effect.' },
+    { title: 'Build', body: 'With AI-driven development, we reach a working MVP fast and implement at high quality in a short cycle.' },
+    { title: 'Measure', body: 'Using an evaluation framework fit for the AI era, we verify results precisely and identify what to improve.' },
+    { title: 'Improve', body: 'We implement the improvements found in operation, accumulating and evolving them as an organizational asset.' },
   ],
 } as const;
 
