@@ -166,10 +166,10 @@ const pageContent: Record<string, DetailContent> = {
   'ai-application': {
     hero: {
       eyebrow: 'AI Application Solution',
-      jaTitle: '「すごいデモ」で終わったAIを、毎日使われるプロダクトへ。',
-      enTitle: 'From an AI demo that wowed once — to a product people use every day.',
-      jaSubtitle: 'AI機能だけを作っても、現場や顧客が毎日使ってくれるとは限りません。Nebula Infinityは、誰がどの場面で何のために使うのかを起点に、画面・AI応答・データ・業務との接続まで一つの体験として設計し、実装します。一度きりのデモではなく、毎日の業務や暮らしに定着するプロダクトに仕上げます。',
-      enSubtitle: 'Building an AI feature does not guarantee that your customers or your team will reach for it every day. Nebula Infinity starts from who uses it, when, and for what — then designs screens, AI responses, data, and the connection to real work as one experience, and builds it. Not a one-off demo, but a product that takes root in everyday work and life.',
+      jaTitle: '「すごいデモ」から、「毎日使うプロダクト」へ。',
+      enTitle: 'From a one-off demo to an everyday product.',
+      jaSubtitle: 'AI機能を作るだけでは、毎日は使われません。誰がどの場面で何のために使うかを起点に、画面・AI応答・データ・業務との接続を一つの体験として設計・実装し、毎日使われるプロダクトに仕上げます。',
+      enSubtitle: 'Building an AI feature does not mean it gets used every day. Starting from who uses it, when, and why, we design and build screens, AI responses, data, and the connection to real work as one experience — into a product used every day.',
       chipsJa: ['顧客向けプロダクト', '社内ツール', 'RAG / マルチモーダル / リアルタイム'],
       chipsEn: ['Customer-facing products', 'Internal tools', 'RAG / Multimodal / Realtime'],
       primaryCtaJa: 'この領域で相談する',
@@ -182,7 +182,7 @@ const pageContent: Record<string, DetailContent> = {
       titleEn: 'Three problems we address',
       cardsJa: [
         ['デモは盛り上がったが、毎日は使われない', '試した時は反応が良くても、日々の業務には組み込まれず、いつの間にか使われなくなる。'],
-        ['AI機能はあるが、業務やデータに繋がっていない', '単体では動くものの、実際の画面や手順、社内データと接続されておらず、現場の判断に使えない。'],
+        ['AI機能はあるが、業務やデータに繋がっていない', '単体では動くが、実際の画面や手順、社内データと繋がらず、現場で使えない。'],
         ['作って終わりで、定着も改善も続かない', '公開した後の運用、評価、改善の仕組みがなく、価値が伝わらないまま放置される。'],
       ],
       cardsEn: [
@@ -198,7 +198,7 @@ const pageContent: Record<string, DetailContent> = {
       subtitleEn: 'A product often goes unused not because of AI accuracy, but because the user experience, the work, and the data are not connected. Nebula Infinity builds everything from experience design through implementation to operation and improvement as one piece — and finishes it to the point where it is used every day.',
       itemsJa: [
         ['体験設計', '利用者、場面、画面、導線、AI応答の見せ方を、使われる前提で設計します。'],
-        ['フロントエンド / バックエンド実装', 'UI、API、認証、データ、外部サービス連携を実装します。'],
+        ['フロントエンド / バックエンド実装', 'UI、API、認証、データ、外部サービス連携まで、現場で動く形に実装します。'],
         ['AI機能実装', 'RAG、マルチモーダルなどのAI技術と、業務ロジックを体験に組み込みます。'],
         ['運用・改善機能実装', 'ログ、評価、保守、改善の仕組みを設計・実装し、使い続けられる状態にします。'],
       ],
@@ -248,8 +248,8 @@ const pageContent: Record<string, DetailContent> = {
   'ai-driven-development': {
     hero: {
       eyebrow: 'AI-Driven Development',
-      jaTitle: '構想のままのアイデアを、来週には動くプロダクトへ。',
-      enTitle: 'From an idea on a slide — to a product running next week.',
+      jaTitle: '「構想のまま」から、「動くプロダクト」へ。',
+      enTitle: 'From a stalled concept to a running product.',
       jaSubtitle: '明確な仕様がなくても構いません。目的、制約、最初に動かす範囲から一緒に整理し、AI駆動の開発体制で速く確かに実装します。開発待ちで止まっていた構想を、最短で動く形まで進めます。',
       enSubtitle: 'You do not need a finished spec. We start from your purpose, constraints, and the first scope worth running, then implement it fast and reliably with an AI-driven delivery model. Ideas stuck waiting for development reach a working form, fast.',
       chipsJa: ['Agentic Workflow', 'Quality Gates', 'Delivery Acceleration'],
@@ -265,7 +265,7 @@ const pageContent: Record<string, DetailContent> = {
       cardsJa: [
         ['アイデアや要望が、開発待ちで止まっている', 'やりたいことはあるのに、リソースや段取りが追いつかず、構想のまま先に進まない。'],
         ['仕様変更が多く、作っても追いつかない', '前提が動くたびに手戻りが増え、レビューや改善が回らないまま開発が重くなる。'],
-        ['速さと品質が、両立しない', '速く作ると品質が下がり、品質を守ると遅くなる——どちらかを諦める前提になっている。'],
+        ['速さと品質が、両立しない', '速く作れば品質が落ち、守れば遅くなる——どちらかを諦める前提になっている。'],
       ],
       cardsEn: [
         ['Ideas and requests are stuck waiting for development', 'You know what you want to do, but resources and sequencing cannot keep up, so it stays an idea.'],
@@ -280,9 +280,9 @@ const pageContent: Record<string, DetailContent> = {
       subtitleEn: 'Speed and quality fail to coexist when AI is used only as one-off task help. Nebula Infinity rebuilds the flow from requirements through implementation, review, and verification around AI, and designs the roles of AI agents and people so speed and quality hold at the same time.',
       itemsJa: [
         ['開発ワークフロー設計', '要件整理、設計、実装、レビュー、検証の流れをAI前提で組み直し、AIエージェントの役割まで設計します。'],
-        ['プロダクト実装', 'フロントエンド、バックエンド、データ連携、AI機能を一体で実装します。'],
+        ['プロダクト実装', 'フロントエンド、バックエンド、データ連携、AI機能までを一つのプロダクトとして実装します。'],
         ['品質ゲート整備', 'テスト、型チェック、ビルド、レビュー観点、受け入れ条件を組み込みます。'],
-        ['運用・改善ハンドオフ', '判断ログ、残課題、改善サイクルを残し、継続開発へ接続します。'],
+        ['運用・改善ハンドオフ', '判断ログ、残課題、改善サイクルを残し、運用と継続開発にそのまま接続します。'],
       ],
       itemsEn: [
         ['Development workflow design', 'We rebuild requirements, design, implementation, review, and verification around AI, including the roles AI agents play.'],
